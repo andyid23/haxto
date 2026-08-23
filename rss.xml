@@ -19,7 +19,7 @@
     <item>
       <title>Ulangan Harian</title>
       <link>https://localhost:3000/sites/haxto/ulangan-harian</link>
-      <description>📝 Ulangan Harian 12 Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban benar/salah tidak ditampilkan sampai guru memutuskan. Skor terkirim otomatis ke database setelah waktu habis atau semua soal terjawab.</description>
+      <description>📝 Ulangan Harian Literasi Digital Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban benar/salah tidak ditampilkan sampai guru memutuskan. Skor terkirim otomatis ke database setelah waktu habis atau semua soal terjawab.</description>
       <guid>https://localhost:3000/sites/haxto/ulangan-harian</guid>
       <pubDate>Sun, 23 Aug 2026 06:35:36 GMT</pubDate>
     </item>

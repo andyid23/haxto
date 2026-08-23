@@ -226,6 +226,18 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
         attribute: "shuffle-choices",
         reflect: true,
       },
+      shuffleQuestions: {
+        type: Boolean,
+        attribute: "shuffle-questions",
+        reflect: true,
+      },
+      lockAfterComplete: {
+        type: Boolean,
+        attribute: "lock-after-complete",
+        reflect: true,
+      },
+      _locked: { state: true },
+      _lockChecked: { state: true },
       studentId: { type: String, attribute: "student-id", reflect: true },
       studentName: { type: String, attribute: "student-name", reflect: true },
       studentNis: { type: String, attribute: "student-nis", reflect: true },
@@ -259,10 +271,12 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
       _tempChoice1: { state: true },
       _tempChoice2: { state: true },
       _tempChoice3: { state: true },
+      _tempChoice4: { state: true },
       _tempChoiceImage0: { state: true },
       _tempChoiceImage1: { state: true },
       _tempChoiceImage2: { state: true },
       _tempChoiceImage3: { state: true },
+      _tempChoiceImage4: { state: true },
       _tempCorrectIndex: { state: true },
       _tempCorrectAnswers: { state: true },
       _tempLeftItems: { state: true },
@@ -299,6 +313,8 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     this.hideAnswers = false;
     this.hideScore = false;
     this.shuffleChoices = false;
+    this.shuffleQuestions = false;
+    this.lockAfterComplete = true;
     this.editable = false;
     this.studentId = "";
     this.studentName = "";
@@ -324,6 +340,8 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     this._bankLoaded = false;
     this._confettiFired = false;
     this._shuffledQuestions = [];
+    this._locked = false;
+    this._lockChecked = false;
     this._editing = false;
     this._tempQuestions = [];
     this._editingIndex = -1;
@@ -348,6 +366,12 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
           margin: 0 auto;
           box-shadow: var(--ddd-boxShadow-sm);
         }
+        .locked-box {
+          text-align: center;
+          border: 2px dashed var(--ddd-theme-primary, #4f46e5);
+        }
+        .lock-icon { font-size: 40px; }
+        .lock-msg { color: #64748b; font-weight: 600; }
         .quiz-title { color: var(--ddd-theme-primary); font-size: var(--ddd-font-size-l); font-weight: 800; margin-top: 0; text-align: center; }
         .btn-start {
           display: block; width: 100%; padding: var(--ddd-spacing-4); background-color: var(--ddd-theme-polaris-primary); color: var(--ddd-theme-on-primary);
@@ -460,6 +484,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     globalThis.addEventListener("quiz-user-login", this._authHandler);
     globalThis.addEventListener("quiz-user-session-changed", this._authHandler);
     this._loadSession();
+    this._cekKunci();
     if (!this.hasAttribute("questions")) {
       const local = this._loadQuestionsLocal();
       if (local && local.length > 0) {
@@ -732,11 +757,12 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     this._currentIdx = 0;
     this._score = 0;
     this._confettiFired = false;
+    let base = Array.isArray(this.questions) ? this.questions : DEFAULT_QUESTIONS;
+    if (this.shuffleQuestions) base = this._shuffleArray(base);
     this._maxPoints =
       (this.questions || []).reduce((sum, q) => sum + this._maxPoinSoal(q), 0) || 1;
-    const quizQuestions = Array.isArray(this.questions) ? this.questions : DEFAULT_QUESTIONS;
     if (this.shuffleChoices) {
-      this._shuffledQuestions = quizQuestions.map((q, origIdx) => {
+      this._shuffledQuestions = base.map((q, origIdx) => {
         if (!Array.isArray(q.choices) || q.type === "pgk" || q.type === "matching") return { ...q, _originalIndex: origIdx };
         const pairs = q.choices.map((c, i) => ({ text: c, origIndex: i }));
         const shuffled = this._shuffleArray(pairs);
@@ -748,7 +774,9 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
         };
       });
     } else {
-      this._shuffledQuestions = [];
+      // SELALU isi _shuffledQuestions (urutan mungkin sudah diacak) agar
+      // _getActiveQuestions memakai urutan soal yang baru.
+      this._shuffledQuestions = base.map((q, i) => ({ ...q, _originalIndex: i }));
     }
     this._resetState();
   }
@@ -1025,6 +1053,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     // Cadangan langsung: bila kuis dipakai STANDALONE (tanpa <dasbor-kuis>),
     // event tidak tertangkap host mana pun — kirim sendiri ke backend.
     this._kirimHasilLangsung(idLog, totalSkor);
+    if (this.lockAfterComplete) this._locked = true;
   }
 
   /** Kirim hasil kuis langsung ke action=logActivity bila berdiri sendiri. */
@@ -1075,13 +1104,55 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     }
   }
 
+  /** Cek status kunci di backend (codev6 → db_asesmen). Graceful: bila gagal, izinkan mencoba. */
+  async _cekKunci() {
+    if (!this.lockAfterComplete || !this.appsScriptUrl || !this.studentId || !this.kdMateri) {
+      this._lockChecked = true;
+      return;
+    }
+    try {
+      const u = `${this.appsScriptUrl}${this.appsScriptUrl.includes("?") ? "&" : "?"}action=getQuizLock&studentId=${encodeURIComponent(this.studentId)}&kdMateri=${encodeURIComponent(this.kdMateri)}`;
+      const res = await fetch(u, { method: "GET", mode: "cors" });
+      const j = await res.json();
+      this._locked = !!(j && j.locked);
+    } catch (_) {
+      this._locked = false;
+    }
+    this._lockChecked = true;
+    this.requestUpdate();
+  }
+
+  /** Guru (mode guru) membuka kunci via resetQuizLock di backend. */
+  async _bukaKunci() {
+    if (!this.appsScriptUrl || !this.studentId || !this.kdMateri) return;
+    try {
+      const u = `${this.appsScriptUrl}${this.appsScriptUrl.includes("?") ? "&" : "?"}action=resetQuizLock&studentId=${encodeURIComponent(this.studentId)}&kdMateri=${encodeURIComponent(this.kdMateri)}`;
+      await fetch(u, { method: "GET", mode: "cors" });
+    } catch (_) {}
+    this._locked = false;
+    this._screen = "start";
+    this.requestUpdate();
+  }
+
   render() {
     if (this._screen === "start") {
+      if (this._locked && this.mode !== "guru") {
+        return html`
+          <div class="quiz-card locked-box">
+            <div class="lock-icon">🔒</div>
+            <h3 class="quiz-title">${this.judul}</h3>
+            <p class="lock-msg">Kuis terkunci. Hubungi guru untuk mengulang.</p>
+          </div>
+        `;
+      }
       return html`
         <div class="quiz-card">
           <h3 class="quiz-title">📝 ${this.judul}</h3>
           <p style="color: #64748b; text-align: center; margin-bottom: var(--ddd-spacing-5);">Selesaikan seluruh pertanyaan kuis di bawah ini secara mandiri untuk mengunci status kelulusan nilai pada lembar kendali dasbor.</p>
           <button class="btn-start" @click=${this._startQuiz} aria-label="Mulai mengerjakan kuis">Mulai Pengerjaan Kuis</button>
+          ${this._locked && this.mode === "guru"
+            ? html`<button class="btn-edit-soal" @click=${this._bukaKunci} aria-label="Buka kunci kuis">🔓 Buka Kunci / Ulangi</button>`
+            : ""}
           ${this._inHaxEditor
             ? html`<button class="btn-edit-soal" @click=${this._openEditor} aria-label="Edit soal kuis">✏️ Edit Soal</button>`
             : ""}
@@ -1586,7 +1657,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     const isMulti = this._tempCorrectAnswers.length > 1;
     return html`
       <div class="choices-container">
-        ${[0, 1, 2, 3].map((index) => html`
+        ${[0, 1, 2, 3, 4].map((index) => html`
           <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:6px;">
             <input class="editor-input" style="flex:1;min-width:120px;" .value=${this[`_tempChoice${index}`]}
               @input=${(e) => (this[`_tempChoice${index}`] = e.target.value)}
@@ -1746,7 +1817,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
 
     if (qType === "mc") {
       if (!this._tempChoice0.trim() || !this._tempChoice1.trim()) return;
-      newQuestion.choices = [0, 1, 2, 3]
+      newQuestion.choices = [0, 1, 2, 3, 4]
         .map((i) => {
           const text = this[`_tempChoice${i}`]?.trim();
           if (!text) return null;
@@ -1789,10 +1860,12 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     this._tempChoice1 = "";
     this._tempChoice2 = "";
     this._tempChoice3 = "";
+    this._tempChoice4 = "";
     this._tempChoiceImage0 = "";
     this._tempChoiceImage1 = "";
     this._tempChoiceImage2 = "";
     this._tempChoiceImage3 = "";
+    this._tempChoiceImage4 = "";
     this._tempCorrectIndex = "0";
     this._tempCorrectAnswers = [];
     this._tempQuestionImage = "";
@@ -1819,10 +1892,12 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     this._tempChoice1 = this._getChoiceText(choices[1]) || "";
     this._tempChoice2 = this._getChoiceText(choices[2]) || "";
     this._tempChoice3 = this._getChoiceText(choices[3]) || "";
+    this._tempChoice4 = this._getChoiceText(choices[4]) || "";
     this._tempChoiceImage0 = this._getChoiceImage(choices[0]) || "";
     this._tempChoiceImage1 = this._getChoiceImage(choices[1]) || "";
     this._tempChoiceImage2 = this._getChoiceImage(choices[2]) || "";
     this._tempChoiceImage3 = this._getChoiceImage(choices[3]) || "";
+    this._tempChoiceImage4 = this._getChoiceImage(choices[4]) || "";
     this._tempCorrectIndex = q.correctIndex != null ? q.correctIndex.toString() : "0";
     this._tempCorrectAnswers = q.correctAnswers || [];
     this._tempLeftItems = q.leftItems || ["", ""];
@@ -1843,7 +1918,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     if (this._tempQuestionPoints > 1) updated.points = this._tempQuestionPoints;
 
     if (qType === "mc") {
-      updated.choices = [0, 1, 2, 3]
+      updated.choices = [0, 1, 2, 3, 4]
         .map((i) => {
           const text = this[`_tempChoice${i}`]?.trim();
           if (!text) return null;

@@ -70,6 +70,19 @@
                 "inputMethod": "boolean"
             },
             {
+                "property": "shuffleQuestions",
+                "title": "Acak Urutan Soal",
+                "description": "Mengacak urutan soal setiap kali kuis dimulai.",
+                "inputMethod": "boolean"
+            },
+            {
+                "property": "lockAfterComplete",
+                "title": "Kunci Otomatis Setelah Selesai",
+                "description": "Siswa tidak bisa mengulang setelah submit pertama; guru membuka via mode guru.",
+                "inputMethod": "boolean",
+                "default": true
+            },
+            {
                 "property": "hideAnswers",
                 "title": "Sembunyikan Jawaban",
                 "description": "Tidak menampilkan jawaban benar/salah setelah menjawab",
@@ -124,10 +137,12 @@
             "_tempChoice1",
             "_tempChoice2",
             "_tempChoice3",
+            "_tempChoice4",
             "_tempChoiceImage0",
             "_tempChoiceImage1",
             "_tempChoiceImage2",
             "_tempChoiceImage3",
+            "_tempChoiceImage4",
             "_tempCorrectIndex",
             "_tempCorrectAnswers",
             "_tempLeftItems",
