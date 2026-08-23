@@ -71,6 +71,5548 @@
       "path": "src/custom.js",
       "declarations": [],
       "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/dasbor-kuis/dasbor-kuis.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "`dasbor-kuis`\n\nDasbor evaluasi terintegrasi V5 dengan dua mode tampilan:\n- `guru`: pantauan kelas (roster, status aktivitas) + leaderboard & rekap nilai.\n- `siswa`: hasil nilai pribadi (kehadiran, UH, UTS, UAS, sikap, keterampilan,\n  nilai akhir) + evaluasi mandiri (baca, kuis, diskusi).\n\nData diambil dari Google Apps Script via GET ramah CORS\n(action=getStudentRoster|getLeaderboard|getScores|getActivityHistory|logActivity).",
+          "name": "QuizDashboard",
+          "members": [
+            {
+              "kind": "field",
+              "name": "tag",
+              "static": true,
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "haxProperties",
+              "static": true,
+              "readonly": true
+            },
+            {
+              "kind": "method",
+              "name": "_loadProfile"
+            },
+            {
+              "kind": "method",
+              "name": "_persistProfile"
+            },
+            {
+              "kind": "method",
+              "name": "_onUserLogin",
+              "parameters": [
+                {
+                  "name": "e"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_onUserLogout"
+            },
+            {
+              "kind": "method",
+              "name": "_onLogEvent",
+              "parameters": [
+                {
+                  "name": "e"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_generateLogId"
+            },
+            {
+              "kind": "method",
+              "name": "_ambilIdLogStabil",
+              "parameters": [
+                {
+                  "name": "tipe_aktivitas"
+                },
+                {
+                  "name": "payload_data"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_apiGet",
+              "parameters": [
+                {
+                  "name": "params"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_deteksiErrorBackend",
+              "parameters": [
+                {
+                  "name": "respon"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_bacaCacheLokal"
+            },
+            {
+              "kind": "method",
+              "name": "fetchDataKomplit"
+            },
+            {
+              "kind": "method",
+              "name": "logActivity",
+              "parameters": [
+                {
+                  "name": "tipe_aktivitas"
+                },
+                {
+                  "name": "payload_data",
+                  "default": "{}"
+                },
+                {
+                  "name": "id_log"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_flushQueue"
+            },
+            {
+              "kind": "method",
+              "name": "_num",
+              "parameters": [
+                {
+                  "name": "v"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_rowValue",
+              "parameters": [
+                {
+                  "name": "row"
+                },
+                {
+                  "name": "key"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_renderContent"
+            },
+            {
+              "kind": "method",
+              "name": "_renderKuisWadah",
+              "description": "🎯 Wadah kuis: teruskan atribut HAX (soal, URL, identitas siswa) ke <kuis-ledakan>."
+            },
+            {
+              "kind": "method",
+              "name": "_renderDashboardPembelajaran",
+              "description": "🎯 Dashboard Pembelajaran — Kuis + Kehadiran + Nilai (via sistem-kehadiran)."
+            },
+            {
+              "kind": "method",
+              "name": "_renderInputNilai"
+            },
+            {
+              "kind": "method",
+              "name": "_ubahNilai",
+              "parameters": [
+                {
+                  "name": "i"
+                },
+                {
+                  "name": "field"
+                },
+                {
+                  "name": "value"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_kirimNilaiSiswa",
+              "parameters": [
+                {
+                  "name": "i"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_renderEditSoal"
+            },
+            {
+              "kind": "method",
+              "name": "_muatBankSoal"
+            },
+            {
+              "kind": "method",
+              "name": "_terapkanSoal"
+            },
+            {
+              "kind": "method",
+              "name": "_renderPengaturan"
+            },
+            {
+              "kind": "method",
+              "name": "_renderPantauanGuru"
+            },
+            {
+              "kind": "method",
+              "name": "_renderLeaderboard"
+            },
+            {
+              "kind": "method",
+              "name": "_opsiKelas"
+            },
+            {
+              "kind": "method",
+              "name": "_bacaEditNilai",
+              "parameters": [
+                {
+                  "name": "sid"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_simpanEditNilai",
+              "parameters": [
+                {
+                  "name": "sid"
+                },
+                {
+                  "name": "data"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_hapusEditNilai",
+              "parameters": [
+                {
+                  "name": "sid"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_buildPeringkat"
+            },
+            {
+              "kind": "method",
+              "name": "_filterPeringkat",
+              "parameters": [
+                {
+                  "name": "rows"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_ubahFilterKelas",
+              "parameters": [
+                {
+                  "name": "val"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_renderPeringkatBimbingan"
+            },
+            {
+              "kind": "method",
+              "name": "_renderCopas"
+            },
+            {
+              "kind": "method",
+              "name": "_salinKopas"
+            },
+            {
+              "kind": "method",
+              "name": "_bukaDetail",
+              "parameters": [
+                {
+                  "name": "row"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_renderDetailSiswa"
+            },
+            {
+              "kind": "method",
+              "name": "_simpanNilaiLokal"
+            },
+            {
+              "kind": "method",
+              "name": "_kirimSemuaNilai",
+              "description": "☁️ Kirim SEMUA kolom nilai yang terisi (kehadiran/UH/UTS/UAS/sikap/keterampilan/Nilai Akhir) ke sheet Nilai Manual."
+            },
+            {
+              "kind": "method",
+              "name": "_kirimManualSkor"
+            },
+            {
+              "kind": "method",
+              "name": "_rowPeringkatKeCSV",
+              "parameters": [
+                {
+                  "name": "rows"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_csvKerangka",
+              "parameters": [
+                {
+                  "name": "rows"
+                },
+                {
+                  "name": "delim",
+                  "default": "\"\\t\""
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_eksporNilai",
+              "parameters": [
+                {
+                  "name": "format"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_downloadBlob",
+              "parameters": [
+                {
+                  "name": "nama"
+                },
+                {
+                  "name": "isi"
+                },
+                {
+                  "name": "mime"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_hs",
+              "parameters": [
+                {
+                  "name": "v"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_renderHasilSiswa"
+            },
+            {
+              "kind": "method",
+              "name": "_gabungRiwayat"
+            },
+            {
+              "kind": "method",
+              "name": "_renderLogAktivitasTerbaru"
+            },
+            {
+              "kind": "method",
+              "name": "_renderHeatmapSiswa"
+            },
+            {
+              "kind": "field",
+              "name": "appsScriptUrl",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "apps-script-url",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "forumApiUrl",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "forum-api-url",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "kdMateri",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Pertemuan 1\"",
+              "attribute": "kd-materi",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "mode",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"guru\"",
+              "attribute": "mode",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "kelas",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"XI-1\"",
+              "attribute": "kelas",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "studentId",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"STD-65108053\"",
+              "attribute": "student-id",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "namaSiswa",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Andy Yulianto\"",
+              "attribute": "nama-siswa",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "nis",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "nis",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "absen",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "absen",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "allowModeSwitch",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "allow-mode-switch",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "judulKuis",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Evaluasi Kuis Interaktif\"",
+              "attribute": "judul-kuis",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "questions",
+              "privacy": "public",
+              "type": {
+                "text": "array"
+              },
+              "default": "[]",
+              "attribute": "questions",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "shuffleChoices",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "shuffle-choices",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "hideAnswers",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "hide-answers",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "hideScore",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "hide-score",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "hideConfetti",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "hide-confetti",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "_activeTab",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"pantauan\"",
+              "attribute": "_activeTab"
+            },
+            {
+              "kind": "field",
+              "name": "_isFlushing",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "_isFlushing"
+            },
+            {
+              "kind": "field",
+              "name": "_loading",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "_loading"
+            },
+            {
+              "kind": "field",
+              "name": "_serverError",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "_serverError"
+            },
+            {
+              "kind": "field",
+              "name": "_peringkatKelas",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "_peringkatKelas"
+            },
+            {
+              "kind": "field",
+              "name": "_detailSiswa",
+              "privacy": "public",
+              "type": {
+                "text": "null"
+              },
+              "default": "null",
+              "attribute": "_detailSiswa"
+            },
+            {
+              "kind": "field",
+              "name": "_editNilai",
+              "privacy": "public",
+              "type": {
+                "text": "null"
+              },
+              "default": "null",
+              "attribute": "_editNilai"
+            },
+            {
+              "kind": "field",
+              "name": "_note",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "_note"
+            },
+            {
+              "kind": "field",
+              "name": "_copasTSV",
+              "privacy": "public",
+              "type": {
+                "text": "null"
+              },
+              "default": "null",
+              "attribute": "_copasTSV"
+            },
+            {
+              "kind": "field",
+              "name": "_simulabankSoalUrl",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "_simulabankSoalUrl"
+            },
+            {
+              "kind": "field",
+              "name": "_serverData",
+              "privacy": "public",
+              "type": {
+                "text": "object"
+              },
+              "default": "{ roster: [], leaderboard: [], siswa: null, history: [], }",
+              "attribute": "_serverData"
+            },
+            {
+              "kind": "field",
+              "name": "_onUserLoginBound"
+            },
+            {
+              "kind": "field",
+              "name": "_onUserLogoutBound"
+            },
+            {
+              "kind": "field",
+              "name": "_onLogEventBound"
+            },
+            {
+              "kind": "field",
+              "name": "_onOnlineBound"
+            },
+            {
+              "kind": "field",
+              "name": "_onFocusBound"
+            },
+            {
+              "kind": "field",
+              "name": "_draftNilai",
+              "privacy": "public",
+              "attribute": "_draftNilai"
+            },
+            {
+              "kind": "field",
+              "name": "_soalText",
+              "privacy": "public",
+              "attribute": "_soalText"
+            }
+          ],
+          "events": [
+            {
+              "name": "dasbor-kuis-activity",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "apps-script-url",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "appsScriptUrl"
+            },
+            {
+              "name": "forum-api-url",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "forumApiUrl"
+            },
+            {
+              "name": "kd-materi",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Pertemuan 1\"",
+              "fieldName": "kdMateri"
+            },
+            {
+              "name": "mode",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"guru\"",
+              "fieldName": "mode"
+            },
+            {
+              "name": "kelas",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"XI-1\"",
+              "fieldName": "kelas"
+            },
+            {
+              "name": "student-id",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"STD-65108053\"",
+              "fieldName": "studentId"
+            },
+            {
+              "name": "nama-siswa",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Andy Yulianto\"",
+              "fieldName": "namaSiswa"
+            },
+            {
+              "name": "nis",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "nis"
+            },
+            {
+              "name": "absen",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "absen"
+            },
+            {
+              "name": "allow-mode-switch",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "allowModeSwitch"
+            },
+            {
+              "name": "judul-kuis",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Evaluasi Kuis Interaktif\"",
+              "fieldName": "judulKuis"
+            },
+            {
+              "name": "questions",
+              "type": {
+                "text": "array"
+              },
+              "default": "[]",
+              "fieldName": "questions"
+            },
+            {
+              "name": "shuffle-choices",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "shuffleChoices"
+            },
+            {
+              "name": "hide-answers",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "hideAnswers"
+            },
+            {
+              "name": "hide-score",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "hideScore"
+            },
+            {
+              "name": "hide-confetti",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "hideConfetti"
+            },
+            {
+              "name": "_activeTab",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"pantauan\"",
+              "fieldName": "_activeTab"
+            },
+            {
+              "name": "_serverData",
+              "type": {
+                "text": "object"
+              },
+              "default": "{ roster: [], leaderboard: [], siswa: null, history: [], }",
+              "fieldName": "_serverData"
+            },
+            {
+              "name": "_isFlushing",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "_isFlushing"
+            },
+            {
+              "name": "_loading",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "_loading"
+            },
+            {
+              "name": "_serverError",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "_serverError"
+            },
+            {
+              "name": "_peringkatKelas",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "_peringkatKelas"
+            },
+            {
+              "name": "_detailSiswa",
+              "type": {
+                "text": "null"
+              },
+              "default": "null",
+              "fieldName": "_detailSiswa"
+            },
+            {
+              "name": "_editNilai",
+              "type": {
+                "text": "null"
+              },
+              "default": "null",
+              "fieldName": "_editNilai"
+            },
+            {
+              "name": "_note",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "_note"
+            },
+            {
+              "name": "_draftNilai",
+              "fieldName": "_draftNilai"
+            },
+            {
+              "name": "_soalText",
+              "fieldName": "_soalText"
+            },
+            {
+              "name": "_copasTSV",
+              "type": {
+                "text": "null"
+              },
+              "default": "null",
+              "fieldName": "_copasTSV"
+            },
+            {
+              "name": "_simulabankSoalUrl",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "_simulabankSoalUrl"
+            }
+          ],
+          "mixins": [
+            {
+              "name": "I18NMixin",
+              "package": "@haxtheweb/i18n-manager/lib/I18NMixin.js"
+            },
+            {
+              "name": "DDDSuper",
+              "package": "@haxtheweb/d-d-d/d-d-d.js"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "dasbor-kuis",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "QuizDashboard",
+          "declaration": {
+            "name": "QuizDashboard",
+            "module": "src/dasbor-kuis/dasbor-kuis.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "declaration": {
+            "name": "QuizDashboard",
+            "module": "src/dasbor-kuis/dasbor-kuis.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/dasbor-kuis/lib/diskusi-tugas.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "IntegratedForum",
+          "members": [
+            {
+              "kind": "field",
+              "name": "tag",
+              "static": true,
+              "readonly": true
+            },
+            {
+              "kind": "method",
+              "name": "_muatKomentarSesi"
+            },
+            {
+              "kind": "method",
+              "name": "_buatIdLog"
+            },
+            {
+              "kind": "method",
+              "name": "kirimDiskusiAtauTugas",
+              "parameters": [
+                {
+                  "name": "tipe"
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "namaSiswa",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Siswa\"",
+              "attribute": "nama-siswa",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "_jawabanLokal",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "_jawabanLokal"
+            },
+            {
+              "kind": "field",
+              "name": "_daftarKomentar",
+              "privacy": "public",
+              "type": {
+                "text": "array"
+              },
+              "default": "[]",
+              "attribute": "_daftarKomentar"
+            }
+          ],
+          "events": [
+            {
+              "name": "dasbor-kuis-log",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "nama-siswa",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Siswa\"",
+              "fieldName": "namaSiswa"
+            },
+            {
+              "name": "_jawabanLokal",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "_jawabanLokal"
+            },
+            {
+              "name": "_daftarKomentar",
+              "type": {
+                "text": "array"
+              },
+              "default": "[]",
+              "fieldName": "_daftarKomentar"
+            }
+          ],
+          "mixins": [
+            {
+              "name": "DDDSuper",
+              "package": "@haxtheweb/d-d-d/d-d-d.js"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "IntegratedForum",
+          "declaration": {
+            "name": "IntegratedForum",
+            "module": "src/dasbor-kuis/lib/diskusi-tugas.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "declaration": {
+            "name": "IntegratedForum",
+            "module": "src/dasbor-kuis/lib/diskusi-tugas.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/dasbor-kuis/lib/kirim-tugas.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "`kirim-tugas`\n\n🎯 Halaman contoh pengumpulan tugas mandiri (adaptasi <assignment-component>\ndari quiz-dashboard-lite2). Kirim ke `forumApiUrl` dengan action\n`saveAssignment` + `kdMateri` (nilai dari `sheetName`). Status tersimpan\nper kdMateri di localStorage (`hax_assignment_{kdMateri}`) sehingga siswa\nyang sudah menyerahkan tetap melihat kartu terkunci saat di-refresh.\n\nSetiap submit juga memancarkan event `dasbor-kuis-log` (tipe `assignment`)\nagar <dasbor-kuis> mengantrekan aktivitas ke app script utama\n(action=logActivity, idempoten per id_log) — kontribusi ke rekap\n\"assignment\" di Rangkuman.",
+          "name": "KirimTugas",
+          "members": [
+            {
+              "kind": "field",
+              "name": "tag",
+              "static": true,
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "haxProperties",
+              "static": true,
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "kdMateri",
+              "readonly": true
+            },
+            {
+              "kind": "method",
+              "name": "_onLogout"
+            },
+            {
+              "kind": "method",
+              "name": "_listenSession"
+            },
+            {
+              "kind": "method",
+              "name": "_loadSession"
+            },
+            {
+              "kind": "method",
+              "name": "_handleSessionChanged",
+              "parameters": [
+                {
+                  "name": "e"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_storageKey"
+            },
+            {
+              "kind": "method",
+              "name": "_loadFromStorage"
+            },
+            {
+              "kind": "method",
+              "name": "_saveToStorage"
+            },
+            {
+              "kind": "method",
+              "name": "_isValidUrl",
+              "parameters": [
+                {
+                  "name": "str"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_submitAssignment"
+            },
+            {
+              "kind": "method",
+              "name": "_resetAssignment"
+            },
+            {
+              "kind": "method",
+              "name": "_dispatchActivity",
+              "parameters": [
+                {
+                  "name": "type"
+                },
+                {
+                  "name": "description"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_buatIdLog"
+            },
+            {
+              "kind": "method",
+              "name": "_showToast",
+              "parameters": [
+                {
+                  "name": "msg"
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "appsScriptUrl",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "apps-script-url",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "forumApiUrl",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "forum-api-url",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "sheetName",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Pertemuan\"",
+              "attribute": "sheet-name",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "studentId",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "student-id",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "studentName",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "student-name",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "studentNis",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "student-nis",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "studentAbsen",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "student-absen",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "studentKelas",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "student-kelas",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "assignmentTitle",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Tugas Mandiri\"",
+              "attribute": "assignment-title",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "assignmentInstruction",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Tuliskan refleksi atau jawaban tugas Anda.\"",
+              "attribute": "assignment-instruction",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "hideDelete",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "hide-delete",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "_assignmentText",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "_assignmentText"
+            },
+            {
+              "kind": "field",
+              "name": "_assignmentLink",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "_assignmentLink"
+            },
+            {
+              "kind": "field",
+              "name": "_assignmentSubmitted",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "_assignmentSubmitted"
+            },
+            {
+              "kind": "field",
+              "name": "_submitting",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "_submitting"
+            },
+            {
+              "kind": "field",
+              "name": "_toastMsg",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "_toastMsg"
+            },
+            {
+              "kind": "field",
+              "name": "t",
+              "type": {
+                "text": "object"
+              },
+              "default": "{ ...this.t, submissionTitle: \"Pengumpulan Tugas\", submitBtn: \"Kirim & Kunci Tugas\", submitting: \"Mengirim...\", submitted: \"Tugas Diserahkan & Tersimpan ke Google Sheets\", pending: \"Belum Menyerahkan\", resetBtn: \"Ubah\", placeholderTask: \"Tulis jawaban tugas Anda di sini...\", placeholderLink: \"Link Google Drive / Google Doc (opsional)\", invalidLink: \"Format link tidak valid. Gunakan URL Google Drive/Doc.\", emptyTask: \"Isi tugas atau link Google Drive terlebih dahulu!\", activityAssignment: \"Tugas dikumpulkan\", backendError: \"Gagal tersimpan ke sheet. Perbarui deployment Apps Script (New version).\", loginHint: \"Login dulu untuk memastikan tugas tercatat atas nama Anda.\", }"
+            }
+          ],
+          "events": [
+            {
+              "name": "dasbor-kuis-log",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "apps-script-url",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "appsScriptUrl"
+            },
+            {
+              "name": "forum-api-url",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "forumApiUrl"
+            },
+            {
+              "name": "sheet-name",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Pertemuan\"",
+              "fieldName": "sheetName"
+            },
+            {
+              "name": "student-id",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "studentId"
+            },
+            {
+              "name": "student-name",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "studentName"
+            },
+            {
+              "name": "student-nis",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "studentNis"
+            },
+            {
+              "name": "student-absen",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "studentAbsen"
+            },
+            {
+              "name": "student-kelas",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "studentKelas"
+            },
+            {
+              "name": "assignment-title",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Tugas Mandiri\"",
+              "fieldName": "assignmentTitle"
+            },
+            {
+              "name": "assignment-instruction",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Tuliskan refleksi atau jawaban tugas Anda.\"",
+              "fieldName": "assignmentInstruction"
+            },
+            {
+              "name": "hide-delete",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "hideDelete"
+            },
+            {
+              "name": "_assignmentText",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "_assignmentText"
+            },
+            {
+              "name": "_assignmentLink",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "_assignmentLink"
+            },
+            {
+              "name": "_assignmentSubmitted",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "_assignmentSubmitted"
+            },
+            {
+              "name": "_submitting",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "_submitting"
+            },
+            {
+              "name": "_toastMsg",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "_toastMsg"
+            }
+          ],
+          "mixins": [
+            {
+              "name": "I18NMixin",
+              "package": "@haxtheweb/i18n-manager/lib/I18NMixin.js"
+            },
+            {
+              "name": "DDDSuper",
+              "package": "@haxtheweb/d-d-d/d-d-d.js"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "kirim-tugas",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "KirimTugas",
+          "declaration": {
+            "name": "KirimTugas",
+            "module": "src/dasbor-kuis/lib/kirim-tugas.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "declaration": {
+            "name": "KirimTugas",
+            "module": "src/dasbor-kuis/lib/kirim-tugas.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/dasbor-kuis/lib/kuis-ledakan.js",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "DEFAULT_QUESTIONS",
+          "type": {
+            "text": "array"
+          },
+          "default": "[ { q: \"Apa kegunaan utama metode connectedCallback pada LitElement?\", a: \"Menginisialisasi nilai variabel dasar\", b: \"Mendeteksi elemen saat berhasil diinjeksikan ke struktur DOM\", c: \"Menghapus event listener global\", k: \"b\" }, { q: \"Bagaimana cara mencegah timeout 6 menit pada Google Apps Script?\", a: \"Menggunakan penulisan masal berbasis batch I/O\", b: \"Menulis ke banyak sheet terpisah\", c: \"Memperbanyak rumus formula cell\", k: \"a\" } ]"
+        },
+        {
+          "kind": "class",
+          "description": "",
+          "name": "ModularQuiz",
+          "members": [
+            {
+              "kind": "field",
+              "name": "tag",
+              "static": true,
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "haxProperties",
+              "static": true,
+              "readonly": true
+            },
+            {
+              "kind": "method",
+              "name": "_authHandler",
+              "parameters": [
+                {
+                  "name": "e"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_loadSession"
+            },
+            {
+              "kind": "method",
+              "name": "_cancelMegaConfetti"
+            },
+            {
+              "kind": "method",
+              "name": "_onTimerExpired"
+            },
+            {
+              "kind": "method",
+              "name": "forceFinish"
+            },
+            {
+              "kind": "method",
+              "name": "_muatBankSoal",
+              "description": "Muat Bank Soal (AKM) dari backend bila tidak ada atribut `questions`."
+            },
+            {
+              "kind": "method",
+              "name": "_getChoiceText",
+              "parameters": [
+                {
+                  "name": "choice"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_getChoiceImage",
+              "parameters": [
+                {
+                  "name": "choice"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_normalisasiSoal",
+              "parameters": [
+                {
+                  "name": "q"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_siapkanSoal",
+              "parameters": [
+                {
+                  "name": "q"
+                }
+              ],
+              "description": "Normalisasi format soal: {q,a,b,c,k} legacy maupun {soal,choices,correctIndex} AKM."
+            },
+            {
+              "kind": "method",
+              "name": "_fireConfetti"
+            },
+            {
+              "kind": "method",
+              "name": "_fireMegaConfetti"
+            },
+            {
+              "kind": "method",
+              "name": "_shuffleArray",
+              "parameters": [
+                {
+                  "name": "arr"
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "_inHaxEditor",
+              "description": "Hanya true di dalam editor HAX (hax start / haxcms local dev).",
+              "readonly": true
+            },
+            {
+              "kind": "method",
+              "name": "_maxPoinSoal",
+              "parameters": [
+                {
+                  "name": "q"
+                }
+              ],
+              "description": "Poin maksimum per soal: PGK → jumlah pernyataan, menjodohkan → jumlah item kiri, selainnya → points || 1."
+            },
+            {
+              "kind": "method",
+              "name": "_startQuiz"
+            },
+            {
+              "kind": "method",
+              "name": "_getActiveQuestions"
+            },
+            {
+              "kind": "method",
+              "name": "_resetState"
+            },
+            {
+              "kind": "method",
+              "name": "_pilihJawaban",
+              "parameters": [
+                {
+                  "name": "indexKey"
+                },
+                {
+                  "name": "opsi"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_toggleMultiAnswer",
+              "parameters": [
+                {
+                  "name": "indexKey"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_submitMultiAnswers"
+            },
+            {
+              "kind": "method",
+              "name": "_setPGK",
+              "parameters": [
+                {
+                  "name": "index"
+                },
+                {
+                  "name": "value"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_submitPGK"
+            },
+            {
+              "kind": "method",
+              "name": "_submitMatching"
+            },
+            {
+              "kind": "method",
+              "name": "_submitShortAnswer"
+            },
+            {
+              "kind": "method",
+              "name": "_autoAdvance"
+            },
+            {
+              "kind": "method",
+              "name": "_buatIdLog"
+            },
+            {
+              "kind": "method",
+              "name": "_selesaiKuis"
+            },
+            {
+              "kind": "method",
+              "name": "_kirimHasilLangsung",
+              "parameters": [
+                {
+                  "name": "idLog"
+                },
+                {
+                  "name": "skor"
+                }
+              ],
+              "description": "Kirim hasil kuis langsung ke action=logActivity bila berdiri sendiri."
+            },
+            {
+              "kind": "method",
+              "name": "_renderQuestionScreen"
+            },
+            {
+              "kind": "method",
+              "name": "_renderMC",
+              "parameters": [
+                {
+                  "name": "s"
+                },
+                {
+                  "name": "soal"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_renderPGK",
+              "parameters": [
+                {
+                  "name": "s"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_renderMatching",
+              "parameters": [
+                {
+                  "name": "s"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_renderShortAnswer",
+              "parameters": [
+                {
+                  "name": "s"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_handleImportFile",
+              "parameters": [
+                {
+                  "name": "e"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_importFromText"
+            },
+            {
+              "kind": "method",
+              "name": "_parseImported",
+              "parameters": [
+                {
+                  "name": "raw"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_normalisasiUntukEditor",
+              "parameters": [
+                {
+                  "name": "item"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_slug",
+              "parameters": [
+                {
+                  "name": "text"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_storageKey"
+            },
+            {
+              "kind": "method",
+              "name": "_saveQuestionsLocal"
+            },
+            {
+              "kind": "method",
+              "name": "_loadQuestionsLocal"
+            },
+            {
+              "kind": "method",
+              "name": "_openEditor"
+            },
+            {
+              "kind": "method",
+              "name": "_saveAll"
+            },
+            {
+              "kind": "method",
+              "name": "_cancelAll"
+            },
+            {
+              "kind": "method",
+              "name": "_renderEditorScreen"
+            },
+            {
+              "kind": "method",
+              "name": "_renderEditorMC"
+            },
+            {
+              "kind": "method",
+              "name": "_renderEditorPGK"
+            },
+            {
+              "kind": "method",
+              "name": "_renderEditorMatching"
+            },
+            {
+              "kind": "method",
+              "name": "_syncCorrectPairs",
+              "parameters": [
+                {
+                  "name": "pairs"
+                },
+                {
+                  "name": "leftCount"
+                },
+                {
+                  "name": "rightCount"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_renderEditorShortAnswer"
+            },
+            {
+              "kind": "method",
+              "name": "_addQuestion"
+            },
+            {
+              "kind": "method",
+              "name": "_deleteQuestion",
+              "parameters": [
+                {
+                  "name": "index"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_resetEditorForm"
+            },
+            {
+              "kind": "method",
+              "name": "_startEditQuestion",
+              "parameters": [
+                {
+                  "name": "index"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_saveEditQuestion"
+            },
+            {
+              "kind": "method",
+              "name": "_cancelEditQuestion"
+            },
+            {
+              "kind": "field",
+              "name": "t",
+              "type": {
+                "text": "object"
+              },
+              "default": "{ ...this.t, importTitle: \"Impor Soal (JSON / .txt)\", importFromText: \"Impor dari Teks\", importPlaceholder: '[{\"question\":\"...\",\"choices\":[\"A\",\"B\"],\"correctIndex\":0}]', }"
+            },
+            {
+              "kind": "field",
+              "name": "_confettiFn",
+              "default": "confetti"
+            },
+            {
+              "kind": "field",
+              "name": "questions",
+              "privacy": "public",
+              "type": {
+                "text": "array"
+              },
+              "default": "[ { q: \"Apa kegunaan utama metode connectedCallback pada LitElement?\", a: \"Menginisialisasi nilai variabel dasar\", b: \"Mendeteksi elemen saat berhasil diinjeksikan ke struktur DOM\", c: \"Menghapus event listener global\", k: \"b\" }, { q: \"Bagaimana cara mencegah timeout 6 menit pada Google Apps Script?\", a: \"Menggunakan penulisan masal berbasis batch I/O\", b: \"Menulis ke banyak sheet terpisah\", c: \"Memperbanyak rumus formula cell\", k: \"a\" } ]",
+              "attribute": "questions",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "judul",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Evaluasi Kuis Interaktif\"",
+              "attribute": "judul",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "appsScriptUrl",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "apps-script-url",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "kdMateri",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Pertemuan 1\"",
+              "attribute": "kd-materi",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "mode",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"siswa\"",
+              "attribute": "mode",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "hideConfetti",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "hide-confetti",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "hideAnswers",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "hide-answers",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "hideScore",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "hide-score",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "shuffleChoices",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "shuffle-choices",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "editable",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "editable",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "studentId",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "student-id",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "studentName",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "student-name",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "studentNis",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "student-nis",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "studentAbsen",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "student-absen",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "studentKelas",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "student-kelas",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "timerDuration",
+              "privacy": "public",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "attribute": "timer-duration",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "timerAutostart",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true",
+              "attribute": "timer-autostart",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "_screen",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"start\"",
+              "attribute": "_screen"
+            },
+            {
+              "kind": "field",
+              "name": "_currentIdx",
+              "privacy": "public",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "attribute": "_currentIdx"
+            },
+            {
+              "kind": "field",
+              "name": "_selected",
+              "privacy": "public",
+              "type": {
+                "text": "number"
+              },
+              "default": "-1",
+              "attribute": "_selected"
+            },
+            {
+              "kind": "field",
+              "name": "_selectedAnswers",
+              "privacy": "public",
+              "default": "new Set()",
+              "attribute": "_selectedAnswers"
+            },
+            {
+              "kind": "field",
+              "name": "_matchAnswers",
+              "privacy": "public",
+              "type": {
+                "text": "object"
+              },
+              "default": "{}",
+              "attribute": "_matchAnswers"
+            },
+            {
+              "kind": "field",
+              "name": "_shortAnswerText",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "_shortAnswerText"
+            },
+            {
+              "kind": "field",
+              "name": "_answered",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "_answered"
+            },
+            {
+              "kind": "field",
+              "name": "_score",
+              "privacy": "public",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "attribute": "_score"
+            },
+            {
+              "kind": "field",
+              "name": "_maxPoints",
+              "privacy": "public",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "attribute": "_maxPoints"
+            },
+            {
+              "kind": "field",
+              "name": "_feedbackText",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "_feedbackText"
+            },
+            {
+              "kind": "field",
+              "name": "_feedbackPositive",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "_feedbackPositive"
+            },
+            {
+              "kind": "field",
+              "name": "_advanceTimer",
+              "privacy": "public",
+              "type": {
+                "text": "null"
+              },
+              "default": "null",
+              "attribute": "_advanceTimer"
+            },
+            {
+              "kind": "field",
+              "name": "_megaConfettiFrameId",
+              "privacy": "public",
+              "type": {
+                "text": "null"
+              },
+              "default": "null",
+              "attribute": "_megaConfettiFrameId"
+            },
+            {
+              "kind": "field",
+              "name": "_bankStatus",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "_bankStatus"
+            },
+            {
+              "kind": "field",
+              "name": "_bankLoaded",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "_confettiFired",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "_shuffledQuestions",
+              "privacy": "public",
+              "type": {
+                "text": "array"
+              },
+              "default": "[]",
+              "attribute": "_shuffledQuestions"
+            },
+            {
+              "kind": "field",
+              "name": "_editing",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "_editing"
+            },
+            {
+              "kind": "field",
+              "name": "_tempQuestions",
+              "privacy": "public",
+              "type": {
+                "text": "array"
+              },
+              "default": "[]",
+              "attribute": "_tempQuestions"
+            },
+            {
+              "kind": "field",
+              "name": "_editingIndex",
+              "privacy": "public",
+              "type": {
+                "text": "number"
+              },
+              "default": "-1",
+              "attribute": "_editingIndex"
+            },
+            {
+              "kind": "field",
+              "name": "_editorOrigin",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"result\"",
+              "attribute": "_editorOrigin"
+            },
+            {
+              "kind": "field",
+              "name": "_importText",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "_importText"
+            },
+            {
+              "kind": "field",
+              "name": "_importStatus",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "_importStatus"
+            },
+            {
+              "kind": "field",
+              "name": "_tempQuestionText",
+              "privacy": "public",
+              "attribute": "_tempQuestionText"
+            },
+            {
+              "kind": "field",
+              "name": "_tempQuestionImage",
+              "privacy": "public",
+              "attribute": "_tempQuestionImage"
+            },
+            {
+              "kind": "field",
+              "name": "_tempQuestionType",
+              "privacy": "public",
+              "attribute": "_tempQuestionType"
+            },
+            {
+              "kind": "field",
+              "name": "_tempQuestionPoints",
+              "privacy": "public",
+              "attribute": "_tempQuestionPoints"
+            },
+            {
+              "kind": "field",
+              "name": "_tempChoice0",
+              "privacy": "public",
+              "attribute": "_tempChoice0"
+            },
+            {
+              "kind": "field",
+              "name": "_tempChoice1",
+              "privacy": "public",
+              "attribute": "_tempChoice1"
+            },
+            {
+              "kind": "field",
+              "name": "_tempChoice2",
+              "privacy": "public",
+              "attribute": "_tempChoice2"
+            },
+            {
+              "kind": "field",
+              "name": "_tempChoice3",
+              "privacy": "public",
+              "attribute": "_tempChoice3"
+            },
+            {
+              "kind": "field",
+              "name": "_tempChoiceImage0",
+              "privacy": "public",
+              "attribute": "_tempChoiceImage0"
+            },
+            {
+              "kind": "field",
+              "name": "_tempChoiceImage1",
+              "privacy": "public",
+              "attribute": "_tempChoiceImage1"
+            },
+            {
+              "kind": "field",
+              "name": "_tempChoiceImage2",
+              "privacy": "public",
+              "attribute": "_tempChoiceImage2"
+            },
+            {
+              "kind": "field",
+              "name": "_tempChoiceImage3",
+              "privacy": "public",
+              "attribute": "_tempChoiceImage3"
+            },
+            {
+              "kind": "field",
+              "name": "_tempCorrectIndex",
+              "privacy": "public",
+              "attribute": "_tempCorrectIndex"
+            },
+            {
+              "kind": "field",
+              "name": "_tempCorrectAnswers",
+              "privacy": "public",
+              "attribute": "_tempCorrectAnswers"
+            },
+            {
+              "kind": "field",
+              "name": "_tempLeftItems",
+              "privacy": "public",
+              "attribute": "_tempLeftItems"
+            },
+            {
+              "kind": "field",
+              "name": "_tempRightItems",
+              "privacy": "public",
+              "attribute": "_tempRightItems"
+            },
+            {
+              "kind": "field",
+              "name": "_tempCorrectPairs",
+              "privacy": "public",
+              "attribute": "_tempCorrectPairs"
+            },
+            {
+              "kind": "field",
+              "name": "_tempAcceptedAnswers",
+              "privacy": "public",
+              "attribute": "_tempAcceptedAnswers"
+            },
+            {
+              "kind": "field",
+              "name": "_tempAcceptedStatements",
+              "privacy": "public",
+              "attribute": "_tempAcceptedStatements"
+            },
+            {
+              "kind": "field",
+              "name": "_tempStatements",
+              "privacy": "public",
+              "attribute": "_tempStatements"
+            }
+          ],
+          "events": [
+            {
+              "name": "dasbor-kuis-log",
+              "type": {
+                "text": "CustomEvent"
+              }
+            },
+            {
+              "name": "questions-changed",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "questions",
+              "type": {
+                "text": "array"
+              },
+              "default": "DEFAULT_QUESTIONS",
+              "fieldName": "questions"
+            },
+            {
+              "name": "judul",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Evaluasi Kuis Interaktif\"",
+              "fieldName": "judul"
+            },
+            {
+              "name": "apps-script-url",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "appsScriptUrl"
+            },
+            {
+              "name": "kd-materi",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Pertemuan 1\"",
+              "fieldName": "kdMateri"
+            },
+            {
+              "name": "mode",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"siswa\"",
+              "fieldName": "mode"
+            },
+            {
+              "name": "hide-confetti",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "hideConfetti"
+            },
+            {
+              "name": "hide-answers",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "hideAnswers"
+            },
+            {
+              "name": "hide-score",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "hideScore"
+            },
+            {
+              "name": "editable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "editable"
+            },
+            {
+              "name": "shuffle-choices",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "shuffleChoices"
+            },
+            {
+              "name": "student-id",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "studentId"
+            },
+            {
+              "name": "student-name",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "studentName"
+            },
+            {
+              "name": "student-nis",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "studentNis"
+            },
+            {
+              "name": "student-absen",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "studentAbsen"
+            },
+            {
+              "name": "student-kelas",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "studentKelas"
+            },
+            {
+              "name": "timer-duration",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "fieldName": "timerDuration"
+            },
+            {
+              "name": "timer-autostart",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true",
+              "fieldName": "timerAutostart"
+            },
+            {
+              "name": "_screen",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"start\"",
+              "fieldName": "_screen"
+            },
+            {
+              "name": "_currentIdx",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "fieldName": "_currentIdx"
+            },
+            {
+              "name": "_selected",
+              "type": {
+                "text": "number"
+              },
+              "default": "-1",
+              "fieldName": "_selected"
+            },
+            {
+              "name": "_selectedAnswers",
+              "default": "new Set()",
+              "fieldName": "_selectedAnswers"
+            },
+            {
+              "name": "_matchAnswers",
+              "type": {
+                "text": "object"
+              },
+              "default": "{}",
+              "fieldName": "_matchAnswers"
+            },
+            {
+              "name": "_shortAnswerText",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "_shortAnswerText"
+            },
+            {
+              "name": "_answered",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "_answered"
+            },
+            {
+              "name": "_score",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "fieldName": "_score"
+            },
+            {
+              "name": "_maxPoints",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "fieldName": "_maxPoints"
+            },
+            {
+              "name": "_feedbackText",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "_feedbackText"
+            },
+            {
+              "name": "_feedbackPositive",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "_feedbackPositive"
+            },
+            {
+              "name": "_advanceTimer",
+              "type": {
+                "text": "null"
+              },
+              "default": "null",
+              "fieldName": "_advanceTimer"
+            },
+            {
+              "name": "_megaConfettiFrameId",
+              "type": {
+                "text": "null"
+              },
+              "default": "null",
+              "fieldName": "_megaConfettiFrameId"
+            },
+            {
+              "name": "_bankStatus",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "_bankStatus"
+            },
+            {
+              "name": "_shuffledQuestions",
+              "type": {
+                "text": "array"
+              },
+              "default": "[]",
+              "fieldName": "_shuffledQuestions"
+            },
+            {
+              "name": "_editing",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "_editing"
+            },
+            {
+              "name": "_tempQuestions",
+              "type": {
+                "text": "array"
+              },
+              "default": "[]",
+              "fieldName": "_tempQuestions"
+            },
+            {
+              "name": "_editingIndex",
+              "type": {
+                "text": "number"
+              },
+              "default": "-1",
+              "fieldName": "_editingIndex"
+            },
+            {
+              "name": "_tempQuestionText",
+              "fieldName": "_tempQuestionText"
+            },
+            {
+              "name": "_tempQuestionImage",
+              "fieldName": "_tempQuestionImage"
+            },
+            {
+              "name": "_tempQuestionType",
+              "fieldName": "_tempQuestionType"
+            },
+            {
+              "name": "_tempQuestionPoints",
+              "fieldName": "_tempQuestionPoints"
+            },
+            {
+              "name": "_tempChoice0",
+              "fieldName": "_tempChoice0"
+            },
+            {
+              "name": "_tempChoice1",
+              "fieldName": "_tempChoice1"
+            },
+            {
+              "name": "_tempChoice2",
+              "fieldName": "_tempChoice2"
+            },
+            {
+              "name": "_tempChoice3",
+              "fieldName": "_tempChoice3"
+            },
+            {
+              "name": "_tempChoiceImage0",
+              "fieldName": "_tempChoiceImage0"
+            },
+            {
+              "name": "_tempChoiceImage1",
+              "fieldName": "_tempChoiceImage1"
+            },
+            {
+              "name": "_tempChoiceImage2",
+              "fieldName": "_tempChoiceImage2"
+            },
+            {
+              "name": "_tempChoiceImage3",
+              "fieldName": "_tempChoiceImage3"
+            },
+            {
+              "name": "_tempCorrectIndex",
+              "fieldName": "_tempCorrectIndex"
+            },
+            {
+              "name": "_tempCorrectAnswers",
+              "fieldName": "_tempCorrectAnswers"
+            },
+            {
+              "name": "_tempLeftItems",
+              "fieldName": "_tempLeftItems"
+            },
+            {
+              "name": "_tempRightItems",
+              "fieldName": "_tempRightItems"
+            },
+            {
+              "name": "_tempCorrectPairs",
+              "fieldName": "_tempCorrectPairs"
+            },
+            {
+              "name": "_tempAcceptedAnswers",
+              "fieldName": "_tempAcceptedAnswers"
+            },
+            {
+              "name": "_tempAcceptedStatements",
+              "fieldName": "_tempAcceptedStatements"
+            },
+            {
+              "name": "_tempStatements",
+              "fieldName": "_tempStatements"
+            },
+            {
+              "name": "_editorOrigin",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"result\"",
+              "fieldName": "_editorOrigin"
+            },
+            {
+              "name": "_importText",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "_importText"
+            },
+            {
+              "name": "_importStatus",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "_importStatus"
+            }
+          ],
+          "mixins": [
+            {
+              "name": "I18NMixin",
+              "package": "@haxtheweb/i18n-manager/lib/I18NMixin.js"
+            },
+            {
+              "name": "DDDSuper",
+              "package": "@haxtheweb/d-d-d/d-d-d.js"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ModularQuiz",
+          "declaration": {
+            "name": "ModularQuiz",
+            "module": "src/dasbor-kuis/lib/kuis-ledakan.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "declaration": {
+            "name": "ModularQuiz",
+            "module": "src/dasbor-kuis/lib/kuis-ledakan.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "DEFAULT_QUESTIONS",
+          "declaration": {
+            "name": "DEFAULT_QUESTIONS",
+            "module": "src/dasbor-kuis/lib/kuis-ledakan.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/dasbor-kuis/lib/latihan-kuis.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "`latihan-kuis`\n\nHalaman contoh latihan terpandu: materi → kuis berwaktu → pesan \"nilai\nterkirim\". Menyatukan <kuis-ledakan> (kuis yang ada) dan <timer-kuis>\n(hitung mundur). Saat waktu habis (event `timer-kuis-expired`), kuis\ndikunci otomatis (`_selesaiKuis`) lalu materi & kuis disembunyikan dan\nditampilkan pesan \"Selamat! Nilai sudah terkirim\".\n\nNilai dikirim ke Google Apps Script (`apps-script-url`) oleh <kuis-ledakan>\nlewat action=logActivity, sehingga tercatat di Google Spreadsheet.",
+          "name": "LatihanKuis",
+          "members": [
+            {
+              "kind": "field",
+              "name": "tag",
+              "static": true,
+              "readonly": true
+            },
+            {
+              "kind": "method",
+              "name": "_onWaktuHabis"
+            },
+            {
+              "kind": "method",
+              "name": "_onKuisLog",
+              "parameters": [
+                {
+                  "name": "e"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_mulaiLatihan"
+            },
+            {
+              "kind": "field",
+              "name": "haxProperties",
+              "static": true,
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "appsScriptUrl",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "apps-script-url",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "spreadsheetUrl",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "spreadsheet-url",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "duration",
+              "privacy": "public",
+              "type": {
+                "text": "number"
+              },
+              "default": "300",
+              "attribute": "duration",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "judulMateri",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Materi Pembelajaran\"",
+              "attribute": "judul-materi",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "teksMateri",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Baca materi di bawah ini dengan saksama sebelum mengerjakan kuis. Waktu pengerjaan kuis dibatasi oleh timer; saat waktu habis, kuis akan dikunci dan nilai otomatis terkirim.\"",
+              "attribute": "teks-materi",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "materiUrl",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "materi-url",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "materiFile",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "materi-file",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "coverImage",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "cover-image",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "judulKuis",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Evaluasi Kuis Interaktif\"",
+              "attribute": "judul-kuis",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "questions",
+              "privacy": "public",
+              "type": {
+                "text": "array"
+              },
+              "default": "undefined",
+              "attribute": "questions",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "studentId",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "student-id",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "studentName",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "student-name",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "studentNis",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "student-nis",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "studentAbsen",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "student-absen",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "studentKelas",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "student-kelas",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "pesanWaktuHabis",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"⏰ Waktu habis! Kuis dikunci & dinilai otomatis.\"",
+              "attribute": "pesan-waktu-habis",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "pesanNilaiTerkirim",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet.\"",
+              "attribute": "pesan-nilai-terkirim",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "labelMulai",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"▶️ Mulai Latihan\"",
+              "attribute": "label-mulai",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "_mulai",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "_mulai"
+            },
+            {
+              "kind": "field",
+              "name": "_selesai",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "_selesai"
+            },
+            {
+              "kind": "field",
+              "name": "_skor",
+              "privacy": "public",
+              "type": {
+                "text": "null"
+              },
+              "default": "null",
+              "attribute": "_skor"
+            },
+            {
+              "kind": "field",
+              "name": "t",
+              "type": {
+                "text": "object"
+              },
+              "default": "{ ...this.t, bacaMateri: \"🔗 Buka URL Materi\", unduhMateri: \"📎 Unduh File Materi\", }"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "apps-script-url",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "appsScriptUrl"
+            },
+            {
+              "name": "spreadsheet-url",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "spreadsheetUrl"
+            },
+            {
+              "name": "duration",
+              "type": {
+                "text": "number"
+              },
+              "default": "300",
+              "fieldName": "duration"
+            },
+            {
+              "name": "judul-materi",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Materi Pembelajaran\"",
+              "fieldName": "judulMateri"
+            },
+            {
+              "name": "teks-materi",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Baca materi di bawah ini dengan saksama sebelum mengerjakan kuis. Waktu pengerjaan kuis dibatasi oleh timer; saat waktu habis, kuis akan dikunci dan nilai otomatis terkirim.\"",
+              "fieldName": "teksMateri"
+            },
+            {
+              "name": "materi-url",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "materiUrl"
+            },
+            {
+              "name": "materi-file",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "materiFile"
+            },
+            {
+              "name": "cover-image",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "coverImage"
+            },
+            {
+              "name": "judul-kuis",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Evaluasi Kuis Interaktif\"",
+              "fieldName": "judulKuis"
+            },
+            {
+              "name": "questions",
+              "type": {
+                "text": "array"
+              },
+              "default": "undefined",
+              "fieldName": "questions"
+            },
+            {
+              "name": "student-id",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "studentId"
+            },
+            {
+              "name": "student-name",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "studentName"
+            },
+            {
+              "name": "student-nis",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "studentNis"
+            },
+            {
+              "name": "student-absen",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "studentAbsen"
+            },
+            {
+              "name": "student-kelas",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "studentKelas"
+            },
+            {
+              "name": "pesan-waktu-habis",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"⏰ Waktu habis! Kuis dikunci & dinilai otomatis.\"",
+              "fieldName": "pesanWaktuHabis"
+            },
+            {
+              "name": "pesan-nilai-terkirim",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet.\"",
+              "fieldName": "pesanNilaiTerkirim"
+            },
+            {
+              "name": "label-mulai",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"▶️ Mulai Latihan\"",
+              "fieldName": "labelMulai"
+            },
+            {
+              "name": "_mulai",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "_mulai"
+            },
+            {
+              "name": "_selesai",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "_selesai"
+            },
+            {
+              "name": "_skor",
+              "type": {
+                "text": "null"
+              },
+              "default": "null",
+              "fieldName": "_skor"
+            }
+          ],
+          "mixins": [
+            {
+              "name": "I18NMixin",
+              "package": "@haxtheweb/i18n-manager/lib/I18NMixin.js"
+            },
+            {
+              "name": "DDDSuper",
+              "package": "@haxtheweb/d-d-d/d-d-d.js"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "latihan-kuis",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "LatihanKuis",
+          "declaration": {
+            "name": "LatihanKuis",
+            "module": "src/dasbor-kuis/lib/latihan-kuis.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "declaration": {
+            "name": "LatihanKuis",
+            "module": "src/dasbor-kuis/lib/latihan-kuis.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/dasbor-kuis/lib/quiz-user-auth.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "`quiz-user-auth`\n\nLogin / registrasi / verifikasi sesi siswa terhubung ke backend\nlib/codev5.gs (action=register|login|verify dengan kontrak\n`{status:\"ok\", data:{student_id,nis,nama,email,absen,kelas}}`).\n\nSesi disimpan di localStorage (kunci `quiz_user_session`, TTL 24 jam) dan\ndipancarkan lewat event global:\n  - quiz-user-login            → dipakai <dasbor-kuis> dkk\n  - quiz-user-logout\n  - quiz-user-session-changed  → dipakai kuis-ledakan",
+          "name": "QuizUserAuth",
+          "members": [
+            {
+              "kind": "field",
+              "name": "tag",
+              "static": true,
+              "readonly": true
+            },
+            {
+              "kind": "method",
+              "name": "_load",
+              "parameters": [
+                {
+                  "name": "key"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_save",
+              "parameters": [
+                {
+                  "name": "key"
+                },
+                {
+                  "name": "val"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_clear",
+              "parameters": [
+                {
+                  "name": "key"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_api",
+              "parameters": [
+                {
+                  "name": "action"
+                },
+                {
+                  "name": "params"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_ekstrakOk",
+              "parameters": [
+                {
+                  "name": "payload"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_verifySession"
+            },
+            {
+              "kind": "method",
+              "name": "_handleLogin",
+              "parameters": [
+                {
+                  "name": "e"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_handleRegister",
+              "parameters": [
+                {
+                  "name": "e"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_startSessionWatch"
+            },
+            {
+              "kind": "method",
+              "name": "_handleLogout"
+            },
+            {
+              "kind": "method",
+              "name": "_mutasiProfilKunci"
+            },
+            {
+              "kind": "method",
+              "name": "_dispatchLogin"
+            },
+            {
+              "kind": "method",
+              "name": "_dispatchSessionChanged"
+            },
+            {
+              "kind": "field",
+              "name": "haxProperties",
+              "static": true,
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "appsScriptUrl",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "apps-script-url",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "autoLogin",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true",
+              "attribute": "auto-login",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "_screen",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"check\"",
+              "attribute": "_screen"
+            },
+            {
+              "kind": "field",
+              "name": "_nama",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "_nama"
+            },
+            {
+              "kind": "field",
+              "name": "_email",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "_email"
+            },
+            {
+              "kind": "field",
+              "name": "_nis",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "_nis"
+            },
+            {
+              "kind": "field",
+              "name": "_absen",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "_absen"
+            },
+            {
+              "kind": "field",
+              "name": "_kelas",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "_kelas"
+            },
+            {
+              "kind": "field",
+              "name": "_studentId",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "_studentId"
+            },
+            {
+              "kind": "field",
+              "name": "_errorMsg",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "_errorMsg"
+            },
+            {
+              "kind": "field",
+              "name": "_successMsg",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "_successMsg"
+            },
+            {
+              "kind": "field",
+              "name": "_loading",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "_loading"
+            },
+            {
+              "kind": "field",
+              "name": "_sessionInterval",
+              "type": {
+                "text": "null"
+              },
+              "default": "null"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "apps-script-url",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "appsScriptUrl"
+            },
+            {
+              "name": "auto-login",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true",
+              "fieldName": "autoLogin"
+            },
+            {
+              "name": "_screen",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"check\"",
+              "fieldName": "_screen"
+            },
+            {
+              "name": "_nama",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "_nama"
+            },
+            {
+              "name": "_email",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "_email"
+            },
+            {
+              "name": "_nis",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "_nis"
+            },
+            {
+              "name": "_absen",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "_absen"
+            },
+            {
+              "name": "_kelas",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "_kelas"
+            },
+            {
+              "name": "_studentId",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "_studentId"
+            },
+            {
+              "name": "_errorMsg",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "_errorMsg"
+            },
+            {
+              "name": "_successMsg",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "_successMsg"
+            },
+            {
+              "name": "_loading",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "_loading"
+            }
+          ],
+          "mixins": [
+            {
+              "name": "I18NMixin",
+              "package": "@haxtheweb/i18n-manager/lib/I18NMixin.js"
+            },
+            {
+              "name": "DDDSuper",
+              "package": "@haxtheweb/d-d-d/d-d-d.js"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "quiz-user-auth",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "QuizUserAuth",
+          "declaration": {
+            "name": "QuizUserAuth",
+            "module": "src/dasbor-kuis/lib/quiz-user-auth.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "declaration": {
+            "name": "QuizUserAuth",
+            "module": "src/dasbor-kuis/lib/quiz-user-auth.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/dasbor-kuis/lib/ruang-diskusi.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "`ruang-diskusi`\n\n💬 Halaman contoh ruang diskusi bertingkat (adaptasi <forum-component>\ndari quiz-dashboard-lite2). Baca & kirim komentar ke `forumApiUrl` dengan\naction `getForumComments` / `saveForumComment` + `kdMateri` (nilai dari\n`sheetName`). Mendukung reply bertingkat, like, urutan (terbaik/terbaru/\nterlama), dan hapus (mode dosen).\n\nSetiap posting juga memancarkan event `dasbor-kuis-log` (tipe `discussion`)\nagar <dasbor-kuis> mengantrekan aktivitas ke app script utama\n(action=logActivity, idempoten per id_log) — kontribusi ke rekap\n\"discussion\" di Rangkuman.",
+          "name": "RuangDiskusi",
+          "members": [
+            {
+              "kind": "field",
+              "name": "tag",
+              "static": true,
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "haxProperties",
+              "static": true,
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "kdMateri",
+              "readonly": true
+            },
+            {
+              "kind": "method",
+              "name": "_commentAuthorName"
+            },
+            {
+              "kind": "method",
+              "name": "_onUserLogin",
+              "parameters": [
+                {
+                  "name": "e"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_handleSessionChanged",
+              "parameters": [
+                {
+                  "name": "e"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_loadSession"
+            },
+            {
+              "kind": "method",
+              "name": "_loadForumComments"
+            },
+            {
+              "kind": "method",
+              "name": "_buildThread",
+              "parameters": [
+                {
+                  "name": "flat"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_getSorted"
+            },
+            {
+              "kind": "method",
+              "name": "_setSort",
+              "parameters": [
+                {
+                  "name": "mode"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_submitMainComment"
+            },
+            {
+              "kind": "method",
+              "name": "_submitReply",
+              "parameters": [
+                {
+                  "name": "parentId"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_kirimForum",
+              "parameters": [
+                {
+                  "name": "payload"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_deleteComment",
+              "parameters": [
+                {
+                  "name": "commentId"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_findAndUpdateComment",
+              "parameters": [
+                {
+                  "name": "comments"
+                },
+                {
+                  "name": "id"
+                },
+                {
+                  "name": "updater"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_handleLike",
+              "parameters": [
+                {
+                  "name": "commentId"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_syncLike",
+              "parameters": [
+                {
+                  "name": "commentId"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_toggleReply",
+              "parameters": [
+                {
+                  "name": "commentId"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_sendActivity",
+              "parameters": [
+                {
+                  "name": "type"
+                },
+                {
+                  "name": "description"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_buatIdLog"
+            },
+            {
+              "kind": "method",
+              "name": "_timeAgo",
+              "parameters": [
+                {
+                  "name": "isoStr"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_showToast",
+              "parameters": [
+                {
+                  "name": "msg"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_renderComment",
+              "parameters": [
+                {
+                  "name": "c"
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "appsScriptUrl",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "apps-script-url",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "forumApiUrl",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "forum-api-url",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "sheetName",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Pertemuan\"",
+              "attribute": "sheet-name",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "studentId",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "student-id",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "studentName",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "student-name",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "studentNis",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "student-nis",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "studentAbsen",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "student-absen",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "studentKelas",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "student-kelas",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "forumTopic",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Ruang Diskusi\"",
+              "attribute": "forum-topic",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "viewMode",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"student\"",
+              "attribute": "view-mode",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "anchorId",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"ruang-diskusi\"",
+              "attribute": "anchor-id",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "hideDelete",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "hide-delete",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "_comments",
+              "privacy": "public",
+              "type": {
+                "text": "array"
+              },
+              "default": "[]",
+              "attribute": "_comments"
+            },
+            {
+              "kind": "field",
+              "name": "_activeReplyId",
+              "privacy": "public",
+              "type": {
+                "text": "null"
+              },
+              "default": "null",
+              "attribute": "_activeReplyId"
+            },
+            {
+              "kind": "field",
+              "name": "_sortMode",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"best\"",
+              "attribute": "_sortMode"
+            },
+            {
+              "kind": "field",
+              "name": "_submitting",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "_submitting"
+            },
+            {
+              "kind": "field",
+              "name": "_loadingComments",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "_loadingComments"
+            },
+            {
+              "kind": "field",
+              "name": "_toastMsg",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "_toastMsg"
+            },
+            {
+              "kind": "field",
+              "name": "t",
+              "type": {
+                "text": "object"
+              },
+              "default": "{ ...this.t, forumTitle: \"Ruang Diskusi\", postComment: \"Kirim Komentar\", posting: \"Mengirim...\", reply: \"Balas\", deleteBtn: \"Hapus\", noComments: \"Belum ada komentar. Mulai diskusi!\", sortBest: \"Terbaik\", sortNewest: \"Terbaru\", sortOldest: \"Terlama\", placeholderComment: \"Tulis komentar...\", placeholderReply: \"Tulis balasan...\", confirmDelete: \"Hapus komentar ini?\", activityForum: \"Aktivitas forum tercatat\", justNow: \"Baru saja\", minutesAgo: \"menit lalu\", hoursAgo: \"jam lalu\", daysAgo: \"hari lalu\", loginHint: \"Login dulu untuk ikut berdiskusi atas nama Anda.\", }"
+            }
+          ],
+          "events": [
+            {
+              "name": "dasbor-kuis-log",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "apps-script-url",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "appsScriptUrl"
+            },
+            {
+              "name": "forum-api-url",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "forumApiUrl"
+            },
+            {
+              "name": "sheet-name",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Pertemuan\"",
+              "fieldName": "sheetName"
+            },
+            {
+              "name": "student-id",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "studentId"
+            },
+            {
+              "name": "student-name",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "studentName"
+            },
+            {
+              "name": "student-nis",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "studentNis"
+            },
+            {
+              "name": "student-absen",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "studentAbsen"
+            },
+            {
+              "name": "student-kelas",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "studentKelas"
+            },
+            {
+              "name": "forum-topic",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Ruang Diskusi\"",
+              "fieldName": "forumTopic"
+            },
+            {
+              "name": "view-mode",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"student\"",
+              "fieldName": "viewMode"
+            },
+            {
+              "name": "anchor-id",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"ruang-diskusi\"",
+              "fieldName": "anchorId"
+            },
+            {
+              "name": "hide-delete",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "hideDelete"
+            },
+            {
+              "name": "_comments",
+              "type": {
+                "text": "array"
+              },
+              "default": "[]",
+              "fieldName": "_comments"
+            },
+            {
+              "name": "_activeReplyId",
+              "type": {
+                "text": "null"
+              },
+              "default": "null",
+              "fieldName": "_activeReplyId"
+            },
+            {
+              "name": "_sortMode",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"best\"",
+              "fieldName": "_sortMode"
+            },
+            {
+              "name": "_submitting",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "_submitting"
+            },
+            {
+              "name": "_loadingComments",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "_loadingComments"
+            },
+            {
+              "name": "_toastMsg",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "_toastMsg"
+            }
+          ],
+          "mixins": [
+            {
+              "name": "I18NMixin",
+              "package": "@haxtheweb/i18n-manager/lib/I18NMixin.js"
+            },
+            {
+              "name": "DDDSuper",
+              "package": "@haxtheweb/d-d-d/d-d-d.js"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "ruang-diskusi",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "RuangDiskusi",
+          "declaration": {
+            "name": "RuangDiskusi",
+            "module": "src/dasbor-kuis/lib/ruang-diskusi.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "declaration": {
+            "name": "RuangDiskusi",
+            "module": "src/dasbor-kuis/lib/ruang-diskusi.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/dasbor-kuis/lib/sistem-kehadiran.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "`sistem-kehadiran`\n\n🎯 Dashboard Pembelajaran (adaptasi <full-quiz-dashboard> Vanilla JS ke\nstack Lit + DDD / HAX). Satu panel untuk Kuis + Kehadiran + Nilai:\n  - 📝 Kuis interaktif (soal bisa diedit & direset via tab ⚙️ Soal)\n  - 📊 Kehadiran pekan ini (gauge + checklist 4 kriteria)\n  - 📈 Pelacakan Aktivitas (Total, Streak, Peta 28 Hari + Log Terbaru)\n  - 📖 Nilai transparan + 🔧 Atur (threshold & bobot, peringatan total 100%)\n  - Simulasi 📖/📥/💬 + 🗑️ Reset untuk uji coba langsung\n\nSemua aktivitas lokal tersinkron lewat event `dasbor-kuis-log` sehingga\n<dasbor-kuis> mengantrekan & meneruskan ke Google Apps Script\n(action=logActivity, idempoten per id_log). Heatmap menggabungkan log lokal\ndengan riwayat server (action=getActivityHistory).",
+          "name": "AttendanceSystem",
+          "members": [
+            {
+              "kind": "field",
+              "name": "tag",
+              "static": true,
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "LOGS_KEY",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"a3_attendance_activity_logs\""
+            },
+            {
+              "kind": "field",
+              "name": "THRESHOLD_KEY",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"a3_attendance_threshold_config\""
+            },
+            {
+              "kind": "field",
+              "name": "GRADES_KEY",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"a3_attendance_grades_config\""
+            },
+            {
+              "kind": "field",
+              "name": "QUESTIONS_KEY",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"quiz_custom_questions\""
+            },
+            {
+              "kind": "field",
+              "name": "DEFAULT_QUESTIONS",
+              "type": {
+                "text": "array"
+              },
+              "static": true,
+              "default": "[ { question: \"Apa ibu kota Indonesia?\", choices: [\"Bandung\", \"Surabaya\", \"Jakarta\", \"Medan\"], correctIndex: 2 }, { question: \"Berapa hasil dari 7 × 8?\", choices: [\"54\", \"56\", \"58\", \"60\"], correctIndex: 1 }, { question: \"Planet terdekat dengan Matahari?\", choices: [\"Venus\", \"Bumi\", \"Mars\", \"Merkurius\"], correctIndex: 3 }, { question: \"Siapa presiden pertama Indonesia?\", choices: [\"Soeharto\", \"Soekarno\", \"Habibie\", \"Megawati\"], correctIndex: 1 }, { question: \"Berapa jumlah provinsi di Indonesia?\", choices: [\"32\", \"34\", \"36\", \"38\"], correctIndex: 2 }, ]"
+            },
+            {
+              "kind": "field",
+              "name": "DEFAULT_THRESHOLDS",
+              "type": {
+                "text": "object"
+              },
+              "static": true,
+              "default": "{ minWeeklyActivities: 5, minReading: 2, minQuiz: 1, minDiscussion: 1, }"
+            },
+            {
+              "kind": "field",
+              "name": "DEFAULT_GRADES",
+              "type": {
+                "text": "object"
+              },
+              "static": true,
+              "default": "{ uts: 85, uas: 88, attendanceWeight: 50, quizWeight: 30, utsWeight: 25, uasWeight: 25, }"
+            },
+            {
+              "kind": "method",
+              "name": "_load",
+              "parameters": [
+                {
+                  "name": "k"
+                },
+                {
+                  "name": "fb"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_save",
+              "parameters": [
+                {
+                  "name": "k"
+                },
+                {
+                  "name": "v"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_rem",
+              "parameters": [
+                {
+                  "name": "k"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_show",
+              "parameters": [
+                {
+                  "name": "msg"
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "_connected",
+              "readonly": true
+            },
+            {
+              "kind": "method",
+              "name": "_buatIdLog"
+            },
+            {
+              "kind": "method",
+              "name": "_log",
+              "parameters": [
+                {
+                  "name": "type"
+                },
+                {
+                  "name": "desc"
+                }
+              ],
+              "description": "Catat aktivitas lokal + kirim ke antrean idempoten <dasbor-kuis>."
+            },
+            {
+              "kind": "method",
+              "name": "pemicuAksiManual",
+              "parameters": [
+                {
+                  "name": "tipe"
+                },
+                {
+                  "name": "deskripsi"
+                }
+              ],
+              "description": "ADAPTASI LAMA: nama metode manual guard tetap dipertahankan."
+            },
+            {
+              "kind": "method",
+              "name": "_sim",
+              "parameters": [
+                {
+                  "name": "type"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_clearLogs"
+            },
+            {
+              "kind": "method",
+              "name": "_onScroll"
+            },
+            {
+              "kind": "method",
+              "name": "_muatRiwayatServer",
+              "description": "Riwayat server 28 hari (sheet aktivitas, mis. Pertemuan 1) → heatmap."
+            },
+            {
+              "kind": "method",
+              "name": "_tglKey",
+              "parameters": [
+                {
+                  "name": "d"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_weekly"
+            },
+            {
+              "kind": "method",
+              "name": "_streak"
+            },
+            {
+              "kind": "method",
+              "name": "_heatmap"
+            },
+            {
+              "kind": "method",
+              "name": "_grade"
+            },
+            {
+              "kind": "method",
+              "name": "_mulaiQuiz"
+            },
+            {
+              "kind": "method",
+              "name": "_pilihQuiz",
+              "parameters": [
+                {
+                  "name": "i"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_nextQuiz"
+            },
+            {
+              "kind": "method",
+              "name": "_resetQuiz"
+            },
+            {
+              "kind": "method",
+              "name": "_tambahSoal"
+            },
+            {
+              "kind": "method",
+              "name": "_editMulai",
+              "parameters": [
+                {
+                  "name": "i"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_simpanSoal"
+            },
+            {
+              "kind": "method",
+              "name": "_hapusSoal",
+              "parameters": [
+                {
+                  "name": "i"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_updThreshold",
+              "parameters": [
+                {
+                  "name": "key"
+                },
+                {
+                  "name": "val"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_updGrade",
+              "parameters": [
+                {
+                  "name": "key"
+                },
+                {
+                  "name": "val"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_renderQuiz"
+            },
+            {
+              "kind": "method",
+              "name": "_cri",
+              "parameters": [
+                {
+                  "name": "icon"
+                },
+                {
+                  "name": "name"
+                },
+                {
+                  "name": "cnt"
+                },
+                {
+                  "name": "min"
+                },
+                {
+                  "name": "met"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_renderKehadiran"
+            },
+            {
+              "kind": "method",
+              "name": "_renderNilai"
+            },
+            {
+              "kind": "method",
+              "name": "_renderSoal"
+            },
+            {
+              "kind": "method",
+              "name": "_renderAtur"
+            },
+            {
+              "kind": "field",
+              "name": "appsScriptUrl",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "apps-script-url",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "kdMateri",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Pertemuan 1\"",
+              "attribute": "kd-materi",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "studentId",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "student-id",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "namaSiswa",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Siswa\"",
+              "attribute": "nama-siswa",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "mode",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"siswa\"",
+              "attribute": "mode",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "questions",
+              "privacy": "public",
+              "type": {
+                "text": "array"
+              },
+              "attribute": "questions",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "thresholds",
+              "type": {
+                "text": "object"
+              },
+              "default": "{ ...AttendanceSystem.DEFAULT_THRESHOLDS, ...this._load(AttendanceSystem.THRESHOLD_KEY, {}) }"
+            },
+            {
+              "kind": "field",
+              "name": "grades",
+              "type": {
+                "text": "object"
+              },
+              "default": "{ ...AttendanceSystem.DEFAULT_GRADES, ...this._load(AttendanceSystem.GRADES_KEY, {}) }"
+            },
+            {
+              "kind": "field",
+              "name": "_tab",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"kehadiran\"",
+              "attribute": "_tab"
+            },
+            {
+              "kind": "field",
+              "name": "_toast",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "_toast"
+            },
+            {
+              "kind": "field",
+              "name": "_toastT",
+              "type": {
+                "text": "null"
+              },
+              "default": "null"
+            },
+            {
+              "kind": "field",
+              "name": "_logs",
+              "privacy": "public",
+              "attribute": "_logs"
+            },
+            {
+              "kind": "field",
+              "name": "_serverHistory",
+              "privacy": "public",
+              "type": {
+                "text": "array"
+              },
+              "default": "[]",
+              "attribute": "_serverHistory"
+            },
+            {
+              "kind": "field",
+              "name": "_quizScreen",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"start\"",
+              "attribute": "_quizScreen"
+            },
+            {
+              "kind": "field",
+              "name": "_quizIdx",
+              "privacy": "public",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "attribute": "_quizIdx"
+            },
+            {
+              "kind": "field",
+              "name": "_quizAnswered",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "_quizAnswered"
+            },
+            {
+              "kind": "field",
+              "name": "_quizSel",
+              "privacy": "public",
+              "type": {
+                "text": "number"
+              },
+              "default": "-1",
+              "attribute": "_quizSel"
+            },
+            {
+              "kind": "field",
+              "name": "_quizFb",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "_quizFb"
+            },
+            {
+              "kind": "field",
+              "name": "_quizFbPos",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "_quizFbPos"
+            },
+            {
+              "kind": "field",
+              "name": "_quizScore",
+              "type": {
+                "text": "number"
+              },
+              "default": "0"
+            },
+            {
+              "kind": "field",
+              "name": "_editIdx",
+              "privacy": "public",
+              "type": {
+                "text": "number"
+              },
+              "default": "-1",
+              "attribute": "_editIdx"
+            },
+            {
+              "kind": "field",
+              "name": "_edit",
+              "privacy": "public",
+              "type": {
+                "text": "object"
+              },
+              "default": "{ q: \"\", c0: \"\", c1: \"\", c2: \"\", c3: \"\", correct: \"0\" }",
+              "attribute": "_edit"
+            },
+            {
+              "kind": "field",
+              "name": "_lastScroll",
+              "type": {
+                "text": "number"
+              },
+              "default": "0"
+            },
+            {
+              "kind": "field",
+              "name": "_onScrollBound"
+            }
+          ],
+          "events": [
+            {
+              "name": "dasbor-kuis-log",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "apps-script-url",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "appsScriptUrl"
+            },
+            {
+              "name": "kd-materi",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Pertemuan 1\"",
+              "fieldName": "kdMateri"
+            },
+            {
+              "name": "student-id",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "studentId"
+            },
+            {
+              "name": "nama-siswa",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Siswa\"",
+              "fieldName": "namaSiswa"
+            },
+            {
+              "name": "mode",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"siswa\"",
+              "fieldName": "mode"
+            },
+            {
+              "name": "questions",
+              "type": {
+                "text": "array"
+              },
+              "fieldName": "questions"
+            },
+            {
+              "name": "_tab",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"kehadiran\"",
+              "fieldName": "_tab"
+            },
+            {
+              "name": "_toast",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "_toast"
+            },
+            {
+              "name": "_logs",
+              "fieldName": "_logs"
+            },
+            {
+              "name": "_serverHistory",
+              "type": {
+                "text": "array"
+              },
+              "default": "[]",
+              "fieldName": "_serverHistory"
+            },
+            {
+              "name": "_quizScreen",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"start\"",
+              "fieldName": "_quizScreen"
+            },
+            {
+              "name": "_quizIdx",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "fieldName": "_quizIdx"
+            },
+            {
+              "name": "_quizAnswered",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "_quizAnswered"
+            },
+            {
+              "name": "_quizSel",
+              "type": {
+                "text": "number"
+              },
+              "default": "-1",
+              "fieldName": "_quizSel"
+            },
+            {
+              "name": "_quizFb",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "_quizFb"
+            },
+            {
+              "name": "_quizFbPos",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "_quizFbPos"
+            },
+            {
+              "name": "_editIdx",
+              "type": {
+                "text": "number"
+              },
+              "default": "-1",
+              "fieldName": "_editIdx"
+            },
+            {
+              "name": "_edit",
+              "type": {
+                "text": "object"
+              },
+              "default": "{ q: \"\", c0: \"\", c1: \"\", c2: \"\", c3: \"\", correct: \"0\" }",
+              "fieldName": "_edit"
+            }
+          ],
+          "mixins": [
+            {
+              "name": "I18NMixin",
+              "package": "@haxtheweb/i18n-manager/lib/I18NMixin.js"
+            },
+            {
+              "name": "DDDSuper",
+              "package": "@haxtheweb/d-d-d/d-d-d.js"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "sistem-kehadiran",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "AttendanceSystem",
+          "declaration": {
+            "name": "AttendanceSystem",
+            "module": "src/dasbor-kuis/lib/sistem-kehadiran.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "declaration": {
+            "name": "AttendanceSystem",
+            "module": "src/dasbor-kuis/lib/sistem-kehadiran.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/dasbor-kuis/lib/timer-kuis.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "`timer-kuis`\n\nTimer hitung mundur untuk mengerjakan kuis. Saat waktu habis, komponen\nmenghentikan hitungan dan memancarkan event `timer-kuis-expired`\n(bubbles, composed) yang dapat dipasang ke <kuis-ledakan> untuk\nmelakukan auto-submit.",
+          "name": "TimerKuis",
+          "members": [
+            {
+              "kind": "field",
+              "name": "tag",
+              "static": true,
+              "readonly": true
+            },
+            {
+              "kind": "method",
+              "name": "start"
+            },
+            {
+              "kind": "method",
+              "name": "pause"
+            },
+            {
+              "kind": "method",
+              "name": "reset"
+            },
+            {
+              "kind": "method",
+              "name": "_clearInterval"
+            },
+            {
+              "kind": "method",
+              "name": "_tick"
+            },
+            {
+              "kind": "method",
+              "name": "_onExpire"
+            },
+            {
+              "kind": "method",
+              "name": "_format",
+              "parameters": [
+                {
+                  "name": "seconds"
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "haxProperties",
+              "static": true,
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "duration",
+              "privacy": "public",
+              "type": {
+                "text": "number"
+              },
+              "default": "300",
+              "attribute": "duration",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "autostart",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "autostart",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "_remaining",
+              "privacy": "public",
+              "attribute": "_remaining"
+            },
+            {
+              "kind": "field",
+              "name": "_running",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "_running"
+            },
+            {
+              "kind": "field",
+              "name": "_intervalId",
+              "type": {
+                "text": "null"
+              },
+              "default": "null"
+            },
+            {
+              "kind": "field",
+              "name": "t",
+              "type": {
+                "text": "object"
+              },
+              "default": "{ ...this.t, title: \"Waktu Kuis\", start: \"Mulai\", pause: \"Jeda\", reset: \"Ulang\", done: \"Waktu habis\", }"
+            }
+          ],
+          "events": [
+            {
+              "name": "timer-kuis-expired",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "duration",
+              "type": {
+                "text": "number"
+              },
+              "default": "300",
+              "fieldName": "duration"
+            },
+            {
+              "name": "autostart",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "autostart"
+            },
+            {
+              "name": "_remaining",
+              "fieldName": "_remaining"
+            },
+            {
+              "name": "_running",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "_running"
+            }
+          ],
+          "mixins": [
+            {
+              "name": "I18NMixin",
+              "package": "@haxtheweb/i18n-manager/lib/I18NMixin.js"
+            },
+            {
+              "name": "DDDSuper",
+              "package": "@haxtheweb/d-d-d/d-d-d.js"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "timer-kuis",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "TimerKuis",
+          "declaration": {
+            "name": "TimerKuis",
+            "module": "src/dasbor-kuis/lib/timer-kuis.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "declaration": {
+            "name": "TimerKuis",
+            "module": "src/dasbor-kuis/lib/timer-kuis.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/dasbor-kuis/lib/timer-materi-kuis.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "`timer-materi-kuis`\n\nDua timer terpisah dalam satu komponen: satu untuk membaca materi dan\nsatu untuk mengerjakan kuis. Masing-masing berjalan independen dengan\ntombol Mulai/Ulang sendiri. Saat habis, memancarkan event:\n  - timer-materi-expired  (bubbles, composed)\n  - timer-kuis-expired    (bubbles, composed)",
+          "name": "TimerMateriKuis",
+          "members": [
+            {
+              "kind": "field",
+              "name": "tag",
+              "static": true,
+              "readonly": true
+            },
+            {
+              "kind": "method",
+              "name": "_meta",
+              "parameters": [
+                {
+                  "name": "phase"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "start",
+              "parameters": [
+                {
+                  "name": "phase"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "pause",
+              "parameters": [
+                {
+                  "name": "phase"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "reset",
+              "parameters": [
+                {
+                  "name": "phase"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_clearInterval",
+              "parameters": [
+                {
+                  "name": "phase"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_tick",
+              "parameters": [
+                {
+                  "name": "phase"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_format",
+              "parameters": [
+                {
+                  "name": "seconds"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_renderTimer",
+              "parameters": [
+                {
+                  "name": "phase"
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "haxProperties",
+              "static": true,
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "durasiMateri",
+              "privacy": "public",
+              "type": {
+                "text": "number"
+              },
+              "default": "600",
+              "attribute": "durasi-materi",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "durasiKuis",
+              "privacy": "public",
+              "type": {
+                "text": "number"
+              },
+              "default": "300",
+              "attribute": "durasi-kuis",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "autostartMateri",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "autostart-materi",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "_sisaMateri",
+              "privacy": "public",
+              "attribute": "_sisaMateri"
+            },
+            {
+              "kind": "field",
+              "name": "_sisaKuis",
+              "privacy": "public",
+              "attribute": "_sisaKuis"
+            },
+            {
+              "kind": "field",
+              "name": "_jalanMateri",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "_jalanMateri"
+            },
+            {
+              "kind": "field",
+              "name": "_jalanKuis",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "_jalanKuis"
+            },
+            {
+              "kind": "field",
+              "name": "_ivMateri",
+              "type": {
+                "text": "null"
+              },
+              "default": "null"
+            },
+            {
+              "kind": "field",
+              "name": "_ivKuis",
+              "type": {
+                "text": "null"
+              },
+              "default": "null"
+            },
+            {
+              "kind": "field",
+              "name": "t",
+              "type": {
+                "text": "object"
+              },
+              "default": "{ ...this.t, materi: \"Waktu Materi\", kuis: \"Waktu Kuis\", start: \"Mulai\", pause: \"Jeda\", reset: \"Ulang\", done: \"Waktu habis\", }"
+            }
+          ],
+          "events": [
+            {
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "durasi-materi",
+              "type": {
+                "text": "number"
+              },
+              "default": "600",
+              "fieldName": "durasiMateri"
+            },
+            {
+              "name": "durasi-kuis",
+              "type": {
+                "text": "number"
+              },
+              "default": "300",
+              "fieldName": "durasiKuis"
+            },
+            {
+              "name": "autostart-materi",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "autostartMateri"
+            },
+            {
+              "name": "_sisaMateri",
+              "fieldName": "_sisaMateri"
+            },
+            {
+              "name": "_sisaKuis",
+              "fieldName": "_sisaKuis"
+            },
+            {
+              "name": "_jalanMateri",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "_jalanMateri"
+            },
+            {
+              "name": "_jalanKuis",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "_jalanKuis"
+            }
+          ],
+          "mixins": [
+            {
+              "name": "I18NMixin",
+              "package": "@haxtheweb/i18n-manager/lib/I18NMixin.js"
+            },
+            {
+              "name": "DDDSuper",
+              "package": "@haxtheweb/d-d-d/d-d-d.js"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "timer-materi-kuis",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "TimerMateriKuis",
+          "declaration": {
+            "name": "TimerMateriKuis",
+            "module": "src/dasbor-kuis/lib/timer-materi-kuis.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "declaration": {
+            "name": "TimerMateriKuis",
+            "module": "src/dasbor-kuis/lib/timer-materi-kuis.js"
+          }
+        }
+      ]
     }
   ]
 }

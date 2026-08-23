@@ -8,6 +8,7 @@
   "repository": "https://github.com/haxtheweb/haxcms",
   "scripts": {
     "build": "rollup -c rollup.config.js",
+    "sync": "node ../../scripts/sync-dasbor-kuis.mjs",
     "start": "yarn run watch",
     "watch": "rollup --watch -c rollup.config.js",
     "analyze": "cem analyze --litelement --exclude build 'src/custom.js'"
@@ -19,5 +20,9 @@
     "@web/rollup-plugin-import-meta-assets": "2.3.0",
     "rollup-plugin-esbuild": "6.2.1",
     "@rollup/plugin-babel": "6.0.4"
+  },
+  "dependencies": {
+    "canvas-confetti": "^1.9.4",
+    "lit": "3.3.2"
   }
 }

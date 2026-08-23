@@ -29,6 +29,28 @@ export default {
     if (asset.endsWith(inputFile) || asset.startsWith('./') || asset.startsWith(srcDir)) {
       return false;
     }
+    // bundle canvas-confetti and the lit family inline since they are not part
+    // of the site's import map (@haxtheweb/ bare imports are external and
+    // resolved at runtime). the bare specifier and the resolved path are both
+    // checked here because rollup calls external for the source import and
+    // again for the resolved file
+    const bundledPackages = [
+      'canvas-confetti',
+      'lit',
+      'lit-element',
+      'lit-html',
+      '@lit/reactive-element',
+    ];
+    const assetSegments = asset.split(/[\\/]/);
+    const isBundled = bundledPackages.some(
+      (pkg) =>
+        asset === pkg ||
+        assetSegments.includes(pkg) ||
+        (pkg.startsWith('@') && assetSegments.includes(pkg.split('/')[1])),
+    );
+    if (isBundled) {
+      return false;
+    }
     return true;
   },
   preserveEntrySignatures: false,
@@ -38,7 +60,7 @@ export default {
     /** Minify JS, compile JS to a lower language target */
     esbuild({
       minify: true,
-      target: ['chrome64', 'firefox67', 'safari11.1'],
+      target: ['chrome120', 'firefox121', 'edge120', 'safari17.2'],
     }),
     /** Bundle assets references via import.meta.url */
     importMetaAssets(),

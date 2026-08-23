@@ -7,3 +7,7 @@
 // don't import that directory, we'd recommend copy and pasting it in here or
 // creating your own theme based on it
  import "./custom-haxkuis-theme.js";
+ import "./dasbor-kuis/dasbor-kuis.js";
+ import "./dasbor-kuis/lib/kuis-ledakan.js";
+ import "./dasbor-kuis/lib/latihan-kuis.js";
+ import "./dasbor-kuis/lib/quiz-user-auth.js";

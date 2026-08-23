@@ -6,7 +6,7 @@
     <description></description>
     <copyright>Copyright (C) 2026 https://localhost:3000/sites/haxto</copyright>
     <language>en-us</language>
-    <lastBuildDate>Sun, 23 Aug 2026 03:55:59 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 23 Aug 2026 04:02:34 GMT</lastBuildDate>
     <generator>HAXcms NodeJS</generator>
     <atom:link href="https://localhost:3000/sites/haxto/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
@@ -15,6 +15,20 @@
       <description>Welcome to your new HAX site! Click edit on the top bar to get started What can I do? We&apos;ve got a ton of blocks that are easy to use and get a lot done with little effort, so much in fact we made a little video exploring some of them! Here&apos;s a list of just a few things to get started, or if your a pro, delete this content and have fun! Edit this content by hitting &quot;Edit page&quot; above Hit enter in a paragraph of text to add another one Click &quot;Merlin&quot; to see a list of all the things you can do Tr...</description>
       <guid>https://localhost:3000/sites/haxto/welcome</guid>
       <pubDate>Sun, 23 Aug 2026 03:55:59 GMT</pubDate>
+    </item>
+    <item>
+      <title>Ulangan Harian</title>
+      <link>https://localhost:3000/sites/haxto/ulangan-harian</link>
+      <description>📝 Ulangan Harian Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban benar/salah tidak ditampilkan sampai guru memutuskan. Skor terkirim otomatis ke database setelah waktu habis atau semua soal terjawab.</description>
+      <guid>https://localhost:3000/sites/haxto/ulangan-harian</guid>
+      <pubDate>Sun, 23 Aug 2026 06:35:36 GMT</pubDate>
+    </item>
+    <item>
+      <title>Materi &amp; Latihan Soal</title>
+      <link>https://localhost:3000/sites/haxto/materi-latihan</link>
+      <description>📖 Materi &amp;#38; Latihan Soal-soal Pelajari materi di bawah ini, lalu kerjakan latihan soal berwaktu. Nilai latihan terkirim otomatis ke database.</description>
+      <guid>https://localhost:3000/sites/haxto/materi-latihan</guid>
+      <pubDate>Sun, 23 Aug 2026 06:35:36 GMT</pubDate>
     </item>
   </channel>
 </rss>

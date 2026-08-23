@@ -14,7 +14,7 @@
       "name": "haxto",
       "domain": null,
       "created": 1787457359,
-      "updated": 1787457754
+      "updated": 1787503264
     },
     "theme": {
       "element": "custom-haxkuis-theme",
@@ -52,6 +52,51 @@
           "terrible": false,
           "key": "haxma-theme"
         },
+        "published": true,
+        "hideInMenu": false,
+        "locked": false,
+        "readtime": 1,
+        "videos": [],
+        "images": []
+      }
+    },
+    {
+      "id": "item-641ef0af-6ba1-4523-bedd-5c0d0f85828b",
+      "indent": 0,
+      "location": "pages/item-641ef0af-6ba1-4523-bedd-5c0d0f85828b/index.html",
+      "slug": "ulangan-harian",
+      "order": 1,
+      "parent": null,
+      "title": "Ulangan Harian",
+      "description": "Halaman ulangan harian terintegrasi dengan timer, anti-confetti, dan jawaban tersembunyi.",
+      "metadata": {
+        "created": 1787466936,
+        "updated": 1787466936,
+        "theme": {
+          "element": "custom-haxkuis-theme",
+          "path": "./custom/build/custom.es6.js",
+          "name": "CustomHaxkuisTheme"
+        },
+        "published": true,
+        "hideInMenu": false,
+        "locked": false,
+        "readtime": 1,
+        "videos": [],
+        "images": []
+      }
+    },
+    {
+      "id": "item-22f6ed54-bc3f-4a32-8ee7-00f2ab65482e",
+      "indent": 0,
+      "location": "pages/item-22f6ed54-bc3f-4a32-8ee7-00f2ab65482e/index.html",
+      "slug": "materi-latihan",
+      "order": 2,
+      "parent": null,
+      "title": "Materi & Latihan Soal",
+      "description": "Halaman materi dan latihan soal berwaktu dengan auto-submit nilai ke database.",
+      "metadata": {
+        "created": 1787466936,
+        "updated": 1787503264,
         "published": true,
         "hideInMenu": false,
         "locked": false,
