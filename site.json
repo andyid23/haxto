@@ -14,7 +14,7 @@
       "name": "haxto",
       "domain": null,
       "created": 1787457359,
-      "updated": 1787517883
+      "updated": 1787518018
     },
     "theme": {
       "element": "custom-haxkuis-theme",
@@ -33,11 +33,11 @@
       "slug": "welcome",
       "order": 0,
       "parent": null,
-      "title": "Welcome to haxto",
+      "title": "Selamat Datang Pada Ulangan",
       "description": "Welcome to your new HAX site! Click edit on the top bar to get started\nWhat can I do?\nWe've got a ton of blocks that are easy to use and get a lot done with little effort, so much in fact we made a l",
       "metadata": {
         "created": 1787457359,
-        "updated": 1787457754,
+        "updated": 1787518018,
         "theme": {
           "element": "haxma-theme",
           "path": "@haxtheweb/haxma-theme/haxma-theme.js",
@@ -57,7 +57,8 @@
         "locked": false,
         "readtime": 1,
         "videos": [],
-        "images": []
+        "images": [],
+        "status": ""
       }
     },
     {
@@ -71,13 +72,14 @@
       "description": "Halaman ulangan harian terintegrasi dengan timer, anti-confetti, dan jawaban tersembunyi.",
       "metadata": {
         "created": 1787466936,
-        "updated": 1787517882,
+        "updated": 1787518018,
         "published": true,
         "hideInMenu": false,
         "locked": false,
         "readtime": 1,
         "videos": [],
-        "images": []
+        "images": [],
+        "status": ""
       }
     },
     {
@@ -91,7 +93,7 @@
       "description": "Halaman materi dan latihan soal berwaktu dengan auto-submit nilai ke database.",
       "metadata": {
         "created": 1787466936,
-        "updated": 1787507128,
+        "updated": 1787518018,
         "published": true,
         "hideInMenu": false,
         "locked": false,
@@ -99,7 +101,8 @@
         "videos": [],
         "images": [],
         "pageType": "practice",
-        "icon": "hax:shovel"
+        "icon": "hax:shovel",
+        "status": ""
       }
     }
   ]
