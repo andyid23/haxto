@@ -10,7 +10,7 @@
 <description>Halaman materi dan latihan soal berwaktu dengan auto-submit nilai ke database.</description>
 <metadata>
 <created>1787466936</created>
-<updated>1787507128</updated>
+<updated>1787519144</updated>
 <published>true</published>
 <hideInMenu>false</hideInMenu>
 <locked>false</locked>
@@ -21,6 +21,21 @@
 </images>
 <pageType>practice</pageType>
 <icon>hax:shovel</icon>
+<status></status>
+<theme>
+<element>app-hax-theme</element>
+<path>@haxtheweb/app-hax/lib/app-hax-theme.js</path>
+<name>8-Bit Land</name>
+<thumbnail>@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-app-hax-theme-thumb.jpg</thumbnail>
+<description>Start with a blank site using the 8-Bit Land</description>
+<category>
+<item>Course</item>
+</category>
+<hidden>true</hidden>
+<priority>0</priority>
+<terrible>false</terrible>
+<key>app-hax-theme</key>
+</theme>
 </metadata>
 <content><![CDATA[
 <h2 id="h2-latihan">📖 Materi &#38; Latihan Soal-soal-soal</h2>

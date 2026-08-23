@@ -1827,6 +1827,16 @@
             },
             {
               "kind": "method",
+              "name": "_cekKunci",
+              "description": "Cek status kunci di backend (codev6 → db_asesmen). Graceful: bila gagal, izinkan mencoba."
+            },
+            {
+              "kind": "method",
+              "name": "_bukaKunci",
+              "description": "Guru (mode guru) membuka kunci via resetQuizLock di backend."
+            },
+            {
+              "kind": "method",
               "name": "_renderQuestionScreen"
             },
             {
@@ -2115,6 +2125,28 @@
             },
             {
               "kind": "field",
+              "name": "shuffleQuestions",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "shuffle-questions",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "lockAfterComplete",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true",
+              "attribute": "lock-after-complete",
+              "reflects": true
+            },
+            {
+              "kind": "field",
               "name": "editable",
               "privacy": "public",
               "type": {
@@ -2366,6 +2398,26 @@
             },
             {
               "kind": "field",
+              "name": "_locked",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "_locked"
+            },
+            {
+              "kind": "field",
+              "name": "_lockChecked",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "_lockChecked"
+            },
+            {
+              "kind": "field",
               "name": "_editing",
               "privacy": "public",
               "type": {
@@ -2474,6 +2526,12 @@
             },
             {
               "kind": "field",
+              "name": "_tempChoice4",
+              "privacy": "public",
+              "attribute": "_tempChoice4"
+            },
+            {
+              "kind": "field",
               "name": "_tempChoiceImage0",
               "privacy": "public",
               "attribute": "_tempChoiceImage0"
@@ -2495,6 +2553,12 @@
               "name": "_tempChoiceImage3",
               "privacy": "public",
               "attribute": "_tempChoiceImage3"
+            },
+            {
+              "kind": "field",
+              "name": "_tempChoiceImage4",
+              "privacy": "public",
+              "attribute": "_tempChoiceImage4"
             },
             {
               "kind": "field",
@@ -2639,6 +2703,38 @@
               },
               "default": "false",
               "fieldName": "shuffleChoices"
+            },
+            {
+              "name": "shuffle-questions",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "shuffleQuestions"
+            },
+            {
+              "name": "lock-after-complete",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true",
+              "fieldName": "lockAfterComplete"
+            },
+            {
+              "name": "_locked",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "_locked"
+            },
+            {
+              "name": "_lockChecked",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "_lockChecked"
             },
             {
               "name": "student-id",
@@ -2870,6 +2966,10 @@
               "fieldName": "_tempChoice3"
             },
             {
+              "name": "_tempChoice4",
+              "fieldName": "_tempChoice4"
+            },
+            {
               "name": "_tempChoiceImage0",
               "fieldName": "_tempChoiceImage0"
             },
@@ -2884,6 +2984,10 @@
             {
               "name": "_tempChoiceImage3",
               "fieldName": "_tempChoiceImage3"
+            },
+            {
+              "name": "_tempChoiceImage4",
+              "fieldName": "_tempChoiceImage4"
             },
             {
               "name": "_tempCorrectIndex",

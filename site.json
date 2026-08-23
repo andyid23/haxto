@@ -14,7 +14,7 @@
       "name": "haxto",
       "domain": null,
       "created": 1787457359,
-      "updated": 1787518332
+      "updated": 1787519144
     },
     "theme": {
       "element": "custom-haxkuis-theme",
@@ -93,7 +93,7 @@
       "description": "Halaman materi dan latihan soal berwaktu dengan auto-submit nilai ke database.",
       "metadata": {
         "created": 1787466936,
-        "updated": 1787518018,
+        "updated": 1787519144,
         "published": true,
         "hideInMenu": false,
         "locked": false,
@@ -102,7 +102,21 @@
         "images": [],
         "pageType": "practice",
         "icon": "hax:shovel",
-        "status": ""
+        "status": "",
+        "theme": {
+          "element": "app-hax-theme",
+          "path": "@haxtheweb/app-hax/lib/app-hax-theme.js",
+          "name": "8-Bit Land",
+          "thumbnail": "@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-app-hax-theme-thumb.jpg",
+          "description": "Start with a blank site using the 8-Bit Land",
+          "category": [
+            "Course"
+          ],
+          "hidden": true,
+          "priority": 0,
+          "terrible": false,
+          "key": "app-hax-theme"
+        }
       }
     }
   ]
