@@ -3,6 +3,7 @@ import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
 import { I18NMixin } from "@haxtheweb/i18n-manager/lib/I18NMixin.js";
 import confetti from "canvas-confetti";
 import "./timer-kuis.js";
+import "./timer-kuis.js";
 
 const DEFAULT_QUESTIONS = [
   { q: "Apa kegunaan utama metode connectedCallback pada LitElement?", a: "Menginisialisasi nilai variabel dasar", b: "Mendeteksi elemen saat berhasil diinjeksikan ke struktur DOM", c: "Menghapus event listener global", k: "b" },
