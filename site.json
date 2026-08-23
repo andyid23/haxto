@@ -14,7 +14,7 @@
       "name": "haxto",
       "domain": null,
       "created": 1787457359,
-      "updated": 1787520790
+      "updated": 1787522644
     },
     "theme": {
       "element": "custom-haxkuis-theme",
@@ -68,18 +68,33 @@
       "slug": "ulangan-harian",
       "order": 1,
       "parent": null,
-      "title": "Ulangan Harian",
+      "title": "Ulangan Harian 1",
       "description": "Halaman ulangan harian terintegrasi dengan timer, anti-confetti, dan jawaban tersembunyi.",
       "metadata": {
         "created": 1787466936,
-        "updated": 1787520790,
+        "updated": 1787522644,
         "published": true,
         "hideInMenu": false,
         "locked": false,
         "readtime": 1,
         "videos": [],
         "images": [],
-        "status": ""
+        "status": "",
+        "theme": {
+          "element": "polaris-flex-theme",
+          "path": "@haxtheweb/polaris-theme/lib/polaris-flex-theme.js",
+          "name": "Polaris Flex",
+          "thumbnail": "@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-polaris-flex-theme-thumb.jpg",
+          "description": "Start with a blank site using the Polaris Flex",
+          "category": [
+            "Website"
+          ],
+          "hidden": false,
+          "priority": -1,
+          "terrible": false,
+          "key": "polaris-flex-theme"
+        },
+        "tags": "literasi"
       }
     },
     {
