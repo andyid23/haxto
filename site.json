@@ -14,10 +14,12 @@
       "name": "haxto",
       "domain": null,
       "created": 1787457359,
-      "updated": 1787457359
+      "updated": 1787457754
     },
     "theme": {
-      "variables": {}
+      "element": "custom-haxkuis-theme",
+      "path": "./custom/build/custom.es6.js",
+      "name": "CustomHaxkuisTheme"
     },
     "node": {
       "fields": {}
@@ -32,12 +34,31 @@
       "order": 0,
       "parent": null,
       "title": "Welcome to haxto",
-      "description": "",
+      "description": "Welcome to your new HAX site! Click edit on the top bar to get started\nWhat can I do?\nWe've got a ton of blocks that are easy to use and get a lot done with little effort, so much in fact we made a l",
       "metadata": {
         "created": 1787457359,
-        "updated": 1787457359
+        "updated": 1787457754,
+        "theme": {
+          "element": "haxma-theme",
+          "path": "@haxtheweb/haxma-theme/haxma-theme.js",
+          "name": "Design docs",
+          "thumbnail": "@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-haxma-theme-thumb.jpg",
+          "description": "Start with a blank site using the Design docs",
+          "category": [
+            "Website"
+          ],
+          "hidden": false,
+          "priority": 0,
+          "terrible": false,
+          "key": "haxma-theme"
+        },
+        "published": true,
+        "hideInMenu": false,
+        "locked": false,
+        "readtime": 1,
+        "videos": [],
+        "images": []
       }
     }
-  ],
-  "location": "/_sites/haxto/index.html"
+  ]
 }

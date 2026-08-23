@@ -6,14 +6,14 @@ Use HAX CLI and ecosystem tooling to maintain human-authored content while keepi
 Managed files (feeds, search indexes, manifests, and this `llms.txt`) are generated artifacts and should be rebuilt by tooling.
 
 ## Core resources
-- [site.json](https://localhost/sites/haxto/site.json): Canonical site manifest and navigation tree in JSON Outline Schema format.
-- [llms.txt](https://localhost/sites/haxto/llms.txt): LLM-oriented guide to this site and its machine-readable resources.
+- [site.json](https://localhost:3000/sites/haxto/site.json): Canonical site manifest and navigation tree in JSON Outline Schema format.
+- [llms.txt](https://localhost:3000/sites/haxto/llms.txt): LLM-oriented guide to this site and its machine-readable resources.
 
 ## Pages
-- [Welcome to haxto](https://localhost/sites/haxto/pages/item-e25c1b60-c8b7-4360-b3e8-3533c93c3a92/index.md)
+- [Welcome to haxto](https://localhost:3000/sites/haxto/pages/item-e25c1b60-c8b7-4360-b3e8-3533c93c3a92/index.md): Welcome to your new HAX site! Click edit on the top bar to get started What can I do? We've got a ton of blocks that are easy to use and get a lot done with little effort, so much in fact we made a l
 
 ## Optional
-- [Search index](https://localhost/sites/haxto/lunrSearchIndex.json): Lunr corpus for quick full-text retrieval.
-- [RSS feed](https://localhost/sites/haxto/rss.xml): Site updates in RSS format.
-- [Atom feed](https://localhost/sites/haxto/atom.xml): Site updates in Atom format.
-- [Sitemap](https://localhost/sites/haxto/sitemap.xml): URL-level discovery map for the published site.
+- [Search index](https://localhost:3000/sites/haxto/lunrSearchIndex.json): Lunr corpus for quick full-text retrieval.
+- [RSS feed](https://localhost:3000/sites/haxto/rss.xml): Site updates in RSS format.
+- [Atom feed](https://localhost:3000/sites/haxto/atom.xml): Site updates in Atom format.
+- [Sitemap](https://localhost:3000/sites/haxto/sitemap.xml): URL-level discovery map for the published site.
