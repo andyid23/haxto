@@ -14,7 +14,7 @@
       "name": "haxto",
       "domain": null,
       "created": 1787457359,
-      "updated": 1787507128
+      "updated": 1787508277
     },
     "theme": {
       "element": "custom-haxkuis-theme",
@@ -71,12 +71,7 @@
       "description": "Halaman ulangan harian terintegrasi dengan timer, anti-confetti, dan jawaban tersembunyi.",
       "metadata": {
         "created": 1787466936,
-        "updated": 1787466936,
-        "theme": {
-          "element": "custom-haxkuis-theme",
-          "path": "./custom/build/custom.es6.js",
-          "name": "CustomHaxkuisTheme"
-        },
+        "updated": 1787508277,
         "published": true,
         "hideInMenu": false,
         "locked": false,
