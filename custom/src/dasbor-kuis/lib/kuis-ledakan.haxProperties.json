@@ -112,6 +112,27 @@
                 "title": "Timer Mulai Otomatis",
                 "inputMethod": "boolean",
                 "default": true
+            },
+            {
+                "property": "timerMinutes",
+                "title": "Durasi Menit",
+                "description": "Menit untuk timer kuis (digabung dengan Detik → timer-duration).",
+                "inputMethod": "number",
+                "default": 0
+            },
+            {
+                "property": "timerSeconds",
+                "title": "Durasi Detik",
+                "description": "Detik untuk timer kuis (ditambah Menit → timer-duration).",
+                "inputMethod": "number",
+                "default": 0
+            },
+            {
+                "property": "hidePauseRestart",
+                "title": "Sembunyikan Tombol Jeda & Ulang",
+                "description": "Menyembunyikan tombol Jeda/Ulang di timer dan tombol Ulangi Kuis di layar hasil.",
+                "inputMethod": "boolean",
+                "default": false
             }
         ],
         "advanced": [],

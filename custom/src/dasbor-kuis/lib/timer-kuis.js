@@ -24,6 +24,7 @@ export class TimerKuis extends I18NMixin(DDDSuper(LitElement)) {
       autostart: { type: Boolean, attribute: "autostart", reflect: true },
       _remaining: { state: true },
       _running: { state: true },
+      hideControls: { type: Boolean, attribute: "hide-controls", reflect: true },
     };
   }
 
@@ -31,6 +32,7 @@ export class TimerKuis extends I18NMixin(DDDSuper(LitElement)) {
     super();
     this.duration = 300;
     this.autostart = false;
+    this.hideControls = false;
     this._remaining = this.duration;
     this._running = false;
     this._intervalId = null;
@@ -162,10 +164,12 @@ export class TimerKuis extends I18NMixin(DDDSuper(LitElement)) {
           <span class="time ${low ? "warn" : ""}">${this._format(this._remaining)}</span>
         </div>
         <div class="controls">
-          ${this._running
-            ? html`<button @click="${this.pause}">⏸️ ${this.t.pause}</button>`
-            : html`<button @click="${this.start}" ?disabled="${this._remaining <= 0}">▶️ ${this.t.start}</button>`}
-          <button @click="${this.reset}">↺ ${this.t.reset}</button>
+          ${this.hideControls
+            ? ""
+            : html`${this._running
+                ? html`<button @click="${this.pause}">⏸️ ${this.t.pause}</button>`
+                : html`<button @click="${this.start}" ?disabled="${this._remaining <= 0}">▶️ ${this.t.start}</button>`}
+              <button @click="${this.reset}">↺ ${this.t.reset}</button>`}
         </div>
       </div>
       ${this._remaining <= 0 ? html`<div class="done" role="alert">⏰ ${this.t.done}</div>` : ""}

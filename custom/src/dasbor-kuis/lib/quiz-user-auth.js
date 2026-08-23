@@ -345,13 +345,13 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
           margin-bottom: var(--ddd-spacing-4);
         }
         .auth-card {
-          background: var(--ddd-theme-default-white);
-          border: var(--ddd-border-xs);
+          background: var(--ddd-theme-default-white, #ffffff);
+          border: var(--ddd-border-xs, 1px solid #e2e8f0);
           border-radius: var(--ddd-radius-lg);
           padding: var(--ddd-spacing-6);
           max-width: 420px;
           margin: 0 auto;
-          box-shadow: var(--ddd-boxShadow-sm);
+          box-shadow: var(--ddd-boxShadow-sm, 0 1px 3px rgba(0,0,0,.12));
         }
         h2 {
           color: var(--ddd-theme-default-text);
@@ -406,8 +406,8 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
           cursor: pointer;
           font-family: var(--ddd-font-primary);
           margin-top: var(--ddd-spacing-2);
-          background: linear-gradient(120deg, var(--ddd-theme-primary), var(--ddd-theme-accent));
-          color: var(--ddd-theme-default-white);
+          background: linear-gradient(120deg, var(--ddd-theme-primary, #4f46e5), var(--ddd-theme-accent, #6d28d9));
+          color: var(--ddd-theme-default-white, #ffffff);
           box-shadow: var(--ddd-boxShadow-sm);
         }
         .btn:hover {
@@ -420,7 +420,7 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
         .btn-link {
           background: none;
           border: none;
-          color: var(--ddd-theme-primary);
+          color: var(--ddd-theme-primary, #4f46e5);
           font-size: var(--ddd-font-size-4xs);
           text-decoration: underline;
           margin-top: var(--ddd-spacing-3);
@@ -464,8 +464,8 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
           width: 40px;
           height: 40px;
           border-radius: var(--ddd-radius-circle);
-          background: linear-gradient(120deg, var(--ddd-theme-primary), var(--ddd-theme-accent));
-          color: var(--ddd-theme-default-white);
+          background: linear-gradient(120deg, var(--ddd-theme-primary, #4f46e5), var(--ddd-theme-accent, #6d28d9));
+          color: var(--ddd-theme-default-white, #ffffff);
           display: flex;
           align-items: center;
           justify-content: center;

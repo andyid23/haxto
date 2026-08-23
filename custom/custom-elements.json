@@ -2235,6 +2235,39 @@
             },
             {
               "kind": "field",
+              "name": "timerMinutes",
+              "privacy": "public",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "attribute": "timer-minutes",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "timerSeconds",
+              "privacy": "public",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "attribute": "timer-seconds",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "hidePauseRestart",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "hide-pause-restart",
+              "reflects": true
+            },
+            {
+              "kind": "field",
               "name": "_screen",
               "privacy": "public",
               "type": {
@@ -2785,12 +2818,36 @@
               "fieldName": "timerDuration"
             },
             {
+              "name": "timer-minutes",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "fieldName": "timerMinutes"
+            },
+            {
+              "name": "timer-seconds",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "fieldName": "timerSeconds"
+            },
+            {
               "name": "timer-autostart",
               "type": {
                 "text": "boolean"
               },
               "default": "true",
               "fieldName": "timerAutostart"
+            },
+            {
+              "name": "hide-pause-restart",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "hidePauseRestart"
             },
             {
               "name": "_screen",
@@ -5337,6 +5394,17 @@
             },
             {
               "kind": "field",
+              "name": "hideControls",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "hide-controls",
+              "reflects": true
+            },
+            {
+              "kind": "field",
               "name": "_remaining",
               "privacy": "public",
               "attribute": "_remaining"
@@ -5404,6 +5472,14 @@
               },
               "default": "false",
               "fieldName": "_running"
+            },
+            {
+              "name": "hide-controls",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "hideControls"
             }
           ],
           "mixins": [

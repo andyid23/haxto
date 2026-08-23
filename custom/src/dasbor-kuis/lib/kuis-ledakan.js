@@ -244,7 +244,10 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
       studentAbsen: { type: String, attribute: "student-absen", reflect: true },
       studentKelas: { type: String, attribute: "student-kelas", reflect: true },
       timerDuration: { type: Number, attribute: "timer-duration", reflect: true },
+      timerMinutes: { type: Number, attribute: "timer-minutes", reflect: true },
+      timerSeconds: { type: Number, attribute: "timer-seconds", reflect: true },
       timerAutostart: { type: Boolean, attribute: "timer-autostart", reflect: true },
+      hidePauseRestart: { type: Boolean, attribute: "hide-pause-restart", reflect: true },
       _screen: { state: true },
       _currentIdx: { state: true },
       _selected: { state: true },
@@ -323,6 +326,9 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     this.studentKelas = "";
     this.timerDuration = 0;
     this.timerAutostart = true;
+    this.timerMinutes = 0;
+    this.timerSeconds = 0;
+    this.hidePauseRestart = false;
     this._screen = "start"; // start, question, result
     this._currentIdx = 0;
     this._selected = -1;
@@ -467,6 +473,15 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     super.updated(changed);
     if (changed.has("questions") && !Array.isArray(this.questions)) {
       this.questions = DEFAULT_QUESTIONS;
+    }
+    if (changed.has("timerMinutes") || changed.has("timerSeconds")) {
+      const total = (this.timerMinutes || 0) * 60 + (this.timerSeconds || 0);
+      if (this.timerDuration !== total) this.timerDuration = total;
+    } else if (changed.has("timerDuration")) {
+      const m = Math.floor((this.timerDuration || 0) / 60);
+      const s = (this.timerDuration || 0) % 60;
+      if (this.timerMinutes !== m) this.timerMinutes = m;
+      if (this.timerSeconds !== s) this.timerSeconds = s;
     }
   }
 
@@ -1149,7 +1164,10 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
         <div class="quiz-card">
           <h3 class="quiz-title">📝 ${this.judul}</h3>
           <p style="color: #64748b; text-align: center; margin-bottom: var(--ddd-spacing-5);">Selesaikan seluruh pertanyaan kuis di bawah ini secara mandiri untuk mengunci status kelulusan nilai pada lembar kendali dasbor.</p>
-          <button class="btn-start" @click=${this._startQuiz} aria-label="Mulai mengerjakan kuis">Mulai Pengerjaan Kuis</button>
+          ${this.studentId
+            ? html`<button class="btn-start" @click=${this._startQuiz} aria-label="Mulai mengerjakan kuis">Mulai Pengerjaan Kuis</button>`
+            : html`<button class="btn-start" disabled aria-label="Mulai mengerjakan kuis" style="opacity:.55;cursor:not-allowed;">Mulai Pengerjaan Kuis</button>
+               <p class="err-chip" style="background:#fef3c7;border-color:#fcd34d;color:#92400e;margin-top:10px;">ℹ️ Harap login untuk mengerjakan kuis.</p>`}
           ${this._locked && this.mode === "guru"
             ? html`<button class="btn-edit-soal" @click=${this._bukaKunci} aria-label="Buka kunci kuis">🔓 Buka Kunci / Ulangi</button>`
             : ""}
@@ -1176,7 +1194,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
             ? html`<p class="err-chip">ℹ️ ${this._bankStatus}</p>`
             : ""}
           <p class="err-chip" style="background:#eef2ff;border-color:#c7d2fe;color:#4338ca;">ℹ️ Siswa: ${this.studentName || "-"} (NIS ${this.studentNis || "-"}, Kelas ${this.studentKelas || "-"})</p>
-          ${this.mode === "guru"
+          ${this.mode === "guru" && !this.hidePauseRestart
             ? html`<button class="btn-start" style="background-color:#475569;" @click=${() => {
                 this._screen = "start";
                 this.requestUpdate();
@@ -1206,6 +1224,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
               <timer-kuis
                 duration="${this.timerDuration}"
                 ?autostart="${this.timerAutostart}"
+                ?hide-controls="${this.hidePauseRestart}"
                 @timer-kuis-expired="${this._onTimerExpired}"
               ></timer-kuis>
             </div>`
