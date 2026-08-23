@@ -1837,6 +1837,25 @@
             },
             {
               "kind": "method",
+              "name": "_onStartClick",
+              "description": "Klik Mulai: bila belum login, arahkan ke login (kuis tak terbuka). Bila sudah, langsung mulai."
+            },
+            {
+              "kind": "method",
+              "name": "_redirectToLogin",
+              "description": "Arahkan pengguna ke <quiz-user-auth> di halaman + emit event agar host bisa menangani login."
+            },
+            {
+              "kind": "method",
+              "name": "_attemptKey"
+            },
+            {
+              "kind": "method",
+              "name": "_resumeAttemptIfAny",
+              "description": "Resume attempt yang belum submit bila ada (anti-refresh): kembalikan sisa waktu & urutan soal."
+            },
+            {
+              "kind": "method",
               "name": "_renderQuestionScreen"
             },
             {
@@ -2262,7 +2281,7 @@
               "type": {
                 "text": "boolean"
               },
-              "default": "false",
+              "default": "true",
               "attribute": "hide-pause-restart",
               "reflects": true
             },
@@ -2448,6 +2467,26 @@
               },
               "default": "false",
               "attribute": "_lockChecked"
+            },
+            {
+              "kind": "field",
+              "name": "_attemptStart",
+              "privacy": "public",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "attribute": "_attemptStart"
+            },
+            {
+              "kind": "field",
+              "name": "_resumeRemaining",
+              "privacy": "public",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "attribute": "_resumeRemaining"
             },
             {
               "kind": "field",
@@ -2650,6 +2689,12 @@
               }
             },
             {
+              "name": "kuis-need-login",
+              "type": {
+                "text": "CustomEvent"
+              }
+            },
+            {
               "name": "questions-changed",
               "type": {
                 "text": "CustomEvent"
@@ -2846,8 +2891,24 @@
               "type": {
                 "text": "boolean"
               },
-              "default": "false",
+              "default": "true",
               "fieldName": "hidePauseRestart"
+            },
+            {
+              "name": "_attemptStart",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "fieldName": "_attemptStart"
+            },
+            {
+              "name": "_resumeRemaining",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "fieldName": "_resumeRemaining"
             },
             {
               "name": "_screen",

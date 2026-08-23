@@ -129,10 +129,10 @@
             },
             {
                 "property": "hidePauseRestart",
-                "title": "Sembunyikan Tombol Jeda & Ulang",
-                "description": "Menyembunyikan tombol Jeda/Ulang di timer dan tombol Ulangi Kuis di layar hasil.",
+                "title": "Sembunyikan Tombol Kontrol Timer (Jeda, Mulai, Ulang)",
+                "description": "Menyembunyikan tombol Jeda, Mulai, dan Ulang di timer serta tombol Ulangi Kuis di layar hasil. Default ON agar siswa tidak bisa mengulur waktu ujian.",
                 "inputMethod": "boolean",
-                "default": false
+                "default": true
             }
         ],
         "advanced": [],

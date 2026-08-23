@@ -3,7 +3,6 @@ import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
 import { I18NMixin } from "@haxtheweb/i18n-manager/lib/I18NMixin.js";
 import confetti from "canvas-confetti";
 import "./timer-kuis.js";
-import "./timer-kuis.js";
 
 const DEFAULT_QUESTIONS = [
   { q: "Apa kegunaan utama metode connectedCallback pada LitElement?", a: "Menginisialisasi nilai variabel dasar", b: "Mendeteksi elemen saat berhasil diinjeksikan ke struktur DOM", c: "Menghapus event listener global", k: "b" },
@@ -248,6 +247,8 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
       timerSeconds: { type: Number, attribute: "timer-seconds", reflect: true },
       timerAutostart: { type: Boolean, attribute: "timer-autostart", reflect: true },
       hidePauseRestart: { type: Boolean, attribute: "hide-pause-restart", reflect: true },
+      _attemptStart: { state: true },
+      _resumeRemaining: { state: true },
       _screen: { state: true },
       _currentIdx: { state: true },
       _selected: { state: true },
@@ -328,7 +329,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     this.timerAutostart = true;
     this.timerMinutes = 0;
     this.timerSeconds = 0;
-    this.hidePauseRestart = false;
+    this.hidePauseRestart = true;
     this._screen = "start"; // start, question, result
     this._currentIdx = 0;
     this._selected = -1;
@@ -348,6 +349,8 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     this._shuffledQuestions = [];
     this._locked = false;
     this._lockChecked = false;
+    this._attemptStart = 0;
+    this._resumeRemaining = 0;
     this._editing = false;
     this._tempQuestions = [];
     this._editingIndex = -1;
@@ -380,10 +383,10 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
         .lock-msg { color: #64748b; font-weight: 600; }
         .quiz-title { color: var(--ddd-theme-primary); font-size: var(--ddd-font-size-l); font-weight: 800; margin-top: 0; text-align: center; }
         .btn-start {
-          display: block; width: 100%; padding: var(--ddd-spacing-4); background-color: var(--ddd-theme-polaris-primary); color: var(--ddd-theme-on-primary);
+          display: block; width: 100%; padding: var(--ddd-spacing-4); background-color: var(--ddd-theme-polaris-primary, #4f46e5); color: var(--ddd-theme-on-primary, #ffffff);
           border: none; border-radius: var(--ddd-radius-sm); font-size: var(--ddd-font-size-4xs); font-weight: 700; cursor: pointer; transition: background 0.2s;
         }
-        .btn-start:hover { background-color: var(--ddd-theme-accent); }
+        .btn-start:hover { background-color: var(--ddd-theme-accent, #6d28d9); }
         .question-text { font-size: var(--ddd-font-size-4xs); font-weight: 700; color: var(--ddd-theme-on-surface); margin-bottom: var(--ddd-spacing-4); }
         .question-image img { max-width: 100%; max-height: 260px; border-radius: 10px; margin-bottom: var(--ddd-spacing-4); border: var(--ddd-border-xs); }
         .choices-stack { display: flex; flex-direction: column; gap: 10px; }
@@ -483,6 +486,10 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
       if (this.timerMinutes !== m) this.timerMinutes = m;
       if (this.timerSeconds !== s) this.timerSeconds = s;
     }
+    // _resumeRemaining sudah dipakai di render (timer embed); reset agar tak menimpa.
+    if (this._screen === "question" && this._resumeRemaining > 0) {
+      this._resumeRemaining = 0;
+    }
   }
 
   connectedCallback() {
@@ -500,6 +507,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     globalThis.addEventListener("quiz-user-session-changed", this._authHandler);
     this._loadSession();
     this._cekKunci();
+    this._resumeAttemptIfAny();
     if (!this.hasAttribute("questions")) {
       const local = this._loadQuestionsLocal();
       if (local && local.length > 0) {
@@ -794,6 +802,16 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
       this._shuffledQuestions = base.map((q, i) => ({ ...q, _originalIndex: i }));
     }
     this._resetState();
+    if (this.lockAfterComplete && this.studentId && this.kdMateri) {
+      this._attemptStart = Date.now();
+      try {
+        localStorage.setItem(this._attemptKey(), JSON.stringify({
+          start: this._attemptStart,
+          duration: this.timerDuration,
+          questions: this._shuffledQuestions,
+        }));
+      } catch (_) {}
+    }
   }
 
   _getActiveQuestions() {
@@ -1036,6 +1054,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
       this._advanceTimer = null;
     }
     this._screen = "result";
+    this._maxPoints = (this.questions || []).reduce((sum, q) => sum + this._maxPoinSoal(q), 0) || 1;
     const totalSkor = Math.round((this._score / this._maxPoints) * 100);
 
     if (!this._confettiFired && !this.hideConfetti) {
@@ -1069,6 +1088,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     // event tidak tertangkap host mana pun — kirim sendiri ke backend.
     this._kirimHasilLangsung(idLog, totalSkor);
     if (this.lockAfterComplete) this._locked = true;
+    try { localStorage.removeItem(this._attemptKey()); } catch (_) {}
   }
 
   /** Kirim hasil kuis langsung ke action=logActivity bila berdiri sendiri. */
@@ -1146,6 +1166,52 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     } catch (_) {}
     this._locked = false;
     this._screen = "start";
+    try { localStorage.removeItem(this._attemptKey()); } catch (_) {}
+    this.requestUpdate();
+  }
+
+  /** Klik Mulai: bila belum login, arahkan ke login (kuis tak terbuka). Bila sudah, langsung mulai. */
+  _onStartClick() {
+    if (!this.studentId) {
+      this._redirectToLogin();
+      return;
+    }
+    this._startQuiz();
+  }
+
+  /** Arahkan pengguna ke <quiz-user-auth> di halaman + emit event agar host bisa menangani login. */
+  _redirectToLogin() {
+    const auth = document.querySelector("quiz-user-auth");
+    if (auth) {
+      auth.scrollIntoView({ behavior: "smooth", block: "center" });
+      if (typeof auth.focus === "function") auth.focus();
+    }
+    this.dispatchEvent(new CustomEvent("kuis-need-login", { bubbles: true, composed: true, detail: { kdMateri: this.kdMateri } }));
+    this.requestUpdate();
+  }
+
+  _attemptKey() {
+    return `kuis-ledakan:attempt:${this.studentId}:${this.kdMateri}`;
+  }
+
+  /** Resume attempt yang belum submit bila ada (anti-refresh): kembalikan sisa waktu & urutan soal. */
+  _resumeAttemptIfAny() {
+    if (!this.lockAfterComplete || !this.studentId || !this.kdMateri) return;
+    let data = null;
+    try {
+      data = JSON.parse(localStorage.getItem(this._attemptKey()) || "null");
+    } catch (_) {}
+    if (!data) return;
+    const elapsed = Math.floor((Date.now() - data.start) / 1000);
+    const remaining = (data.duration || 0) - elapsed;
+    if (remaining <= 0) {
+      try { localStorage.removeItem(this._attemptKey()); } catch (_) {}
+      return;
+    }
+    this._shuffledQuestions = data.questions || this._shuffledQuestions;
+    this._attemptStart = data.start;
+    this._resumeRemaining = remaining;
+    this._screen = "question";
     this.requestUpdate();
   }
 
@@ -1164,10 +1230,10 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
         <div class="quiz-card">
           <h3 class="quiz-title">📝 ${this.judul}</h3>
           <p style="color: #64748b; text-align: center; margin-bottom: var(--ddd-spacing-5);">Selesaikan seluruh pertanyaan kuis di bawah ini secara mandiri untuk mengunci status kelulusan nilai pada lembar kendali dasbor.</p>
-          ${this.studentId
-            ? html`<button class="btn-start" @click=${this._startQuiz} aria-label="Mulai mengerjakan kuis">Mulai Pengerjaan Kuis</button>`
-            : html`<button class="btn-start" disabled aria-label="Mulai mengerjakan kuis" style="opacity:.55;cursor:not-allowed;">Mulai Pengerjaan Kuis</button>
-               <p class="err-chip" style="background:#fef3c7;border-color:#fcd34d;color:#92400e;margin-top:10px;">ℹ️ Harap login untuk mengerjakan kuis.</p>`}
+          <button class="btn-start" @click=${this._onStartClick} aria-label="Mulai mengerjakan kuis">Mulai Pengerjaan Kuis</button>
+          ${!this.studentId
+            ? html`<p class="err-chip" style="background:#fef3c7;border-color:#fcd34d;color:#92400e;margin-top:10px;">ℹ️ Harap login untuk mengerjakan kuis.</p>`
+            : ""}
           ${this._locked && this.mode === "guru"
             ? html`<button class="btn-edit-soal" @click=${this._bukaKunci} aria-label="Buka kunci kuis">🔓 Buka Kunci / Ulangi</button>`
             : ""}
@@ -1219,10 +1285,10 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
           <span>Soal ${this._currentIdx + 1} dari ${active.length}</span>
           ${this.hideScore ? "" : html`<span>Skor Berjalan: ${this._score}</span>`}
         </div>
-        ${this.timerDuration > 0
+        ${(this.timerDuration > 0 || this._resumeRemaining > 0)
           ? html`<div class="quiz-timer">
               <timer-kuis
-                duration="${this.timerDuration}"
+                duration="${this._resumeRemaining || this.timerDuration}"
                 ?autostart="${this.timerAutostart}"
                 ?hide-controls="${this.hidePauseRestart}"
                 @timer-kuis-expired="${this._onTimerExpired}"
