@@ -10,7 +10,7 @@
 <description>Halaman materi dan latihan soal berwaktu dengan auto-submit nilai ke database.</description>
 <metadata>
 <created>1787466936</created>
-<updated>1787519144</updated>
+<updated>1787519194</updated>
 <published>true</published>
 <hideInMenu>false</hideInMenu>
 <locked>false</locked>
@@ -23,18 +23,18 @@
 <icon>hax:shovel</icon>
 <status></status>
 <theme>
-<element>app-hax-theme</element>
-<path>@haxtheweb/app-hax/lib/app-hax-theme.js</path>
-<name>8-Bit Land</name>
-<thumbnail>@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-app-hax-theme-thumb.jpg</thumbnail>
-<description>Start with a blank site using the 8-Bit Land</description>
+<element>polaris-flex-theme</element>
+<path>@haxtheweb/polaris-theme/lib/polaris-flex-theme.js</path>
+<name>Polaris Flex</name>
+<thumbnail>@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-polaris-flex-theme-thumb.jpg</thumbnail>
+<description>Start with a blank site using the Polaris Flex</description>
 <category>
-<item>Course</item>
+<item>Website</item>
 </category>
-<hidden>true</hidden>
-<priority>0</priority>
+<hidden>false</hidden>
+<priority>-1</priority>
 <terrible>false</terrible>
-<key>app-hax-theme</key>
+<key>polaris-flex-theme</key>
 </theme>
 </metadata>
 <content><![CDATA[
