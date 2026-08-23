@@ -3,7 +3,7 @@
   <title>haxto</title>
   <link href="https://localhost:3000/sites/haxto/" rel="self" />
   <subtitle></subtitle>
-  <updated>2026-08-23T22:04:04.000Z</updated>
+  <updated>2026-08-23T22:41:19.000Z</updated>
   <author>
       <name></name>
   </author>
@@ -12,7 +12,7 @@
   <entry>
     <title>Selamat Datang Pada Ulangan</title>
     <id>item-e25c1b60-c8b7-4360-b3e8-3533c93c3a92</id>
-    <updated>2026-08-23T22:40:34.000Z</updated>
+    <updated>2026-08-23T22:41:19.000Z</updated>
     <published>2026-08-23T03:55:59.000Z</published>
     <summary>Welcome to your new HAX site! Click edit on the top bar to get started
 What can I do?
@@ -87,7 +87,7 @@ We&apos;ve got a ton of blocks that are easy to use and get a lot done with litt
   <entry>
     <title>Ulangan Harian 1</title>
     <id>item-641ef0af-6ba1-4523-bedd-5c0d0f85828b</id>
-    <updated>2026-08-23T22:04:04.000Z</updated>
+    <updated>2026-08-23T22:41:19.000Z</updated>
     <published>2026-08-23T06:35:36.000Z</published>
     <summary>Halaman ulangan harian terintegrasi dengan timer, anti-confetti, dan jawaban tersembunyi.</summary>
     <link href="https://localhost:3000/sites/haxto/ulangan-harian"/>
@@ -107,7 +107,7 @@ We&apos;ve got a ton of blocks that are easy to use and get a lot done with litt
   <entry>
     <title>Materi &amp; Latihan Soal</title>
     <id>item-22f6ed54-bc3f-4a32-8ee7-00f2ab65482e</id>
-    <updated>2026-08-23T21:06:34.000Z</updated>
+    <updated>2026-08-23T22:41:19.000Z</updated>
     <published>2026-08-23T06:35:36.000Z</published>
     <summary>Halaman materi dan latihan soal berwaktu dengan auto-submit nilai ke database.</summary>
     <link href="https://localhost:3000/sites/haxto/materi-latihan"/>

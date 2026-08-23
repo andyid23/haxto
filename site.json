@@ -14,7 +14,7 @@
       "name": "haxto",
       "domain": null,
       "created": 1787457359,
-      "updated": 1787524834
+      "updated": 1787524879
     },
     "theme": {
       "element": "custom-haxkuis-theme",
@@ -31,13 +31,13 @@
       "indent": 0,
       "location": "pages/item-e25c1b60-c8b7-4360-b3e8-3533c93c3a92/index.html",
       "slug": "welcome",
-      "order": 0,
+      "order": 2,
       "parent": null,
       "title": "Selamat Datang Pada Ulangan",
       "description": "Welcome to your new HAX site! Click edit on the top bar to get started\nWhat can I do?\nWe've got a ton of blocks that are easy to use and get a lot done with little effort, so much in fact we made a l",
       "metadata": {
         "created": 1787457359,
-        "updated": 1787524834,
+        "updated": 1787524879,
         "theme": {
           "element": "haxma-theme",
           "path": "@haxtheweb/haxma-theme/haxma-theme.js",
@@ -72,7 +72,7 @@
       "description": "Halaman ulangan harian terintegrasi dengan timer, anti-confetti, dan jawaban tersembunyi.",
       "metadata": {
         "created": 1787466936,
-        "updated": 1787522644,
+        "updated": 1787524879,
         "published": true,
         "hideInMenu": false,
         "locked": false,
@@ -102,13 +102,13 @@
       "indent": 0,
       "location": "pages/item-22f6ed54-bc3f-4a32-8ee7-00f2ab65482e/index.html",
       "slug": "materi-latihan",
-      "order": 2,
+      "order": 0,
       "parent": null,
       "title": "Materi & Latihan Soal",
       "description": "Halaman materi dan latihan soal berwaktu dengan auto-submit nilai ke database.",
       "metadata": {
         "created": 1787466936,
-        "updated": 1787519194,
+        "updated": 1787524879,
         "published": true,
         "hideInMenu": false,
         "locked": false,
