@@ -9,13 +9,14 @@
   "description": "Halaman materi dan latihan soal berwaktu dengan auto-submit nilai ke database.",
   "metadata": {
     "created": 1787466936,
-    "updated": 1787503264,
+    "updated": 1787504711,
     "published": true,
     "hideInMenu": false,
     "locked": false,
     "readtime": 1,
     "videos": [],
-    "images": []
+    "images": [],
+    "pageType": "practice"
   },
-  "content": "\n<h2 id=\"h2-latihan\">📖 Materi &#38; Latihan Soal-soal</h2>\n<p>Pelajari materi di bawah ini, lalu kerjakan latihan soal berwaktu. Nilai latihan terkirim otomatis ke database.</p>\n<quiz-user-auth apps-script-url=\"https://script.google.com/macros/s/AKfycbzZtRJ8dDEj6y3VyQgbYRap1-BBkOrOb-5vapHI7ck2ki751kqwudADvm8YSfEkzkRB/exec\" auto-login _student-id=\"STD-65108053\"></quiz-user-auth>\n<latihan-kuis apps-script-url=\"https://script.google.com/macros/s/AKfycbzdM3NJYimRQikNhBl67beBbtO7ccBe8wezd1j5K6gYY2N2aH5TDPxAzyeGv6h1KRA/exec\" spreadsheet-url=\"https://docs.google.com/spreadsheets/d/1z51gL4O3tB21FAn3NHTbxz5dF8iw0MrQ_ea7JYWZZ0I/edit\" judul-materi=\"Bab 2: Logika &amp; Algoritma\" teks-materi=\"Pelajari konsep dasar logika dan algoritma. Setelah selesai membaca, klik tombol 'Mulai Latihan' untuk mengerjakan kuis berwaktu.\" judul-kuis=\"Latihan Soal Bab 2\" duration=\"600\" label-mulai=\"▶️ Mulai Latihan\" pesan-waktu-habis=\"⏰ Waktu habis! Kuis dikunci dan dinilai otomatis.\" pesan-nilai-terkirim=\"🎉 Latihan selesai! Nilai Anda sudah terkirim.\"  materi-file=\"\" cover-image=\"\" student-id=\"\" student-name=\"\" student-nis=\"\" student-absen=\"\" student-kelas=\"\">\n</latihan-kuis>\n"
+  "content": "\n<h2 id=\"h2-latihan\">📖 Materi &#38; Latihan Soal-soal</h2>\n<p>Pelajari materi di bawah ini, lalu kerjakan latihan soal berwaktu. Nilai latihan terkirim otomatis ke database.</p>\n<quiz-user-auth apps-script-url=\"https://script.google.com/macros/s/AKfycbzdM3NJYimRQikNhBl67beBbtO7ccBe8wezd1j5K6gYY2N2aH5TDPxAzyeGv6h1KRA/exec\" auto-login _student-id=\"STD-65108053\"></quiz-user-auth>\n<latihan-kuis apps-script-url=\"https://script.google.com/macros/s/AKfycbzdM3NJYimRQikNhBl67beBbtO7ccBe8wezd1j5K6gYY2N2aH5TDPxAzyeGv6h1KRA/exec\" spreadsheet-url=\"https://docs.google.com/spreadsheets/d/1z51gL4O3tB21FAn3NHTbxz5dF8iw0MrQ_ea7JYWZZ0I/edit\" judul-materi=\"Bab 2: Logika &amp; Algoritma\" teks-materi=\"Pelajari konsep dasar logika dan algoritma. Setelah selesai membaca, klik tombol 'Mulai Latihan' untuk mengerjakan kuis berwaktu.\" judul-kuis=\"Latihan Soal Bab 2\" duration=\"600\" label-mulai=\"▶️ Mulai Latihan\" pesan-waktu-habis=\"⏰ Waktu habis! Kuis dikunci dan dinilai otomatis.\" pesan-nilai-terkirim=\"🎉 Latihan selesai! Nilai Anda sudah terkirim.\" materi-file=\"\" cover-image=\"\" student-id=\"\" student-name=\"\" student-nis=\"\" student-absen=\"\" student-kelas=\"\" >\n</latihan-kuis>\n"
 }

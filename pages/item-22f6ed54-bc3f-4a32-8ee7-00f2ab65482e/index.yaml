@@ -8,13 +8,14 @@ title: Materi & Latihan Soal
 description: Halaman materi dan latihan soal berwaktu dengan auto-submit nilai ke database.
 metadata:
   created: 1787466936
-  updated: 1787503264
+  updated: 1787504711
   published: true
   hideInMenu: false
   locked: false
   readtime: 1
   videos: []
   images: []
+  pageType: practice
 content: >
 
   <h2 id="h2-latihan">📖 Materi &#38; Latihan Soal-soal</h2>
@@ -23,7 +24,7 @@ content: >
   latihan terkirim otomatis ke database.</p>
 
   <quiz-user-auth
-  apps-script-url="https://script.google.com/macros/s/AKfycbzZtRJ8dDEj6y3VyQgbYRap1-BBkOrOb-5vapHI7ck2ki751kqwudADvm8YSfEkzkRB/exec"
+  apps-script-url="https://script.google.com/macros/s/AKfycbzdM3NJYimRQikNhBl67beBbtO7ccBe8wezd1j5K6gYY2N2aH5TDPxAzyeGv6h1KRA/exec"
   auto-login _student-id="STD-65108053"></quiz-user-auth>
 
   <latihan-kuis
@@ -34,8 +35,8 @@ content: >
   Latihan' untuk mengerjakan kuis berwaktu." judul-kuis="Latihan Soal Bab 2"
   duration="600" label-mulai="▶️ Mulai Latihan" pesan-waktu-habis="⏰ Waktu
   habis! Kuis dikunci dan dinilai otomatis." pesan-nilai-terkirim="🎉 Latihan
-  selesai! Nilai Anda sudah terkirim."  materi-file="" cover-image=""
-  student-id="" student-name="" student-nis="" student-absen=""
-  student-kelas="">
+  selesai! Nilai Anda sudah terkirim." materi-file="" cover-image=""
+  student-id="" student-name="" student-nis="" student-absen="" student-kelas=""
+  >
 
   </latihan-kuis>
