@@ -10,7 +10,7 @@ description: >-
   tersembunyi.
 metadata:
   created: 1787466936
-  updated: 1787515183
+  updated: 1787516604
   published: true
   hideInMenu: false
   locked: false
@@ -29,10 +29,10 @@ content: >
   apps-script-url="https://script.google.com/macros/s/AKfycbzdM3NJYimRQikNhBl67beBbtO7ccBe8wezd1j5K6gYY2N2aH5TDPxAzyeGv6h1KRA/exec"
   auto-login _student-id="STD-65108053"></quiz-user-auth>
 
-  <kuis-ledakan judul="Ulangan Harian — Pertemuan 1" mode="siswa"
+  <kuis-ledakan judul="Ulangan Harian — Pertemuan 12" mode="siswa"
   kd-materi="Pertemuan 1"
   apps-script-url="https://script.google.com/macros/s/AKfycbzdM3NJYimRQikNhBl67beBbtO7ccBe8wezd1j5K6gYY2N2aH5TDPxAzyeGv6h1KRA/exec"
-  hide-answers hide-confetti shuffle-choices timer-duration="1800"
+  hide-answers hide-confetti shuffle-choices timer-duration="100"
   timer-autostart questions="[{&quot;q&quot;:&quot;Apa kegunaan utama metode
   connectedCallback pada LitElement?&quot;,&quot;a&quot;:&quot;Menginisialisasi
   nilai variabel dasar&quot;,&quot;b&quot;:&quot;Mendeteksi elemen saat berhasil
@@ -43,14 +43,25 @@ content: >
   Script?&quot;,&quot;a&quot;:&quot;Menggunakan penulisan masal berbasis batch
   I/O&quot;,&quot;b&quot;:&quot;Menulis ke banyak sheet
   terpisah&quot;,&quot;c&quot;:&quot;Memperbanyak rumus formula
-  cell&quot;,&quot;k&quot;:&quot;a&quot;},{&quot;type&quot;:&quot;matching&quot;,&quot;question&quot;:&quot;dfsafdsafdsa&quot;,&quot;leftItems&quot;:[&quot;sadfs&quot;,&quot;&quot;],&quot;rightItems&quot;:[&quot;13232&quot;,&quot;&quot;],&quot;correctPairs&quot;:{&quot;0&quot;:1,&quot;1&quot;:0}}]"
-  student-id="STD-65108053" student-name="Andy Yulianto" student-nis="234"
-  student-absen="2" student-kelas="Your Teacher" hide-score _current-idx="0"
+  cell&quot;,&quot;k&quot;:&quot;a&quot;}]" student-id="STD-65108053"
+  student-name="Andy Yulianto" student-nis="234" student-absen="2"
+  student-kelas="Your Teacher" hide-score _current-idx="0"
   _selected-answers="{}" _match-answers="{}" _max-points="0"
-  _shuffled-questions="[]" _temp-questions="[]" _editing-index="-1"
-  _temp-question-type="mc" _temp-question-points="1" _temp-correct-index="0"
-  _temp-correct-answers="[]" _temp-left-items="[&quot;&quot;,&quot;&quot;]"
+  _shuffled-questions="[]" _temp-questions="[{&quot;q&quot;:&quot;Apa kegunaan
+  utama metode connectedCallback pada
+  LitElement?&quot;,&quot;a&quot;:&quot;Menginisialisasi nilai variabel
+  dasar&quot;,&quot;b&quot;:&quot;Mendeteksi elemen saat berhasil diinjeksikan
+  ke struktur DOM&quot;,&quot;c&quot;:&quot;Menghapus event listener
+  global&quot;,&quot;k&quot;:&quot;b&quot;},{&quot;q&quot;:&quot;Bagaimana cara
+  mencegah timeout 6 menit pada Google Apps
+  Script?&quot;,&quot;a&quot;:&quot;Menggunakan penulisan masal berbasis batch
+  I/O&quot;,&quot;b&quot;:&quot;Menulis ke banyak sheet
+  terpisah&quot;,&quot;c&quot;:&quot;Memperbanyak rumus formula
+  cell&quot;,&quot;k&quot;:&quot;a&quot;},{&quot;type&quot;:&quot;matching&quot;,&quot;question&quot;:&quot;dfsafdsafdsa&quot;,&quot;leftItems&quot;:[&quot;sadfs&quot;,&quot;&quot;],&quot;rightItems&quot;:[&quot;13232&quot;,&quot;&quot;],&quot;correctPairs&quot;:{&quot;0&quot;:1,&quot;1&quot;:0}},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;sdfsa&quot;,&quot;choices&quot;:[&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;],&quot;correctAnswers&quot;:[2,1]}]"
+  _editing-index="-1" _temp-question-type="mc" _temp-question-points="1"
+  _temp-correct-index="0" _temp-correct-answers="[]"
+  _temp-left-items="[&quot;&quot;,&quot;&quot;]"
   _temp-right-items="[&quot;&quot;,&quot;&quot;]" _temp-correct-pairs="{}"
-  _temp-accepted-statements="[]" _temp-statements="[]" _editor-origin="result">
+  _temp-accepted-statements="[]" _temp-statements="[]" _editor-origin="start">
 
   </kuis-ledakan>
