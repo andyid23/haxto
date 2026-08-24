@@ -10,9 +10,9 @@ description: >-
   tersembunyi.
 metadata:
   created: 1787466936
-  updated: 1787522644
+  updated: 1787526908
   published: true
-  hideInMenu: false
+  hideInMenu: true
   locked: false
   readtime: 1
   videos: []
@@ -363,7 +363,8 @@ content: >
   _temp-right-items="[&quot;&quot;,&quot;&quot;]" _temp-correct-pairs="{}"
   _temp-accepted-statements="[]" _temp-statements="[]" _editor-origin="result"
   lock-after-complete timer-minutes="30" timer-seconds="0" _lock-checked
-  timer-duration="1800">
+  timer-duration="1800" hide-pause-restart _attempt-start="0"
+  _resume-remaining="0">
 
   </kuis-ledakan>
 
