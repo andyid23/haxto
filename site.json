@@ -14,7 +14,7 @@
       "name": "haxto",
       "domain": null,
       "created": 1787457359,
-      "updated": 1787533139
+      "updated": 1787533649
     },
     "theme": {
       "element": "custom-haxkuis-theme",
@@ -108,7 +108,7 @@
       "description": "Halaman materi dan latihan soal berwaktu dengan auto-submit nilai ke database.",
       "metadata": {
         "created": 1787466936,
-        "updated": 1787533139,
+        "updated": 1787533649,
         "published": true,
         "hideInMenu": false,
         "locked": false,
