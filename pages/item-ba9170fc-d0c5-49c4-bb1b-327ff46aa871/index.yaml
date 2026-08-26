@@ -10,7 +10,7 @@ description: |+
 
 metadata:
   created: 1787721767
-  updated: 1787751925
+  updated: 1787752157
   images: []
   videos: []
   published: true
@@ -97,6 +97,15 @@ content: >
 
     </ol>
    <strong>URL Apps Script (contoh — ganti dengan milik Anda):</strong>
+  <latihan-kuis   duration="300" judul-materi="Materi Pembelajaran"
+  teks-materi="Baca materi di bawah ini dengan saksama sebelum mengerjakan kuis.
+  Waktu pengerjaan kuis dibatasi oleh timer; saat waktu habis, kuis akan dikunci
+  dan nilai otomatis terkirim."  materi-file="" cover-image=""
+  judul-kuis="Evaluasi Kuis Interaktif" student-id="STD-65108053"
+  student-name="Andy" student-nis="234" student-absen="1" student-kelas="XI-1"
+  kd-materi="" pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai
+  otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke
+  spreadsheet." label-mulai="▶️ Mulai Latihan" ></latihan-kuis>
 
     <input class="gas" readonly="" value="https://script.google.com/macros/s/AKfycbwEXAMPLE1234567890/exec" id="gasUrl">
     <button>📋 Salin URL GAS</button>

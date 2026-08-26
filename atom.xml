@@ -3,7 +3,7 @@
   <title>haxto</title>
   <link href="https://localhost:3000/sites/haxto/" rel="self" />
   <subtitle></subtitle>
-  <updated>2026-08-26T13:21:58.000Z</updated>
+  <updated>2026-08-26T13:45:26.000Z</updated>
   <author>
       <name></name>
   </author>
@@ -418,7 +418,7 @@ We&apos;ve got a ton of blocks that are easy to use and get a lot done with litt
   <entry>
     <title>New Page</title>
     <id>item-ba9170fc-d0c5-49c4-bb1b-327ff46aa871</id>
-    <updated>2026-08-26T13:45:25.000Z</updated>
+    <updated>2026-08-26T13:49:17.000Z</updated>
     <published>2026-08-26T05:22:47.000Z</published>
     <summary>soal latihan
 
@@ -477,6 +477,7 @@ menampilkan kartu "Nilai terkirim" + skor.</li>
 
   </ol>
  <strong>URL Apps Script (contoh — ganti dengan milik Anda):</strong>
+<latihan-kuis   duration="300" judul-materi="Materi Pembelajaran" teks-materi="Baca materi di bawah ini dengan saksama sebelum mengerjakan kuis. Waktu pengerjaan kuis dibatasi oleh timer; saat waktu habis, kuis akan dikunci dan nilai otomatis terkirim."  materi-file="" cover-image="" judul-kuis="Evaluasi Kuis Interaktif" student-id="STD-65108053" student-name="Andy" student-nis="234" student-absen="1" student-kelas="XI-1" kd-materi="" pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai Latihan" ></latihan-kuis>
 
   <input class="gas" readonly="" value="https://script.google.com/macros/s/AKfycbwEXAMPLE1234567890/exec" id="gasUrl">
   <button>📋 Salin URL GAS</button>
