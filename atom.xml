@@ -3,7 +3,7 @@
   <title>haxto</title>
   <link href="https://localhost:3000/sites/haxto/" rel="self" />
   <subtitle></subtitle>
-  <updated>2026-08-26T13:11:18.000Z</updated>
+  <updated>2026-08-26T13:21:58.000Z</updated>
   <author>
       <name></name>
   </author>
@@ -418,7 +418,7 @@ We&apos;ve got a ton of blocks that are easy to use and get a lot done with litt
   <entry>
     <title>New Page</title>
     <id>item-ba9170fc-d0c5-49c4-bb1b-327ff46aa871</id>
-    <updated>2026-08-26T13:21:58.000Z</updated>
+    <updated>2026-08-26T13:45:25.000Z</updated>
     <published>2026-08-26T05:22:47.000Z</published>
     <summary>soal latihan
 
@@ -481,7 +481,7 @@ menampilkan kartu "Nilai terkirim" + skor.</li>
   <input class="gas" readonly="" value="https://script.google.com/macros/s/AKfycbwEXAMPLE1234567890/exec" id="gasUrl">
   <button>📋 Salin URL GAS</button>
 </div>
-<latihan-kuis id="latihan2" apps-script-url="https://script.google.com/macros/s/AKfycbyuprudZkCq_YCQ-CqqD_huzndsbA6zHsg_ICfqPnlB97dhcrm1xJjGxJ3u4Jp8DjJQ/exec" spreadsheet-url="https://docs.google.com/spreadsheets/d/ISI_ID_SPREADSHEET_ANDA/edit" kd-materi="bab2" show-sheet-link duration="30" judul-materi="Bab 2: Logika &amp; Algoritma" teks-materi="Baca materi berikut sebelum mengerjakan kuis. Waktu pengerjaan dibatasi timer; saat waktu habis, kuis dikunci dan nilai otomatis terkirim ke Spreadsheet." cover-image="" judul-kuis="Kuis Formatif Bab 2" soal-file-url="soal-contoh.json" materi-file="" student-id="STD-65108053" student-name="Andy" student-nis="234" student-absen="1" student-kelas="XI-1" pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai Latihan" _pesan="Gagal memuat file soal: HTTP 404"  _mulai>
+<latihan-kuis id="latihan2" apps-script-url="https://script.google.com/macros/s/AKfycbyuprudZkCq_YCQ-CqqD_huzndsbA6zHsg_ICfqPnlB97dhcrm1xJjGxJ3u4Jp8DjJQ/exec" spreadsheet-url="https://docs.google.com/spreadsheets/d/ISI_ID_SPREADSHEET_ANDA/edit" kd-materi="bab2" show-sheet-link duration="30" judul-materi="Bab 2: Logika &amp; Algoritma" teks-materi="Baca materi berikut sebelum mengerjakan kuis. Waktu pengerjaan dibatasi timer; saat waktu habis, kuis dikunci dan nilai otomatis terkirim ke Spreadsheet." cover-image="" judul-kuis="Kuis Formatif Bab 2" soal-file-url="soal-contoh.json" materi-file="" student-id="STD-65108053" student-name="Andy" student-nis="234" student-absen="1" student-kelas="XI-1" pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai Latihan" _pesan="Gagal memuat file soal: HTTP 404" _mulai="" >
   <!--  soal-file-url="soal-contoh.json"  -->
 </latihan-kuis>
  ]]>

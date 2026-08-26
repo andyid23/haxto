@@ -10,7 +10,7 @@ description: |+
 
 metadata:
   created: 1787721767
-  updated: 1787750518
+  updated: 1787751925
   images: []
   videos: []
   published: true
@@ -114,6 +114,6 @@ content: >
   student-absen="1" student-kelas="XI-1" pesan-waktu-habis="⏰ Waktu habis! Kuis
   dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda
   sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai Latihan" _pesan="Gagal
-  memuat file soal: HTTP 404"  _mulai>
+  memuat file soal: HTTP 404" _mulai="" >
     <!--  soal-file-url="soal-contoh.json"  -->
   </latihan-kuis>
