@@ -10,7 +10,7 @@ description: |+
 
 metadata:
   created: 1787721767
-  updated: 1787737009
+  updated: 1787737380
   images: []
   videos: []
   published: true
@@ -39,8 +39,8 @@ content: >
   Kuis dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai
   Anda sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai Latihan"
   apps-script-url="https://script.google.com/macros/s/AKfycby2DIuM6ZN8FfkID9TjIVLICAmRa9ogfsuD4BDoCvEItZ2YG6-_gNr-f_mKroUCnalZ/exec"
-  spreadsheet-url="https://docs.google.com/spreadsheets/d/1RlGyoqJXoM0B8-cwnXjy83XPowpF_9EFbImKywvQQgM/edit?usp=sharing"  
-  _mulai _selesai _skor="100"></latihan-kuis>
+  spreadsheet-url="https://docs.google.com/spreadsheets/d/1RlGyoqJXoM0B8-cwnXjy83XPowpF_9EFbImKywvQQgM/edit?usp=sharing"
+  _mulai="" _selesai="" _skor="100"  ></latihan-kuis>
 
   <p></p>
 
@@ -102,10 +102,11 @@ content: >
   7 ×
   8?&quot;,&quot;a&quot;:&quot;54&quot;,&quot;b&quot;:&quot;56&quot;,&quot;c&quot;:&quot;58&quot;,&quot;d&quot;:&quot;60&quot;,&quot;k&quot;:&quot;b&quot;,&quot;points&quot;:10},{&quot;q&quot;:&quot;Planet
   terdekat
-  Matahari?&quot;,&quot;a&quot;:&quot;Venus&quot;,&quot;b&quot;:&quot;Bumi&quot;,&quot;c&quot;:&quot;Merkurius&quot;,&quot;d&quot;:&quot;Mars&quot;,&quot;k&quot;:&quot;c&quot;,&quot;points&quot;:10}]" 
+  Matahari?&quot;,&quot;a&quot;:&quot;Venus&quot;,&quot;b&quot;:&quot;Bumi&quot;,&quot;c&quot;:&quot;Merkurius&quot;,&quot;d&quot;:&quot;Mars&quot;,&quot;k&quot;:&quot;c&quot;,&quot;points&quot;:10}]"
   materi-file="" student-id="" student-name="" student-nis="" student-absen=""
   student-kelas="" pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai
   otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke
-  spreadsheet." label-mulai="▶️ Mulai Latihan" >
+  spreadsheet." label-mulai="▶️ Mulai Latihan"  soal-file-url="soal-contoh.json"
+  _pesan="Gagal memuat file soal: HTTP 404">
     <!--  soal-file-url="soal-contoh.json"  -->
   </latihan-kuis>

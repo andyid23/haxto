@@ -3,7 +3,7 @@
   <title>haxto</title>
   <link href="https://localhost:3000/sites/haxto/" rel="self" />
   <subtitle></subtitle>
-  <updated>2026-08-26T07:45:10.000Z</updated>
+  <updated>2026-08-26T09:36:49.000Z</updated>
   <author>
       <name></name>
   </author>
@@ -418,7 +418,7 @@ We&apos;ve got a ton of blocks that are easy to use and get a lot done with litt
   <entry>
     <title>New Page</title>
     <id>item-ba9170fc-d0c5-49c4-bb1b-327ff46aa871</id>
-    <updated>2026-08-26T09:36:49.000Z</updated>
+    <updated>2026-08-26T09:43:00.000Z</updated>
     <published>2026-08-26T05:22:47.000Z</published>
     <summary>soal latihan
 
@@ -434,7 +434,7 @@ We&apos;ve got a ton of blocks that are easy to use and get a lot done with litt
 
 </p>
 <p></p>
-<latihan-kuis duration="300" judul-materi="Materi Pembelajaran" teks-materi="Baca materi di bawah ini dengan saksama sebelum mengerjakan kuis. Waktu pengerjaan kuis dibatasi oleh timer; saat waktu habis, kuis akan dikunci dan nilai otomatis terkirim." materi-file="" cover-image="" judul-kuis="Evaluasi Kuis Interaktif" student-id="STD-65108053" student-name="Andy Yulianto" student-nis="234" student-absen="2" student-kelas="Your Teacher" kd-materi="" pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai Latihan" apps-script-url="https://script.google.com/macros/s/AKfycby2DIuM6ZN8FfkID9TjIVLICAmRa9ogfsuD4BDoCvEItZ2YG6-_gNr-f_mKroUCnalZ/exec" spreadsheet-url="https://docs.google.com/spreadsheets/d/1RlGyoqJXoM0B8-cwnXjy83XPowpF_9EFbImKywvQQgM/edit?usp=sharing"   _mulai _selesai _skor="100"></latihan-kuis>
+<latihan-kuis duration="300" judul-materi="Materi Pembelajaran" teks-materi="Baca materi di bawah ini dengan saksama sebelum mengerjakan kuis. Waktu pengerjaan kuis dibatasi oleh timer; saat waktu habis, kuis akan dikunci dan nilai otomatis terkirim." materi-file="" cover-image="" judul-kuis="Evaluasi Kuis Interaktif" student-id="STD-65108053" student-name="Andy Yulianto" student-nis="234" student-absen="2" student-kelas="Your Teacher" kd-materi="" pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai Latihan" apps-script-url="https://script.google.com/macros/s/AKfycby2DIuM6ZN8FfkID9TjIVLICAmRa9ogfsuD4BDoCvEItZ2YG6-_gNr-f_mKroUCnalZ/exec" spreadsheet-url="https://docs.google.com/spreadsheets/d/1RlGyoqJXoM0B8-cwnXjy83XPowpF_9EFbImKywvQQgM/edit?usp=sharing" _mulai="" _selesai="" _skor="100"  ></latihan-kuis>
 <p></p>
 <div class="petunjuk">
    <h2>📘 Cara Memasukkan Nilai ke Google Spreadsheet</h2>
@@ -481,7 +481,7 @@ menampilkan kartu "Nilai terkirim" + skor.</li>
   <input class="gas" readonly="" value="https://script.google.com/macros/s/AKfycbwEXAMPLE1234567890/exec" id="gasUrl">
   <button>📋 Salin URL GAS</button>
 </div>
-<latihan-kuis id="latihan" apps-script-url="https://script.google.com/macros/s/AKfycby2DIuM6ZN8FfkID9TjIVLICAmRa9ogfsuD4BDoCvEItZ2YG6-_gNr-f_mKroUCnalZ/exec" spreadsheet-url="https://docs.google.com/spreadsheets/d/1RlGyoqJXoM0B8-cwnXjy83XPowpF_9EFbImKywvQQgM/edit?usp=sharing" kd-materi="bab2" show-sheet-link duration="30" judul-materi="Bab 2: Logika &amp; Algoritma" teks-materi="Baca materi berikut sebelum mengerjakan kuis. Waktu pengerjaan dibatasi timer; saat waktu habis, kuis dikunci dan nilai otomatis terkirim ke Spreadsheet." cover-image="" judul-kuis="Kuis Formatif Bab 2" questions="[{&quot;q&quot;:&quot;Apa ibu kota Indonesia?&quot;,&quot;a&quot;:&quot;Bandung&quot;,&quot;b&quot;:&quot;Jakarta&quot;,&quot;c&quot;:&quot;Surabaya&quot;,&quot;d&quot;:&quot;Medan&quot;,&quot;k&quot;:&quot;b&quot;,&quot;points&quot;:10},{&quot;q&quot;:&quot;Berapa 7 × 8?&quot;,&quot;a&quot;:&quot;54&quot;,&quot;b&quot;:&quot;56&quot;,&quot;c&quot;:&quot;58&quot;,&quot;d&quot;:&quot;60&quot;,&quot;k&quot;:&quot;b&quot;,&quot;points&quot;:10},{&quot;q&quot;:&quot;Planet terdekat Matahari?&quot;,&quot;a&quot;:&quot;Venus&quot;,&quot;b&quot;:&quot;Bumi&quot;,&quot;c&quot;:&quot;Merkurius&quot;,&quot;d&quot;:&quot;Mars&quot;,&quot;k&quot;:&quot;c&quot;,&quot;points&quot;:10}]"  materi-file="" student-id="" student-name="" student-nis="" student-absen="" student-kelas="" pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai Latihan" >
+<latihan-kuis id="latihan" apps-script-url="https://script.google.com/macros/s/AKfycby2DIuM6ZN8FfkID9TjIVLICAmRa9ogfsuD4BDoCvEItZ2YG6-_gNr-f_mKroUCnalZ/exec" spreadsheet-url="https://docs.google.com/spreadsheets/d/1RlGyoqJXoM0B8-cwnXjy83XPowpF_9EFbImKywvQQgM/edit?usp=sharing" kd-materi="bab2" show-sheet-link duration="30" judul-materi="Bab 2: Logika &amp; Algoritma" teks-materi="Baca materi berikut sebelum mengerjakan kuis. Waktu pengerjaan dibatasi timer; saat waktu habis, kuis dikunci dan nilai otomatis terkirim ke Spreadsheet." cover-image="" judul-kuis="Kuis Formatif Bab 2" questions="[{&quot;q&quot;:&quot;Apa ibu kota Indonesia?&quot;,&quot;a&quot;:&quot;Bandung&quot;,&quot;b&quot;:&quot;Jakarta&quot;,&quot;c&quot;:&quot;Surabaya&quot;,&quot;d&quot;:&quot;Medan&quot;,&quot;k&quot;:&quot;b&quot;,&quot;points&quot;:10},{&quot;q&quot;:&quot;Berapa 7 × 8?&quot;,&quot;a&quot;:&quot;54&quot;,&quot;b&quot;:&quot;56&quot;,&quot;c&quot;:&quot;58&quot;,&quot;d&quot;:&quot;60&quot;,&quot;k&quot;:&quot;b&quot;,&quot;points&quot;:10},{&quot;q&quot;:&quot;Planet terdekat Matahari?&quot;,&quot;a&quot;:&quot;Venus&quot;,&quot;b&quot;:&quot;Bumi&quot;,&quot;c&quot;:&quot;Merkurius&quot;,&quot;d&quot;:&quot;Mars&quot;,&quot;k&quot;:&quot;c&quot;,&quot;points&quot;:10}]" materi-file="" student-id="" student-name="" student-nis="" student-absen="" student-kelas="" pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai Latihan"  soal-file-url="soal-contoh.json" _pesan="Gagal memuat file soal: HTTP 404">
   <!--  soal-file-url="soal-contoh.json"  -->
 </latihan-kuis>
  ]]>
