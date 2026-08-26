@@ -10,7 +10,7 @@ description: |+
 
 metadata:
   created: 1787721767
-  updated: 1787737380
+  updated: 1787737635
   images: []
   videos: []
   published: true
@@ -39,7 +39,7 @@ content: >
   Kuis dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai
   Anda sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai Latihan"
   apps-script-url="https://script.google.com/macros/s/AKfycby2DIuM6ZN8FfkID9TjIVLICAmRa9ogfsuD4BDoCvEItZ2YG6-_gNr-f_mKroUCnalZ/exec"
-  spreadsheet-url="https://docs.google.com/spreadsheets/d/1RlGyoqJXoM0B8-cwnXjy83XPowpF_9EFbImKywvQQgM/edit?usp=sharing"
+  spreadsheet-url="https://docs.google.com/spreadsheets/d/1RlGyoqJXoM0B8-cwnXjy83XPowpF_9EFbImKywvQQgM/edit"
   _mulai="" _selesai="" _skor="100"  ></latihan-kuis>
 
   <p></p>
@@ -92,7 +92,7 @@ content: >
 
   <latihan-kuis id="latihan"
   apps-script-url="https://script.google.com/macros/s/AKfycby2DIuM6ZN8FfkID9TjIVLICAmRa9ogfsuD4BDoCvEItZ2YG6-_gNr-f_mKroUCnalZ/exec"
-  spreadsheet-url="https://docs.google.com/spreadsheets/d/1RlGyoqJXoM0B8-cwnXjy83XPowpF_9EFbImKywvQQgM/edit?usp=sharing"
+  spreadsheet-url="https://docs.google.com/spreadsheets/d/1RlGyoqJXoM0B8-cwnXjy83XPowpF_9EFbImKywvQQgM/edit"
   kd-materi="bab2" show-sheet-link duration="30" judul-materi="Bab 2: Logika
   &amp; Algoritma" teks-materi="Baca materi berikut sebelum mengerjakan kuis.
   Waktu pengerjaan dibatasi timer; saat waktu habis, kuis dikunci dan nilai
@@ -106,7 +106,7 @@ content: >
   materi-file="" student-id="" student-name="" student-nis="" student-absen=""
   student-kelas="" pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai
   otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke
-  spreadsheet." label-mulai="▶️ Mulai Latihan"  soal-file-url="soal-contoh.json"
-  _pesan="Gagal memuat file soal: HTTP 404">
+  spreadsheet." label-mulai="▶️ Mulai Latihan" soal-file-url="soal-contoh.json"
+  _pesan="Gagal memuat file soal: HTTP 404" >
     <!--  soal-file-url="soal-contoh.json"  -->
   </latihan-kuis>
