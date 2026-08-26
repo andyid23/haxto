@@ -6,7 +6,7 @@
     <description></description>
     <copyright>Copyright (C) 2026 https://localhost:3000/sites/haxto</copyright>
     <language>en-us</language>
-    <lastBuildDate>Mon, 24 Aug 2026 01:07:29 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 26 Aug 2026 05:29:17 GMT</lastBuildDate>
     <generator>HAXcms NodeJS</generator>
     <atom:link href="https://localhost:3000/sites/haxto/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
@@ -34,7 +34,7 @@
     <item>
       <title>New Page</title>
       <link>https://localhost:3000/sites/haxto/new-page</link>
-      <description>soal latihan</description>
+      <description>soal latihan duration=&quot;600&quot; judul-materi=&quot;Bab 2: Logika &amp;#38; Algoritma&quot; teks-materi=&quot;Baca materi, lalu kerjakan kuis. Skor otomatis ke Spreadsheet.&quot; judul-kuis=&quot;Kuis Formatif Bab 2&quot; questions=&apos;[ {&quot;q&quot;:&quot;Apa ibu kota Indonesia?&quot;,&quot;a&quot;:&quot;Bandung&quot;,&quot;b&quot;:&quot;Jakarta&quot;,&quot;c&quot;:&quot;Surabaya&quot;,&quot;d&quot;:&quot;Medan&quot;,&quot;k&quot;:&quot;b&quot;,&quot;points&quot;:10}, {&quot;q&quot;:&quot;Berapa 7 &amp;#215; 8?&quot;,&quot;a&quot;:&quot;54&quot;,&quot;b&quot;:&quot;56&quot;,&quot;c&quot;:&quot;58&quot;,&quot;d&quot;:&quot;60&quot;,&quot;k&quot;:&quot;b&quot;,&quot;points&quot;:10}, {&quot;q&quot;:&quot;Planet terdekat Matahari?&quot;,&quot;a&quot;:&quot;Venus&quot;,&quot;b&quot;:&quot;Bumi&quot;,&quot;c&quot;:&quot;Merkurius&quot;,&quot;d&quot;:&quot;Mars&quot;,&quot;k&quot;:&quot;c&quot;,&quot;points&quot;:10} ]&apos;&amp;#62;</description>
       <guid>https://localhost:3000/sites/haxto/new-page</guid>
       <pubDate>Wed, 26 Aug 2026 05:22:47 GMT</pubDate>
     </item>
