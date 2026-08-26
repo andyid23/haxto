@@ -10,7 +10,7 @@ description: |+
 
 metadata:
   created: 1787721767
-  updated: 1787730140
+  updated: 1787730187
   images: []
   videos: []
   published: true
@@ -22,10 +22,6 @@ content: >
   <p>soal latihan</p>
 
   <p></p>
-
-  <quiz-user-auth id="auth"
-  apps-script-url="https://script.google.com/macros/s/AKfycby2DIuM6ZN8FfkID9TjIVLICAmRa9ogfsuD4BDoCvEItZ2YG6-_gNr-f_mKroUCnalZ/exec"
-  auto-login _student-id="STD-65108053"></quiz-user-auth>
 
   <p></p>
 
@@ -46,9 +42,9 @@ content: >
   judul-kuis="Evaluasi Kuis Interaktif" student-id="" student-name=""
   student-nis="" student-absen="" student-kelas="" pesan-waktu-habis="⏰ Waktu
   habis! Kuis dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat!
-  Nilai Anda sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai Latihan" 
-  kd-materi="" >duration="600"
-    <!--  10 menit; siswa bisa selesai lebih awal  -->judul-materi="Bab 2: Logika &#38; Algoritma" teks-materi="Baca materi, lalu kerjakan
+  Nilai Anda sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai Latihan"
+  kd-materi=""  >duration="600"
+    <!--   10 menit; siswa bisa selesai lebih awal   -->judul-materi="Bab 2: Logika &#38; Algoritma" teks-materi="Baca materi, lalu kerjakan
     kuis. Skor otomatis ke Spreadsheet." judul-kuis="Kuis Formatif Bab 2" questions='[
     {"q":"Apa ibu kota Indonesia?","a":"Bandung","b":"Jakarta","c":"Surabaya","d":"Medan","k":"b","points":10},
     {"q":"Berapa 7 &#215; 8?","a":"54","b":"56","c":"58","d":"60","k":"b","points":10},
