@@ -3445,6 +3445,17 @@
             },
             {
               "kind": "field",
+              "name": "showSheetLink",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "show-sheet-link",
+              "reflects": true
+            },
+            {
+              "kind": "field",
               "name": "_mulai",
               "privacy": "public",
               "type": {
@@ -3472,6 +3483,16 @@
               },
               "default": "null",
               "attribute": "_skor"
+            },
+            {
+              "kind": "field",
+              "name": "_habisWaktu",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "_habisWaktu"
             },
             {
               "kind": "field",
@@ -3628,6 +3649,14 @@
               "fieldName": "labelMulai"
             },
             {
+              "name": "show-sheet-link",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "showSheetLink"
+            },
+            {
               "name": "_mulai",
               "type": {
                 "text": "boolean"
@@ -3650,6 +3679,14 @@
               },
               "default": "null",
               "fieldName": "_skor"
+            },
+            {
+              "name": "_habisWaktu",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "_habisWaktu"
             }
           ],
           "mixins": [

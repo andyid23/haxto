@@ -44,9 +44,11 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
       pesanWaktuHabis: { type: String, attribute: "pesan-waktu-habis", reflect: true },
       pesanNilaiTerkirim: { type: String, attribute: "pesan-nilai-terkirim", reflect: true },
       labelMulai: { type: String, attribute: "label-mulai", reflect: true },
+      showSheetLink: { type: Boolean, attribute: "show-sheet-link", reflect: true },
       _mulai: { state: true },
       _selesai: { state: true },
       _skor: { state: true },
+      _habisWaktu: { state: true },
     };
   }
 
@@ -71,9 +73,11 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     this.pesanWaktuHabis = "⏰ Waktu habis! Kuis dikunci & dinilai otomatis.";
     this.pesanNilaiTerkirim = "🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet.";
     this.labelMulai = "▶️ Mulai Latihan";
+    this.showSheetLink = false;
     this._mulai = false;
     this._selesai = false;
     this._skor = null;
+    this._habisWaktu = false;
     this.t = {
       ...this.t,
       bacaMateri: "🔗 Buka URL Materi",
@@ -105,11 +109,13 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
       kuis._selesaiKuis();
     }
     this._selesai = true;
+    this._habisWaktu = true;
   }
 
   _onKuisLog(e) {
     if (e.detail && e.detail.payload && typeof e.detail.payload.score === "number") {
       this._skor = e.detail.payload.score;
+      this._selesai = true;
     }
   }
 
@@ -155,12 +161,12 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
         }
         .btn-mulai:hover { background: var(--ddd-theme-accent, #7a5fc4); }
         .selesai-card {
-          text-align: center; border: 1px solid var(--ddd-theme-success, #2e7d32);
+          text-align: center; border: 1px solid var(--ddd-theme-success);
           border-radius: var(--ddd-radius-lg); padding: var(--ddd-spacing-8);
-          background: var(--ddd-theme-success-light, #e8f5e9);
+          background: var(--ddd-theme-default-surface);
         }
-        .selesai-card .waktu { font-size: var(--ddd-font-size-l); color: var(--ddd-theme-error, #c62828); margin-bottom: var(--ddd-spacing-2); }
-        .selesai-card .kirim { font-size: var(--ddd-font-size-xl); font-weight: var(--ddd-font-weight-bold); color: var(--ddd-theme-success-text, #1b5e20); }
+        .selesai-card .waktu { font-size: var(--ddd-font-size-l); color: var(--ddd-theme-error); margin-bottom: var(--ddd-spacing-2); }
+        .selesai-card .kirim { font-size: var(--ddd-font-size-xl); font-weight: var(--ddd-font-weight-bold); color: var(--ddd-theme-default-text); }
         .selesai-card .skor { margin: var(--ddd-spacing-4) 0; font-size: var(--ddd-font-size-l); }
         .selesai-card a {
           display: inline-block; margin-top: var(--ddd-spacing-4); padding: var(--ddd-spacing-3) var(--ddd-spacing-5);
@@ -176,10 +182,10 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
       return html`
         <div class="wrap">
           <div class="selesai-card" role="status">
-            <div class="waktu">${this.pesanWaktuHabis}</div>
+            ${this._habisWaktu ? html`<div class="waktu">${this.pesanWaktuHabis}</div>` : nothing}
             <div class="kirim">${this.pesanNilaiTerkirim}</div>
             ${this._skor != null ? html`<div class="skor">Skor Anda: <strong>${this._skor}%</strong></div>` : nothing}
-            ${this.spreadsheetUrl
+            ${this.showSheetLink && this.spreadsheetUrl
               ? html`<a href="${this.spreadsheetUrl}" target="_blank" rel="noopener">📊 Buka Spreadsheet Nilai</a>`
               : nothing}
           </div>
@@ -300,6 +306,12 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
             property: "labelMulai",
             title: "Teks Tombol Mulai",
             inputMethod: "textfield",
+          },
+          {
+            property: "showSheetLink",
+            title: "Tampilkan Link Spreadsheet",
+            inputMethod: "boolean",
+            description: "PERINGATAN: siswa bisa lihat isi sheet. Default OFF. Hanya aktifkan untuk guru/view aman.",
           },
         ],
       },
