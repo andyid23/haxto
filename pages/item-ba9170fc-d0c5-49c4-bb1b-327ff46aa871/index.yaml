@@ -10,7 +10,7 @@ description: |+
 
 metadata:
   created: 1787721767
-  updated: 1787730187
+  updated: 1787730241
   images: []
   videos: []
   published: true
@@ -25,9 +25,15 @@ content: >
 
   <p></p>
 
-  <p></p>
-
-  <p></p>
+  <latihan-kuis   duration="300" judul-materi="Materi Pembelajaran"
+  teks-materi="Baca materi di bawah ini dengan saksama sebelum mengerjakan kuis.
+  Waktu pengerjaan kuis dibatasi oleh timer; saat waktu habis, kuis akan dikunci
+  dan nilai otomatis terkirim."  materi-file="" cover-image=""
+  judul-kuis="Evaluasi Kuis Interaktif" student-id="" student-name=""
+  student-nis="" student-absen="" student-kelas="" kd-materi=""
+  pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai otomatis."
+  pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet."
+  label-mulai="▶️ Mulai Latihan" ></latihan-kuis>
 
   <p></p>
 
@@ -44,7 +50,7 @@ content: >
   habis! Kuis dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat!
   Nilai Anda sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai Latihan"
   kd-materi=""  >duration="600"
-    <!--   10 menit; siswa bisa selesai lebih awal   -->judul-materi="Bab 2: Logika &#38; Algoritma" teks-materi="Baca materi, lalu kerjakan
+    <!--  10 menit; siswa bisa selesai lebih awal  -->judul-materi="Bab 2: Logika &#38; Algoritma" teks-materi="Baca materi, lalu kerjakan
     kuis. Skor otomatis ke Spreadsheet." judul-kuis="Kuis Formatif Bab 2" questions='[
     {"q":"Apa ibu kota Indonesia?","a":"Bandung","b":"Jakarta","c":"Surabaya","d":"Medan","k":"b","points":10},
     {"q":"Berapa 7 &#215; 8?","a":"54","b":"56","c":"58","d":"60","k":"b","points":10},
