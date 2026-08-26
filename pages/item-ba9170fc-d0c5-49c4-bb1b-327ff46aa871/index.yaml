@@ -2,13 +2,22 @@ id: item-ba9170fc-d0c5-49c4-bb1b-327ff46aa871
 indent: 0
 location: pages/item-ba9170fc-d0c5-49c4-bb1b-327ff46aa871/index.yaml
 slug: new-page
-order: 1
+order: 2
 parent: null
 title: New Page
-description: ''
+description: |+
+  soal latihan
+
 metadata:
   created: 1787721767
-  updated: 1787721767
+  updated: 1787722157
   images: []
   videos: []
-content: <p></p>
+  published: true
+  hideInMenu: false
+  locked: false
+  readtime: 1
+content: |
+
+  <p>soal latihan</p>
+  <p></p>

@@ -14,7 +14,7 @@
       "name": "haxto",
       "domain": null,
       "created": 1787457359,
-      "updated": 1787533649
+      "updated": 1787722157
     },
     "theme": {
       "element": "custom-haxkuis-theme",
@@ -139,15 +139,19 @@
       "indent": 0,
       "location": "pages/item-ba9170fc-d0c5-49c4-bb1b-327ff46aa871/index.html",
       "slug": "new-page",
-      "order": 1,
+      "order": 2,
       "parent": null,
       "title": "New Page",
-      "description": "",
+      "description": "soal latihan\n\n",
       "metadata": {
         "created": 1787721767,
-        "updated": 1787721767,
+        "updated": 1787722157,
         "images": [],
-        "videos": []
+        "videos": [],
+        "published": true,
+        "hideInMenu": false,
+        "locked": false,
+        "readtime": 1
       }
     }
   ]

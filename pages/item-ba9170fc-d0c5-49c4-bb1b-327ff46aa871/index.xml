@@ -4,17 +4,26 @@
 <indent>0</indent>
 <location>pages/item-ba9170fc-d0c5-49c4-bb1b-327ff46aa871/index.xml</location>
 <slug>new-page</slug>
-<order>1</order>
+<order>2</order>
 <parent></parent>
 <title>New Page</title>
-<description></description>
+<description>soal latihan
+
+</description>
 <metadata>
 <created>1787721767</created>
-<updated>1787721767</updated>
+<updated>1787722157</updated>
 <images>
 </images>
 <videos>
 </videos>
+<published>true</published>
+<hideInMenu>false</hideInMenu>
+<locked>false</locked>
+<readtime>1</readtime>
 </metadata>
-<content><![CDATA[<p></p>]]></content>
+<content><![CDATA[
+<p>soal latihan</p>
+<p></p>
+]]></content>
 </item>
