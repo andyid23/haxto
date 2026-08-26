@@ -745,6 +745,16 @@
             },
             {
               "kind": "field",
+              "name": "kategori",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "kategori",
+              "reflects": true
+            },
+            {
+              "kind": "field",
               "name": "_draftNilai",
               "privacy": "public",
               "attribute": "_draftNilai"
@@ -788,6 +798,13 @@
               },
               "default": "\"Pertemuan 1\"",
               "fieldName": "kdMateri"
+            },
+            {
+              "name": "kategori",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "kategori"
             },
             {
               "name": "mode",
@@ -2089,6 +2106,17 @@
             },
             {
               "kind": "field",
+              "name": "kategori",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"sumatif_lm\"",
+              "attribute": "kategori",
+              "reflects": true
+            },
+            {
+              "kind": "field",
               "name": "mode",
               "privacy": "public",
               "type": {
@@ -2735,6 +2763,14 @@
               "fieldName": "kdMateri"
             },
             {
+              "name": "kategori",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"sumatif_lm\"",
+              "fieldName": "kategori"
+            },
+            {
               "name": "mode",
               "type": {
                 "text": "string"
@@ -3224,6 +3260,28 @@
             },
             {
               "kind": "method",
+              "name": "_onAuthLogin",
+              "parameters": [
+                {
+                  "name": "e"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_onAuthLogout"
+            },
+            {
+              "kind": "method",
+              "name": "_muatSoalDariFile",
+              "parameters": [
+                {
+                  "name": "url"
+                }
+              ]
+            },
+            {
+              "kind": "method",
               "name": "_onWaktuHabis"
             },
             {
@@ -3412,6 +3470,17 @@
             },
             {
               "kind": "field",
+              "name": "kdMateri",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "kd-materi",
+              "reflects": true
+            },
+            {
+              "kind": "field",
               "name": "pesanWaktuHabis",
               "privacy": "public",
               "type": {
@@ -3456,6 +3525,17 @@
             },
             {
               "kind": "field",
+              "name": "soalFileUrl",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "soal-file-url",
+              "reflects": true
+            },
+            {
+              "kind": "field",
               "name": "_mulai",
               "privacy": "public",
               "type": {
@@ -3493,6 +3573,16 @@
               },
               "default": "false",
               "attribute": "_habisWaktu"
+            },
+            {
+              "kind": "field",
+              "name": "_pesan",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "_pesan"
             },
             {
               "kind": "field",
@@ -3625,6 +3715,14 @@
               "fieldName": "studentKelas"
             },
             {
+              "name": "kd-materi",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "kdMateri"
+            },
+            {
               "name": "pesan-waktu-habis",
               "type": {
                 "text": "string"
@@ -3657,6 +3755,14 @@
               "fieldName": "showSheetLink"
             },
             {
+              "name": "soal-file-url",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "soalFileUrl"
+            },
+            {
               "name": "_mulai",
               "type": {
                 "text": "boolean"
@@ -3687,6 +3793,14 @@
               },
               "default": "false",
               "fieldName": "_habisWaktu"
+            },
+            {
+              "name": "_pesan",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "_pesan"
             }
           ],
           "mixins": [

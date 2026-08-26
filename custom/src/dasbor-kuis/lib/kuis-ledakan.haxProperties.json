@@ -47,6 +47,17 @@
                 "inputMethod": "textfield"
             },
             {
+                "property": "kategori",
+                "title": "Kategori Kuis",
+                "description": "sumatif_lm → skor masuk rapor (db_asesmen); formatif → progres saja, tidak masuk rapor (db_aktivitas).",
+                "inputMethod": "select",
+                "options": {
+                    "sumatif_lm": "Sumatif (Rapor LM)",
+                    "formatif": "Formatif (Progres)"
+                },
+                "default": "sumatif_lm"
+            },
+            {
                 "property": "mode",
                 "title": "Mode Tampilan",
                 "description": "Mode guru menampilkan tombol ulang; mode siswa fokus mengerjakan.",

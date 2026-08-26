@@ -3,6 +3,7 @@ import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
 import { I18NMixin } from "@haxtheweb/i18n-manager/lib/I18NMixin.js";
 import "./timer-kuis.js";
 import "./kuis-ledakan.js";
+import "./quiz-user-auth.js";
 
 /**
  * `latihan-kuis`
@@ -41,14 +42,17 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
       studentNis: { type: String, attribute: "student-nis", reflect: true },
       studentAbsen: { type: String, attribute: "student-absen", reflect: true },
       studentKelas: { type: String, attribute: "student-kelas", reflect: true },
+      kdMateri: { type: String, attribute: "kd-materi", reflect: true },
       pesanWaktuHabis: { type: String, attribute: "pesan-waktu-habis", reflect: true },
       pesanNilaiTerkirim: { type: String, attribute: "pesan-nilai-terkirim", reflect: true },
       labelMulai: { type: String, attribute: "label-mulai", reflect: true },
       showSheetLink: { type: Boolean, attribute: "show-sheet-link", reflect: true },
+      soalFileUrl: { type: String, attribute: "soal-file-url", reflect: true },
       _mulai: { state: true },
       _selesai: { state: true },
       _skor: { state: true },
       _habisWaktu: { state: true },
+      _pesan: { state: true },
     };
   }
 
@@ -70,14 +74,19 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     this.studentNis = "";
     this.studentAbsen = "";
     this.studentKelas = "";
+    this.kdMateri = "";
     this.pesanWaktuHabis = "⏰ Waktu habis! Kuis dikunci & dinilai otomatis.";
     this.pesanNilaiTerkirim = "🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet.";
     this.labelMulai = "▶️ Mulai Latihan";
     this.showSheetLink = false;
+    this.soalFileUrl = "";
     this._mulai = false;
     this._selesai = false;
     this._skor = null;
     this._habisWaktu = false;
+    this._pesan = "";
+    this._onAuthLogin = this._onAuthLogin.bind(this);
+    this._onAuthLogout = this._onAuthLogout.bind(this);
     this.t = {
       ...this.t,
       bacaMateri: "🔗 Buka URL Materi",
@@ -97,10 +106,53 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
         store.elementList[LatihanKuis.tag] = LatihanKuis.haxProperties;
       }
     }
+    // Sinkronkan identitas siswa dari <quiz-user-auth> (event global) ke properti
+    // agar nilai terikat Student ID sebelum kuis dimulai.
+    globalThis.addEventListener("quiz-user-login", this._onAuthLogin);
+    globalThis.addEventListener("quiz-user-logout", this._onAuthLogout);
   }
 
   disconnectedCallback() {
+    globalThis.removeEventListener("quiz-user-login", this._onAuthLogin);
+    globalThis.removeEventListener("quiz-user-logout", this._onAuthLogout);
     super.disconnectedCallback();
+  }
+
+  _onAuthLogin(e) {
+    const d = (e && e.detail) || {};
+    this.studentId = d.studentId || "";
+    this.studentName = d.nama || "";
+    this.studentNis = d.nis || "";
+    this.studentAbsen = d.absen || "";
+    this.studentKelas = d.kelas || "";
+  }
+
+  _onAuthLogout() {
+    this.studentId = "";
+    this.studentName = "";
+    this.studentNis = "";
+    this.studentAbsen = "";
+    this.studentKelas = "";
+  }
+
+  updated(changed) {
+    super.updated(changed);
+    if (changed.has("soalFileUrl") && this.soalFileUrl) {
+      this._muatSoalDariFile(this.soalFileUrl);
+    }
+  }
+
+  async _muatSoalDariFile(url) {
+    try {
+      const r = await fetch(url);
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      const d = await r.json();
+      if (!Array.isArray(d)) throw new Error("Bukan array JSON");
+      this.questions = d;
+      this._pesan = "";
+    } catch (e) {
+      this._pesan = "Gagal memuat file soal: " + e.message;
+    }
   }
 
   _onWaktuHabis() {
@@ -120,11 +172,17 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
   }
 
   async _mulaiLatihan() {
+    if (!this.studentId) {
+      // H1: kunci Mulai bila belum login — jangan buka kuis tanpa identitas.
+      this.requestUpdate();
+      return;
+    }
     this._mulai = true;
     await this.updateComplete;
     const kuis = this.shadowRoot && this.shadowRoot.querySelector("kuis-ledakan");
     const timer = this.shadowRoot && this.shadowRoot.querySelector("timer-kuis");
-    if (kuis && typeof kuis._startQuiz === "function") kuis._startQuiz();
+    // H1: pakai _onStartClick (cek login di kuis-ledakan) bukan _startQuiz langsung.
+    if (kuis && typeof kuis._onStartClick === "function") kuis._onStartClick();
     if (timer && typeof timer.start === "function") timer.start();
   }
 
@@ -160,6 +218,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
           font-family: var(--ddd-font-primary, system-ui, sans-serif);
         }
         .btn-mulai:hover { background: var(--ddd-theme-accent, #7a5fc4); }
+        .auth-hint { text-align: center; color: var(--ddd-theme-secondary); font-size: var(--ddd-font-size-m); margin: var(--ddd-spacing-3) 0 0; }
         .selesai-card {
           text-align: center; border: 1px solid var(--ddd-theme-success);
           border-radius: var(--ddd-radius-lg); padding: var(--ddd-spacing-8);
@@ -167,11 +226,17 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
         }
         .selesai-card .waktu { font-size: var(--ddd-font-size-l); color: var(--ddd-theme-error); margin-bottom: var(--ddd-spacing-2); }
         .selesai-card .kirim { font-size: var(--ddd-font-size-xl); font-weight: var(--ddd-font-weight-bold); color: var(--ddd-theme-default-text); }
+        .selesai-card .kirim.warn { color: var(--ddd-theme-error); }
         .selesai-card .skor { margin: var(--ddd-spacing-4) 0; font-size: var(--ddd-font-size-l); }
         .selesai-card a {
           display: inline-block; margin-top: var(--ddd-spacing-4); padding: var(--ddd-spacing-3) var(--ddd-spacing-5);
           background: var(--ddd-theme-primary, #6750a4); color: #fff; border-radius: var(--ddd-radius-md);
           text-decoration: none; font-weight: var(--ddd-font-weight-bold);
+        }
+        .err-chip {
+          background: #fef3c7; border: 1px solid #fcd34d; color: #92400e;
+          padding: var(--ddd-spacing-3); border-radius: var(--ddd-radius-md);
+          margin-bottom: var(--ddd-spacing-4);
         }
       `,
     ];
@@ -183,7 +248,9 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
         <div class="wrap">
           <div class="selesai-card" role="status">
             ${this._habisWaktu ? html`<div class="waktu">${this.pesanWaktuHabis}</div>` : nothing}
-            <div class="kirim">${this.pesanNilaiTerkirim}</div>
+            ${this.studentId
+              ? html`<div class="kirim">${this.pesanNilaiTerkirim}</div>`
+              : html`<div class="kirim warn">⚠️ Nilai belum tersimpan karena belum login</div>`}
             ${this._skor != null ? html`<div class="skor">Skor Anda: <strong>${this._skor}%</strong></div>` : nothing}
             ${this.showSheetLink && this.spreadsheetUrl
               ? html`<a href="${this.spreadsheetUrl}" target="_blank" rel="noopener">📊 Buka Spreadsheet Nilai</a>`
@@ -206,8 +273,14 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
         </section>
 
         ${!this._mulai
-          ? html`<button class="btn-mulai" @click="${this._mulaiLatihan}">${this.labelMulai}</button>`
+          ? (this.studentId
+              ? html`<button class="btn-mulai" @click="${this._mulaiLatihan}">${this.labelMulai}</button>`
+              : html`
+                  <quiz-user-auth .appsScriptUrl="${this.appsScriptUrl}"></quiz-user-auth>
+                  <p class="auth-hint">🔐 Silakan login dulu agar nilai tersimpan ke Spreadsheet.</p>
+                `)
           : html`
+              ${this._pesan ? html`<p class="err-chip">${this._pesan}</p>` : nothing}
               <timer-kuis
                 duration="${this.duration}"
                 @timer-kuis-expired="${this._onWaktuHabis}">
@@ -222,7 +295,8 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
                 .studentName="${this.studentName}"
                 .studentNis="${this.studentNis}"
                 .studentAbsen="${this.studentAbsen}"
-                .studentKelas="${this.studentKelas}">
+                .studentKelas="${this.studentKelas}"
+                .kdMateri="${this.kdMateri}">
               </kuis-ledakan>
             `}
       </div>
@@ -254,6 +328,12 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
             title: "URL Spreadsheet Nilai (lihat)",
             inputMethod: "textfield",
             description: "Link Google Spreadsheet berisi rekap nilai siswa",
+          },
+          {
+            property: "kdMateri",
+            title: "Kode Materi (kd-materi)",
+            inputMethod: "textfield",
+            description: "Kode/topik kuis; diteruskan ke <kuis-ledakan> agar rekap per topik tersimpan.",
           },
           {
             property: "duration",
@@ -312,6 +392,18 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
             title: "Tampilkan Link Spreadsheet",
             inputMethod: "boolean",
             description: "PERINGATAN: siswa bisa lihat isi sheet. Default OFF. Hanya aktifkan untuk guru/view aman.",
+          },
+          {
+            property: "questions",
+            title: "Soal (JSON)",
+            inputMethod: "code-editor",
+            description: "Array soal AKM/PG. Format lama {q,a,b,c,k} didukung.",
+          },
+          {
+            property: "soalFileUrl",
+            title: "Upload File Soal (JSON)",
+            inputMethod: "haxupload",
+            description: "File .json soal; otomatis di-parse & menimpa soal inline.",
           },
         ],
       },

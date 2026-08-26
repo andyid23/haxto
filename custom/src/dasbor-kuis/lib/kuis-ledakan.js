@@ -56,6 +56,17 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
             inputMethod: "textfield",
           },
           {
+            property: "kategori",
+            title: "Kategori Kuis",
+            description: "sumatif_lm → skor masuk rapor (db_asesmen); formatif → progres saja, tidak masuk rapor (db_aktivitas).",
+            inputMethod: "select",
+            options: {
+              sumatif_lm: "Sumatif (Rapor LM)",
+              formatif: "Formatif (Progres)",
+            },
+            default: "sumatif_lm",
+          },
+          {
             property: "mode",
             title: "Mode Tampilan",
             description: "Mode guru menampilkan tombol ulang; mode siswa fokus mengerjakan.",
@@ -203,6 +214,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
       judul: { type: String, attribute: "judul", reflect: true },
       appsScriptUrl: { type: String, attribute: "apps-script-url", reflect: true },
       kdMateri: { type: String, attribute: "kd-materi", reflect: true },
+      kategori: { type: String, attribute: "kategori", reflect: true },
       mode: { type: String, attribute: "mode", reflect: true },
       hideConfetti: {
         type: Boolean,
@@ -312,6 +324,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     this.judul = "Evaluasi Kuis Interaktif";
     this.appsScriptUrl = "";
     this.kdMateri = "Pertemuan 1";
+    this.kategori = "sumatif_lm";
     this.mode = "siswa";
     this.hideConfetti = false;
     this.hideAnswers = false;
@@ -1075,7 +1088,9 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
           tipe: "quiz",
           payload: {
             score: totalSkor,
-            jenisKuis: "formatif",
+            jenisKuis: this.kategori,
+            kdMateri: this.kdMateri,
+            kategori: this.kategori,
             metadataKuis: this.judul,
             timestamp: new Date().toISOString(),
           },
@@ -1105,12 +1120,14 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
       type: "quiz",
       description: JSON.stringify({
         score: skor,
-        jenisKuis: "formatif",
+        jenisKuis: this.kategori || "sumatif_lm",
+        kdMateri: this.kdMateri || "",
         metadataKuis: this.judul,
         timestamp,
       }),
       timestamp,
       kdMateri: this.kdMateri || "",
+      kategori: this.kategori || "sumatif_lm",
       id_log: idLog,
     };
     try {

@@ -42,6 +42,7 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
         reflect: true,
       },
       kdMateri: { type: String, attribute: "kd-materi", reflect: true },
+      kategori: { type: String, attribute: "kategori", reflect: true },
       mode: { type: String, attribute: "mode", reflect: true },
       kelas: { type: String, attribute: "kelas", reflect: true },
       studentId: { type: String, attribute: "student-id", reflect: true },
@@ -636,10 +637,15 @@ if (this.mode === "guru" || this.mode === "dosen") {
 
   logActivity(tipe_aktivitas, payload_data = {}, id_log) {
     const idLog = id_log || this._ambilIdLogStabil(tipe_aktivitas, payload_data);
+    // kdMateri & kategori diutamakan dari payload event (diisi kuis-ledakan),
+    // fallback ke properti host agar komponen lain tetap berfungsi.
+    const kdMateri = (payload_data && payload_data.kdMateri) || this.kdMateri || "";
+    const kategori = (payload_data && payload_data.kategori) || this.kategori || "sumatif_lm";
     const newLog = {
       id_log: idLog,
       student_id: this.studentId,
-      id_materi: this.kdMateri,
+      id_materi: kdMateri,
+      kategori: kategori,
       tipe_aktivitas: tipe_aktivitas,
       payload_data: JSON.stringify(payload_data),
       timestamp: new Date().toISOString(),
@@ -716,6 +722,7 @@ if (this.mode === "guru" || this.mode === "dosen") {
             description: log.payload_data,
             timestamp: log.timestamp,
             kdMateri: log.id_materi,
+            kategori: log.kategori || "sumatif_lm",
             id_log: log.id_log,
           }),
         ),
