@@ -14,7 +14,7 @@
       "name": "haxto",
       "domain": null,
       "created": 1787457359,
-      "updated": 1787727371
+      "updated": 1787728492
     },
     "theme": {
       "element": "custom-haxkuis-theme",
@@ -31,13 +31,13 @@
       "indent": 0,
       "location": "pages/item-e25c1b60-c8b7-4360-b3e8-3533c93c3a92/index.html",
       "slug": "welcome",
-      "order": 2,
+      "order": 3,
       "parent": null,
       "title": "Selamat Datang Pada Ulangan",
       "description": "Welcome to your new HAX site! Click edit on the top bar to get started\nWhat can I do?\nWe've got a ton of blocks that are easy to use and get a lot done with little effort, so much in fact we made a l",
       "metadata": {
         "created": 1787457359,
-        "updated": 1787524879,
+        "updated": 1787728492,
         "theme": {
           "element": "haxma-theme",
           "path": "@haxtheweb/haxma-theme/haxma-theme.js",
