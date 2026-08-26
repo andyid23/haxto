@@ -12,7 +12,7 @@
 </description>
 <metadata>
 <created>1787721767</created>
-<updated>1787752157</updated>
+<updated>1787752216</updated>
 <images>
 </images>
 <videos>
@@ -87,10 +87,11 @@ menampilkan kartu "Nilai terkirim" + skor.</li>
 
   </ol>
  <strong>URL Apps Script (contoh — ganti dengan milik Anda):</strong>
-<latihan-kuis   duration="300" judul-materi="Materi Pembelajaran" teks-materi="Baca materi di bawah ini dengan saksama sebelum mengerjakan kuis. Waktu pengerjaan kuis dibatasi oleh timer; saat waktu habis, kuis akan dikunci dan nilai otomatis terkirim."  materi-file="" cover-image="" judul-kuis="Evaluasi Kuis Interaktif" student-id="STD-65108053" student-name="Andy" student-nis="234" student-absen="1" student-kelas="XI-1" kd-materi="" pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai Latihan" ></latihan-kuis>
 
-  <input class="gas" readonly="" value="https://script.google.com/macros/s/AKfycbwEXAMPLE1234567890/exec" id="gasUrl">
-  <button>📋 Salin URL GAS</button>
+  <latihan-kuis duration="300" judul-materi="Materi Pembelajaran" teks-materi="Baca materi di bawah ini dengan saksama sebelum mengerjakan kuis. Waktu pengerjaan kuis dibatasi oleh timer; saat waktu habis, kuis akan dikunci dan nilai otomatis terkirim." materi-file="" cover-image="" judul-kuis="Evaluasi Kuis Interaktif" student-id="STD-65108053" student-name="Andy" student-nis="234" student-absen="1" student-kelas="XI-1" kd-materi="" pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai Latihan"    ></latihan-kuis>
+
+    <input class="gas" readonly="" value="https://script.google.com/macros/s/AKfycbyuprudZkCq_YCQ-CqqD_huzndsbA6zHsg_ICfqPnlB97dhcrm1xJjGxJ3u4Jp8DjJQ/exec" id="gasUrl">
+    <button>📋 Salin URL GAS</button>
 </div>
 <latihan-kuis id="latihan2" apps-script-url="https://script.google.com/macros/s/AKfycbyuprudZkCq_YCQ-CqqD_huzndsbA6zHsg_ICfqPnlB97dhcrm1xJjGxJ3u4Jp8DjJQ/exec" spreadsheet-url="https://docs.google.com/spreadsheets/d/ISI_ID_SPREADSHEET_ANDA/edit" kd-materi="bab2" show-sheet-link duration="30" judul-materi="Bab 2: Logika &amp; Algoritma" teks-materi="Baca materi berikut sebelum mengerjakan kuis. Waktu pengerjaan dibatasi timer; saat waktu habis, kuis dikunci dan nilai otomatis terkirim ke Spreadsheet." cover-image="" judul-kuis="Kuis Formatif Bab 2" soal-file-url="soal-contoh.json" materi-file="" student-id="STD-65108053" student-name="Andy" student-nis="234" student-absen="1" student-kelas="XI-1" pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai Latihan" _pesan="Gagal memuat file soal: HTTP 404" _mulai="" >
   <!--  soal-file-url="soal-contoh.json"  -->
