@@ -519,19 +519,9 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     globalThis.addEventListener("quiz-user-login", this._authHandler);
     globalThis.addEventListener("quiz-user-session-changed", this._authHandler);
     this._loadSession();
-    this._cekKunci();
     this._resumeAttemptIfAny();
-    if (!this.hasAttribute("questions")) {
-      const local = this._loadQuestionsLocal();
-      if (local && local.length > 0) {
-        this._tempQuestions = local;
-        this.questions = JSON.parse(JSON.stringify(local));
-      } else {
-        this._muatBankSoal();
-      }
-    } else {
-      this._muatBankSoal();
-    }
+    // I2: getQuizLock & getBankSoal DITUNDA ke _onStartClick (saat siswa benar-benar
+    // mulai), bukan saat mount, agar tak membanjiri eksekusi GAS tiap render.
   }
 
   disconnectedCallback() {
@@ -1188,11 +1178,18 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
   }
 
   /** Klik Mulai: bila belum login, arahkan ke login (kuis tak terbuka). Bila sudah, langsung mulai. */
-  _onStartClick() {
+  async _onStartClick() {
     if (!this.studentId) {
       this._redirectToLogin();
       return;
     }
+    // I2: cek kunci & muat bank soal baru saat mulai (1 eksekusi per sesi).
+    await this._cekKunci();
+    if (this._locked) {
+      this.requestUpdate();
+      return;
+    }
+    await this._muatBankSoal();
     this._startQuiz();
   }
 

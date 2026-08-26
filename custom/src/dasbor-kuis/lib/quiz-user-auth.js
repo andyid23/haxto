@@ -37,6 +37,8 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
       _errorMsg: { state: true },
       _successMsg: { state: true },
       _loading: { state: true },
+      _verifyError: { state: true },
+      _verifyMsg: { state: true },
     };
   }
 
@@ -54,6 +56,8 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
     this._errorMsg = "";
     this._successMsg = "";
     this._loading = false;
+    this._verifyError = false;
+    this._verifyMsg = "";
     this._sessionInterval = null;
   }
 
@@ -77,8 +81,9 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
       this._absen = saved.absen || "";
       this._kelas = saved.kelas || "";
       this._screen = "logged-in";
-      queueMicrotask(() => this._verifySession());
-      if (this.autoLogin) this._dispatchSessionChanged();
+      // I1: percayai sesi lokal (sudah tervalidasi saat login, TTL 24j) — tidak ada
+      // verify-on-load yang memicu eksekusi GAS tiap load. Siarkan sesi ke elemen lain.
+      if (this.autoLogin) this._dispatchLogin();
       this._startSessionWatch();
     } else {
       this._screen = "login";
@@ -126,15 +131,30 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
 
   // ---------- API ----------
   async _api(action, params) {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 10000);
     const qs = new URLSearchParams(params);
-    const res = await fetch(`${this.appsScriptUrl}?action=${action}&${qs.toString()}`, {
-      redirect: "follow",
-    });
-    const teks = await res.text();
-    if (!teks || teks.trim().charAt(0) !== "{") {
-      throw new Error("Respon backend bukan JSON. Periksa URL /exec & deployment.");
+    try {
+      const res = await fetch(`${this.appsScriptUrl}?action=${action}&${qs.toString()}`, {
+        redirect: "follow",
+        signal: controller.signal,
+      });
+      if (!res.ok) {
+        throw new Error(`Backend merespons HTTP ${res.status}.`);
+      }
+      const teks = await res.text();
+      if (!teks || teks.trim().charAt(0) !== "{") {
+        throw new Error("Respon backend bukan JSON. Periksa URL /exec & deployment.");
+      }
+      return JSON.parse(teks);
+    } catch (e) {
+      if (e && e.name === "AbortError") {
+        throw new Error("Waktu habis (timeout 10 detik) menghubungi server.");
+      }
+      throw e;
+    } finally {
+      clearTimeout(timer);
     }
-    return JSON.parse(teks);
   }
 
   _ekstrakOk(payload) {
@@ -155,10 +175,12 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
 
   async _verifySession() {
     if (!this.appsScriptUrl) {
-      this._screen = "login";
+      // Bila URL belum dikonfigurasi, biarkan sesi lokal tetap login (jangan paksa logout).
       return;
     }
     this._loading = true;
+    this._verifyError = false;
+    this._verifyMsg = "";
     try {
       const payload = await this._api("verify", { studentId: this._studentId });
       const r = this._ekstrakOk(payload);
@@ -171,13 +193,14 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
         this._mutasiProfilKunci();
         this._dispatchLogin();
       } else {
-        this._clear("quiz_user_session");
-        this._screen = "login";
-        this._dispatchSessionChanged();
+        // Sesi lokal tetap dianggap valid; cuma tandai gagal verifikasi (tidak destroy).
+        this._verifyError = true;
+        this._verifyMsg = r.message || "Sesi belum terverifikasi di server.";
       }
     } catch (e) {
-      this._screen = "login";
-      this._dispatchSessionChanged();
+      // Jaringan/404/down: JANGAN hapus sesi & JANGAN paksa login ("logout sendiri").
+      this._verifyError = true;
+      this._verifyMsg = "Tidak dapat memverifikasi sesi (offline?). Sesi lokal tetap aktif.";
     }
     this._loading = false;
   }
@@ -198,10 +221,10 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
       const r = this._ekstrakOk(payload);
       if (r.ok && r.studentId) {
         this._studentId = r.studentId;
-        this._nama = r.nama;
+        this._nama = r.nama || this._nama;
         this._nis = r.nis || this._nis;
-        this._absen = r.absen || "";
-        this._kelas = r.kelas || "";
+        this._absen = r.absen || this._absen;
+        this._kelas = r.kelas || this._kelas;
         this._save("quiz_user_session", {
           studentId: this._studentId,
           nama: this._nama,
@@ -499,6 +522,31 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
           background: var(--ddd-theme-error);
           color: var(--ddd-theme-default-white);
         }
+        .user-actions {
+          display: flex;
+          flex-direction: column;
+          gap: var(--ddd-spacing-2);
+          align-items: flex-end;
+        }
+        .check-btn {
+          padding: var(--ddd-spacing-2) var(--ddd-spacing-3);
+          border: var(--ddd-border-xs);
+          color: var(--ddd-theme-primary, #4f46e5);
+          background: none;
+          border-radius: var(--ddd-radius-sm);
+          font-size: var(--ddd-font-size-4xs);
+          cursor: pointer;
+          font-family: var(--ddd-font-primary);
+        }
+        .check-btn:hover {
+          background: var(--ddd-theme-primary, #4f46e5);
+          color: var(--ddd-theme-default-white, #ffffff);
+        }
+        .verify-note {
+          margin-top: var(--ddd-spacing-1);
+          font-size: var(--ddd-font-size-4xs);
+          color: var(--ddd-theme-warning, #b45309);
+        }
         .loading {
           text-align: center;
           padding: var(--ddd-spacing-8);
@@ -523,9 +571,17 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
               <div class="user-name">${this._nama}</div>
               <div class="user-email">${this._email}</div>
               <div class="user-meta">NIS: ${this._nis} | Absen: ${this._absen} | Kelas: ${this._kelas}</div>
+              ${this._verifyError
+                ? html`<div class="verify-note">${this._verifyMsg}</div>`
+                : ""}
             </div>
           </div>
-          <button class="logout-btn" @click=${this._handleLogout}>Keluar</button>
+          <div class="user-actions">
+            <button class="check-btn" @click=${this._verifySession} ?disabled=${this._loading}>
+              ${this._loading ? "⏳" : "Cek sesi"}
+            </button>
+            <button class="logout-btn" @click=${this._handleLogout}>Keluar</button>
+          </div>
         </div>
       `;
     }
@@ -575,7 +631,7 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
                 Sudah punya akun? Masuk
               </button>
             `
-          : html`
+            : html`
               <form @submit=${this._handleLogin}>
                 <div class="field">
                   <label>NIS</label>

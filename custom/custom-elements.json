@@ -4077,6 +4077,26 @@
             },
             {
               "kind": "field",
+              "name": "_verifyError",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "_verifyError"
+            },
+            {
+              "kind": "field",
+              "name": "_verifyMsg",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "_verifyMsg"
+            },
+            {
+              "kind": "field",
               "name": "_sessionInterval",
               "type": {
                 "text": "null"
@@ -4180,6 +4200,22 @@
               },
               "default": "false",
               "fieldName": "_loading"
+            },
+            {
+              "name": "_verifyError",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "_verifyError"
+            },
+            {
+              "name": "_verifyMsg",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "_verifyMsg"
             }
           ],
           "mixins": [

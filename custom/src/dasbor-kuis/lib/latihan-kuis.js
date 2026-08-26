@@ -275,10 +275,12 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
         ${!this._mulai
           ? (this.studentId
               ? html`<button class="btn-mulai" @click="${this._mulaiLatihan}">${this.labelMulai}</button>`
-              : html`
-                  <quiz-user-auth .appsScriptUrl="${this.appsScriptUrl}"></quiz-user-auth>
-                  <p class="auth-hint">🔐 Silakan login dulu agar nilai tersimpan ke Spreadsheet.</p>
-                `)
+              : (document.querySelector("quiz-user-auth")
+                  ? html`<p class="auth-hint">🔐 Silakan login lewat form di atas agar nilai tersimpan ke Spreadsheet.</p>`
+                  : html`
+                      <quiz-user-auth .appsScriptUrl="${this.appsScriptUrl}"></quiz-user-auth>
+                      <p class="auth-hint">🔐 Silakan login dulu agar nilai tersimpan ke Spreadsheet.</p>
+                    `))
           : html`
               ${this._pesan ? html`<p class="err-chip">${this._pesan}</p>` : nothing}
               <timer-kuis
