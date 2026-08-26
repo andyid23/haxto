@@ -10,7 +10,7 @@ description: |+
 
 metadata:
   created: 1787721767
-  updated: 1787730241
+  updated: 1787730310
   images: []
   videos: []
   published: true
@@ -25,15 +25,18 @@ content: >
 
   <p></p>
 
-  <latihan-kuis   duration="300" judul-materi="Materi Pembelajaran"
+  <latihan-kuis duration="300" judul-materi="Materi Pembelajaran"
   teks-materi="Baca materi di bawah ini dengan saksama sebelum mengerjakan kuis.
   Waktu pengerjaan kuis dibatasi oleh timer; saat waktu habis, kuis akan dikunci
-  dan nilai otomatis terkirim."  materi-file="" cover-image=""
+  dan nilai otomatis terkirim." materi-file="" cover-image=""
   judul-kuis="Evaluasi Kuis Interaktif" student-id="" student-name=""
   student-nis="" student-absen="" student-kelas="" kd-materi=""
   pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai otomatis."
   pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet."
-  label-mulai="▶️ Mulai Latihan" ></latihan-kuis>
+  label-mulai="▶️ Mulai Latihan"
+  apps-script-url="https://script.google.com/macros/s/AKfycby2DIuM6ZN8FfkID9TjIVLICAmRa9ogfsuD4BDoCvEItZ2YG6-_gNr-f_mKroUCnalZ/exec"
+  spreadsheet-url="https://docs.google.com/spreadsheets/d/1RlGyoqJXoM0B8-cwnXjy83XPowpF_9EFbImKywvQQgM/edit?usp=sharing" 
+  ></latihan-kuis>
 
   <p></p>
 
