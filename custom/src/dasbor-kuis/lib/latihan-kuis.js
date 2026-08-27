@@ -58,6 +58,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
       hideConfetti: { type: Boolean, attribute: "hide-confetti", reflect: true },
       hideAnswers: { type: Boolean, attribute: "hide-answers", reflect: true },
       hideScore: { type: Boolean, attribute: "hide-score", reflect: true },
+      timerAutostart: { type: Boolean, attribute: "timer-autostart", reflect: true },
       _mulai: { state: true },
       _selesai: { state: true },
       _skor: { state: true },
@@ -67,6 +68,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
       _pernahIkut: { state: true },
       _attemptKe: { state: true },
       _terkunci: { state: true },
+      _resumeRemaining: { state: true },
     };
   }
 
@@ -91,7 +93,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     this.kdMateri = "";
     this.pesanWaktuHabis = "⏰ Waktu habis! Kuis dikunci & dinilai otomatis.";
     this.pesanNilaiTerkirim = "🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet.";
-    this.labelMulai = "▶️ Mulai Latihan";
+    this.labelMulai = "▶️ Mulai";
     this.showSheetLink = false;
     this.soalFileUrl = "";
     this.allowRetake = true;
@@ -104,6 +106,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     this.hideConfetti = false;
     this.hideAnswers = false;
     this.hideScore = false;
+    this.timerAutostart = true;
     this._mulai = false;
     this._selesai = false;
     this._skor = null;
@@ -113,6 +116,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     this._pernahIkut = false;
     this._attemptKe = 0;
     this._terkunci = false;
+    this._resumeRemaining = null;
     this._onAuthLogout = this._onAuthLogout.bind(this);
     this.t = {
       ...this.t,
@@ -158,6 +162,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     this._skor = null;
     this._mulai = false;
     this._terkunci = false;
+    this._resumeRemaining = null;
     this.studentId = d.studentId || "";
     this.studentName = d.nama || "";
     this.studentNis = d.nis || "";
@@ -175,6 +180,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     this._skor = null;
     this._mulai = false;
     this._terkunci = false;
+    this._resumeRemaining = null;
     this._attemptKe = 0;
     this.studentId = "";
     this.studentName = "";
@@ -201,6 +207,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
       // abaikan
     }
     this._loadAttemptCounter();
+    this._cobaResumeTimer();
   }
 
   /** Baca counter attempt ter-submit dari localStorage (per studentId+kdMateri). */
@@ -227,6 +234,47 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     }
   }
 
+  _timerKey() {
+    return `latihan_kuis_time_${this.studentId}_${this.kdMateri}`;
+  }
+
+  _simpanWaktuMulai() {
+    if (!this.studentId || !this.kdMateri) return;
+    try {
+      globalThis.localStorage.setItem(
+        this._timerKey(),
+        JSON.stringify({ start: Date.now(), duration: this.duration }),
+      );
+    } catch (_) {}
+  }
+
+  _bacaSisaWaktu() {
+    if (!this.studentId || !this.kdMateri) return null;
+    try {
+      const d = JSON.parse(globalThis.localStorage.getItem(this._timerKey()) || "null");
+      if (!d) return null;
+      const sisa = d.duration - Math.floor((Date.now() - d.start) / 1000);
+      return sisa > 0 ? sisa : 0;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  _hapusWaktuMulai() {
+    try {
+      globalThis.localStorage.removeItem(this._timerKey());
+    } catch (_) {}
+  }
+
+  _cobaResumeTimer() {
+    const sisa = this._bacaSisaWaktu();
+    const kuota = this.maxRetake === 0 || this._attemptKe < this.maxRetake + 1;
+    if (sisa && sisa > 0 && kuota) {
+      this._mulai = true;
+      this._resumeRemaining = sisa;
+    }
+  }
+
 
   /** T: muat status kuis dari sheet (pernah ikut + nilai terbaik) via getQuizLock. */
   _muatStatusKuis() {
@@ -243,6 +291,9 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
           this._terkunci = true;
           this._selesai = false;
           this._skor = this._bestSkor;
+          this._hapusWaktuMulai();
+          this._mulai = false;
+          this._resumeRemaining = null;
         }
       })
       .catch(() => {
@@ -255,6 +306,8 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     this._selesai = false;
     this._terkunci = false;
     this._kunci = false;
+    this._resumeRemaining = null;
+    this._hapusWaktuMulai();
     this._habisWaktu = false;
     this._skor = null;
     this._muatStatusKuis();
@@ -288,12 +341,16 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     }
     this._selesai = true;
     this._habisWaktu = true;
+    this._resumeRemaining = null;
+    this._hapusWaktuMulai();
   }
 
   _onKuisLog(e) {
     if (e.detail && e.detail.payload && typeof e.detail.payload.score === "number") {
       this._skor = e.detail.payload.score;
       this._selesai = true;
+      this._resumeRemaining = null;
+      this._hapusWaktuMulai();
       // L: hitung attempt ter-submit (bukan klik Ulangi) agar reload-trick tak bobol batas.
       if (this.maxRetake) {
         this._attemptKe++;
@@ -311,6 +368,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     }
     this._terkunci = false;
     this._mulai = true;
+    this._simpanWaktuMulai();
     await this.updateComplete;
     const kuis = this.shadowRoot && this.shadowRoot.querySelector("kuis-ledakan");
     const timer = this.shadowRoot && this.shadowRoot.querySelector("timer-kuis");
@@ -444,8 +502,9 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
           : html`
               ${this._pesan ? html`<p class="err-chip">${this._pesan}</p>` : nothing}
               <timer-kuis
-                duration="${this.duration}"
+                duration="${this._resumeRemaining != null ? this._resumeRemaining : this.duration}"
                 ?hide-controls="${this.hidePauseRestart}"
+                ?autostart="${this.timerAutostart}"
                 @timer-kuis-expired="${this._onWaktuHabis}">
               </timer-kuis>
 
@@ -536,6 +595,12 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
             description: "Menyembunyikan tombol jeda/mulai/ulang di timer dan tombol Ulangi di layar hasil. Default true.",
           },
           {
+            property: "timerAutostart",
+            title: "Timer Mulai Otomatis",
+            inputMethod: "boolean",
+            description: "true = timer langsung berjalan saat kuis dimulai. Default true.",
+          },
+          {
             property: "shuffleQuestions",
             title: "Acak Urutan Soal",
             inputMethod: "boolean",
@@ -622,6 +687,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
             property: "labelMulai",
             title: "Teks Tombol Mulai",
             inputMethod: "textfield",
+            description: "Teks tombol untuk memulai latihan/kuis (default: '▶️ Mulai').",
           },
           {
             property: "showSheetLink",

@@ -88,6 +88,9 @@
       padding: 0;
       min-height: 98vh;
     }
+    :root, html, body {
+      color-scheme: dark light;
+    }
     haxcms-site-builder:not([theme-loaded]) * {
       margin-top: 100px;
       display: block;
@@ -190,15 +193,25 @@
       }
     }
     @media (prefers-color-scheme: dark) {
+      :root {
+        --ddd-theme-default-surface: #1e1e1e;
+        --ddd-theme-default-text: #e6e6e6;
+        --ddd-theme-polaris-surface: #242424;
+        --ddd-theme-polaris-surface-hover: #2e2e2e;
+        --ddd-theme-polaris-border: #3a3a3a;
+        /* Sangat disarankan (masih minimal) agar kartu & teks muted ikut gelap */
+        --ddd-theme-default-white: #1e1e1e;
+        --ddd-theme-secondary: #b5b5b5;
+      }
       body {
         background-color: #333333;
-        color: rgba(255,255,255, 0.2);
+        color: rgba(255,255,255, 0.85);
       }
       #loading {
         background-color: #333333;
       }
       #loading div.messaging {
-        color: rgba(255,255,255, 0.2);
+        color: rgba(255,255,255, 0.85);
       }
     }
   </style>

@@ -3291,6 +3291,26 @@
             },
             {
               "kind": "method",
+              "name": "_timerKey"
+            },
+            {
+              "kind": "method",
+              "name": "_simpanWaktuMulai"
+            },
+            {
+              "kind": "method",
+              "name": "_bacaSisaWaktu"
+            },
+            {
+              "kind": "method",
+              "name": "_hapusWaktuMulai"
+            },
+            {
+              "kind": "method",
+              "name": "_cobaResumeTimer"
+            },
+            {
+              "kind": "method",
               "name": "_muatStatusKuis",
               "description": "T: muat status kuis dari sheet (pernah ikut + nilai terbaik) via getQuizLock."
             },
@@ -3535,7 +3555,7 @@
               "type": {
                 "text": "string"
               },
-              "default": "\"▶️ Mulai Latihan\"",
+              "default": "\"▶️ Mulai\"",
               "attribute": "label-mulai",
               "reflects": true
             },
@@ -3673,6 +3693,17 @@
             },
             {
               "kind": "field",
+              "name": "timerAutostart",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true",
+              "attribute": "timer-autostart",
+              "reflects": true
+            },
+            {
+              "kind": "field",
               "name": "_mulai",
               "privacy": "public",
               "type": {
@@ -3760,6 +3791,16 @@
               },
               "default": "false",
               "attribute": "_terkunci"
+            },
+            {
+              "kind": "field",
+              "name": "_resumeRemaining",
+              "privacy": "public",
+              "type": {
+                "text": "null"
+              },
+              "default": "null",
+              "attribute": "_resumeRemaining"
             },
             {
               "kind": "field",
@@ -3920,7 +3961,7 @@
               "type": {
                 "text": "string"
               },
-              "default": "\"▶️ Mulai Latihan\"",
+              "default": "\"▶️ Mulai\"",
               "fieldName": "labelMulai"
             },
             {
@@ -4020,6 +4061,14 @@
               "fieldName": "hideScore"
             },
             {
+              "name": "timer-autostart",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true",
+              "fieldName": "timerAutostart"
+            },
+            {
               "name": "_mulai",
               "type": {
                 "text": "boolean"
@@ -4090,6 +4139,14 @@
               },
               "default": "false",
               "fieldName": "_terkunci"
+            },
+            {
+              "name": "_resumeRemaining",
+              "type": {
+                "text": "null"
+              },
+              "default": "null",
+              "fieldName": "_resumeRemaining"
             }
           ],
           "mixins": [
