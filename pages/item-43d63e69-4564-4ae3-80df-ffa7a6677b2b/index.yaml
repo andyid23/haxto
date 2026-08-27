@@ -2,7 +2,7 @@ id: item-43d63e69-4564-4ae3-80df-ffa7a6677b2b
 indent: 0
 location: pages/item-43d63e69-4564-4ae3-80df-ffa7a6677b2b/index.yaml
 slug: new-page
-order: 3
+order: 4
 parent: null
 title: Ulangan Harian 1
 description: |+
@@ -10,7 +10,7 @@ description: |+
 
 metadata:
   created: 1787854344
-  updated: 1787855410
+  updated: 1787855435
   images: []
   videos: []
   published: true
@@ -18,6 +18,19 @@ metadata:
   locked: false
   readtime: 1
   tags: Literasi Digital
+  theme:
+    element: polaris-flex-theme
+    path: '@haxtheweb/polaris-theme/lib/polaris-flex-theme.js'
+    name: Polaris Flex
+    thumbnail: >-
+      @haxtheweb/haxcms-elements/lib/theme-screenshots/theme-polaris-flex-theme-thumb.jpg
+    description: Start with a blank site using the Polaris Flex
+    category:
+      - Website
+    hidden: false
+    priority: -1
+    terrible: false
+    key: polaris-flex-theme
 content: >
 
   <latihan-kuis mode="siswa" allow-retake max-retake="0" duration="1000"
@@ -180,6 +193,6 @@ content: >
   mengandung kata kunci tertentu.&quot;,&quot;Menghapus seluruh riwayat
   (history) penelusuran peramban internet secara
   otomatis.&quot;],&quot;correctPairs&quot;:{&quot;0&quot;:1,&quot;1&quot;:2,&quot;2&quot;:0,&quot;3&quot;:3}}]"
-  _best-skor="0" _attempt-ke="0"   _pernah-ikut>
+  _best-skor="0" _attempt-ke="0" _pernah-ikut  >
 
   </latihan-kuis>

@@ -14,7 +14,7 @@
       "name": "haxto",
       "domain": null,
       "created": 1787457359,
-      "updated": 1787855410
+      "updated": 1787855435
     },
     "theme": {
       "element": "custom-haxkuis-theme",
@@ -210,20 +210,34 @@
       "indent": 0,
       "location": "pages/item-43d63e69-4564-4ae3-80df-ffa7a6677b2b/index.html",
       "slug": "new-page",
-      "order": 3,
+      "order": 4,
       "parent": null,
       "title": "Ulangan Harian 1",
       "description": "\n\n",
       "metadata": {
         "created": 1787854344,
-        "updated": 1787855410,
+        "updated": 1787855435,
         "images": [],
         "videos": [],
         "published": true,
         "hideInMenu": true,
         "locked": false,
         "readtime": 1,
-        "tags": "Literasi Digital"
+        "tags": "Literasi Digital",
+        "theme": {
+          "element": "polaris-flex-theme",
+          "path": "@haxtheweb/polaris-theme/lib/polaris-flex-theme.js",
+          "name": "Polaris Flex",
+          "thumbnail": "@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-polaris-flex-theme-thumb.jpg",
+          "description": "Start with a blank site using the Polaris Flex",
+          "category": [
+            "Website"
+          ],
+          "hidden": false,
+          "priority": -1,
+          "terrible": false,
+          "key": "polaris-flex-theme"
+        }
       }
     }
   ]
