@@ -2,7 +2,7 @@ id: item-ba9170fc-d0c5-49c4-bb1b-327ff46aa871
 indent: 0
 location: pages/item-ba9170fc-d0c5-49c4-bb1b-327ff46aa871/index.yaml
 slug: halaman-tugas
-order: 4
+order: 0
 parent: null
 title: Simulasi Ulangan/Kuis
 description: |+
@@ -10,7 +10,7 @@ description: |+
 
 metadata:
   created: 1787721767
-  updated: 1787837588
+  updated: 1787838331
   images: []
   videos: []
   published: true
@@ -31,6 +31,7 @@ metadata:
     priority: 0
     terrible: true
     key: terrible-resume-themes
+  status: ''
 content: >
 
   <div class="petunjuk">
@@ -91,27 +92,21 @@ content: >
 
       </p>
 
-
     </li>
-
 
     <li aria-level="1">
       <p><b>Mampu menyusun strategi penelusuran informasi daring dengan menggunakan kata kunci presisi serta operator logika Boolean.</b>
 
       </p>
 
-
     </li>
-
 
     <li aria-level="1">
       <p><b>Mampu menerapkan kombinasi variabel pencarian lanjutan (seperti site:, filetype:, dll.) untuk meningkatkan keandalan sumber data dan menghemat waktu riset.</b>
 
       </p>
 
-
     </li>
-
 
   </ul>
 
@@ -143,27 +138,21 @@ content: >
 
       </p>
 
-
     </li>
-
 
     <li aria-level="1">
       <p><b>OR: Digunakan untuk memperluas pencarian dengan menampilkan hasil yang memuat salah satu atau kedua kata kunci sekaligus.</b>
 
       </p>
 
-
     </li>
-
 
     <li aria-level="1">
       <p><b>NOT (atau karakter tanda minus -): Digunakan untuk mengecualikan kata kunci tertentu yang tidak relevan agar tidak muncul di halaman hasil penelusuran.</b>
 
       </p>
 
-
     </li>
-
 
   </ul>
 
@@ -182,63 +171,49 @@ content: >
 
       </p>
 
-
     </li>
-
 
     <li aria-level="1">
       <p><b>filetype:: Menyaring hasil pencarian berdasarkan format dokumen berkas tertentu, seperti pdf untuk dokumen formal, doc, atau ppt.</b>
 
       </p>
 
-
     </li>
-
 
     <li aria-level="1">
       <p><b>inurl:: Melacak kata kunci spesifik yang tertanam langsung di dalam alamat URL halaman web.</b>
 
       </p>
 
-
     </li>
-
 
     <li aria-level="1">
       <p><b>intitle:: Membatasi pencarian halaman web yang judul dokumennya mengandung kata kunci tertentu.</b>
 
       </p>
 
-
     </li>
-
 
     <li aria-level="1">
       <p><b>intext:: Mengunci pelacakan kata kunci khusus hanya di dalam badan teks (body) dokumen halaman web.</b>
 
       </p>
 
-
     </li>
-
 
     <li aria-level="1">
       <p><b>cache:: Menampilkan versi salinan sementara terbaru dari suatu halaman web yang disimpan oleh server Google, sangat membantu di tengah keterbatasan koneksi internet.</b>
 
       </p>
 
-
     </li>
-
 
     <li aria-level="1">
       <p><b>Tanda Petik Ganda (""): Digunakan untuk memaksa mesin pencari melacak frasa kata kunci secara tepat dan persis (Exact Match).</b>
 
       </p>
 
-
     </li>
-
 
   </ul>
 
@@ -250,9 +225,7 @@ content: >
 
       </p>
 
-
     </li>
-
 
   </ul>
 
@@ -264,27 +237,21 @@ content: >
 
       </p>
 
-
     </li>
-
 
     <li aria-level="1">
       <p><b>Miskonsepsi 2: Penggunaan kata kunci yang terlampau spesifik dan sempit selalu dianjurkan. Faktanya: Kata kunci yang terlampau spesifik dan sempit dihindari karena berisiko menghilangkan informasi penting lainnya yang tersedia di bawah terminologi yang lebih umum.</b>
 
       </p>
 
-
     </li>
-
 
     <li aria-level="1">
       <p><b>Miskonsepsi 3: Operator OR digunakan untuk menyaring dan mempersempit pencarian. Faktanya: Operator OR berfungsi untuk memperluas pencarian dengan menggabungkan alternatif istilah. Operator yang mempersempit ruang lingkup adalah AND.</b>
 
       </p>
 
-
     </li>
-
 
   </ul>
 
@@ -296,36 +263,28 @@ content: >
 
       </p>
 
-
     </li>
-
 
     <li aria-level="1">
       <p><b>Operator logika Boolean (AND, OR, NOT/-) serta tanda petik ganda ("") mengontrol relevansi dan cakupan relasi antarkata kunci secara presisi.</b>
 
       </p>
 
-
     </li>
-
 
     <li aria-level="1">
       <p><b>Variabel pencarian lanjutan seperti site: dan filetype: memfokuskan hasil pada reputasi domain akademik/pemerintah dan format dokumen siap unduh.</b>
 
       </p>
 
-
     </li>
-
 
     <li aria-level="1">
       <p><b>Pencarian berbasis visual difasilitasi oleh Google Lens dengan mencocokkan kemiripan gambar secara daring.</b>
 
       </p>
 
-
     </li>
-
 
   </ol>
 
@@ -366,18 +325,14 @@ content: >
 
       </p>
 
-
     </li>
-
 
     <li aria-level="1">
       <p><b>Analisis Efisiensi: Penulisan frasa dalam tanda petik ganda memastikan pelacakan persis, sedangkan filetype:pdf langsung menyaring file dokumen siap pakai tanpa perlu menyusuri artikel blog pribadi yang tidak valid.</b>
 
       </p>
 
-
     </li>
-
 
   </ul>
 
@@ -389,18 +344,16 @@ content: >
 
   <latihan-kuis
   apps-script-url="https://script.google.com/macros/s/AKfycbyuprudZkCq_YCQ-CqqD_huzndsbA6zHsg_ICfqPnlB97dhcrm1xJjGxJ3u4Jp8DjJQ/exec"
-  kd-materi="bab1" student-id="STD-65108053" show-sheet-link
+  kd-materi="bab1" student-id="" show-sheet-link
   soal-file-url="./files/soal-contoh.json" allow-retake max-retake="4"
-  duration="1000" judul-kuis="Kuis Formatif Literasi" judul-materi="Materi
+  duration="1100" judul-kuis="Kuis Formatif Literasi" judul-materi="Materi
   Pembelajaran" teks-materi="Baca materi di atas ini dengan saksama sebelum
   mengerjakan kuis. Waktu pengerjaan kuis dibatasi oleh timer; saat waktu habis,
-  kuis akan dikunci dan nilai otomatis terkirim. Bisa diulang sampai 4x latihan
-  untuk nilai terbaik" materi-file="" cover-image="" student-name="Andy"
-  student-nis="234" student-absen="1" student-kelas="XI-1" pesan-waktu-habis="⏰
-  Waktu habis! Kuis dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉
-  Selamat! Nilai Anda sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai
-  Latihan" _pesan="Gagal memuat file soal: Bukan array JSON" _best-skor="50"
-  _pernah-ikut="" _attempt-ke="0"
+  kuis akan dikunci dan nilai otomatis terkirim.  Bisa diulang sampai 4x latihan
+  untuk nilai terbaik" materi-file="" cover-image="" student-name=""
+  student-nis="" student-absen="" student-kelas="" pesan-waktu-habis="⏰ Waktu
+  habis! Kuis dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat!
+  Nilai Anda sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai Latihan"  
   questions="[{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Pencarian
   informasi ilmiah secara daring menggunakan kata kunci sederhana sering kali
   tidak efektif karena menghasilkan jutaan data tidak relevan. Guna menyaring
@@ -548,7 +501,9 @@ content: >
   PPT.&quot;,&quot;Membatasi pencarian halaman web yang judul dokumennya
   mengandung kata kunci tertentu.&quot;,&quot;Menghapus seluruh riwayat
   (history) penelusuran peramban internet secara
-  otomatis.&quot;],&quot;correctPairs&quot;:{&quot;0&quot;:1,&quot;1&quot;:2,&quot;2&quot;:0,&quot;3&quot;:3}}]" 
-  ></latihan-kuis>
+  otomatis.&quot;],&quot;correctPairs&quot;:{&quot;0&quot;:1,&quot;1&quot;:2,&quot;2&quot;:0,&quot;3&quot;:3}}]"
+  _attempt-ke="0">
+
+  </latihan-kuis>
 
   <p></p>
