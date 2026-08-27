@@ -50,6 +50,11 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
       soalFileUrl: { type: String, attribute: "soal-file-url", reflect: true },
       allowRetake: { type: Boolean, attribute: "allow-retake", reflect: true },
       maxRetake: { type: Number, attribute: "max-retake", reflect: true },
+      mode: { type: String, attribute: "mode", reflect: true },
+      hidePauseRestart: { type: Boolean, attribute: "hide-pause-restart", reflect: true },
+      shuffleQuestions: { type: Boolean, attribute: "shuffle-questions", reflect: true },
+      shuffleChoices: { type: Boolean, attribute: "shuffle-choices", reflect: true },
+      kategori: { type: String, attribute: "kategori", reflect: true },
       _mulai: { state: true },
       _selesai: { state: true },
       _skor: { state: true },
@@ -58,6 +63,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
       _bestSkor: { state: true },
       _pernahIkut: { state: true },
       _attemptKe: { state: true },
+      _terkunci: { state: true },
     };
   }
 
@@ -87,6 +93,11 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     this.soalFileUrl = "";
     this.allowRetake = true;
     this.maxRetake = 0;
+    this.mode = "siswa";
+    this.hidePauseRestart = true;
+    this.shuffleQuestions = false;
+    this.shuffleChoices = false;
+    this.kategori = "";
     this._mulai = false;
     this._selesai = false;
     this._skor = null;
@@ -95,6 +106,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     this._bestSkor = null;
     this._pernahIkut = false;
     this._attemptKe = 0;
+    this._terkunci = false;
     this._onAuthLogout = this._onAuthLogout.bind(this);
     this.t = {
       ...this.t,
@@ -139,6 +151,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     this._habisWaktu = false;
     this._skor = null;
     this._mulai = false;
+    this._terkunci = false;
     this.studentId = d.studentId || "";
     this.studentName = d.nama || "";
     this.studentNis = d.nis || "";
@@ -155,6 +168,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     this._habisWaktu = false;
     this._skor = null;
     this._mulai = false;
+    this._terkunci = false;
     this._attemptKe = 0;
     this.studentId = "";
     this.studentName = "";
@@ -216,12 +230,12 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
       .then((r) => r.json())
       .then((j) => {
         if (!j) return;
-        this._pernahIkut = !!j.locked;
+        this._terkunci = false;
+        this._pernahIkut = typeof j.best === "number" && j.best != null;
         this._bestSkor = typeof j.best === "number" ? j.best : null;
-        // Lock permanen HANYA bila allowRetake=false DAN sudah pernah ikut.
         if (!this.allowRetake && j.locked) {
-          this._selesai = true;
-          this._habisWaktu = false;
+          this._terkunci = true;
+          this._selesai = false;
           this._skor = this._bestSkor;
         }
       })
@@ -233,6 +247,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
 
   _ulangiKuis() {
     this._selesai = false;
+    this._terkunci = false;
     this._kunci = false;
     this._habisWaktu = false;
     this._skor = null;
@@ -288,6 +303,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
       this.requestUpdate();
       return;
     }
+    this._terkunci = false;
     this._mulai = true;
     await this.updateComplete;
     const kuis = this.shadowRoot && this.shadowRoot.querySelector("kuis-ledakan");
@@ -325,7 +341,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
         .btn-mulai {
           width: 100%; padding: var(--ddd-spacing-4); font-size: var(--ddd-font-size-l);
           font-weight: var(--ddd-font-weight-bold); border: none; border-radius: var(--ddd-radius-md);
-          background: var(--ddd-theme-primary, #6750a4); color: #fff; cursor: pointer;
+          background: var(--ddd-theme-primary, #6750a4); color: var(--ddd-theme-on-primary); cursor: pointer;
           font-family: var(--ddd-font-primary, system-ui, sans-serif);
         }
         .btn-mulai:hover { background: var(--ddd-theme-accent, #7a5fc4); }
@@ -341,11 +357,11 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
         .selesai-card .skor { margin: var(--ddd-spacing-4) 0; font-size: var(--ddd-font-size-l); }
         .selesai-card a {
           display: inline-block; margin-top: var(--ddd-spacing-4); padding: var(--ddd-spacing-3) var(--ddd-spacing-5);
-          background: var(--ddd-theme-primary, #6750a4); color: #fff; border-radius: var(--ddd-radius-md);
+          background: var(--ddd-theme-primary, #6750a4); color: var(--ddd-theme-on-primary); border-radius: var(--ddd-radius-md);
           text-decoration: none; font-weight: var(--ddd-font-weight-bold);
         }
         .err-chip {
-          background: #fef3c7; border: 1px solid #fcd34d; color: #92400e;
+          background: var(--ddd-theme-warning-light, #fef3c7); border: 1px solid var(--ddd-theme-warning, #fcd34d); color: var(--ddd-theme-warning-text, #92400e);
           padding: var(--ddd-spacing-3); border-radius: var(--ddd-radius-md);
           margin-bottom: var(--ddd-spacing-4);
         }
@@ -361,6 +377,20 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
   }
 
   render() {
+    if (this._terkunci && this.mode !== "guru") {
+      return html`
+        <div class="wrap">
+          <div class="selesai-card" role="alert">
+            <div style="font-size:2.5rem">🔒</div>
+            <p class="kirim warn">Kuis terkunci. Hubungi guru untuk mengulang.</p>
+            ${this._bestSkor != null
+              ? html`<div class="skor">Nilai terbaik Anda: <strong>${this._bestSkor}%</strong></div>`
+              : nothing}
+          </div>
+        </div>
+      `;
+    }
+
     if (this._selesai) {
       return html`
         <div class="wrap">
@@ -423,7 +453,12 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
                 .studentAbsen="${this.studentAbsen}"
                 .studentKelas="${this.studentKelas}"
                 .kdMateri="${this.kdMateri}"
-                .lockAfterComplete="${!this.allowRetake}">
+                .lockAfterComplete="${!this.allowRetake}"
+                .mode="${this.mode}"
+                .hidePauseRestart="${this.hidePauseRestart}"
+                .shuffleQuestions="${this.shuffleQuestions}"
+                .shuffleChoices="${this.shuffleChoices}"
+                .kategori="${this.kategori}">
               </kuis-ledakan>
             `}
       </div>
@@ -466,13 +501,47 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
             property: "allowRetake",
             title: "Boleh Diulang (retake)",
             inputMethod: "boolean",
-            description: "True (default): latihan boleh dikerjakan berkali-kali, tampil nilai terbaik & tombol Ulangi. False: kunci permanen setelah 1x (mode ulangan).",
+            description: "false = ulangan (terkunci setelah 1x), true = latihan (boleh ulang). Default true.",
           },
           {
             property: "maxRetake",
             title: "Batas Ulang (max-retake)",
             inputMethod: "number",
-            description: "0 (default): ikut allowRetake tanpa batas. >0: jumlah ulangan maksimal (total attempt = 1 asli + maxRetake). Counter disimpan di localStorage per siswa+materi.",
+            description: "Total attempt = 1 asli + maxRetake. Counter disimpan di localStorage per siswa+materi.",
+          },
+          {
+            property: "mode",
+            title: "Mode Tampilan",
+            inputMethod: "select",
+            description: "siswa (default) vs guru (lihat tombol buka kunci).",
+            options: {
+              siswa: "Siswa - Evaluasi Mandiri",
+              guru: "Guru - Pantauan",
+            },
+          },
+          {
+            property: "hidePauseRestart",
+            title: "Sembunyikan Tombol Timer",
+            inputMethod: "boolean",
+            description: "Menyembunyikan tombol jeda/mulai/ulang di timer dan tombol Ulangi di layar hasil. Default true.",
+          },
+          {
+            property: "shuffleQuestions",
+            title: "Acak Urutan Soal",
+            inputMethod: "boolean",
+            description: "Mengacak urutan soal setiap kali kuis dimulai.",
+          },
+          {
+            property: "shuffleChoices",
+            title: "Acak Pilihan Jawaban",
+            inputMethod: "boolean",
+            description: "Mengacak urutan pilihan jawaban setiap kali kuis dimulai.",
+          },
+          {
+            property: "kategori",
+            title: "Kategori Kuis",
+            inputMethod: "textfield",
+            description: "Kategori pedagogi: formatif (progres) atau sumatif (rapor). Diteruskan ke backend.",
           },
           {
             property: "duration",
@@ -530,7 +599,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
             property: "showSheetLink",
             title: "Tampilkan Link Spreadsheet",
             inputMethod: "boolean",
-            description: "PERINGATAN: siswa bisa lihat isi sheet. Default OFF. Hanya aktifkan untuk guru/view aman.",
+            description: "Hanya untuk view aman/guru. Default OFF.",
           },
           {
             property: "questions",

@@ -393,7 +393,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
           border: 2px dashed var(--ddd-theme-primary, #4f46e5);
         }
         .lock-icon { font-size: 40px; }
-        .lock-msg { color: #64748b; font-weight: 600; }
+        .lock-msg { color: var(--ddd-theme-secondary); font-weight: 600; }
         .quiz-title { color: var(--ddd-theme-primary); font-size: var(--ddd-font-size-l); font-weight: 800; margin-top: 0; text-align: center; }
         .btn-start {
           display: block; width: 100%; padding: var(--ddd-spacing-4); background-color: var(--ddd-theme-polaris-primary, #4f46e5); color: var(--ddd-theme-on-primary, #ffffff);
@@ -408,15 +408,15 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
           border-radius: var(--ddd-radius-sm); cursor: pointer; font-size: var(--ddd-font-size-4xs); font-weight: 500;
           transition: all 0.2s; text-align: left;
         }
-        .choice-row:hover:not(.disabled) { border-color: var(--ddd-theme-primary); background: #f0f9ff; }
-        .choice-row.selected { border-color: var(--ddd-theme-primary); background: #e0f2fe; }
+        .choice-row:hover:not(.disabled) { border-color: var(--ddd-theme-primary); background: var(--ddd-theme-polaris-surface-hover); }
+        .choice-row.selected { border-color: var(--ddd-theme-primary); background: var(--ddd-theme-polaris-surface-hover); }
         .choice-row.correct { border-color: var(--ddd-theme-success); background: var(--ddd-theme-success-light); color: var(--ddd-theme-success-text); font-weight: 700; }
         .choice-row.wrong { border-color: var(--ddd-theme-error); background: var(--ddd-theme-error-light); color: var(--ddd-theme-error-text); }
         .choice-image { max-height: 64px; vertical-align: middle; margin-top: 6px; border-radius: var(--ddd-radius-xs); }
 
         .result-box { text-align: center; padding: var(--ddd-spacing-4) 0; }
         .score-circle {
-          width: 100px; height: 100px; border-radius: var(--ddd-radius-circle); background: #e0f2fe; color: var(--ddd-theme-primary);
+          width: 100px; height: 100px; border-radius: var(--ddd-radius-circle); background: var(--ddd-theme-polaris-surface-hover); color: var(--ddd-theme-primary);
           display: flex; align-items: center; justify-content: center; font-size: var(--ddd-font-size-xl); font-weight: 800; margin: 0 auto var(--ddd-spacing-4);
           border: var(--ddd-border-lg);
         }
@@ -427,7 +427,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
 
         .pgk-table { width: 100%; border-collapse: collapse; margin: var(--ddd-spacing-3) 0; }
         .pgk-table th { text-align: left; padding: var(--ddd-spacing-3) var(--ddd-spacing-3); background: var(--ddd-theme-polaris-surface-hover); border-bottom: var(--ddd-border-sm); font-size: var(--ddd-font-size-4xs); color: var(--ddd-theme-secondary); }
-        .pgk-table td { padding: var(--ddd-spacing-3) var(--ddd-spacing-3); border-bottom: 1px solid #f1f5f9; font-size: var(--ddd-font-size-4xs); }
+        .pgk-table td { padding: var(--ddd-spacing-3) var(--ddd-spacing-3); border-bottom: 1px solid var(--ddd-theme-polaris-border); font-size: var(--ddd-font-size-4xs); }
         .pgk-table .pgk-cell { text-align: center; }
         .matching-container, .short-answer-container { display: flex; flex-direction: column; gap: var(--ddd-spacing-3); margin: var(--ddd-spacing-3) 0; }
         .matching-row { display: flex; align-items: center; gap: var(--ddd-spacing-3); flex-wrap: wrap; }
@@ -453,10 +453,10 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
         .feedback-area.negative { background: var(--ddd-theme-error-light); color: var(--ddd-theme-error-text); border: var(--ddd-border-xs); }
 
         .btn-edit-soal {
-          display: block; width: 100%; padding: var(--ddd-spacing-3); margin-top: var(--ddd-spacing-3); background-color: #475569;
-          color: #fff; border: none; border-radius: var(--ddd-radius-sm); font-size: var(--ddd-font-size-4xs); font-weight: 700; cursor: pointer; transition: background 0.2s;
+          display: block; width: 100%; padding: var(--ddd-spacing-3); margin-top: var(--ddd-spacing-3); background-color: var(--ddd-theme-secondary);
+          color: var(--ddd-theme-on-primary); border: none; border-radius: var(--ddd-radius-sm); font-size: var(--ddd-font-size-4xs); font-weight: 700; cursor: pointer; transition: background 0.2s;
         }
-        .btn-edit-soal:hover { background-color: #334155; }
+        .btn-edit-soal:hover { filter: brightness(0.9); }
         .editor-screen { max-width: 760px; }
         .edit-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--ddd-spacing-3); }
         .edit-header .btn-edit-soal { width: auto; margin: 0; padding: var(--ddd-spacing-2) var(--ddd-spacing-4); }
@@ -465,9 +465,9 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
           border: var(--ddd-border-sm); border-radius: var(--ddd-radius-md); padding: var(--ddd-spacing-4);
           background: var(--ddd-theme-polaris-surface-hover);
         }
-        .editor-select { padding: 6px 10px; border-radius: 6px; border: 1px solid #ccc; font-size: 13px; font-family: inherit; }
-        .editor-input { padding: 6px 10px; border-radius: 6px; border: 1px solid #ccc; font-size: 13px; font-family: inherit; box-sizing: border-box; }
-        .editor-textarea { width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #ccc; font-size: 12px; font-family: monospace; box-sizing: border-box; }
+        .editor-select { padding: 6px 10px; border-radius: 6px; border: 1px solid var(--ddd-theme-polaris-border); font-size: 13px; font-family: inherit; }
+        .editor-input { padding: 6px 10px; border-radius: 6px; border: 1px solid var(--ddd-theme-polaris-border); font-size: 13px; font-family: inherit; box-sizing: border-box; }
+        .editor-textarea { width: 100%; padding: 8px; border-radius: 6px; border: 1px solid var(--ddd-theme-polaris-border); font-size: 12px; font-family: monospace; box-sizing: border-box; }
         .question-text-input, .edit-question-text-input {
           width: 100%; min-height: 70px; padding: var(--ddd-spacing-3); border: var(--ddd-border-xs); border-radius: var(--ddd-radius-md);
           font-size: var(--ddd-font-size-4xs); font-family: inherit; box-sizing: border-box; margin: 4px 0;
@@ -1243,10 +1243,10 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
       return html`
         <div class="quiz-card">
           <h3 class="quiz-title">📝 ${this.judul}</h3>
-          <p style="color: #64748b; text-align: center; margin-bottom: var(--ddd-spacing-5);">Selesaikan seluruh pertanyaan kuis di bawah ini secara mandiri untuk mengunci status kelulusan nilai pada lembar kendali dasbor.</p>
+          <p style="color: var(--ddd-theme-secondary); text-align: center; margin-bottom: var(--ddd-spacing-5);">Selesaikan seluruh pertanyaan kuis di bawah ini secara mandiri untuk mengunci status kelulusan nilai pada lembar kendali dasbor.</p>
           <button class="btn-start" @click=${this._onStartClick} aria-label="Mulai mengerjakan kuis">Mulai Pengerjaan Kuis</button>
           ${!this.studentId
-            ? html`<p class="err-chip" style="background:#fef3c7;border-color:#fcd34d;color:#92400e;margin-top:10px;">ℹ️ Harap login untuk mengerjakan kuis.</p>`
+            ? html`<p class="err-chip" style="background:var(--ddd-theme-warning-light,#fef3c7);border-color:var(--ddd-theme-warning,#fcd34d);color:var(--ddd-theme-warning-text,#92400e);margin-top:10px;">ℹ️ Harap login untuk mengerjakan kuis.</p>`
             : ""}
           ${this._locked && this.mode === "guru"
             ? html`<button class="btn-edit-soal" @click=${this._bukaKunci} aria-label="Buka kunci kuis">🔓 Buka Kunci / Ulangi</button>`
@@ -1268,14 +1268,14 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
         <div class="quiz-card result-box">
           <h3 class="quiz-title">🎊 Hasil Evaluasi Anda</h3>
           ${this.hideScore ? "" : html`<div class="score-circle">${persentase}%</div>`}
-          <p style="font-weight:700; color:#1e293b; margin-bottom:4px;">Kuis Selesai Dikerjakan!</p>
-          <p style="color:#64748b; font-size:14px; margin-top:0; margin-bottom: var(--ddd-spacing-4);">Skor Anda telah dikunci dan dikirim masuk ke antrean database tunggal V5.</p>
+          <p style="font-weight:700; color:var(--ddd-theme-default-text); margin-bottom:4px;">Kuis Selesai Dikerjakan!</p>
+          <p style="color:var(--ddd-theme-secondary); font-size:14px; margin-top:0; margin-bottom: var(--ddd-spacing-4);">Skor Anda telah dikunci dan dikirim masuk ke antrean database tunggal V5.</p>
           ${this._bankStatus
             ? html`<p class="err-chip">ℹ️ ${this._bankStatus}</p>`
             : ""}
-          <p class="err-chip" style="background:#eef2ff;border-color:#c7d2fe;color:#4338ca;">ℹ️ Siswa: ${this.studentName || "-"} (NIS ${this.studentNis || "-"}, Kelas ${this.studentKelas || "-"})</p>
+          <p class="err-chip" style="background:var(--ddd-theme-polaris-surface-hover);border-color:var(--ddd-theme-primary);color:var(--ddd-theme-primary);">ℹ️ Siswa: ${this.studentName || "-"} (NIS ${this.studentNis || "-"}, Kelas ${this.studentKelas || "-"})</p>
           ${this.mode === "guru" && !this.hidePauseRestart
-            ? html`<button class="btn-start" style="background-color:#475569;" @click=${() => {
+            ? html`<button class="btn-start" style="background-color:var(--ddd-theme-secondary);" @click=${() => {
                 this._screen = "start";
                 this.requestUpdate();
               }}>Ulangi Kuis</button>`
@@ -1295,7 +1295,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     const qType = s.type || "mc";
     return html`
       <div class="quiz-card">
-        <div style="display:flex; justify-content:space-between; font-size:12px; font-weight:bold; color:#64748b; margin-bottom:10px;">
+        <div style="display:flex; justify-content:space-between; font-size:12px; font-weight:bold; color:var(--ddd-theme-secondary); margin-bottom:10px;">
           <span>Soal ${this._currentIdx + 1} dari ${active.length}</span>
           ${this.hideScore ? "" : html`<span>Skor Berjalan: ${this._score}</span>`}
         </div>
@@ -1668,12 +1668,12 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
               <input type="text" class="editor-input" style="flex:1;min-width:160px;"
                 placeholder="URL gambar soal (opsional)" .value=${this._tempQuestionImage}
                 @input=${(e) => { this._tempQuestionImage = e.target.value; }}>
-              <label style="font-size:12px;color:#555;white-space:nowrap;">Poin:</label>
+              <label style="font-size:12px;color:var(--ddd-theme-secondary);white-space:nowrap;">Poin:</label>
               <input type="number" min="1" class="editor-input" style="width:60px;text-align:center;"
                 .value=${this._tempQuestionPoints} @input=${(e) => { this._tempQuestionPoints = parseInt(e.target.value, 10) || 1; }}>
             </div>
             ${this._tempQuestionImage
-              ? html`<div style="text-align:center;margin:8px 0;"><img src=${this._tempQuestionImage} style="max-width:200px;border-radius:6px;border:1px solid #ddd;" alt="Pratinjau gambar soal" /></div>`
+              ? html`<div style="text-align:center;margin:8px 0;"><img src=${this._tempQuestionImage} style="max-width:200px;border-radius:6px;border:1px solid var(--ddd-theme-polaris-border);" alt="Pratinjau gambar soal" /></div>`
               : ""}
 
             <textarea class="question-text-input" .value=${this._tempQuestionText}
@@ -1703,7 +1703,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
                       <input type="text" class="editor-input" style="flex:1;min-width:160px;"
                         placeholder="URL gambar soal" .value=${this._tempQuestionImage}
                         @input=${(e) => { this._tempQuestionImage = e.target.value; }}>
-                      <label style="font-size:12px;color:#555;white-space:nowrap;">Poin:</label>
+                      <label style="font-size:12px;color:var(--ddd-theme-secondary);white-space:nowrap;">Poin:</label>
                       <input type="number" min="1" class="editor-input" style="width:60px;text-align:center;"
                         .value=${this._tempQuestionPoints} @input=${(e) => { this._tempQuestionPoints = parseInt(e.target.value, 10) || 1; }}>
                     </div>
@@ -1716,19 +1716,19 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
                     ${this._tempQuestionType === "shortAnswer" ? this._renderEditorShortAnswer() : ""}
                     <div style="display:flex;gap:8px;margin-top:8px;">
                       <button type="button" class="btn-submit" @click=${this._saveEditQuestion}>💾 Simpan Perubahan</button>
-                      <button type="button" class="btn-submit" style="background:#94a3b8;" @click=${this._cancelEditQuestion}>Batal</button>
+                      <button type="button" class="btn-submit" style="background:var(--ddd-theme-secondary);" @click=${this._cancelEditQuestion}>Batal</button>
                     </div>
                   </div>
                 ` : html`
                   <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;">
                     <div>
-                      <strong style="color:#4338ca;">[${(question.type || "mc").toUpperCase()}]</strong> ${question.question}
-                      ${question.image ? html`<span style="font-size:11px;color:#888;">[gambar]</span>` : ""}
-                      <span style="font-size:11px;color:#059669;font-weight:bold;">[${question.points || 1} poin]</span>
+                      <strong style="color:var(--ddd-theme-primary);">[${(question.type || "mc").toUpperCase()}]</strong> ${question.question}
+                      ${question.image ? html`<span style="font-size:11px;color:var(--ddd-theme-secondary);">[gambar]</span>` : ""}
+                      <span style="font-size:11px;color:var(--ddd-theme-success);font-weight:bold;">[${question.points || 1} poin]</span>
                     </div>
                     <div style="display:flex;gap:6px;">
                       <button class="btn-edit-soal" style="margin:0;padding:4px 10px;" @click=${() => this._startEditQuestion(index)}>✏️ Edit</button>
-                      <button class="btn-edit-soal" style="margin:0;padding:4px 10px;background-color:#dc2626;" @click=${() => this._deleteQuestion(index)}>🗑️</button>
+                      <button class="btn-edit-soal" style="margin:0;padding:4px 10px;background-color:var(--ddd-theme-error);" @click=${() => this._deleteQuestion(index)}>🗑️</button>
                     </div>
                   </div>
                 `}
@@ -1781,8 +1781,8 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
         `)}
       </div>
       ${this._tempCorrectAnswers.length <= 1
-        ? html`<div style="font-size:11px;color:#888;margin-top:4px;">Centang 1 jawaban benar. Centang lebih dari 1 untuk mode PG Kompleks.</div>`
-        : html`<div style="font-size:11px;color:#4338ca;margin-top:4px;font-weight:bold;">Mode PG Kompleks: ${this._tempCorrectAnswers.length} jawaban benar dipilih</div>`}
+        ? html`<div style="font-size:11px;color:var(--ddd-theme-secondary);margin-top:4px;">Centang 1 jawaban benar. Centang lebih dari 1 untuk mode PG Kompleks.</div>`
+        : html`<div style="font-size:11px;color:var(--ddd-theme-primary);margin-top:4px;font-weight:bold;">Mode PG Kompleks: ${this._tempCorrectAnswers.length} jawaban benar dipilih</div>`}
     `;
   }
 
@@ -1818,13 +1818,13 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
               }} />
             Salah
           </label>
-          <button type="button" style="font-size:11px;padding:2px 8px;border-radius:4px;border:1px solid #ccc;cursor:pointer;background:#fee2e2;color:#dc2626;"
+          <button type="button" style="font-size:11px;padding:2px 8px;border-radius:4px;border:1px solid var(--ddd-theme-polaris-border);cursor:pointer;background:var(--ddd-theme-error-light);color:var(--ddd-theme-error);"
             @click=${() => {
               this._tempStatements = this._tempStatements.filter((_, j) => j !== i);
             }}>🗑️</button>
         </div>
       `)}
-      <button type="button" style="font-size:11px;margin-top:4px;padding:2px 8px;border-radius:4px;border:1px solid #ccc;cursor:pointer;"
+      <button type="button" style="font-size:11px;margin-top:4px;padding:2px 8px;border-radius:4px;border:1px solid var(--ddd-theme-polaris-border);cursor:pointer;"
         @click=${() => { this._tempStatements = [...this._tempStatements, { text: "", answer: true }]; }}>➕ Tambah Pernyataan</button>
     </div>`;
   }
@@ -1841,7 +1841,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
               .value=${item} @input=${(e) => { const a = [...this._tempLeftItems]; a[i] = e.target.value; this._tempLeftItems = a; }}
               placeholder="Item ${i + 1}">
           `)}
-          <button type="button" style="font-size:11px;margin-top:4px;padding:2px 8px;border-radius:4px;border:1px solid #ccc;cursor:pointer;"
+          <button type="button" style="font-size:11px;margin-top:4px;padding:2px 8px;border-radius:4px;border:1px solid var(--ddd-theme-polaris-border);cursor:pointer;"
             @click=${() => { this._tempLeftItems = [...this._tempLeftItems, ""]; }}>+ Tambah</button>
         </div>
         <div style="flex:1;min-width:200px;">
@@ -1851,7 +1851,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
               .value=${item} @input=${(e) => { const a = [...this._tempRightItems]; a[i] = e.target.value; this._tempRightItems = a; }}
               placeholder="Item ${String.fromCharCode(65 + i)}">
           `)}
-          <button type="button" style="font-size:11px;margin-top:4px;padding:2px 8px;border-radius:4px;border:1px solid #ccc;cursor:pointer;"
+          <button type="button" style="font-size:11px;margin-top:4px;padding:2px 8px;border-radius:4px;border:1px solid var(--ddd-theme-polaris-border);cursor:pointer;"
             @click=${() => {
               const a = [...this._tempRightItems, ""];
               this._tempRightItems = a;
@@ -1879,7 +1879,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
             </div>
           `;
         })}
-        <button type="button" style="font-size:11px;margin-top:4px;padding:2px 8px;border-radius:4px;border:1px solid #ccc;cursor:pointer;"
+        <button type="button" style="font-size:11px;margin-top:4px;padding:2px 8px;border-radius:4px;border:1px solid var(--ddd-theme-polaris-border);cursor:pointer;"
           @click=${() => {
             const pairs = {};
             leftItems.forEach((_, i) => { pairs[i] = i < rightItems.length ? i : 0; });
