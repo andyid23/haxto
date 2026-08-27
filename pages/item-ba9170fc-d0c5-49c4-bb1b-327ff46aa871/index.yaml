@@ -10,7 +10,7 @@ description: |+
 
 metadata:
   created: 1787721767
-  updated: 1787836264
+  updated: 1787836294
   images: []
   videos: []
   published: true
@@ -18,17 +18,18 @@ metadata:
   locked: false
   readtime: 4
   theme:
-    element: clean-one
-    path: '@haxtheweb/clean-one/clean-one.js'
-    name: Clean One
-    thumbnail: '@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-clean-one-thumb.jpg'
-    description: Start with a blank site using the Clean One
+    element: haxcms-blank-theme
+    path: '@haxtheweb/haxcms-elements/lib/haxcms-blank-theme.js'
+    name: Haxcms Blank Theme
+    thumbnail: >-
+      @haxtheweb/haxcms-elements/lib/theme-screenshots/theme-haxcms-blank-theme-thumb.jpg
+    description: Start with a blank site using the Haxcms Blank Theme
     category:
-      - Course
-    hidden: false
-    priority: -2
+      - Website
+    hidden: true
+    priority: 0
     terrible: false
-    key: clean-one
+    key: haxcms-blank-theme
 content: >
 
   <div class="petunjuk">
@@ -42,12 +43,12 @@ content: >
 
   <p><b></b></p>
 
-  <h3><b>MODUL MATERI INFORMATIKA FASE F</b></h3>
+  <h3 id="h3-1384382893"><b>MODUL MATERI INFORMATIKA FASE F</b></h3>
 
-  <h4><b>TOPIK: OPTIMALISASI PENCARIAN LANJUTAN UNTUK RISET (BAB 1 - STIMULUS
-  1)</b></h4>
+  <h4 id="h4--903726175"><b>TOPIK: OPTIMALISASI PENCARIAN LANJUTAN UNTUK RISET
+  (BAB 1 - STIMULUS 1)</b></h4>
 
-  <hr/><h3><b>1. Pendahuluan</b></h3>
+  <hr/><h3 id="h3-39465782"><b>1. Pendahuluan</b></h3>
 
   <p><b>Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap
   konsep inti serta implementasi dari sistem komputer, jaringan, dan kecakapan
@@ -63,7 +64,7 @@ content: >
   memanfaatkan mesin pencari (search engine) untuk kepentingan riset akademik
   secara efektif dan efisien.</b></p>
 
-  <hr/><h3><b>2. Tujuan Pembelajaran</b></h3>
+  <hr/><h3 id="h3-468844443"><b>2. Tujuan Pembelajaran</b></h3>
 
   <p><b>Berdasarkan Capaian Pembelajaran (CP) dan Alur Tujuan Pembelajaran (ATP)
   Informatika Fase F, tujuan pembelajaran khusus pada topik ini adalah:</b></p>
@@ -72,14 +73,18 @@ content: >
   optimal untuk melakukan riset akademik.</b></p>
 
 
+
   </li>
+
 
 
   <li aria-level="1"><p><b>Mampu menyusun strategi penelusuran informasi daring
   dengan menggunakan kata kunci presisi serta operator logika Boolean.</b></p>
 
 
+
   </li>
+
 
 
   <li aria-level="1"><p><b>Mampu menerapkan kombinasi variabel pencarian
@@ -87,14 +92,16 @@ content: >
   data dan menghemat waktu riset.</b></p>
 
 
+
   </li>
+
 
 
   </ul>
 
-  <hr/><h3><b>3. Materi dan Konsep Dasar</b></h3>
+  <hr/><h3 id="h3-272661673"><b>3. Materi dan Konsep Dasar</b></h3>
 
-  <h4><b>A. Kebutuhan Riset Ilmiah Daring</b></h4>
+  <h4 id="h4--549341882"><b>A. Kebutuhan Riset Ilmiah Daring</b></h4>
 
   <p><b>Riset adalah penyelidikan suatu masalah secara sistematis, kritis, dan
   ilmiah untuk mendapatkan fakta baru atau penafsiran yang lebih baik. Dalam
@@ -103,7 +110,7 @@ content: >
   karena itu, pemrogram dan peneliti harus menguasai strategi pencarian lanjutan
   untuk menyaring data secara presisi.</b></p>
 
-  <h4><b>B. Operator Logika Boolean</b></h4>
+  <h4 id="h4--1885554261"><b>B. Operator Logika Boolean</b></h4>
 
   <p><b>Operator logika Boolean berperan penting dalam mengaitkan, membatasi,
   atau mengecualikan konsep penelusuran di mesin pencari:</b></p>
@@ -113,7 +120,9 @@ content: >
   halaman yang hanya memuat semua kata kunci tersebut secara bersamaan).</b></p>
 
 
+
   </li>
+
 
 
   <li aria-level="1"><p><b>OR: Digunakan untuk memperluas pencarian dengan
@@ -121,7 +130,9 @@ content: >
   sekaligus.</b></p>
 
 
+
   </li>
+
 
 
   <li aria-level="1"><p><b>NOT (atau karakter tanda minus -): Digunakan untuk
@@ -129,12 +140,15 @@ content: >
   halaman hasil penelusuran.</b></p>
 
 
+
   </li>
+
 
 
   </ul>
 
-  <h4><b>C. Variabel Pencarian Lanjutan (Search Operators)</b></h4>
+  <h4 id="h4-690940071"><b>C. Variabel Pencarian Lanjutan (Search
+  Operators)</b></h4>
 
   <p><b>Variabel ini membatasi pelacakan kata kunci pada bagian spesifik dari
   dokumen atau server di internet:</b></p>
@@ -145,7 +159,9 @@ content: >
   Indonesia).</b></p>
 
 
+
   </li>
+
 
 
   <li aria-level="1"><p><b>filetype:: Menyaring hasil pencarian berdasarkan
@@ -153,28 +169,36 @@ content: >
   ppt.</b></p>
 
 
+
   </li>
+
 
 
   <li aria-level="1"><p><b>inurl:: Melacak kata kunci spesifik yang tertanam
   langsung di dalam alamat URL halaman web.</b></p>
 
 
+
   </li>
+
 
 
   <li aria-level="1"><p><b>intitle:: Membatasi pencarian halaman web yang judul
   dokumennya mengandung kata kunci tertentu.</b></p>
 
 
+
   </li>
+
 
 
   <li aria-level="1"><p><b>intext:: Mengunci pelacakan kata kunci khusus hanya
   di dalam badan teks (body) dokumen halaman web.</b></p>
 
 
+
   </li>
+
 
 
   <li aria-level="1"><p><b>cache:: Menampilkan versi salinan sementara terbaru
@@ -182,7 +206,9 @@ content: >
   tengah keterbatasan koneksi internet.</b></p>
 
 
+
   </li>
+
 
 
   <li aria-level="1"><p><b>Tanda Petik Ganda (""): Digunakan untuk memaksa mesin
@@ -190,12 +216,14 @@ content: >
   Match).</b></p>
 
 
+
   </li>
+
 
 
   </ul>
 
-  <h4><b>D. Teknologi Pencarian Modern</b></h4>
+  <h4 id="h4--2045198086"><b>D. Teknologi Pencarian Modern</b></h4>
 
   <ul><li aria-level="1"><p><b>Pencarian Visual (Google Lens): Teknologi
   penelusuran informasi non-teks yang didasarkan pada pencocokan data
@@ -203,12 +231,14 @@ content: >
   internet.</b></p>
 
 
+
   </li>
+
 
 
   </ul>
 
-  <hr/><h3><b>4. Miskonsepsi Umum</b></h3>
+  <hr/><h3 id="h3--2136781867"><b>4. Miskonsepsi Umum</b></h3>
 
   <ul><li aria-level="1"><p><b>Miskonsepsi 1: Mengetikkan kata kunci yang tidak
   berkaitan mempercepat proses riset. Faktanya: Kata kunci yang tidak berkaitan
@@ -216,7 +246,9 @@ content: >
   riset secara signifikan.</b></p>
 
 
+
   </li>
+
 
 
   <li aria-level="1"><p><b>Miskonsepsi 2: Penggunaan kata kunci yang terlampau
@@ -225,7 +257,9 @@ content: >
   lainnya yang tersedia di bawah terminologi yang lebih umum.</b></p>
 
 
+
   </li>
+
 
 
   <li aria-level="1"><p><b>Miskonsepsi 3: Operator OR digunakan untuk menyaring
@@ -234,19 +268,23 @@ content: >
   ruang lingkup adalah AND.</b></p>
 
 
+
   </li>
+
 
 
   </ul>
 
-  <hr/><h3><b>5. Ringkasan Materi</b></h3>
+  <hr/><h3 id="h3-1891844905"><b>5. Ringkasan Materi</b></h3>
 
   <ol><li aria-level="1"><p><b>Pencarian riset ilmiah daring memerlukan teknik
   pencarian lanjutan agar terhindar dari tumpukan informasi tidak
   relevan.</b></p>
 
 
+
   </li>
+
 
 
   <li aria-level="1"><p><b>Operator logika Boolean (AND, OR, NOT/-) serta tanda
@@ -254,7 +292,9 @@ content: >
   secara presisi.</b></p>
 
 
+
   </li>
+
 
 
   <li aria-level="1"><p><b>Variabel pencarian lanjutan seperti site: dan
@@ -262,21 +302,26 @@ content: >
   format dokumen siap unduh.</b></p>
 
 
+
   </li>
+
 
 
   <li aria-level="1"><p><b>Pencarian berbasis visual difasilitasi oleh Google
   Lens dengan mencocokkan kemiripan gambar secara daring.</b></p>
 
 
+
   </li>
+
 
 
   </ol>
 
-  <hr/><h3><b>6. Materi Pembelajaran sesuai Stimulus 1</b></h3>
+  <hr/><h3 id="h3-489287619"><b>6. Materi Pembelajaran sesuai Stimulus
+  1</b></h3>
 
-  <h4><b>Wacana Stimulus 1:</b></h4>
+  <h4 id="h4--148070518"><b>Wacana Stimulus 1:</b></h4>
 
   <p><b>Pencarian informasi ilmiah secara daring menggunakan kata kunci
   sederhana sering kali tidak efektif karena menghasilkan jutaan data tidak
@@ -285,7 +330,7 @@ content: >
   format berkas. Selain itu, operator logika boolean (AND, OR, NOT) berperan
   penting dalam mengaitkan atau mengecualikan konsep penelusuran.</b></p>
 
-  <h4><b>Studi Kasus Skenario Riset Akademik:</b></h4>
+  <h4 id="h4-815904018"><b>Studi Kasus Skenario Riset Akademik:</b></h4>
 
   <p><b>Seorang siswa kelas XI sedang melakukan riset mengenai "dampak emisi
   karbon". Ia ingin mencari dokumen laporan resmi berformat PDF yang diterbitkan
@@ -300,7 +345,9 @@ content: >
   pemerintah yang sah (memiliki Authority tinggi).</b></p>
 
 
+
   </li>
+
 
 
   <li aria-level="1"><p><b>Analisis Efisiensi: Penulisan frasa dalam tanda petik
@@ -309,7 +356,9 @@ content: >
   valid.</b></p>
 
 
+
   </li>
+
 
 
   </ul>
@@ -341,7 +390,7 @@ content: >
   iniiiii?&quot;,&quot;a&quot;:&quot;Python&quot;,&quot;b&quot;:&quot;Lit
   (JavaScript)&quot;,&quot;c&quot;:&quot;PHP&quot;,&quot;d&quot;:&quot;Ruby&quot;,&quot;k&quot;:&quot;b&quot;,&quot;points&quot;:10}]"
   _mulai="" _selesai="" _skor="0" _habis-waktu="" _best-skor="50" _pernah-ikut
-  _attempt-ke="3"  >
+  _attempt-ke="3"   _pesan="Gagal memuat file soal: Bukan array JSON">
 
   </latihan-kuis>
 
