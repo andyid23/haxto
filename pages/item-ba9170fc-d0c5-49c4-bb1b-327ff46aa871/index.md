@@ -12,4 +12,4 @@ soal latihan
 7.  **Edit / upload soal:** soal bisa diketik langsung lewat panel HAX (_Soal (JSON)_, inputMethod `code-editor`) atau diunggah dari file via _Upload File Soal (JSON)_ (`haxupload` → atribut `soal-file-url`). Bila `soal-file-url` berhasil di-parse, isinya _menimpa_ soal inline; bila file rusak/cosong, soal inline tetap dipakai dan pesan error tampil di atas kuis.
 8.  Cek hasil di Spreadsheet lewat atribut `spreadsheet-url` (tombol "Buka Spreadsheet Nilai" di layar akhir, bila `show-sheet-link` aktif).
 
-**URL Apps Script (contoh — ganti dengan milik Anda):**  📋 Salin URL GAS
+**URL Apps Script (contoh — ganti dengan milik Anda):**
