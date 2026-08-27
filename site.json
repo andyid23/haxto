@@ -14,7 +14,7 @@
       "name": "haxto",
       "domain": null,
       "created": 1787457359,
-      "updated": 1787854451
+      "updated": 1787855410
     },
     "theme": {
       "element": "custom-haxkuis-theme",
@@ -210,19 +210,20 @@
       "indent": 0,
       "location": "pages/item-43d63e69-4564-4ae3-80df-ffa7a6677b2b/index.html",
       "slug": "new-page",
-      "order": 2,
+      "order": 3,
       "parent": null,
-      "title": "New Page",
+      "title": "Ulangan Harian 1",
       "description": "\n\n",
       "metadata": {
         "created": 1787854344,
-        "updated": 1787854451,
+        "updated": 1787855410,
         "images": [],
         "videos": [],
         "published": true,
-        "hideInMenu": false,
+        "hideInMenu": true,
         "locked": false,
-        "readtime": 1
+        "readtime": 1,
+        "tags": "Literasi Digital"
       }
     }
   ]

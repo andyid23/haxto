@@ -3585,6 +3585,61 @@
             },
             {
               "kind": "field",
+              "name": "mode",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"siswa\"",
+              "attribute": "mode",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "hidePauseRestart",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true",
+              "attribute": "hide-pause-restart",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "shuffleQuestions",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "shuffle-questions",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "shuffleChoices",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "shuffle-choices",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "kategori",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "kategori",
+              "reflects": true
+            },
+            {
+              "kind": "field",
               "name": "_mulai",
               "privacy": "public",
               "type": {
@@ -3662,6 +3717,16 @@
               },
               "default": "0",
               "attribute": "_attemptKe"
+            },
+            {
+              "kind": "field",
+              "name": "_terkunci",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "_terkunci"
             },
             {
               "kind": "field",
@@ -3858,6 +3923,46 @@
               "fieldName": "maxRetake"
             },
             {
+              "name": "mode",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"siswa\"",
+              "fieldName": "mode"
+            },
+            {
+              "name": "hide-pause-restart",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true",
+              "fieldName": "hidePauseRestart"
+            },
+            {
+              "name": "shuffle-questions",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "shuffleQuestions"
+            },
+            {
+              "name": "shuffle-choices",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "shuffleChoices"
+            },
+            {
+              "name": "kategori",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "kategori"
+            },
+            {
               "name": "_mulai",
               "type": {
                 "text": "boolean"
@@ -3920,6 +4025,14 @@
               },
               "default": "0",
               "fieldName": "_attemptKe"
+            },
+            {
+              "name": "_terkunci",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "_terkunci"
             }
           ],
           "mixins": [
