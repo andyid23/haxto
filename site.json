@@ -14,7 +14,7 @@
       "name": "haxto",
       "domain": null,
       "created": 1787457359,
-      "updated": 1787855435
+      "updated": 1787857898
     },
     "theme": {
       "element": "custom-haxkuis-theme",
@@ -103,11 +103,11 @@
       "slug": "ulangan-harian",
       "order": 2,
       "parent": null,
-      "title": "Ulangan Harian 1",
+      "title": "LATIHAN/SIMULASI KUIS",
       "description": "Halaman ulangan harian terintegrasi dengan timer, anti-confetti, dan jawaban tersembunyi.",
       "metadata": {
         "created": 1787466936,
-        "updated": 1787837658,
+        "updated": 1787857898,
         "published": true,
         "hideInMenu": true,
         "locked": false,

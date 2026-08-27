@@ -3640,6 +3640,39 @@
             },
             {
               "kind": "field",
+              "name": "hideConfetti",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "hide-confetti",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "hideAnswers",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "hide-answers",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "hideScore",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "hide-score",
+              "reflects": true
+            },
+            {
+              "kind": "field",
               "name": "_mulai",
               "privacy": "public",
               "type": {
@@ -3961,6 +3994,30 @@
               },
               "default": "\"\"",
               "fieldName": "kategori"
+            },
+            {
+              "name": "hide-confetti",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "hideConfetti"
+            },
+            {
+              "name": "hide-answers",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "hideAnswers"
+            },
+            {
+              "name": "hide-score",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "hideScore"
             },
             {
               "name": "_mulai",

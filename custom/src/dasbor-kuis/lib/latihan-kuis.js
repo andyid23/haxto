@@ -55,6 +55,9 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
       shuffleQuestions: { type: Boolean, attribute: "shuffle-questions", reflect: true },
       shuffleChoices: { type: Boolean, attribute: "shuffle-choices", reflect: true },
       kategori: { type: String, attribute: "kategori", reflect: true },
+      hideConfetti: { type: Boolean, attribute: "hide-confetti", reflect: true },
+      hideAnswers: { type: Boolean, attribute: "hide-answers", reflect: true },
+      hideScore: { type: Boolean, attribute: "hide-score", reflect: true },
       _mulai: { state: true },
       _selesai: { state: true },
       _skor: { state: true },
@@ -98,6 +101,9 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     this.shuffleQuestions = false;
     this.shuffleChoices = false;
     this.kategori = "";
+    this.hideConfetti = false;
+    this.hideAnswers = false;
+    this.hideScore = false;
     this._mulai = false;
     this._selesai = false;
     this._skor = null;
@@ -439,6 +445,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
               ${this._pesan ? html`<p class="err-chip">${this._pesan}</p>` : nothing}
               <timer-kuis
                 duration="${this.duration}"
+                ?hide-controls="${this.hidePauseRestart}"
                 @timer-kuis-expired="${this._onWaktuHabis}">
               </timer-kuis>
 
@@ -458,7 +465,10 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
                 .hidePauseRestart="${this.hidePauseRestart}"
                 .shuffleQuestions="${this.shuffleQuestions}"
                 .shuffleChoices="${this.shuffleChoices}"
-                .kategori="${this.kategori}">
+                .kategori="${this.kategori}"
+                .hideConfetti="${this.hideConfetti}"
+                .hideAnswers="${this.hideAnswers}"
+                .hideScore="${this.hideScore}">
               </kuis-ledakan>
             `}
       </div>
@@ -542,6 +552,24 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
             title: "Kategori Kuis",
             inputMethod: "textfield",
             description: "Kategori pedagogi: formatif (progres) atau sumatif (rapor). Diteruskan ke backend.",
+          },
+          {
+            property: "hideConfetti",
+            title: "Nonaktifkan Konfeti",
+            inputMethod: "boolean",
+            description: "Tidak menampilkan efek konfeti saat jawaban benar.",
+          },
+          {
+            property: "hideAnswers",
+            title: "Sembunyikan Jawaban",
+            inputMethod: "boolean",
+            description: "Tidak menampilkan jawaban benar/salah setelah menjawab.",
+          },
+          {
+            property: "hideScore",
+            title: "Sembunyikan Nilai",
+            inputMethod: "boolean",
+            description: "Menyembunyikan angka skor berjalan di layar soal dan lingkaran nilai akhir.",
           },
           {
             property: "duration",

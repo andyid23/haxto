@@ -2,15 +2,15 @@ id: item-641ef0af-6ba1-4523-bedd-5c0d0f85828b
 indent: 0
 location: pages/item-641ef0af-6ba1-4523-bedd-5c0d0f85828b/index.yaml
 slug: ulangan-harian
-order: 1
+order: 2
 parent: null
-title: Ulangan Harian 1
+title: LATIHAN/SIMULASI KUIS
 description: >-
   Halaman ulangan harian terintegrasi dengan timer, anti-confetti, dan jawaban
   tersembunyi.
 metadata:
   created: 1787466936
-  updated: 1787526908
+  updated: 1787857898
   published: true
   hideInMenu: true
   locked: false
@@ -34,338 +34,176 @@ metadata:
   tags: literasi
 content: >
 
-  <h2 id="h2-ulangan">📝 Ulangan Harian 1</h2>
+  <h2 id="h2-ulangan">📝 Latihan 1</h2>
 
   <p>Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan.
-  Jawaban benar/salah tidak ditampilkan sampai guru memutuskan. Skor terkirim
-  otomatis ke database setelah waktu habis atau semua soal terjawab. Waktu
-  Pengerjaan Soal 30 Menit</p>
-
+  Jawaban
+    benar/salah tidak ditampilkan sampai guru memutuskan. Skor terkirim otomatis ke database
+    setelah waktu habis atau semua soal terjawab. Waktu Pengerjaan Soal 30 Menit</p>
   <quiz-user-auth
   apps-script-url="https://script.google.com/macros/s/AKfycbxJtcgtms69cByMneEgPvDUg7S3NkmhdiQtsCUTG8bJpsZw2dP9UDrRCkd1HNZ-EvY/exec"
   auto-login _student-id="STD-65108053"></quiz-user-auth>
 
-  <p>&#160;_</p>
+  <br/><p></p>
 
-  <br/><kuis-ledakan judul="Ulangan Harian — Pertemuan 12" mode="siswa"
-  kd-materi="Literasi 1"
-  apps-script-url="https://script.google.com/macros/s/AKfycbxJtcgtms69cByMneEgPvDUg7S3NkmhdiQtsCUTG8bJpsZw2dP9UDrRCkd1HNZ-EvY/exec"
-  hide-answers hide-confetti shuffle-choices timer-autostart
-  questions="[{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Seorang
-  peneliti ingin mencari jurnal ilmiah resmi tentang \&quot;perubahan
-  iklim\&quot; yang dipublikasikan oleh universitas di Indonesia (menggunakan
-  domain ac.id) dan ingin memastikan dokumen tersebut langsung berformat PDF
-  agar dapat diunduh secara utuh. Sintaks pencarian Google manakah yang paling
-  tepat untuk kebutuhan tersebut?&quot;,&quot;choices&quot;:[&quot;perubahan
-  iklim filetype:pdf site:edu&quot;,&quot;perubahan iklim OR
-  site:\&quot;ac.id\&quot; filetype:pdf&quot;,&quot;\&quot;perubahan
-  iklim\&quot; site:ac.id filetype:pdf&quot;,&quot;\&quot;perubahan iklim\&quot;
-  site:gov filetype:pdf&quot;,&quot;\&quot;perubahan iklim\&quot; inurl:ac.id
-  intext:pdf&quot;],&quot;correctIndex&quot;:2},{&quot;type&quot;:&quot;pgk&quot;,&quot;question&quot;:&quot;Tentukan
-  apakah setiap pernyataan berikut Benar atau Salah mengenai penggunaan variabel
-  dan strategi pencarian lanjutan di
-  Google!&quot;,&quot;statements&quot;:[{&quot;text&quot;:&quot;Penggunaan kata
-  kunci pencarian yang sangat spesifik (terlalu sempit) dijamin selalu
-  menghasilkan informasi yang paling relevan dan tidak akan menghilangkan
-  informasi penting
-  lainnya.&quot;,&quot;answer&quot;:false},{&quot;text&quot;:&quot;Variabel
-  inurl:karir akan menampilkan halaman web yang alamat URL-nya mengandung kata
-  \&quot;karir\&quot;, sedangkan intitle:lowongan akan mencari halaman yang
-  judul dokumennya memuat kata
-  \&quot;lowongan\&quot;.&quot;,&quot;answer&quot;:true},{&quot;text&quot;:&quot;Operator
-  boolean \&quot;OR\&quot; digunakan untuk mempersempit hasil pencarian dengan
-  mengecualikan kata kunci tertentu yang tidak relevan dari halaman
-  pencarian.&quot;,&quot;answer&quot;:false}]},{&quot;type&quot;:&quot;matching&quot;,&quot;question&quot;:&quot;Pasangkanlah
-  nama variabel pencarian lanjutan Google di lajur kiri dengan fungsi
+  <latihan-kuis mode="siswa" allow-retake max-retake="5" duration="900"
+  timer-autostart="" shuffle-questions shuffle-choices kategori="formatif"
+  apps-script-url="https://script.google.com/macros/s/AKfycbyuprudZkCq_YCQ-CqqD_huzndsbA6zHsg_ICfqPnlB97dhcrm1xJjGxJ3u4Jp8DjJQ/exec"
+  kd-materi="LD-1 Latihan" student-id="" judul-materi="Materi: Pencarian"
+  teks-materi="Baca contoh di bawah, lalu kerjakan kuis. Kamu bisa mengulang
+  sampai 4 kali." materi-url="./halaman-tugas" show-sheet-link
+  soal-file-url="./files/soal-contoh.json"  materi-file="" cover-image=""
+  judul-kuis="Evaluasi Kuis Interaktif" student-name="" student-nis=""
+  student-absen="" student-kelas="" pesan-waktu-habis="⏰ Waktu habis! Kuis
+  dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda
+  sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai Latihan"
+  hide-pause-restart
+  questions="[{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Pencarian
+  informasi ilmiah secara daring menggunakan kata kunci sederhana sering kali
+  tidak efektif karena menghasilkan jutaan data tidak relevan. Guna menyaring
+  data secara presisi, pengguna dapat menerapkan variabel pencarian lanjutan
+  seperti site: untuk domain web dan filetype: untuk format berkas. Seorang
+  siswa kelas XI sedang melakukan riset mengenai \&quot;dampak emisi
+  karbon\&quot;. Ia ingin mencari dokumen laporan resmi berformat PDF yang
+  diterbitkan langsung oleh instansi pemerintah Indonesia (domain go.id) agar
+  datanya valid. Sintaks pencarian lanjutan manakah yang paling cepat dan akurat
+  untuk memenuhi kebutuhan tersebut?&quot;,&quot;choices&quot;:[&quot;dampak
+  emisi karbon filetype:pdf site:edu&quot;,&quot;\&quot;dampak emisi
+  karbon\&quot; site:go.id filetype:pdf&quot;,&quot;dampak emisi karbon AND
+  site:go.id OR filetype:pdf&quot;,&quot;site:gov filetype:pdf \&quot;dampak
+  emisi karbon\&quot;&quot;,&quot;inurl:emisi_karbon filetype:doc
+  site:com&quot;],&quot;correctIndex&quot;:1},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Pencarian
+  informasi ilmiah secara daring menggunakan kata kunci sederhana sering kali
+  tidak efektif karena menghasilkan jutaan data tidak relevan. Selain itu,
+  operator logika boolean (AND, OR, NOT) berperan penting dalam mengaitkan atau
+  mengecualikan konsep penelusuran. Ketika melakukan riset daring, adakalanya
+  kita ingin mengecualikan kata tertentu yang tidak relevan agar tidak muncul di
+  halaman pencarian. Operator logika boolean atau karakter penulisan manakah
+  yang digunakan untuk mengecualikan kata kunci di mesin pencari
+  Google?&quot;,&quot;choices&quot;:[&quot;Operator AND&quot;,&quot;Operator
+  OR&quot;,&quot;Operator NOT atau tanda minus -&quot;,&quot;Tanda petik ganda
+  \&quot;\&quot;&quot;,&quot;Variabel
+  site:&quot;],&quot;correctIndex&quot;:2},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Dalam
+  pencarian lanjut pada mesin pencari Google, apa fungsi utama dari penggunaan
+  tanda petik ganda \&quot;\&quot; di awal dan akhir frasa kata kunci (seperti
+  \&quot;energi terbarukan\&quot;)?&quot;,&quot;choices&quot;:[&quot;Mengonversi
+  dokumen secara otomatis ke format file PDF&quot;,&quot;Melacak halaman web
+  yang judulnya hanya memuat kata kunci tunggal&quot;,&quot;Menginstruksikan
+  mesin pencari untuk melacak frasa kata kunci secara tepat dan persis (Exact
+  Match)&quot;,&quot;Melakukan enkripsi otomatis pada jalur koneksi internet
+  browser&quot;,&quot;Menghapus data cache sementara dari server
+  Google&quot;],&quot;correctIndex&quot;:2},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Pencarian
+  informasi ilmiah secara daring menggunakan kata kunci sederhana sering kali
+  tidak efektif. Seorang peneliti ingin mencari informasi spesifik mengenai
+  \&quot;pemanasan global\&quot; di situs web resmi kementerian/lembaga
+  pemerintah Indonesia (go.id). Sintaks penulisan di mesin pencari yang
+  benar-benar membatasi hasil pencarian hanya pada domain tersebut
+  adalah...&quot;,&quot;choices&quot;:[&quot;\&quot;pemanasan global\&quot;
+  site:go.id&quot;,&quot;pemanasan global OR
+  site:go.id&quot;,&quot;\&quot;pemanasan global\&quot;
+  filetype:go.id&quot;,&quot;intext:pemanasan global
+  site:edu&quot;,&quot;\&quot;pemanasan global\&quot;
+  -site:go.id&quot;],&quot;correctIndex&quot;:0},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Dalam
+  merumuskan strategi pencarian di mesin pencari Google, mengapa penggunaan kata
+  kunci yang terlampau spesifik dan sempit sangat dihindari oleh seorang
+  peneliti?&quot;,&quot;choices&quot;:[&quot;Karena dapat memblokir alamat IP
+  komputer pengguna secara otomatis&quot;,&quot;Karena dapat mematikan
+  konektivitas jaringan nirkabel router&quot;,&quot;Karena berisiko
+  menghilangkan informasi penting lainnya yang tersedia di bawah terminologi
+  yang lebih umum&quot;,&quot;Karena mengacaukan pengodean biner pada memori
+  cache komputer&quot;,&quot;Karena memaksa browser mengunduh virus digital
+  secara
+  otomatis&quot;],&quot;correctIndex&quot;:2},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Teknologi
+  pencarian modern seperti Google Lens dikembangkan untuk membantu pengguna
+  internet melakukan penelusuran informasi yang tidak terbatas pada teks saja.
+  Penelusuran informasi pada Google Lens didasarkan pada
+  pencocokan...&quot;,&quot;choices&quot;:[&quot;Suara/vokal secara
+  interaktif&quot;,&quot;Gambar/visual yang diunggah
+  pengguna&quot;,&quot;Enkripsi persandian asimetris&quot;,&quot;Koordinat
+  geolokasi satelit secara otomatis&quot;,&quot;Aliran paket data
+  nirkabel&quot;],&quot;correctIndex&quot;:1},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Di
+  tengah keterbatasan akses internet, seorang siswa ingin melihat versi salinan
+  sementara terbaru dari suatu halaman web yang disimpan oleh server mesin
+  pencari Google. Variabel pencarian lanjutan manakah yang harus ia
+  gunakan?&quot;,&quot;choices&quot;:[&quot;site:&quot;,&quot;filetype:&quot;,&quot;cache:&quot;,&quot;inurl:&quot;,&quot;intitle:&quot;],&quot;correctIndex&quot;:2},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Dalam
+  riset akademis di Indonesia, manakah domain website pengelola di internet yang
+  tergolong kredibel, tepercaya, dan secara resmi dikelola oleh institusi
+  pendidikan
+  tinggi?&quot;,&quot;choices&quot;:[&quot;.com&quot;,&quot;.ac.id&quot;,&quot;.blogspot.com&quot;,&quot;.net&quot;,&quot;.org&quot;],&quot;correctIndex&quot;:1},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Mengapa
+  penggunaan kata kunci yang tidak berkaitan dengan topik penelitian tidak
+  termasuk dalam langkah-langkah pencarian informasi yang
+  efektif?&quot;,&quot;choices&quot;:[&quot;Karena dapat merusak perangkat keras
+  komputer pengguna secara langsung&quot;,&quot;Karena menghasilkan hasil
+  pencarian yang tidak relevan dengan topik sehingga menyulitkan pencarian
+  informasi yang dibutuhkan&quot;,&quot;Karena otomatis memblokir koneksi
+  internet browser&quot;,&quot;Karena memaksa server Google menghapus data
+  pencarian pengguna&quot;,&quot;Karena mempercepat durasi loading halaman web
+  secara
+  berlebihan&quot;],&quot;correctIndex&quot;:1},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Mengapa
+  situs web dengan protokol HTTPS dinilai jauh lebih aman dan kredibel untuk
+  diakses saat menjelajah informasi digital dibandingkan situs HTTP
+  biasa?&quot;,&quot;choices&quot;:[&quot;Karena HTTPS secara otomatis menghapus
+  file duplikat di internet&quot;,&quot;Karena HTTPS mempercepat proses indexing
+  Google secara real-time&quot;,&quot;Karena HTTPS menggunakan enkripsi SSL/TLS
+  untuk melindungi data pengguna dari akses pihak yang tidak
+  sah&quot;,&quot;Karena HTTPS tidak memerlukan koneksi internet nirkabel untuk
+  loading&quot;,&quot;Karena HTTPS otomatis memblokir iklan pop-up di
+  browser&quot;],&quot;correctIndex&quot;:2},{&quot;type&quot;:&quot;pgk&quot;,&quot;question&quot;:&quot;Pencarian
+  informasi ilmiah secara daring menggunakan kata kunci sederhana sering kali
+  tidak efektif karena menghasilkan jutaan data tidak relevan. Tentukan apakah
+  setiap pernyataan berikut Benar atau Salah mengenai aturan, variabel, dan
+  strategi pencarian lanjutan di mesin
+  pencari!&quot;,&quot;statements&quot;:[{&quot;text&quot;:&quot;Variabel
+  filetype:pdf berfungsi secara presisi untuk membatasi atau menyaring hasil
+  pencarian Google agar hanya menampilkan berkas berformat dokumen
+  PDF.&quot;,&quot;answer&quot;:true},{&quot;text&quot;:&quot;Operator logika
+  boolean OR digunakan untuk mempersempit hasil pencarian secara drastis dengan
+  memaksa mesin pencari menampilkan halaman yang hanya memuat semua kata kunci
+  sekaligus.&quot;,&quot;answer&quot;:false},{&quot;text&quot;:&quot;Penggunaan
+  variabel intitle:riset membatasi penelusuran agar mesin pencari hanya
+  menampilkan halaman web yang judul dokumennya mengandung kata
+  \&quot;riset\&quot;.&quot;,&quot;answer&quot;:true},{&quot;text&quot;:&quot;Memasukkan
+  kata kunci pencarian yang tidak berkaitan sangat disarankan karena dapat
+  menghemat waktu riset serta meningkatkan efisiensi penyaringan informasi
+  ilmiah.&quot;,&quot;answer&quot;:false},{&quot;text&quot;:&quot;Penggunaan
+  kata kunci pencarian yang terlampau spesifik atau sempit di awal penelusuran
+  dihindari karena berisiko menghilangkan informasi penting lain yang
+  menggunakan istilah
+  umum.&quot;,&quot;answer&quot;:true},{&quot;text&quot;:&quot;Variabel
+  inurl:jurnal digunakan untuk mengunci pelacakan kata kunci
+  \&quot;jurnal\&quot; khusus hanya di dalam badan teks (body text) halaman
+  web.&quot;,&quot;answer&quot;:false}]},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Pencarian
+  informasi ilmiah secara daring menggunakan kata kunci sederhana sering kali
+  tidak efektif. Manakah dua pernyataan berikut yang benar mengenai fungsi dari
+  operator logika boolean dan format pencarian di mesin pencari
+  Google?&quot;,&quot;choices&quot;:[&quot;Operator AND berfungsi menggabungkan
+  beberapa kata kunci guna mempersempit ruang lingkup pencarian
+  data.&quot;,&quot;Operator OR berfungsi membatasi penelusuran agar hanya
+  menampilkan hasil berkas dari domain militer .mil.&quot;,&quot;Operator NOT
+  atau tanda minus - digunakan untuk mengecualikan kata kunci tertentu yang
+  tidak berkaitan dari halaman pencarian.&quot;,&quot;Penggunaan tanda petik
+  ganda \&quot;\&quot; secara otomatis melacak versi salinan sementara terbaru
+  halaman web di
+  server.&quot;],&quot;correctAnswers&quot;:[0,2]},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Pencarian
+  informasi ilmiah secara daring menggunakan kata kunci sederhana sering kali
+  tidak efektif. Seorang siswa ingin mencari data ilmiah mengenai
+  \&quot;teknologi pangan\&quot; yang diterbitkan secara resmi oleh perguruan
+  tinggi di Indonesia (ac.id). Manakah dua sintaks pencarian lanjutan yang sah
+  dan benar-benar membatasi pelacakan hanya ke situs web perguruan tinggi
+  Indonesia tersebut?&quot;,&quot;choices&quot;:[&quot;\&quot;teknologi
+  pangan\&quot; site:ac.id&quot;,&quot;\&quot;teknologi pangan\&quot;
+  filetype:ac.id&quot;,&quot;site:ac.id intext:\&quot;teknologi
+  pangan\&quot;&quot;,&quot;\&quot;teknologi pangan\&quot; OR
+  site:edu&quot;],&quot;correctAnswers&quot;:[0,2]},{&quot;type&quot;:&quot;matching&quot;,&quot;question&quot;:&quot;Pasangkanlah
+  variabel pencarian lanjutan Google di lajur kiri dengan deskripsi
   penjelasannya yang tepat di lajur
-  kanan!&quot;,&quot;leftItems&quot;:[&quot;site:&quot;,&quot;cache:&quot;,&quot;intext:&quot;],&quot;rightItems&quot;:[&quot;Mencari
-  kata kunci khusus di dalam badan teks (body) halaman web&quot;,&quot;Membatasi
-  pencarian pada konten yang muncul di alamat website/domain
-  tertentu&quot;,&quot;Menampilkan versi salinan sementara terbaru dari halaman
-  web tertentu yang disimpan Google&quot;,&quot;Menyaring hasil pencarian
-  berdasarkan format file dokumen tertentu seperti PDF atau
-  DOC&quot;],&quot;correctPairs&quot;:{&quot;0&quot;:1,&quot;1&quot;:2,&quot;2&quot;:0}},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Anda
-  ingin mencari panduan belajar pemrograman bahasa Python yang khusus
-  diterbitkan di situs resmi Kementerian Komunikasi dan Informatika Indonesia
-  (domain: kominfo.go.id) dengan format dokumen berupa presentasi PowerPoint
-  (ppt). Sintaks pencarian lanjutan Google manakah yang paling tepat dan efisien
-  untuk kasus tersebut?&quot;,&quot;choices&quot;:[&quot;python
-  site:kominfo.go.id filetype:ppt&quot;,&quot;python site:kominfo.go.id
-  filetype:pdf&quot;,&quot;python intext:kominfo.go.id
-  inurl:ppt&quot;,&quot;python site:kominfo.go.id OR
-  filetype:ppt&quot;,&quot;python site:kominfo.go.id
-  -filetype:ppt&quot;],&quot;correctIndex&quot;:0},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Seorang
-  siswa sedang melakukan riset mengenai \&quot;Olimpiade 2024\&quot; menggunakan
-  mesin pencari. Di tengah proses, ia menyadari pentingnya efisiensi dalam
-  pencarian data. Berdasarkan prinsip pencarian informasi yang efektif, mengapa
-  penggunaan kata kunci yang tidak berkaitan harus dihindari, dan bagaimana
-  Google Lens memberikan solusi untuk pencarian berbasis informasi
-  non-teks?&quot;,&quot;choices&quot;:[&quot;Kata kunci tidak relevan mematikan
-  algoritma mesin pencari; Google Lens menyaring file duplikat.&quot;,&quot;Kata
-  kunci tidak relevan memperluas hasil pencarian secara optimal; Google Lens
-  merekam suara pengguna untuk diterjemahkan.&quot;,&quot;Kata kunci tidak
-  relevan menghasilkan informasi yang tidak terkait sehingga menyulitkan
-  pencarian; Google Lens memproses gambar yang diunggah untuk dicocokkan dengan
-  sumber visual serupa di internet.&quot;,&quot;Kata kunci tidak relevan
-  mempercepat proses pemeringkatan situs web; Google Lens memblokir semua konten
-  visual yang mengandung bias hak cipta.&quot;,&quot;Kata kunci tidak relevan
-  mendeteksi metadata tersembunyi; Google Lens melacak koordinat geolokasi dari
-  perangkat pencari secara
-  otomatis.&quot;],&quot;correctIndex&quot;:2},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Derasnya
-  arus informasi digital dapat menyebabkan fenomena infodemi, yaitu ledakan
-  informasi berlebih yang mencakup berita akurat maupun hoaks secara cepat.
-  Mengapa era jurnalisme digital memiliki risiko penyebaran informasi palsu
-  (disinformasi/hoaks) yang jauh lebih tinggi dibandingkan era jurnalisme
-  tradisional?&quot;,&quot;choices&quot;:[&quot;Karena teknologi internet
-  membatasi akses masyarakat terhadap kanal berita resmi
-  pemerintah.&quot;,&quot;Karena organisasi periksa fakta tidak memiliki
-  teknologi AI untuk memantau semua situs web.&quot;,&quot;Karena jurnalisme
-  digital memungkinkan lebih banyak orang untuk memublikasikan konten secara
-  instan tanpa pelatihan formal dan penyaringan ketat.&quot;,&quot;Karena UU ITE
-  membebaskan penyebaran opini subjektif di media sosial tanpa sanksi
-  hukum.&quot;,&quot;Karena platform media sosial secara aktif memblokir semua
-  berita yang bersifat
-  objektif.&quot;],&quot;correctIndex&quot;:2},{&quot;type&quot;:&quot;pgk&quot;,&quot;question&quot;:&quot;Nilailah
-  apakah pernyataan-pernyataan berikut Benar atau Salah terkait tanggung jawab
-  platform media sosial, regulasi hukum di Indonesia, dan verifikasi
-  informasi!&quot;,&quot;statements&quot;:[{&quot;text&quot;:&quot;Jika sebuah
-  informasi palsu yang membahayakan publik masih menyebar luas di internet
-  meskipun telah dinyatakan hoaks oleh organisasi periksa fakta, platform media
-  sosial dapat dinilai gagal membatasi penyebaran konten
-  tersebut.&quot;,&quot;answer&quot;:true},{&quot;text&quot;:&quot;Undang-Undang
-  No. 11 Tahun 2008 (UU ITE) khususnya Pasal 45A ayat (1) merupakan salah satu
-  instrumen hukum formal di Indonesia yang melarang keras penyebaran informasi
-  bohong dan
-  menyesatkan.&quot;,&quot;answer&quot;:true},{&quot;text&quot;:&quot;Metode
-  triangulasi dilakukan dengan cara mencocokkan informasi hanya pada satu sumber
-  utama yang paling disukai oleh pembaca guna mempercepat pengambilan
-  keputusan.&quot;,&quot;answer&quot;:false}]},{&quot;type&quot;:&quot;matching&quot;,&quot;question&quot;:&quot;Pasangkanlah
-  komponen ekosistem periksa fakta di lajur kiri dengan contoh entitas atau
-  perannya yang sesuai di lajur
-  kanan!&quot;,&quot;leftItems&quot;:[&quot;Organisasi Periksa
-  Fakta&quot;,&quot;Jurnalis dan Peneliti&quot;,&quot;Publik /
-  Masyarakat&quot;],&quot;rightItems&quot;:[&quot;CekFakta.com dan
-  Turnbackhoax.id&quot;,&quot;Menyaring informasi secara kritis dan tidak
-  menyebarkan hoaks&quot;,&quot;cekfakta.kompas.com dan
-  cekfakta.tempo.co&quot;,&quot;Melakukan enkripsi end-to-end pada pesan
-  pribadi&quot;],&quot;correctPairs&quot;:{&quot;0&quot;:0,&quot;1&quot;:2,&quot;2&quot;:1}},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Adi
-  sedang berjalan di dalam hutan dekat desa. Di perjalanan, dia bertemu penjaga
-  hutan yang memintanya pulang karena ada isu macan buas berkeliaran. Untuk
-  meyakinkan Adi, penjaga hutan menunjukkan jejak kaki segar di tanah yang mirip
-  jejak macan, serta memperlihatkan foto tenda kemah yang koyak akibat cakaran
-  binatang buas di gawainya. Adi mengamati semua bukti fisik tersebut,
-  menyatukannya, dan akhirnya memutuskan untuk pulang.\n\nBerdasarkan konsep
-  validasi data, metode verifikasi gabungan yang diterapkan oleh Adi dengan
-  melihat kesaksian verbal penjaga hutan, jejak kaki di tanah, dan foto tenda
-  yang koyak disebut metode...&quot;,&quot;choices&quot;:[&quot;Enkripsi
-  data&quot;,&quot;Triangulasi&quot;,&quot;Pembersihan
-  data&quot;,&quot;Diseminasi&quot;,&quot;Lateral
-  reading&quot;],&quot;correctIndex&quot;:1},{&quot;type&quot;:&quot;shortAnswer&quot;,&quot;question&quot;:&quot;Kecenderungan
-  psikologis atau kesalahan berpikir yang tidak sadar, di mana seseorang hanya
-  aktif mencari bukti-bukti internet untuk mendukung opini atau keyakinan
-  pribadinya sendiri dan mengabaikan informasi lain yang bertentangan
-  disebut...&quot;,&quot;acceptedAnswers&quot;:[&quot;Bias
-  Konfirmasi&quot;,&quot;bias konfirmasi&quot;,&quot;Confirmation
-  Bias&quot;,&quot;confirmation bias&quot;,&quot;Bias
-  konfirmasi&quot;]},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Anda
-  sedang mencari informasi daring mengenai efek samping suatu zat medis. Di
-  halaman mesin pencari, Anda menemukan dua artikel. Artikel pertama berasal
-  dari situs portal kesehatan resmi pemerintah yang ditulis dengan bahasa
-  profesional, runut, dan menyertakan referensi jurnal ilmiah teruji. Artikel
-  kedua berasal dari blog pribadi anonim yang penuh dengan salah ketik (typo)
-  dan bahasanya cenderung menghakimi tanpa referensi riset.\n\nBerdasarkan
-  kriteria \&quot;Authority\&quot; dan \&quot;Accuracy\&quot; dalam Metode
-  CRAAP, tindakan manakah yang paling tepat
-  diambil?&quot;,&quot;choices&quot;:[&quot;Memercayai artikel kedua karena gaya
-  bahasanya santai dan mudah dipahami oleh masyarakat
-  awam.&quot;,&quot;Menggabungkan kedua artikel tersebut langsung ke dalam
-  laporan ilmiah tanpa melakukan verifikasi ulang.&quot;,&quot;Memberikan bobot
-  kepercayaan utama pada artikel pertama karena dirilis oleh situs bereputasi
-  dan disajikan secara akurat didukung bukti ilmiah.&quot;,&quot;Mengabaikan
-  artikel pertama karena bahasa ilmiahnya terlalu rumit dan hanya menggunakan
-  blog pribadi sebagai satu-satunya rujukan.&quot;,&quot;Melaporkan kedua situs
-  tersebut ke polisi karena memberikan informasi medis yang berbeda di
-  internet.&quot;],&quot;correctIndex&quot;:2},{&quot;type&quot;:&quot;pgk&quot;,&quot;question&quot;:&quot;Seorang
-  mahasiswa sedang mengevaluasi artikel blog yang mengklaim bahwa
-  \&quot;konsumsi teh hijau dapat menyembuhkan penyakit kronis dalam 3
-  hari\&quot; menggunakan metode CRAAP. Manakah pernyataan berikut yang
-  merupakan tindakan evaluasi yang Tepat (Sesuai metode CRAAP) dan Tidak
-  Tepat?&quot;,&quot;statements&quot;:[{&quot;text&quot;:&quot;Mengecek tanggal
-  artikel dipublikasikan (Currency) untuk memastikan klaim tersebut didasarkan
-  pada penemuan ilmiah terbaru, bukan info
-  kedaluwarsa.&quot;,&quot;answer&quot;:true},{&quot;text&quot;:&quot;Langsung
-  menyebarkan artikel tersebut ke grup keluarga karena judulnya sangat menarik,
-  tanpa perlu mengecek siapa penulis atau lembaga pengelolanya
-  (Authority).&quot;,&quot;answer&quot;:false},{&quot;text&quot;:&quot;Menganalisis
-  motif penulisan artikel (Purpose) untuk melihat apakah artikel tersebut
-  ditulis murni untuk edukasi kesehatan atau ternyata untuk mempromosikan produk
-  teh hijau merek
-  tertentu.&quot;,&quot;answer&quot;:true}]},{&quot;type&quot;:&quot;matching&quot;,&quot;question&quot;:&quot;Pasangkanlah
-  kriteria metode CRAAP di lajur kiri dengan contoh pertanyaan evaluatif yang
-  relevan di lajur
-  kanan!&quot;,&quot;leftItems&quot;:[&quot;Relevance&quot;,&quot;Authority&quot;,&quot;Accuracy&quot;],&quot;rightItems&quot;:[&quot;\&quot;Apakah
-  informasi didukung oleh bukti ilmiah yang logis dan bebas dari kesalahan ketik
-  (typo)?\&quot;&quot;,&quot;\&quot;Apakah informasi ini berkaitan langsung
-  dengan topik penelitian dan penting bagi tugas
-  saya?\&quot;&quot;,&quot;\&quot;Siapakah penulis artikel ini dan apakah situs
-  web pengelolanya memiliki domain resmi?\&quot;&quot;,&quot;\&quot;Apakah
-  dokumen tersebut ditulis dalam format PDF atau
-  DOC?\&quot;&quot;],&quot;correctPairs&quot;:{&quot;0&quot;:1,&quot;1&quot;:2,&quot;2&quot;:0}},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Dalam
-  mengevaluasi data teks, kriteria CRAAP yang digunakan untuk memeriksa apakah
-  data atau informasi tersebut merupakan hasil penelitian terbaru/mutakhir atau
-  data yang sudah usang/kedaluwarsa
-  disebut...&quot;,&quot;choices&quot;:[&quot;Relevance&quot;,&quot;Authority&quot;,&quot;Accuracy&quot;,&quot;Purpose&quot;,&quot;Currency&quot;],&quot;correctIndex&quot;:4},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Seorang
-  peneliti menemukan artikel ilmiah tentang mitigasi bencana di internet yang
-  ternyata belum melewati proses peninjauan sejawat (peer-review) oleh para
-  ahli. Berdasarkan prinsip validasi data dan kriteria evaluasi CRAAP, mengapa
-  mengutip jurnal tersebut tanpa verifikasi dianggap berisiko tinggi, dan
-  bagaimana kriteria \&quot;Purpose\&quot; (Tujuan) membantu peneliti mendeteksi
-  \&quot;Bias Potensial\&quot; pada sumber
-  tersebut?&quot;,&quot;choices&quot;:[&quot;Jurnal tanpa review melanggar hak
-  cipta penerbit; kriteria Purpose fokus pada kecepatan pemuatan halaman
-  web.&quot;,&quot;Jurnal tanpa review memiliki keaslian, metodologi, dan
-  akurasi yang belum tervalidasi oleh ahli sehingga rentan mengandung
-  kekeliruan; kriteria Purpose membantu mendeteksi motif komersial atau
-  kepentingan sepihak penulis yang dapat memicu ketidakseimbangan
-  informasi.&quot;,&quot;Jurnal tanpa review secara otomatis tergolong sebagai
-  konten ilegal menurut UU ITE; kriteria Purpose memverifikasi apakah situs web
-  menggunakan protokol HTTPS.&quot;,&quot;Jurnal tanpa review tidak dapat
-  terindeks oleh mesin pencari Google; kriteria Purpose mendeteksi jumlah salah
-  ketik (typo) dalam artikel.&quot;,&quot;Jurnal tanpa review dipastikan 100%
-  merupakan hoaks; kriteria Purpose melacak identitas fisik server hosting situs
-  web
-  tersebut.&quot;],&quot;correctIndex&quot;:1},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Membaca
-  lateral (lateral reading) adalah strategi memverifikasi informasi dengan
-  keluar dari situs asal dan membuka beberapa tab baru untuk mencari konsensus
-  independen. Tindakan manakah yang secara tepat menggambarkan penerapan metode
-  membaca lateral saat membaca artikel kesehatan kontroversial di sebuah
-  blog?&quot;,&quot;choices&quot;:[&quot;Membaca artikel tersebut dengan saksama
-  dari paragraf pertama hingga terakhir tanpa terputus.&quot;,&quot;Memeriksa
-  desain logo, warna latar belakang, dan hiasan halaman blog tersebut agar yakin
-  tampilannya profesional.&quot;,&quot;Meninggalkan halaman blog tersebut,
-  membuka tab baru di peramban, dan mencari ulasan dari situs resmi Kementerian
-  Kesehatan atau WHO mengenai klaim kesehatan itu.&quot;,&quot;Percaya begitu
-  saja karena blog tersebut mencantumkan halaman \&quot;About Us\&quot; yang
-  menceritakan bahwa penulisnya adalah dokter tepercaya.&quot;,&quot;Menyalin
-  teks artikel tersebut dan langsung mengirimkannya ke seluruh kontak telepon
-  genggam.&quot;],&quot;correctIndex&quot;:2},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Pilihlah
-  langkah-langkah sistematis yang Tepat dalam menggunakan metode lateral reading
-  untuk memverifikasi kredibilitas akun media sosial yang menyebarkan informasi
-  darurat! (Pilih semua langkah yang
-  benar)&quot;,&quot;choices&quot;:[&quot;Tetap berada di halaman akun media
-  sosial tersebut dan membaca seluruh komentar pengikutnya untuk membuktikan
-  kebenaran postingan.&quot;,&quot;Keluar dari postingan akun media sosial
-  tersebut.&quot;,&quot;Melakukan pencarian kata kunci di tab baru mesin pencari
-  tentang latar belakang, rekam jejak, dan kredibilitas akun media sosial
-  tersebut.&quot;,&quot;Membuka beberapa situs web independen lain yang
-  memberikan informasi objektif mengenai reputasi akun tersebut, lalu
-  membandingkannya.&quot;],&quot;correctAnswers&quot;:[1,2,3]},{&quot;type&quot;:&quot;matching&quot;,&quot;question&quot;:&quot;Pasangkanlah
-  jenis metode membaca di lajur kiri dengan karakteristik perilaku evaluasinya
-  yang tepat di lajur kanan!&quot;,&quot;leftItems&quot;:[&quot;Membaca
-  Vertikal&quot;,&quot;Membaca
-  Lateral&quot;],&quot;rightItems&quot;:[&quot;Melompat antar-tab browser untuk
-  membandingkan informasi dan mencari konsensus di luar situs
-  asli&quot;,&quot;Fokus membaca di dalam satu situs web saja, mengandalkan
-  tampilan visual, logo, dan teks internal situs&quot;,&quot;Menghapus seluruh
-  riwayat (history) pencarian di peramban secara
-  otomatis&quot;],&quot;correctPairs&quot;:{&quot;0&quot;:1,&quot;1&quot;:0}},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Nama
-  lembaga riset dari Universitas Stanford yang pertama kali menemukan dan
-  memublikasikan bahwa metode membaca lateral (lateral reading) jauh lebih
-  efektif dalam membongkar kredibilitas situs dibandingkan metode membaca
-  konvensional (vertikal) adalah...&quot;,&quot;choices&quot;:[&quot;Stanford
-  History Education Group (SHEG)&quot;,&quot;Stanford Internet
-  Observatory&quot;,&quot;Stanford Center for Professional
-  Development&quot;,&quot;Stanford Media Lab&quot;,&quot;Stanford Computer
-  Science
-  Institute&quot;],&quot;correctIndex&quot;:0},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Membaca
-  vertikal merupakan metode membaca konvensional yang menilai kredibilitas
-  sumber semata-mata berdasarkan aspek internal situs. Manakah dari pilihan
-  berikut yang merupakan contoh kelemahan utama dari metode membaca vertikal
-  ini?&quot;,&quot;choices&quot;:[&quot;Membutuhkan waktu lama karena harus
-  melompat antar-tab browser.&quot;,&quot;Mudah disesatkan karena fitur internal
-  seperti logo profesional, desain visual, atau menu \&quot;About Us\&quot;
-  sangat mudah dipalsukan oleh pembuat hoaks.&quot;,&quot;Memaksa pembaca
-  menggunakan VPN untuk mengakses informasi dari luar negeri.&quot;,&quot;Hanya
-  dapat mendeteksi file dokumen berformat PDF atau DOC.&quot;,&quot;Menghapus
-  riwayat penelusuran di peramban secara otomatis tanpa persetujuan
-  pengguna.&quot;],&quot;correctIndex&quot;:1},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Seorang
-  warga net menemukan foto viral di media sosial yang mengklaim adanya
-  \&quot;banjir bandang di Jakarta hari ini\&quot;. Dia mencurigai foto tersebut
-  adalah foto lama yang diposting kembali. Langkah taktis pertama manakah yang
-  harus dilakukan warga net tersebut untuk memverifikasi keaslian foto
-  tersebut?&quot;,&quot;choices&quot;:[&quot;Langsung menyebarkan foto tersebut
-  ke grup percakapan agar orang lain ikut waspada.&quot;,&quot;Menyimpan foto
-  tersebut dan melakukan Reverse Image Search menggunakan Google Lens untuk
-  melacak riwayat publikasi pertama foto tersebut di
-  internet.&quot;,&quot;Memeriksa kualitas pencahayaan foto dan langsung
-  menyimpulkan foto itu asli hanya karena gambarnya sangat
-  jernih.&quot;,&quot;Membaca komentar di bawah postingan media sosial tersebut
-  untuk melihat berapa banyak orang yang menyukai foto
-  itu.&quot;,&quot;Menghapus gambar tersebut dari komputernya karena takut
-  komputernya terserang
-  virus.&quot;],&quot;correctIndex&quot;:1},{&quot;type&quot;:&quot;pgk&quot;,&quot;question&quot;:&quot;Tentukan
-  apakah setiap pernyataan berikut Benar atau Salah mengenai metadata dan
-  analisis kualitas konten
-  visual!&quot;,&quot;statements&quot;:[{&quot;text&quot;:&quot;Metadata (data
-  EXIF) pada file gambar selalu 100% akurat dan tidak dapat dimanipulasi atau
-  dihapus oleh oknum penyebar
-  hoaks.&quot;,&quot;answer&quot;:false},{&quot;text&quot;:&quot;Evaluasi aspek
-  \&quot;Kebenaran Visual\&quot; dilakukan dengan cara mengecek apakah gambar
-  atau foto tersebut telah mengalami manipulasi atau penyuntingan digital yang
-  tidak jujur.&quot;,&quot;answer&quot;:true},{&quot;text&quot;:&quot;Jika dua
-  sumber informasi tepercaya memberikan data yang saling kontradiktif (bertolak
-  belakang), kita harus langsung memilih data dari sumber yang paling populer
-  atau paling banyak pengikutnya di media
-  sosial.&quot;,&quot;answer&quot;:false}]},{&quot;type&quot;:&quot;matching&quot;,&quot;question&quot;:&quot;Pasangkanlah
-  aspek evaluasi kualitas visual di lajur kiri dengan deskripsi penjelasan
-  evaluasinya yang tepat di lajur
-  kanan!&quot;,&quot;leftItems&quot;:[&quot;Warna dan
-  Kontras&quot;,&quot;Ketepatan Konten&quot;,&quot;Kebenaran
-  Visual&quot;],&quot;rightItems&quot;:[&quot;Memeriksa relevansi dan kesesuaian
-  gambar/visualisasi dengan konteks berita yang dibahas&quot;,&quot;Memeriksa
-  keakuratan visual, pencahayaan, serta keselarasan bayangan objek dengan latar
-  belakangnya&quot;,&quot;Mendeteksi apakah file visual telah disunting,
-  dimanipulasi, atau direkayasa digital untuk tujuan tidak
-  jujur&quot;,&quot;Mengirim pesan secara otomatis melalui
-  email&quot;],&quot;correctPairs&quot;:{&quot;0&quot;:1,&quot;1&quot;:0,&quot;2&quot;:2}},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Proses
-  untuk membaca informasi tambahan tersembunyi seperti tanggal pembuatan,
-  keterangan waktu (timestamp), koordinat lokasi geolokasi, dan jenis perangkat
-  kamera yang tertanam di dalam file gambar digital disebut dengan istilah
-  memeriksa...&quot;,&quot;choices&quot;:[&quot;Metadata
-  EXIF&quot;,&quot;Resolusi gambar&quot;,&quot;Palet warna&quot;,&quot;Histogram
-  kontras&quot;,&quot;Tanda air
-  digital&quot;],&quot;correctIndex&quot;:0},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Verifikasi
-  video merupakan tantangan besar di dunia digital karena sifatnya yang dinamis.
-  Apabila seorang jurnalis periksa fakta ingin memverifikasi sebuah video
-  kontroversial, dan di tengah proses ia menemukan data yang bertolak belakang
-  (kontradiktif) dari dua instansi pemerintah yang kredibel, langkah taktis
-  manakah yang paling tepat untuk memverifikasi kebenaran video sekaligus
-  mengatasi kontradiksi data tersebut?&quot;,&quot;choices&quot;:[&quot;Langsung
-  mengabaikan video tersebut karena dianggap terlalu kompleks; memilih data dari
-  instansi yang memiliki pengikut media sosial terbanyak.&quot;,&quot;Melakukan
-  penyuntingan ulang pada video tersebut agar selaras dengan opini jurnalis;
-  memublikasikan kedua data tersebut secara acak.&quot;,&quot;Menganalisis
-  kredibilitas pembuat video, memeriksa kejanggalan klip (seperti pemotongan
-  tidak alami atau ketidakselarasan audio), serta memeriksa metadatanya;
-  memeriksa secara mendalam metodologi pengumpulan data dan konteks di balik
-  pembuatan informasi dari kedua instansi tersebut.&quot;,&quot;Melaporakan
-  video tersebut ke pihak kepolisian atas tuduhan UU ITE; menghapus semua data
-  yang bersumber dari instansi pemerintah.&quot;,&quot;Meminta bantuan pembuat
-  video untuk mengonfirmasi keaslian file; membuat kesimpulan sendiri tanpa
-  mempertimbangkan metodologi pengumpulan
-  data.&quot;],&quot;correctIndex&quot;:2}]" student-id="STD-65108053"
-  student-name="Andy Yulianto" student-nis="234" student-absen="2"
-  student-kelas="Your Teacher" hide-score _current-idx="0"
-  _selected-answers="{}" _match-answers="{}" _max-points="0"
-  _shuffled-questions="[]" _temp-questions="[]" _editing-index="-1"
-  _temp-question-type="mc" _temp-question-points="1" _temp-correct-index="0"
-  _temp-correct-answers="[]" _temp-left-items="[&quot;&quot;,&quot;&quot;]"
-  _temp-right-items="[&quot;&quot;,&quot;&quot;]" _temp-correct-pairs="{}"
-  _temp-accepted-statements="[]" _temp-statements="[]" _editor-origin="result"
-  lock-after-complete timer-minutes="30" timer-seconds="0" _lock-checked
-  timer-duration="1800" hide-pause-restart _attempt-start="0"
-  _resume-remaining="0">
-
-  </kuis-ledakan>
-
-  <p></p>
+  kanan!&quot;,&quot;leftItems&quot;:[&quot;site:&quot;,&quot;filetype:&quot;,&quot;inurl:&quot;,&quot;intitle:&quot;],&quot;rightItems&quot;:[&quot;Melacak
+  kata kunci spesifik yang tertanam di dalam alamat URL halaman
+  web.&quot;,&quot;Membatasi hasil pencarian hanya pada alamat web atau domain
+  tertentu (seperti .go.id atau .ac.id).&quot;,&quot;Menyaring hasil pencarian
+  berdasarkan format dokumen berkas tertentu seperti PDF, DOC, atau
+  PPT.&quot;,&quot;Membatasi pencarian halaman web yang judul dokumennya
+  mengandung kata kunci tertentu.&quot;,&quot;Menghapus seluruh riwayat
+  (history) penelusuran peramban internet secara
+  otomatis.&quot;],&quot;correctPairs&quot;:{&quot;0&quot;:1,&quot;1&quot;:2,&quot;2&quot;:0,&quot;3&quot;:3}}]"
+  _attempt-ke="0"></latihan-kuis>
