@@ -14,7 +14,7 @@
       "name": "haxto",
       "domain": null,
       "created": 1787457359,
-      "updated": 1787857951
+      "updated": 1787858528
     },
     "theme": {
       "element": "custom-haxkuis-theme",
@@ -209,14 +209,14 @@
       "id": "item-43d63e69-4564-4ae3-80df-ffa7a6677b2b",
       "indent": 0,
       "location": "pages/item-43d63e69-4564-4ae3-80df-ffa7a6677b2b/index.html",
-      "slug": "new-page",
-      "order": 4,
+      "slug": "ulangan-harian-1",
+      "order": 5,
       "parent": null,
       "title": "Ulangan Harian 1",
       "description": "\n\n",
       "metadata": {
         "created": 1787854344,
-        "updated": 1787855435,
+        "updated": 1787858528,
         "images": [],
         "videos": [],
         "published": true,

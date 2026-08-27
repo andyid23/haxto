@@ -1,8 +1,8 @@
 id: item-43d63e69-4564-4ae3-80df-ffa7a6677b2b
 indent: 0
 location: pages/item-43d63e69-4564-4ae3-80df-ffa7a6677b2b/index.yaml
-slug: new-page
-order: 4
+slug: ulangan-harian-1
+order: 5
 parent: null
 title: Ulangan Harian 1
 description: |+
@@ -10,7 +10,7 @@ description: |+
 
 metadata:
   created: 1787854344
-  updated: 1787855435
+  updated: 1787858528
   images: []
   videos: []
   published: true
@@ -33,14 +33,19 @@ metadata:
     key: polaris-flex-theme
 content: >
 
-  <latihan-kuis mode="siswa" allow-retake max-retake="0" duration="1000"
-  hide-pause-restart shuffle-questions shuffle-choices kategori="sumatif"
+  <quiz-user-auth
+  apps-script-url="https://script.google.com/macros/s/AKfycbxJtcgtms69cByMneEgPvDUg7S3NkmhdiQtsCUTG8bJpsZw2dP9UDrRCkd1HNZ-EvY/exec"
+  auto-login _student-id="STD-65108053"></quiz-user-auth>
+
+  <latihan-kuis mode="siswa" allow-retake max-retake="0" duration="900"
+  timer-autostart hide-pause-restart hide-confetti hide-answers hide-score
+  shuffle-questions shuffle-choices kategori="sumatif"
   apps-script-url="https://script.google.com/macros/s/AKfycbyuprudZkCq_YCQ-CqqD_huzndsbA6zHsg_ICfqPnlB97dhcrm1xJjGxJ3u4Jp8DjJQ/exec"
   kd-materi="LD-1" student-id="STD-65108053" judul-kuis="Ulangan Harian"
-  show-sheet-link soal-file-url="./files/soal-contoh.json" judul-materi="Materi
+  show-sheet-link soal-file-url="./files/soal-contoh.json"  judul-materi="Materi
   Pembelajaran" teks-materi="Baca materi di bawah ini dengan saksama sebelum
   mengerjakan kuis. Waktu pengerjaan kuis dibatasi oleh timer; saat waktu habis,
-  kuis akan dikunci dan nilai otomatis terkirim." materi-file="" cover-image=""
+  kuis akan dikunci dan nilai otomatis terkirim."  materi-file="" cover-image=""
   student-name="Andy" student-nis="234" student-absen="1" student-kelas="XI-1"
   pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai otomatis."
   pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet."
@@ -193,6 +198,6 @@ content: >
   mengandung kata kunci tertentu.&quot;,&quot;Menghapus seluruh riwayat
   (history) penelusuran peramban internet secara
   otomatis.&quot;],&quot;correctPairs&quot;:{&quot;0&quot;:1,&quot;1&quot;:2,&quot;2&quot;:0,&quot;3&quot;:3}}]"
-  _best-skor="0" _attempt-ke="0" _pernah-ikut  >
+  _best-skor="0" _pernah-ikut _attempt-ke="0">
 
   </latihan-kuis>
