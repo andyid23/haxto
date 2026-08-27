@@ -14,7 +14,7 @@
       "name": "haxto",
       "domain": null,
       "created": 1787457359,
-      "updated": 1787857898
+      "updated": 1787857951
     },
     "theme": {
       "element": "custom-haxkuis-theme",
@@ -100,14 +100,14 @@
       "id": "item-641ef0af-6ba1-4523-bedd-5c0d0f85828b",
       "indent": 0,
       "location": "pages/item-641ef0af-6ba1-4523-bedd-5c0d0f85828b/index.html",
-      "slug": "ulangan-harian",
+      "slug": "latihan-ulangan-harian",
       "order": 2,
       "parent": null,
       "title": "LATIHAN/SIMULASI KUIS",
       "description": "Halaman ulangan harian terintegrasi dengan timer, anti-confetti, dan jawaban tersembunyi.",
       "metadata": {
         "created": 1787466936,
-        "updated": 1787857898,
+        "updated": 1787857951,
         "published": true,
         "hideInMenu": true,
         "locked": false,
