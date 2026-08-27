@@ -14,7 +14,7 @@
       "name": "haxto",
       "domain": null,
       "created": 1787457359,
-      "updated": 1787837548
+      "updated": 1787837588
     },
     "theme": {
       "element": "custom-haxkuis-theme",
@@ -180,7 +180,7 @@
       "description": "soal latihan\n\n",
       "metadata": {
         "created": 1787721767,
-        "updated": 1787837548,
+        "updated": 1787837588,
         "images": [],
         "videos": [],
         "published": true,
@@ -188,18 +188,19 @@
         "locked": false,
         "readtime": 4,
         "theme": {
-          "element": "journey-theme",
-          "path": "@haxtheweb/journey-theme/journey-theme.js",
-          "name": "Journey",
-          "thumbnail": "@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-journey-theme-thumb.jpg",
-          "description": "Start with a blank site using the Journey",
+          "element": "terrible-resume-themes",
+          "path": "@haxtheweb/terrible-themes/lib/terrible-resume-themes.js",
+          "name": "Terrible Resume",
+          "thumbnail": "@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-terrible-resume-themes-thumb.jpg",
+          "description": "Start with a blank site using the Terrible Resume",
           "category": [
+            "Fun",
             "Website"
           ],
           "hidden": false,
-          "priority": -1,
-          "terrible": false,
-          "key": "journey-theme"
+          "priority": 0,
+          "terrible": true,
+          "key": "terrible-resume-themes"
         }
       }
     }

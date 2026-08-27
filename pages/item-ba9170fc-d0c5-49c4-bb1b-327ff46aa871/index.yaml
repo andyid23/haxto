@@ -10,7 +10,7 @@ description: |+
 
 metadata:
   created: 1787721767
-  updated: 1787837548
+  updated: 1787837588
   images: []
   videos: []
   published: true
@@ -18,18 +18,19 @@ metadata:
   locked: false
   readtime: 4
   theme:
-    element: journey-theme
-    path: '@haxtheweb/journey-theme/journey-theme.js'
-    name: Journey
+    element: terrible-resume-themes
+    path: '@haxtheweb/terrible-themes/lib/terrible-resume-themes.js'
+    name: Terrible Resume
     thumbnail: >-
-      @haxtheweb/haxcms-elements/lib/theme-screenshots/theme-journey-theme-thumb.jpg
-    description: Start with a blank site using the Journey
+      @haxtheweb/haxcms-elements/lib/theme-screenshots/theme-terrible-resume-themes-thumb.jpg
+    description: Start with a blank site using the Terrible Resume
     category:
+      - Fun
       - Website
     hidden: false
-    priority: -1
-    terrible: false
-    key: journey-theme
+    priority: 0
+    terrible: true
+    key: terrible-resume-themes
 content: >
 
   <div class="petunjuk">
@@ -90,21 +91,27 @@ content: >
 
       </p>
 
+
     </li>
+
 
     <li aria-level="1">
       <p><b>Mampu menyusun strategi penelusuran informasi daring dengan menggunakan kata kunci presisi serta operator logika Boolean.</b>
 
       </p>
 
+
     </li>
+
 
     <li aria-level="1">
       <p><b>Mampu menerapkan kombinasi variabel pencarian lanjutan (seperti site:, filetype:, dll.) untuk meningkatkan keandalan sumber data dan menghemat waktu riset.</b>
 
       </p>
 
+
     </li>
+
 
   </ul>
 
@@ -136,21 +143,27 @@ content: >
 
       </p>
 
+
     </li>
+
 
     <li aria-level="1">
       <p><b>OR: Digunakan untuk memperluas pencarian dengan menampilkan hasil yang memuat salah satu atau kedua kata kunci sekaligus.</b>
 
       </p>
 
+
     </li>
+
 
     <li aria-level="1">
       <p><b>NOT (atau karakter tanda minus -): Digunakan untuk mengecualikan kata kunci tertentu yang tidak relevan agar tidak muncul di halaman hasil penelusuran.</b>
 
       </p>
 
+
     </li>
+
 
   </ul>
 
@@ -169,49 +182,63 @@ content: >
 
       </p>
 
+
     </li>
+
 
     <li aria-level="1">
       <p><b>filetype:: Menyaring hasil pencarian berdasarkan format dokumen berkas tertentu, seperti pdf untuk dokumen formal, doc, atau ppt.</b>
 
       </p>
 
+
     </li>
+
 
     <li aria-level="1">
       <p><b>inurl:: Melacak kata kunci spesifik yang tertanam langsung di dalam alamat URL halaman web.</b>
 
       </p>
 
+
     </li>
+
 
     <li aria-level="1">
       <p><b>intitle:: Membatasi pencarian halaman web yang judul dokumennya mengandung kata kunci tertentu.</b>
 
       </p>
 
+
     </li>
+
 
     <li aria-level="1">
       <p><b>intext:: Mengunci pelacakan kata kunci khusus hanya di dalam badan teks (body) dokumen halaman web.</b>
 
       </p>
 
+
     </li>
+
 
     <li aria-level="1">
       <p><b>cache:: Menampilkan versi salinan sementara terbaru dari suatu halaman web yang disimpan oleh server Google, sangat membantu di tengah keterbatasan koneksi internet.</b>
 
       </p>
 
+
     </li>
+
 
     <li aria-level="1">
       <p><b>Tanda Petik Ganda (""): Digunakan untuk memaksa mesin pencari melacak frasa kata kunci secara tepat dan persis (Exact Match).</b>
 
       </p>
 
+
     </li>
+
 
   </ul>
 
@@ -223,7 +250,9 @@ content: >
 
       </p>
 
+
     </li>
+
 
   </ul>
 
@@ -235,21 +264,27 @@ content: >
 
       </p>
 
+
     </li>
+
 
     <li aria-level="1">
       <p><b>Miskonsepsi 2: Penggunaan kata kunci yang terlampau spesifik dan sempit selalu dianjurkan. Faktanya: Kata kunci yang terlampau spesifik dan sempit dihindari karena berisiko menghilangkan informasi penting lainnya yang tersedia di bawah terminologi yang lebih umum.</b>
 
       </p>
 
+
     </li>
+
 
     <li aria-level="1">
       <p><b>Miskonsepsi 3: Operator OR digunakan untuk menyaring dan mempersempit pencarian. Faktanya: Operator OR berfungsi untuk memperluas pencarian dengan menggabungkan alternatif istilah. Operator yang mempersempit ruang lingkup adalah AND.</b>
 
       </p>
 
+
     </li>
+
 
   </ul>
 
@@ -261,28 +296,36 @@ content: >
 
       </p>
 
+
     </li>
+
 
     <li aria-level="1">
       <p><b>Operator logika Boolean (AND, OR, NOT/-) serta tanda petik ganda ("") mengontrol relevansi dan cakupan relasi antarkata kunci secara presisi.</b>
 
       </p>
 
+
     </li>
+
 
     <li aria-level="1">
       <p><b>Variabel pencarian lanjutan seperti site: dan filetype: memfokuskan hasil pada reputasi domain akademik/pemerintah dan format dokumen siap unduh.</b>
 
       </p>
 
+
     </li>
+
 
     <li aria-level="1">
       <p><b>Pencarian berbasis visual difasilitasi oleh Google Lens dengan mencocokkan kemiripan gambar secara daring.</b>
 
       </p>
 
+
     </li>
+
 
   </ol>
 
@@ -323,14 +366,18 @@ content: >
 
       </p>
 
+
     </li>
+
 
     <li aria-level="1">
       <p><b>Analisis Efisiensi: Penulisan frasa dalam tanda petik ganda memastikan pelacakan persis, sedangkan filetype:pdf langsung menyaring file dokumen siap pakai tanpa perlu menyusuri artikel blog pribadi yang tidak valid.</b>
 
       </p>
 
+
     </li>
+
 
   </ul>
 
@@ -353,7 +400,7 @@ content: >
   Waktu habis! Kuis dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉
   Selamat! Nilai Anda sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai
   Latihan" _pesan="Gagal memuat file soal: Bukan array JSON" _best-skor="50"
-  _pernah-ikut="" _attempt-ke="0"  
+  _pernah-ikut="" _attempt-ke="0"
   questions="[{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Pencarian
   informasi ilmiah secara daring menggunakan kata kunci sederhana sering kali
   tidak efektif karena menghasilkan jutaan data tidak relevan. Guna menyaring
@@ -501,6 +548,7 @@ content: >
   PPT.&quot;,&quot;Membatasi pencarian halaman web yang judul dokumennya
   mengandung kata kunci tertentu.&quot;,&quot;Menghapus seluruh riwayat
   (history) penelusuran peramban internet secara
-  otomatis.&quot;],&quot;correctPairs&quot;:{&quot;0&quot;:1,&quot;1&quot;:2,&quot;2&quot;:0,&quot;3&quot;:3}}]"></latihan-kuis>
+  otomatis.&quot;],&quot;correctPairs&quot;:{&quot;0&quot;:1,&quot;1&quot;:2,&quot;2&quot;:0,&quot;3&quot;:3}}]" 
+  ></latihan-kuis>
 
   <p></p>
