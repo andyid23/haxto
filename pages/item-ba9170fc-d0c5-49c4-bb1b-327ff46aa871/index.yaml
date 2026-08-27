@@ -1,7 +1,7 @@
 id: item-ba9170fc-d0c5-49c4-bb1b-327ff46aa871
 indent: 0
 location: pages/item-ba9170fc-d0c5-49c4-bb1b-327ff46aa871/index.yaml
-slug: new-page
+slug: halaman-tugas
 order: 4
 parent: null
 title: New Page
@@ -10,11 +10,11 @@ description: |+
 
 metadata:
   created: 1787721767
-  updated: 1787752216
+  updated: 1787811406
   images: []
   videos: []
   published: true
-  hideInMenu: false
+  hideInMenu: true
   locked: false
   readtime: 1
   theme:
@@ -52,7 +52,8 @@ content: >
   otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke
   spreadsheet." label-mulai="▶️ Mulai Latihan"
   apps-script-url="https://script.google.com/macros/s/AKfycbyuprudZkCq_YCQ-CqqD_huzndsbA6zHsg_ICfqPnlB97dhcrm1xJjGxJ3u4Jp8DjJQ/exec"
-  _mulai="" _selesai="" _skor="0"   ></latihan-kuis>
+  _mulai="" _selesai="" _skor="0"    allow-retake max-retake="0"
+  _attempt-ke="0"></latihan-kuis>
 
   <p></p>
 
@@ -98,13 +99,13 @@ content: >
     </ol>
    <strong>URL Apps Script (contoh — ganti dengan milik Anda):</strong>
 
-    <latihan-kuis duration="300" judul-materi="Materi Pembelajaran" teks-materi="Baca materi di bawah ini dengan saksama sebelum mengerjakan kuis. Waktu pengerjaan kuis dibatasi oleh timer; saat waktu habis, kuis akan dikunci dan nilai otomatis terkirim." materi-file="" cover-image="" judul-kuis="Evaluasi Kuis Interaktif" student-id="STD-65108053" student-name="Andy" student-nis="234" student-absen="1" student-kelas="XI-1" kd-materi="" pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai Latihan"    ></latihan-kuis>
+    <latihan-kuis duration="300" judul-materi="Materi Pembelajaran" teks-materi="Baca materi di bawah ini dengan saksama sebelum mengerjakan kuis. Waktu pengerjaan kuis dibatasi oleh timer; saat waktu habis, kuis akan dikunci dan nilai otomatis terkirim." materi-file="" cover-image="" judul-kuis="Evaluasi Kuis Interaktif" student-id="STD-65108053" student-name="Andy" student-nis="234" student-absen="1" student-kelas="XI-1" kd-materi="" pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai Latihan"     allow-retake max-retake="0" _attempt-ke="0" _mulai=""></latihan-kuis>
 
       <input class="gas" readonly="" value="https://script.google.com/macros/s/AKfycbyuprudZkCq_YCQ-CqqD_huzndsbA6zHsg_ICfqPnlB97dhcrm1xJjGxJ3u4Jp8DjJQ/exec" id="gasUrl">
       <button>📋 Salin URL GAS</button>
   </div>
 
-  <latihan-kuis id="latihan2"
+  <latihan-kuis
   apps-script-url="https://script.google.com/macros/s/AKfycbyuprudZkCq_YCQ-CqqD_huzndsbA6zHsg_ICfqPnlB97dhcrm1xJjGxJ3u4Jp8DjJQ/exec"
   spreadsheet-url="https://docs.google.com/spreadsheets/d/ISI_ID_SPREADSHEET_ANDA/edit"
   kd-materi="bab2" show-sheet-link duration="30" judul-materi="Bab 2: Logika
@@ -116,6 +117,6 @@ content: >
   student-absen="1" student-kelas="XI-1" pesan-waktu-habis="⏰ Waktu habis! Kuis
   dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda
   sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai Latihan" _pesan="Gagal
-  memuat file soal: HTTP 404" _mulai="" >
-    <!--  soal-file-url="soal-contoh.json"  -->
-  </latihan-kuis>
+  memuat file soal: HTTP 404" _mulai  allow-retake max-retake="0"
+  _best-skor="100" _attempt-ke="0" _selesai _skor="0" _habis-waktu
+  _pernah-ikut></latihan-kuis>

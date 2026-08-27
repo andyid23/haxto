@@ -48,11 +48,16 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
       labelMulai: { type: String, attribute: "label-mulai", reflect: true },
       showSheetLink: { type: Boolean, attribute: "show-sheet-link", reflect: true },
       soalFileUrl: { type: String, attribute: "soal-file-url", reflect: true },
+      allowRetake: { type: Boolean, attribute: "allow-retake", reflect: true },
+      maxRetake: { type: Number, attribute: "max-retake", reflect: true },
       _mulai: { state: true },
       _selesai: { state: true },
       _skor: { state: true },
       _habisWaktu: { state: true },
       _pesan: { state: true },
+      _bestSkor: { state: true },
+      _pernahIkut: { state: true },
+      _attemptKe: { state: true },
     };
   }
 
@@ -80,12 +85,16 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     this.labelMulai = "▶️ Mulai Latihan";
     this.showSheetLink = false;
     this.soalFileUrl = "";
+    this.allowRetake = true;
+    this.maxRetake = 0;
     this._mulai = false;
     this._selesai = false;
     this._skor = null;
     this._habisWaktu = false;
     this._pesan = "";
-    this._onAuthLogin = this._onAuthLogin.bind(this);
+    this._bestSkor = null;
+    this._pernahIkut = false;
+    this._attemptKe = 0;
     this._onAuthLogout = this._onAuthLogout.bind(this);
     this.t = {
       ...this.t,
@@ -110,6 +119,9 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     // agar nilai terikat Student ID sebelum kuis dimulai.
     globalThis.addEventListener("quiz-user-login", this._onAuthLogin);
     globalThis.addEventListener("quiz-user-logout", this._onAuthLogout);
+    // T (persistent lock / best score): baca sesi lokal lalu muat status kuis.
+    this._loadSession();
+    this._muatStatusKuis();
   }
 
   disconnectedCallback() {
@@ -120,19 +132,112 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
 
   _onAuthLogin(e) {
     const d = (e && e.detail) || {};
+    // T: reset dulu agar siswa BERBEDA (re-login di perangkat bersama) tak mewarisi state.
+    this._bestSkor = null;
+    this._pernahIkut = false;
+    this._selesai = false;
+    this._habisWaktu = false;
+    this._skor = null;
+    this._mulai = false;
     this.studentId = d.studentId || "";
     this.studentName = d.nama || "";
     this.studentNis = d.nis || "";
     this.studentAbsen = d.absen || "";
     this.studentKelas = d.kelas || "";
+    this._loadAttemptCounter();
+    this._muatStatusKuis();
   }
 
   _onAuthLogout() {
+    this._bestSkor = null;
+    this._pernahIkut = false;
+    this._selesai = false;
+    this._habisWaktu = false;
+    this._skor = null;
+    this._mulai = false;
+    this._attemptKe = 0;
     this.studentId = "";
     this.studentName = "";
     this.studentNis = "";
     this.studentAbsen = "";
     this.studentKelas = "";
+  }
+
+  /** Baca sesi siswa dari localStorage (TTL 24j) — agar cek status jalan saat reload. */
+  _loadSession() {
+    try {
+      const data = JSON.parse(globalThis.localStorage.getItem("quiz_user_session"));
+      if (!data || !data.studentId) return;
+      if (data.expiresAt && Date.now() > data.expiresAt) {
+        globalThis.localStorage.removeItem("quiz_user_session");
+        return;
+      }
+      this.studentId = data.studentId || "";
+      this.studentName = data.nama || "";
+      this.studentNis = data.nis || "";
+      this.studentAbsen = data.absen || "";
+      this.studentKelas = data.kelas || "";
+    } catch (_) {
+      // abaikan
+    }
+    this._loadAttemptCounter();
+  }
+
+  /** Baca counter attempt ter-submit dari localStorage (per studentId+kdMateri). */
+  _attemptKey() {
+    return `latihan_kuis_attempt_${this.studentId}_${this.kdMateri}`;
+  }
+
+  _loadAttemptCounter() {
+    if (!this.maxRetake || !this.studentId || !this.kdMateri) return;
+    try {
+      const v = globalThis.localStorage.getItem(this._attemptKey());
+      this._attemptKe = parseInt(v, 10) || 0;
+    } catch (_) {
+      this._attemptKe = 0;
+    }
+  }
+
+  _saveAttemptCounter() {
+    if (!this.maxRetake || !this.studentId || !this.kdMateri) return;
+    try {
+      globalThis.localStorage.setItem(this._attemptKey(), String(this._attemptKe));
+    } catch (_) {
+      // abaikan
+    }
+  }
+
+
+  /** T: muat status kuis dari sheet (pernah ikut + nilai terbaik) via getQuizLock. */
+  _muatStatusKuis() {
+    if (!this.appsScriptUrl || !this.studentId || !this.kdMateri) return;
+    const u = `${this.appsScriptUrl}${this.appsScriptUrl.includes("?") ? "&" : "?"}action=getQuizLock&studentId=${encodeURIComponent(this.studentId)}&kdMateri=${encodeURIComponent(this.kdMateri)}`;
+    return fetch(u, { method: "GET", mode: "cors" })
+      .then((r) => r.json())
+      .then((j) => {
+        if (!j) return;
+        this._pernahIkut = !!j.locked;
+        this._bestSkor = typeof j.best === "number" ? j.best : null;
+        // Lock permanen HANYA bila allowRetake=false DAN sudah pernah ikut.
+        if (!this.allowRetake && j.locked) {
+          this._selesai = true;
+          this._habisWaktu = false;
+          this._skor = this._bestSkor;
+        }
+      })
+      .catch(() => {
+        // Gagal → biarkan attempt (graceful), jangan kunci salah.
+      })
+      .finally(() => this.requestUpdate());
+  }
+
+  _ulangiKuis() {
+    this._selesai = false;
+    this._kunci = false;
+    this._habisWaktu = false;
+    this._skor = null;
+    this._muatStatusKuis();
+    this._mulaiLatihan(); // langsung mulai ulang kuis (retry)
   }
 
   updated(changed) {
@@ -168,6 +273,12 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     if (e.detail && e.detail.payload && typeof e.detail.payload.score === "number") {
       this._skor = e.detail.payload.score;
       this._selesai = true;
+      // L: hitung attempt ter-submit (bukan klik Ulangi) agar reload-trick tak bobol batas.
+      if (this.maxRetake) {
+        this._attemptKe++;
+        this._saveAttemptCounter();
+      }
+      this._muatStatusKuis(); // T: refresh nilai terbaik dari sheet (menangkap attempt baru)
     }
   }
 
@@ -238,6 +349,13 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
           padding: var(--ddd-spacing-3); border-radius: var(--ddd-radius-md);
           margin-bottom: var(--ddd-spacing-4);
         }
+        .skor-best {
+          margin-top: var(--ddd-spacing-4); padding: var(--ddd-spacing-3) var(--ddd-spacing-4);
+          border-radius: var(--ddd-radius-md); font-weight: var(--ddd-font-weight-bold);
+          color: var(--ddd-theme-success, #2e7d32);
+          background: var(--ddd-theme-success-light, #e8f5e9);
+          display: inline-block;
+        }
       `,
     ];
   }
@@ -252,6 +370,9 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
               ? html`<div class="kirim">${this.pesanNilaiTerkirim}</div>`
               : html`<div class="kirim warn">⚠️ Nilai belum tersimpan karena belum login</div>`}
             ${this._skor != null ? html`<div class="skor">Skor Anda: <strong>${this._skor}%</strong></div>` : nothing}
+            ${this.allowRetake && (this.maxRetake === 0 || this._attemptKe < this.maxRetake + 1)
+              ? html`<button class="btn-mulai" @click=${this._ulangiKuis}>🔁 Ulangi Kuis</button>`
+              : nothing}
             ${this.showSheetLink && this.spreadsheetUrl
               ? html`<a href="${this.spreadsheetUrl}" target="_blank" rel="noopener">📊 Buka Spreadsheet Nilai</a>`
               : nothing}
@@ -270,10 +391,13 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
             ${this.materiUrl ? html`<a href="${this.materiUrl}" target="_blank" rel="noopener">${this.t.bacaMateri}</a>` : nothing}
             ${this.materiFile ? html`<a href="${this.materiFile}" target="_blank" rel="noopener" download>${this.t.unduhMateri}</a>` : nothing}
           </div>
+          ${this._pernahIkut && this._bestSkor != null
+            ? html`<p class="skor-best">⭐ Nilai terbaik Anda: <strong>${this._bestSkor}%</strong></p>`
+            : nothing}
         </section>
 
         ${!this._mulai
-          ? (this.studentId
+          ? (this.studentId && (this.maxRetake === 0 || this._attemptKe < this.maxRetake + 1)
               ? html`<button class="btn-mulai" @click="${this._mulaiLatihan}">${this.labelMulai}</button>`
               : (document.querySelector("quiz-user-auth")
                   ? html`<p class="auth-hint">🔐 Silakan login lewat form di atas agar nilai tersimpan ke Spreadsheet.</p>`
@@ -298,7 +422,8 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
                 .studentNis="${this.studentNis}"
                 .studentAbsen="${this.studentAbsen}"
                 .studentKelas="${this.studentKelas}"
-                .kdMateri="${this.kdMateri}">
+                .kdMateri="${this.kdMateri}"
+                .lockAfterComplete="${!this.allowRetake}">
               </kuis-ledakan>
             `}
       </div>
@@ -336,6 +461,18 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
             title: "Kode Materi (kd-materi)",
             inputMethod: "textfield",
             description: "Kode/topik kuis; diteruskan ke <kuis-ledakan> agar rekap per topik tersimpan.",
+          },
+          {
+            property: "allowRetake",
+            title: "Boleh Diulang (retake)",
+            inputMethod: "boolean",
+            description: "True (default): latihan boleh dikerjakan berkali-kali, tampil nilai terbaik & tombol Ulangi. False: kunci permanen setelah 1x (mode ulangan).",
+          },
+          {
+            property: "maxRetake",
+            title: "Batas Ulang (max-retake)",
+            inputMethod: "number",
+            description: "0 (default): ikut allowRetake tanpa batas. >0: jumlah ulangan maksimal (total attempt = 1 asli + maxRetake). Counter disimpan di localStorage per siswa+materi.",
           },
           {
             property: "duration",

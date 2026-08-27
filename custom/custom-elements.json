@@ -3273,6 +3273,33 @@
             },
             {
               "kind": "method",
+              "name": "_loadSession",
+              "description": "Baca sesi siswa dari localStorage (TTL 24j) — agar cek status jalan saat reload."
+            },
+            {
+              "kind": "method",
+              "name": "_attemptKey",
+              "description": "Baca counter attempt ter-submit dari localStorage (per studentId+kdMateri)."
+            },
+            {
+              "kind": "method",
+              "name": "_loadAttemptCounter"
+            },
+            {
+              "kind": "method",
+              "name": "_saveAttemptCounter"
+            },
+            {
+              "kind": "method",
+              "name": "_muatStatusKuis",
+              "description": "T: muat status kuis dari sheet (pernah ikut + nilai terbaik) via getQuizLock."
+            },
+            {
+              "kind": "method",
+              "name": "_ulangiKuis"
+            },
+            {
+              "kind": "method",
               "name": "_muatSoalDariFile",
               "parameters": [
                 {
@@ -3536,6 +3563,28 @@
             },
             {
               "kind": "field",
+              "name": "allowRetake",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true",
+              "attribute": "allow-retake",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "maxRetake",
+              "privacy": "public",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "attribute": "max-retake",
+              "reflects": true
+            },
+            {
+              "kind": "field",
               "name": "_mulai",
               "privacy": "public",
               "type": {
@@ -3583,6 +3632,36 @@
               },
               "default": "\"\"",
               "attribute": "_pesan"
+            },
+            {
+              "kind": "field",
+              "name": "_bestSkor",
+              "privacy": "public",
+              "type": {
+                "text": "null"
+              },
+              "default": "null",
+              "attribute": "_bestSkor"
+            },
+            {
+              "kind": "field",
+              "name": "_pernahIkut",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "_pernahIkut"
+            },
+            {
+              "kind": "field",
+              "name": "_attemptKe",
+              "privacy": "public",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "attribute": "_attemptKe"
             },
             {
               "kind": "field",
@@ -3763,6 +3842,22 @@
               "fieldName": "soalFileUrl"
             },
             {
+              "name": "allow-retake",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true",
+              "fieldName": "allowRetake"
+            },
+            {
+              "name": "max-retake",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "fieldName": "maxRetake"
+            },
+            {
               "name": "_mulai",
               "type": {
                 "text": "boolean"
@@ -3801,6 +3896,30 @@
               },
               "default": "\"\"",
               "fieldName": "_pesan"
+            },
+            {
+              "name": "_bestSkor",
+              "type": {
+                "text": "null"
+              },
+              "default": "null",
+              "fieldName": "_bestSkor"
+            },
+            {
+              "name": "_pernahIkut",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "_pernahIkut"
+            },
+            {
+              "name": "_attemptKe",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "fieldName": "_attemptKe"
             }
           ],
           "mixins": [
