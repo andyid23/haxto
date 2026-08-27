@@ -14,7 +14,7 @@
       "name": "haxto",
       "domain": null,
       "created": 1787457359,
-      "updated": 1787836712
+      "updated": 1787837548
     },
     "theme": {
       "element": "custom-haxkuis-theme",
@@ -180,7 +180,7 @@
       "description": "soal latihan\n\n",
       "metadata": {
         "created": 1787721767,
-        "updated": 1787836712,
+        "updated": 1787837548,
         "images": [],
         "videos": [],
         "published": true,
@@ -188,18 +188,18 @@
         "locked": false,
         "readtime": 4,
         "theme": {
-          "element": "haxcms-blank-theme",
-          "path": "@haxtheweb/haxcms-elements/lib/haxcms-blank-theme.js",
-          "name": "Haxcms Blank Theme",
-          "thumbnail": "@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-haxcms-blank-theme-thumb.jpg",
-          "description": "Start with a blank site using the Haxcms Blank Theme",
+          "element": "journey-theme",
+          "path": "@haxtheweb/journey-theme/journey-theme.js",
+          "name": "Journey",
+          "thumbnail": "@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-journey-theme-thumb.jpg",
+          "description": "Start with a blank site using the Journey",
           "category": [
             "Website"
           ],
-          "hidden": true,
-          "priority": 0,
+          "hidden": false,
+          "priority": -1,
           "terrible": false,
-          "key": "haxcms-blank-theme"
+          "key": "journey-theme"
         }
       }
     }
