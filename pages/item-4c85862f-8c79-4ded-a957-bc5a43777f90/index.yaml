@@ -1,0 +1,34 @@
+id: item-4c85862f-8c79-4ded-a957-bc5a43777f90
+indent: 0
+location: pages/item-4c85862f-8c79-4ded-a957-bc5a43777f90/index.yaml
+slug: kategori-kuis-formatif-vs-sumatif
+order: 1
+parent: null
+title: 'Kategori Kuis: Formatif vs Sumatif'
+description: >-
+  Panduan guru memisahkan kuis latihan (formatif) dari kuis rapor (sumatif) pada
+  <kuis-ledakan> agar skor latihan tidak mengotori rapor siswa.
+metadata:
+  created: 1787750791
+  updated: 1787837658
+  theme:
+    element: haxma-theme
+    path: '@haxtheweb/haxma-theme/haxma-theme.js'
+    name: Design docs
+    thumbnail: >-
+      @haxtheweb/haxcms-elements/lib/theme-screenshots/theme-haxma-theme-thumb.jpg
+    description: Start with a blank site using the Design docs
+    category:
+      - Website
+    hidden: false
+    priority: 0
+    terrible: false
+    key: haxma-theme
+  published: false
+  hideInMenu: false
+  locked: false
+  readtime: 2
+  videos: []
+  images: []
+  status: ''
+content: <p></p>

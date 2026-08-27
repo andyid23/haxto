@@ -14,7 +14,7 @@
       "name": "haxto",
       "domain": null,
       "created": 1787457359,
-      "updated": 1787837588
+      "updated": 1787837658
     },
     "theme": {
       "element": "custom-haxkuis-theme",
@@ -31,13 +31,13 @@
       "indent": 0,
       "location": "pages/item-e25c1b60-c8b7-4360-b3e8-3533c93c3a92/index.html",
       "slug": "welcome",
-      "order": 3,
+      "order": 4,
       "parent": null,
       "title": "Selamat Datang Pada Ulangan",
       "description": "Welcome to your new HAX site! Click edit on the top bar to get started\nWhat can I do?\nWe've got a ton of blocks that are easy to use and get a lot done with little effort, so much in fact we made a l",
       "metadata": {
         "created": 1787457359,
-        "updated": 1787728492,
+        "updated": 1787837658,
         "theme": {
           "element": "haxma-theme",
           "path": "@haxtheweb/haxma-theme/haxma-theme.js",
@@ -65,14 +65,14 @@
       "id": "item-4c85862f-8c79-4ded-a957-bc5a43777f90",
       "indent": 0,
       "location": "pages/item-4c85862f-8c79-4ded-a957-bc5a43777f90/index.html",
-      "slug": "kategori-kuis-formatif-sumatif",
-      "order": 0,
+      "slug": "kategori-kuis-formatif-vs-sumatif",
+      "order": 1,
       "parent": null,
       "title": "Kategori Kuis: Formatif vs Sumatif",
       "description": "Panduan guru memisahkan kuis latihan (formatif) dari kuis rapor (sumatif) pada <kuis-ledakan> agar skor latihan tidak mengotori rapor siswa.",
       "metadata": {
         "created": 1787750791,
-        "updated": 1787750791,
+        "updated": 1787837658,
         "theme": {
           "element": "haxma-theme",
           "path": "@haxtheweb/haxma-theme/haxma-theme.js",
@@ -101,13 +101,13 @@
       "indent": 0,
       "location": "pages/item-641ef0af-6ba1-4523-bedd-5c0d0f85828b/index.html",
       "slug": "ulangan-harian",
-      "order": 1,
+      "order": 2,
       "parent": null,
       "title": "Ulangan Harian 1",
       "description": "Halaman ulangan harian terintegrasi dengan timer, anti-confetti, dan jawaban tersembunyi.",
       "metadata": {
         "created": 1787466936,
-        "updated": 1787526908,
+        "updated": 1787837658,
         "published": true,
         "hideInMenu": true,
         "locked": false,
@@ -137,13 +137,13 @@
       "indent": 0,
       "location": "pages/item-22f6ed54-bc3f-4a32-8ee7-00f2ab65482e/index.html",
       "slug": "materi-latihan",
-      "order": 1,
+      "order": 3,
       "parent": null,
       "title": "Materi & Latihan Soal",
       "description": "Halaman materi dan latihan soal berwaktu dengan auto-submit nilai ke database.",
       "metadata": {
         "created": 1787466936,
-        "updated": 1787728683,
+        "updated": 1787837658,
         "published": true,
         "hideInMenu": false,
         "locked": false,
@@ -174,13 +174,13 @@
       "indent": 0,
       "location": "pages/item-ba9170fc-d0c5-49c4-bb1b-327ff46aa871/index.html",
       "slug": "halaman-tugas",
-      "order": 4,
+      "order": 0,
       "parent": null,
       "title": "Simulasi Ulangan/Kuis",
       "description": "soal latihan\n\n",
       "metadata": {
         "created": 1787721767,
-        "updated": 1787837588,
+        "updated": 1787837658,
         "images": [],
         "videos": [],
         "published": true,
@@ -201,7 +201,8 @@
           "priority": 0,
           "terrible": true,
           "key": "terrible-resume-themes"
-        }
+        },
+        "status": ""
       }
     }
   ]

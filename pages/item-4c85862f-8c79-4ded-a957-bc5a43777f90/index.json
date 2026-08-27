@@ -2,14 +2,14 @@
   "id": "item-4c85862f-8c79-4ded-a957-bc5a43777f90",
   "indent": 0,
   "location": "pages/item-4c85862f-8c79-4ded-a957-bc5a43777f90/index.json",
-  "slug": "kategori-kuis-formatif-sumatif",
-  "order": 0,
+  "slug": "kategori-kuis-formatif-vs-sumatif",
+  "order": 1,
   "parent": null,
   "title": "Kategori Kuis: Formatif vs Sumatif",
   "description": "Panduan guru memisahkan kuis latihan (formatif) dari kuis rapor (sumatif) pada <kuis-ledakan> agar skor latihan tidak mengotori rapor siswa.",
   "metadata": {
     "created": 1787750791,
-    "updated": 1787750791,
+    "updated": 1787837658,
     "theme": {
       "element": "haxma-theme",
       "path": "@haxtheweb/haxma-theme/haxma-theme.js",
@@ -32,5 +32,5 @@
     "images": [],
     "status": ""
   },
-  "content": "\n<h1>Kategori Kuis: Formatif vs Sumatif pada &lt;kuis-ledakan&gt;</h1>\n<p>Panduan guru memisahkan <strong>kuis latihan (formatif)</strong> dari <strong>kuis rapor (sumatif)</strong> agar skor latihan tidak mengotori rapor siswa. Komponen <em>&lt;kuis-ledakan&gt;</em> (dan wrapper-nya <em>&lt;latihan-kuis&gt;</em>) kini mendukung properti <code>kategori</code>.</p>\n<grid-plate layout=\"1-1\" disable-responsive=\"\">\n<div slot=\"col-1\">\n<h2>Mengapa Memisahkan?</h2>\n<p>Dalam Kurikulum Merdeka:</p>\n<ul>\n<li><strong>Formatif</strong> = progres harian (latihan, evaluasi mandiri). Hanya pantauan, <strong>tidak</strong> masuk rumus rapor.</li>\n<li><strong>Sumatif</strong> = hasil resmi (LM &amp; SAS) yang dihitung menjadi <code>Nilai_Rapor</code>.</li>\n</ul>\n<p>Dulu semua kuis dipaksa ke <code>db_asesmen</code> (rapor). Kini <code>kategori=\"formatif\"</code> dirutekan ke <code>db_aktivitas</code> (heatmap), sehingga rapor tetap bersih.</p>\n</div>\n<div slot=\"col-2\">\n<h2>Properti kategori</h2>\n<table>\n<thead>\n<tr><th>Nilai</th><th>Sheet</th><th>Ke Rapor?</th></tr>\n</thead>\n<tbody>\n<tr><td><code>sumatif_lm</code> (default)</td><td><code>db_asesmen</code></td><td>Ya → LM1..LM5</td></tr>\n<tr><td><code>formatif</code></td><td><code>db_aktivitas</code></td><td>Tidak (progres)</td></tr>\n</tbody>\n</table>\n<p>Atur dari panel HAX (mode Guru → configure) tanpa menyentuh kode.</p>\n</div>\n</grid-plate>\n<h2>Contoh Tag</h2>\n<h3>Sumatif (masuk rapor)</h3>\n<pre><code>&lt;kuis-ledakan\n  judul=\"Ulangan Harian LM-1\"\n  mode=\"siswa\"\n  kd-materi=\"LM-1\"\n  kategori=\"sumatif_lm\"\n  apps-script-url=\"https://script.google.com/macros/s/AKfy.../exec\"\n&gt;&lt;/kuis-ledakan&gt;\n</code></pre>\n<h3>Formatif (hanya progres)</h3>\n<pre><code>&lt;kuis-ledakan\n  judul=\"Latihan Literasi Membaca\"\n  mode=\"siswa\"\n  kd-materi=\"Latihan Literasi\"\n  kategori=\"formatif\"\n  apps-script-url=\"https://script.google.com/macros/s/AKfy.../exec\"\n&gt;&lt;/kuis-ledakan&gt;\n</code></pre>\n<h3>Lewat &lt;latihan-kuis&gt;</h3>\n<p><em>&lt;latihan-kuis&gt;</em> hanya membungkus <em>&lt;kuis-ledakan&gt;</em>, sehingga <code>kategori</code> dan <code>kd-materi</code> diteruskan ke backend yang sama.</p>\n<h2>Langkah Verifikasi Guru</h2>\n<ol>\n<li>Pastikan Web App <code>codev6.gs</code> sudah di-deploy ulang (akses <strong>Anyone</strong>).</li>\n<li>Kerjakan kuis <code>kategori=\"formatif\"</code> → cek baris muncul di sheet <code>db_aktivitas</code> (kolom <code>Tipe Aktivitas</code> = <code>kuis_formatif</code>).</li>\n<li>Pastikan <strong>tidak</strong> ada baris di <code>db_asesmen</code> untuk kuis tersebut.</li>\n<li>Jalankan <code>?action=generateReport</code> → nilai formatif tidak muncul di <code>Akumulasi_Nilai_Rapor</code>.</li>\n<li>Kirim ulang (<code>id_log</code> sama) → tidak ada baris ganda (cek kolom <code>ID Log</code>).</li>\n</ol>\n<blockquote>\n<p>Tips: gunakan <code>kd-materi=\"LM-1\"..\"LM-5\"</code> agar urutan rapor LM bisa ditebak (pemetaan bersifat alfabetis).</p>\n</blockquote>\n<p>Untuk penjelasan lengkap, baca <code>TUTOR-KUIS-LEDAPAN-V6.md</code> di repo.</p>\n"
+  "content": "<p></p>"
 }
