@@ -10,7 +10,7 @@ description: |+
 
 metadata:
   created: 1787854344
-  updated: 1787870858
+  updated: 1787871095
   images: []
   videos: []
   published: true
@@ -34,33 +34,32 @@ metadata:
   status: ''
 content: >
 
-  <h2 id="h2-594611922">📝 Kuis&#160;OPTIMALISASI PENCARIAN LANJUTAN UNTUK
-  RISET&#160;(LM1)</h2>
+  <h2 id="h2--2080334786">📝 Kuis OPTIMALISASI PENCARIAN LANJUTAN UNTUK RISET
+  (LM1)</h2>
 
   <p></p>
 
   <p>Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan.
   Jawaban
-    benar/salah ditampilkan. Setelah login reload untuk menampilkan tombol mulai latihan ulangan. Nilai akhir akan diambil dari nilai terakhir yang dikumpulkan setelah waktu habis atau semua soal terjawab. Waktu Pengerjaan Soal 15 Menit</p>
-  <p></p>
-
+    benar/salah ditampilkan. Setelah login <mark>reload</mark>untuk menampilkan <mark>tombol mulai</mark>&#160;ulangan. Nilai akhir akan diambil dari nilai terakhir yang dikumpulkan setelah waktu habis atau semua soal terjawab. Waktu Pengerjaan Soal 15 Menit&#160;🤐</p>
+  <p>Kalau <b><u>mode gelap</u></b>
+   tidak bisa gunakan <mark>mode terang</mark> di smartphonemu&#160;😄</p>
   <quiz-user-auth
   apps-script-url="https://script.google.com/macros/s/AKfycbxJtcgtms69cByMneEgPvDUg7S3NkmhdiQtsCUTG8bJpsZw2dP9UDrRCkd1HNZ-EvY/exec"
-  auto-login _student-id="STD-65108053"></quiz-user-auth>
+  auto-login _student-id=""></quiz-user-auth>
 
   <latihan-kuis mode="siswa" allow-retake max-retake="0" duration="900"
   timer-autostart hide-pause-restart hide-confetti hide-answers hide-score
   shuffle-questions shuffle-choices kategori="sumatif_lm"
   apps-script-url="https://script.google.com/macros/s/AKfycbyuprudZkCq_YCQ-CqqD_huzndsbA6zHsg_ICfqPnlB97dhcrm1xJjGxJ3u4Jp8DjJQ/exec"
-  kd-materi="LM1" student-id="STD-65108053" judul-kuis="Ulangan Harian"
-  show-sheet-link soal-file-url="./files/soal-contoh.json"  judul-materi="Materi
-  Pembelajaran" teks-materi="Baca materi di bawah ini dengan saksama sebelum
-  mengerjakan kuis. Waktu pengerjaan kuis dibatasi oleh timer; saat waktu habis,
-  kuis akan dikunci dan nilai otomatis terkirim."  materi-file="" cover-image=""
-  student-name="Andy" student-nis="234" student-absen="1" student-kelas="XI-1"
-  pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai otomatis."
-  pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet."
-  label-mulai="▶️ Mulai"
+  kd-materi="LM1" student-id="" judul-kuis="Ulangan Harian" show-sheet-link
+  soal-file-url="./files/soal-contoh.json"  judul-materi="Materi Pembelajaran"
+  teks-materi="Baca materi di bawah ini dengan saksama sebelum mengerjakan kuis.
+  Waktu pengerjaan kuis dibatasi oleh timer; saat waktu habis, kuis akan dikunci
+  dan nilai otomatis terkirim."  materi-file="" cover-image="" student-name=""
+  student-nis="" student-absen="" student-kelas="" pesan-waktu-habis="⏰ Waktu
+  habis! Kuis dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat!
+  Nilai Anda sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai"
   questions="[{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Pencarian
   informasi ilmiah secara daring menggunakan kata kunci sederhana sering kali
   tidak efektif karena menghasilkan jutaan data tidak relevan. Guna menyaring
@@ -217,6 +216,6 @@ content: >
   mengandung kata kunci tertentu.&quot;,&quot;Menghapus seluruh riwayat
   (history) penelusuran peramban internet secara
   otomatis.&quot;],&quot;correctPairs&quot;:{&quot;0&quot;:1,&quot;1&quot;:2,&quot;2&quot;:0,&quot;3&quot;:3}}]"
-  _mulai _best-skor="100" _pernah-ikut _attempt-ke="0" _resume-remaining="447">
+  _attempt-ke="0">
 
   </latihan-kuis>
