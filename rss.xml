@@ -6,7 +6,7 @@
     <description></description>
     <copyright>Copyright (C) 2026 https://localhost:3000/sites/haxto</copyright>
     <language>en-us</language>
-    <lastBuildDate>Thu, 27 Aug 2026 12:01:36 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 27 Aug 2026 12:58:51 GMT</lastBuildDate>
     <generator>HAXcms NodeJS</generator>
     <atom:link href="https://localhost:3000/sites/haxto/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
@@ -34,7 +34,7 @@
     <item>
       <title>Simulasi Ulangan/Kuis</title>
       <link>https://localhost:3000/sites/haxto/halaman-tugas</link>
-      <description>soal latihan 📘 Cara Memasukkan Nilai ke Google Spreadsheet Siapkan Google Apps Script (Web App) yang menerima action=logActivity dan menulis ke Spreadsheet. Salin URL-nya. Tempel URL tersebut ke atribut apps-script-url di bawah (atau atur lewat panel HAX: URL Apps Script (kirim nilai) ). Siswa login dulu via &amp;lt;quiz-user-auth&amp;gt; agar nilai terikat ke Student ID (lihat kotak auth di bawah). Kartu hasil muncul di dua jalur : (a) siswa menjawab semua soal &amp;#38; submit manual, atau (b) timer-k...</description>
+      <description>📘 Cara Mengerjakan Latihan Simak materi dan pahami, lanjutkan soal latihan di bawah dengan login terlebih dahulu MODUL MATERI INFORMATIKA FASE F TOPIK: OPTIMALISASI PENCARIAN LANJUTAN UNTUK RISET (BAB 1 - STIMULUS 1) 1. Pendahuluan Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep inti serta implementasi dari sistem komputer, jaringan, dan kecakapan digital. Di tengah arus transformasi digital yang mengalir deras, literasi digital dan kemampuan berpikir kritis menjad...</description>
       <guid>https://localhost:3000/sites/haxto/halaman-tugas</guid>
       <pubDate>Wed, 26 Aug 2026 05:22:47 GMT</pubDate>
     </item>
