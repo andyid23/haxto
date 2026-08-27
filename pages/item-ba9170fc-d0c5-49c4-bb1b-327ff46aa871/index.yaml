@@ -10,7 +10,7 @@ description: |+
 
 metadata:
   created: 1787721767
-  updated: 1787832096
+  updated: 1787835531
   images: []
   videos: []
   published: true
@@ -55,7 +55,7 @@ content: >
   pemrograman apa yang dipakai elemen
   iniiiii?&quot;,&quot;a&quot;:&quot;Python&quot;,&quot;b&quot;:&quot;Lit
   (JavaScript)&quot;,&quot;c&quot;:&quot;PHP&quot;,&quot;d&quot;:&quot;Ruby&quot;,&quot;k&quot;:&quot;b&quot;,&quot;points&quot;:10}]"
-  _attempt-ke="3"   _best-skor="0" _mulai=""></latihan-kuis>
+  _attempt-ke="3" _best-skor="0" _mulai=""  ></latihan-kuis>
 
   <p></p>
 
@@ -106,12 +106,39 @@ content: >
 
   <latihan-kuis
   apps-script-url="https://script.google.com/macros/s/AKfycbyuprudZkCq_YCQ-CqqD_huzndsbA6zHsg_ICfqPnlB97dhcrm1xJjGxJ3u4Jp8DjJQ/exec"
+  kd-materi="bab1" student-id="STD-65108053" show-sheet-link
+  soal-file-url="./files/soal-contoh.json" allow-retake max-retake="2"
+  duration="30" judul-kuis="Kuis Formatif Literasi" judul-materi="Materi
+  Pembelajaran" teks-materi="Baca materi di atas ini dengan saksama sebelum
+  mengerjakan kuis. Waktu pengerjaan kuis dibatasi oleh timer; saat waktu habis,
+  kuis akan dikunci dan nilai otomatis terkirim." materi-file="" cover-image=""
+  student-name="Andy" student-nis="234" student-absen="1" student-kelas="XI-1"
+  pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai otomatis."
+  pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet."
+  label-mulai="▶️ Mulai Latihan"   questions="[{&quot;q&quot;:&quot;Apa ibu kota
+  Indonesia?&quot;,&quot;a&quot;:&quot;Bandung&quot;,&quot;b&quot;:&quot;Jakarta&quot;,&quot;c&quot;:&quot;Surabaya&quot;,&quot;d&quot;:&quot;Medan&quot;,&quot;k&quot;:&quot;b&quot;,&quot;points&quot;:10},{&quot;q&quot;:&quot;Berapa
+  7 ×
+  8?&quot;,&quot;a&quot;:&quot;54&quot;,&quot;b&quot;:&quot;56&quot;,&quot;c&quot;:&quot;58&quot;,&quot;d&quot;:&quot;60&quot;,&quot;k&quot;:&quot;b&quot;,&quot;points&quot;:10},{&quot;q&quot;:&quot;Planet
+  terdekat
+  Matahari?&quot;,&quot;a&quot;:&quot;Venus&quot;,&quot;b&quot;:&quot;Bumi&quot;,&quot;c&quot;:&quot;Merkurius&quot;,&quot;d&quot;:&quot;Mars&quot;,&quot;k&quot;:&quot;c&quot;,&quot;points&quot;:10},{&quot;q&quot;:&quot;Bahasa
+  pemrograman apa yang dipakai elemen
+  iniiiii?&quot;,&quot;a&quot;:&quot;Python&quot;,&quot;b&quot;:&quot;Lit
+  (JavaScript)&quot;,&quot;c&quot;:&quot;PHP&quot;,&quot;d&quot;:&quot;Ruby&quot;,&quot;k&quot;:&quot;b&quot;,&quot;points&quot;:10}]"
+  _mulai _selesai _skor="0" _habis-waktu _best-skor="50" _pernah-ikut
+  _attempt-ke="2">
+
+  </latihan-kuis>
+
+  <p></p>
+
+  <latihan-kuis
+  apps-script-url="https://script.google.com/macros/s/AKfycbyuprudZkCq_YCQ-CqqD_huzndsbA6zHsg_ICfqPnlB97dhcrm1xJjGxJ3u4Jp8DjJQ/exec"
   kd-materi="bab2" student-id="STD-65108053" show-sheet-link allow-retake
   max-retake="2" duration="30" soal-file-url="./files/soal-contoh.json"
-  judul-kuis="Kuis Formatif Bab 2"  judul-materi="Materi Pembelajaran"
+  judul-kuis="Kuis Formatif Bab 2" judul-materi="Materi Pembelajaran"
   teks-materi="Baca materi di bawah ini dengan saksama sebelum mengerjakan kuis.
   Waktu pengerjaan kuis dibatasi oleh timer; saat waktu habis, kuis akan dikunci
-  dan nilai otomatis terkirim."  materi-file="" cover-image=""
+  dan nilai otomatis terkirim." materi-file="" cover-image=""
   student-name="Andy" student-nis="234" student-absen="1" student-kelas="XI-1"
   pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai otomatis."
   pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet."
@@ -124,5 +151,5 @@ content: >
   pemrograman apa yang dipakai elemen
   iniiiii?&quot;,&quot;a&quot;:&quot;Python&quot;,&quot;b&quot;:&quot;Lit
   (JavaScript)&quot;,&quot;c&quot;:&quot;PHP&quot;,&quot;d&quot;:&quot;Ruby&quot;,&quot;k&quot;:&quot;b&quot;,&quot;points&quot;:10}]"
-  _best-skor="50" _pernah-ikut _attempt-ke="3" _mulai _selesai _skor="50"
-  _habis-waktu></latihan-kuis>
+  _best-skor="75" _pernah-ikut _attempt-ke="1" _mulai="" _selesai="" _skor="50"
+  _habis-waktu=""  ></latihan-kuis>
