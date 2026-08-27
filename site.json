@@ -14,7 +14,7 @@
       "name": "haxto",
       "domain": null,
       "created": 1787457359,
-      "updated": 1787838519
+      "updated": 1787841035
     },
     "theme": {
       "element": "custom-haxkuis-theme",
@@ -177,10 +177,10 @@
       "order": 0,
       "parent": null,
       "title": "Simulasi Ulangan/Kuis",
-      "description": "soal latihan\n\n",
+      "description": "soal latihan ",
       "metadata": {
         "created": 1787721767,
-        "updated": 1787838331,
+        "updated": 1787841035,
         "images": [],
         "videos": [],
         "published": true,
