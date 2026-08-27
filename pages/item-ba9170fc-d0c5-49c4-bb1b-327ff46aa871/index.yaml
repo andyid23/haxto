@@ -10,7 +10,7 @@ description: |+
 
 metadata:
   created: 1787721767
-  updated: 1787836294
+  updated: 1787836454
   images: []
   videos: []
   published: true
@@ -33,7 +33,9 @@ metadata:
 content: >
 
   <div class="petunjuk">
-     <h2>📘 Cara Mengerjakan Latihan</h2><p></p><p></p>
+     <h2>📘 Cara Mengerjakan Latihan</h2>
+    <p></p>
+    <p></p>
   </div>
 
   <p>Simak materi dan pahami, lanjutkan soal latihan di bawah dengan login
@@ -41,7 +43,9 @@ content: >
 
   <p></p>
 
-  <p><b></b></p>
+  <p><b></b>
+
+  </p>
 
   <h3 id="h3-1384382893"><b>MODUL MATERI INFORMATIKA FASE F</b></h3>
 
@@ -55,47 +59,44 @@ content: >
   digital. Di tengah arus transformasi digital yang mengalir deras, literasi
   digital dan kemampuan berpikir kritis menjadi prasyarat mutlak agar peserta
   didik memiliki bekal untuk menjadi warga digital yang berbudaya, beradab, dan
-  produktif.</b></p>
+  produktif.</b>
+
+  </p>
 
   <p><b>Literasi digital mencakup kemampuan teknis dan kognitif untuk mengakses,
   mengatur, memahami, mengintegrasikan, mengevaluasi, dan mengkreasi informasi
   secara aman melalui teknologi digital. Salah satu keterampilan mendasar dalam
   literasi digital adalah kemampuan menjelajahi informasi secara cerdas dan
   memanfaatkan mesin pencari (search engine) untuk kepentingan riset akademik
-  secara efektif dan efisien.</b></p>
+  secara efektif dan efisien.</b>
+
+  </p>
 
   <hr/><h3 id="h3-468844443"><b>2. Tujuan Pembelajaran</b></h3>
 
   <p><b>Berdasarkan Capaian Pembelajaran (CP) dan Alur Tujuan Pembelajaran (ATP)
-  Informatika Fase F, tujuan pembelajaran khusus pada topik ini adalah:</b></p>
+  Informatika Fase F, tujuan pembelajaran khusus pada topik ini adalah:</b>
 
-  <ul><li aria-level="1"><p><b>Mampu memahami penggunaan mesin pencari secara
-  optimal untuk melakukan riset akademik.</b></p>
+  </p>
 
+  <ul>
+    <li aria-level="1">
+      <p><b>Mampu memahami penggunaan mesin pencari secara optimal untuk melakukan riset akademik.</b>
+      </p>
 
+    </li>
 
-  </li>
+    <li aria-level="1">
+      <p><b>Mampu menyusun strategi penelusuran informasi daring dengan menggunakan kata kunci presisi serta operator logika Boolean.</b>
+      </p>
 
+    </li>
 
+    <li aria-level="1">
+      <p><b>Mampu menerapkan kombinasi variabel pencarian lanjutan (seperti site:, filetype:, dll.) untuk meningkatkan keandalan sumber data dan menghemat waktu riset.</b>
+      </p>
 
-  <li aria-level="1"><p><b>Mampu menyusun strategi penelusuran informasi daring
-  dengan menggunakan kata kunci presisi serta operator logika Boolean.</b></p>
-
-
-
-  </li>
-
-
-
-  <li aria-level="1"><p><b>Mampu menerapkan kombinasi variabel pencarian
-  lanjutan (seperti site:, filetype:, dll.) untuk meningkatkan keandalan sumber
-  data dan menghemat waktu riset.</b></p>
-
-
-
-  </li>
-
-
+    </li>
 
   </ul>
 
@@ -108,42 +109,35 @@ content: >
   melakukan riset, pencarian informasi daring menggunakan kata kunci sederhana
   sering kali tidak efektif karena menghasilkan jutaan data tidak relevan. Oleh
   karena itu, pemrogram dan peneliti harus menguasai strategi pencarian lanjutan
-  untuk menyaring data secara presisi.</b></p>
+  untuk menyaring data secara presisi.</b>
+
+  </p>
 
   <h4 id="h4--1885554261"><b>B. Operator Logika Boolean</b></h4>
 
   <p><b>Operator logika Boolean berperan penting dalam mengaitkan, membatasi,
-  atau mengecualikan konsep penelusuran di mesin pencari:</b></p>
+  atau mengecualikan konsep penelusuran di mesin pencari:</b>
 
-  <ul><li aria-level="1"><p><b>AND: Digunakan untuk menggabungkan kata kunci
-  guna mempersempit hasil pencarian data (memaksa mesin pencari menampilkan
-  halaman yang hanya memuat semua kata kunci tersebut secara bersamaan).</b></p>
+  </p>
 
+  <ul>
+    <li aria-level="1">
+      <p><b>AND: Digunakan untuk menggabungkan kata kunci guna mempersempit hasil pencarian data (memaksa mesin pencari menampilkan halaman yang hanya memuat semua kata kunci tersebut secara bersamaan).</b>
+      </p>
 
+    </li>
 
-  </li>
+    <li aria-level="1">
+      <p><b>OR: Digunakan untuk memperluas pencarian dengan menampilkan hasil yang memuat salah satu atau kedua kata kunci sekaligus.</b>
+      </p>
 
+    </li>
 
+    <li aria-level="1">
+      <p><b>NOT (atau karakter tanda minus -): Digunakan untuk mengecualikan kata kunci tertentu yang tidak relevan agar tidak muncul di halaman hasil penelusuran.</b>
+      </p>
 
-  <li aria-level="1"><p><b>OR: Digunakan untuk memperluas pencarian dengan
-  menampilkan hasil yang memuat salah satu atau kedua kata kunci
-  sekaligus.</b></p>
-
-
-
-  </li>
-
-
-
-  <li aria-level="1"><p><b>NOT (atau karakter tanda minus -): Digunakan untuk
-  mengecualikan kata kunci tertentu yang tidak relevan agar tidak muncul di
-  halaman hasil penelusuran.</b></p>
-
-
-
-  </li>
-
-
+    </li>
 
   </ul>
 
@@ -151,170 +145,115 @@ content: >
   Operators)</b></h4>
 
   <p><b>Variabel ini membatasi pelacakan kata kunci pada bagian spesifik dari
-  dokumen atau server di internet:</b></p>
+  dokumen atau server di internet:</b>
 
-  <ul><li aria-level="1"><p><b>site:: Membatasi hasil pencarian hanya pada
-  alamat web atau domain tertentu (misalnya, site:go.id untuk situs resmi
-  pemerintah Indonesia atau site:ac.id untuk perguruan tinggi di
-  Indonesia).</b></p>
+  </p>
 
+  <ul>
+    <li aria-level="1">
+      <p><b>site:: Membatasi hasil pencarian hanya pada alamat web atau domain tertentu (misalnya, site:go.id untuk situs resmi pemerintah Indonesia atau site:ac.id untuk perguruan tinggi di Indonesia).</b>
+      </p>
 
+    </li>
 
-  </li>
+    <li aria-level="1">
+      <p><b>filetype:: Menyaring hasil pencarian berdasarkan format dokumen berkas tertentu, seperti pdf untuk dokumen formal, doc, atau ppt.</b>
+      </p>
 
+    </li>
 
+    <li aria-level="1">
+      <p><b>inurl:: Melacak kata kunci spesifik yang tertanam langsung di dalam alamat URL halaman web.</b>
+      </p>
 
-  <li aria-level="1"><p><b>filetype:: Menyaring hasil pencarian berdasarkan
-  format dokumen berkas tertentu, seperti pdf untuk dokumen formal, doc, atau
-  ppt.</b></p>
+    </li>
 
+    <li aria-level="1">
+      <p><b>intitle:: Membatasi pencarian halaman web yang judul dokumennya mengandung kata kunci tertentu.</b>
+      </p>
 
+    </li>
 
-  </li>
+    <li aria-level="1">
+      <p><b>intext:: Mengunci pelacakan kata kunci khusus hanya di dalam badan teks (body) dokumen halaman web.</b>
+      </p>
 
+    </li>
 
+    <li aria-level="1">
+      <p><b>cache:: Menampilkan versi salinan sementara terbaru dari suatu halaman web yang disimpan oleh server Google, sangat membantu di tengah keterbatasan koneksi internet.</b>
+      </p>
 
-  <li aria-level="1"><p><b>inurl:: Melacak kata kunci spesifik yang tertanam
-  langsung di dalam alamat URL halaman web.</b></p>
+    </li>
 
+    <li aria-level="1">
+      <p><b>Tanda Petik Ganda (""): Digunakan untuk memaksa mesin pencari melacak frasa kata kunci secara tepat dan persis (Exact Match).</b>
+      </p>
 
-
-  </li>
-
-
-
-  <li aria-level="1"><p><b>intitle:: Membatasi pencarian halaman web yang judul
-  dokumennya mengandung kata kunci tertentu.</b></p>
-
-
-
-  </li>
-
-
-
-  <li aria-level="1"><p><b>intext:: Mengunci pelacakan kata kunci khusus hanya
-  di dalam badan teks (body) dokumen halaman web.</b></p>
-
-
-
-  </li>
-
-
-
-  <li aria-level="1"><p><b>cache:: Menampilkan versi salinan sementara terbaru
-  dari suatu halaman web yang disimpan oleh server Google, sangat membantu di
-  tengah keterbatasan koneksi internet.</b></p>
-
-
-
-  </li>
-
-
-
-  <li aria-level="1"><p><b>Tanda Petik Ganda (""): Digunakan untuk memaksa mesin
-  pencari melacak frasa kata kunci secara tepat dan persis (Exact
-  Match).</b></p>
-
-
-
-  </li>
-
-
+    </li>
 
   </ul>
 
   <h4 id="h4--2045198086"><b>D. Teknologi Pencarian Modern</b></h4>
 
-  <ul><li aria-level="1"><p><b>Pencarian Visual (Google Lens): Teknologi
-  penelusuran informasi non-teks yang didasarkan pada pencocokan data
-  gambar/visual yang diunggah pengguna dengan sumber visual serupa di
-  internet.</b></p>
+  <ul>
+    <li aria-level="1">
+      <p><b>Pencarian Visual (Google Lens): Teknologi penelusuran informasi non-teks yang didasarkan pada pencocokan data gambar/visual yang diunggah pengguna dengan sumber visual serupa di internet.</b>
+      </p>
 
-
-
-  </li>
-
-
+    </li>
 
   </ul>
 
   <hr/><h3 id="h3--2136781867"><b>4. Miskonsepsi Umum</b></h3>
 
-  <ul><li aria-level="1"><p><b>Miskonsepsi 1: Mengetikkan kata kunci yang tidak
-  berkaitan mempercepat proses riset. Faktanya: Kata kunci yang tidak berkaitan
-  justru menghasilkan data sampah, merusak akurasi, serta menghambat efisiensi
-  riset secara signifikan.</b></p>
+  <ul>
+    <li aria-level="1">
+      <p><b>Miskonsepsi 1: Mengetikkan kata kunci yang tidak berkaitan mempercepat proses riset. Faktanya: Kata kunci yang tidak berkaitan justru menghasilkan data sampah, merusak akurasi, serta menghambat efisiensi riset secara signifikan.</b>
+      </p>
 
+    </li>
 
+    <li aria-level="1">
+      <p><b>Miskonsepsi 2: Penggunaan kata kunci yang terlampau spesifik dan sempit selalu dianjurkan. Faktanya: Kata kunci yang terlampau spesifik dan sempit dihindari karena berisiko menghilangkan informasi penting lainnya yang tersedia di bawah terminologi yang lebih umum.</b>
+      </p>
 
-  </li>
+    </li>
 
+    <li aria-level="1">
+      <p><b>Miskonsepsi 3: Operator OR digunakan untuk menyaring dan mempersempit pencarian. Faktanya: Operator OR berfungsi untuk memperluas pencarian dengan menggabungkan alternatif istilah. Operator yang mempersempit ruang lingkup adalah AND.</b>
+      </p>
 
-
-  <li aria-level="1"><p><b>Miskonsepsi 2: Penggunaan kata kunci yang terlampau
-  spesifik dan sempit selalu dianjurkan. Faktanya: Kata kunci yang terlampau
-  spesifik dan sempit dihindari karena berisiko menghilangkan informasi penting
-  lainnya yang tersedia di bawah terminologi yang lebih umum.</b></p>
-
-
-
-  </li>
-
-
-
-  <li aria-level="1"><p><b>Miskonsepsi 3: Operator OR digunakan untuk menyaring
-  dan mempersempit pencarian. Faktanya: Operator OR berfungsi untuk memperluas
-  pencarian dengan menggabungkan alternatif istilah. Operator yang mempersempit
-  ruang lingkup adalah AND.</b></p>
-
-
-
-  </li>
-
-
+    </li>
 
   </ul>
 
   <hr/><h3 id="h3-1891844905"><b>5. Ringkasan Materi</b></h3>
 
-  <ol><li aria-level="1"><p><b>Pencarian riset ilmiah daring memerlukan teknik
-  pencarian lanjutan agar terhindar dari tumpukan informasi tidak
-  relevan.</b></p>
+  <ol>
+    <li aria-level="1">
+      <p><b>Pencarian riset ilmiah daring memerlukan teknik pencarian lanjutan agar terhindar dari tumpukan informasi tidak relevan.</b>
+      </p>
 
+    </li>
 
+    <li aria-level="1">
+      <p><b>Operator logika Boolean (AND, OR, NOT/-) serta tanda petik ganda ("") mengontrol relevansi dan cakupan relasi antarkata kunci secara presisi.</b>
+      </p>
 
-  </li>
+    </li>
 
+    <li aria-level="1">
+      <p><b>Variabel pencarian lanjutan seperti site: dan filetype: memfokuskan hasil pada reputasi domain akademik/pemerintah dan format dokumen siap unduh.</b>
+      </p>
 
+    </li>
 
-  <li aria-level="1"><p><b>Operator logika Boolean (AND, OR, NOT/-) serta tanda
-  petik ganda ("") mengontrol relevansi dan cakupan relasi antarkata kunci
-  secara presisi.</b></p>
+    <li aria-level="1">
+      <p><b>Pencarian berbasis visual difasilitasi oleh Google Lens dengan mencocokkan kemiripan gambar secara daring.</b>
+      </p>
 
-
-
-  </li>
-
-
-
-  <li aria-level="1"><p><b>Variabel pencarian lanjutan seperti site: dan
-  filetype: memfokuskan hasil pada reputasi domain akademik/pemerintah dan
-  format dokumen siap unduh.</b></p>
-
-
-
-  </li>
-
-
-
-  <li aria-level="1"><p><b>Pencarian berbasis visual difasilitasi oleh Google
-  Lens dengan mencocokkan kemiripan gambar secara daring.</b></p>
-
-
-
-  </li>
-
-
+    </li>
 
   </ol>
 
@@ -328,38 +267,36 @@ content: >
   relevan. Guna menyaring data secara presisi, pengguna dapat menerapkan
   variabel pencarian lanjutan seperti site: untuk domain web dan filetype: untuk
   format berkas. Selain itu, operator logika boolean (AND, OR, NOT) berperan
-  penting dalam mengaitkan atau mengecualikan konsep penelusuran.</b></p>
+  penting dalam mengaitkan atau mengecualikan konsep penelusuran.</b>
+
+  </p>
 
   <h4 id="h4-815904018"><b>Studi Kasus Skenario Riset Akademik:</b></h4>
 
   <p><b>Seorang siswa kelas XI sedang melakukan riset mengenai "dampak emisi
   karbon". Ia ingin mencari dokumen laporan resmi berformat PDF yang diterbitkan
   langsung oleh instansi pemerintah Indonesia (domain go.id) agar datanya valid
-  dan kredibel secara hukum.</b></p>
+  dan kredibel secara hukum.</b>
+
+  </p>
 
   <p><b>Sintaks pencarian lanjutan yang paling cepat, akurat, dan akseptabel
-  adalah: "dampak emisi karbon" site:go.id filetype:pdf</b></p>
+  adalah: "dampak emisi karbon" site:go.id filetype:pdf</b>
 
-  <ul><li aria-level="1"><p><b>Analisis Keandalan: Penggunaan domain go.id
-  memberikan jaminan bahwa data statistik berasal langsung dari server instansi
-  pemerintah yang sah (memiliki Authority tinggi).</b></p>
+  </p>
 
+  <ul>
+    <li aria-level="1">
+      <p><b>Analisis Keandalan: Penggunaan domain go.id memberikan jaminan bahwa data statistik berasal langsung dari server instansi pemerintah yang sah (memiliki Authority tinggi).</b>
+      </p>
 
+    </li>
 
-  </li>
+    <li aria-level="1">
+      <p><b>Analisis Efisiensi: Penulisan frasa dalam tanda petik ganda memastikan pelacakan persis, sedangkan filetype:pdf langsung menyaring file dokumen siap pakai tanpa perlu menyusuri artikel blog pribadi yang tidak valid.</b>
+      </p>
 
-
-
-  <li aria-level="1"><p><b>Analisis Efisiensi: Penulisan frasa dalam tanda petik
-  ganda memastikan pelacakan persis, sedangkan filetype:pdf langsung menyaring
-  file dokumen siap pakai tanpa perlu menyusuri artikel blog pribadi yang tidak
-  valid.</b></p>
-
-
-
-  </li>
-
-
+    </li>
 
   </ul>
 
@@ -389,9 +326,8 @@ content: >
   pemrograman apa yang dipakai elemen
   iniiiii?&quot;,&quot;a&quot;:&quot;Python&quot;,&quot;b&quot;:&quot;Lit
   (JavaScript)&quot;,&quot;c&quot;:&quot;PHP&quot;,&quot;d&quot;:&quot;Ruby&quot;,&quot;k&quot;:&quot;b&quot;,&quot;points&quot;:10}]"
-  _mulai="" _selesai="" _skor="0" _habis-waktu="" _best-skor="50" _pernah-ikut
-  _attempt-ke="3"   _pesan="Gagal memuat file soal: Bukan array JSON">
-
-  </latihan-kuis>
+  _mulai="" _selesai="" _skor="0" _habis-waktu="" _best-skor="0" _pernah-ikut
+  _attempt-ke="3" _pesan="Gagal memuat file soal: Bukan array JSON" 
+  ></latihan-kuis>
 
   <p></p>
