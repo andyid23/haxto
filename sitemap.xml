@@ -8,13 +8,19 @@
   </url>
   <url>
     <loc>https://localhost:3000/sites/haxto/latihan-ulangan-harian</loc>
-    <lastmod>2026-08-28T03:32:27.000Z</lastmod>
+    <lastmod>2026-08-28T03:54:24.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://localhost:3000/sites/haxto/halaman-tugas</loc>
     <lastmod>2026-08-28T03:32:27.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/sites/haxto/kategori-kuis-formatif-vs-sumatif</loc>
+    <lastmod>2026-08-28T03:31:54.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>

@@ -1,4 +1,4 @@
-📝 Latihan 1
-------------
+📝 Latihan Kuis
+---------------
 
-Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban benar/salah tidak ditampilkan sampai guru memutuskan. Skor terkirim otomatis ke database setelah waktu habis atau semua soal terjawab. Waktu Pengerjaan Soal 30 Menit
+Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban benar/salah ditampilkan. Setelah login reload untuk menampilkan tombol mulai latihan ulangan. Bisa mengulang latihan ulangan maksimal 4 kali. Nilai akhir akan diambil dari nilai terakhir yang dikumpulkan setelah waktu habis atau semua soal terjawab. Waktu Pengerjaan Soal 15 Menit

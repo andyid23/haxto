@@ -14,7 +14,7 @@
       "name": "haxto",
       "domain": null,
       "created": 1787457359,
-      "updated": 1787887948
+      "updated": 1787889264
     },
     "theme": {
       "element": "custom-haxkuis-theme",
@@ -72,7 +72,7 @@
       "description": "Halaman ulangan harian terintegrasi dengan timer, anti-confetti, dan jawaban tersembunyi.",
       "metadata": {
         "created": 1787466936,
-        "updated": 1787887947,
+        "updated": 1787889264,
         "published": true,
         "hideInMenu": true,
         "locked": false,
@@ -93,8 +93,7 @@
           "priority": -1,
           "terrible": false,
           "key": "polaris-flex-theme"
-        },
-        "tags": "literasi"
+        }
       }
     },
     {
@@ -166,6 +165,41 @@
           "terrible": false,
           "key": "polaris-flex-theme"
         },
+        "status": ""
+      }
+    },
+    {
+      "id": "item-4c85862f-8c79-4ded-a957-bc5a43777f90",
+      "indent": 0,
+      "location": "pages/item-4c85862f-8c79-4ded-a957-bc5a43777f90/index.html",
+      "slug": "kategori-kuis-formatif-vs-sumatif",
+      "order": 5,
+      "parent": null,
+      "title": "Kategori Kuis: Formatif vs Sumatif",
+      "description": "Panduan guru memisahkan kuis latihan (formatif) dari kuis rapor (sumatif) pada kuis-ledakan agar skor latihan tidak mengotori rapor siswa.",
+      "metadata": {
+        "created": 1787750791,
+        "updated": 1787887914,
+        "theme": {
+          "element": "journey-theme",
+          "path": "@haxtheweb/journey-theme/journey-theme.js",
+          "name": "Journey",
+          "thumbnail": "@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-journey-theme-thumb.jpg",
+          "description": "Start with a blank site using the Journey",
+          "category": [
+            "Website"
+          ],
+          "hidden": false,
+          "priority": -1,
+          "terrible": false,
+          "key": "journey-theme"
+        },
+        "published": true,
+        "hideInMenu": true,
+        "locked": false,
+        "readtime": 5,
+        "videos": [],
+        "images": [],
         "status": ""
       }
     }
