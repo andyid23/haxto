@@ -96,7 +96,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     this.labelMulai = "▶️ Mulai";
     this.showSheetLink = false;
     this.soalFileUrl = "";
-    this.allowRetake = true;
+    this.allowRetake = false;
     this.maxRetake = 0;
     this.mode = "siswa";
     this.hidePauseRestart = true;
@@ -571,7 +571,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
             property: "allowRetake",
             title: "Boleh Diulang (retake)",
             inputMethod: "boolean",
-            description: "false = ulangan (terkunci setelah 1x), true = latihan (boleh ulang). Default true.",
+            description: "false = ulangan (terkunci setelah 1x), true = latihan (boleh ulang). Attribute hadir = true; tidak ada attribute = false (default).",
           },
           {
             property: "maxRetake",

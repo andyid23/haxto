@@ -3588,7 +3588,7 @@
               "type": {
                 "text": "boolean"
               },
-              "default": "true",
+              "default": "false",
               "attribute": "allow-retake",
               "reflects": true
             },
@@ -3654,7 +3654,7 @@
               "type": {
                 "text": "string"
               },
-              "default": "\"\"",
+              "default": "\"sumatif_lm\"",
               "attribute": "kategori",
               "reflects": true
             },
@@ -3985,7 +3985,7 @@
               "type": {
                 "text": "boolean"
               },
-              "default": "true",
+              "default": "false",
               "fieldName": "allowRetake"
             },
             {
@@ -4033,7 +4033,7 @@
               "type": {
                 "text": "string"
               },
-              "default": "\"\"",
+              "default": "\"sumatif_lm\"",
               "fieldName": "kategori"
             },
             {
