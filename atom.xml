@@ -265,13 +265,15 @@ We&apos;ve got a ton of blocks that are easy to use and get a lot done with litt
   <entry>
     <title>Kategori Kuis: Formatif vs Sumatif</title>
     <id>item-4c85862f-8c79-4ded-a957-bc5a43777f90</id>
-    <updated>2026-08-28T03:31:08.000Z</updated>
+    <updated>2026-08-28T03:31:54.000Z</updated>
     <published>2026-08-26T13:26:31.000Z</published>
-    <summary>Panduan guru memisahkan kuis latihan (formatif) dari kuis rapor (sumatif) pada &lt;kuis-ledakan&gt; agar skor latihan tidak mengotori rapor siswa.</summary>
+    <summary>Panduan guru memisahkan kuis latihan (formatif) dari kuis rapor (sumatif) pada &amp;#60;kuis-ledakan&amp;#62; agar skor latihan tidak mengotori rapor siswa.</summary>
     <link href="https://localhost:3000/sites/haxto/kategori-kuis-formatif-vs-sumatif"/>
     
     <content type="html">
-      <![CDATA[ <p></p> ]]>
+      <![CDATA[ 
+<p></p>
+ ]]>
     </content>
   </entry>
   <entry>
