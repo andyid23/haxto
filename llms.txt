@@ -13,7 +13,6 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Selamat Datang Pada Ulangan](https://localhost:3000/sites/haxto/pages/item-e25c1b60-c8b7-4360-b3e8-3533c93c3a92/index.md): Welcome to your new HAX site! Click edit on the top bar to get started What can I do? We've got a ton of blocks that are easy to use and get a lot done with little effort, so much in fact we made a l
 - [Kategori Kuis: Formatif vs Sumatif](https://localhost:3000/sites/haxto/pages/item-4c85862f-8c79-4ded-a957-bc5a43777f90/index.md): Panduan guru memisahkan kuis latihan (formatif) dari kuis rapor (sumatif) pada <kuis-ledakan> agar skor latihan tidak mengotori rapor siswa.
 - [LATIHAN/SIMULASI KUIS](https://localhost:3000/sites/haxto/pages/item-641ef0af-6ba1-4523-bedd-5c0d0f85828b/index.md): Halaman ulangan harian terintegrasi dengan timer, anti-confetti, dan jawaban tersembunyi.
-- [Materi & Latihan Soal](https://localhost:3000/sites/haxto/pages/item-22f6ed54-bc3f-4a32-8ee7-00f2ab65482e/index.md): Halaman materi dan latihan soal berwaktu dengan auto-submit nilai ke database.
 - [Simulasi Ulangan/Kuis](https://localhost:3000/sites/haxto/pages/item-ba9170fc-d0c5-49c4-bb1b-327ff46aa871/index.md): soal latihan
 - [Ulangan Harian 1](https://localhost:3000/sites/haxto/pages/item-43d63e69-4564-4ae3-80df-ffa7a6677b2b/index.md)
 

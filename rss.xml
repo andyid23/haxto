@@ -6,7 +6,7 @@
     <description></description>
     <copyright>Copyright (C) 2026 https://localhost:3000/sites/haxto</copyright>
     <language>en-us</language>
-    <lastBuildDate>Thu, 27 Aug 2026 22:51:35 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 28 Aug 2026 03:20:21 GMT</lastBuildDate>
     <generator>HAXcms NodeJS</generator>
     <atom:link href="https://localhost:3000/sites/haxto/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
@@ -22,13 +22,6 @@
       <description>📝 Latihan Kuis Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban benar/salah ditampilkan. Setelah login reload untuk menampilkan tombol mulai latihan ulangan. Bisa mengulang latihan ulangan maksimal 4 kali. Nilai akhir akan diambil dari nilai terakhir yang dikumpulkan setelah waktu habis atau semua soal terjawab. Waktu Pengerjaan Soal 15 Menit</description>
       <category>literasi</category>
       <guid>https://localhost:3000/sites/haxto/latihan-ulangan-harian</guid>
-      <pubDate>Sun, 23 Aug 2026 06:35:36 GMT</pubDate>
-    </item>
-    <item>
-      <title>Materi &amp; Latihan Soal</title>
-      <link>https://localhost:3000/sites/haxto/materi-latihan</link>
-      <description>📖 Materi &amp;#38; Latihan Soal BAB I: OPTIMALISASI MESIN PENCARI UNTUK RISET Pencarian informasi di internet menggunakan kata kunci (keyword) sederhana sering kali memunculkan ratusan juta hasil yang tidak relevan dan tidak efisien untuk dianalisis. Untuk melakukan riset yang efektif, pengguna dituntut mampu menyaring informasi secara presisi dengan memanfaatkan fitur pencarian lanjut menggunakan variabel atau parameter khusus. 1. Variabel Pencarian Lanjutan Google Variabel pencarian adalah par...</description>
-      <guid>https://localhost:3000/sites/haxto/materi-latihan</guid>
       <pubDate>Sun, 23 Aug 2026 06:35:36 GMT</pubDate>
     </item>
     <item>
