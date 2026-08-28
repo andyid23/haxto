@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
-    <title>haxto</title>
+    <title>Media Pembelajaran Kelas XI Informatika SMA</title>
     <link>https://localhost:3000/sites/haxto/</link>
     <description></description>
     <copyright>Copyright (C) 2026 https://localhost:3000/sites/haxto</copyright>
     <language>en-us</language>
-    <lastBuildDate>Fri, 28 Aug 2026 04:08:13 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 28 Aug 2026 04:32:05 GMT</lastBuildDate>
     <generator>HAXcms NodeJS</generator>
     <atom:link href="https://localhost:3000/sites/haxto/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
@@ -33,7 +33,7 @@
     <item>
       <title>Ulangan Harian 1</title>
       <link>https://localhost:3000/sites/haxto/ulangan-harian-1</link>
-      <description>📝 Kuis OPTIMALISASI PENCARIAN LANJUTAN UNTUK RISET (LM1) Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban benar/salah ditampilkan. Setelah login reload untuk menampilkan tombol mulai &amp;#160;ulangan. Nilai akhir akan diambil dari nilai terakhir yang dikumpulkan setelah waktu habis atau semua soal terjawab. Waktu Pengerjaan Soal 15 Menit&amp;#160;🤐 Kalau mode gelap tidak bisa gunakan mode terang di smartphonemu&amp;#160;😄</description>
+      <description>📝 Kuis OPTIMALISASI PENCARIAN LANJUTAN UNTUK RISET (LM1) Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban benar/salah ditampilkan. Setelah login reload untuk menampilkan tombol mulai &amp;#160;ulangan. Nilai akhir akan diambil dari nilai terakhir yang dikumpulkan setelah waktu habis atau semua soal terjawab. Waktu Pengerjaan Soal 15 Menit&amp;#160;🤐 Kalau mode gelap tidak bisa gunakan mode terang di smartphonemu&amp;#160;😄 Ulangan</description>
       <category>Literasi Digital</category>
       <guid>https://localhost:3000/sites/haxto/ulangan-harian-1</guid>
       <pubDate>Thu, 27 Aug 2026 18:12:24 GMT</pubDate>
