@@ -2,7 +2,7 @@ id: item-e25c1b60-c8b7-4360-b3e8-3533c93c3a92
 indent: 0
 location: pages/item-e25c1b60-c8b7-4360-b3e8-3533c93c3a92/index.yaml
 slug: welcome
-order: 3
+order: 2
 parent: null
 title: Selamat Datang Pada Ulangan
 description: >-
@@ -14,7 +14,7 @@ description: >-
   effort, so much in fact we made a l
 metadata:
   created: 1787457359
-  updated: 1787728492
+  updated: 1787890093
   theme:
     element: haxma-theme
     path: '@haxtheweb/haxma-theme/haxma-theme.js'
@@ -59,7 +59,9 @@ content: >
 
 
 
+
       <video-player source="https://www.youtube.com/watch?v=zmext_0e4xQ" slot="col-2" accent-color="grey" crossorigin="anonymous" sticky-corner="none" audio-description-source="" resource="#b23e175d-561e-5493-0a2a-fd09f9fe75b1" prefix="oer:http://oerschema.org/ schema:http://schema.org/ dc:http://purl.org/dc/terms/ foaf:http://xmlns.com/foaf/0.1/ cc:http://creativecommons.org/ns# bib:http://bib.schema.org " element-visible source-type="youtube" lang="en" source-data="[{&quot;src&quot;:&quot;https://www.youtube.com/embed/zmext_0e4xQ&quot;,&quot;type&quot;:&quot;&quot;}]"></video-player>
+
 
 
 
@@ -76,15 +78,18 @@ content: >
   <h2 id="h2--1479273868">Get involved with HAX</h2>
 
   <p>
-      <rpg-character accent-color="orange" seed="rddqfohexc" accessories="9" height="142" width="113" base="1" face="1" face-item="1" hair="4" pants="0" shirt="5" skin="5" hat-color="7" hat="none" leg="R" speed="500"></rpg-character>
+      <rpg-character accent-color="orange" seed="rddqfohexc" accessories="9" height="142" width="113" base="1" face="1" face-item="1" hair="4" pants="0" shirt="5" skin="5" hat-color="7" hat="none" leg="L" speed="500"></rpg-character>
 
 
 
-      <rpg-character accent-color="orange" seed="5f7632xie5" accessories="1" height="142" width="113" base="0" face="1" face-item="1" hair="9" pants="4" shirt="2" skin="4" hat-color="6" hat="none" leg="R" speed="500"></rpg-character>
+
+      <rpg-character accent-color="orange" seed="5f7632xie5" accessories="1" height="142" width="113" base="0" face="1" face-item="1" hair="9" pants="4" shirt="2" skin="4" hat-color="6" hat="none" leg="L" speed="500"></rpg-character>
 
 
 
-      <rpg-character seed="btopro" accent-color="orange" accessories="7" height="142" width="113" base="0" face="2" face-item="1" hair="5" pants="5" shirt="5" skin="0" hat-color="1" hat="none" leg="R" speed="500"></rpg-character>
+
+      <rpg-character seed="btopro" accent-color="orange" accessories="7" height="142" width="113" base="0" face="2" face-item="1" hair="5" pants="5" shirt="5" skin="0" hat-color="1" hat="none" leg="L" speed="500"></rpg-character>
+
 
 
 
@@ -92,11 +97,14 @@ content: >
 
 
 
+
       <rpg-character accent-color="orange" seed="e41boly25n" accessories="5" height="142" width="113" base="1" face="1" face-item="5" hair="2" pants="5" shirt="5" skin="3" hat-color="0" hat="none" leg="L" speed="500"></rpg-character>
 
 
 
+
       <rpg-character accent-color="orange" seed="lz2logoisg" accessories="6" height="142" width="113" base="0" face="4" face-item="2" hair="7" pants="1" shirt="7" skin="1" hat-color="7" hat="none" leg="L" speed="500"></rpg-character>
+
 
 
 
@@ -111,11 +119,14 @@ content: >
 
 
 
+
       <li><a href="https://bit.ly/hax-discord" target="_blank">Join the HAX community</a></li>
 
 
 
+
       <li><a href="https://github.com/elmsln/issues/issues/new?assignees=&amp;labels=POP&amp;template=issue-report.md&amp;title=User%20report%20from%20HAX%20welcome%20page" target="_blank">Post an issue in our issue queue</a></li>
+
 
 
 
@@ -135,74 +146,466 @@ content: >
   apps-script-url="https://script.google.com/macros/s/AKfycby2DIuM6ZN8FfkID9TjIVLICAmRa9ogfsuD4BDoCvEItZ2YG6-_gNr-f_mKroUCnalZ/exec"
   kd-materi="Pertemuan 1" kelas="XI-1" student-id="STD-65108053"
   nama-siswa="Andy Yulianto" nis="65108053" absen="1" judul-kuis="Evaluasi Kuis
-  Interaktif" questions="[]" _active-tab="peringkat"
-  _server-data="{&quot;roster&quot;:[{&quot;studentId&quot;:&quot;STD-65108053&quot;,&quot;nama&quot;:&quot;Andy
-  Yulianto&quot;,&quot;nis&quot;:&quot;65108053&quot;,&quot;absen&quot;:&quot;1&quot;,&quot;kelas&quot;:&quot;XI-1&quot;,&quot;totalActivities&quot;:31,&quot;statusAktivitas&quot;:&quot;Aktif&quot;,&quot;emoji&quot;:&quot;📘&quot;,&quot;logAktivitas&quot;:&quot;31
-  aktivitas&quot;,&quot;kehadiran&quot;:100,&quot;uh&quot;:80,&quot;uts&quot;:85,&quot;uas&quot;:82,&quot;sikap&quot;:0,&quot;keterampilan&quot;:0,&quot;nilaiAkhir&quot;:84,&quot;grade&quot;:&quot;B+&quot;},{&quot;studentId&quot;:&quot;STD-65108054&quot;,&quot;nama&quot;:&quot;Siti
-  Rahmawati&quot;,&quot;nis&quot;:&quot;65108054&quot;,&quot;absen&quot;:&quot;2&quot;,&quot;kelas&quot;:&quot;XI-1&quot;,&quot;totalActivities&quot;:9,&quot;statusAktivitas&quot;:&quot;Aktif&quot;,&quot;emoji&quot;:&quot;📘&quot;,&quot;logAktivitas&quot;:&quot;9
-  aktivitas&quot;,&quot;kehadiran&quot;:100,&quot;uh&quot;:86,&quot;uts&quot;:90,&quot;uas&quot;:92,&quot;sikap&quot;:0,&quot;keterampilan&quot;:0,&quot;nilaiAkhir&quot;:90,&quot;grade&quot;:&quot;A&quot;},{&quot;studentId&quot;:&quot;STD-65108055&quot;,&quot;nama&quot;:&quot;Bima
-  Pratama&quot;,&quot;nis&quot;:&quot;65108055&quot;,&quot;absen&quot;:&quot;3&quot;,&quot;kelas&quot;:&quot;XI-1&quot;,&quot;totalActivities&quot;:6,&quot;statusAktivitas&quot;:&quot;Kurang
-  Konsisten&quot;,&quot;emoji&quot;:&quot;⚠️&quot;,&quot;logAktivitas&quot;:&quot;6
-  aktivitas&quot;,&quot;kehadiran&quot;:100,&quot;uh&quot;:85,&quot;uts&quot;:88,&quot;uas&quot;:86,&quot;sikap&quot;:0,&quot;keterampilan&quot;:0,&quot;nilaiAkhir&quot;:88,&quot;grade&quot;:&quot;A&quot;},{&quot;studentId&quot;:&quot;STD-65108056&quot;,&quot;nama&quot;:&quot;Dina
-  Lestari&quot;,&quot;nis&quot;:&quot;65108056&quot;,&quot;absen&quot;:&quot;4&quot;,&quot;kelas&quot;:&quot;XI-1&quot;,&quot;totalActivities&quot;:3,&quot;statusAktivitas&quot;:&quot;Kurang
-  Konsisten&quot;,&quot;emoji&quot;:&quot;⚠️&quot;,&quot;logAktivitas&quot;:&quot;3
-  aktivitas&quot;,&quot;kehadiran&quot;:100,&quot;uh&quot;:76,&quot;uts&quot;:80,&quot;uas&quot;:82,&quot;sikap&quot;:0,&quot;keterampilan&quot;:0,&quot;nilaiAkhir&quot;:82,&quot;grade&quot;:&quot;B+&quot;},{&quot;studentId&quot;:&quot;STD-65108057&quot;,&quot;nama&quot;:&quot;Rizky
-  Ramadhan&quot;,&quot;nis&quot;:&quot;65108057&quot;,&quot;absen&quot;:&quot;5&quot;,&quot;kelas&quot;:&quot;XI-1&quot;,&quot;totalActivities&quot;:2,&quot;statusAktivitas&quot;:&quot;Minim&quot;,&quot;emoji&quot;:&quot;🟡&quot;,&quot;logAktivitas&quot;:&quot;2
-  aktivitas&quot;,&quot;kehadiran&quot;:66,&quot;uh&quot;:62,&quot;uts&quot;:65,&quot;uas&quot;:60,&quot;sikap&quot;:0,&quot;keterampilan&quot;:0,&quot;nilaiAkhir&quot;:63,&quot;grade&quot;:&quot;C+&quot;},{&quot;studentId&quot;:&quot;STD-65108058&quot;,&quot;nama&quot;:&quot;Nadia
-  Safitri&quot;,&quot;nis&quot;:&quot;65108058&quot;,&quot;absen&quot;:&quot;6&quot;,&quot;kelas&quot;:&quot;XI-1&quot;,&quot;totalActivities&quot;:1,&quot;statusAktivitas&quot;:&quot;Minim&quot;,&quot;emoji&quot;:&quot;🟡&quot;,&quot;logAktivitas&quot;:&quot;1
-  aktivitas&quot;,&quot;kehadiran&quot;:33,&quot;uh&quot;:50,&quot;uts&quot;:55,&quot;uas&quot;:52,&quot;sikap&quot;:0,&quot;keterampilan&quot;:0,&quot;nilaiAkhir&quot;:50,&quot;grade&quot;:&quot;C&quot;}],&quot;leaderboard&quot;:[{&quot;Student
-  ID&quot;:&quot;STD-65108054&quot;,&quot;NIS&quot;:65108054,&quot;Nama&quot;:&quot;Siti
-  Rahmawati&quot;,&quot;Absen&quot;:2,&quot;Kelas&quot;:&quot;XI-1&quot;,&quot;Total
-  Kuis&quot;:5,&quot;Rata-rata Skor&quot;:89,&quot;Skor
-  Tertinggi&quot;:92,&quot;Skor Terendah&quot;:86,&quot;Total
-  Aktivitas&quot;:9,&quot;Reading&quot;:3,&quot;Quiz
-  Activity&quot;:0,&quot;Assignment&quot;:2,&quot;Discussion&quot;:2,&quot;Download&quot;:2,&quot;Kuis
-  Formatif&quot;:2,&quot;Kuis Sumatif&quot;:0,&quot;Skor UTS&quot;:90,&quot;Skor
-  UAS&quot;:92,&quot;Jumlah Pertemuan&quot;:5,&quot;Status Kuis
-  Terakhir&quot;:&quot;LULUS&quot;},{&quot;Student
-  ID&quot;:&quot;STD-65108055&quot;,&quot;NIS&quot;:65108055,&quot;Nama&quot;:&quot;Bima
-  Pratama&quot;,&quot;Absen&quot;:3,&quot;Kelas&quot;:&quot;XI-1&quot;,&quot;Total
-  Kuis&quot;:5,&quot;Rata-rata Skor&quot;:86,&quot;Skor
-  Tertinggi&quot;:88,&quot;Skor Terendah&quot;:84,&quot;Total
-  Aktivitas&quot;:6,&quot;Reading&quot;:3,&quot;Quiz
-  Activity&quot;:0,&quot;Assignment&quot;:1,&quot;Discussion&quot;:1,&quot;Download&quot;:1,&quot;Kuis
-  Formatif&quot;:2,&quot;Kuis Sumatif&quot;:0,&quot;Skor UTS&quot;:88,&quot;Skor
-  UAS&quot;:86,&quot;Jumlah Pertemuan&quot;:5,&quot;Status Kuis
-  Terakhir&quot;:&quot;LULUS&quot;},{&quot;Student
-  ID&quot;:&quot;STD-65108053&quot;,&quot;NIS&quot;:65108053,&quot;Nama&quot;:&quot;Andy
-  Yulianto&quot;,&quot;Absen&quot;:1,&quot;Kelas&quot;:&quot;XI-1&quot;,&quot;Total
-  Kuis&quot;:9,&quot;Rata-rata Skor&quot;:84,&quot;Skor
-  Tertinggi&quot;:100,&quot;Skor Terendah&quot;:50,&quot;Total
-  Aktivitas&quot;:31,&quot;Reading&quot;:15,&quot;Quiz
-  Activity&quot;:17,&quot;Assignment&quot;:3,&quot;Discussion&quot;:2,&quot;Download&quot;:6,&quot;Kuis
-  Formatif&quot;:6,&quot;Kuis Sumatif&quot;:0,&quot;Skor UTS&quot;:85,&quot;Skor
-  UAS&quot;:82,&quot;Jumlah Pertemuan&quot;:5,&quot;Status Kuis
-  Terakhir&quot;:&quot;LULUS&quot;},{&quot;Student
-  ID&quot;:&quot;STD-65108056&quot;,&quot;NIS&quot;:65108056,&quot;Nama&quot;:&quot;Dina
-  Lestari&quot;,&quot;Absen&quot;:4,&quot;Kelas&quot;:&quot;XI-1&quot;,&quot;Total
-  Kuis&quot;:4,&quot;Rata-rata Skor&quot;:80,&quot;Skor
-  Tertinggi&quot;:82,&quot;Skor Terendah&quot;:76,&quot;Total
-  Aktivitas&quot;:3,&quot;Reading&quot;:1,&quot;Quiz
-  Activity&quot;:0,&quot;Assignment&quot;:0,&quot;Discussion&quot;:1,&quot;Download&quot;:1,&quot;Kuis
-  Formatif&quot;:1,&quot;Kuis Sumatif&quot;:0,&quot;Skor UTS&quot;:80,&quot;Skor
-  UAS&quot;:82,&quot;Jumlah Pertemuan&quot;:4,&quot;Status Kuis
-  Terakhir&quot;:&quot;LULUS&quot;},{&quot;Student
-  ID&quot;:&quot;STD-65108057&quot;,&quot;NIS&quot;:65108057,&quot;Nama&quot;:&quot;Rizky
-  Ramadhan&quot;,&quot;Absen&quot;:5,&quot;Kelas&quot;:&quot;XI-1&quot;,&quot;Total
-  Kuis&quot;:4,&quot;Rata-rata Skor&quot;:62,&quot;Skor
-  Tertinggi&quot;:65,&quot;Skor Terendah&quot;:60,&quot;Total
-  Aktivitas&quot;:2,&quot;Reading&quot;:1,&quot;Quiz
-  Activity&quot;:0,&quot;Assignment&quot;:0,&quot;Discussion&quot;:0,&quot;Download&quot;:1,&quot;Kuis
-  Formatif&quot;:1,&quot;Kuis Sumatif&quot;:0,&quot;Skor UTS&quot;:65,&quot;Skor
-  UAS&quot;:60,&quot;Jumlah Pertemuan&quot;:4,&quot;Status Kuis
-  Terakhir&quot;:&quot;TIDAK LULUS&quot;},{&quot;Student
-  ID&quot;:&quot;STD-65108058&quot;,&quot;NIS&quot;:65108058,&quot;Nama&quot;:&quot;Nadia
-  Safitri&quot;,&quot;Absen&quot;:6,&quot;Kelas&quot;:&quot;XI-1&quot;,&quot;Total
-  Kuis&quot;:4,&quot;Rata-rata Skor&quot;:53,&quot;Skor
-  Tertinggi&quot;:55,&quot;Skor Terendah&quot;:50,&quot;Total
-  Aktivitas&quot;:1,&quot;Reading&quot;:1,&quot;Quiz
-  Activity&quot;:0,&quot;Assignment&quot;:0,&quot;Discussion&quot;:0,&quot;Download&quot;:0,&quot;Kuis
-  Formatif&quot;:1,&quot;Kuis Sumatif&quot;:0,&quot;Skor UTS&quot;:55,&quot;Skor
-  UAS&quot;:52,&quot;Jumlah Pertemuan&quot;:4,&quot;Status Kuis
-  Terakhir&quot;:&quot;TIDAK
-  LULUS&quot;}],&quot;siswa&quot;:null,&quot;history&quot;:[]}" ></dasbor-kuis>
+  Interaktif" questions="[]" _active-tab="pantauan"
+  _server-data="{&quot;roster&quot;:[{&quot;studentId&quot;:&quot;STD-65108053&quot;,&quot;nama&quot;:&quot;Andy&quot;,&quot;nis&quot;:&quot;234&quot;,&quot;absen&quot;:&quot;1&quot;,&quot;kelas&quot;:&quot;XI-1&quot;,&quot;totalActivities&quot;:5,&quot;statusAktivitas&quot;:&quot;Kurang
+  Konsisten&quot;,&quot;emoji&quot;:&quot;⚠️&quot;,&quot;logAktivitas&quot;:&quot;5
+  aktivitas&quot;,&quot;nilaiRapor&quot;:27,&quot;sas&quot;:0,&quot;rerataLM&quot;:45,&quot;sts&quot;:0,&quot;intervalCapaian&quot;:&quot;Perlu
+  Remedial&quot;},{&quot;studentId&quot;:&quot;STD-65108010&quot;,&quot;nama&quot;:&quot;Abi
+  Andy&quot;,&quot;nis&quot;:&quot;123&quot;,&quot;absen&quot;:&quot;1&quot;,&quot;kelas&quot;:&quot;XI-1&quot;,&quot;totalActivities&quot;:0,&quot;statusAktivitas&quot;:&quot;Belum
+  Ada
+  Aktivitas&quot;,&quot;emoji&quot;:&quot;📭&quot;,&quot;logAktivitas&quot;:&quot;0
+  aktivitas&quot;,&quot;nilaiRapor&quot;:0,&quot;sas&quot;:0,&quot;rerataLM&quot;:0,&quot;sts&quot;:0,&quot;intervalCapaian&quot;:&quot;Perlu
+  Remedial&quot;},{&quot;studentId&quot;:&quot;STD-06485325&quot;,&quot;nama&quot;:&quot;AHMAD
+  JUPRIL
+  PRASETYO&quot;,&quot;nis&quot;:&quot;12638&quot;,&quot;absen&quot;:&quot;1&quot;,&quot;kelas&quot;:&quot;XI-1&quot;,&quot;totalActivities&quot;:0,&quot;statusAktivitas&quot;:&quot;Belum
+  Ada
+  Aktivitas&quot;,&quot;emoji&quot;:&quot;📭&quot;,&quot;logAktivitas&quot;:&quot;0
+  aktivitas&quot;,&quot;nilaiRapor&quot;:0,&quot;sas&quot;:0,&quot;rerataLM&quot;:0,&quot;sts&quot;:0,&quot;intervalCapaian&quot;:&quot;Perlu
+  Remedial&quot;},{&quot;studentId&quot;:&quot;STD-06525756&quot;,&quot;nama&quot;:&quot;Haruna
+  adi
+  wibowo&quot;,&quot;nis&quot;:&quot;2512771&quot;,&quot;absen&quot;:&quot;15&quot;,&quot;kelas&quot;:&quot;XI-1&quot;,&quot;totalActivities&quot;:0,&quot;statusAktivitas&quot;:&quot;Belum
+  Ada
+  Aktivitas&quot;,&quot;emoji&quot;:&quot;📭&quot;,&quot;logAktivitas&quot;:&quot;0
+  aktivitas&quot;,&quot;nilaiRapor&quot;:0,&quot;sas&quot;:0,&quot;rerataLM&quot;:0,&quot;sts&quot;:0,&quot;intervalCapaian&quot;:&quot;Perlu
+  Remedial&quot;},{&quot;studentId&quot;:&quot;STD-06836717&quot;,&quot;nama&quot;:&quot;Tristan
+  Mousavi
+  Wibowo&quot;,&quot;nis&quot;:&quot;12993&quot;,&quot;absen&quot;:&quot;35&quot;,&quot;kelas&quot;:&quot;XI-1&quot;,&quot;totalActivities&quot;:0,&quot;statusAktivitas&quot;:&quot;Belum
+  Ada
+  Aktivitas&quot;,&quot;emoji&quot;:&quot;📭&quot;,&quot;logAktivitas&quot;:&quot;0
+  aktivitas&quot;,&quot;nilaiRapor&quot;:0,&quot;sas&quot;:0,&quot;rerataLM&quot;:0,&quot;sts&quot;:0,&quot;intervalCapaian&quot;:&quot;Perlu
+  Remedial&quot;},{&quot;studentId&quot;:&quot;STD-07057195&quot;,&quot;nama&quot;:&quot;Aura
+  Syifa
+  Andriani&quot;,&quot;nis&quot;:&quot;12684&quot;,&quot;absen&quot;:&quot;7&quot;,&quot;kelas&quot;:&quot;XI-1&quot;,&quot;totalActivities&quot;:0,&quot;statusAktivitas&quot;:&quot;Belum
+  Ada
+  Aktivitas&quot;,&quot;emoji&quot;:&quot;📭&quot;,&quot;logAktivitas&quot;:&quot;0
+  aktivitas&quot;,&quot;nilaiRapor&quot;:0,&quot;sas&quot;:0,&quot;rerataLM&quot;:0,&quot;sts&quot;:0,&quot;intervalCapaian&quot;:&quot;Perlu
+  Remedial&quot;},{&quot;studentId&quot;:&quot;STD-07101478&quot;,&quot;nama&quot;:&quot;Sulfi
+  Julia
+  Nirandra&quot;,&quot;nis&quot;:&quot;12982&quot;,&quot;absen&quot;:&quot;33&quot;,&quot;kelas&quot;:&quot;XI-1&quot;,&quot;totalActivities&quot;:0,&quot;statusAktivitas&quot;:&quot;Belum
+  Ada
+  Aktivitas&quot;,&quot;emoji&quot;:&quot;📭&quot;,&quot;logAktivitas&quot;:&quot;0
+  aktivitas&quot;,&quot;nilaiRapor&quot;:0,&quot;sas&quot;:0,&quot;rerataLM&quot;:0,&quot;sts&quot;:0,&quot;intervalCapaian&quot;:&quot;Perlu
+  Remedial&quot;},{&quot;studentId&quot;:&quot;STD-07118464&quot;,&quot;nama&quot;:&quot;LU'LUIZ
+  ZAHRO'&quot;,&quot;nis&quot;:&quot;12810&quot;,&quot;absen&quot;:&quot;19&quot;,&quot;kelas&quot;:&quot;XI-1&quot;,&quot;totalActivities&quot;:0,&quot;statusAktivitas&quot;:&quot;Belum
+  Ada
+  Aktivitas&quot;,&quot;emoji&quot;:&quot;📭&quot;,&quot;logAktivitas&quot;:&quot;0
+  aktivitas&quot;,&quot;nilaiRapor&quot;:0,&quot;sas&quot;:0,&quot;rerataLM&quot;:0,&quot;sts&quot;:0,&quot;intervalCapaian&quot;:&quot;Perlu
+  Remedial&quot;},{&quot;studentId&quot;:&quot;STD-08140233&quot;,&quot;nama&quot;:&quot;Muhamad
+  Jericho Yusfa Izza
+  Abdillah&quot;,&quot;nis&quot;:&quot;12860&quot;,&quot;absen&quot;:&quot;24&quot;,&quot;kelas&quot;:&quot;XI-1&quot;,&quot;totalActivities&quot;:0,&quot;statusAktivitas&quot;:&quot;Belum
+  Ada
+  Aktivitas&quot;,&quot;emoji&quot;:&quot;📭&quot;,&quot;logAktivitas&quot;:&quot;0
+  aktivitas&quot;,&quot;nilaiRapor&quot;:0,&quot;sas&quot;:0,&quot;rerataLM&quot;:0,&quot;sts&quot;:0,&quot;intervalCapaian&quot;:&quot;Perlu
+  Remedial&quot;},{&quot;studentId&quot;:&quot;STD-08863005&quot;,&quot;nama&quot;:&quot;Naura
+  Syifa Anindita
+  Putri&quot;,&quot;nis&quot;:&quot;2512908&quot;,&quot;absen&quot;:&quot;27&quot;,&quot;kelas&quot;:&quot;XI-1&quot;,&quot;totalActivities&quot;:0,&quot;statusAktivitas&quot;:&quot;Belum
+  Ada
+  Aktivitas&quot;,&quot;emoji&quot;:&quot;📭&quot;,&quot;logAktivitas&quot;:&quot;0
+  aktivitas&quot;,&quot;nilaiRapor&quot;:0,&quot;sas&quot;:0,&quot;rerataLM&quot;:0,&quot;sts&quot;:0,&quot;intervalCapaian&quot;:&quot;Perlu
+  Remedial&quot;},{&quot;studentId&quot;:&quot;STD-09146925&quot;,&quot;nama&quot;:&quot;Naura
+  Syifa Anindita
+  Putri&quot;,&quot;nis&quot;:&quot;2512908&quot;,&quot;absen&quot;:&quot;27&quot;,&quot;kelas&quot;:&quot;XI-1&quot;,&quot;totalActivities&quot;:0,&quot;statusAktivitas&quot;:&quot;Belum
+  Ada
+  Aktivitas&quot;,&quot;emoji&quot;:&quot;📭&quot;,&quot;logAktivitas&quot;:&quot;0
+  aktivitas&quot;,&quot;nilaiRapor&quot;:0,&quot;sas&quot;:0,&quot;rerataLM&quot;:0,&quot;sts&quot;:0,&quot;intervalCapaian&quot;:&quot;Perlu
+  Remedial&quot;},{&quot;studentId&quot;:&quot;STD-09186795&quot;,&quot;nama&quot;:&quot;Evelyn
+  Nerissa
+  Artanti&quot;,&quot;nis&quot;:&quot;12742&quot;,&quot;absen&quot;:&quot;13&quot;,&quot;kelas&quot;:&quot;XI-1&quot;,&quot;totalActivities&quot;:0,&quot;statusAktivitas&quot;:&quot;Belum
+  Ada
+  Aktivitas&quot;,&quot;emoji&quot;:&quot;📭&quot;,&quot;logAktivitas&quot;:&quot;0
+  aktivitas&quot;,&quot;nilaiRapor&quot;:0,&quot;sas&quot;:0,&quot;rerataLM&quot;:0,&quot;sts&quot;:0,&quot;intervalCapaian&quot;:&quot;Perlu
+  Remedial&quot;},{&quot;studentId&quot;:&quot;STD-09260062&quot;,&quot;nama&quot;:&quot;Silvia
+  Agustina
+  Ramadhani&quot;,&quot;nis&quot;:&quot;12976&quot;,&quot;absen&quot;:&quot;32&quot;,&quot;kelas&quot;:&quot;XI-1&quot;,&quot;totalActivities&quot;:0,&quot;statusAktivitas&quot;:&quot;Belum
+  Ada
+  Aktivitas&quot;,&quot;emoji&quot;:&quot;📭&quot;,&quot;logAktivitas&quot;:&quot;0
+  aktivitas&quot;,&quot;nilaiRapor&quot;:0,&quot;sas&quot;:0,&quot;rerataLM&quot;:0,&quot;sts&quot;:0,&quot;intervalCapaian&quot;:&quot;Perlu
+  Remedial&quot;},{&quot;studentId&quot;:&quot;STD-09921061&quot;,&quot;nama&quot;:&quot;Mauris
+  Shofya Al
+  Fairus&quot;,&quot;nis&quot;:&quot;2512827&quot;,&quot;absen&quot;:&quot;21&quot;,&quot;kelas&quot;:&quot;XI-1&quot;,&quot;totalActivities&quot;:0,&quot;statusAktivitas&quot;:&quot;Belum
+  Ada
+  Aktivitas&quot;,&quot;emoji&quot;:&quot;📭&quot;,&quot;logAktivitas&quot;:&quot;0
+  aktivitas&quot;,&quot;nilaiRapor&quot;:0,&quot;sas&quot;:0,&quot;rerataLM&quot;:0,&quot;sts&quot;:0,&quot;intervalCapaian&quot;:&quot;Perlu
+  Remedial&quot;},{&quot;studentId&quot;:&quot;STD-10343914&quot;,&quot;nama&quot;:&quot;Shylla
+  Patricia
+  C&quot;,&quot;nis&quot;:&quot;12975&quot;,&quot;absen&quot;:&quot;31&quot;,&quot;kelas&quot;:&quot;XI-1&quot;,&quot;totalActivities&quot;:0,&quot;statusAktivitas&quot;:&quot;Belum
+  Ada
+  Aktivitas&quot;,&quot;emoji&quot;:&quot;📭&quot;,&quot;logAktivitas&quot;:&quot;0
+  aktivitas&quot;,&quot;nilaiRapor&quot;:0,&quot;sas&quot;:0,&quot;rerataLM&quot;:0,&quot;sts&quot;:0,&quot;intervalCapaian&quot;:&quot;Perlu
+  Remedial&quot;},{&quot;studentId&quot;:&quot;STD-10741791&quot;,&quot;nama&quot;:&quot;Naura
+  Syifa Anindita
+  Putri&quot;,&quot;nis&quot;:&quot;12908&quot;,&quot;absen&quot;:&quot;27&quot;,&quot;kelas&quot;:&quot;XI-1&quot;,&quot;totalActivities&quot;:0,&quot;statusAktivitas&quot;:&quot;Belum
+  Ada
+  Aktivitas&quot;,&quot;emoji&quot;:&quot;📭&quot;,&quot;logAktivitas&quot;:&quot;0
+  aktivitas&quot;,&quot;nilaiRapor&quot;:0,&quot;sas&quot;:0,&quot;rerataLM&quot;:0,&quot;sts&quot;:0,&quot;intervalCapaian&quot;:&quot;Perlu
+  Remedial&quot;},{&quot;studentId&quot;:&quot;STD-11015265&quot;,&quot;nama&quot;:&quot;Niki
+  Prita
+  Agustina&quot;,&quot;nis&quot;:&quot;12914&quot;,&quot;absen&quot;:&quot;28&quot;,&quot;kelas&quot;:&quot;XI-1&quot;,&quot;totalActivities&quot;:0,&quot;statusAktivitas&quot;:&quot;Belum
+  Ada
+  Aktivitas&quot;,&quot;emoji&quot;:&quot;📭&quot;,&quot;logAktivitas&quot;:&quot;0
+  aktivitas&quot;,&quot;nilaiRapor&quot;:0,&quot;sas&quot;:0,&quot;rerataLM&quot;:0,&quot;sts&quot;:0,&quot;intervalCapaian&quot;:&quot;Perlu
+  Remedial&quot;},{&quot;studentId&quot;:&quot;STD-25189982&quot;,&quot;nama&quot;:&quot;AINA
+  NUR
+  RAHMA&quot;,&quot;nis&quot;:&quot;108586104&quot;,&quot;absen&quot;:&quot;2&quot;,&quot;kelas&quot;:&quot;XI-1&quot;,&quot;totalActivities&quot;:0,&quot;statusAktivitas&quot;:&quot;Belum
+  Ada
+  Aktivitas&quot;,&quot;emoji&quot;:&quot;📭&quot;,&quot;logAktivitas&quot;:&quot;0
+  aktivitas&quot;,&quot;nilaiRapor&quot;:0,&quot;sas&quot;:0,&quot;rerataLM&quot;:0,&quot;sts&quot;:0,&quot;intervalCapaian&quot;:&quot;Perlu
+  Remedial&quot;},{&quot;studentId&quot;:&quot;STD-25317778&quot;,&quot;nama&quot;:&quot;AINA
+  NUR
+  RAHMA&quot;,&quot;nis&quot;:&quot;108586104&quot;,&quot;absen&quot;:&quot;2&quot;,&quot;kelas&quot;:&quot;XI-1&quot;,&quot;totalActivities&quot;:0,&quot;statusAktivitas&quot;:&quot;Belum
+  Ada
+  Aktivitas&quot;,&quot;emoji&quot;:&quot;📭&quot;,&quot;logAktivitas&quot;:&quot;0
+  aktivitas&quot;,&quot;nilaiRapor&quot;:0,&quot;sas&quot;:0,&quot;rerataLM&quot;:0,&quot;sts&quot;:0,&quot;intervalCapaian&quot;:&quot;Perlu
+  Remedial&quot;},{&quot;studentId&quot;:&quot;STD-46398851&quot;,&quot;nama&quot;:&quot;CITRA
+  OKTAVIA
+  WINANINGTYAS&quot;,&quot;nis&quot;:&quot;12706&quot;,&quot;absen&quot;:&quot;8&quot;,&quot;kelas&quot;:&quot;XI-1&quot;,&quot;totalActivities&quot;:0,&quot;statusAktivitas&quot;:&quot;Belum
+  Ada
+  Aktivitas&quot;,&quot;emoji&quot;:&quot;📭&quot;,&quot;logAktivitas&quot;:&quot;0
+  aktivitas&quot;,&quot;nilaiRapor&quot;:0,&quot;sas&quot;:0,&quot;rerataLM&quot;:0,&quot;sts&quot;:0,&quot;intervalCapaian&quot;:&quot;Perlu
+  Remedial&quot;},{&quot;studentId&quot;:&quot;STD-74599242&quot;,&quot;nama&quot;:&quot;M.
+  RIDHO
+  PRATAMA&quot;,&quot;nis&quot;:&quot;12817&quot;,&quot;absen&quot;:&quot;20&quot;,&quot;kelas&quot;:&quot;XI-1&quot;,&quot;totalActivities&quot;:0,&quot;statusAktivitas&quot;:&quot;Belum
+  Ada
+  Aktivitas&quot;,&quot;emoji&quot;:&quot;📭&quot;,&quot;logAktivitas&quot;:&quot;0
+  aktivitas&quot;,&quot;nilaiRapor&quot;:0,&quot;sas&quot;:0,&quot;rerataLM&quot;:0,&quot;sts&quot;:0,&quot;intervalCapaian&quot;:&quot;Perlu
+  Remedial&quot;},{&quot;studentId&quot;:&quot;STD-77477004&quot;,&quot;nama&quot;:&quot;muhammad
+  aflan
+  dzaky&quot;,&quot;nis&quot;:&quot;12862&quot;,&quot;absen&quot;:&quot;25&quot;,&quot;kelas&quot;:&quot;XI-1&quot;,&quot;totalActivities&quot;:0,&quot;statusAktivitas&quot;:&quot;Belum
+  Ada
+  Aktivitas&quot;,&quot;emoji&quot;:&quot;📭&quot;,&quot;logAktivitas&quot;:&quot;0
+  aktivitas&quot;,&quot;nilaiRapor&quot;:0,&quot;sas&quot;:0,&quot;rerataLM&quot;:0,&quot;sts&quot;:0,&quot;intervalCapaian&quot;:&quot;Perlu
+  Remedial&quot;},{&quot;studentId&quot;:&quot;STD-01744774&quot;,&quot;nama&quot;:&quot;Angelina
+  Azzahra
+  D.A&quot;,&quot;nis&quot;:&quot;12667&quot;,&quot;absen&quot;:&quot;6&quot;,&quot;kelas&quot;:&quot;XI-1&quot;,&quot;totalActivities&quot;:0,&quot;statusAktivitas&quot;:&quot;Belum
+  Ada
+  Aktivitas&quot;,&quot;emoji&quot;:&quot;📭&quot;,&quot;logAktivitas&quot;:&quot;0
+  aktivitas&quot;,&quot;nilaiRapor&quot;:0,&quot;sas&quot;:0,&quot;rerataLM&quot;:0,&quot;sts&quot;:0,&quot;intervalCapaian&quot;:&quot;Perlu
+  Remedial&quot;},{&quot;studentId&quot;:&quot;STD-96015253&quot;,&quot;nama&quot;:&quot;Dara
+  Wahyu
+  Almaghfiroh&quot;,&quot;nis&quot;:&quot;12714&quot;,&quot;absen&quot;:&quot;10&quot;,&quot;kelas&quot;:&quot;XI-1&quot;,&quot;totalActivities&quot;:0,&quot;statusAktivitas&quot;:&quot;Belum
+  Ada
+  Aktivitas&quot;,&quot;emoji&quot;:&quot;📭&quot;,&quot;logAktivitas&quot;:&quot;0
+  aktivitas&quot;,&quot;nilaiRapor&quot;:0,&quot;sas&quot;:0,&quot;rerataLM&quot;:0,&quot;sts&quot;:0,&quot;intervalCapaian&quot;:&quot;Perlu
+  Remedial&quot;},{&quot;studentId&quot;:&quot;STD-75144592&quot;,&quot;nama&quot;:&quot;debby
+  veodora bhagaskara
+  priyambada&quot;,&quot;nis&quot;:&quot;94048509&quot;,&quot;absen&quot;:&quot;1&quot;,&quot;kelas&quot;:&quot;XI-1&quot;,&quot;totalActivities&quot;:0,&quot;statusAktivitas&quot;:&quot;Belum
+  Ada
+  Aktivitas&quot;,&quot;emoji&quot;:&quot;📭&quot;,&quot;logAktivitas&quot;:&quot;0
+  aktivitas&quot;,&quot;nilaiRapor&quot;:0,&quot;sas&quot;:0,&quot;rerataLM&quot;:0,&quot;sts&quot;:0,&quot;intervalCapaian&quot;:&quot;Perlu
+  Remedial&quot;},{&quot;studentId&quot;:&quot;STD-74470589&quot;,&quot;nama&quot;:&quot;Merisha
+  Vista
+  Levia&quot;,&quot;nis&quot;:&quot;12830&quot;,&quot;absen&quot;:&quot;22&quot;,&quot;kelas&quot;:&quot;XI-1&quot;,&quot;totalActivities&quot;:0,&quot;statusAktivitas&quot;:&quot;Belum
+  Ada
+  Aktivitas&quot;,&quot;emoji&quot;:&quot;📭&quot;,&quot;logAktivitas&quot;:&quot;0
+  aktivitas&quot;,&quot;nilaiRapor&quot;:0,&quot;sas&quot;:0,&quot;rerataLM&quot;:0,&quot;sts&quot;:0,&quot;intervalCapaian&quot;:&quot;Perlu
+  Remedial&quot;},{&quot;studentId&quot;:&quot;STD-73234069&quot;,&quot;nama&quot;:&quot;Aina
+  Nur
+  Rahma&quot;,&quot;nis&quot;:&quot;12641&quot;,&quot;absen&quot;:&quot;2&quot;,&quot;kelas&quot;:&quot;XI-1&quot;,&quot;totalActivities&quot;:0,&quot;statusAktivitas&quot;:&quot;Belum
+  Ada
+  Aktivitas&quot;,&quot;emoji&quot;:&quot;📭&quot;,&quot;logAktivitas&quot;:&quot;0
+  aktivitas&quot;,&quot;nilaiRapor&quot;:0,&quot;sas&quot;:0,&quot;rerataLM&quot;:0,&quot;sts&quot;:0,&quot;intervalCapaian&quot;:&quot;Perlu
+  Remedial&quot;},{&quot;studentId&quot;:&quot;STD-62623950&quot;,&quot;nama&quot;:&quot;Haruna
+  adi
+  wibowo&quot;,&quot;nis&quot;:&quot;12771&quot;,&quot;absen&quot;:&quot;15&quot;,&quot;kelas&quot;:&quot;XI-1&quot;,&quot;totalActivities&quot;:0,&quot;statusAktivitas&quot;:&quot;Belum
+  Ada
+  Aktivitas&quot;,&quot;emoji&quot;:&quot;📭&quot;,&quot;logAktivitas&quot;:&quot;0
+  aktivitas&quot;,&quot;nilaiRapor&quot;:0,&quot;sas&quot;:0,&quot;rerataLM&quot;:0,&quot;sts&quot;:0,&quot;intervalCapaian&quot;:&quot;Perlu
+  Remedial&quot;},{&quot;studentId&quot;:&quot;STD-71061954&quot;,&quot;nama&quot;:&quot;Safa'Atul
+  Husna&quot;,&quot;nis&quot;:&quot;12958&quot;,&quot;absen&quot;:&quot;29&quot;,&quot;kelas&quot;:&quot;XI-1&quot;,&quot;totalActivities&quot;:0,&quot;statusAktivitas&quot;:&quot;Belum
+  Ada
+  Aktivitas&quot;,&quot;emoji&quot;:&quot;📭&quot;,&quot;logAktivitas&quot;:&quot;0
+  aktivitas&quot;,&quot;nilaiRapor&quot;:0,&quot;sas&quot;:0,&quot;rerataLM&quot;:0,&quot;sts&quot;:0,&quot;intervalCapaian&quot;:&quot;Perlu
+  Remedial&quot;},{&quot;studentId&quot;:&quot;STD-47296408&quot;,&quot;nama&quot;:&quot;Aisha
+  Rifqa
+  Almaghfira&quot;,&quot;nis&quot;:&quot;12644&quot;,&quot;absen&quot;:&quot;3&quot;,&quot;kelas&quot;:&quot;XI-1&quot;,&quot;totalActivities&quot;:0,&quot;statusAktivitas&quot;:&quot;Belum
+  Ada
+  Aktivitas&quot;,&quot;emoji&quot;:&quot;📭&quot;,&quot;logAktivitas&quot;:&quot;0
+  aktivitas&quot;,&quot;nilaiRapor&quot;:0,&quot;sas&quot;:0,&quot;rerataLM&quot;:0,&quot;sts&quot;:0,&quot;intervalCapaian&quot;:&quot;Perlu
+  Remedial&quot;},{&quot;studentId&quot;:&quot;STD-62320507&quot;,&quot;nama&quot;:&quot;Nurlaily
+  Al Furohmah
+  Purwanto&quot;,&quot;nis&quot;:&quot;12922&quot;,&quot;absen&quot;:&quot;28&quot;,&quot;kelas&quot;:&quot;XI-1&quot;,&quot;totalActivities&quot;:0,&quot;statusAktivitas&quot;:&quot;Belum
+  Ada
+  Aktivitas&quot;,&quot;emoji&quot;:&quot;📭&quot;,&quot;logAktivitas&quot;:&quot;0
+  aktivitas&quot;,&quot;nilaiRapor&quot;:0,&quot;sas&quot;:0,&quot;rerataLM&quot;:0,&quot;sts&quot;:0,&quot;intervalCapaian&quot;:&quot;Perlu
+  Remedial&quot;},{&quot;studentId&quot;:&quot;STD-24125993&quot;,&quot;nama&quot;:&quot;Alya
+  Nashwa
+  Sabriya&quot;,&quot;nis&quot;:&quot;12660&quot;,&quot;absen&quot;:&quot;5&quot;,&quot;kelas&quot;:&quot;XI-1&quot;,&quot;totalActivities&quot;:0,&quot;statusAktivitas&quot;:&quot;Belum
+  Ada
+  Aktivitas&quot;,&quot;emoji&quot;:&quot;📭&quot;,&quot;logAktivitas&quot;:&quot;0
+  aktivitas&quot;,&quot;nilaiRapor&quot;:0,&quot;sas&quot;:0,&quot;rerataLM&quot;:0,&quot;sts&quot;:0,&quot;intervalCapaian&quot;:&quot;Perlu
+  Remedial&quot;},{&quot;studentId&quot;:&quot;STD-30448299&quot;,&quot;nama&quot;:&quot;debby
+  veodora bhagaskara
+  priyambada&quot;,&quot;nis&quot;:&quot;12718&quot;,&quot;absen&quot;:&quot;11&quot;,&quot;kelas&quot;:&quot;XI-1&quot;,&quot;totalActivities&quot;:0,&quot;statusAktivitas&quot;:&quot;Belum
+  Ada
+  Aktivitas&quot;,&quot;emoji&quot;:&quot;📭&quot;,&quot;logAktivitas&quot;:&quot;0
+  aktivitas&quot;,&quot;nilaiRapor&quot;:0,&quot;sas&quot;:0,&quot;rerataLM&quot;:0,&quot;sts&quot;:0,&quot;intervalCapaian&quot;:&quot;Perlu
+  Remedial&quot;},{&quot;studentId&quot;:&quot;STD-93297111&quot;,&quot;nama&quot;:&quot;Farin
+  Nur
+  Aini&quot;,&quot;nis&quot;:&quot;12748&quot;,&quot;absen&quot;:&quot;14&quot;,&quot;kelas&quot;:&quot;XI-1&quot;,&quot;totalActivities&quot;:0,&quot;statusAktivitas&quot;:&quot;Belum
+  Ada
+  Aktivitas&quot;,&quot;emoji&quot;:&quot;📭&quot;,&quot;logAktivitas&quot;:&quot;0
+  aktivitas&quot;,&quot;nilaiRapor&quot;:0,&quot;sas&quot;:0,&quot;rerataLM&quot;:0,&quot;sts&quot;:0,&quot;intervalCapaian&quot;:&quot;Perlu
+  Remedial&quot;},{&quot;studentId&quot;:&quot;STD-11861021&quot;,&quot;nama&quot;:&quot;Devita
+  cahaya
+  putri&quot;,&quot;nis&quot;:&quot;12723&quot;,&quot;absen&quot;:&quot;12&quot;,&quot;kelas&quot;:&quot;XI-1&quot;,&quot;totalActivities&quot;:0,&quot;statusAktivitas&quot;:&quot;Belum
+  Ada
+  Aktivitas&quot;,&quot;emoji&quot;:&quot;📭&quot;,&quot;logAktivitas&quot;:&quot;0
+  aktivitas&quot;,&quot;nilaiRapor&quot;:0,&quot;sas&quot;:0,&quot;rerataLM&quot;:0,&quot;sts&quot;:0,&quot;intervalCapaian&quot;:&quot;Perlu
+  Remedial&quot;},{&quot;studentId&quot;:&quot;STD-38086746&quot;,&quot;nama&quot;:&quot;Syifa
+  Almaghfira&quot;,&quot;nis&quot;:&quot;12989&quot;,&quot;absen&quot;:&quot;33&quot;,&quot;kelas&quot;:&quot;XI-1&quot;,&quot;totalActivities&quot;:0,&quot;statusAktivitas&quot;:&quot;Belum
+  Ada
+  Aktivitas&quot;,&quot;emoji&quot;:&quot;📭&quot;,&quot;logAktivitas&quot;:&quot;0
+  aktivitas&quot;,&quot;nilaiRapor&quot;:0,&quot;sas&quot;:0,&quot;rerataLM&quot;:0,&quot;sts&quot;:0,&quot;intervalCapaian&quot;:&quot;Perlu
+  Remedial&quot;},{&quot;studentId&quot;:&quot;STD-14152185&quot;,&quot;nama&quot;:&quot;Jeysisca
+  Christyana&quot;,&quot;nis&quot;:&quot;12789&quot;,&quot;absen&quot;:&quot;16&quot;,&quot;kelas&quot;:&quot;XI-1&quot;,&quot;totalActivities&quot;:0,&quot;statusAktivitas&quot;:&quot;Belum
+  Ada
+  Aktivitas&quot;,&quot;emoji&quot;:&quot;📭&quot;,&quot;logAktivitas&quot;:&quot;0
+  aktivitas&quot;,&quot;nilaiRapor&quot;:0,&quot;sas&quot;:0,&quot;rerataLM&quot;:0,&quot;sts&quot;:0,&quot;intervalCapaian&quot;:&quot;Perlu
+  Remedial&quot;},{&quot;studentId&quot;:&quot;STD-72259641&quot;,&quot;nama&quot;:&quot;Akika
+  Rahma&quot;,&quot;nis&quot;:&quot;12652&quot;,&quot;absen&quot;:&quot;4&quot;,&quot;kelas&quot;:&quot;XI-1&quot;,&quot;totalActivities&quot;:0,&quot;statusAktivitas&quot;:&quot;Belum
+  Ada
+  Aktivitas&quot;,&quot;emoji&quot;:&quot;📭&quot;,&quot;logAktivitas&quot;:&quot;0
+  aktivitas&quot;,&quot;nilaiRapor&quot;:0,&quot;sas&quot;:0,&quot;rerataLM&quot;:0,&quot;sts&quot;:0,&quot;intervalCapaian&quot;:&quot;Perlu
+  Remedial&quot;},{&quot;studentId&quot;:&quot;STD-25286505&quot;,&quot;nama&quot;:&quot;Keyla
+  Nayaka
+  Putri&quot;,&quot;nis&quot;:&quot;12799&quot;,&quot;absen&quot;:&quot;17&quot;,&quot;kelas&quot;:&quot;XI-1&quot;,&quot;totalActivities&quot;:0,&quot;statusAktivitas&quot;:&quot;Belum
+  Ada
+  Aktivitas&quot;,&quot;emoji&quot;:&quot;📭&quot;,&quot;logAktivitas&quot;:&quot;0
+  aktivitas&quot;,&quot;nilaiRapor&quot;:0,&quot;sas&quot;:0,&quot;rerataLM&quot;:0,&quot;sts&quot;:0,&quot;intervalCapaian&quot;:&quot;Perlu
+  Remedial&quot;},{&quot;studentId&quot;:&quot;STD-35969302&quot;,&quot;nama&quot;:&quot;Danissa
+  Aprilia&quot;,&quot;nis&quot;:&quot;12712&quot;,&quot;absen&quot;:&quot;9&quot;,&quot;kelas&quot;:&quot;XI-1&quot;,&quot;totalActivities&quot;:0,&quot;statusAktivitas&quot;:&quot;Belum
+  Ada
+  Aktivitas&quot;,&quot;emoji&quot;:&quot;📭&quot;,&quot;logAktivitas&quot;:&quot;0
+  aktivitas&quot;,&quot;nilaiRapor&quot;:0,&quot;sas&quot;:0,&quot;rerataLM&quot;:0,&quot;sts&quot;:0,&quot;intervalCapaian&quot;:&quot;Perlu
+  Remedial&quot;}],&quot;leaderboard&quot;:[{&quot;Timestamp&quot;:&quot;2026-08-27T17:00:00.000Z&quot;,&quot;StudentID&quot;:&quot;STD-65108053&quot;,&quot;Nama&quot;:&quot;Andy&quot;,&quot;Kelas&quot;:&quot;XI-1&quot;,&quot;LM1&quot;:45,&quot;LM2&quot;:&quot;&quot;,&quot;LM3&quot;:&quot;&quot;,&quot;LM4&quot;:&quot;&quot;,&quot;LM5&quot;:&quot;&quot;,&quot;Rerata_LM&quot;:45,&quot;STS&quot;:0,&quot;SAS&quot;:0,&quot;Nilai_Rapor&quot;:27,&quot;Interval_Capaian&quot;:&quot;Perlu
+  Remedial&quot;,&quot;Deskripsi_Capaian&quot;:&quot;Menunjukkan penguasaan yang
+  sangat baik dalam . Perlu pendampingan dan peningkatan dalam
+  .&quot;},{&quot;Timestamp&quot;:&quot;2026-08-27T17:00:00.000Z&quot;,&quot;StudentID&quot;:&quot;STD-65108010&quot;,&quot;Nama&quot;:&quot;Abi
+  Andy&quot;,&quot;Kelas&quot;:&quot;XI-1&quot;,&quot;LM1&quot;:&quot;&quot;,&quot;LM2&quot;:&quot;&quot;,&quot;LM3&quot;:&quot;&quot;,&quot;LM4&quot;:&quot;&quot;,&quot;LM5&quot;:&quot;&quot;,&quot;Rerata_LM&quot;:0,&quot;STS&quot;:0,&quot;SAS&quot;:0,&quot;Nilai_Rapor&quot;:0,&quot;Interval_Capaian&quot;:&quot;Perlu
+  Remedial&quot;,&quot;Deskripsi_Capaian&quot;:&quot;Menunjukkan penguasaan yang
+  sangat baik dalam seluruh tujuan pembelajaran. Perlu pendampingan dan
+  peningkatan dalam seluruh tujuan
+  pembelajaran.&quot;},{&quot;Timestamp&quot;:&quot;2026-08-27T17:00:00.000Z&quot;,&quot;StudentID&quot;:&quot;STD-06485325&quot;,&quot;Nama&quot;:&quot;AHMAD
+  JUPRIL
+  PRASETYO&quot;,&quot;Kelas&quot;:&quot;XI-1&quot;,&quot;LM1&quot;:&quot;&quot;,&quot;LM2&quot;:&quot;&quot;,&quot;LM3&quot;:&quot;&quot;,&quot;LM4&quot;:&quot;&quot;,&quot;LM5&quot;:&quot;&quot;,&quot;Rerata_LM&quot;:0,&quot;STS&quot;:0,&quot;SAS&quot;:0,&quot;Nilai_Rapor&quot;:0,&quot;Interval_Capaian&quot;:&quot;Perlu
+  Remedial&quot;,&quot;Deskripsi_Capaian&quot;:&quot;Menunjukkan penguasaan yang
+  sangat baik dalam seluruh tujuan pembelajaran. Perlu pendampingan dan
+  peningkatan dalam seluruh tujuan
+  pembelajaran.&quot;},{&quot;Timestamp&quot;:&quot;2026-08-27T17:00:00.000Z&quot;,&quot;StudentID&quot;:&quot;STD-06525756&quot;,&quot;Nama&quot;:&quot;Haruna
+  adi
+  wibowo&quot;,&quot;Kelas&quot;:&quot;XI-1&quot;,&quot;LM1&quot;:&quot;&quot;,&quot;LM2&quot;:&quot;&quot;,&quot;LM3&quot;:&quot;&quot;,&quot;LM4&quot;:&quot;&quot;,&quot;LM5&quot;:&quot;&quot;,&quot;Rerata_LM&quot;:0,&quot;STS&quot;:0,&quot;SAS&quot;:0,&quot;Nilai_Rapor&quot;:0,&quot;Interval_Capaian&quot;:&quot;Perlu
+  Remedial&quot;,&quot;Deskripsi_Capaian&quot;:&quot;Menunjukkan penguasaan yang
+  sangat baik dalam seluruh tujuan pembelajaran. Perlu pendampingan dan
+  peningkatan dalam seluruh tujuan
+  pembelajaran.&quot;},{&quot;Timestamp&quot;:&quot;2026-08-27T17:00:00.000Z&quot;,&quot;StudentID&quot;:&quot;STD-06836717&quot;,&quot;Nama&quot;:&quot;Tristan
+  Mousavi
+  Wibowo&quot;,&quot;Kelas&quot;:&quot;XI-1&quot;,&quot;LM1&quot;:&quot;&quot;,&quot;LM2&quot;:&quot;&quot;,&quot;LM3&quot;:&quot;&quot;,&quot;LM4&quot;:&quot;&quot;,&quot;LM5&quot;:&quot;&quot;,&quot;Rerata_LM&quot;:0,&quot;STS&quot;:0,&quot;SAS&quot;:0,&quot;Nilai_Rapor&quot;:0,&quot;Interval_Capaian&quot;:&quot;Perlu
+  Remedial&quot;,&quot;Deskripsi_Capaian&quot;:&quot;Menunjukkan penguasaan yang
+  sangat baik dalam seluruh tujuan pembelajaran. Perlu pendampingan dan
+  peningkatan dalam seluruh tujuan
+  pembelajaran.&quot;},{&quot;Timestamp&quot;:&quot;2026-08-27T17:00:00.000Z&quot;,&quot;StudentID&quot;:&quot;STD-07057195&quot;,&quot;Nama&quot;:&quot;Aura
+  Syifa
+  Andriani&quot;,&quot;Kelas&quot;:&quot;XI-1&quot;,&quot;LM1&quot;:&quot;&quot;,&quot;LM2&quot;:&quot;&quot;,&quot;LM3&quot;:&quot;&quot;,&quot;LM4&quot;:&quot;&quot;,&quot;LM5&quot;:&quot;&quot;,&quot;Rerata_LM&quot;:0,&quot;STS&quot;:0,&quot;SAS&quot;:0,&quot;Nilai_Rapor&quot;:0,&quot;Interval_Capaian&quot;:&quot;Perlu
+  Remedial&quot;,&quot;Deskripsi_Capaian&quot;:&quot;Menunjukkan penguasaan yang
+  sangat baik dalam seluruh tujuan pembelajaran. Perlu pendampingan dan
+  peningkatan dalam seluruh tujuan
+  pembelajaran.&quot;},{&quot;Timestamp&quot;:&quot;2026-08-27T17:00:00.000Z&quot;,&quot;StudentID&quot;:&quot;STD-07101478&quot;,&quot;Nama&quot;:&quot;Sulfi
+  Julia
+  Nirandra&quot;,&quot;Kelas&quot;:&quot;XI-1&quot;,&quot;LM1&quot;:&quot;&quot;,&quot;LM2&quot;:&quot;&quot;,&quot;LM3&quot;:&quot;&quot;,&quot;LM4&quot;:&quot;&quot;,&quot;LM5&quot;:&quot;&quot;,&quot;Rerata_LM&quot;:0,&quot;STS&quot;:0,&quot;SAS&quot;:0,&quot;Nilai_Rapor&quot;:0,&quot;Interval_Capaian&quot;:&quot;Perlu
+  Remedial&quot;,&quot;Deskripsi_Capaian&quot;:&quot;Menunjukkan penguasaan yang
+  sangat baik dalam seluruh tujuan pembelajaran. Perlu pendampingan dan
+  peningkatan dalam seluruh tujuan
+  pembelajaran.&quot;},{&quot;Timestamp&quot;:&quot;2026-08-27T17:00:00.000Z&quot;,&quot;StudentID&quot;:&quot;STD-07118464&quot;,&quot;Nama&quot;:&quot;LU'LUIZ
+  ZAHRO'&quot;,&quot;Kelas&quot;:&quot;XI-1&quot;,&quot;LM1&quot;:&quot;&quot;,&quot;LM2&quot;:&quot;&quot;,&quot;LM3&quot;:&quot;&quot;,&quot;LM4&quot;:&quot;&quot;,&quot;LM5&quot;:&quot;&quot;,&quot;Rerata_LM&quot;:0,&quot;STS&quot;:0,&quot;SAS&quot;:0,&quot;Nilai_Rapor&quot;:0,&quot;Interval_Capaian&quot;:&quot;Perlu
+  Remedial&quot;,&quot;Deskripsi_Capaian&quot;:&quot;Menunjukkan penguasaan yang
+  sangat baik dalam seluruh tujuan pembelajaran. Perlu pendampingan dan
+  peningkatan dalam seluruh tujuan
+  pembelajaran.&quot;},{&quot;Timestamp&quot;:&quot;2026-08-27T17:00:00.000Z&quot;,&quot;StudentID&quot;:&quot;STD-08140233&quot;,&quot;Nama&quot;:&quot;Muhamad
+  Jericho Yusfa Izza
+  Abdillah&quot;,&quot;Kelas&quot;:&quot;XI-1&quot;,&quot;LM1&quot;:&quot;&quot;,&quot;LM2&quot;:&quot;&quot;,&quot;LM3&quot;:&quot;&quot;,&quot;LM4&quot;:&quot;&quot;,&quot;LM5&quot;:&quot;&quot;,&quot;Rerata_LM&quot;:0,&quot;STS&quot;:0,&quot;SAS&quot;:0,&quot;Nilai_Rapor&quot;:0,&quot;Interval_Capaian&quot;:&quot;Perlu
+  Remedial&quot;,&quot;Deskripsi_Capaian&quot;:&quot;Menunjukkan penguasaan yang
+  sangat baik dalam seluruh tujuan pembelajaran. Perlu pendampingan dan
+  peningkatan dalam seluruh tujuan
+  pembelajaran.&quot;},{&quot;Timestamp&quot;:&quot;2026-08-27T17:00:00.000Z&quot;,&quot;StudentID&quot;:&quot;STD-08863005&quot;,&quot;Nama&quot;:&quot;Naura
+  Syifa Anindita
+  Putri&quot;,&quot;Kelas&quot;:&quot;XI-1&quot;,&quot;LM1&quot;:&quot;&quot;,&quot;LM2&quot;:&quot;&quot;,&quot;LM3&quot;:&quot;&quot;,&quot;LM4&quot;:&quot;&quot;,&quot;LM5&quot;:&quot;&quot;,&quot;Rerata_LM&quot;:0,&quot;STS&quot;:0,&quot;SAS&quot;:0,&quot;Nilai_Rapor&quot;:0,&quot;Interval_Capaian&quot;:&quot;Perlu
+  Remedial&quot;,&quot;Deskripsi_Capaian&quot;:&quot;Menunjukkan penguasaan yang
+  sangat baik dalam seluruh tujuan pembelajaran. Perlu pendampingan dan
+  peningkatan dalam seluruh tujuan
+  pembelajaran.&quot;},{&quot;Timestamp&quot;:&quot;2026-08-27T17:00:00.000Z&quot;,&quot;StudentID&quot;:&quot;STD-09146925&quot;,&quot;Nama&quot;:&quot;Naura
+  Syifa Anindita
+  Putri&quot;,&quot;Kelas&quot;:&quot;XI-1&quot;,&quot;LM1&quot;:&quot;&quot;,&quot;LM2&quot;:&quot;&quot;,&quot;LM3&quot;:&quot;&quot;,&quot;LM4&quot;:&quot;&quot;,&quot;LM5&quot;:&quot;&quot;,&quot;Rerata_LM&quot;:0,&quot;STS&quot;:0,&quot;SAS&quot;:0,&quot;Nilai_Rapor&quot;:0,&quot;Interval_Capaian&quot;:&quot;Perlu
+  Remedial&quot;,&quot;Deskripsi_Capaian&quot;:&quot;Menunjukkan penguasaan yang
+  sangat baik dalam seluruh tujuan pembelajaran. Perlu pendampingan dan
+  peningkatan dalam seluruh tujuan
+  pembelajaran.&quot;},{&quot;Timestamp&quot;:&quot;2026-08-27T17:00:00.000Z&quot;,&quot;StudentID&quot;:&quot;STD-09186795&quot;,&quot;Nama&quot;:&quot;Evelyn
+  Nerissa
+  Artanti&quot;,&quot;Kelas&quot;:&quot;XI-1&quot;,&quot;LM1&quot;:&quot;&quot;,&quot;LM2&quot;:&quot;&quot;,&quot;LM3&quot;:&quot;&quot;,&quot;LM4&quot;:&quot;&quot;,&quot;LM5&quot;:&quot;&quot;,&quot;Rerata_LM&quot;:0,&quot;STS&quot;:0,&quot;SAS&quot;:0,&quot;Nilai_Rapor&quot;:0,&quot;Interval_Capaian&quot;:&quot;Perlu
+  Remedial&quot;,&quot;Deskripsi_Capaian&quot;:&quot;Menunjukkan penguasaan yang
+  sangat baik dalam seluruh tujuan pembelajaran. Perlu pendampingan dan
+  peningkatan dalam seluruh tujuan
+  pembelajaran.&quot;},{&quot;Timestamp&quot;:&quot;2026-08-27T17:00:00.000Z&quot;,&quot;StudentID&quot;:&quot;STD-09260062&quot;,&quot;Nama&quot;:&quot;Silvia
+  Agustina
+  Ramadhani&quot;,&quot;Kelas&quot;:&quot;XI-1&quot;,&quot;LM1&quot;:&quot;&quot;,&quot;LM2&quot;:&quot;&quot;,&quot;LM3&quot;:&quot;&quot;,&quot;LM4&quot;:&quot;&quot;,&quot;LM5&quot;:&quot;&quot;,&quot;Rerata_LM&quot;:0,&quot;STS&quot;:0,&quot;SAS&quot;:0,&quot;Nilai_Rapor&quot;:0,&quot;Interval_Capaian&quot;:&quot;Perlu
+  Remedial&quot;,&quot;Deskripsi_Capaian&quot;:&quot;Menunjukkan penguasaan yang
+  sangat baik dalam seluruh tujuan pembelajaran. Perlu pendampingan dan
+  peningkatan dalam seluruh tujuan
+  pembelajaran.&quot;},{&quot;Timestamp&quot;:&quot;2026-08-27T17:00:00.000Z&quot;,&quot;StudentID&quot;:&quot;STD-09921061&quot;,&quot;Nama&quot;:&quot;Mauris
+  Shofya Al
+  Fairus&quot;,&quot;Kelas&quot;:&quot;XI-1&quot;,&quot;LM1&quot;:&quot;&quot;,&quot;LM2&quot;:&quot;&quot;,&quot;LM3&quot;:&quot;&quot;,&quot;LM4&quot;:&quot;&quot;,&quot;LM5&quot;:&quot;&quot;,&quot;Rerata_LM&quot;:0,&quot;STS&quot;:0,&quot;SAS&quot;:0,&quot;Nilai_Rapor&quot;:0,&quot;Interval_Capaian&quot;:&quot;Perlu
+  Remedial&quot;,&quot;Deskripsi_Capaian&quot;:&quot;Menunjukkan penguasaan yang
+  sangat baik dalam seluruh tujuan pembelajaran. Perlu pendampingan dan
+  peningkatan dalam seluruh tujuan
+  pembelajaran.&quot;},{&quot;Timestamp&quot;:&quot;2026-08-27T17:00:00.000Z&quot;,&quot;StudentID&quot;:&quot;STD-10343914&quot;,&quot;Nama&quot;:&quot;Shylla
+  Patricia
+  C&quot;,&quot;Kelas&quot;:&quot;XI-1&quot;,&quot;LM1&quot;:&quot;&quot;,&quot;LM2&quot;:&quot;&quot;,&quot;LM3&quot;:&quot;&quot;,&quot;LM4&quot;:&quot;&quot;,&quot;LM5&quot;:&quot;&quot;,&quot;Rerata_LM&quot;:0,&quot;STS&quot;:0,&quot;SAS&quot;:0,&quot;Nilai_Rapor&quot;:0,&quot;Interval_Capaian&quot;:&quot;Perlu
+  Remedial&quot;,&quot;Deskripsi_Capaian&quot;:&quot;Menunjukkan penguasaan yang
+  sangat baik dalam seluruh tujuan pembelajaran. Perlu pendampingan dan
+  peningkatan dalam seluruh tujuan
+  pembelajaran.&quot;},{&quot;Timestamp&quot;:&quot;2026-08-27T17:00:00.000Z&quot;,&quot;StudentID&quot;:&quot;STD-10741791&quot;,&quot;Nama&quot;:&quot;Naura
+  Syifa Anindita
+  Putri&quot;,&quot;Kelas&quot;:&quot;XI-1&quot;,&quot;LM1&quot;:&quot;&quot;,&quot;LM2&quot;:&quot;&quot;,&quot;LM3&quot;:&quot;&quot;,&quot;LM4&quot;:&quot;&quot;,&quot;LM5&quot;:&quot;&quot;,&quot;Rerata_LM&quot;:0,&quot;STS&quot;:0,&quot;SAS&quot;:0,&quot;Nilai_Rapor&quot;:0,&quot;Interval_Capaian&quot;:&quot;Perlu
+  Remedial&quot;,&quot;Deskripsi_Capaian&quot;:&quot;Menunjukkan penguasaan yang
+  sangat baik dalam seluruh tujuan pembelajaran. Perlu pendampingan dan
+  peningkatan dalam seluruh tujuan
+  pembelajaran.&quot;},{&quot;Timestamp&quot;:&quot;2026-08-27T17:00:00.000Z&quot;,&quot;StudentID&quot;:&quot;STD-11015265&quot;,&quot;Nama&quot;:&quot;Niki
+  Prita
+  Agustina&quot;,&quot;Kelas&quot;:&quot;XI-1&quot;,&quot;LM1&quot;:&quot;&quot;,&quot;LM2&quot;:&quot;&quot;,&quot;LM3&quot;:&quot;&quot;,&quot;LM4&quot;:&quot;&quot;,&quot;LM5&quot;:&quot;&quot;,&quot;Rerata_LM&quot;:0,&quot;STS&quot;:0,&quot;SAS&quot;:0,&quot;Nilai_Rapor&quot;:0,&quot;Interval_Capaian&quot;:&quot;Perlu
+  Remedial&quot;,&quot;Deskripsi_Capaian&quot;:&quot;Menunjukkan penguasaan yang
+  sangat baik dalam seluruh tujuan pembelajaran. Perlu pendampingan dan
+  peningkatan dalam seluruh tujuan
+  pembelajaran.&quot;},{&quot;Timestamp&quot;:&quot;2026-08-27T17:00:00.000Z&quot;,&quot;StudentID&quot;:&quot;STD-25189982&quot;,&quot;Nama&quot;:&quot;AINA
+  NUR
+  RAHMA&quot;,&quot;Kelas&quot;:&quot;XI-1&quot;,&quot;LM1&quot;:&quot;&quot;,&quot;LM2&quot;:&quot;&quot;,&quot;LM3&quot;:&quot;&quot;,&quot;LM4&quot;:&quot;&quot;,&quot;LM5&quot;:&quot;&quot;,&quot;Rerata_LM&quot;:0,&quot;STS&quot;:0,&quot;SAS&quot;:0,&quot;Nilai_Rapor&quot;:0,&quot;Interval_Capaian&quot;:&quot;Perlu
+  Remedial&quot;,&quot;Deskripsi_Capaian&quot;:&quot;Menunjukkan penguasaan yang
+  sangat baik dalam seluruh tujuan pembelajaran. Perlu pendampingan dan
+  peningkatan dalam seluruh tujuan
+  pembelajaran.&quot;},{&quot;Timestamp&quot;:&quot;2026-08-27T17:00:00.000Z&quot;,&quot;StudentID&quot;:&quot;STD-25317778&quot;,&quot;Nama&quot;:&quot;AINA
+  NUR
+  RAHMA&quot;,&quot;Kelas&quot;:&quot;XI-1&quot;,&quot;LM1&quot;:&quot;&quot;,&quot;LM2&quot;:&quot;&quot;,&quot;LM3&quot;:&quot;&quot;,&quot;LM4&quot;:&quot;&quot;,&quot;LM5&quot;:&quot;&quot;,&quot;Rerata_LM&quot;:0,&quot;STS&quot;:0,&quot;SAS&quot;:0,&quot;Nilai_Rapor&quot;:0,&quot;Interval_Capaian&quot;:&quot;Perlu
+  Remedial&quot;,&quot;Deskripsi_Capaian&quot;:&quot;Menunjukkan penguasaan yang
+  sangat baik dalam seluruh tujuan pembelajaran. Perlu pendampingan dan
+  peningkatan dalam seluruh tujuan
+  pembelajaran.&quot;},{&quot;Timestamp&quot;:&quot;2026-08-27T17:00:00.000Z&quot;,&quot;StudentID&quot;:&quot;STD-46398851&quot;,&quot;Nama&quot;:&quot;CITRA
+  OKTAVIA
+  WINANINGTYAS&quot;,&quot;Kelas&quot;:&quot;XI-1&quot;,&quot;LM1&quot;:&quot;&quot;,&quot;LM2&quot;:&quot;&quot;,&quot;LM3&quot;:&quot;&quot;,&quot;LM4&quot;:&quot;&quot;,&quot;LM5&quot;:&quot;&quot;,&quot;Rerata_LM&quot;:0,&quot;STS&quot;:0,&quot;SAS&quot;:0,&quot;Nilai_Rapor&quot;:0,&quot;Interval_Capaian&quot;:&quot;Perlu
+  Remedial&quot;,&quot;Deskripsi_Capaian&quot;:&quot;Menunjukkan penguasaan yang
+  sangat baik dalam seluruh tujuan pembelajaran. Perlu pendampingan dan
+  peningkatan dalam seluruh tujuan
+  pembelajaran.&quot;},{&quot;Timestamp&quot;:&quot;2026-08-27T17:00:00.000Z&quot;,&quot;StudentID&quot;:&quot;STD-74599242&quot;,&quot;Nama&quot;:&quot;M.
+  RIDHO
+  PRATAMA&quot;,&quot;Kelas&quot;:&quot;XI-1&quot;,&quot;LM1&quot;:&quot;&quot;,&quot;LM2&quot;:&quot;&quot;,&quot;LM3&quot;:&quot;&quot;,&quot;LM4&quot;:&quot;&quot;,&quot;LM5&quot;:&quot;&quot;,&quot;Rerata_LM&quot;:0,&quot;STS&quot;:0,&quot;SAS&quot;:0,&quot;Nilai_Rapor&quot;:0,&quot;Interval_Capaian&quot;:&quot;Perlu
+  Remedial&quot;,&quot;Deskripsi_Capaian&quot;:&quot;Menunjukkan penguasaan yang
+  sangat baik dalam seluruh tujuan pembelajaran. Perlu pendampingan dan
+  peningkatan dalam seluruh tujuan
+  pembelajaran.&quot;},{&quot;Timestamp&quot;:&quot;2026-08-27T17:00:00.000Z&quot;,&quot;StudentID&quot;:&quot;STD-77477004&quot;,&quot;Nama&quot;:&quot;muhammad
+  aflan
+  dzaky&quot;,&quot;Kelas&quot;:&quot;XI-1&quot;,&quot;LM1&quot;:&quot;&quot;,&quot;LM2&quot;:&quot;&quot;,&quot;LM3&quot;:&quot;&quot;,&quot;LM4&quot;:&quot;&quot;,&quot;LM5&quot;:&quot;&quot;,&quot;Rerata_LM&quot;:0,&quot;STS&quot;:0,&quot;SAS&quot;:0,&quot;Nilai_Rapor&quot;:0,&quot;Interval_Capaian&quot;:&quot;Perlu
+  Remedial&quot;,&quot;Deskripsi_Capaian&quot;:&quot;Menunjukkan penguasaan yang
+  sangat baik dalam seluruh tujuan pembelajaran. Perlu pendampingan dan
+  peningkatan dalam seluruh tujuan
+  pembelajaran.&quot;},{&quot;Timestamp&quot;:&quot;2026-08-27T17:00:00.000Z&quot;,&quot;StudentID&quot;:&quot;STD-01744774&quot;,&quot;Nama&quot;:&quot;Angelina
+  Azzahra
+  D.A&quot;,&quot;Kelas&quot;:&quot;XI-1&quot;,&quot;LM1&quot;:&quot;&quot;,&quot;LM2&quot;:&quot;&quot;,&quot;LM3&quot;:&quot;&quot;,&quot;LM4&quot;:&quot;&quot;,&quot;LM5&quot;:&quot;&quot;,&quot;Rerata_LM&quot;:0,&quot;STS&quot;:0,&quot;SAS&quot;:0,&quot;Nilai_Rapor&quot;:0,&quot;Interval_Capaian&quot;:&quot;Perlu
+  Remedial&quot;,&quot;Deskripsi_Capaian&quot;:&quot;Menunjukkan penguasaan yang
+  sangat baik dalam seluruh tujuan pembelajaran. Perlu pendampingan dan
+  peningkatan dalam seluruh tujuan
+  pembelajaran.&quot;},{&quot;Timestamp&quot;:&quot;2026-08-27T17:00:00.000Z&quot;,&quot;StudentID&quot;:&quot;STD-96015253&quot;,&quot;Nama&quot;:&quot;Dara
+  Wahyu
+  Almaghfiroh&quot;,&quot;Kelas&quot;:&quot;XI-1&quot;,&quot;LM1&quot;:&quot;&quot;,&quot;LM2&quot;:&quot;&quot;,&quot;LM3&quot;:&quot;&quot;,&quot;LM4&quot;:&quot;&quot;,&quot;LM5&quot;:&quot;&quot;,&quot;Rerata_LM&quot;:0,&quot;STS&quot;:0,&quot;SAS&quot;:0,&quot;Nilai_Rapor&quot;:0,&quot;Interval_Capaian&quot;:&quot;Perlu
+  Remedial&quot;,&quot;Deskripsi_Capaian&quot;:&quot;Menunjukkan penguasaan yang
+  sangat baik dalam seluruh tujuan pembelajaran. Perlu pendampingan dan
+  peningkatan dalam seluruh tujuan
+  pembelajaran.&quot;},{&quot;Timestamp&quot;:&quot;2026-08-27T17:00:00.000Z&quot;,&quot;StudentID&quot;:&quot;STD-75144592&quot;,&quot;Nama&quot;:&quot;debby
+  veodora bhagaskara
+  priyambada&quot;,&quot;Kelas&quot;:&quot;XI-1&quot;,&quot;LM1&quot;:&quot;&quot;,&quot;LM2&quot;:&quot;&quot;,&quot;LM3&quot;:&quot;&quot;,&quot;LM4&quot;:&quot;&quot;,&quot;LM5&quot;:&quot;&quot;,&quot;Rerata_LM&quot;:0,&quot;STS&quot;:0,&quot;SAS&quot;:0,&quot;Nilai_Rapor&quot;:0,&quot;Interval_Capaian&quot;:&quot;Perlu
+  Remedial&quot;,&quot;Deskripsi_Capaian&quot;:&quot;Menunjukkan penguasaan yang
+  sangat baik dalam seluruh tujuan pembelajaran. Perlu pendampingan dan
+  peningkatan dalam seluruh tujuan
+  pembelajaran.&quot;},{&quot;Timestamp&quot;:&quot;2026-08-27T17:00:00.000Z&quot;,&quot;StudentID&quot;:&quot;STD-74470589&quot;,&quot;Nama&quot;:&quot;Merisha
+  Vista
+  Levia&quot;,&quot;Kelas&quot;:&quot;XI-1&quot;,&quot;LM1&quot;:&quot;&quot;,&quot;LM2&quot;:&quot;&quot;,&quot;LM3&quot;:&quot;&quot;,&quot;LM4&quot;:&quot;&quot;,&quot;LM5&quot;:&quot;&quot;,&quot;Rerata_LM&quot;:0,&quot;STS&quot;:0,&quot;SAS&quot;:0,&quot;Nilai_Rapor&quot;:0,&quot;Interval_Capaian&quot;:&quot;Perlu
+  Remedial&quot;,&quot;Deskripsi_Capaian&quot;:&quot;Menunjukkan penguasaan yang
+  sangat baik dalam seluruh tujuan pembelajaran. Perlu pendampingan dan
+  peningkatan dalam seluruh tujuan
+  pembelajaran.&quot;},{&quot;Timestamp&quot;:&quot;2026-08-27T17:00:00.000Z&quot;,&quot;StudentID&quot;:&quot;STD-73234069&quot;,&quot;Nama&quot;:&quot;Aina
+  Nur
+  Rahma&quot;,&quot;Kelas&quot;:&quot;XI-1&quot;,&quot;LM1&quot;:&quot;&quot;,&quot;LM2&quot;:&quot;&quot;,&quot;LM3&quot;:&quot;&quot;,&quot;LM4&quot;:&quot;&quot;,&quot;LM5&quot;:&quot;&quot;,&quot;Rerata_LM&quot;:0,&quot;STS&quot;:0,&quot;SAS&quot;:0,&quot;Nilai_Rapor&quot;:0,&quot;Interval_Capaian&quot;:&quot;Perlu
+  Remedial&quot;,&quot;Deskripsi_Capaian&quot;:&quot;Menunjukkan penguasaan yang
+  sangat baik dalam seluruh tujuan pembelajaran. Perlu pendampingan dan
+  peningkatan dalam seluruh tujuan
+  pembelajaran.&quot;},{&quot;Timestamp&quot;:&quot;2026-08-27T17:00:00.000Z&quot;,&quot;StudentID&quot;:&quot;STD-62623950&quot;,&quot;Nama&quot;:&quot;Haruna
+  adi
+  wibowo&quot;,&quot;Kelas&quot;:&quot;XI-1&quot;,&quot;LM1&quot;:&quot;&quot;,&quot;LM2&quot;:&quot;&quot;,&quot;LM3&quot;:&quot;&quot;,&quot;LM4&quot;:&quot;&quot;,&quot;LM5&quot;:&quot;&quot;,&quot;Rerata_LM&quot;:0,&quot;STS&quot;:0,&quot;SAS&quot;:0,&quot;Nilai_Rapor&quot;:0,&quot;Interval_Capaian&quot;:&quot;Perlu
+  Remedial&quot;,&quot;Deskripsi_Capaian&quot;:&quot;Menunjukkan penguasaan yang
+  sangat baik dalam seluruh tujuan pembelajaran. Perlu pendampingan dan
+  peningkatan dalam seluruh tujuan
+  pembelajaran.&quot;},{&quot;Timestamp&quot;:&quot;2026-08-27T17:00:00.000Z&quot;,&quot;StudentID&quot;:&quot;STD-71061954&quot;,&quot;Nama&quot;:&quot;Safa'Atul
+  Husna&quot;,&quot;Kelas&quot;:&quot;XI-1&quot;,&quot;LM1&quot;:&quot;&quot;,&quot;LM2&quot;:&quot;&quot;,&quot;LM3&quot;:&quot;&quot;,&quot;LM4&quot;:&quot;&quot;,&quot;LM5&quot;:&quot;&quot;,&quot;Rerata_LM&quot;:0,&quot;STS&quot;:0,&quot;SAS&quot;:0,&quot;Nilai_Rapor&quot;:0,&quot;Interval_Capaian&quot;:&quot;Perlu
+  Remedial&quot;,&quot;Deskripsi_Capaian&quot;:&quot;Menunjukkan penguasaan yang
+  sangat baik dalam seluruh tujuan pembelajaran. Perlu pendampingan dan
+  peningkatan dalam seluruh tujuan
+  pembelajaran.&quot;},{&quot;Timestamp&quot;:&quot;2026-08-27T17:00:00.000Z&quot;,&quot;StudentID&quot;:&quot;STD-47296408&quot;,&quot;Nama&quot;:&quot;Aisha
+  Rifqa
+  Almaghfira&quot;,&quot;Kelas&quot;:&quot;XI-1&quot;,&quot;LM1&quot;:&quot;&quot;,&quot;LM2&quot;:&quot;&quot;,&quot;LM3&quot;:&quot;&quot;,&quot;LM4&quot;:&quot;&quot;,&quot;LM5&quot;:&quot;&quot;,&quot;Rerata_LM&quot;:0,&quot;STS&quot;:0,&quot;SAS&quot;:0,&quot;Nilai_Rapor&quot;:0,&quot;Interval_Capaian&quot;:&quot;Perlu
+  Remedial&quot;,&quot;Deskripsi_Capaian&quot;:&quot;Menunjukkan penguasaan yang
+  sangat baik dalam seluruh tujuan pembelajaran. Perlu pendampingan dan
+  peningkatan dalam seluruh tujuan
+  pembelajaran.&quot;},{&quot;Timestamp&quot;:&quot;2026-08-27T17:00:00.000Z&quot;,&quot;StudentID&quot;:&quot;STD-62320507&quot;,&quot;Nama&quot;:&quot;Nurlaily
+  Al Furohmah
+  Purwanto&quot;,&quot;Kelas&quot;:&quot;XI-1&quot;,&quot;LM1&quot;:&quot;&quot;,&quot;LM2&quot;:&quot;&quot;,&quot;LM3&quot;:&quot;&quot;,&quot;LM4&quot;:&quot;&quot;,&quot;LM5&quot;:&quot;&quot;,&quot;Rerata_LM&quot;:0,&quot;STS&quot;:0,&quot;SAS&quot;:0,&quot;Nilai_Rapor&quot;:0,&quot;Interval_Capaian&quot;:&quot;Perlu
+  Remedial&quot;,&quot;Deskripsi_Capaian&quot;:&quot;Menunjukkan penguasaan yang
+  sangat baik dalam seluruh tujuan pembelajaran. Perlu pendampingan dan
+  peningkatan dalam seluruh tujuan
+  pembelajaran.&quot;},{&quot;Timestamp&quot;:&quot;2026-08-27T17:00:00.000Z&quot;,&quot;StudentID&quot;:&quot;STD-24125993&quot;,&quot;Nama&quot;:&quot;Alya
+  Nashwa
+  Sabriya&quot;,&quot;Kelas&quot;:&quot;XI-1&quot;,&quot;LM1&quot;:&quot;&quot;,&quot;LM2&quot;:&quot;&quot;,&quot;LM3&quot;:&quot;&quot;,&quot;LM4&quot;:&quot;&quot;,&quot;LM5&quot;:&quot;&quot;,&quot;Rerata_LM&quot;:0,&quot;STS&quot;:0,&quot;SAS&quot;:0,&quot;Nilai_Rapor&quot;:0,&quot;Interval_Capaian&quot;:&quot;Perlu
+  Remedial&quot;,&quot;Deskripsi_Capaian&quot;:&quot;Menunjukkan penguasaan yang
+  sangat baik dalam seluruh tujuan pembelajaran. Perlu pendampingan dan
+  peningkatan dalam seluruh tujuan
+  pembelajaran.&quot;},{&quot;Timestamp&quot;:&quot;2026-08-27T17:00:00.000Z&quot;,&quot;StudentID&quot;:&quot;STD-30448299&quot;,&quot;Nama&quot;:&quot;debby
+  veodora bhagaskara
+  priyambada&quot;,&quot;Kelas&quot;:&quot;XI-1&quot;,&quot;LM1&quot;:&quot;&quot;,&quot;LM2&quot;:&quot;&quot;,&quot;LM3&quot;:&quot;&quot;,&quot;LM4&quot;:&quot;&quot;,&quot;LM5&quot;:&quot;&quot;,&quot;Rerata_LM&quot;:0,&quot;STS&quot;:0,&quot;SAS&quot;:0,&quot;Nilai_Rapor&quot;:0,&quot;Interval_Capaian&quot;:&quot;Perlu
+  Remedial&quot;,&quot;Deskripsi_Capaian&quot;:&quot;Menunjukkan penguasaan yang
+  sangat baik dalam seluruh tujuan pembelajaran. Perlu pendampingan dan
+  peningkatan dalam seluruh tujuan
+  pembelajaran.&quot;},{&quot;Timestamp&quot;:&quot;2026-08-27T17:00:00.000Z&quot;,&quot;StudentID&quot;:&quot;STD-93297111&quot;,&quot;Nama&quot;:&quot;Farin
+  Nur
+  Aini&quot;,&quot;Kelas&quot;:&quot;XI-1&quot;,&quot;LM1&quot;:&quot;&quot;,&quot;LM2&quot;:&quot;&quot;,&quot;LM3&quot;:&quot;&quot;,&quot;LM4&quot;:&quot;&quot;,&quot;LM5&quot;:&quot;&quot;,&quot;Rerata_LM&quot;:0,&quot;STS&quot;:0,&quot;SAS&quot;:0,&quot;Nilai_Rapor&quot;:0,&quot;Interval_Capaian&quot;:&quot;Perlu
+  Remedial&quot;,&quot;Deskripsi_Capaian&quot;:&quot;Menunjukkan penguasaan yang
+  sangat baik dalam seluruh tujuan pembelajaran. Perlu pendampingan dan
+  peningkatan dalam seluruh tujuan
+  pembelajaran.&quot;},{&quot;Timestamp&quot;:&quot;2026-08-27T17:00:00.000Z&quot;,&quot;StudentID&quot;:&quot;STD-11861021&quot;,&quot;Nama&quot;:&quot;Devita
+  cahaya
+  putri&quot;,&quot;Kelas&quot;:&quot;XI-1&quot;,&quot;LM1&quot;:&quot;&quot;,&quot;LM2&quot;:&quot;&quot;,&quot;LM3&quot;:&quot;&quot;,&quot;LM4&quot;:&quot;&quot;,&quot;LM5&quot;:&quot;&quot;,&quot;Rerata_LM&quot;:0,&quot;STS&quot;:0,&quot;SAS&quot;:0,&quot;Nilai_Rapor&quot;:0,&quot;Interval_Capaian&quot;:&quot;Perlu
+  Remedial&quot;,&quot;Deskripsi_Capaian&quot;:&quot;Menunjukkan penguasaan yang
+  sangat baik dalam seluruh tujuan pembelajaran. Perlu pendampingan dan
+  peningkatan dalam seluruh tujuan
+  pembelajaran.&quot;},{&quot;Timestamp&quot;:&quot;2026-08-27T17:00:00.000Z&quot;,&quot;StudentID&quot;:&quot;STD-38086746&quot;,&quot;Nama&quot;:&quot;Syifa
+  Almaghfira&quot;,&quot;Kelas&quot;:&quot;XI-1&quot;,&quot;LM1&quot;:&quot;&quot;,&quot;LM2&quot;:&quot;&quot;,&quot;LM3&quot;:&quot;&quot;,&quot;LM4&quot;:&quot;&quot;,&quot;LM5&quot;:&quot;&quot;,&quot;Rerata_LM&quot;:0,&quot;STS&quot;:0,&quot;SAS&quot;:0,&quot;Nilai_Rapor&quot;:0,&quot;Interval_Capaian&quot;:&quot;Perlu
+  Remedial&quot;,&quot;Deskripsi_Capaian&quot;:&quot;Menunjukkan penguasaan yang
+  sangat baik dalam seluruh tujuan pembelajaran. Perlu pendampingan dan
+  peningkatan dalam seluruh tujuan
+  pembelajaran.&quot;},{&quot;Timestamp&quot;:&quot;2026-08-27T17:00:00.000Z&quot;,&quot;StudentID&quot;:&quot;STD-14152185&quot;,&quot;Nama&quot;:&quot;Jeysisca
+  Christyana&quot;,&quot;Kelas&quot;:&quot;XI-1&quot;,&quot;LM1&quot;:&quot;&quot;,&quot;LM2&quot;:&quot;&quot;,&quot;LM3&quot;:&quot;&quot;,&quot;LM4&quot;:&quot;&quot;,&quot;LM5&quot;:&quot;&quot;,&quot;Rerata_LM&quot;:0,&quot;STS&quot;:0,&quot;SAS&quot;:0,&quot;Nilai_Rapor&quot;:0,&quot;Interval_Capaian&quot;:&quot;Perlu
+  Remedial&quot;,&quot;Deskripsi_Capaian&quot;:&quot;Menunjukkan penguasaan yang
+  sangat baik dalam seluruh tujuan pembelajaran. Perlu pendampingan dan
+  peningkatan dalam seluruh tujuan
+  pembelajaran.&quot;},{&quot;Timestamp&quot;:&quot;2026-08-27T17:00:00.000Z&quot;,&quot;StudentID&quot;:&quot;STD-72259641&quot;,&quot;Nama&quot;:&quot;Akika
+  Rahma&quot;,&quot;Kelas&quot;:&quot;XI-1&quot;,&quot;LM1&quot;:&quot;&quot;,&quot;LM2&quot;:&quot;&quot;,&quot;LM3&quot;:&quot;&quot;,&quot;LM4&quot;:&quot;&quot;,&quot;LM5&quot;:&quot;&quot;,&quot;Rerata_LM&quot;:0,&quot;STS&quot;:0,&quot;SAS&quot;:0,&quot;Nilai_Rapor&quot;:0,&quot;Interval_Capaian&quot;:&quot;Perlu
+  Remedial&quot;,&quot;Deskripsi_Capaian&quot;:&quot;Menunjukkan penguasaan yang
+  sangat baik dalam seluruh tujuan pembelajaran. Perlu pendampingan dan
+  peningkatan dalam seluruh tujuan
+  pembelajaran.&quot;},{&quot;Timestamp&quot;:&quot;2026-08-27T17:00:00.000Z&quot;,&quot;StudentID&quot;:&quot;STD-25286505&quot;,&quot;Nama&quot;:&quot;Keyla
+  Nayaka
+  Putri&quot;,&quot;Kelas&quot;:&quot;XI-1&quot;,&quot;LM1&quot;:&quot;&quot;,&quot;LM2&quot;:&quot;&quot;,&quot;LM3&quot;:&quot;&quot;,&quot;LM4&quot;:&quot;&quot;,&quot;LM5&quot;:&quot;&quot;,&quot;Rerata_LM&quot;:0,&quot;STS&quot;:0,&quot;SAS&quot;:0,&quot;Nilai_Rapor&quot;:0,&quot;Interval_Capaian&quot;:&quot;Perlu
+  Remedial&quot;,&quot;Deskripsi_Capaian&quot;:&quot;Menunjukkan penguasaan yang
+  sangat baik dalam seluruh tujuan pembelajaran. Perlu pendampingan dan
+  peningkatan dalam seluruh tujuan
+  pembelajaran.&quot;},{&quot;Timestamp&quot;:&quot;2026-08-27T17:00:00.000Z&quot;,&quot;StudentID&quot;:&quot;STD-35969302&quot;,&quot;Nama&quot;:&quot;Danissa
+  Aprilia&quot;,&quot;Kelas&quot;:&quot;XI-1&quot;,&quot;LM1&quot;:&quot;&quot;,&quot;LM2&quot;:&quot;&quot;,&quot;LM3&quot;:&quot;&quot;,&quot;LM4&quot;:&quot;&quot;,&quot;LM5&quot;:&quot;&quot;,&quot;Rerata_LM&quot;:0,&quot;STS&quot;:0,&quot;SAS&quot;:0,&quot;Nilai_Rapor&quot;:0,&quot;Interval_Capaian&quot;:&quot;Perlu
+  Remedial&quot;,&quot;Deskripsi_Capaian&quot;:&quot;Menunjukkan penguasaan yang
+  sangat baik dalam seluruh tujuan pembelajaran. Perlu pendampingan dan
+  peningkatan dalam seluruh tujuan
+  pembelajaran.&quot;}],&quot;siswa&quot;:null,&quot;history&quot;:[]}"
+  ></dasbor-kuis>
