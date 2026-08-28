@@ -2,13 +2,13 @@ id: item-ba9170fc-d0c5-49c4-bb1b-327ff46aa871
 indent: 0
 location: pages/item-ba9170fc-d0c5-49c4-bb1b-327ff46aa871/index.yaml
 slug: halaman-tugas
-order: 0
+order: 1
 parent: null
 title: Simulasi Ulangan/Kuis
 description: 'soal latihan '
 metadata:
   created: 1787721767
-  updated: 1787841035
+  updated: 1787887221
   images: []
   videos: []
   published: true
@@ -32,7 +32,7 @@ metadata:
   status: ''
 content: >
 
-  <h2>📘 Cara Mengerjakan Latihan</h2>
+  <h2 id="h2-17200480">📘 Cara Mengerjakan Latihan</h2>
 
   <p>Simak materi dan pahami, lanjutkan soal latihan di bawah dengan login
   terlebih dahulu,
@@ -41,9 +41,10 @@ content: >
   apps-script-url="https://script.google.com/macros/s/AKfycbyuprudZkCq_YCQ-CqqD_huzndsbA6zHsg_ICfqPnlB97dhcrm1xJjGxJ3u4Jp8DjJQ/exec"
   auto-login></quiz-user-auth>
 
-  <h4><strong>TOPIK: OPTIMALISASI PENCARIAN LANJUTAN UNTUK RISET</strong></h4>
+  <h4 id="h4--664910474"><strong>TOPIK: OPTIMALISASI PENCARIAN LANJUTAN UNTUK
+  RISET</strong></h4>
 
-  <hr/><h3><strong>1. Pendahuluan</strong></h3>
+  <hr/><h3 id="h3-39465782"><strong>1. Pendahuluan</strong></h3>
 
   <p><span>Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap
   konsep inti serta implementasi dari sistem komputer, jaringan, dan kecakapan
@@ -59,7 +60,7 @@ content: >
   cerdas dan memanfaatkan mesin pencari (search engine) untuk kepentingan riset
   akademik secara efektif dan efisien.</span> 
     </p>
-  <hr/><h3><strong>2. Tujuan Pembelajaran</strong></h3>
+  <hr/><h3 id="h3-468844443"><strong>2. Tujuan Pembelajaran</strong></h3>
 
   <p><span>Berdasarkan Capaian Pembelajaran (CP) dan Alur Tujuan Pembelajaran
   (ATP) Informatika Fase F, tujuan pembelajaran khusus pada topik ini
@@ -72,9 +73,9 @@ content: >
         <li aria-level="1">Mampu menerapkan kombinasi variabel pencarian lanjutan (seperti site:, filetype:,
           dll.) untuk meningkatkan keandalan sumber data dan menghemat waktu riset.</li>
     </ul>
-  <hr/><h3><strong>3. Materi dan Konsep Dasar</strong></h3>
+  <hr/><h3 id="h3-272661673"><strong>3. Materi dan Konsep Dasar</strong></h3>
 
-  <h4><strong>A. Kebutuhan Riset Ilmiah Daring</strong></h4>
+  <h4 id="h4--549341882"><strong>A. Kebutuhan Riset Ilmiah Daring</strong></h4>
 
   <p><span>Riset adalah penyelidikan suatu masalah secara sistematis, kritis,
   dan ilmiah untuk mendapatkan fakta baru atau penafsiran yang lebih baik. Dalam
@@ -83,7 +84,7 @@ content: >
   karena itu, pemrogram dan peneliti harus menguasai strategi pencarian lanjutan
   untuk menyaring data secara presisi.</span> 
     </p>
-  <h4><strong>B. Operator Logika Boolean</strong></h4>
+  <h4 id="h4--1885554261"><strong>B. Operator Logika Boolean</strong></h4>
 
   <p><strong>Operator logika Boolean berperan penting dalam mengaitkan,
   membatasi, atau mengecualikan konsep penelusuran di mesin pencari:</strong> 
@@ -97,7 +98,8 @@ content: >
       <li aria-level="1">NOT (atau karakter tanda minus -): Digunakan untuk mengecualikan kata kunci tertentu
         yang tidak relevan agar tidak muncul di halaman hasil penelusuran.</li>
     </ul>
-  <h4><strong>C. Variabel Pencarian Lanjutan (Search Operators)</strong></h4>
+  <h4 id="h4-690940071"><strong>C. Variabel Pencarian Lanjutan (Search
+  Operators)</strong></h4>
 
   <p><strong>Variabel ini membatasi pelacakan kata kunci pada bagian spesifik
   dari dokumen atau server di internet:</strong>
@@ -120,7 +122,7 @@ content: >
       <li aria-level="1">Tanda Petik Ganda (""): Digunakan untuk memaksa mesin pencari melacak frasa kata
         kunci secara tepat dan persis (Exact Match).</li>
     </ul>
-  <h4><strong>D. Teknologi Pencarian Modern</strong></h4>
+  <h4 id="h4--2045198086"><strong>D. Teknologi Pencarian Modern</strong></h4>
 
   <ul>
       <li aria-level="1">
@@ -130,7 +132,7 @@ content: >
       </li>
 
     </ul>
-  <hr/><h3><strong>4. Miskonsepsi Umum</strong></h3>
+  <hr/><h3 id="h3--2136781867"><strong>4. Miskonsepsi Umum</strong></h3>
 
   <ul>
       <li aria-level="1">Miskonsepsi 1: Mengetikkan kata kunci yang tidak berkaitan mempercepat proses riset.
@@ -144,7 +146,7 @@ content: >
         Faktanya: Operator OR berfungsi untuk memperluas pencarian dengan menggabungkan alternatif
         istilah. Operator yang mempersempit ruang lingkup adalah AND.</li>
     </ul>
-  <hr/><h3><strong>5. Ringkasan Materi</strong></h3>
+  <hr/><h3 id="h3-1891844905"><strong>5. Ringkasan Materi</strong></h3>
 
   <ol>
       <li aria-level="1">Pencarian riset ilmiah daring memerlukan teknik pencarian lanjutan agar terhindar
@@ -156,9 +158,10 @@ content: >
       <li aria-level="1">Pencarian berbasis visual difasilitasi oleh Google Lens dengan mencocokkan kemiripan
         gambar secara daring.</li>
     </ol>
-  <hr/><h3><strong>6. Materi Pembelajaran sesuai Stimulus 1</strong></h3>
+  <hr/><h3 id="h3-489287619"><strong>6. Materi Pembelajaran sesuai Stimulus
+  1</strong></h3>
 
-  <h4><strong>Wacana Stimulus 1:</strong></h4>
+  <h4 id="h4--148070518"><strong>Wacana Stimulus 1:</strong></h4>
 
   <p>Pencarian informasi ilmiah secara daring menggunakan kata kunci sederhana
   sering
@@ -169,7 +172,8 @@ content: >
       penelusuran.<strong></strong>
 
     </p>
-  <h4><strong>Studi Kasus Skenario Riset Akademik:</strong></h4>
+  <h4 id="h4-815904018"><strong>Studi Kasus Skenario Riset
+  Akademik:</strong></h4>
 
   <p>Seorang siswa kelas XI sedang melakukan riset mengenai "dampak emisi
   karbon". Ia
@@ -248,20 +252,22 @@ content: >
   kunci yang terlampau spesifik dan sempit sangat dihindari oleh seorang
   peneliti?&quot;,&quot;choices&quot;:[&quot;Karena dapat memblokir alamat IP
   komputer pengguna secara otomatis&quot;,&quot;Karena dapat mematikan
-  konektivitas jaringan nirkabel router&quot;,&quot;Karena berisiko
-  menghilangkan informasi penting lainnya yang tersedia di bawah terminologi
-  yang lebih umum&quot;,&quot;Karena mengacaukan pengodean biner pada memori
-  cache komputer&quot;,&quot;Karena memaksa browser mengunduh virus digital
-  secara
-  otomatis&quot;],&quot;correctIndex&quot;:2},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Teknologi
+  konektivitas jaringan nirkabel router publik bawah terminologi yang lebih
+  umum&quot;,&quot;Karena berisiko menghilangkan informasi penting lainnya yang
+  tersedia di bawah terminologi yang lebih umum&quot;,&quot;Karena mengacaukan
+  pengodean biner pada memori cache komputer pengguna umum bawah
+  terminologi&quot;,&quot;Karena memaksa browser mengunduh virus digital secara
+  otomatis umum bawah terminologi yang
+  lebih&quot;],&quot;correctIndex&quot;:2},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Teknologi
   pencarian modern seperti Google Lens dikembangkan untuk membantu pengguna
   internet melakukan penelusuran informasi yang tidak terbatas pada teks saja.
   Penelusuran informasi pada Google Lens didasarkan pada
   pencocokan...&quot;,&quot;choices&quot;:[&quot;Suara/vokal secara
-  interaktif&quot;,&quot;Gambar/visual yang diunggah
-  pengguna&quot;,&quot;Enkripsi persandian asimetris&quot;,&quot;Koordinat
-  geolokasi satelit secara otomatis&quot;,&quot;Aliran paket data
-  nirkabel&quot;],&quot;correctIndex&quot;:1},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Di
+  interaktif&quot;,&quot;Gambar/visual yang diunggah pengguna
+  otomatis&quot;,&quot;Enkripsi persandian asimetris satelit
+  publik&quot;,&quot;Koordinat geolokasi satelit secara
+  otomatis&quot;,&quot;Aliran paket data nirkabel jaringan
+  publik&quot;],&quot;correctIndex&quot;:1},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Di
   tengah keterbatasan akses internet, seorang siswa ingin melihat versi salinan
   sementara terbaru dari suatu halaman web yang disimpan oleh server mesin
   pencari Google. Variabel pencarian lanjutan manakah yang harus ia
@@ -273,22 +279,28 @@ content: >
   penggunaan kata kunci yang tidak berkaitan dengan topik penelitian tidak
   termasuk dalam langkah-langkah pencarian informasi yang
   efektif?&quot;,&quot;choices&quot;:[&quot;Karena dapat merusak perangkat keras
-  komputer pengguna secara langsung&quot;,&quot;Karena menghasilkan hasil
-  pencarian yang tidak relevan dengan topik sehingga menyulitkan pencarian
-  informasi yang dibutuhkan&quot;,&quot;Karena otomatis memblokir koneksi
-  internet browser&quot;,&quot;Karena memaksa server Google menghapus data
-  pencarian pengguna&quot;,&quot;Karena mempercepat durasi loading halaman web
-  secara
+  komputer pengguna secara langsung yang dibutuhkan data pengguna secara
+  berlebihan&quot;,&quot;Karena menghasilkan hasil pencarian yang tidak relevan
+  dengan topik sehingga menyulitkan pencarian informasi yang
+  dibutuhkan&quot;,&quot;Karena otomatis memblokir koneksi internet browser
+  dalam informasi yang dibutuhkan data pengguna secara
+  berlebihan&quot;,&quot;Karena memaksa server Google menghapus data pencarian
+  pengguna secara permanen yang dibutuhkan data pengguna secara
+  berlebihan&quot;,&quot;Karena mempercepat durasi loading halaman web secara
+  berlebihan yang dibutuhkan data pengguna secara
   berlebihan&quot;],&quot;correctIndex&quot;:1},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Mengapa
   situs web dengan protokol HTTPS dinilai jauh lebih aman dan kredibel untuk
   diakses saat menjelajah informasi digital dibandingkan situs HTTP
   biasa?&quot;,&quot;choices&quot;:[&quot;Karena HTTPS secara otomatis menghapus
-  file duplikat di internet&quot;,&quot;Karena HTTPS mempercepat proses indexing
-  Google secara real-time&quot;,&quot;Karena HTTPS menggunakan enkripsi SSL/TLS
-  untuk melindungi data pengguna dari akses pihak yang tidak
-  sah&quot;,&quot;Karena HTTPS tidak memerlukan koneksi internet nirkabel untuk
-  loading&quot;,&quot;Karena HTTPS otomatis memblokir iklan pop-up di
-  browser&quot;],&quot;correctIndex&quot;:2},{&quot;type&quot;:&quot;pgk&quot;,&quot;question&quot;:&quot;Pencarian
+  file duplikat di internet browser dari akses pihak yang tidak
+  sah&quot;,&quot;Karena HTTPS mempercepat proses indexing Google secara
+  real-time di browser pengguna dari akses pihak yang tidak
+  sah&quot;,&quot;Karena HTTPS menggunakan enkripsi SSL/TLS untuk melindungi
+  data pengguna dari akses pihak yang tidak sah&quot;,&quot;Karena HTTPS tidak
+  memerlukan koneksi internet nirkabel untuk loading nirkabel untuk loading
+  secara real-time&quot;,&quot;Karena HTTPS otomatis memblokir iklan pop-up di
+  browser pengguna dari akses pihak yang tidak sah untuk
+  loading&quot;],&quot;correctIndex&quot;:2},{&quot;type&quot;:&quot;pgk&quot;,&quot;question&quot;:&quot;Pencarian
   informasi ilmiah secara daring menggunakan kata kunci sederhana sering kali
   tidak efektif karena menghasilkan jutaan data tidak relevan. Tentukan apakah
   setiap pernyataan berikut Benar atau Salah mengenai aturan, variabel, dan
@@ -317,13 +329,13 @@ content: >
   tidak efektif. Manakah dua pernyataan berikut yang benar mengenai fungsi dari
   operator logika boolean dan format pencarian di mesin pencari
   Google?&quot;,&quot;choices&quot;:[&quot;Operator AND berfungsi menggabungkan
-  beberapa kata kunci guna mempersempit ruang lingkup pencarian
-  data.&quot;,&quot;Operator OR berfungsi membatasi penelusuran agar hanya
-  menampilkan hasil berkas dari domain militer .mil.&quot;,&quot;Operator NOT
-  atau tanda minus - digunakan untuk mengecualikan kata kunci tertentu yang
-  tidak berkaitan dari halaman pencarian.&quot;,&quot;Penggunaan tanda petik
-  ganda \&quot;\&quot; secara otomatis melacak versi salinan sementara terbaru
-  halaman web di
+  beberapa kata kunci guna mempersempit ruang lingkup pencarian data sementara
+  terbaru halaman web di server..&quot;,&quot;Operator OR berfungsi membatasi
+  penelusuran agar hanya menampilkan hasil berkas dari domain militer .mil. dan
+  ac.id. .com.&quot;,&quot;Operator NOT atau tanda minus - digunakan untuk
+  mengecualikan kata kunci tertentu yang tidak berkaitan dari halaman
+  pencarian.&quot;,&quot;Penggunaan tanda petik ganda \&quot;\&quot; secara
+  otomatis melacak versi salinan sementara terbaru halaman web di
   server.&quot;],&quot;correctAnswers&quot;:[0,2]},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Pencarian
   informasi ilmiah secara daring menggunakan kata kunci sederhana sering kali
   tidak efektif. Seorang siswa ingin mencari data ilmiah mengenai
@@ -346,4 +358,5 @@ content: >
   mengandung kata kunci tertentu.&quot;,&quot;Menghapus seluruh riwayat
   (history) penelusuran peramban internet secara
   otomatis.&quot;],&quot;correctPairs&quot;:{&quot;0&quot;:1,&quot;1&quot;:2,&quot;2&quot;:0,&quot;3&quot;:3}}]"
-  _attempt-ke="0"  ></latihan-kuis>
+  _attempt-ke="0"   mode="siswa" hide-pause-restart kategori="Formatif"
+  timer-autostart></latihan-kuis>
