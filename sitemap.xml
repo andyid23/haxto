@@ -2,31 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://localhost:3000/sites/haxto/welcome</loc>
-    <lastmod>2026-08-28T03:31:08.000Z</lastmod>
+    <lastmod>2026-08-28T03:32:28.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://localhost:3000/sites/haxto/latihan-ulangan-harian</loc>
-    <lastmod>2026-08-28T03:31:08.000Z</lastmod>
+    <lastmod>2026-08-28T03:32:27.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://localhost:3000/sites/haxto/halaman-tugas</loc>
-    <lastmod>2026-08-28T03:31:08.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://localhost:3000/sites/haxto/kategori-kuis-formatif-vs-sumatif</loc>
-    <lastmod>2026-08-28T03:31:54.000Z</lastmod>
+    <lastmod>2026-08-28T03:32:27.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://localhost:3000/sites/haxto/ulangan-harian-1</loc>
-    <lastmod>2026-08-28T03:31:08.000Z</lastmod>
+    <lastmod>2026-08-28T03:32:28.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
