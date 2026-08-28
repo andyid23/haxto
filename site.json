@@ -1,6 +1,6 @@
 {
   "id": "6404f0ee-e94d-444b-bcb9-6a79135066d8",
-  "title": "haxto",
+  "title": "Media Pembelajaran Kelas XI Informatika SMA",
   "author": "",
   "description": "",
   "license": "by-sa",
@@ -18,13 +18,16 @@
         "gaID": "",
         "private": true,
         "pathauto": true,
-        "publishPagesOn": true
+        "publishPagesOn": true,
+        "sw": true,
+        "forceUpgrade": false
       },
       "name": "haxto",
       "domain": "",
       "created": 1787457359,
-      "updated": 1787891473,
-      "logo": ""
+      "updated": 1787891525,
+      "logo": "",
+      "version": "26.0.1"
     },
     "theme": {
       "element": "custom-haxkuis-theme",
@@ -33,7 +36,8 @@
     },
     "node": {
       "fields": {}
-    }
+    },
+    "platform": {}
   },
   "items": [
     {
