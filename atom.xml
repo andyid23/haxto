@@ -3,7 +3,7 @@
   <title>haxto</title>
   <link href="https://localhost:3000/sites/haxto/" rel="self" />
   <subtitle></subtitle>
-  <updated>2026-08-28T03:32:28.000Z</updated>
+  <updated>2026-08-28T03:54:24.000Z</updated>
   <author>
       <name></name>
   </author>
@@ -12,7 +12,7 @@
   <entry>
     <title>Selamat Datang Pada Ulangan</title>
     <id>item-e25c1b60-c8b7-4360-b3e8-3533c93c3a92</id>
-    <updated>2026-08-28T03:32:28.000Z</updated>
+    <updated>2026-08-28T04:05:31.000Z</updated>
     <published>2026-08-23T03:55:59.000Z</published>
     <summary>Welcome to your new HAX site! Click edit on the top bar to get started
 What can I do?
@@ -98,7 +98,7 @@ We&apos;ve got a ton of blocks that are easy to use and get a lot done with litt
   <entry>
     <title>LATIHAN/SIMULASI KUIS</title>
     <id>item-641ef0af-6ba1-4523-bedd-5c0d0f85828b</id>
-    <updated>2026-08-28T03:54:24.000Z</updated>
+    <updated>2026-08-28T04:05:31.000Z</updated>
     <published>2026-08-23T06:35:36.000Z</published>
     <summary>Halaman ulangan harian terintegrasi dengan timer, anti-confetti, dan jawaban tersembunyi.</summary>
     <link href="https://localhost:3000/sites/haxto/latihan-ulangan-harian"/>
@@ -119,7 +119,7 @@ We&apos;ve got a ton of blocks that are easy to use and get a lot done with litt
   <entry>
     <title>Simulasi Ulangan/Kuis</title>
     <id>item-ba9170fc-d0c5-49c4-bb1b-327ff46aa871</id>
-    <updated>2026-08-28T03:32:27.000Z</updated>
+    <updated>2026-08-28T04:05:31.000Z</updated>
     <published>2026-08-26T05:22:47.000Z</published>
     <summary>soal latihan </summary>
     <link href="https://localhost:3000/sites/haxto/halaman-tugas"/>
@@ -245,23 +245,9 @@ We&apos;ve got a ton of blocks that are easy to use and get a lot done with litt
     </content>
   </entry>
   <entry>
-    <title>Kategori Kuis: Formatif vs Sumatif</title>
-    <id>item-4c85862f-8c79-4ded-a957-bc5a43777f90</id>
-    <updated>2026-08-28T03:31:54.000Z</updated>
-    <published>2026-08-26T13:26:31.000Z</published>
-    <summary>Panduan guru memisahkan kuis latihan (formatif) dari kuis rapor (sumatif) pada kuis-ledakan agar skor latihan tidak mengotori rapor siswa.</summary>
-    <link href="https://localhost:3000/sites/haxto/kategori-kuis-formatif-vs-sumatif"/>
-    
-    <content type="html">
-      <![CDATA[ 
-<p></p>
- ]]>
-    </content>
-  </entry>
-  <entry>
     <title>Ulangan Harian 1</title>
     <id>item-43d63e69-4564-4ae3-80df-ffa7a6677b2b</id>
-    <updated>2026-08-28T03:32:28.000Z</updated>
+    <updated>2026-08-28T04:05:31.000Z</updated>
     <published>2026-08-27T18:12:24.000Z</published>
     <summary>
 
