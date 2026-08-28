@@ -5,16 +5,26 @@
   "description": "",
   "license": "by-sa",
   "metadata": {
-    "author": {},
+    "author": {
+      "image": "",
+      "name": "Andy Yulianto",
+      "email": "andy.informatika23@gmail.com",
+      "socialLink": "andyid23"
+    },
     "site": {
       "settings": {
-        "lang": "en",
-        "canonical": true
+        "lang": "id",
+        "canonical": true,
+        "gaID": "",
+        "private": true,
+        "pathauto": true,
+        "publishPagesOn": true
       },
       "name": "haxto",
-      "domain": null,
+      "domain": "",
       "created": 1787457359,
-      "updated": 1787890159
+      "updated": 1787891473,
+      "logo": ""
     },
     "theme": {
       "element": "custom-haxkuis-theme",

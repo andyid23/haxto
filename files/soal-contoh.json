@@ -153,8 +153,8 @@
     "type": "mc",
     "question": "Pencarian informasi ilmiah secara daring menggunakan kata kunci sederhana sering kali tidak efektif. Manakah dua pernyataan berikut yang benar mengenai fungsi dari operator logika boolean dan format pencarian di mesin pencari Google?",
     "choices": [
-      "Operator AND berfungsi menggabungkan beberapa kata kunci guna mempersempit ruang lingkup pencarian data sementara terbaru halaman web di server..",
-      "Operator OR berfungsi membatasi penelusuran agar hanya menampilkan hasil berkas dari domain militer .mil. dan ac.id. .com.",
+      "Operator AND berfungsi menggabungkan beberapa kata kunci guna mempersempit ruang lingkup pencarian data.",
+      "Operator OR berfungsi membatasi penelusuran agar hanya menampilkan hasil berkas dari domain militer .mil.",
       "Operator NOT atau tanda minus - digunakan untuk mengecualikan kata kunci tertentu yang tidak berkaitan dari halaman pencarian.",
       "Penggunaan tanda petik ganda \"\" secara otomatis melacak versi salinan sementara terbaru halaman web di server."
     ],

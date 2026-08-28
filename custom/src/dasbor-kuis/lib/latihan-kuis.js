@@ -102,7 +102,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     this.hidePauseRestart = true;
     this.shuffleQuestions = false;
     this.shuffleChoices = false;
-    this.kategori = "";
+    this.kategori = "sumatif_lm";
     this.hideConfetti = false;
     this.hideAnswers = false;
     this.hideScore = false;
@@ -117,6 +117,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     this._attemptKe = 0;
     this._terkunci = false;
     this._resumeRemaining = null;
+    this._onAuthLogin = this._onAuthLogin.bind(this);
     this._onAuthLogout = this._onAuthLogout.bind(this);
     this.t = {
       ...this.t,
@@ -287,7 +288,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
         this._terkunci = false;
         this._pernahIkut = typeof j.best === "number" && j.best != null;
         this._bestSkor = typeof j.best === "number" ? j.best : null;
-        if (!this.allowRetake && j.locked) {
+        if (!this.allowRetake && this._pernahIkut) {
           this._terkunci = true;
           this._selesai = false;
           this._skor = this._bestSkor;
@@ -615,8 +616,13 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
           {
             property: "kategori",
             title: "Kategori Kuis",
-            inputMethod: "textfield",
-            description: "Kategori pedagogi: formatif (progres) atau sumatif (rapor). Diteruskan ke backend.",
+            inputMethod: "select",
+            description: "sumatif → skor masuk rapor (db_asesmen); formatif → progres saja, tidak masuk rapor (db_aktivitas).",
+            options: {
+              sumatif_lm: "Sumatif (Rapor LM)",
+              formatif: "Formatif (Progres)",
+            },
+            default: "sumatif_lm",
           },
           {
             property: "hideConfetti",
