@@ -208,7 +208,8 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
       // abaikan
     }
     this._loadAttemptCounter();
-    this._cobaResumeTimer();
+    // Jangan langsung resume timer di sini — biarkan _muatStatusKuis() yang
+    // mengatur _mulai setelah lock-state pasti (hindari race condition).
   }
 
   /** Baca counter attempt ter-submit dari localStorage (per studentId+kdMateri). */
@@ -279,7 +280,10 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
 
   /** T: muat status kuis dari sheet (pernah ikut + nilai terbaik) via getQuizLock. */
   _muatStatusKuis() {
-    if (!this.appsScriptUrl || !this.studentId || !this.kdMateri) return;
+    if (!this.appsScriptUrl || !this.studentId || !this.kdMateri) {
+      this._cobaResumeTimer();
+      return;
+    }
     const u = `${this.appsScriptUrl}${this.appsScriptUrl.includes("?") ? "&" : "?"}action=getQuizLock&studentId=${encodeURIComponent(this.studentId)}&kdMateri=${encodeURIComponent(this.kdMateri)}`;
     return fetch(u, { method: "GET", mode: "cors" })
       .then((r) => r.json())
@@ -300,7 +304,13 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
       .catch(() => {
         // Gagal → biarkan attempt (graceful), jangan kunci salah.
       })
-      .finally(() => this.requestUpdate());
+      .finally(() => {
+        // Hanya resume timer jika quiz belum terkunci & belum selesai.
+        if (!this._terkunci && !this._selesai) {
+          this._cobaResumeTimer();
+        }
+        this.requestUpdate();
+      });
   }
 
   _ulangiKuis() {
