@@ -289,10 +289,10 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
       .then((r) => r.json())
       .then((j) => {
         if (!j) return;
-        this._terkunci = false;
+        this._terkunci = Boolean(j.locked);
         this._pernahIkut = typeof j.best === "number" && j.best != null;
         this._bestSkor = typeof j.best === "number" ? j.best : null;
-        if (!this.allowRetake && this._pernahIkut) {
+        if (this._terkunci) {
           this._terkunci = true;
           this._selesai = false;
           this._skor = this._bestSkor;
