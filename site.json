@@ -25,7 +25,7 @@
       "name": "haxto",
       "domain": "",
       "created": 1787457359,
-      "updated": 1788163320,
+      "updated": 1788163673,
       "logo": "",
       "version": "26.0.1"
     },
@@ -190,13 +190,30 @@
       "order": 4,
       "parent": null,
       "title": "Ulangan Harian 1 Fase E LM1-E",
-      "description": "",
+      "description": "📝 Kuis Ekosistem Periksa Fakta &#38; CRAAP, PENCARIAN LANJUTAN (LM1) Kelas X\n\nKerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban\n  benar/salah ditampilkan. Setelah logi",
       "metadata": {
         "locked": false,
         "created": 1788163319,
         "images": [],
         "videos": [],
-        "updated": 1788163319
+        "updated": 1788163673,
+        "theme": {
+          "element": "polaris-flex-theme",
+          "path": "@haxtheweb/polaris-theme/lib/polaris-flex-theme.js",
+          "name": "Polaris Flex",
+          "thumbnail": "@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-polaris-flex-theme-thumb.jpg",
+          "description": "Start with a blank site using the Polaris Flex",
+          "category": [
+            "Website"
+          ],
+          "hidden": false,
+          "priority": -1,
+          "terrible": false,
+          "key": "polaris-flex-theme"
+        },
+        "published": true,
+        "hideInMenu": false,
+        "readtime": 1
       }
     }
   ]
