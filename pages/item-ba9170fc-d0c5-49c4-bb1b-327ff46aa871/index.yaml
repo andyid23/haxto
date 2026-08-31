@@ -8,7 +8,7 @@ title: Materi Simulasi Ulangan/Kuis
 description: 'soal latihan '
 metadata:
   created: 1787721767
-  updated: 1788169353
+  updated: 1788172285
   images: []
   videos: []
   published: true
@@ -130,7 +130,9 @@ content: >
         </p>
 
 
+
       </li>
+
 
 
     </ul>
@@ -197,7 +199,7 @@ content: >
   apps-script-url="https://script.google.com/macros/s/AKfycbyuprudZkCq_YCQ-CqqD_huzndsbA6zHsg_ICfqPnlB97dhcrm1xJjGxJ3u4Jp8DjJQ/exec"
   kd-materi="LD-1 Latihan" student-id="" judul-materi="Materi: Pencarian"
   teks-materi="Baca materi di atas, lalu kerjakan kuis. Kamu bisa mengulang
-  sampai 4 kali." show-sheet-link soal-file-url="./files/soal-contoh.json"  
+  sampai 4 kali." show-sheet-link soal-file-url="./files/soal-contoh.json"
   materi-file="" cover-image="" judul-kuis="Evaluasi Kuis Interaktif"
   student-name="" student-nis="" student-absen="" student-kelas=""
   pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai otomatis."
@@ -359,6 +361,6 @@ content: >
   mengandung kata kunci tertentu.&quot;,&quot;Menghapus seluruh riwayat
   (history) penelusuran peramban internet secara
   otomatis.&quot;],&quot;correctPairs&quot;:{&quot;0&quot;:1,&quot;1&quot;:2,&quot;2&quot;:0,&quot;3&quot;:3}}]"
-  _attempt-ke="0">
+  _attempt-ke="0"  >
 
   </latihan-kuis>
