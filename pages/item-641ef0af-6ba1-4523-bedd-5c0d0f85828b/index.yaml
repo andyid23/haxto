@@ -2,15 +2,15 @@ id: item-641ef0af-6ba1-4523-bedd-5c0d0f85828b
 indent: 0
 location: pages/item-641ef0af-6ba1-4523-bedd-5c0d0f85828b/index.yaml
 slug: latihan-ulangan-harian
-order: 0
+order: 1
 parent: null
-title: LATIHAN/SIMULASI KUIS
+title: LATIHAN / SIMULASI KUIS
 description: >-
   Halaman ulangan harian terintegrasi dengan timer, anti-confetti, dan jawaban
   tersembunyi.
 metadata:
   created: 1787466936
-  updated: 1787889264
+  updated: 1788174350
   published: true
   hideInMenu: true
   locked: false
@@ -39,24 +39,26 @@ content: >
   Jawaban
     benar/salah ditampilkan. Setelah login reload untuk menampilkan tombol mulai latihan ulangan. Bisa mengulang latihan ulangan maksimal 4 kali. Nilai akhir akan diambil dari nilai terakhir yang dikumpulkan
     setelah waktu habis atau semua soal terjawab. Waktu Pengerjaan Soal 15 Menit</p>
+  <p>Kalau <b><u>mode gelap</u></b>
+
+   tidak bisa gunakan <mark>mode terang</mark> di smartphonemu&#160;😄</p>
   <quiz-user-auth
   apps-script-url="https://script.google.com/macros/s/AKfycbxJtcgtms69cByMneEgPvDUg7S3NkmhdiQtsCUTG8bJpsZw2dP9UDrRCkd1HNZ-EvY/exec"
   auto-login _student-id="STD-65108053"></quiz-user-auth>
 
   <br/><p></p>
 
-  <latihan-kuis mode="siswa" allow-retake max-retake="5" duration="900"
-  timer-autostart hide-pause-restart shuffle-questions shuffle-choices
-  kategori="formatif"
+  <latihan-kuis mode="siswa" allow-retake max-retake="4" duration="900"
+  timer-autostart shuffle-questions shuffle-choices kategori="formatif"
   apps-script-url="https://script.google.com/macros/s/AKfycbyuprudZkCq_YCQ-CqqD_huzndsbA6zHsg_ICfqPnlB97dhcrm1xJjGxJ3u4Jp8DjJQ/exec"
-  kd-materi="LD-1 Latihan" student-id="STD-65108053" judul-materi="Materi:
-  Pencarian" teks-materi="Baca contoh di bawah, lalu kerjakan kuis. Kamu bisa
-  mengulang sampai 4 kali." materi-url="./halaman-tugas" show-sheet-link
+  kd-materi="LD-1 Latihan" student-id="" judul-materi="Materi: Pencarian"
+  teks-materi="Baca contoh di bawah, lalu kerjakan kuis. Kamu bisa mengulang
+  sampai 4 kali." materi-url="./materi-simulasi-ulangan-/-kuis" show-sheet-link
   soal-file-url="./files/soal-contoh.json"  materi-file="" cover-image=""
-  judul-kuis="Evaluasi Kuis Interaktif" student-name="Andy" student-nis="234"
-  student-absen="1" student-kelas="XI-1" pesan-waktu-habis="⏰ Waktu habis! Kuis
+  judul-kuis="Evaluasi Kuis Interaktif" student-name="" student-nis=""
+  student-absen="" student-kelas="" pesan-waktu-habis="⏰ Waktu habis! Kuis
   dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda
-  sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai"
+  sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai" hide-pause-restart
   questions="[{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Pencarian
   informasi ilmiah secara daring menggunakan kata kunci sederhana sering kali
   tidak efektif karena menghasilkan jutaan data tidak relevan. Guna menyaring
@@ -184,13 +186,13 @@ content: >
   tidak efektif. Manakah dua pernyataan berikut yang benar mengenai fungsi dari
   operator logika boolean dan format pencarian di mesin pencari
   Google?&quot;,&quot;choices&quot;:[&quot;Operator AND berfungsi menggabungkan
-  beberapa kata kunci guna mempersempit ruang lingkup pencarian data sementara
-  terbaru halaman web di server..&quot;,&quot;Operator OR berfungsi membatasi
-  penelusuran agar hanya menampilkan hasil berkas dari domain militer .mil. dan
-  ac.id. .com.&quot;,&quot;Operator NOT atau tanda minus - digunakan untuk
-  mengecualikan kata kunci tertentu yang tidak berkaitan dari halaman
-  pencarian.&quot;,&quot;Penggunaan tanda petik ganda \&quot;\&quot; secara
-  otomatis melacak versi salinan sementara terbaru halaman web di
+  beberapa kata kunci guna mempersempit ruang lingkup pencarian
+  data.&quot;,&quot;Operator OR berfungsi membatasi penelusuran agar hanya
+  menampilkan hasil berkas dari domain militer .mil.&quot;,&quot;Operator NOT
+  atau tanda minus - digunakan untuk mengecualikan kata kunci tertentu yang
+  tidak berkaitan dari halaman pencarian.&quot;,&quot;Penggunaan tanda petik
+  ganda \&quot;\&quot; secara otomatis melacak versi salinan sementara terbaru
+  halaman web di
   server.&quot;],&quot;correctAnswers&quot;:[0,2]},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Pencarian
   informasi ilmiah secara daring menggunakan kata kunci sederhana sering kali
   tidak efektif. Seorang siswa ingin mencari data ilmiah mengenai
@@ -213,6 +215,6 @@ content: >
   mengandung kata kunci tertentu.&quot;,&quot;Menghapus seluruh riwayat
   (history) penelusuran peramban internet secara
   otomatis.&quot;],&quot;correctPairs&quot;:{&quot;0&quot;:1,&quot;1&quot;:2,&quot;2&quot;:0,&quot;3&quot;:3}}]"
-  _best-skor="0" _pernah-ikut _attempt-ke="2">
+  _attempt-ke="0">
 
   </latihan-kuis>
