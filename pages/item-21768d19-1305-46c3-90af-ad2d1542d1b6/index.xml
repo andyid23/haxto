@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-21768d19-1305-46c3-90af-ad2d1542d1b6</id>
+<indent>0</indent>
+<location>pages/item-21768d19-1305-46c3-90af-ad2d1542d1b6/index.xml</location>
+<slug>ulangan-harian-1-fase-e-lm1-e</slug>
+<order>4</order>
+<parent></parent>
+<title>Ulangan Harian 1 Fase E LM1-E</title>
+<description></description>
+<metadata>
+<locked>false</locked>
+<created>1788163319</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1788163319</updated>
+</metadata>
+<content><![CDATA[
+<h2 id="h2--2080334786">📝 Kuis OPTIMALISASI PENCARIAN LANJUTAN UNTUK RISET (LM1)</h2>
+<p></p>
+<p>Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban
+  benar/salah ditampilkan. Setelah login <mark>reload</mark>untuk menampilkan <mark>tombol mulai</mark>&#160;ulangan. Nilai akhir akan diambil dari nilai terakhir yang dikumpulkan setelah waktu habis atau semua soal terjawab. Waktu Pengerjaan Soal 15 Menit&#160;🤐</p>
+<p>Kalau <b><u>mode gelap</u></b>
+ tidak bisa gunakan <mark>mode terang</mark> di smartphonemu&#160;😄</p>
+<quiz-user-auth apps-script-url="https://script.google.com/macros/s/AKfycbyt6bfek-Is4YPJ2cux2H5Bp2Vk62wokK0-4Bl4wWy1uQM1VURByUgq-F_z0i2TxrEE/exec" auto-login _student-id=""></quiz-user-auth>
+Ulangan
+<latihan-kuis
+  mode="siswa"
+  max-retake="0"
+  duration="900"
+  timer-autostart="true"
+  hide-pause-restart="true"
+  hide-confetti="true"
+  hide-answers="false"
+  hide-score="true"
+  shuffle-questions="true"
+  shuffle-choices="true"
+  kategori="sumatif_lm" apps-script-url="https://script.google.com/macros/s/AKfycbyuprudZkCq_YCQ-CqqD_huzndsbA6zHsg_ICfqPnlB97dhcrm1xJjGxJ3u4Jp8DjJQ/exec"
+  kd-materi="LM1"
+  student-id=""
+  judul-kuis="Ulangan Harian"
+  show-sheet-link="false"
+  soal-file-url="./files/soal-contoh.json"
+>
+</latihan-kuis>
+]]></content>
+</item>

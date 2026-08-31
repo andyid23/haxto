@@ -1,0 +1,203 @@
+[
+  {
+    "type": "mc",
+    "question": "Pencarian informasi ilmiah secara daring menggunakan kata kunci sederhana sering kali tidak efektif karena menghasilkan jutaan data tidak relevan. Guna menyaring data secara presisi, pengguna dapat menerapkan variabel pencarian lanjutan seperti site: untuk domain web dan filetype: untuk format berkas. Seorang siswa kelas XI sedang melakukan riset mengenai \"dampak emisi karbon\". Ia ingin mencari dokumen laporan resmi berformat PDF yang diterbitkan langsung oleh instansi pemerintah Indonesia (domain go.id) agar datanya valid. Sintaks pencarian lanjutan manakah yang paling cepat dan akurat untuk memenuhi kebutuhan tersebut?",
+    "choices": [
+      "dampak emisi karbon filetype:pdf site:edu",
+      "\"dampak emisi karbon\" site:go.id filetype:pdf",
+      "dampak emisi karbon AND site:go.id OR filetype:pdf",
+      "site:gov filetype:pdf \"dampak emisi karbon\"",
+      "inurl:emisi_karbon filetype:doc site:com"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "type": "mc",
+    "question": "Pencarian informasi ilmiah secara daring menggunakan kata kunci sederhana sering kali tidak efektif karena menghasilkan jutaan data tidak relevan. Selain itu, operator logika boolean (AND, OR, NOT) berperan penting dalam mengaitkan atau mengecualikan konsep penelusuran. Ketika melakukan riset daring, adakalanya kita ingin mengecualikan kata tertentu yang tidak relevan agar tidak muncul di halaman pencarian. Operator logika boolean atau karakter penulisan manakah yang digunakan untuk mengecualikan kata kunci di mesin pencari Google?",
+    "choices": [
+      "Operator AND",
+      "Operator OR",
+      "Operator NOT atau tanda minus -",
+      "Tanda petik ganda \"\"",
+      "Variabel site:"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "type": "mc",
+    "question": "Dalam pencarian lanjut pada mesin pencari Google, apa fungsi utama dari penggunaan tanda petik ganda \"\" di awal dan akhir frasa kata kunci (seperti \"energi terbarukan\")?",
+    "choices": [
+      "Mengonversi dokumen secara otomatis ke format file PDF",
+      "Melacak halaman web yang judulnya hanya memuat kata kunci tunggal",
+      "Menginstruksikan mesin pencari untuk melacak frasa kata kunci secara tepat dan persis (Exact Match)",
+      "Melakukan enkripsi otomatis pada jalur koneksi internet browser",
+      "Menghapus data cache sementara dari server Google"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "type": "mc",
+    "question": "Pencarian informasi ilmiah secara daring menggunakan kata kunci sederhana sering kali tidak efektif. Seorang peneliti ingin mencari informasi spesifik mengenai \"pemanasan global\" di situs web resmi kementerian/lembaga pemerintah Indonesia (go.id). Sintaks penulisan di mesin pencari yang benar-benar membatasi hasil pencarian hanya pada domain tersebut adalah...",
+    "choices": [
+      "\"pemanasan global\" site:go.id",
+      "pemanasan global OR site:go.id",
+      "\"pemanasan global\" filetype:go.id",
+      "intext:pemanasan global site:edu",
+      "\"pemanasan global\" -site:go.id"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "type": "mc",
+    "question": "Dalam merumuskan strategi pencarian di mesin pencari Google, mengapa penggunaan kata kunci yang terlampau spesifik dan sempit sangat dihindari oleh seorang peneliti?",
+    "choices": [
+      "Karena dapat memblokir alamat IP komputer pengguna secara otomatis",
+      "Karena dapat mematikan konektivitas jaringan nirkabel router",
+      "Karena berisiko menghilangkan informasi penting lainnya yang tersedia di bawah terminologi yang lebih umum",
+      "Karena mengacaukan pengodean biner pada memori cache komputer",
+      "Karena memaksa browser mengunduh virus digital secara otomatis"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "type": "mc",
+    "question": "Teknologi pencarian modern seperti Google Lens dikembangkan untuk membantu pengguna internet melakukan penelusuran informasi yang tidak terbatas pada teks saja. Penelusuran informasi pada Google Lens didasarkan pada pencocokan...",
+    "choices": [
+      "Suara/vokal secara interaktif",
+      "Gambar/visual yang diunggah pengguna",
+      "Enkripsi persandian asimetris",
+      "Koordinat geolokasi satelit secara otomatis",
+      "Aliran paket data nirkabel"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "type": "mc",
+    "question": "Di tengah keterbatasan akses internet, seorang siswa ingin melihat versi salinan sementara terbaru dari suatu halaman web yang disimpan oleh server mesin pencari Google. Variabel pencarian lanjutan manakah yang harus ia gunakan?",
+    "choices": [
+      "site:",
+      "filetype:",
+      "cache:",
+      "inurl:",
+      "intitle:"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "type": "mc",
+    "question": "Dalam riset akademis di Indonesia, manakah domain website pengelola di internet yang tergolong kredibel, tepercaya, dan secara resmi dikelola oleh institusi pendidikan tinggi?",
+    "choices": [
+      ".com",
+      ".ac.id",
+      ".blogspot.com",
+      ".net",
+      ".org"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "type": "mc",
+    "question": "Mengapa penggunaan kata kunci yang tidak berkaitan dengan topik penelitian tidak termasuk dalam langkah-langkah pencarian informasi yang efektif?",
+    "choices": [
+      "Karena dapat merusak perangkat keras komputer pengguna secara langsung",
+      "Karena menghasilkan hasil pencarian yang tidak relevan dengan topik sehingga menyulitkan pencarian informasi yang dibutuhkan",
+      "Karena otomatis memblokir koneksi internet browser",
+      "Karena memaksa server Google menghapus data pencarian pengguna",
+      "Karena mempercepat durasi loading halaman web secara berlebihan"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "type": "mc",
+    "question": "Mengapa situs web dengan protokol HTTPS dinilai jauh lebih aman dan kredibel untuk diakses saat menjelajah informasi digital dibandingkan situs HTTP biasa?",
+    "choices": [
+      "Karena HTTPS secara otomatis menghapus file duplikat di internet",
+      "Karena HTTPS mempercepat proses indexing Google secara real-time",
+      "Karena HTTPS menggunakan enkripsi SSL/TLS untuk melindungi data pengguna dari akses pihak yang tidak sah",
+      "Karena HTTPS tidak memerlukan koneksi internet nirkabel untuk loading",
+      "Karena HTTPS otomatis memblokir iklan pop-up di browser"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "type": "pgk",
+    "question": "Pencarian informasi ilmiah secara daring menggunakan kata kunci sederhana sering kali tidak efektif karena menghasilkan jutaan data tidak relevan. Tentukan apakah setiap pernyataan berikut Benar atau Salah mengenai aturan, variabel, dan strategi pencarian lanjutan di mesin pencari!",
+    "statements": [
+      {
+        "text": "Variabel filetype:pdf berfungsi secara presisi untuk membatasi atau menyaring hasil pencarian Google agar hanya menampilkan berkas berformat dokumen PDF.",
+        "answer": true
+      },
+      {
+        "text": "Operator logika boolean OR digunakan untuk mempersempit hasil pencarian secara drastis dengan memaksa mesin pencari menampilkan halaman yang hanya memuat semua kata kunci sekaligus.",
+        "answer": false
+      },
+      {
+        "text": "Penggunaan variabel intitle:riset membatasi penelusuran agar mesin pencari hanya menampilkan halaman web yang judul dokumennya mengandung kata \"riset\".",
+        "answer": true
+      },
+      {
+        "text": "Memasukkan kata kunci pencarian yang tidak berkaitan sangat disarankan karena dapat menghemat waktu riset serta meningkatkan efisiensi penyaringan informasi ilmiah.",
+        "answer": false
+      },
+      {
+        "text": "Penggunaan kata kunci pencarian yang terlampau spesifik atau sempit di awal penelusuran dihindari karena berisiko menghilangkan informasi penting lain yang menggunakan istilah umum.",
+        "answer": true
+      },
+      {
+        "text": "Variabel inurl:jurnal digunakan untuk mengunci pelacakan kata kunci \"jurnal\" khusus hanya di dalam badan teks (body text) halaman web.",
+        "answer": false
+      }
+    ]
+  },
+  {
+    "type": "mc",
+    "question": "Pencarian informasi ilmiah secara daring menggunakan kata kunci sederhana sering kali tidak efektif. Manakah dua pernyataan berikut yang benar mengenai fungsi dari operator logika boolean dan format pencarian di mesin pencari Google?",
+    "choices": [
+      "Operator AND berfungsi menggabungkan beberapa kata kunci guna mempersempit ruang lingkup pencarian data.",
+      "Operator OR berfungsi membatasi penelusuran agar hanya menampilkan hasil berkas dari domain militer .mil.",
+      "Operator NOT atau tanda minus - digunakan untuk mengecualikan kata kunci tertentu yang tidak berkaitan dari halaman pencarian.",
+      "Penggunaan tanda petik ganda \"\" secara otomatis melacak versi salinan sementara terbaru halaman web di server."
+    ],
+    "correctAnswers": [
+      0,
+      2
+    ]
+  },
+  {
+    "type": "mc",
+    "question": "Pencarian informasi ilmiah secara daring menggunakan kata kunci sederhana sering kali tidak efektif. Seorang siswa ingin mencari data ilmiah mengenai \"teknologi pangan\" yang diterbitkan secara resmi oleh perguruan tinggi di Indonesia (ac.id). Manakah dua sintaks pencarian lanjutan yang sah dan benar-benar membatasi pelacakan hanya ke situs web perguruan tinggi Indonesia tersebut?",
+    "choices": [
+      "\"teknologi pangan\" site:ac.id",
+      "\"teknologi pangan\" filetype:ac.id",
+      "site:ac.id intext:\"teknologi pangan\"",
+      "\"teknologi pangan\" OR site:edu"
+    ],
+    "correctAnswers": [
+      0,
+      2
+    ]
+  },
+  {
+    "type": "matching",
+    "question": "Pasangkanlah variabel pencarian lanjutan Google di lajur kiri dengan deskripsi penjelasannya yang tepat di lajur kanan!",
+    "leftItems": [
+      "site:",
+      "filetype:",
+      "inurl:",
+      "intitle:"
+    ],
+    "rightItems": [
+      "Melacak kata kunci spesifik yang tertanam di dalam alamat URL halaman web.",
+      "Membatasi hasil pencarian hanya pada alamat web atau domain tertentu (seperti .go.id atau .ac.id).",
+      "Menyaring hasil pencarian berdasarkan format dokumen berkas tertentu seperti PDF, DOC, atau PPT.",
+      "Membatasi pencarian halaman web yang judul dokumennya mengandung kata kunci tertentu.",
+      "Menghapus seluruh riwayat (history) penelusuran peramban internet secara otomatis."
+    ],
+    "correctPairs": {
+      "0": 1,
+      "1": 2,
+      "2": 0,
+      "3": 3
+    }
+  }
+]

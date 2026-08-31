@@ -1,26 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://localhost:3000/sites/haxto/welcome</loc>
-    <lastmod>2026-08-28T06:06:19.000Z</lastmod>
+    <loc>https://localhost:3000/sites/haxto/selamat-datang-pada-ulangan</loc>
+    <lastmod>2026-08-31T08:01:59.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/sites/haxto/latihan-ulangan-harian</loc>
-    <lastmod>2026-08-28T04:06:32.000Z</lastmod>
+    <loc>https://localhost:3000/sites/haxto/latihan/simulasi-kuis</loc>
+    <lastmod>2026-08-31T08:01:59.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/sites/haxto/halaman-tugas</loc>
-    <lastmod>2026-08-28T04:06:32.000Z</lastmod>
+    <loc>https://localhost:3000/sites/haxto/materi-simulasi-ulangan/kuis</loc>
+    <lastmod>2026-08-31T08:01:59.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://localhost:3000/sites/haxto/ulangan-harian-1</loc>
-    <lastmod>2026-08-28T04:06:32.000Z</lastmod>
+    <lastmod>2026-08-31T08:01:59.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/sites/haxto/ulangan-harian-1-fase-e-lm1-e</loc>
+    <lastmod>2026-08-31T08:01:59.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>

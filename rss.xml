@@ -6,28 +6,28 @@
     <description></description>
     <copyright>Copyright (C) 2026 https://localhost:3000/sites/haxto</copyright>
     <language>en-us</language>
-    <lastBuildDate>Fri, 28 Aug 2026 04:32:05 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 31 Aug 2026 08:02:00 GMT</lastBuildDate>
     <generator>HAXcms NodeJS</generator>
     <atom:link href="https://localhost:3000/sites/haxto/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>Selamat Datang Pada Ulangan</title>
-      <link>https://localhost:3000/sites/haxto/welcome</link>
+      <link>https://localhost:3000/sites/haxto/selamat-datang-pada-ulangan</link>
       <description>You, while using HAX ...probably Evaluasi &amp;#38; Kuis Terpadu Gunakan dasbor di bawah ini untuk memantau kelas, mengerjakan kuis, dan melihat hasil evaluasi. Masuk dengan akun siswa terlebih dahulu bila Anda siswa.</description>
-      <guid>https://localhost:3000/sites/haxto/welcome</guid>
+      <guid>https://localhost:3000/sites/haxto/selamat-datang-pada-ulangan</guid>
       <pubDate>Sun, 23 Aug 2026 03:55:59 GMT</pubDate>
     </item>
     <item>
       <title>LATIHAN/SIMULASI KUIS</title>
-      <link>https://localhost:3000/sites/haxto/latihan-ulangan-harian</link>
+      <link>https://localhost:3000/sites/haxto/latihan/simulasi-kuis</link>
       <description>📝 Latihan Kuis Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban benar/salah ditampilkan. Setelah login reload untuk menampilkan tombol mulai latihan ulangan. Bisa mengulang latihan ulangan maksimal 4 kali. Nilai akhir akan diambil dari nilai terakhir yang dikumpulkan setelah waktu habis atau semua soal terjawab. Waktu Pengerjaan Soal 15 Menit</description>
-      <guid>https://localhost:3000/sites/haxto/latihan-ulangan-harian</guid>
+      <guid>https://localhost:3000/sites/haxto/latihan/simulasi-kuis</guid>
       <pubDate>Sun, 23 Aug 2026 06:35:36 GMT</pubDate>
     </item>
     <item>
       <title>Materi Simulasi Ulangan/Kuis</title>
-      <link>https://localhost:3000/sites/haxto/halaman-tugas</link>
+      <link>https://localhost:3000/sites/haxto/materi-simulasi-ulangan/kuis</link>
       <description>📘 Cara Mengerjakan Latihan Simak materi dan pahami, lanjutkan soal latihan di bawah dengan login terlebih dahulu, harap refresh bila tombol mulai latihan soal tidak muncul setelah login. TOPIK: OPTIMALISASI PENCARIAN LANJUTAN UNTUK RISET 1. Pendahuluan Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep inti serta implementasi dari sistem komputer, jaringan, dan kecakapan digital. Di tengah arus transformasi digital yang mengalir deras, literasi digital dan kemampuan b...</description>
-      <guid>https://localhost:3000/sites/haxto/halaman-tugas</guid>
+      <guid>https://localhost:3000/sites/haxto/materi-simulasi-ulangan/kuis</guid>
       <pubDate>Wed, 26 Aug 2026 05:22:47 GMT</pubDate>
     </item>
     <item>
@@ -37,6 +37,13 @@
       <category>Literasi Digital</category>
       <guid>https://localhost:3000/sites/haxto/ulangan-harian-1</guid>
       <pubDate>Thu, 27 Aug 2026 18:12:24 GMT</pubDate>
+    </item>
+    <item>
+      <title>Ulangan Harian 1 Fase E LM1-E</title>
+      <link>https://localhost:3000/sites/haxto/ulangan-harian-1-fase-e-lm1-e</link>
+      <description>📝 Kuis OPTIMALISASI PENCARIAN LANJUTAN UNTUK RISET (LM1) Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban benar/salah ditampilkan. Setelah login reload untuk menampilkan tombol mulai &amp;#160;ulangan. Nilai akhir akan diambil dari nilai terakhir yang dikumpulkan setelah waktu habis atau semua soal terjawab. Waktu Pengerjaan Soal 15 Menit&amp;#160;🤐 Kalau mode gelap tidak bisa gunakan mode terang di smartphonemu&amp;#160;😄 Ulangan</description>
+      <guid>https://localhost:3000/sites/haxto/ulangan-harian-1-fase-e-lm1-e</guid>
+      <pubDate>Mon, 31 Aug 2026 08:01:59 GMT</pubDate>
     </item>
   </channel>
 </rss>
