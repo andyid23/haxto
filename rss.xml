@@ -6,7 +6,7 @@
     <description></description>
     <copyright>Copyright (C) 2026 https://localhost:3000/sites/haxto</copyright>
     <language>en-us</language>
-    <lastBuildDate>Mon, 31 Aug 2026 08:07:53 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 31 Aug 2026 08:40:02 GMT</lastBuildDate>
     <generator>HAXcms NodeJS</generator>
     <atom:link href="https://localhost:3000/sites/haxto/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
@@ -44,6 +44,13 @@
       <description>📝 Kuis Ekosistem Periksa Fakta &amp;#38; CRAAP, PENCARIAN LANJUTAN (LM1) Kelas X Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban benar/salah ditampilkan. Setelah login reload untuk menampilkan tombol mulai &amp;#160;ulangan. Nilai akhir akan diambil dari nilai terakhir yang dikumpulkan setelah waktu habis atau semua soal terjawab. Waktu Pengerjaan Soal 15 Menit&amp;#160;🤐 Kalau mode gelap tidak bisa gunakan mode terang di smartphonemu&amp;#160;😄</description>
       <guid>https://localhost:3000/sites/haxto/ulangan-harian-1-fase-e-lm1-e</guid>
       <pubDate>Mon, 31 Aug 2026 08:01:59 GMT</pubDate>
+    </item>
+    <item>
+      <title>LATIHAN/SIMULASI KUIS FASE-E-LM1</title>
+      <link>https://localhost:3000/sites/haxto/latihan/simulasi-kuis-fase-e-lm1</link>
+      <description>📝 Latihan Kuis Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban benar/salah ditampilkan. Setelah login reload untuk menampilkan tombol mulai latihan ulangan. Bisa mengulang latihan ulangan maksimal 4 kali. Nilai akhir akan diambil dari nilai terakhir yang dikumpulkan setelah waktu habis atau semua soal terjawab. Waktu Pengerjaan Soal 15 Menit</description>
+      <guid>https://localhost:3000/sites/haxto/latihan/simulasi-kuis-fase-e-lm1</guid>
+      <pubDate>Mon, 31 Aug 2026 08:40:02 GMT</pubDate>
     </item>
   </channel>
 </rss>

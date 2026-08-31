@@ -15,6 +15,7 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Materi Simulasi Ulangan/Kuis](https://localhost:3000/sites/haxto/pages/item-ba9170fc-d0c5-49c4-bb1b-327ff46aa871/index.md): soal latihan
 - [Ulangan Harian 1](https://localhost:3000/sites/haxto/pages/item-43d63e69-4564-4ae3-80df-ffa7a6677b2b/index.md)
 - [Ulangan Harian 1 Fase E LM1-E](https://localhost:3000/sites/haxto/pages/item-21768d19-1305-46c3-90af-ad2d1542d1b6/index.md): 📝 Kuis Ekosistem Periksa Fakta &#38; CRAAP, PENCARIAN LANJUTAN (LM1) Kelas X Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban benar/salah ditampilkan. Setelah logi
+- [LATIHAN/SIMULASI KUIS FASE-E-LM1](https://localhost:3000/sites/haxto/pages/item-792b811f-d307-4765-93cb-f20ed47c8097/index.md)
 
 ## Optional
 - [Search index](https://localhost:3000/sites/haxto/lunrSearchIndex.json): Lunr corpus for quick full-text retrieval.

@@ -1,0 +1,18 @@
+{
+  "id": "item-792b811f-d307-4765-93cb-f20ed47c8097",
+  "indent": 0,
+  "location": "pages/item-792b811f-d307-4765-93cb-f20ed47c8097/index.json",
+  "slug": "latihan/simulasi-kuis-fase-e-lm1",
+  "order": 1,
+  "parent": null,
+  "title": "LATIHAN/SIMULASI KUIS FASE-E-LM1",
+  "description": "",
+  "metadata": {
+    "locked": false,
+    "created": 1788165602,
+    "images": [],
+    "videos": [],
+    "updated": 1788165602
+  },
+  "content": "\n<h2 id=\"h2-572249993\">📝 Latihan Kuis</h2>\n<p>Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban\n  benar/salah ditampilkan. Setelah login reload untuk menampilkan tombol mulai latihan ulangan. Bisa mengulang latihan ulangan maksimal 4 kali. Nilai akhir akan diambil dari nilai terakhir yang dikumpulkan\n  setelah waktu habis atau semua soal terjawab. Waktu Pengerjaan Soal 15 Menit</p>\n<quiz-user-auth apps-script-url=\"https://script.google.com/macros/s/AKfycbxJtcgtms69cByMneEgPvDUg7S3NkmhdiQtsCUTG8bJpsZw2dP9UDrRCkd1HNZ-EvY/exec\" auto-login _student-id=\"STD-65108053\"></quiz-user-auth>\n<br/><p></p>\n<latihan-kuis\n  mode=\"siswa\"\n  allow-retake=\"true\"\n  max-retake=\"5\"\n  duration=\"900\"\n  timer-autostart=\"true\"\n  shuffle-questions=\"false\"\n  shuffle-choices=\"true\"\n  kategori=\"formatif\"\napps-script-url=\"https://script.google.com/macros/s/AKfycbyuprudZkCq_YCQ-CqqD_huzndsbA6zHsg_ICfqPnlB97dhcrm1xJjGxJ3u4Jp8DjJQ/exec\"\n  kd-materi=\"LD-1 Latihan\"\n  student-id=\"\"\n  judul-materi=\"Materi: Pencarian\"\n  teks-materi=\"Baca contoh di bawah, lalu kerjakan kuis. Kamu bisa mengulang sampai 4 kali.\"\n  materi-url=\"./halaman-tugas\"\n  show-sheet-link=\"false\"\n   soal-file-url=\"./files/soal-contoh.json\"\n   >\n</latihan-kuis>\n"
+}
