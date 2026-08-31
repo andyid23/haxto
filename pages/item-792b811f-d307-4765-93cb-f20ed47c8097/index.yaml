@@ -16,7 +16,7 @@ metadata:
   created: 1788165602
   images: []
   videos: []
-  updated: 1788165994
+  updated: 1788166034
   theme:
     element: polaris-flex-theme
     path: '@haxtheweb/polaris-theme/lib/polaris-flex-theme.js'
@@ -31,7 +31,7 @@ metadata:
     terrible: false
     key: polaris-flex-theme
   published: true
-  hideInMenu: false
+  hideInMenu: true
   icon: av:album
   readtime: 1
 content: >
@@ -54,7 +54,7 @@ content: >
   kd-materi="LD-1 Latihan" student-id="" judul-materi="Materi: Pencarian"
   teks-materi="Baca contoh di bawah, lalu kerjakan kuis. Kamu bisa mengulang
   sampai 4 kali." materi-url="./halaman-tugas" show-sheet-link
-  soal-file-url="./files/soal-contoh.json"  materi-file="" cover-image=""
+  soal-file-url="./files/soal-contoh.json" materi-file="" cover-image=""
   judul-kuis="Evaluasi Kuis Interaktif" student-name="" student-nis=""
   student-absen="" student-kelas="" pesan-waktu-habis="⏰ Waktu habis! Kuis
   dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda
@@ -215,6 +215,6 @@ content: >
   mengandung kata kunci tertentu.&quot;,&quot;Menghapus seluruh riwayat
   (history) penelusuran peramban internet secara
   otomatis.&quot;],&quot;correctPairs&quot;:{&quot;0&quot;:1,&quot;1&quot;:2,&quot;2&quot;:0,&quot;3&quot;:3}}]"
-  _attempt-ke="0">
+  _attempt-ke="0" >
 
   </latihan-kuis>

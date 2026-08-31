@@ -25,7 +25,7 @@
       "name": "haxto",
       "domain": "",
       "created": 1787457359,
-      "updated": 1788165994,
+      "updated": 1788166034,
       "logo": "",
       "version": "26.0.1"
     },
@@ -231,7 +231,7 @@
         "created": 1788165602,
         "images": [],
         "videos": [],
-        "updated": 1788165994,
+        "updated": 1788166034,
         "theme": {
           "element": "polaris-flex-theme",
           "path": "@haxtheweb/polaris-theme/lib/polaris-flex-theme.js",
@@ -247,7 +247,7 @@
           "key": "polaris-flex-theme"
         },
         "published": true,
-        "hideInMenu": false,
+        "hideInMenu": true,
         "icon": "av:album",
         "readtime": 1
       }
