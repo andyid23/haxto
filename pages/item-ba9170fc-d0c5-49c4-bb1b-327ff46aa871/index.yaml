@@ -1,14 +1,14 @@
 id: item-ba9170fc-d0c5-49c4-bb1b-327ff46aa871
 indent: 0
 location: pages/item-ba9170fc-d0c5-49c4-bb1b-327ff46aa871/index.yaml
-slug: halaman-tugas
-order: 1
+slug: materi-simulasi-ulangan-kuis
+order: 2
 parent: null
-title: Simulasi Ulangan/Kuis
+title: Materi Simulasi Ulangan/Kuis
 description: 'soal latihan '
 metadata:
   created: 1787721767
-  updated: 1787887221
+  updated: 1788169353
   images: []
   videos: []
   published: true
@@ -129,7 +129,9 @@ content: >
         <p><strong>Pencarian Visual (Google Lens): Teknologi penelusuran informasi non-teks yang didasarkan pada pencocokan data gambar/visual yang diunggah pengguna dengan sumber visual serupa di internet.</strong> 
         </p>
 
+
       </li>
+
 
     </ul>
   <hr/><h3 id="h3--2136781867"><strong>4. Miskonsepsi Umum</strong></h3>
@@ -190,18 +192,17 @@ content: >
         persis, sedangkan filetype:pdf langsung menyaring file dokumen siap pakai tanpa perlu
         menyusuri artikel blog pribadi yang tidak valid.</li>
     </ul>
-  <latihan-kuis
+  <latihan-kuis mode="siswa" allow-retake max-retake="5" duration="900"
+  timer-autostart shuffle-questions shuffle-choices kategori="formatif"
   apps-script-url="https://script.google.com/macros/s/AKfycbyuprudZkCq_YCQ-CqqD_huzndsbA6zHsg_ICfqPnlB97dhcrm1xJjGxJ3u4Jp8DjJQ/exec"
-  kd-materi="bab1" student-id="" show-sheet-link
-  soal-file-url="./files/soal-contoh.json" allow-retake max-retake="4"
-  duration="1100" judul-kuis="Kuis Formatif Literasi" judul-materi="Materi
-  Pembelajaran" teks-materi="Baca materi di atas ini dengan saksama sebelum
-  mengerjakan kuis. Waktu pengerjaan kuis dibatasi oleh timer; saat waktu habis,
-  kuis akan dikunci dan nilai otomatis terkirim.  Bisa diulang sampai 4x latihan
-  untuk nilai terbaik" materi-file="" cover-image="" student-name=""
-  student-nis="" student-absen="" student-kelas="" pesan-waktu-habis="⏰ Waktu
-  habis! Kuis dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat!
-  Nilai Anda sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai Latihan"
+  kd-materi="LD-1 Latihan" student-id="" judul-materi="Materi: Pencarian"
+  teks-materi="Baca materi di atas, lalu kerjakan kuis. Kamu bisa mengulang
+  sampai 4 kali." show-sheet-link soal-file-url="./files/soal-contoh.json"  
+  materi-file="" cover-image="" judul-kuis="Evaluasi Kuis Interaktif"
+  student-name="" student-nis="" student-absen="" student-kelas=""
+  pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai otomatis."
+  pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet."
+  label-mulai="▶️ Mulai" hide-pause-restart
   questions="[{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Pencarian
   informasi ilmiah secara daring menggunakan kata kunci sederhana sering kali
   tidak efektif karena menghasilkan jutaan data tidak relevan. Guna menyaring
@@ -329,13 +330,13 @@ content: >
   tidak efektif. Manakah dua pernyataan berikut yang benar mengenai fungsi dari
   operator logika boolean dan format pencarian di mesin pencari
   Google?&quot;,&quot;choices&quot;:[&quot;Operator AND berfungsi menggabungkan
-  beberapa kata kunci guna mempersempit ruang lingkup pencarian data sementara
-  terbaru halaman web di server..&quot;,&quot;Operator OR berfungsi membatasi
-  penelusuran agar hanya menampilkan hasil berkas dari domain militer .mil. dan
-  ac.id. .com.&quot;,&quot;Operator NOT atau tanda minus - digunakan untuk
-  mengecualikan kata kunci tertentu yang tidak berkaitan dari halaman
-  pencarian.&quot;,&quot;Penggunaan tanda petik ganda \&quot;\&quot; secara
-  otomatis melacak versi salinan sementara terbaru halaman web di
+  beberapa kata kunci guna mempersempit ruang lingkup pencarian
+  data.&quot;,&quot;Operator OR berfungsi membatasi penelusuran agar hanya
+  menampilkan hasil berkas dari domain militer .mil.&quot;,&quot;Operator NOT
+  atau tanda minus - digunakan untuk mengecualikan kata kunci tertentu yang
+  tidak berkaitan dari halaman pencarian.&quot;,&quot;Penggunaan tanda petik
+  ganda \&quot;\&quot; secara otomatis melacak versi salinan sementara terbaru
+  halaman web di
   server.&quot;],&quot;correctAnswers&quot;:[0,2]},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Pencarian
   informasi ilmiah secara daring menggunakan kata kunci sederhana sering kali
   tidak efektif. Seorang siswa ingin mencari data ilmiah mengenai
@@ -358,5 +359,6 @@ content: >
   mengandung kata kunci tertentu.&quot;,&quot;Menghapus seluruh riwayat
   (history) penelusuran peramban internet secara
   otomatis.&quot;],&quot;correctPairs&quot;:{&quot;0&quot;:1,&quot;1&quot;:2,&quot;2&quot;:0,&quot;3&quot;:3}}]"
-  _attempt-ke="0"   mode="siswa" hide-pause-restart kategori="Formatif"
-  timer-autostart></latihan-kuis>
+  _attempt-ke="0">
+
+  </latihan-kuis>

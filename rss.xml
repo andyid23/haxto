@@ -6,7 +6,7 @@
     <description></description>
     <copyright>Copyright (C) 2026 https://localhost:3000/sites/haxto</copyright>
     <language>en-us</language>
-    <lastBuildDate>Mon, 31 Aug 2026 08:46:34 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 31 Aug 2026 08:47:14 GMT</lastBuildDate>
     <generator>HAXcms NodeJS</generator>
     <atom:link href="https://localhost:3000/sites/haxto/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
@@ -25,9 +25,9 @@
     </item>
     <item>
       <title>Materi Simulasi Ulangan/Kuis</title>
-      <link>https://localhost:3000/sites/haxto/materi-simulasi-ulangan/kuis</link>
+      <link>https://localhost:3000/sites/haxto/materi-simulasi-ulangan-kuis</link>
       <description>📘 Cara Mengerjakan Latihan Simak materi dan pahami, lanjutkan soal latihan di bawah dengan login terlebih dahulu, harap refresh bila tombol mulai latihan soal tidak muncul setelah login. TOPIK: OPTIMALISASI PENCARIAN LANJUTAN UNTUK RISET 1. Pendahuluan Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep inti serta implementasi dari sistem komputer, jaringan, dan kecakapan digital. Di tengah arus transformasi digital yang mengalir deras, literasi digital dan kemampuan b...</description>
-      <guid>https://localhost:3000/sites/haxto/materi-simulasi-ulangan/kuis</guid>
+      <guid>https://localhost:3000/sites/haxto/materi-simulasi-ulangan-kuis</guid>
       <pubDate>Wed, 26 Aug 2026 05:22:47 GMT</pubDate>
     </item>
     <item>
@@ -48,7 +48,7 @@
     <item>
       <title>LATIHAN/SIMULASI KUIS FASE-E-LM1</title>
       <link>https://localhost:3000/sites/haxto/latihan/simulasi-kuis-fase-e-lm1</link>
-      <description>📝 Latihan Kuis Kelas X Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban benar/salah ditampilkan. Setelah login reload untuk menampilkan tombol mulai latihan ulangan. Bisa mengulang latihan ulangan maksimal 4 kali. Nilai akhir akan diambil dari nilai terakhir yang dikumpulkan setelah waktu habis atau semua soal terjawab. Waktu Pengerjaan Soal 15 Menit</description>
+      <description>📝 Latihan Kuis Kelas X Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban benar/salah ditampilkan. Setelah login reload untuk menampilkan tombol mulai latihan ulangan. Bisa mengulang latihan ulangan maksimal 4 kali. Nilai akhir akan diambil dari nilai terakhir yang dikumpulkan setelah waktu habis atau semua soal terjawab. Waktu Pengerjaan Soal 15 Menit Kalau mode gelap tidak bisa gunakan mode terang di smartphonemu&amp;#160;😄</description>
       <guid>https://localhost:3000/sites/haxto/latihan/simulasi-kuis-fase-e-lm1</guid>
       <pubDate>Mon, 31 Aug 2026 08:40:02 GMT</pubDate>
     </item>
