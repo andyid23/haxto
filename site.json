@@ -25,7 +25,7 @@
       "name": "haxto",
       "domain": "",
       "created": 1787457359,
-      "updated": 1788170448,
+      "updated": 1788170887,
       "logo": "",
       "version": "26.0.1"
     },
@@ -267,7 +267,7 @@
         "created": 1788169908,
         "images": [],
         "videos": [],
-        "updated": 1788170448,
+        "updated": 1788170887,
         "theme": {
           "element": "terrible-resume-themes",
           "path": "@haxtheweb/terrible-themes/lib/terrible-resume-themes.js",
@@ -286,7 +286,7 @@
         "published": true,
         "hideInMenu": true,
         "accentColor": "purple",
-        "readtime": 5
+        "readtime": 6
       }
     }
   ]
