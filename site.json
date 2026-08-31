@@ -25,7 +25,7 @@
       "name": "haxto",
       "domain": "",
       "created": 1787457359,
-      "updated": 1788165602,
+      "updated": 1788165994,
       "logo": "",
       "version": "26.0.1"
     },
@@ -225,13 +225,31 @@
       "order": 1,
       "parent": null,
       "title": "LATIHAN/SIMULASI KUIS FASE-E-LM1",
-      "description": "",
+      "description": "📝 Latihan Kuis Kelas X\nKerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban\n  benar/salah ditampilkan. Setelah login reload untuk menampilkan tombol mulai latihan ulangan",
       "metadata": {
         "locked": false,
         "created": 1788165602,
         "images": [],
         "videos": [],
-        "updated": 1788165602
+        "updated": 1788165994,
+        "theme": {
+          "element": "polaris-flex-theme",
+          "path": "@haxtheweb/polaris-theme/lib/polaris-flex-theme.js",
+          "name": "Polaris Flex",
+          "thumbnail": "@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-polaris-flex-theme-thumb.jpg",
+          "description": "Start with a blank site using the Polaris Flex",
+          "category": [
+            "Website"
+          ],
+          "hidden": false,
+          "priority": -1,
+          "terrible": false,
+          "key": "polaris-flex-theme"
+        },
+        "published": true,
+        "hideInMenu": false,
+        "icon": "av:album",
+        "readtime": 1
       }
     }
   ]
