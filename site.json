@@ -25,7 +25,7 @@
       "name": "haxto",
       "domain": "",
       "created": 1787457359,
-      "updated": 1788169909,
+      "updated": 1788170289,
       "logo": "",
       "version": "26.0.1"
     },
@@ -261,13 +261,32 @@
       "order": 3,
       "parent": null,
       "title": "EKOSISTEM PERIKSA FAKTA & METODE CRAAP",
-      "description": "",
+      "description": "📘 Cara Mengerjakan Latihan\nSimak materi dan pahami, lanjutkan soal latihan di bawah dengan login terlebih dahulu,\n  harap refresh bila tombol mulai latihan soal tidak muncul setelah login.\n\n\n\n\n\n1. P",
       "metadata": {
         "locked": false,
         "created": 1788169908,
         "images": [],
         "videos": [],
-        "updated": 1788169908
+        "updated": 1788170289,
+        "theme": {
+          "element": "terrible-resume-themes",
+          "path": "@haxtheweb/terrible-themes/lib/terrible-resume-themes.js",
+          "name": "Terrible Resume",
+          "thumbnail": "@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-terrible-resume-themes-thumb.jpg",
+          "description": "Start with a blank site using the Terrible Resume",
+          "category": [
+            "Fun",
+            "Website"
+          ],
+          "hidden": false,
+          "priority": 0,
+          "terrible": true,
+          "key": "terrible-resume-themes"
+        },
+        "published": true,
+        "hideInMenu": true,
+        "accentColor": "purple",
+        "readtime": 5
       }
     }
   ]
