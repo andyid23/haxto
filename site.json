@@ -25,7 +25,7 @@
       "name": "haxto",
       "domain": "",
       "created": 1787457359,
-      "updated": 1788170289,
+      "updated": 1788170326,
       "logo": "",
       "version": "26.0.1"
     },
@@ -261,13 +261,13 @@
       "order": 3,
       "parent": null,
       "title": "EKOSISTEM PERIKSA FAKTA & METODE CRAAP",
-      "description": "📘 Cara Mengerjakan Latihan\nSimak materi dan pahami, lanjutkan soal latihan di bawah dengan login terlebih dahulu,\n  harap refresh bila tombol mulai latihan soal tidak muncul setelah login.\n\n\n\n\n\n1. P",
+      "description": "📘 Cara Mengerjakan Latihan Simak materi dan pahami, lanjutkan soal latihan di bawah dengan login terlebih dahulu,   harap refresh bila tombol mulai latihan soal tidak muncul setelah login. 1. P",
       "metadata": {
         "locked": false,
         "created": 1788169908,
         "images": [],
         "videos": [],
-        "updated": 1788170289,
+        "updated": 1788170326,
         "theme": {
           "element": "terrible-resume-themes",
           "path": "@haxtheweb/terrible-themes/lib/terrible-resume-themes.js",

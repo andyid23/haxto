@@ -6,23 +6,15 @@ order: 3
 parent: null
 title: EKOSISTEM PERIKSA FAKTA & METODE CRAAP
 description: >-
-  📘 Cara Mengerjakan Latihan
-
-  Simak materi dan pahami, lanjutkan soal latihan di bawah dengan login terlebih
-  dahulu,
-    harap refresh bila tombol mulai latihan soal tidak muncul setelah login.
-
-
-
-
-
-  1. P
+  📘 Cara Mengerjakan Latihan Simak materi dan pahami, lanjutkan soal latihan di
+  bawah dengan login terlebih dahulu,   harap refresh bila tombol mulai latihan
+  soal tidak muncul setelah login. 1. P
 metadata:
   locked: false
   created: 1788169908
   images: []
   videos: []
-  updated: 1788170289
+  updated: 1788170326
   theme:
     element: terrible-resume-themes
     path: '@haxtheweb/terrible-themes/lib/terrible-resume-themes.js'
@@ -43,55 +35,47 @@ metadata:
   readtime: 5
 content: >
 
-  <h2 id="h2-17200480" data-hax-lock="data-hax-lock">📘 Cara Mengerjakan
-  Latihan</h2>
+  <h2>📘 Cara Mengerjakan Latihan</h2>
 
-  <p data-hax-lock="data-hax-lock">Simak materi dan pahami, lanjutkan soal
-  latihan di bawah dengan login terlebih dahulu,
+  <p>Simak materi dan pahami, lanjutkan soal latihan di bawah dengan login
+  terlebih dahulu,
     harap refresh bila tombol mulai latihan soal tidak muncul setelah login.</p>
-  <p><labs-tailwind-structural-element-view-v2 _ngcontent-ng-c2850564263=""
+  <p>
+    <labs-tailwind-structural-element-view-v2 _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249="">
+      <paragraph-element-view _ngcontent-ng-c2087920249="" _nghost-ng-c784474382=""></paragraph-element-view>
+
+    </labs-tailwind-structural-element-view-v2>
+
+  </p>
+
+  <p aria-level="3"><b _ngcontent-ng-c784474382="">1. Pendahuluan  </b>
+
+  </p>
+
+  <b _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382="">
+  <strong><labs-tailwind-structural-element-view-v2 _ngcontent-ng-c2850564263=""
   _nghost-ng-c2087920249=""><paragraph-element-view _ngcontent-ng-c2087920249=""
   _nghost-ng-c784474382=""></paragraph-element-view>
 
+   </labs-tailwind-structural-element-view-v2>
 
-  </labs-tailwind-structural-element-view-v2>
+   </strong>
+
+   <p _ngcontent-ng-c784474382=""><strong>Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep inti serta implementasi dari sistem komputasi, rekayasa, dan kecakapan digital di era modern<button _ngcontent-ng-c784474382="" panelclass="citation-tooltip-panel" dialoglabel="Detail Kutipan" triggerdescription="Klik untuk membuka detail kutipan" jslog="219344;track:generic_click,impression,hover" aria-haspopup="dialog" aria-describedby="cdk-describedby-message-ng-1-60" cdk-describedby-host="ng-1"></button>. Di tengah derasnya arus informasi era Masyarakat 5.0, kita sering kali dihadapkan pada fenomena <b _ngcontent-ng-c784474382="">infodemi, yaitu ledakan informasi dalam jumlah besar yang bercampur aduk antara berita yang akurat dengan berita bohong (hoaks) yang menyebar sangat cepat<button _ngcontent-ng-c784474382="" panelclass="citation-tooltip-panel" dialoglabel="Detail Kutipan" triggerdescription="Klik untuk membuka detail kutipan" jslog="219344;track:generic_click,impression,hover" aria-haspopup="dialog" aria-describedby="cdk-describedby-message-ng-1-60" cdk-describedby-host="ng-1"></button>.</b>
 
 
-  </p>
+  </strong>
 
-  <p aria-level="3"><b _ngcontent-ng-c784474382="">1. Pendahuluan</b></p>
 
-  <b><labs-tailwind-structural-element-view-v2 _ngcontent-ng-c2850564263=""
-  _nghost-ng-c2087920249=""><paragraph-element-view _ngcontent-ng-c2087920249=""
-  _nghost-ng-c784474382=""><p _ngcontent-ng-c784474382="">Informatika merupakan
-  disiplin ilmu yang mencari pemahaman terhadap konsep inti serta implementasi
-  dari sistem komputasi, rekayasa, dan kecakapan digital di era modern<button
-  _ngcontent-ng-c784474382="" panelclass="citation-tooltip-panel"
-  dialoglabel="Detail Kutipan" triggerdescription="Klik untuk membuka detail
-  kutipan" jslog="219344;track:generic_click,impression,hover"
-  aria-haspopup="dialog" aria-describedby="cdk-describedby-message-ng-1-60"
-  cdk-describedby-host="ng-1"></button>. Di tengah derasnya arus informasi era
-  Masyarakat 5.0, kita sering kali dihadapkan pada fenomena <b
-  _ngcontent-ng-c784474382="">infodemi, yaitu ledakan informasi dalam jumlah
-  besar yang bercampur aduk antara berita yang akurat dengan berita bohong
-  (hoaks) yang menyebar sangat cepat<button _ngcontent-ng-c784474382=""
-  panelclass="citation-tooltip-panel" dialoglabel="Detail Kutipan"
-  triggerdescription="Klik untuk membuka detail kutipan"
-  jslog="219344;track:generic_click,impression,hover" aria-haspopup="dialog"
-  aria-describedby="cdk-describedby-message-ng-1-60"
-  cdk-describedby-host="ng-1"></button>.</b>
+  <b _ngcontent-ng-c784474382="">  <b _ngcontent-ng-c784474382="">  </b></b>
 
 
   </p>
 
 
-  </paragraph-element-view>
-
-
-  </labs-tailwind-structural-element-view-v2>
-
-
-  <b _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382="">   <b
+  _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
   _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><paragraph-element-view
   _ngcontent-ng-c2087920249="" _nghost-ng-c784474382=""><p
   _ngcontent-ng-c784474382="">Oleh karena itu, kecakapan <b
@@ -105,7 +89,7 @@ content: >
   jslog="219344;track:generic_click,impression,hover" aria-haspopup="dialog"
   aria-describedby="cdk-describedby-message-ng-1-60"
   cdk-describedby-host="ng-1"></button><button _ngcontent-ng-c784474382=""
-  jslog="219344;track:generic_click,impression,hover"></button>.</b>
+  jslog="219344;track:generic_click,impression,hover"></button>.    </b>
 
 
   </b>
@@ -114,64 +98,99 @@ content: >
   </p>
 
 
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382="">  </b></b>
+
+
+  </b>
+
+
+  </b>
+
+
   </paragraph-element-view>
+
+
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382="">  </b></b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
 
 
   </labs-tailwind-structural-element-view-v2>
 
 
-  <b _ngcontent-ng-c784474382=""><b
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""><b
   _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
   _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><hr
   _ngcontent-ng-c2087920249=""></labs-tailwind-structural-element-view-v2>
 
+    <labs-tailwind-structural-element-view-v2 _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><paragraph-element-view _ngcontent-ng-c2087920249="" _nghost-ng-c784474382=""><p _ngcontent-ng-c784474382="" aria-level="3"><b _ngcontent-ng-c784474382="">2. Tujuan Pembelajaran  </b>
+  </p>
 
-  <labs-tailwind-structural-element-view-v2 _ngcontent-ng-c2850564263=""
-  _nghost-ng-c2087920249=""><paragraph-element-view _ngcontent-ng-c2087920249=""
-  _nghost-ng-c784474382=""><p _ngcontent-ng-c784474382="" aria-level="3"><b
-  _ngcontent-ng-c784474382="">2. Tujuan Pembelajaran</b></p>
+
+  <b _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382="">  </b></b>
 
 
   </paragraph-element-view>
 
 
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382="">  </b></b>
+
+
+  </b>
+
+
   </labs-tailwind-structural-element-view-v2>
 
 
-  <b _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
   _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><paragraph-element-view
   _ngcontent-ng-c2087920249="" _nghost-ng-c784474382=""><p
   _ngcontent-ng-c784474382="">Berdasarkan Capaian Pembelajaran (CP) dan Alur
   Tujuan Pembelajaran (ATP) Informatika Fase E (Kelas X), tujuan pembelajaran
   khusus pada topik ini adalah:</p></paragraph-element-view>
 
+    </labs-tailwind-structural-element-view-v2>
 
-  </labs-tailwind-structural-element-view-v2>
-
-
-  <ul _ngcontent-ng-c2850564263=""><labs-tailwind-structural-element-view-v2
-  _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><paragraph-element-view
-  _ngcontent-ng-c2087920249="" _nghost-ng-c784474382=""><li
-  _ngcontent-ng-c784474382="">Siswa mampu <b
-  _ngcontent-ng-c784474382="">menjelaskan ekosistem periksa fakta untuk memilah
-  fakta dan bukan fakta di dunia digital<button _ngcontent-ng-c784474382=""
-  panelclass="citation-tooltip-panel" dialoglabel="Detail Kutipan"
-  triggerdescription="Klik untuk membuka detail kutipan"
-  jslog="219344;track:generic_click,impression,hover" aria-haspopup="dialog"
-  aria-describedby="cdk-describedby-message-ng-1-60"
-  cdk-describedby-host="ng-1"></button>.</b>
+    <ul _ngcontent-ng-c2850564263=""><labs-tailwind-structural-element-view-v2 _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><paragraph-element-view _ngcontent-ng-c2087920249="" _nghost-ng-c784474382=""><li _ngcontent-ng-c784474382="">Siswa mampu <b _ngcontent-ng-c784474382="">menjelaskan ekosistem periksa fakta untuk memilah fakta dan bukan fakta di dunia digital<button _ngcontent-ng-c784474382="" panelclass="citation-tooltip-panel" dialoglabel="Detail Kutipan" triggerdescription="Klik untuk membuka detail kutipan" jslog="219344;track:generic_click,impression,hover" aria-haspopup="dialog" aria-describedby="cdk-describedby-message-ng-1-60" cdk-describedby-host="ng-1"></button>.  </b>
 
 
   </li>
 
 
+  <b _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382="">  </b></b>
+
+
   </paragraph-element-view>
+
+
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382="">  </b></b>
+
+
+  </b>
 
 
   </labs-tailwind-structural-element-view-v2>
 
 
-  <b _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
   _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><paragraph-element-view
   _ngcontent-ng-c2087920249="" _nghost-ng-c784474382=""><li
   _ngcontent-ng-c784474382="">Siswa mampu <b
@@ -182,7 +201,7 @@ content: >
   dialoglabel="Detail Kutipan" triggerdescription="Klik untuk membuka detail
   kutipan" jslog="219344;track:generic_click,impression,hover"
   aria-haspopup="dialog" aria-describedby="cdk-describedby-message-ng-1-60"
-  cdk-describedby-host="ng-1"></button>.</b>
+  cdk-describedby-host="ng-1"></button>.      </b>
 
 
   </b>
@@ -194,13 +213,50 @@ content: >
   </li>
 
 
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382="">   </b></b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
   </paragraph-element-view>
+
+
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382="">   </b></b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
 
 
   </labs-tailwind-structural-element-view-v2>
 
 
   <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
   _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
   _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><paragraph-element-view
   _ngcontent-ng-c2087920249="" _nghost-ng-c784474382=""><li
@@ -217,7 +273,7 @@ content: >
   triggerdescription="Klik untuk membuka detail kutipan"
   jslog="219344;track:generic_click,impression,hover" aria-haspopup="dialog"
   aria-describedby="cdk-describedby-message-ng-1-60"
-  cdk-describedby-host="ng-1"></button>.</b>
+  cdk-describedby-host="ng-1"></button>.    </b>
 
 
   </b>
@@ -226,10 +282,78 @@ content: >
   </li>
 
 
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382="">  </b></b>
+
+
+  </b>
+
+
+  </b>
+
+
   </paragraph-element-view>
 
 
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382="">  </b></b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
   </labs-tailwind-structural-element-view-v2>
+
+
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382="">              </b></b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
 
 
   </b>
@@ -248,37 +372,63 @@ content: >
 
 
   <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
   _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
   _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><hr
   _ngcontent-ng-c2087920249=""></labs-tailwind-structural-element-view-v2>
 
+    <labs-tailwind-structural-element-view-v2 _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><paragraph-element-view _ngcontent-ng-c2087920249="" _nghost-ng-c784474382=""><p _ngcontent-ng-c784474382="" aria-level="3"><b _ngcontent-ng-c784474382="">3. Materi dan Konsep Dasar  </b>
+  </p>
 
-  <labs-tailwind-structural-element-view-v2 _ngcontent-ng-c2850564263=""
-  _nghost-ng-c2087920249=""><paragraph-element-view _ngcontent-ng-c2087920249=""
-  _nghost-ng-c784474382=""><p _ngcontent-ng-c784474382="" aria-level="3"><b
-  _ngcontent-ng-c784474382="">3. Materi dan Konsep Dasar</b></p>
+
+  <b _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382="">  </b></b>
 
 
   </paragraph-element-view>
 
 
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382="">  </b></b>
+
+
+  </b>
+
+
   </labs-tailwind-structural-element-view-v2>
 
 
-  <b _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
   _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><paragraph-element-view
   _ngcontent-ng-c2087920249="" _nghost-ng-c784474382=""><p
   _ngcontent-ng-c784474382="" aria-level="4"><b _ngcontent-ng-c784474382="">A.
-  Ekosistem Periksa Fakta &amp; Regulasi Hukum</b></p>
+  Ekosistem Periksa Fakta &amp; Regulasi Hukum  </b>
+
+  </p>
+
+
+  <b _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382="">  </b></b>
 
 
   </paragraph-element-view>
 
 
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382="">  </b></b>
+
+
+  </b>
+
+
   </labs-tailwind-structural-element-view-v2>
 
 
-  <ul _ngcontent-ng-c2850564263=""><b
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""> <ul
+  _ngcontent-ng-c2850564263=""><b
   _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
   _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><paragraph-element-view
   _ngcontent-ng-c2087920249="" _nghost-ng-c784474382=""><li
@@ -289,19 +439,32 @@ content: >
   triggerdescription="Klik untuk membuka detail kutipan"
   jslog="219344;track:generic_click,impression,hover" aria-haspopup="dialog"
   aria-describedby="cdk-describedby-message-ng-1-60"
-  cdk-describedby-host="ng-1"></button>.</b>
+  cdk-describedby-host="ng-1"></button>.    </b>
+
 
 
   </li>
 
 
+  <b _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382="">    </b></b>
+
+
   </paragraph-element-view>
+
+
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382="">    </b></b>
+
+
+  </b>
 
 
   </labs-tailwind-structural-element-view-v2>
 
 
-  <b _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
   _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><paragraph-element-view
   _ngcontent-ng-c2087920249="" _nghost-ng-c784474382=""><li
   _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382="">Komponen Ekosistem
@@ -330,19 +493,32 @@ content: >
   triggerdescription="Klik untuk membuka detail kutipan"
   jslog="219344;track:generic_click,impression,hover" aria-haspopup="dialog"
   aria-describedby="cdk-describedby-message-ng-1-60"
-  cdk-describedby-host="ng-1"></button>.</b>
+  cdk-describedby-host="ng-1"></button>.    </b>
+
 
 
   </li>
 
 
+  <b _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382="">    </b></b>
+
+
   </paragraph-element-view>
+
+
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382="">    </b></b>
+
+
+  </b>
 
 
   </labs-tailwind-structural-element-view-v2>
 
 
-  <b _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
   _ngcontent-ng-c784474382="" _nghost-ng-c2087920249=""><paragraph-element-view
   _ngcontent-ng-c2087920249="" _nghost-ng-c784474382=""><li
   _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382="">Jurnalis dan
@@ -351,19 +527,32 @@ content: >
   dialoglabel="Detail Kutipan" triggerdescription="Klik untuk membuka detail
   kutipan" jslog="219344;track:generic_click,impression,hover"
   aria-haspopup="dialog" aria-describedby="cdk-describedby-message-ng-1-60"
-  cdk-describedby-host="ng-1"></button>.</b>
+  cdk-describedby-host="ng-1"></button>.    </b>
+
 
 
   </li>
 
 
+  <b _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382="">    </b></b>
+
+
   </paragraph-element-view>
+
+
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382="">    </b></b>
+
+
+  </b>
 
 
   </labs-tailwind-structural-element-view-v2>
 
 
-  <b _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
   _ngcontent-ng-c784474382="" _nghost-ng-c2087920249=""><paragraph-element-view
   _ngcontent-ng-c2087920249="" _nghost-ng-c784474382=""><li
   _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382="">Platform Media
@@ -378,19 +567,32 @@ content: >
   triggerdescription="Klik untuk membuka detail kutipan"
   jslog="219344;track:generic_click,impression,hover" aria-haspopup="dialog"
   aria-describedby="cdk-describedby-message-ng-1-60"
-  cdk-describedby-host="ng-1"></button>.</b>
+  cdk-describedby-host="ng-1"></button>.    </b>
+
 
 
   </li>
 
 
+  <b _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382="">    </b></b>
+
+
   </paragraph-element-view>
+
+
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382="">    </b></b>
+
+
+  </b>
 
 
   </labs-tailwind-structural-element-view-v2>
 
 
-  <b _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
   _ngcontent-ng-c784474382="" _nghost-ng-c2087920249=""><paragraph-element-view
   _ngcontent-ng-c2087920249="" _nghost-ng-c784474382=""><li
   _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382="">Publik: Peran aktif
@@ -405,16 +607,74 @@ content: >
   triggerdescription="Klik untuk membuka detail kutipan"
   jslog="219344;track:generic_click,impression,hover" aria-haspopup="dialog"
   aria-describedby="cdk-describedby-message-ng-1-60"
-  cdk-describedby-host="ng-1"></button>.</b>
+  cdk-describedby-host="ng-1"></button>.    </b>
+
 
 
   </li>
 
 
+  <b _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382="">    </b></b>
+
+
   </paragraph-element-view>
 
 
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382="">    </b></b>
+
+
+  </b>
+
+
   </labs-tailwind-structural-element-view-v2>
+
+
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382="">                 
+  </b></b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
 
 
   </b>
@@ -429,19 +689,73 @@ content: >
   </ol>
 
 
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382="">         </b></b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
   </b>
 
 
   </li>
 
 
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382="">     </b></b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
   </paragraph-element-view>
+
+
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382="">     </b></b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
 
 
   </labs-tailwind-structural-element-view-v2>
 
 
   <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
   _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
   _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><paragraph-element-view
   _ngcontent-ng-c2087920249="" _nghost-ng-c784474382=""><li
@@ -458,7 +772,7 @@ content: >
   triggerdescription="Klik untuk membuka detail kutipan"
   jslog="219344;track:generic_click,impression,hover" aria-haspopup="dialog"
   aria-describedby="cdk-describedby-message-ng-1-60"
-  cdk-describedby-host="ng-1"></button>.</b>
+  cdk-describedby-host="ng-1"></button>.      </b>
 
 
   </b>
@@ -467,10 +781,78 @@ content: >
   </li>
 
 
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382="">    </b></b>
+
+
+  </b>
+
+
+  </b>
+
+
   </paragraph-element-view>
 
 
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382="">    </b></b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
   </labs-tailwind-structural-element-view-v2>
+
+
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382="">                          </b></b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
 
 
   </b>
@@ -492,20 +874,37 @@ content: >
 
 
   <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
   _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
   _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><paragraph-element-view
   _ngcontent-ng-c2087920249="" _nghost-ng-c784474382=""><p
   _ngcontent-ng-c784474382="" aria-level="4"><b _ngcontent-ng-c784474382="">B.
-  Metode CRAAP dalam Mengevaluasi Konten Teks</b></p>
+  Metode CRAAP dalam Mengevaluasi Konten Teks  </b>
+
+  </p>
+
+
+  <b _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382="">  </b></b>
 
 
   </paragraph-element-view>
 
 
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382="">  </b></b>
+
+
+  </b>
+
+
   </labs-tailwind-structural-element-view-v2>
 
 
-  <b _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
   _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><paragraph-element-view
   _ngcontent-ng-c2087920249="" _nghost-ng-c784474382=""><p
   _ngcontent-ng-c784474382="">Kevalidan suatu dokumen teks dapat diuji secara
@@ -516,19 +915,32 @@ content: >
   triggerdescription="Klik untuk membuka detail kutipan"
   jslog="219344;track:generic_click,impression,hover" aria-haspopup="dialog"
   aria-describedby="cdk-describedby-message-ng-1-60"
-  cdk-describedby-host="ng-1"></button>:</b>
+  cdk-describedby-host="ng-1"></button>:  </b>
+
 
 
   </p>
 
 
+  <b _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382="">  </b></b>
+
+
   </paragraph-element-view>
+
+
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382="">  </b></b>
+
+
+  </b>
 
 
   </labs-tailwind-structural-element-view-v2>
 
 
-  <ol _ngcontent-ng-c2850564263=""><b
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""> <ol
+  _ngcontent-ng-c2850564263=""><b
   _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
   _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><paragraph-element-view
   _ngcontent-ng-c2087920249="" _nghost-ng-c784474382=""><li
@@ -539,19 +951,32 @@ content: >
   dialoglabel="Detail Kutipan" triggerdescription="Klik untuk membuka detail
   kutipan" jslog="219344;track:generic_click,impression,hover"
   aria-haspopup="dialog" aria-describedby="cdk-describedby-message-ng-1-60"
-  cdk-describedby-host="ng-1"></button>.</b>
+  cdk-describedby-host="ng-1"></button>.    </b>
+
 
 
   </li>
 
 
+  <b _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382="">    </b></b>
+
+
   </paragraph-element-view>
+
+
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382="">    </b></b>
+
+
+  </b>
 
 
   </labs-tailwind-structural-element-view-v2>
 
 
-  <b _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
   _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><paragraph-element-view
   _ngcontent-ng-c2087920249="" _nghost-ng-c784474382=""><li
   _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382="">Relevance
@@ -561,19 +986,32 @@ content: >
   triggerdescription="Klik untuk membuka detail kutipan"
   jslog="219344;track:generic_click,impression,hover" aria-haspopup="dialog"
   aria-describedby="cdk-describedby-message-ng-1-60"
-  cdk-describedby-host="ng-1"></button>.</b>
+  cdk-describedby-host="ng-1"></button>.    </b>
+
 
 
   </li>
 
 
+  <b _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382="">    </b></b>
+
+
   </paragraph-element-view>
+
+
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382="">    </b></b>
+
+
+  </b>
 
 
   </labs-tailwind-structural-element-view-v2>
 
 
-  <b _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
   _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><paragraph-element-view
   _ngcontent-ng-c2087920249="" _nghost-ng-c784474382=""><li
   _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382="">Authority
@@ -597,19 +1035,32 @@ content: >
   triggerdescription="Klik untuk membuka detail kutipan"
   jslog="219344;track:generic_click,impression,hover" aria-haspopup="dialog"
   aria-describedby="cdk-describedby-message-ng-1-60"
-  cdk-describedby-host="ng-1"></button>.</b>
+  cdk-describedby-host="ng-1"></button>.    </b>
+
 
 
   </li>
 
 
+  <b _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382="">    </b></b>
+
+
   </paragraph-element-view>
+
+
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382="">    </b></b>
+
+
+  </b>
 
 
   </labs-tailwind-structural-element-view-v2>
 
 
-  <b _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
   _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><paragraph-element-view
   _ngcontent-ng-c2087920249="" _nghost-ng-c784474382=""><li
   _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382="">Accuracy
@@ -622,19 +1073,32 @@ content: >
   jslog="219344;track:generic_click,impression,hover" aria-haspopup="dialog"
   aria-describedby="cdk-describedby-message-ng-1-60"
   cdk-describedby-host="ng-1"></button><button _ngcontent-ng-c784474382=""
-  jslog="219344;track:generic_click,impression,hover"></button>.</b>
+  jslog="219344;track:generic_click,impression,hover"></button>.    </b>
+
 
 
   </li>
 
 
+  <b _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382="">    </b></b>
+
+
   </paragraph-element-view>
+
+
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382="">    </b></b>
+
+
+  </b>
 
 
   </labs-tailwind-structural-element-view-v2>
 
 
-  <b _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
   _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><paragraph-element-view
   _ngcontent-ng-c2087920249="" _nghost-ng-c784474382=""><li
   _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382="">Purpose (Tujuan):
@@ -646,7 +1110,7 @@ content: >
   triggerdescription="Klik untuk membuka detail kutipan"
   jslog="219344;track:generic_click,impression,hover" aria-haspopup="dialog"
   aria-describedby="cdk-describedby-message-ng-1-60"
-  cdk-describedby-host="ng-1"></button>.</b>
+  cdk-describedby-host="ng-1"></button>.      </b>
 
 
   </b>
@@ -655,10 +1119,96 @@ content: >
   </li>
 
 
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382="">    </b></b>
+
+
+  </b>
+
+
+  </b>
+
+
   </paragraph-element-view>
 
 
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382="">    </b></b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
   </labs-tailwind-structural-element-view-v2>
+
+
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382="">                          </b></b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
 
 
   </b>
@@ -680,12 +1230,15 @@ content: >
 
 
   <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
   _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
   _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><paragraph-element-view
   _ngcontent-ng-c2087920249="" _nghost-ng-c784474382=""><p
   _ngcontent-ng-c784474382="" aria-level="4"><b _ngcontent-ng-c784474382="">C.
   Strategi Membaca Lateral (<b _ngcontent-ng-c784474382="">Lateral Reading<b
-  _ngcontent-ng-c784474382="">)</b></b>
+  _ngcontent-ng-c784474382="">)    </b></b>
 
 
   </b>
@@ -694,13 +1247,50 @@ content: >
   </p>
 
 
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382="">   </b></b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
   </paragraph-element-view>
+
+
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382="">   </b></b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
 
 
   </labs-tailwind-structural-element-view-v2>
 
 
   <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
   _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
   _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><paragraph-element-view
   _ngcontent-ng-c2087920249="" _nghost-ng-c784474382=""><p
@@ -723,7 +1313,7 @@ content: >
   jslog="219344;track:generic_click,impression,hover" aria-haspopup="dialog"
   aria-describedby="cdk-describedby-message-ng-1-60"
   cdk-describedby-host="ng-1"></button><button _ngcontent-ng-c784474382=""
-  jslog="219344;track:generic_click,impression,hover"></button>.</b>
+  jslog="219344;track:generic_click,impression,hover"></button>.    </b>
 
 
   </b>
@@ -732,34 +1322,97 @@ content: >
   </p>
 
 
-  </paragraph-element-view>
-
-
-  </labs-tailwind-structural-element-view-v2>
-
-
-  <b _ngcontent-ng-c784474382=""><b
-  _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
-  _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><paragraph-element-view
-  _ngcontent-ng-c2087920249="" _nghost-ng-c784474382=""><p
-  _ngcontent-ng-c784474382="" aria-level="4"><b _ngcontent-ng-c784474382="">D.
-  Peninjauan Sejawat (<b _ngcontent-ng-c784474382="">Peer-Review<b
-  _ngcontent-ng-c784474382="">)</b></b>
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382="">  </b></b>
 
 
   </b>
 
 
-  </p>
+  </b>
 
 
   </paragraph-element-view>
+
+
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382="">  </b></b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
 
 
   </labs-tailwind-structural-element-view-v2>
 
 
   <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
+  _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><paragraph-element-view
+  _ngcontent-ng-c2087920249="" _nghost-ng-c784474382=""><p
+  _ngcontent-ng-c784474382="" aria-level="4"><b _ngcontent-ng-c784474382="">D.
+  Peninjauan Sejawat (<b _ngcontent-ng-c784474382="">Peer-Review<b
+  _ngcontent-ng-c784474382="">)    </b></b>
+
+
+  </b>
+
+
+  </p>
+
+
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382="">   </b></b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </paragraph-element-view>
+
+
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382="">   </b></b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </labs-tailwind-structural-element-view-v2>
+
+
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
   _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
   _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><paragraph-element-view
   _ngcontent-ng-c2087920249="" _nghost-ng-c784474382=""><p
@@ -793,7 +1446,7 @@ content: >
   triggerdescription="Klik untuk membuka detail kutipan"
   jslog="219344;track:generic_click,impression,hover" aria-haspopup="dialog"
   aria-describedby="cdk-describedby-message-ng-1-60"
-  cdk-describedby-host="ng-1"></button>.</b>
+  cdk-describedby-host="ng-1"></button>.      </b>
 
 
   </b>
@@ -805,31 +1458,77 @@ content: >
   </p>
 
 
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382="">   </b></b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
   </paragraph-element-view>
+
+
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382="">   </b></b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
 
 
   </labs-tailwind-structural-element-view-v2>
 
 
   <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
   _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
   _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><hr
   _ngcontent-ng-c2087920249=""></labs-tailwind-structural-element-view-v2>
 
+    <labs-tailwind-structural-element-view-v2 _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><paragraph-element-view _ngcontent-ng-c2087920249="" _nghost-ng-c784474382=""><p _ngcontent-ng-c784474382="" aria-level="3"><b _ngcontent-ng-c784474382="">4. Miskonsepsi Umum  </b>
+  </p>
 
-  <labs-tailwind-structural-element-view-v2 _ngcontent-ng-c2850564263=""
-  _nghost-ng-c2087920249=""><paragraph-element-view _ngcontent-ng-c2087920249=""
-  _nghost-ng-c784474382=""><p _ngcontent-ng-c784474382="" aria-level="3"><b
-  _ngcontent-ng-c784474382="">4. Miskonsepsi Umum</b></p>
+
+  <b _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382="">  </b></b>
 
 
   </paragraph-element-view>
 
 
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382="">  </b></b>
+
+
+  </b>
+
+
   </labs-tailwind-structural-element-view-v2>
 
 
-  <ul _ngcontent-ng-c2850564263=""><b
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""> <ul
+  _ngcontent-ng-c2850564263=""><b
   _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
   _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><paragraph-element-view
   _ngcontent-ng-c2087920249="" _nghost-ng-c784474382=""><li
@@ -864,19 +1563,32 @@ content: >
   triggerdescription="Klik untuk membuka detail kutipan"
   jslog="219344;track:generic_click,impression,hover" aria-haspopup="dialog"
   aria-describedby="cdk-describedby-message-ng-1-60"
-  cdk-describedby-host="ng-1"></button>.</b>
+  cdk-describedby-host="ng-1"></button>.    </b>
+
 
 
   </li>
 
 
+  <b _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382="">    </b></b>
+
+
   </paragraph-element-view>
+
+
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382="">    </b></b>
+
+
+  </b>
 
 
   </labs-tailwind-structural-element-view-v2>
 
 
-  <b _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
   _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><paragraph-element-view
   _ngcontent-ng-c2087920249="" _nghost-ng-c784474382=""><li
   _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382="">Miskonsepsi 2:
@@ -901,7 +1613,7 @@ content: >
   dialoglabel="Detail Kutipan" triggerdescription="Klik untuk membuka detail
   kutipan" jslog="219344;track:generic_click,impression,hover"
   aria-haspopup="dialog" aria-describedby="cdk-describedby-message-ng-1-60"
-  cdk-describedby-host="ng-1"></button>.</b>
+  cdk-describedby-host="ng-1"></button>.              </b>
 
 
   </b>
@@ -916,13 +1628,50 @@ content: >
   </li>
 
 
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382="">     </b></b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
   </paragraph-element-view>
+
+
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382="">     </b></b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
 
 
   </labs-tailwind-structural-element-view-v2>
 
 
   <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
   _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
   _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><paragraph-element-view
   _ngcontent-ng-c2087920249="" _nghost-ng-c784474382=""><li
@@ -943,16 +1692,68 @@ content: >
   jslog="219344;track:generic_click,impression,hover" aria-haspopup="dialog"
   aria-describedby="cdk-describedby-message-ng-1-60"
   cdk-describedby-host="ng-1"></button><button _ngcontent-ng-c784474382=""
-  jslog="219344;track:generic_click,impression,hover"></button>.</b>
+  jslog="219344;track:generic_click,impression,hover"></button>.    </b>
+
 
 
   </li>
 
 
+  <b _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382="">    </b></b>
+
+
   </paragraph-element-view>
 
 
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382="">    </b></b>
+
+
+  </b>
+
+
   </labs-tailwind-structural-element-view-v2>
+
+
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382="">                         </b></b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
 
 
   </b>
@@ -974,24 +1775,36 @@ content: >
 
 
   <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
   _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
   _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><hr
   _ngcontent-ng-c2087920249=""></labs-tailwind-structural-element-view-v2>
 
+    <labs-tailwind-structural-element-view-v2 _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><paragraph-element-view _ngcontent-ng-c2087920249="" _nghost-ng-c784474382=""><p _ngcontent-ng-c784474382="" aria-level="3"><b _ngcontent-ng-c784474382="">5. Ringkasan Materi  </b>
+  </p>
 
-  <labs-tailwind-structural-element-view-v2 _ngcontent-ng-c2850564263=""
-  _nghost-ng-c2087920249=""><paragraph-element-view _ngcontent-ng-c2087920249=""
-  _nghost-ng-c784474382=""><p _ngcontent-ng-c784474382="" aria-level="3"><b
-  _ngcontent-ng-c784474382="">5. Ringkasan Materi</b></p>
+
+  <b _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382="">  </b></b>
 
 
   </paragraph-element-view>
 
 
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382="">  </b></b>
+
+
+  </b>
+
+
   </labs-tailwind-structural-element-view-v2>
 
 
-  <ol _ngcontent-ng-c2850564263=""><b
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""> <ol
+  _ngcontent-ng-c2850564263=""><b
   _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
   _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><paragraph-element-view
   _ngcontent-ng-c2087920249="" _nghost-ng-c784474382=""><li
@@ -1002,19 +1815,32 @@ content: >
   dialoglabel="Detail Kutipan" triggerdescription="Klik untuk membuka detail
   kutipan" jslog="219344;track:generic_click,impression,hover"
   aria-haspopup="dialog" aria-describedby="cdk-describedby-message-ng-1-60"
-  cdk-describedby-host="ng-1"></button>.</b>
+  cdk-describedby-host="ng-1"></button>.    </b>
+
 
 
   </li>
 
 
+  <b _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382="">    </b></b>
+
+
   </paragraph-element-view>
+
+
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382="">    </b></b>
+
+
+  </b>
 
 
   </labs-tailwind-structural-element-view-v2>
 
 
-  <b _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
   _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><paragraph-element-view
   _ngcontent-ng-c2087920249="" _nghost-ng-c784474382=""><li
   _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382="">Metode CRAAP (<i
@@ -1025,19 +1851,32 @@ content: >
   triggerdescription="Klik untuk membuka detail kutipan"
   jslog="219344;track:generic_click,impression,hover" aria-haspopup="dialog"
   aria-describedby="cdk-describedby-message-ng-1-60"
-  cdk-describedby-host="ng-1"></button>.</b>
+  cdk-describedby-host="ng-1"></button>.    </b>
+
 
 
   </li>
 
 
+  <b _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382="">    </b></b>
+
+
   </paragraph-element-view>
+
+
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382="">    </b></b>
+
+
+  </b>
 
 
   </labs-tailwind-structural-element-view-v2>
 
 
-  <b _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
   _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><paragraph-element-view
   _ngcontent-ng-c2087920249="" _nghost-ng-c784474382=""><li
   _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382="">Membaca Lateral
@@ -1049,19 +1888,32 @@ content: >
   jslog="219344;track:generic_click,impression,hover" aria-haspopup="dialog"
   aria-describedby="cdk-describedby-message-ng-1-60"
   cdk-describedby-host="ng-1"></button><button _ngcontent-ng-c784474382=""
-  jslog="219344;track:generic_click,impression,hover"></button>.</b>
+  jslog="219344;track:generic_click,impression,hover"></button>.    </b>
+
 
 
   </li>
 
 
+  <b _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382="">    </b></b>
+
+
   </paragraph-element-view>
+
+
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382="">    </b></b>
+
+
+  </b>
 
 
   </labs-tailwind-structural-element-view-v2>
 
 
-  <b _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
   _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><paragraph-element-view
   _ngcontent-ng-c2087920249="" _nghost-ng-c784474382=""><li
   _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382="">Validitas ilmiah
@@ -1075,16 +1927,74 @@ content: >
   kutipan" jslog="219344;track:generic_click,impression,hover"
   aria-haspopup="dialog" aria-describedby="cdk-describedby-message-ng-1-60"
   cdk-describedby-host="ng-1"></button><button _ngcontent-ng-c784474382=""
-  jslog="219344;track:generic_click,impression,hover"></button>.</b>
+  jslog="219344;track:generic_click,impression,hover"></button>.    </b>
+
 
 
   </li>
 
 
+  <b _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382="">    </b></b>
+
+
   </paragraph-element-view>
 
 
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382="">    </b></b>
+
+
+  </b>
+
+
   </labs-tailwind-structural-element-view-v2>
+
+
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382="">                    </b></b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
 
 
   </b>
@@ -1103,37 +2013,63 @@ content: >
 
 
   <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
   _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
   _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><hr
   _ngcontent-ng-c2087920249=""></labs-tailwind-structural-element-view-v2>
 
+    <labs-tailwind-structural-element-view-v2 _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><paragraph-element-view _ngcontent-ng-c2087920249="" _nghost-ng-c784474382=""><p _ngcontent-ng-c784474382="" aria-level="3"><b _ngcontent-ng-c784474382="">6. Materi Pembelajaran sesuai Stimulus 2  </b>
+  </p>
 
-  <labs-tailwind-structural-element-view-v2 _ngcontent-ng-c2850564263=""
-  _nghost-ng-c2087920249=""><paragraph-element-view _ngcontent-ng-c2087920249=""
-  _nghost-ng-c784474382=""><p _ngcontent-ng-c784474382="" aria-level="3"><b
-  _ngcontent-ng-c784474382="">6. Materi Pembelajaran sesuai Stimulus 2</b></p>
+
+  <b _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382="">  </b></b>
 
 
   </paragraph-element-view>
 
 
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382="">  </b></b>
+
+
+  </b>
+
+
   </labs-tailwind-structural-element-view-v2>
 
 
-  <b _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
   _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><paragraph-element-view
   _ngcontent-ng-c2087920249="" _nghost-ng-c784474382=""><p
   _ngcontent-ng-c784474382="" aria-level="4"><b
-  _ngcontent-ng-c784474382="">Wacana Stimulus 2:</b></p>
+  _ngcontent-ng-c784474382="">Wacana Stimulus 2:  </b>
+
+  </p>
+
+
+  <b _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382="">  </b></b>
 
 
   </paragraph-element-view>
 
 
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382="">  </b></b>
+
+
+  </b>
+
+
   </labs-tailwind-structural-element-view-v2>
 
 
-  <b _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
   _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><paragraph-element-view
   _ngcontent-ng-c2087920249="" _nghost-ng-c784474382=""><p
   _ngcontent-ng-c784474382="">"Penilaian kevalidan suatu data teks dapat diuji
@@ -1161,26 +2097,33 @@ content: >
   aria-haspopup="dialog" aria-describedby="cdk-describedby-message-ng-1-60"
   cdk-describedby-host="ng-1"></button>."</p>
 
+    </paragraph-element-view>
 
-  </paragraph-element-view>
+    </labs-tailwind-structural-element-view-v2>
+
+    <labs-tailwind-structural-element-view-v2 _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><paragraph-element-view _ngcontent-ng-c2087920249="" _nghost-ng-c784474382=""><p _ngcontent-ng-c784474382="" aria-level="4"><b _ngcontent-ng-c784474382="">Studi Kasus Penerapan Pembelajaran:  </b>
+  </p>
 
 
-  </labs-tailwind-structural-element-view-v2>
-
-
-  <labs-tailwind-structural-element-view-v2 _ngcontent-ng-c2850564263=""
-  _nghost-ng-c2087920249=""><paragraph-element-view _ngcontent-ng-c2087920249=""
-  _nghost-ng-c784474382=""><p _ngcontent-ng-c784474382="" aria-level="4"><b
-  _ngcontent-ng-c784474382="">Studi Kasus Penerapan Pembelajaran:</b></p>
+  <b _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382="">  </b></b>
 
 
   </paragraph-element-view>
 
 
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382="">  </b></b>
+
+
+  </b>
+
+
   </labs-tailwind-structural-element-view-v2>
 
 
-  <b _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
   _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><paragraph-element-view
   _ngcontent-ng-c2087920249="" _nghost-ng-c784474382=""><p
   _ngcontent-ng-c784474382="">Seorang siswa menemukan artikel kesehatan di
@@ -1188,43 +2131,15 @@ content: >
   herbal tertentu 100% ampuh menyembuhkan segala macam virus dalam waktu 24 jam
   tanpa efek samping!"</i></p>
 
+    </paragraph-element-view>
 
-  </paragraph-element-view>
+    </labs-tailwind-structural-element-view-v2>
 
+    <labs-tailwind-structural-element-view-v2 _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><paragraph-element-view _ngcontent-ng-c2087920249="" _nghost-ng-c784474382=""><p _ngcontent-ng-c784474382="">Siswa diajarkan untuk membedah artikel ini secara kritis:</p></paragraph-element-view>
 
-  </labs-tailwind-structural-element-view-v2>
+    </labs-tailwind-structural-element-view-v2>
 
-
-  <labs-tailwind-structural-element-view-v2 _ngcontent-ng-c2850564263=""
-  _nghost-ng-c2087920249=""><paragraph-element-view _ngcontent-ng-c2087920249=""
-  _nghost-ng-c784474382=""><p _ngcontent-ng-c784474382="">Siswa diajarkan untuk
-  membedah artikel ini secara kritis:</p></paragraph-element-view>
-
-
-  </labs-tailwind-structural-element-view-v2>
-
-
-  <ul _ngcontent-ng-c2850564263=""><labs-tailwind-structural-element-view-v2
-  _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><paragraph-element-view
-  _ngcontent-ng-c2087920249="" _nghost-ng-c784474382=""><li
-  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382="">Analisis Otoritas
-  (<b _ngcontent-ng-c784474382="">Authority<b _ngcontent-ng-c784474382="">):
-  Siswa menerapkan metode membaca lateral dengan membuka tab baru untuk
-  memeriksa siapa penulis blog tersebut<button _ngcontent-ng-c784474382=""
-  panelclass="citation-tooltip-panel" dialoglabel="Detail Kutipan"
-  triggerdescription="Klik untuk membuka detail kutipan"
-  jslog="219344;track:generic_click,impression,hover" aria-haspopup="dialog"
-  aria-describedby="cdk-describedby-message-ng-1-60"
-  cdk-describedby-host="ng-1"></button>. Apakah ia memiliki kualifikasi medis
-  tepercaya, dan apakah situs tersebut menggunakan rujukan dari kementerian
-  kesehatan resmi (<code _ngcontent-ng-c784474382="">.go.id</code>)?<button
-  _ngcontent-ng-c784474382="" panelclass="citation-tooltip-panel"
-  dialoglabel="Detail Kutipan" triggerdescription="Klik untuk membuka detail
-  kutipan" jslog="219344;track:generic_click,impression,hover"
-  aria-haspopup="dialog" aria-describedby="cdk-describedby-message-ng-1-60"
-  cdk-describedby-host="ng-1"></button><button _ngcontent-ng-c784474382=""
-  jslog="219344;track:generic_click,impression,hover"></button></b>
-
+    <ul _ngcontent-ng-c2850564263=""><labs-tailwind-structural-element-view-v2 _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><paragraph-element-view _ngcontent-ng-c2087920249="" _nghost-ng-c784474382=""><li _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382="">Analisis Otoritas (<b _ngcontent-ng-c784474382="">Authority<b _ngcontent-ng-c784474382="">): Siswa menerapkan metode membaca lateral dengan membuka tab baru untuk memeriksa siapa penulis blog tersebut<button _ngcontent-ng-c784474382="" panelclass="citation-tooltip-panel" dialoglabel="Detail Kutipan" triggerdescription="Klik untuk membuka detail kutipan" jslog="219344;track:generic_click,impression,hover" aria-haspopup="dialog" aria-describedby="cdk-describedby-message-ng-1-60" cdk-describedby-host="ng-1"></button>. Apakah ia memiliki kualifikasi medis tepercaya, dan apakah situs tersebut menggunakan rujukan dari kementerian kesehatan resmi (<code _ngcontent-ng-c784474382="">.go.id</code>)?<button _ngcontent-ng-c784474382="" panelclass="citation-tooltip-panel" dialoglabel="Detail Kutipan" triggerdescription="Klik untuk membuka detail kutipan" jslog="219344;track:generic_click,impression,hover" aria-haspopup="dialog" aria-describedby="cdk-describedby-message-ng-1-60" cdk-describedby-host="ng-1"></button><button _ngcontent-ng-c784474382="" jslog="219344;track:generic_click,impression,hover"></button>      </b>
 
   </b>
 
@@ -1235,13 +2150,50 @@ content: >
   </li>
 
 
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382="">   </b></b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
   </paragraph-element-view>
+
+
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382="">   </b></b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
 
 
   </labs-tailwind-structural-element-view-v2>
 
 
   <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
   _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
   _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><paragraph-element-view
   _ngcontent-ng-c2087920249="" _nghost-ng-c784474382=""><li
@@ -1265,7 +2217,7 @@ content: >
   triggerdescription="Klik untuk membuka detail kutipan"
   jslog="219344;track:generic_click,impression,hover" aria-haspopup="dialog"
   aria-describedby="cdk-describedby-message-ng-1-60"
-  cdk-describedby-host="ng-1"></button>.</b>
+  cdk-describedby-host="ng-1"></button>.      </b>
 
 
   </b>
@@ -1277,13 +2229,50 @@ content: >
   </li>
 
 
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382="">   </b></b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
   </paragraph-element-view>
+
+
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382="">   </b></b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
 
 
   </labs-tailwind-structural-element-view-v2>
 
 
   <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
   _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
   _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><paragraph-element-view
   _ngcontent-ng-c2087920249="" _nghost-ng-c784474382=""><li
@@ -1297,7 +2286,7 @@ content: >
   triggerdescription="Klik untuk membuka detail kutipan"
   jslog="219344;track:generic_click,impression,hover" aria-haspopup="dialog"
   aria-describedby="cdk-describedby-message-ng-1-60"
-  cdk-describedby-host="ng-1"></button>.</b>
+  cdk-describedby-host="ng-1"></button>.        </b>
 
 
   </b>
@@ -1312,13 +2301,50 @@ content: >
   </li>
 
 
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382="">   </b></b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
   </paragraph-element-view>
+
+
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382="">   </b></b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
 
 
   </labs-tailwind-structural-element-view-v2>
 
 
   <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
   _ngcontent-ng-c784474382=""><labs-tailwind-structural-element-view-v2
   _ngcontent-ng-c2850564263="" _nghost-ng-c2087920249=""><paragraph-element-view
   _ngcontent-ng-c2087920249="" _nghost-ng-c784474382=""><li
@@ -1343,7 +2369,7 @@ content: >
   kutipan" jslog="219344;track:generic_click,impression,hover"
   aria-haspopup="dialog" aria-describedby="cdk-describedby-message-ng-1-60"
   cdk-describedby-host="ng-1"></button><button _ngcontent-ng-c784474382=""
-  jslog="219344;track:generic_click,impression,hover"></button>.</b>
+  jslog="219344;track:generic_click,impression,hover"></button>.    </b>
 
 
   </b>
@@ -1352,10 +2378,102 @@ content: >
   </li>
 
 
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""> <b
+  _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382="">  </b></b>
+
+
+  </b>
+
+
+  </b>
+
+
   </paragraph-element-view>
 
 
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382="">  </b></b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
   </labs-tailwind-structural-element-view-v2>
+
+
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382="">                             </b></b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
 
 
   </b>
@@ -1388,290 +2506,442 @@ content: >
   </ul>
 
 
-  <p></p></b>
-
-
-  </b>
-
-
-  </b>
-
-
-  </b>
-
-
-  </b>
-
-
-  </b>
-
-
-  </b>
-
-
-  </b>
-
-
-  </b>
-
-
-  </b>
-
-
-  </b>
-
-
-  </b>
-
-
-  </b>
-
-
-  </b>
-
-
-  </b>
-
-
-  </b>
-
-
-  </b>
-
-
-  </b>
-
-
-  </b>
-
-
-  </b>
-
-
-  </b>
-
-
-  </b>
-
-
-  </b>
-
-
-  </b>
-
-
-  </b>
-
-
-  </b>
-
-
-  </b>
-
-
-  </b>
-
-
-  </b>
-
-
-  </b>
-
-
-  </b>
-
-
-  </b>
-
-
-  </b>
-
-
-  </b>
-
-
-  </b>
-
-
-  </b>
-
-  <p></p>
-
-  <p></p>
-
-  <p></p>
-
-  <p></p>
-
-  <quiz-user-auth id="auth"
+  <b _ngcontent-ng-c784474382=""><b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""> <b _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382=""><b
+  _ngcontent-ng-c784474382="">                                              
+  <quiz-user-auth
   apps-script-url="https://script.google.com/macros/s/AKfycbyuprudZkCq_YCQ-CqqD_huzndsbA6zHsg_ICfqPnlB97dhcrm1xJjGxJ3u4Jp8DjJQ/exec"
-  auto-login data-hax-lock="data-hax-lock"></quiz-user-auth>
+  auto-login></quiz-user-auth>
 
-  <latihan-kuis mode="siswa" allow-retake max-retake="5" duration="900"
-  timer-autostart shuffle-questions shuffle-choices kategori="formatif"
-  apps-script-url="https://script.google.com/macros/s/AKfycbyuprudZkCq_YCQ-CqqD_huzndsbA6zHsg_ICfqPnlB97dhcrm1xJjGxJ3u4Jp8DjJQ/exec"
-  kd-materi="LD-1 Latihan" student-id="" judul-materi="Materi: Pencarian"
-  teks-materi="Baca materi di atas, lalu kerjakan kuis. Kamu bisa mengulang
-  sampai 4 kali." show-sheet-link soal-file-url="./files/soal-contoh.json"
-  materi-file="" cover-image="" judul-kuis="Evaluasi Kuis Interaktif"
-  student-name="" student-nis="" student-absen="" student-kelas=""
-  pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai otomatis."
-  pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet."
-  label-mulai="▶️ Mulai" hide-pause-restart
-  questions="[{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Pencarian
-  informasi ilmiah secara daring menggunakan kata kunci sederhana sering kali
-  tidak efektif karena menghasilkan jutaan data tidak relevan. Guna menyaring
-  data secara presisi, pengguna dapat menerapkan variabel pencarian lanjutan
-  seperti site: untuk domain web dan filetype: untuk format berkas. Seorang
-  siswa kelas XI sedang melakukan riset mengenai \&quot;dampak emisi
-  karbon\&quot;. Ia ingin mencari dokumen laporan resmi berformat PDF yang
-  diterbitkan langsung oleh instansi pemerintah Indonesia (domain go.id) agar
-  datanya valid. Sintaks pencarian lanjutan manakah yang paling cepat dan akurat
-  untuk memenuhi kebutuhan tersebut?&quot;,&quot;choices&quot;:[&quot;dampak
-  emisi karbon filetype:pdf site:edu&quot;,&quot;\&quot;dampak emisi
-  karbon\&quot; site:go.id filetype:pdf&quot;,&quot;dampak emisi karbon AND
-  site:go.id OR filetype:pdf&quot;,&quot;site:gov filetype:pdf \&quot;dampak
-  emisi karbon\&quot;&quot;,&quot;inurl:emisi_karbon filetype:doc
-  site:com&quot;],&quot;correctIndex&quot;:1},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Pencarian
-  informasi ilmiah secara daring menggunakan kata kunci sederhana sering kali
-  tidak efektif karena menghasilkan jutaan data tidak relevan. Selain itu,
-  operator logika boolean (AND, OR, NOT) berperan penting dalam mengaitkan atau
-  mengecualikan konsep penelusuran. Ketika melakukan riset daring, adakalanya
-  kita ingin mengecualikan kata tertentu yang tidak relevan agar tidak muncul di
-  halaman pencarian. Operator logika boolean atau karakter penulisan manakah
-  yang digunakan untuk mengecualikan kata kunci di mesin pencari
-  Google?&quot;,&quot;choices&quot;:[&quot;Operator AND&quot;,&quot;Operator
-  OR&quot;,&quot;Operator NOT atau tanda minus -&quot;,&quot;Tanda petik ganda
-  \&quot;\&quot;&quot;,&quot;Variabel
-  site:&quot;],&quot;correctIndex&quot;:2},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Dalam
-  pencarian lanjut pada mesin pencari Google, apa fungsi utama dari penggunaan
-  tanda petik ganda \&quot;\&quot; di awal dan akhir frasa kata kunci (seperti
-  \&quot;energi terbarukan\&quot;)?&quot;,&quot;choices&quot;:[&quot;Mengonversi
-  dokumen secara otomatis ke format file PDF&quot;,&quot;Melacak halaman web
-  yang judulnya hanya memuat kata kunci tunggal&quot;,&quot;Menginstruksikan
-  mesin pencari untuk melacak frasa kata kunci secara tepat dan persis (Exact
-  Match)&quot;,&quot;Melakukan enkripsi otomatis pada jalur koneksi internet
-  browser&quot;,&quot;Menghapus data cache sementara dari server
-  Google&quot;],&quot;correctIndex&quot;:2},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Pencarian
-  informasi ilmiah secara daring menggunakan kata kunci sederhana sering kali
-  tidak efektif. Seorang peneliti ingin mencari informasi spesifik mengenai
-  \&quot;pemanasan global\&quot; di situs web resmi kementerian/lembaga
-  pemerintah Indonesia (go.id). Sintaks penulisan di mesin pencari yang
-  benar-benar membatasi hasil pencarian hanya pada domain tersebut
-  adalah...&quot;,&quot;choices&quot;:[&quot;\&quot;pemanasan global\&quot;
-  site:go.id&quot;,&quot;pemanasan global OR
-  site:go.id&quot;,&quot;\&quot;pemanasan global\&quot;
-  filetype:go.id&quot;,&quot;intext:pemanasan global
-  site:edu&quot;,&quot;\&quot;pemanasan global\&quot;
-  -site:go.id&quot;],&quot;correctIndex&quot;:0},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Dalam
-  merumuskan strategi pencarian di mesin pencari Google, mengapa penggunaan kata
-  kunci yang terlampau spesifik dan sempit sangat dihindari oleh seorang
-  peneliti?&quot;,&quot;choices&quot;:[&quot;Karena dapat memblokir alamat IP
-  komputer pengguna secara otomatis&quot;,&quot;Karena dapat mematikan
-  konektivitas jaringan nirkabel router publik bawah terminologi yang lebih
-  umum&quot;,&quot;Karena berisiko menghilangkan informasi penting lainnya yang
-  tersedia di bawah terminologi yang lebih umum&quot;,&quot;Karena mengacaukan
-  pengodean biner pada memori cache komputer pengguna umum bawah
-  terminologi&quot;,&quot;Karena memaksa browser mengunduh virus digital secara
-  otomatis umum bawah terminologi yang
-  lebih&quot;],&quot;correctIndex&quot;:2},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Teknologi
-  pencarian modern seperti Google Lens dikembangkan untuk membantu pengguna
-  internet melakukan penelusuran informasi yang tidak terbatas pada teks saja.
-  Penelusuran informasi pada Google Lens didasarkan pada
-  pencocokan...&quot;,&quot;choices&quot;:[&quot;Suara/vokal secara
-  interaktif&quot;,&quot;Gambar/visual yang diunggah pengguna
-  otomatis&quot;,&quot;Enkripsi persandian asimetris satelit
-  publik&quot;,&quot;Koordinat geolokasi satelit secara
-  otomatis&quot;,&quot;Aliran paket data nirkabel jaringan
-  publik&quot;],&quot;correctIndex&quot;:1},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Di
-  tengah keterbatasan akses internet, seorang siswa ingin melihat versi salinan
-  sementara terbaru dari suatu halaman web yang disimpan oleh server mesin
-  pencari Google. Variabel pencarian lanjutan manakah yang harus ia
-  gunakan?&quot;,&quot;choices&quot;:[&quot;site:&quot;,&quot;filetype:&quot;,&quot;cache:&quot;,&quot;inurl:&quot;,&quot;intitle:&quot;],&quot;correctIndex&quot;:2},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Dalam
-  riset akademis di Indonesia, manakah domain website pengelola di internet yang
-  tergolong kredibel, tepercaya, dan secara resmi dikelola oleh institusi
-  pendidikan
-  tinggi?&quot;,&quot;choices&quot;:[&quot;.com&quot;,&quot;.ac.id&quot;,&quot;.blogspot.com&quot;,&quot;.net&quot;,&quot;.org&quot;],&quot;correctIndex&quot;:1},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Mengapa
-  penggunaan kata kunci yang tidak berkaitan dengan topik penelitian tidak
-  termasuk dalam langkah-langkah pencarian informasi yang
-  efektif?&quot;,&quot;choices&quot;:[&quot;Karena dapat merusak perangkat keras
-  komputer pengguna secara langsung yang dibutuhkan data pengguna secara
-  berlebihan&quot;,&quot;Karena menghasilkan hasil pencarian yang tidak relevan
-  dengan topik sehingga menyulitkan pencarian informasi yang
-  dibutuhkan&quot;,&quot;Karena otomatis memblokir koneksi internet browser
-  dalam informasi yang dibutuhkan data pengguna secara
-  berlebihan&quot;,&quot;Karena memaksa server Google menghapus data pencarian
-  pengguna secara permanen yang dibutuhkan data pengguna secara
-  berlebihan&quot;,&quot;Karena mempercepat durasi loading halaman web secara
-  berlebihan yang dibutuhkan data pengguna secara
-  berlebihan&quot;],&quot;correctIndex&quot;:1},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Mengapa
-  situs web dengan protokol HTTPS dinilai jauh lebih aman dan kredibel untuk
-  diakses saat menjelajah informasi digital dibandingkan situs HTTP
-  biasa?&quot;,&quot;choices&quot;:[&quot;Karena HTTPS secara otomatis menghapus
-  file duplikat di internet browser dari akses pihak yang tidak
-  sah&quot;,&quot;Karena HTTPS mempercepat proses indexing Google secara
-  real-time di browser pengguna dari akses pihak yang tidak
-  sah&quot;,&quot;Karena HTTPS menggunakan enkripsi SSL/TLS untuk melindungi
-  data pengguna dari akses pihak yang tidak sah&quot;,&quot;Karena HTTPS tidak
-  memerlukan koneksi internet nirkabel untuk loading nirkabel untuk loading
-  secara real-time&quot;,&quot;Karena HTTPS otomatis memblokir iklan pop-up di
-  browser pengguna dari akses pihak yang tidak sah untuk
-  loading&quot;],&quot;correctIndex&quot;:2},{&quot;type&quot;:&quot;pgk&quot;,&quot;question&quot;:&quot;Pencarian
-  informasi ilmiah secara daring menggunakan kata kunci sederhana sering kali
-  tidak efektif karena menghasilkan jutaan data tidak relevan. Tentukan apakah
-  setiap pernyataan berikut Benar atau Salah mengenai aturan, variabel, dan
-  strategi pencarian lanjutan di mesin
-  pencari!&quot;,&quot;statements&quot;:[{&quot;text&quot;:&quot;Variabel
-  filetype:pdf berfungsi secara presisi untuk membatasi atau menyaring hasil
-  pencarian Google agar hanya menampilkan berkas berformat dokumen
-  PDF.&quot;,&quot;answer&quot;:true},{&quot;text&quot;:&quot;Operator logika
-  boolean OR digunakan untuk mempersempit hasil pencarian secara drastis dengan
-  memaksa mesin pencari menampilkan halaman yang hanya memuat semua kata kunci
-  sekaligus.&quot;,&quot;answer&quot;:false},{&quot;text&quot;:&quot;Penggunaan
-  variabel intitle:riset membatasi penelusuran agar mesin pencari hanya
-  menampilkan halaman web yang judul dokumennya mengandung kata
-  \&quot;riset\&quot;.&quot;,&quot;answer&quot;:true},{&quot;text&quot;:&quot;Memasukkan
-  kata kunci pencarian yang tidak berkaitan sangat disarankan karena dapat
-  menghemat waktu riset serta meningkatkan efisiensi penyaringan informasi
-  ilmiah.&quot;,&quot;answer&quot;:false},{&quot;text&quot;:&quot;Penggunaan
-  kata kunci pencarian yang terlampau spesifik atau sempit di awal penelusuran
-  dihindari karena berisiko menghilangkan informasi penting lain yang
-  menggunakan istilah
-  umum.&quot;,&quot;answer&quot;:true},{&quot;text&quot;:&quot;Variabel
-  inurl:jurnal digunakan untuk mengunci pelacakan kata kunci
-  \&quot;jurnal\&quot; khusus hanya di dalam badan teks (body text) halaman
-  web.&quot;,&quot;answer&quot;:false}]},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Pencarian
-  informasi ilmiah secara daring menggunakan kata kunci sederhana sering kali
-  tidak efektif. Manakah dua pernyataan berikut yang benar mengenai fungsi dari
-  operator logika boolean dan format pencarian di mesin pencari
-  Google?&quot;,&quot;choices&quot;:[&quot;Operator AND berfungsi menggabungkan
-  beberapa kata kunci guna mempersempit ruang lingkup pencarian
-  data.&quot;,&quot;Operator OR berfungsi membatasi penelusuran agar hanya
-  menampilkan hasil berkas dari domain militer .mil.&quot;,&quot;Operator NOT
-  atau tanda minus - digunakan untuk mengecualikan kata kunci tertentu yang
-  tidak berkaitan dari halaman pencarian.&quot;,&quot;Penggunaan tanda petik
-  ganda \&quot;\&quot; secara otomatis melacak versi salinan sementara terbaru
-  halaman web di
-  server.&quot;],&quot;correctAnswers&quot;:[0,2]},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Pencarian
-  informasi ilmiah secara daring menggunakan kata kunci sederhana sering kali
-  tidak efektif. Seorang siswa ingin mencari data ilmiah mengenai
-  \&quot;teknologi pangan\&quot; yang diterbitkan secara resmi oleh perguruan
-  tinggi di Indonesia (ac.id). Manakah dua sintaks pencarian lanjutan yang sah
-  dan benar-benar membatasi pelacakan hanya ke situs web perguruan tinggi
-  Indonesia tersebut?&quot;,&quot;choices&quot;:[&quot;\&quot;teknologi
-  pangan\&quot; site:ac.id&quot;,&quot;\&quot;teknologi pangan\&quot;
-  filetype:ac.id&quot;,&quot;site:ac.id intext:\&quot;teknologi
-  pangan\&quot;&quot;,&quot;\&quot;teknologi pangan\&quot; OR
-  site:edu&quot;],&quot;correctAnswers&quot;:[0,2]},{&quot;type&quot;:&quot;matching&quot;,&quot;question&quot;:&quot;Pasangkanlah
-  variabel pencarian lanjutan Google di lajur kiri dengan deskripsi
-  penjelasannya yang tepat di lajur
-  kanan!&quot;,&quot;leftItems&quot;:[&quot;site:&quot;,&quot;filetype:&quot;,&quot;inurl:&quot;,&quot;intitle:&quot;],&quot;rightItems&quot;:[&quot;Melacak
-  kata kunci spesifik yang tertanam di dalam alamat URL halaman
-  web.&quot;,&quot;Membatasi hasil pencarian hanya pada alamat web atau domain
-  tertentu (seperti .go.id atau .ac.id).&quot;,&quot;Menyaring hasil pencarian
-  berdasarkan format dokumen berkas tertentu seperti PDF, DOC, atau
-  PPT.&quot;,&quot;Membatasi pencarian halaman web yang judul dokumennya
-  mengandung kata kunci tertentu.&quot;,&quot;Menghapus seluruh riwayat
-  (history) penelusuran peramban internet secara
-  otomatis.&quot;],&quot;correctPairs&quot;:{&quot;0&quot;:1,&quot;1&quot;:2,&quot;2&quot;:0,&quot;3&quot;:3}}]"
-  _attempt-ke="0"   data-hax-lock="data-hax-lock"></latihan-kuis>
+    <latihan-kuis mode="siswa" allow-retake max-retake="5" duration="900" timer-autostart shuffle-questions shuffle-choices kategori="formatif" apps-script-url="https://script.google.com/macros/s/AKfycbyuprudZkCq_YCQ-CqqD_huzndsbA6zHsg_ICfqPnlB97dhcrm1xJjGxJ3u4Jp8DjJQ/exec" kd-materi="LD-1 Latihan" student-id="" judul-materi="Materi: Pencarian" teks-materi="Baca materi di atas, lalu kerjakan kuis. Kamu bisa mengulang sampai 4 kali." show-sheet-link soal-file-url="./files/soal-contoh.json" materi-file="" cover-image="" judul-kuis="Evaluasi Kuis Interaktif" student-name="" student-nis="" student-absen="" student-kelas="" pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai" hide-pause-restart questions="[{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Pencarian informasi ilmiah secara daring menggunakan kata kunci sederhana sering kali tidak efektif karena menghasilkan jutaan data tidak relevan. Guna menyaring data secara presisi, pengguna dapat menerapkan variabel pencarian lanjutan seperti site: untuk domain web dan filetype: untuk format berkas. Seorang siswa kelas XI sedang melakukan riset mengenai \&quot;dampak emisi karbon\&quot;. Ia ingin mencari dokumen laporan resmi berformat PDF yang diterbitkan langsung oleh instansi pemerintah Indonesia (domain go.id) agar datanya valid. Sintaks pencarian lanjutan manakah yang paling cepat dan akurat untuk memenuhi kebutuhan tersebut?&quot;,&quot;choices&quot;:[&quot;dampak emisi karbon filetype:pdf site:edu&quot;,&quot;\&quot;dampak emisi karbon\&quot; site:go.id filetype:pdf&quot;,&quot;dampak emisi karbon AND site:go.id OR filetype:pdf&quot;,&quot;site:gov filetype:pdf \&quot;dampak emisi karbon\&quot;&quot;,&quot;inurl:emisi_karbon filetype:doc site:com&quot;],&quot;correctIndex&quot;:1},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Pencarian informasi ilmiah secara daring menggunakan kata kunci sederhana sering kali tidak efektif karena menghasilkan jutaan data tidak relevan. Selain itu, operator logika boolean (AND, OR, NOT) berperan penting dalam mengaitkan atau mengecualikan konsep penelusuran. Ketika melakukan riset daring, adakalanya kita ingin mengecualikan kata tertentu yang tidak relevan agar tidak muncul di halaman pencarian. Operator logika boolean atau karakter penulisan manakah yang digunakan untuk mengecualikan kata kunci di mesin pencari Google?&quot;,&quot;choices&quot;:[&quot;Operator AND&quot;,&quot;Operator OR&quot;,&quot;Operator NOT atau tanda minus -&quot;,&quot;Tanda petik ganda \&quot;\&quot;&quot;,&quot;Variabel site:&quot;],&quot;correctIndex&quot;:2},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Dalam pencarian lanjut pada mesin pencari Google, apa fungsi utama dari penggunaan tanda petik ganda \&quot;\&quot; di awal dan akhir frasa kata kunci (seperti \&quot;energi terbarukan\&quot;)?&quot;,&quot;choices&quot;:[&quot;Mengonversi dokumen secara otomatis ke format file PDF&quot;,&quot;Melacak halaman web yang judulnya hanya memuat kata kunci tunggal&quot;,&quot;Menginstruksikan mesin pencari untuk melacak frasa kata kunci secara tepat dan persis (Exact Match)&quot;,&quot;Melakukan enkripsi otomatis pada jalur koneksi internet browser&quot;,&quot;Menghapus data cache sementara dari server Google&quot;],&quot;correctIndex&quot;:2},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Pencarian informasi ilmiah secara daring menggunakan kata kunci sederhana sering kali tidak efektif. Seorang peneliti ingin mencari informasi spesifik mengenai \&quot;pemanasan global\&quot; di situs web resmi kementerian/lembaga pemerintah Indonesia (go.id). Sintaks penulisan di mesin pencari yang benar-benar membatasi hasil pencarian hanya pada domain tersebut adalah...&quot;,&quot;choices&quot;:[&quot;\&quot;pemanasan global\&quot; site:go.id&quot;,&quot;pemanasan global OR site:go.id&quot;,&quot;\&quot;pemanasan global\&quot; filetype:go.id&quot;,&quot;intext:pemanasan global site:edu&quot;,&quot;\&quot;pemanasan global\&quot; -site:go.id&quot;],&quot;correctIndex&quot;:0},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Dalam merumuskan strategi pencarian di mesin pencari Google, mengapa penggunaan kata kunci yang terlampau spesifik dan sempit sangat dihindari oleh seorang peneliti?&quot;,&quot;choices&quot;:[&quot;Karena dapat memblokir alamat IP komputer pengguna secara otomatis&quot;,&quot;Karena dapat mematikan konektivitas jaringan nirkabel router publik bawah terminologi yang lebih umum&quot;,&quot;Karena berisiko menghilangkan informasi penting lainnya yang tersedia di bawah terminologi yang lebih umum&quot;,&quot;Karena mengacaukan pengodean biner pada memori cache komputer pengguna umum bawah terminologi&quot;,&quot;Karena memaksa browser mengunduh virus digital secara otomatis umum bawah terminologi yang lebih&quot;],&quot;correctIndex&quot;:2},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Teknologi pencarian modern seperti Google Lens dikembangkan untuk membantu pengguna internet melakukan penelusuran informasi yang tidak terbatas pada teks saja. Penelusuran informasi pada Google Lens didasarkan pada pencocokan...&quot;,&quot;choices&quot;:[&quot;Suara/vokal secara interaktif&quot;,&quot;Gambar/visual yang diunggah pengguna otomatis&quot;,&quot;Enkripsi persandian asimetris satelit publik&quot;,&quot;Koordinat geolokasi satelit secara otomatis&quot;,&quot;Aliran paket data nirkabel jaringan publik&quot;],&quot;correctIndex&quot;:1},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Di tengah keterbatasan akses internet, seorang siswa ingin melihat versi salinan sementara terbaru dari suatu halaman web yang disimpan oleh server mesin pencari Google. Variabel pencarian lanjutan manakah yang harus ia gunakan?&quot;,&quot;choices&quot;:[&quot;site:&quot;,&quot;filetype:&quot;,&quot;cache:&quot;,&quot;inurl:&quot;,&quot;intitle:&quot;],&quot;correctIndex&quot;:2},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Dalam riset akademis di Indonesia, manakah domain website pengelola di internet yang tergolong kredibel, tepercaya, dan secara resmi dikelola oleh institusi pendidikan tinggi?&quot;,&quot;choices&quot;:[&quot;.com&quot;,&quot;.ac.id&quot;,&quot;.blogspot.com&quot;,&quot;.net&quot;,&quot;.org&quot;],&quot;correctIndex&quot;:1},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Mengapa penggunaan kata kunci yang tidak berkaitan dengan topik penelitian tidak termasuk dalam langkah-langkah pencarian informasi yang efektif?&quot;,&quot;choices&quot;:[&quot;Karena dapat merusak perangkat keras komputer pengguna secara langsung yang dibutuhkan data pengguna secara berlebihan&quot;,&quot;Karena menghasilkan hasil pencarian yang tidak relevan dengan topik sehingga menyulitkan pencarian informasi yang dibutuhkan&quot;,&quot;Karena otomatis memblokir koneksi internet browser dalam informasi yang dibutuhkan data pengguna secara berlebihan&quot;,&quot;Karena memaksa server Google menghapus data pencarian pengguna secara permanen yang dibutuhkan data pengguna secara berlebihan&quot;,&quot;Karena mempercepat durasi loading halaman web secara berlebihan yang dibutuhkan data pengguna secara berlebihan&quot;],&quot;correctIndex&quot;:1},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Mengapa situs web dengan protokol HTTPS dinilai jauh lebih aman dan kredibel untuk diakses saat menjelajah informasi digital dibandingkan situs HTTP biasa?&quot;,&quot;choices&quot;:[&quot;Karena HTTPS secara otomatis menghapus file duplikat di internet browser dari akses pihak yang tidak sah&quot;,&quot;Karena HTTPS mempercepat proses indexing Google secara real-time di browser pengguna dari akses pihak yang tidak sah&quot;,&quot;Karena HTTPS menggunakan enkripsi SSL/TLS untuk melindungi data pengguna dari akses pihak yang tidak sah&quot;,&quot;Karena HTTPS tidak memerlukan koneksi internet nirkabel untuk loading nirkabel untuk loading secara real-time&quot;,&quot;Karena HTTPS otomatis memblokir iklan pop-up di browser pengguna dari akses pihak yang tidak sah untuk loading&quot;],&quot;correctIndex&quot;:2},{&quot;type&quot;:&quot;pgk&quot;,&quot;question&quot;:&quot;Pencarian informasi ilmiah secara daring menggunakan kata kunci sederhana sering kali tidak efektif karena menghasilkan jutaan data tidak relevan. Tentukan apakah setiap pernyataan berikut Benar atau Salah mengenai aturan, variabel, dan strategi pencarian lanjutan di mesin pencari!&quot;,&quot;statements&quot;:[{&quot;text&quot;:&quot;Variabel filetype:pdf berfungsi secara presisi untuk membatasi atau menyaring hasil pencarian Google agar hanya menampilkan berkas berformat dokumen PDF.&quot;,&quot;answer&quot;:true},{&quot;text&quot;:&quot;Operator logika boolean OR digunakan untuk mempersempit hasil pencarian secara drastis dengan memaksa mesin pencari menampilkan halaman yang hanya memuat semua kata kunci sekaligus.&quot;,&quot;answer&quot;:false},{&quot;text&quot;:&quot;Penggunaan variabel intitle:riset membatasi penelusuran agar mesin pencari hanya menampilkan halaman web yang judul dokumennya mengandung kata \&quot;riset\&quot;.&quot;,&quot;answer&quot;:true},{&quot;text&quot;:&quot;Memasukkan kata kunci pencarian yang tidak berkaitan sangat disarankan karena dapat menghemat waktu riset serta meningkatkan efisiensi penyaringan informasi ilmiah.&quot;,&quot;answer&quot;:false},{&quot;text&quot;:&quot;Penggunaan kata kunci pencarian yang terlampau spesifik atau sempit di awal penelusuran dihindari karena berisiko menghilangkan informasi penting lain yang menggunakan istilah umum.&quot;,&quot;answer&quot;:true},{&quot;text&quot;:&quot;Variabel inurl:jurnal digunakan untuk mengunci pelacakan kata kunci \&quot;jurnal\&quot; khusus hanya di dalam badan teks (body text) halaman web.&quot;,&quot;answer&quot;:false}]},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Pencarian informasi ilmiah secara daring menggunakan kata kunci sederhana sering kali tidak efektif. Manakah dua pernyataan berikut yang benar mengenai fungsi dari operator logika boolean dan format pencarian di mesin pencari Google?&quot;,&quot;choices&quot;:[&quot;Operator AND berfungsi menggabungkan beberapa kata kunci guna mempersempit ruang lingkup pencarian data.&quot;,&quot;Operator OR berfungsi membatasi penelusuran agar hanya menampilkan hasil berkas dari domain militer .mil.&quot;,&quot;Operator NOT atau tanda minus - digunakan untuk mengecualikan kata kunci tertentu yang tidak berkaitan dari halaman pencarian.&quot;,&quot;Penggunaan tanda petik ganda \&quot;\&quot; secara otomatis melacak versi salinan sementara terbaru halaman web di server.&quot;],&quot;correctAnswers&quot;:[0,2]},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Pencarian informasi ilmiah secara daring menggunakan kata kunci sederhana sering kali tidak efektif. Seorang siswa ingin mencari data ilmiah mengenai \&quot;teknologi pangan\&quot; yang diterbitkan secara resmi oleh perguruan tinggi di Indonesia (ac.id). Manakah dua sintaks pencarian lanjutan yang sah dan benar-benar membatasi pelacakan hanya ke situs web perguruan tinggi Indonesia tersebut?&quot;,&quot;choices&quot;:[&quot;\&quot;teknologi pangan\&quot; site:ac.id&quot;,&quot;\&quot;teknologi pangan\&quot; filetype:ac.id&quot;,&quot;site:ac.id intext:\&quot;teknologi pangan\&quot;&quot;,&quot;\&quot;teknologi pangan\&quot; OR site:edu&quot;],&quot;correctAnswers&quot;:[0,2]},{&quot;type&quot;:&quot;matching&quot;,&quot;question&quot;:&quot;Pasangkanlah variabel pencarian lanjutan Google di lajur kiri dengan deskripsi penjelasannya yang tepat di lajur kanan!&quot;,&quot;leftItems&quot;:[&quot;site:&quot;,&quot;filetype:&quot;,&quot;inurl:&quot;,&quot;intitle:&quot;],&quot;rightItems&quot;:[&quot;Melacak kata kunci spesifik yang tertanam di dalam alamat URL halaman web.&quot;,&quot;Membatasi hasil pencarian hanya pada alamat web atau domain tertentu (seperti .go.id atau .ac.id).&quot;,&quot;Menyaring hasil pencarian berdasarkan format dokumen berkas tertentu seperti PDF, DOC, atau PPT.&quot;,&quot;Membatasi pencarian halaman web yang judul dokumennya mengandung kata kunci tertentu.&quot;,&quot;Menghapus seluruh riwayat (history) penelusuran peramban internet secara otomatis.&quot;],&quot;correctPairs&quot;:{&quot;0&quot;:1,&quot;1&quot;:2,&quot;2&quot;:0,&quot;3&quot;:3}}]" _attempt-ke="0"  ></latihan-kuis>
+
+                                                                                </b>
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
+
+
+  </b>
