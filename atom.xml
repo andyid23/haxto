@@ -3,7 +3,7 @@
   <title>Media Pembelajaran Kelas XI Informatika SMA</title>
   <link href="https://localhost:3000/sites/haxto/" rel="self" />
   <subtitle></subtitle>
-  <updated>2026-08-31T10:36:56.000Z</updated>
+  <updated>2026-08-31T10:45:21.000Z</updated>
   <author>
       <name>Andy Yulianto</name>
   </author>
@@ -12,7 +12,7 @@
   <entry>
     <title>Selamat Datang Pada Ulangan</title>
     <id>item-e25c1b60-c8b7-4360-b3e8-3533c93c3a92</id>
-    <updated>2026-08-31T10:36:56.000Z</updated>
+    <updated>2026-08-31T10:45:21.000Z</updated>
     <published>2026-08-23T03:55:59.000Z</published>
     <summary>Welcome to your new HAX site! Click edit on the top bar to get started
 What can I do?
@@ -71,12 +71,12 @@ We&apos;ve got a ton of blocks that are easy to use and get a lot done with litt
     </content>
   </entry>
   <entry>
-    <title>LATIHAN/SIMULASI KUIS</title>
+    <title>LATIHAN / SIMULASI KUIS</title>
     <id>item-641ef0af-6ba1-4523-bedd-5c0d0f85828b</id>
-    <updated>2026-08-31T10:36:56.000Z</updated>
+    <updated>2026-08-31T10:45:21.000Z</updated>
     <published>2026-08-23T06:35:36.000Z</published>
     <summary>Halaman ulangan harian terintegrasi dengan timer, anti-confetti, dan jawaban tersembunyi.</summary>
-    <link href="https://localhost:3000/sites/haxto/latihan/simulasi-kuis"/>
+    <link href="https://localhost:3000/sites/haxto/latihan-/-simulasi-kuis"/>
     
     <content type="html">
       <![CDATA[ 
@@ -111,7 +111,7 @@ apps-script-url="https://script.google.com/macros/s/AKfycbyuprudZkCq_YCQ-CqqD_hu
   <entry>
     <title>Materi Simulasi Ulangan / Kuis</title>
     <id>item-ba9170fc-d0c5-49c4-bb1b-327ff46aa871</id>
-    <updated>2026-08-31T10:36:56.000Z</updated>
+    <updated>2026-08-31T10:45:21.000Z</updated>
     <published>2026-08-26T05:22:47.000Z</published>
     <summary>soal latihan </summary>
     <link href="https://localhost:3000/sites/haxto/materi-simulasi-ulangan-/-kuis"/>
@@ -246,7 +246,7 @@ apps-script-url="https://script.google.com/macros/s/AKfycbyuprudZkCq_YCQ-CqqD_hu
   <entry>
     <title>Ulangan Harian 1 FASE F LM1-F</title>
     <id>item-43d63e69-4564-4ae3-80df-ffa7a6677b2b</id>
-    <updated>2026-08-31T10:36:56.000Z</updated>
+    <updated>2026-08-31T10:45:21.000Z</updated>
     <published>2026-08-27T18:12:24.000Z</published>
     <summary>
 
@@ -288,7 +288,7 @@ Ulangan
   <entry>
     <title>Ulangan Harian 1 Fase E LM1-E</title>
     <id>item-21768d19-1305-46c3-90af-ad2d1542d1b6</id>
-    <updated>2026-08-31T10:36:56.000Z</updated>
+    <updated>2026-08-31T10:45:21.000Z</updated>
     <published>2026-08-31T08:01:59.000Z</published>
     <summary>📝 Kuis Ekosistem Periksa Fakta &amp;#38; CRAAP, PENCARIAN LANJUTAN (LM1) Kelas X
 
@@ -330,7 +330,7 @@ Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban
   <entry>
     <title>LATIHAN SIMULASI KUIS FASE-E-LM1</title>
     <id>item-792b811f-d307-4765-93cb-f20ed47c8097</id>
-    <updated>2026-08-31T10:36:56.000Z</updated>
+    <updated>2026-08-31T10:45:21.000Z</updated>
     <published>2026-08-31T08:40:02.000Z</published>
     <summary>📝 Latihan Kuis Kelas X
 Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban
@@ -372,7 +372,7 @@ apps-script-url="https://script.google.com/macros/s/AKfycbyuprudZkCq_YCQ-CqqD_hu
   <entry>
     <title>EKOSISTEM PERIKSA FAKTA &amp; METODE CRAAP</title>
     <id>item-426de1b9-5806-4751-8610-0c7e9478b242</id>
-    <updated>2026-08-31T10:36:56.000Z</updated>
+    <updated>2026-08-31T10:45:21.000Z</updated>
     <published>2026-08-31T09:51:48.000Z</published>
     <summary>📘 Cara Mengerjakan Latihan Simak materi dan pahami, lanjutkan soal latihan di bawah dengan login terlebih dahulu,   harap refresh bila tombol mulai latihan soal tidak muncul setelah login. 1. P</summary>
     <link href="https://localhost:3000/sites/haxto/ekosistem-periksa-fakta-metode-craap"/>
