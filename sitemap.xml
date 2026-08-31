@@ -2,43 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://localhost:3000/sites/haxto/selamat-datang-pada-ulangan</loc>
-    <lastmod>2026-08-31T09:51:48.000Z</lastmod>
+    <lastmod>2026-08-31T10:33:57.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://localhost:3000/sites/haxto/latihan/simulasi-kuis</loc>
-    <lastmod>2026-08-31T09:51:48.000Z</lastmod>
+    <lastmod>2026-08-31T10:33:57.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/sites/haxto/materi-simulasi-ulangan-kuis</loc>
-    <lastmod>2026-08-31T10:31:25.000Z</lastmod>
+    <loc>https://localhost:3000/sites/haxto/materi-simulasi-ulangan/kuis</loc>
+    <lastmod>2026-08-31T10:33:56.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/sites/haxto/ulangan-harian-1</loc>
-    <lastmod>2026-08-31T09:51:49.000Z</lastmod>
+    <loc>https://localhost:3000/sites/haxto/ulangan-harian-1-fase-f-lm1-f</loc>
+    <lastmod>2026-08-31T10:33:57.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://localhost:3000/sites/haxto/ulangan-harian-1-fase-e-lm1-e</loc>
-    <lastmod>2026-08-31T09:51:49.000Z</lastmod>
+    <lastmod>2026-08-31T10:33:57.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://localhost:3000/sites/haxto/latihan-simulasi-kuis-fase-e-lm1</loc>
-    <lastmod>2026-08-31T10:27:30.000Z</lastmod>
+    <lastmod>2026-08-31T10:33:57.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://localhost:3000/sites/haxto/ekosistem-periksa-fakta-metode-craap</loc>
-    <lastmod>2026-08-31T10:17:51.000Z</lastmod>
+    <lastmod>2026-08-31T10:33:57.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
