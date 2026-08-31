@@ -12,7 +12,7 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 ## Pages
 - [Selamat Datang Pada Ulangan](https://localhost:3000/sites/haxto/pages/item-e25c1b60-c8b7-4360-b3e8-3533c93c3a92/index.md): Welcome to your new HAX site! Click edit on the top bar to get started What can I do? We've got a ton of blocks that are easy to use and get a lot done with little effort, so much in fact we made a l
 - [LATIHAN/SIMULASI KUIS](https://localhost:3000/sites/haxto/pages/item-641ef0af-6ba1-4523-bedd-5c0d0f85828b/index.md): Halaman ulangan harian terintegrasi dengan timer, anti-confetti, dan jawaban tersembunyi.
-- [Materi Simulasi Ulangan/Kuis](https://localhost:3000/sites/haxto/pages/item-ba9170fc-d0c5-49c4-bb1b-327ff46aa871/index.md): soal latihan
+- [Materi Simulasi Ulangan / Kuis](https://localhost:3000/sites/haxto/pages/item-ba9170fc-d0c5-49c4-bb1b-327ff46aa871/index.md): soal latihan
 - [Ulangan Harian 1 FASE F LM1-F](https://localhost:3000/sites/haxto/pages/item-43d63e69-4564-4ae3-80df-ffa7a6677b2b/index.md)
 - [Ulangan Harian 1 Fase E LM1-E](https://localhost:3000/sites/haxto/pages/item-21768d19-1305-46c3-90af-ad2d1542d1b6/index.md): 📝 Kuis Ekosistem Periksa Fakta &#38; CRAAP, PENCARIAN LANJUTAN (LM1) Kelas X Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban benar/salah ditampilkan. Setelah logi
 - [LATIHAN SIMULASI KUIS FASE-E-LM1](https://localhost:3000/sites/haxto/pages/item-792b811f-d307-4765-93cb-f20ed47c8097/index.md): 📝 Latihan Kuis Kelas X Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban benar/salah ditampilkan. Setelah login reload untuk menampilkan tombol mulai latihan ulangan

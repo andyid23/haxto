@@ -109,12 +109,12 @@ apps-script-url="https://script.google.com/macros/s/AKfycbyuprudZkCq_YCQ-CqqD_hu
     </content>
   </entry>
   <entry>
-    <title>Materi Simulasi Ulangan/Kuis</title>
+    <title>Materi Simulasi Ulangan / Kuis</title>
     <id>item-ba9170fc-d0c5-49c4-bb1b-327ff46aa871</id>
-    <updated>2026-08-31T10:33:56.000Z</updated>
+    <updated>2026-08-31T10:35:02.000Z</updated>
     <published>2026-08-26T05:22:47.000Z</published>
     <summary>soal latihan </summary>
-    <link href="https://localhost:3000/sites/haxto/materi-simulasi-ulangan/kuis"/>
+    <link href="https://localhost:3000/sites/haxto/materi-simulasi-ulangan-kuis"/>
     
     <content type="html">
       <![CDATA[ 
@@ -183,7 +183,9 @@ apps-script-url="https://script.google.com/macros/s/AKfycbyuprudZkCq_YCQ-CqqD_hu
 
 
 
+
     </li>
+
 
 
 
