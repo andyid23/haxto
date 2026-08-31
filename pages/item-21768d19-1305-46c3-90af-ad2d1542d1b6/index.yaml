@@ -17,7 +17,7 @@ metadata:
   created: 1788163319
   images: []
   videos: []
-  updated: 1788163673
+  updated: 1788163722
   theme:
     element: polaris-flex-theme
     path: '@haxtheweb/polaris-theme/lib/polaris-flex-theme.js'
@@ -32,7 +32,7 @@ metadata:
     terrible: false
     key: polaris-flex-theme
   published: true
-  hideInMenu: false
+  hideInMenu: true
   readtime: 1
 content: >
 
@@ -46,6 +46,7 @@ content: >
     benar/salah ditampilkan. Setelah login <mark>reload</mark>untuk menampilkan <mark>tombol mulai</mark>&#160;ulangan. Nilai akhir akan diambil dari nilai terakhir yang dikumpulkan setelah waktu habis atau semua soal terjawab. Waktu Pengerjaan Soal 15 Menit&#160;🤐</p>
   <p>Kalau <b><u>mode gelap</u></b>
 
+
    tidak bisa gunakan <mark>mode terang</mark> di smartphonemu&#160;😄</p>
   <quiz-user-auth
   apps-script-url="https://script.google.com/macros/s/AKfycbyt6bfek-Is4YPJ2cux2H5Bp2Vk62wokK0-4Bl4wWy1uQM1VURByUgq-F_z0i2TxrEE/exec"
@@ -56,10 +57,10 @@ content: >
   shuffle-choices kategori="sumatif_lm"
   apps-script-url="https://script.google.com/macros/s/AKfycbyuprudZkCq_YCQ-CqqD_huzndsbA6zHsg_ICfqPnlB97dhcrm1xJjGxJ3u4Jp8DjJQ/exec"
   kd-materi="LM1" student-id="" judul-kuis="Ulangan Harian" show-sheet-link
-  soal-file-url="./files/soal-contoh.json"  judul-materi="Materi Pembelajaran"
+  soal-file-url="./files/soal-contoh.json" judul-materi="Materi Pembelajaran"
   teks-materi="Baca materi di bawah ini dengan saksama sebelum mengerjakan kuis.
   Waktu pengerjaan kuis dibatasi oleh timer; saat waktu habis, kuis akan dikunci
-  dan nilai otomatis terkirim."  materi-file="" cover-image="" student-name=""
+  dan nilai otomatis terkirim." materi-file="" cover-image="" student-name=""
   student-nis="" student-absen="" student-kelas="" pesan-waktu-habis="⏰ Waktu
   habis! Kuis dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat!
   Nilai Anda sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai"
@@ -219,6 +220,6 @@ content: >
   mengandung kata kunci tertentu.&quot;,&quot;Menghapus seluruh riwayat
   (history) penelusuran peramban internet secara
   otomatis.&quot;],&quot;correctPairs&quot;:{&quot;0&quot;:1,&quot;1&quot;:2,&quot;2&quot;:0,&quot;3&quot;:3}}]"
-  _attempt-ke="0">
+  _attempt-ke="0"  >
 
   </latihan-kuis>
