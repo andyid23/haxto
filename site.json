@@ -316,6 +316,14 @@
             "type": "application/zip",
             "name": "Fase-F-LM2.docx",
             "size": 12129
+          },
+          {
+            "path": "C:\\Users\\Dragon\\Documents\\github\\andyid23\\haxtheweb-kuis\\haxto\\files\\Fase-F-LM2.rtf",
+            "fullUrl": "/C:\\Users\\Dragon\\Documents\\github\\andyid23\\haxtheweb-kuis\\haxto/files/Fase-F-LM2.rtf",
+            "url": "files/Fase-F-LM2.rtf",
+            "type": "application/rtf",
+            "name": "Fase-F-LM2.rtf",
+            "size": 414499
           }
         ]
       }
