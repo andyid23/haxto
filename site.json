@@ -307,7 +307,17 @@
         "published": true,
         "hideInMenu": false,
         "locked": false,
-        "readtime": 1
+        "readtime": 1,
+        "files": [
+          {
+            "path": "C:\\Users\\Dragon\\Documents\\github\\andyid23\\haxtheweb-kuis\\haxto\\files\\Fase-F-LM2.docx",
+            "fullUrl": "/C:\\Users\\Dragon\\Documents\\github\\andyid23\\haxtheweb-kuis\\haxto/files/Fase-F-LM2.docx",
+            "url": "files/Fase-F-LM2.docx",
+            "type": "application/zip",
+            "name": "Fase-F-LM2.docx",
+            "size": 12129
+          }
+        ]
       }
     }
   ]
