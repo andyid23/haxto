@@ -289,6 +289,22 @@
         "readtime": 5,
         "status": ""
       }
+    },
+    {
+      "id": "item-9bc01ccd-190b-45e4-ac15-8d4938403c5f",
+      "indent": 0,
+      "location": "pages/item-9bc01ccd-190b-45e4-ac15-8d4938403c5f/index.html",
+      "slug": "new-page",
+      "order": 1,
+      "parent": null,
+      "title": "New Page",
+      "description": "",
+      "metadata": {
+        "created": 1788236145,
+        "updated": 1788236145,
+        "images": [],
+        "videos": []
+      }
     }
   ]
 }
