@@ -6,7 +6,7 @@
     <description></description>
     <copyright>Copyright (C) 2026 https://localhost:3000/sites/haxto</copyright>
     <language>en-us</language>
-    <lastBuildDate>Mon, 31 Aug 2026 10:45:21 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 31 Aug 2026 11:05:50 GMT</lastBuildDate>
     <generator>HAXcms NodeJS</generator>
     <atom:link href="https://localhost:3000/sites/haxto/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
@@ -58,6 +58,13 @@
       <description>📘 Cara Mengerjakan Latihan Kuis Simak materi dan pahami, lanjutkan soal latihan di bawah dengan login terlebih dahulu, harap refresh bila tombol mulai latihan soal tidak muncul setelah login. 1. Pendahuluan Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep inti serta implementasi dari sistem komputasi, rekayasa, dan kecakapan digital di era modern . Di tengah derasnya arus informasi era Masyarakat 5.0, kita sering kali dihadapkan pada fenomena infodemi, yaitu ledakan...</description>
       <guid>https://localhost:3000/sites/haxto/ekosistem-periksa-fakta-metode-craap</guid>
       <pubDate>Mon, 31 Aug 2026 09:51:48 GMT</pubDate>
+    </item>
+    <item>
+      <title>New Page</title>
+      <link>https://localhost:3000/sites/haxto/new-page</link>
+      <description></description>
+      <guid>https://localhost:3000/sites/haxto/new-page</guid>
+      <pubDate>Tue, 01 Sep 2026 04:15:45 GMT</pubDate>
     </item>
   </channel>
 </rss>

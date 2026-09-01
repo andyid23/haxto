@@ -2,13 +2,20 @@ id: item-9bc01ccd-190b-45e4-ac15-8d4938403c5f
 indent: 0
 location: pages/item-9bc01ccd-190b-45e4-ac15-8d4938403c5f/index.yaml
 slug: new-page
-order: 1
+order: 2
 parent: null
 title: New Page
-description: ''
+description: |+
+
 metadata:
   created: 1788236145
-  updated: 1788236145
+  updated: 1788236494
   images: []
   videos: []
-content: <p></p>
+  published: true
+  hideInMenu: false
+  locked: false
+  readtime: 1
+content: |
+
+  <p></p>
