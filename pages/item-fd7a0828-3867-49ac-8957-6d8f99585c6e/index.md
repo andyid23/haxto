@@ -1,91 +1,93 @@
-📘 Cara Mengerjakan Latihan
----------------------------
+**MODUL AJAR INFORMATIKA FASE F (KELAS XI)**
+--------------------------------------------
 
-Simak materi dan pahami, lanjutkan soal latihan di bawah dengan login terlebih dahulu, harap refresh bila tombol mulai latihan soal tidak muncul setelah login.
-
-#### **TOPIK: OPTIMALISASI PENCARIAN LANJUTAN UNTUK RISET**
+**TOPIK: VERIFIKASI INFORMASI DAN PERIKSA FAKTA (LITERASI DIGITAL)**
+--------------------------------------------------------------------
 
 * * *
 
 ### **1\. Pendahuluan**
 
-Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep inti serta implementasi dari sistem komputer, jaringan, dan kecakapan digital. Di tengah arus transformasi digital yang mengalir deras, literasi digital dan kemampuan berpikir kritis menjadi prasyarat mutlak agar peserta didik memiliki bekal untuk menjadi warga digital yang berbudaya, beradab, dan produktif.
+Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep inti serta implementasi dari sistem komputasi, jaringan, dan kecakapan digital di era modern. Di tengah pesatnya perkembangan teknologi informasi, masyarakat saat ini hidup di era di mana alam nyata dan alam digital saling terintegrasi. Kondisi ini memicu terjadinya fenomena ledakan informasi digital yang mencakup berita akurat maupun berita bohong (hoaks) yang menyebar secara masif dan cepat.
 
-Literasi digital mencakup kemampuan teknis dan kognitif untuk mengakses, mengatur, memahami, mengintegrasikan, mengevaluasi, dan mengkreasi informasi secara aman melalui teknologi digital. Salah satu keterampilan mendasar dalam literasi digital adalah kemampuan menjelajahi informasi secara cerdas dan memanfaatkan mesin pencari (search engine) untuk kepentingan riset akademik secara efektif dan efisien.
+Kemampuan berpikir kritis dan literasi digital menjadi prasyarat mutlak bagi setiap warga digital agar mampu menyikapi beragam data yang tersedia di internet secara bijak. Melalui pemahaman yang mendalam tentang verifikasi informasi, peserta didik tidak hanya terhindar dari disinformasi yang merugikan, tetapi juga mampu membangun ketahanan terhadap manipulasi informasi di dunia maya.
 
 * * *
 
 ### **2\. Tujuan Pembelajaran**
 
-Berdasarkan Capaian Pembelajaran (CP) dan Alur Tujuan Pembelajaran (ATP) Informatika Fase F, tujuan pembelajaran khusus pada topik ini adalah:
+Berdasarkan Capaian Pembelajaran (CP) elemen Literasi Digital Fase F, sasaran kompetensi khusus pada topik ini adalah:
 
-*   Mampu memahami penggunaan mesin pencari secara optimal untuk melakukan riset akademik.
-*   Mampu menyusun strategi penelusuran informasi daring dengan menggunakan kata kunci presisi serta operator logika Boolean.
-*   Mampu menerapkan kombinasi variabel pencarian lanjutan (seperti site:, filetype:, dll.) untuk meningkatkan keandalan sumber data dan menghemat waktu riset.
+*   Peserta didik mampu **menggunakan cara membaca lateral (_lateral reading_)** untuk mengevaluasi informasi digital yang kompleks.
+*   Peserta didik mampu **mengevaluasi kebenaran konten** menggunakan verifikasi teks, gambar, dan video secara kritis.
+*   Peserta didik mampu **menerapkan metode ilmiah seperti triangulasi** untuk menguji keandalan dan validitas sumber data.
 
 * * *
 
 ### **3\. Materi dan Konsep Dasar**
 
-#### **A. Kebutuhan Riset Ilmiah Daring**
+#### **A. Membaca Lateral (_Lateral Reading_) vs. Membaca Vertikal**
 
-Riset adalah penyelidikan suatu masalah secara sistematis, kritis, dan ilmiah untuk mendapatkan fakta baru atau penafsiran yang lebih baik. Dalam melakukan riset, pencarian informasi daring menggunakan kata kunci sederhana sering kali tidak efektif karena menghasilkan jutaan data tidak relevan. Oleh karena itu, pemrogram dan peneliti harus menguasai strategi pencarian lanjutan untuk menyaring data secara presisi.
+Ketika mengevaluasi informasi digital di internet, banyak pengguna terjebak pada metode **Membaca Vertikal**, yaitu cara membaca satu halaman web dari atas ke bawah secara saksama sembari mengandalkan visual internal—seperti logo profesional, tata letak yang rapi, atau halaman \*"About Us"\*—untuk menilai kredibilitas. Padahal, seluruh fitur internal tersebut sangat mudah dimanipulasi atau dipalsukan oleh pembuat hoaks.
 
-#### **B. Operator Logika Boolean**
+Sebagai solusi, peserta didik harus menerapkan **Membaca Lateral** (_lateral reading_), yaitu strategi mengevaluasi kredibilitas informasi dengan cara **keluar dari situs web atau postingan yang sedang dibaca, membuka beberapa tab baru di peramban**, dan mencari konsensus atau sudut pandang dari berbagai sumber independen tepercaya mengenai organisasi, penulis, atau klaim tersebut.
 
-**Operator logika Boolean berperan penting dalam mengaitkan, membatasi, atau mengecualikan konsep penelusuran di mesin pencari:**
+Selain itu, aspek keamanan penjelajahan juga ditunjang oleh penggunaan protokol **HTTPS** yang dianggap lebih aman dan kredibel dalam interaksi informasi digital. HTTPS menambahkan lapisan keamanan dengan menggunakan protokol **SSL/TLS** yang mengenkripsi data yang dikirimkan antara klien dan server, sehingga melindunginya dari penyadapan pihak ketiga yang tidak sah. Namun, penting untuk dipahami bahwa HTTPS hanya menjamin keamanan jalur transmisi data, bukan kebenaran isi atau validitas informasi di dalam situs tersebut.
 
-*   AND: Digunakan untuk menggabungkan kata kunci guna mempersempit hasil pencarian data (memaksa mesin pencari menampilkan halaman yang hanya memuat semua kata kunci tersebut secara bersamaan).
-*   OR: Digunakan untuk memperluas pencarian dengan menampilkan hasil yang memuat salah satu atau kedua kata kunci sekaligus.
-*   NOT (atau karakter tanda minus -): Digunakan untuk mengecualikan kata kunci tertentu yang tidak relevan agar tidak muncul di halaman hasil penelusuran.
+#### **B. Metode Triangulasi dalam Validasi Data**
 
-#### **C. Variabel Pencarian Lanjutan (Search Operators)**
+**Triangulasi** adalah metode ilmiah yang digunakan untuk memperkuat validitas data dengan cara **menggabungkan minimal tiga sumber, metode, atau peneliti berbeda**. Di dunia digital, penerapan taktis metode ini sangat penting untuk melindungi diri dari jebakan **bias konfirmasi** (_confirmation bias_), yaitu kesalahan berpikir tidak sadar di mana seseorang hanya aktif mencari bukti di internet yang mendukung opini pribadinya sembari mengabaikan fakta bertolak belakang yang kredibel.
 
-**Variabel ini membatasi pelacakan kata kunci pada bagian spesifik dari dokumen atau server di internet:**
+*   **Triangulasi Metode:** Menggunakan teknik pengumpulan data yang berbeda untuk memverifikasi hal yang sama (misalnya menggabungkan wawancara, observasi lapangan, dan analisis dokumen tertulis).
+*   **Triangulasi Sumber:** Membandingkan keabsahan informasi dengan merujuk pada beberapa sumber data independen yang berbeda (misalnya membandingkan kesaksian tokoh, data survei, dan dokumen resmi kementerian).
+*   **Triangulasi Peneliti (_Investigator Triangulation_):** Melibatkan beberapa peneliti atau pengamat independen untuk mengevaluasi data yang sama guna mengurangi bias subjektif personal dan memastikan interpretasi data bersifat objektif.
 
-*   site:: Membatasi hasil pencarian hanya pada alamat web atau domain tertentu (misalnya, site:go.id untuk situs resmi pemerintah Indonesia atau site:ac.id untuk perguruan tinggi di Indonesia).
-*   filetype:: Menyaring hasil pencarian berdasarkan format dokumen berkas tertentu, seperti pdf untuk dokumen formal, doc, atau ppt.
-*   inurl:: Melacak kata kunci spesifik yang tertanam langsung di dalam alamat URL halaman web.
-*   intitle:: Membatasi pencarian halaman web yang judul dokumennya mengandung kata kunci tertentu.
-*   intext:: Mengunci pelacakan kata kunci khusus hanya di dalam badan teks (body) dokumen halaman web.
-*   cache:: Menampilkan versi salinan sementara terbaru dari suatu halaman web yang disimpan oleh server Google, sangat membantu di tengah keterbatasan koneksi internet.
-*   Tanda Petik Ganda (""): Digunakan untuk memaksa mesin pencari melacak frasa kata kunci secara tepat dan persis (Exact Match).
+#### **C. Verifikasi Kredibilitas Konten Gambar (Visual) & Metadata EXIF**
 
-#### **D. Teknologi Pencarian Modern**
+Kredibilitas informasi visual berupa gambar tidak boleh dinilai hanya dari ketajaman atau keindahan estetikanya. Validitas gambar dapat diuji melalui tiga pendekatan ilmiah:
 
-*   **Pencarian Visual (Google Lens): Teknologi penelusuran informasi non-teks yang didasarkan pada pencocokan data gambar/visual yang diunggah pengguna dengan sumber visual serupa di internet.**
-    
+1.  **Reverse Image Search (Pencarian Gambar Terbalik):** Menggunakan alat bantu visual untuk membandingkan file gambar yang diunggah dengan basis data gambar di internet guna melacak riwayat publikasi pertama. Teknik ini sangat efektif untuk mendeteksi **hoaks konteks**, di mana gambar lama yang asli digunakan kembali secara tidak jujur di luar konteks waktu atau peristiwa aslinya.
+2.  **Pemeriksaan Metadata EXIF (_Exchangeable Image File Format_):** Memeriksa data teknis tersembunyi yang tertanam di dalam file gambar asli untuk membaca tanggal pembuatan, keterangan waktu (_timestamp_), hingga koordinat lokasi geografis GPS tempat foto tersebut diambil. Namun, data EXIF ini tidak boleh dipercaya secara mutlak karena **sangat rentan dihapus, disunting, atau dimanipulasi secara sengaja** menggunakan perangkat lunak tertentu sebelum diunggah kembali ke internet.
+3.  **Evaluasi Kualitas Visual:** Menganalisis aspek **"Kebenaran Visual"** untuk mendeteksi tanda-tanda manipulasi, rekayasa digital, atau penyuntingan yang tidak jujur pada objek gambar, serta aspek **"Ketepatan Konten"** untuk memastikan keselarasan visualisasi gambar dengan konteks berita yang dibahas.
+
+#### **D. Mengatasi Konflik Data Kontradiktif**
+
+Apabila kita menemukan data statistik yang kontradiktif dari dua instansi pemerintah tepercaya (misalnya dua kementerian resmi), tindakan yang benar adalah **memeriksa secara mendalam metodologi pengumpulan datanya** serta konteks di balik pembuatan informasi dari kedua sumber tersebut, alih-alih langsung mengambil kesimpulan sepihak.
 
 * * *
 
 ### **4\. Miskonsepsi Umum**
 
-*   Miskonsepsi 1: Mengetikkan kata kunci yang tidak berkaitan mempercepat proses riset. Faktanya: Kata kunci yang tidak berkaitan justru menghasilkan data sampah, merusak akurasi, serta menghambat efisiensi riset secara signifikan.
-*   Miskonsepsi 2: Penggunaan kata kunci yang terlampau spesifik dan sempit selalu dianjurkan. Faktanya: Kata kunci yang terlampau spesifik dan sempit dihindari karena berisiko menghilangkan informasi penting lainnya yang tersedia di bawah terminologi yang lebih umum.
-*   Miskonsepsi 3: Operator OR digunakan untuk menyaring dan mempersempit pencarian. Faktanya: Operator OR berfungsi untuk memperluas pencarian dengan menggabungkan alternatif istilah. Operator yang mempersempit ruang lingkup adalah AND.
+*   **Miskonsepsi 1: Tampilan situs web yang rapi, berlogo profesional, dan menggunakan protokol HTTPS sudah pasti kredibel.**_Faktanya:_ Ini merupakan jebakan metode membaca vertikal. Elemen visual internal sangat mudah dipalsukan secara digital oleh pembuat hoaks. Protokol HTTPS hanya menjamin enkripsi transmisi data agar aman dari penyadapan, tetapi tidak menjamin kebenaran isi atau validitas informasi di dalam web tersebut.
+*   **Miskonsepsi 2: Metadata EXIF pada gambar bersifat permanen dan dapat dipercaya 100% karena datanya sangat detail.**_Faktanya:_ Metadata EXIF sangat rentan dihapus, disunting, atau dimanipulasi secara sengaja oleh pembuat hoaks menggunakan perangkat lunak penyunting sebelum diunggah kembali ke internet.
+*   **Miskonsepsi 3: Menghindari hoaks cukup dilakukan dengan membaca teks secara saksama dari awal hingga akhir paragraf.**_Faktanya:_ Membaca saksama dalam satu situs (Membaca Vertikal) tetap membuat pembaca rawan terjebak jika informasi yang disajikan ditulis dengan gaya bahasa meyakinkan namun fiktif. Verifikasi hoaks mutlak memerlukan **Membaca Lateral** dengan melompat ke tab lain untuk mencari konsensus sumber luar.
 
 * * *
 
 ### **5\. Ringkasan Materi**
 
-1.  Pencarian riset ilmiah daring memerlukan teknik pencarian lanjutan agar terhindar dari tumpukan informasi tidak relevan.
-2.  Operator logika Boolean (AND, OR, NOT/-) serta tanda petik ganda ("") mengontrol relevansi dan cakupan relasi antarkata kunci secara presisi.
-3.  Variabel pencarian lanjutan seperti site: dan filetype: memfokuskan hasil pada reputasi domain akademik/pemerintah dan format dokumen siap unduh.
-4.  Pencarian berbasis visual difasilitasi oleh Google Lens dengan mencocokkan kemiripan gambar secara daring.
+1.  **Membaca Lateral** melatih kita untuk melompat keluar dari situs web asal dan membuka beberapa tab baru guna melacak reputasi penulis serta mencari konsensus dari berbagai sumber luar tepercaya.
+2.  **Metode Triangulasi** meminimalkan bias subjektif dan menghindari bias konfirmasi dengan membandingkan minimal tiga sumber, metode, atau peneliti yang berbeda.
+3.  **Kredibilitas visual (gambar)** wajib diuji secara kritis menggunakan _Reverse Image Search_ dan pemeriksaan metadata EXIF karena aspek visual sangat mudah dimanipulasi secara digital oleh pembuat hoaks.
+4.  **Konflik data** dari instansi kredibel yang kontradiktif diselesaikan dengan cara meneliti metodologi pengumpulan data dan konteks data dari masing-masing sumber.
 
 * * *
 
-### **6\. Materi Pembelajaran sesuai Stimulus 1**
+### **6\. Materi Pembelajaran (Skenario Aktivitas Mandiri)**
 
-#### **Wacana Stimulus 1:**
+#### **Wacana Kasus Uji Verifikasi:**
 
-Pencarian informasi ilmiah secara daring menggunakan kata kunci sederhana sering kali tidak efektif karena menghasilkan jutaan data tidak relevan. Guna menyaring data secara presisi, pengguna dapat menerapkan variabel pencarian lanjutan seperti site: untuk domain web dan filetype: untuk format berkas. Selain itu, operator logika boolean (AND, OR, NOT) berperan penting dalam mengaitkan atau mengecualikan konsep penelusuran.
+> Seorang siswa kelas XI menemukan postingan viral di media sosial yang menampilkan foto "kerusakan jalan raya akibat gempa bumi hari ini di sebuah daerah". Postingan tersebut menyertakan link artikel dari sebuah blog pribadi yang merinci kronologi kejadian dengan desain tata letak yang sangat rapi dan berlogo instansi kedokteran tepercaya.
 
-#### **Studi Kasus Skenario Riset Akademik:**
+#### **Panduan Langkah Eksplorasi Siswa:**
 
-Seorang siswa kelas XI sedang melakukan riset mengenai "dampak emisi karbon". Ia ingin mencari dokumen laporan resmi berformat PDF yang diterbitkan langsung oleh instansi pemerintah Indonesia (domain go.id) agar datanya valid dan kredibel secara hukum.
+Siswa diarahkan untuk membedah kasus di atas secara kritis menggunakan langkah-langkah sistematis berikut:
 
-Sintaks pencarian lanjutan yang paling cepat, akurat, dan akseptabel adalah: "dampak emisi karbon" site:go.id filetype:pdf
+1.  **Menerapkan Membaca Lateral:** Siswa segera keluar dari link blog tersebut, membuka tab baru di peramban, dan mencari tahu reputasi penulis blog serta kebenaran klaim gempa bumi hari ini menurut instansi resmi seperti BMKG atau BNPB.
+2.  **Melakukan Reverse Image Search:** Siswa mengunduh gambar kerusakan jalan tersebut dan mengunggahnya ke mesin pencari gambar (seperti Google Lens). Jika hasil pencarian menunjukkan bahwa gambar tersebut adalah foto kerusakan akibat gempa di negara lain pada tahun 2018, maka terbukti bahwa foto tersebut digunakan di luar konteks asli (hoaks konteks).
+3.  **Menganalisis Kriteria Kebenaran Visual:** Siswa meneliti objek foto untuk mendeteksi tanda-tanda penyuntingan piksel, manipulasi pencahayaan, atau bayangan yang tidak konsisten yang menunjukkan adanya rekayasa gambar.
+4.  **Menguji dengan Triangulasi Sumber:** Siswa memverifikasi kesaksian berita tersebut dengan membandingkan data dari minimal tiga portal berita kredibel yang independen, jurnal bencana yang telah di-_peer-review_, dan situs pemerintah resmi agar terhindar dari bias konfirmasi pribadi.
 
-*   Analisis Keandalan: Penggunaan domain go.id memberikan jaminan bahwa data statistik berasal langsung dari server instansi pemerintah yang sah (memiliki Authority tinggi).
-*   Analisis Efisiensi: Penulisan frasa dalam tanda petik ganda memastikan pelacakan persis, sedangkan filetype:pdf langsung menyaring file dokumen siap pakai tanpa perlu menyusuri artikel blog pribadi yang tidak valid.
+* * *
+
+🎯 **Nudge:**Apakah Anda ingin saya membuatkan **Kunci Lembar Jawab Cepat (Quick Answer Key Sheet)** dalam bentuk tabel ringkas untuk paket soal AKM Stimulus 2 Kelas XI yang telah kita buat sebelumnya agar Anda dapat melakukan koreksi instan?

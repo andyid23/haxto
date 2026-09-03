@@ -25,7 +25,7 @@
       "name": "haxto",
       "domain": "",
       "created": 1787457359,
-      "updated": 1788478966,
+      "updated": 1788479839,
       "logo": "",
       "version": "26.0.1"
     },
@@ -351,13 +351,33 @@
       "order": 1,
       "parent": null,
       "title": "Materi LM2 Fase F",
-      "description": "",
+      "description": "\nMODUL AJAR INFORMATIKA FASE F (KELAS XI)\nTOPIK: VERIFIKASI INFORMASI DAN PERIKSA FAKTA (LITERASI DIGITAL)\n1. Pendahuluan\nInformatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in",
       "metadata": {
         "locked": false,
         "created": 1788478965,
         "images": [],
         "videos": [],
-        "updated": 1788478965
+        "updated": 1788479839,
+        "theme": {
+          "element": "terrible-best-themes",
+          "path": "@haxtheweb/terrible-themes/lib/terrible-best-themes.js",
+          "name": "Terrible hockey",
+          "thumbnail": "@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-terrible-best-themes-thumb.jpg",
+          "description": "Start with a blank site using the Terrible hockey",
+          "category": [
+            "Fun",
+            "Website"
+          ],
+          "hidden": false,
+          "priority": 0,
+          "terrible": true,
+          "key": "terrible-best-themes"
+        },
+        "published": true,
+        "hideInMenu": true,
+        "accentColor": "purple",
+        "icon": "av:art-track",
+        "readtime": 6
       }
     }
   ]
