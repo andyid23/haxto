@@ -2,14 +2,14 @@ id: item-9bc01ccd-190b-45e4-ac15-8d4938403c5f
 indent: 0
 location: pages/item-9bc01ccd-190b-45e4-ac15-8d4938403c5f/index.yaml
 slug: tes-gelap-error
-order: 4
+order: 5
 parent: null
 title: halaman-dark
 description: |+
 
 metadata:
   created: 1788236145
-  updated: 1788413098
+  updated: 1788421891
   images: []
   videos: []
   published: true
@@ -48,21 +48,34 @@ metadata:
     key: polaris-flex-theme
 content: >
 
+  <p>tes browser tidak bisa</p>
+
   <p></p>
 
-  <latihan-kuis mode="siswa" max-retake="0" duration="900" timer-autostart
-  hide-pause-restart hide-confetti hide-answers hide-score shuffle-questions
-  shuffle-choices kategori="sumatif_lm"
+  <p></p>
+
+  <p></p>
+
+  <p></p>
+
+  <p></p>
+
+  <quiz-user-auth
   apps-script-url="https://script.google.com/macros/s/AKfycbyuprudZkCq_YCQ-CqqD_huzndsbA6zHsg_ICfqPnlB97dhcrm1xJjGxJ3u4Jp8DjJQ/exec"
-  kd-materi="LM1" student-id="STD-65108053" judul-kuis="Ulangan Harian"
-  show-sheet-link soal-file-url="./files/2026-stimulus1-faseE.json"
-  judul-materi="Materi Pembelajaran" teks-materi="Baca materi di bawah ini
-  dengan saksama sebelum mengerjakan kuis. Waktu pengerjaan kuis dibatasi oleh
-  timer; saat waktu habis, kuis akan dikunci dan nilai otomatis terkirim."
-  materi-file="" cover-image="" student-name="Andy" student-nis="234"
-  student-absen="1" student-kelas="XI-1" pesan-waktu-habis="⏰ Waktu habis! Kuis
-  dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda
-  sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai"
+  auto-login _student-id=""></quiz-user-auth>
+
+  <latihan-kuis mode="siswa" allow-retake max-retake="4" duration="900"
+  timer-autostart shuffle-questions shuffle-choices kategori="formatif"
+  apps-script-url="https://script.google.com/macros/s/AKfycby6leZPfcyjVfNtK_fAEnXIgCPvAkuLI9YlcTjg7cGhwcpVrZdJObg-byyjg8vm0YvXsQ/exec"
+  kd-materi="LM1 Latihan" student-id="" judul-materi="Materi: Pencarian"
+  teks-materi="Baca contoh di bawah, lalu kerjakan kuis. Kamu bisa mengulang
+  sampai 4 kali." materi-url="./halaman-tugas" show-sheet-link
+  soal-file-url="./files/2026-stimulus1-faseE.json"  materi-file=""
+  cover-image="" judul-kuis="Evaluasi Kuis Interaktif" student-name=""
+  student-nis="" student-absen="" student-kelas="" pesan-waktu-habis="⏰ Waktu
+  habis! Kuis dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat!
+  Nilai Anda sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai"
+  hide-pause-restart
   questions="[{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Pencarian
   informasi ilmiah secara daring menggunakan kata kunci sederhana sering kali
   tidak efektif karena menghasilkan jutaan data tidak relevan. Guna menyaring
@@ -211,6 +224,6 @@ content: >
   mengandung kata kunci tertentu.&quot;,&quot;Menghapus seluruh riwayat
   (history) penelusuran peramban internet secara
   otomatis.&quot;],&quot;correctPairs&quot;:{&quot;0&quot;:1,&quot;1&quot;:2,&quot;2&quot;:0,&quot;3&quot;:3}}]"
-  _attempt-ke="0"   _best-skor="0" _pernah-ikut>
+  _attempt-ke="0">
 
   </latihan-kuis>
