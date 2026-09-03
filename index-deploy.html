@@ -88,9 +88,6 @@
       padding: 0;
       min-height: 98vh;
     }
-    :root, html, body {
-      color-scheme: dark light;
-    }
     haxcms-site-builder:not([theme-loaded]) * {
       margin-top: 100px;
       display: block;
@@ -193,25 +190,15 @@
       }
     }
     @media (prefers-color-scheme: dark) {
-      :root {
-        --ddd-theme-default-surface: #1e1e1e;
-        --ddd-theme-default-text: #e6e6e6;
-        --ddd-theme-polaris-surface: #242424;
-        --ddd-theme-polaris-surface-hover: #2e2e2e;
-        --ddd-theme-polaris-border: #3a3a3a;
-        /* Sangat disarankan (masih minimal) agar kartu & teks muted ikut gelap */
-        --ddd-theme-default-white: #1e1e1e;
-        --ddd-theme-secondary: #b5b5b5;
-      }
       body {
         background-color: #333333;
-        color: rgba(255,255,255, 0.85);
+        color: rgba(255,255,255, 0.2);
       }
       #loading {
         background-color: #333333;
       }
       #loading div.messaging {
-        color: rgba(255,255,255, 0.85);
+        color: rgba(255,255,255, 0.2);
       }
     }
   </style>
@@ -261,6 +248,23 @@
       <h1>Loading..</h1>
     </div>
   </section>
+  <script>
+    // reduce FOUC for dark mode so it starts in dark rapidly if selected
+    (function () {
+    try {
+    var ls = globalThis.localStorage;
+    var stored = ls ? ls.getItem('app-hax-darkMode') : null;
+    var dark = stored !== null
+    ? stored === 'true'
+    : !!(globalThis.matchMedia && globalThis.matchMedia('(prefers-color-scheme: dark)').matches);
+    if (dark) {
+    document.body.classList.add('dark-mode');
+    } else {
+    document.body.classList.remove('dark-mode');
+    }
+    } catch (e) {}
+    })();
+  </script>
   <haxcms-site-builder id="site" file="site.json?2GQKWcJ3ni0xrL2X4_Dw_Sr9SeXqY2Sk3XblmvHVArA"></haxcms-site-builder>
   <script>
     globalThis.MicroFrontendRegistryConfig = globalThis.MicroFrontendRegistryConfig || {};

@@ -484,6 +484,52 @@ export class KirimTugas extends I18NMixin(DDDSuper(LitElement)) {
           }
         }
       `,
+      css`
+        /* ===== DARK MODE (DDD-token swap, gated on body.dark-mode) ===== */
+        :host-context(body.dark-mode) :host {
+          --dk-bg: #0b1020;
+          --dk-card: #111827;
+          --dk-soft: #1f2937;
+          --dk-border: #2a3245;
+          --dk-text: #e5e7eb;
+          --dk-text-soft: #94a3b8;
+          --dk-text-strong: #f8fafc;
+          --ddd-theme-background: var(--dk-bg);
+          --ddd-theme-color: var(--dk-text);
+          --ddd-theme-surface: var(--dk-card);
+          --ddd-theme-default-surface: var(--dk-card);
+          --ddd-theme-default-text: var(--dk-text);
+          --ddd-theme-on-primary: #f8fafc;
+          --ddd-theme-primary: #c4b5fd;
+          --ddd-theme-secondary: var(--dk-text-soft);
+          --ddd-theme-polaris-surface: var(--dk-card);
+          --ddd-theme-polaris-border: var(--dk-border);
+          --ddd-theme-polaris-surface-hover: var(--dk-soft);
+          --ddd-theme-success: #6ee7b7;
+          --ddd-theme-success-light: #064e3b;
+          --ddd-theme-success-text: #6ee7b7;
+          --ddd-theme-success-dark: #047857;
+          --ddd-theme-error: #fca5a5;
+          --ddd-theme-error-dark: #7f1d1d;
+          --ddd-theme-warning: #fcd34d;
+          --ddd-theme-warning-light: #78350f;
+          --ddd-theme-warning-text: #fde68a;
+          background: var(--dk-bg);
+          color: var(--dk-text);
+        }
+        :host-context(body.dark-mode) .upload-card,
+        :host-context(body.dark-mode) .file-input,
+        :host-context(body.dark-mode) .status-banner {
+          background: var(--dk-card);
+          color: var(--dk-text);
+          border-color: var(--dk-border);
+        }
+        :host-context(body.dark-mode) .file-input { background: var(--dk-soft); }
+        :host-context(body.dark-mode) .btn-submit { background: #4f46e5; color: #f8fafc; }
+        :host-context(body.dark-mode) .btn-submit:hover { background: #6366f1; }
+        :host-context(body.dark-mode) .status-banner.success { background: #064e3b; color: #6ee7b7; border-color: #047857; }
+        :host-context(body.dark-mode) .status-banner.error { background: #7f1d1d; color: #fecaca; border-color: #991b1b; }
+      `,
     ];
   }
 

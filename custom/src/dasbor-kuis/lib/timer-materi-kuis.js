@@ -211,6 +211,39 @@ export class TimerMateriKuis extends I18NMixin(DDDSuper(LitElement)) {
         button:disabled { opacity: 0.5; cursor: not-allowed; }
         .done { margin-top: var(--ddd-spacing-2); color: var(--ddd-theme-error, #d32f2f); font-size: var(--ddd-font-size-s); }
       `,
+      css`
+        /* ===== DARK MODE (DDD-token swap, gated on body.dark-mode) ===== */
+        :host-context(body.dark-mode) :host {
+          --dk-bg: #0b1020;
+          --dk-card: #111827;
+          --dk-soft: #1f2937;
+          --dk-border: #2a3245;
+          --dk-text: #e5e7eb;
+          --dk-text-soft: #94a3b8;
+          --dk-text-strong: #f8fafc;
+          --ddd-theme-background: var(--dk-bg);
+          --ddd-theme-color: var(--dk-text);
+          --ddd-theme-surface: var(--dk-card);
+          --ddd-theme-default-surface: var(--dk-card);
+          --ddd-theme-on-primary: #f8fafc;
+          --ddd-theme-primary: #c4b5fd;
+          --ddd-theme-secondary: var(--dk-text-soft);
+          --ddd-theme-polaris-surface: var(--dk-card);
+          --ddd-theme-polaris-border: var(--dk-border);
+          --ddd-theme-error: #fca5a5;
+          background: var(--dk-bg);
+          color: var(--dk-text);
+        }
+        :host-context(body.dark-mode) .card,
+        :host-context(body.dark-mode) button {
+          background: var(--dk-card);
+          color: var(--dk-text);
+          border-color: var(--dk-border);
+        }
+        :host-context(body.dark-mode) .title { color: var(--dk-text-soft); }
+        :host-context(body.dark-mode) .time { color: #c4b5fd; }
+        :host-context(body.dark-mode) .time.warn { color: #fca5a5; }
+      `,
     ];
   }
 

@@ -553,6 +553,58 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
           color: var(--ddd-theme-primary);
         }
       `,
+      css`
+        /* ===== DARK MODE (DDD-token swap, gated on body.dark-mode) ===== */
+        :host-context(body.dark-mode) :host {
+          --dk-bg: #0b1020;
+          --dk-card: #111827;
+          --dk-soft: #1f2937;
+          --dk-border: #2a3245;
+          --dk-text: #e5e7eb;
+          --dk-text-soft: #94a3b8;
+          --dk-text-strong: #f8fafc;
+          --ddd-theme-background: var(--dk-bg);
+          --ddd-theme-color: var(--dk-text);
+          --ddd-theme-surface: var(--dk-card);
+          --ddd-theme-default-surface: var(--dk-card);
+          --ddd-theme-default-text: var(--dk-text);
+          --ddd-theme-default-white: #1f2937;
+          --ddd-theme-on-primary: #f8fafc;
+          --ddd-theme-primary: #c4b5fd;
+          --ddd-theme-accent: #818cf8;
+          --ddd-theme-secondary: var(--dk-text-soft);
+          --ddd-theme-polaris-surface: var(--dk-card);
+          --ddd-theme-polaris-border: var(--dk-border);
+          --ddd-theme-warning: #fcd34d;
+          --ddd-theme-warning-text: #fde68a;
+          background: var(--dk-bg);
+          color: var(--dk-text);
+        }
+        :host-context(body.dark-mode) .auth-card {
+          background: var(--dk-card);
+          color: var(--dk-text);
+          border-color: var(--dk-border);
+        }
+        :host-context(body.dark-mode) .form-input {
+          background: var(--dk-soft);
+          color: var(--dk-text);
+          border-color: var(--dk-border);
+        }
+        :host-context(body.dark-mode) .btn-primary {
+          background: linear-gradient(120deg, #4f46e5, #6366f1);
+          color: #f8fafc;
+        }
+        :host-context(body.dark-mode) .error-msg {
+          background: #7f1d1d;
+          color: #fecaca;
+          border-color: #991b1b;
+        }
+        :host-context(body.dark-mode) .success-msg {
+          background: #064e3b;
+          color: #6ee7b7;
+          border-color: #047857;
+        }
+      `,
     ];
   }
 

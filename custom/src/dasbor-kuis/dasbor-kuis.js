@@ -1563,6 +1563,144 @@ if (this.mode === "guru" || this.mode === "dosen") {
         }
         @keyframes spin { to { transform: rotate(360deg); } }
       `,
+      css`
+        /* ============================================================
+           DARK MODE OVERRIDES (additive, gated on body.dark-mode)
+           Host-context reaches outside shadow DOM to read the class
+           that the HAXcms shell sets in localStorage / prefers-color.
+           ============================================================ */
+        :host-context(body.dark-mode) :host {
+          --dk-bg-app: #0b1020;
+          --dk-bg-card: #111827;
+          --dk-bg-soft: #1f2937;
+          --dk-bg-softer: #182032;
+          --dk-border: #2a3245;
+          --dk-text: #e5e7eb;
+          --dk-text-soft: #94a3b8;
+          --dk-text-strong: #f8fafc;
+          /* Override DDD base tokens used inside templates */
+          --ddd-theme-background: var(--dk-bg-app);
+          --ddd-theme-color: var(--dk-text);
+          --ddd-theme-surface: var(--dk-bg-card);
+          background: linear-gradient(180deg, #0b1020 0%, #0f172a 40%, #0b1020 100%);
+          color: var(--dk-text);
+        }
+        :host-context(body.dark-mode) .app-container,
+        :host-context(body.dark-mode) .stat-card,
+        :host-context(body.dark-mode) .student-card,
+        :host-context(body.dark-mode) .card-siswa,
+        :host-context(body.dark-mode) .card-panel,
+        :host-context(body.dark-mode) .nilai-table-wrap,
+        :host-context(body.dark-mode) .podium-box,
+        :host-context(body.dark-mode) .kpi-card,
+        :host-context(body.dark-mode) .grade-ring-card,
+        :host-context(body.dark-mode) .detail-panel,
+        :host-context(body.dark-mode) .copas-panel,
+        :host-context(body.dark-mode) .loading-banner {
+          background: var(--dk-bg-card);
+          color: var(--dk-text);
+          border-color: var(--dk-border);
+        }
+        :host-context(body.dark-mode) .navbar {
+          background: linear-gradient(120deg, #1e1b4b 0%, #312e81 55%, #4c1d95 100%);
+          color: #f8fafc;
+        }
+        :host-context(body.dark-mode) .stat-icon.i-indigo { background: #312e81; color: #c7d2fe; }
+        :host-context(body.dark-mode) .stat-icon.i-emerald { background: #064e3b; color: #6ee7b7; }
+        :host-context(body.dark-mode) .stat-icon.i-amber { background: #78350f; color: #fcd34d; }
+        :host-context(body.dark-mode) .stat-icon.i-rose { background: #881337; color: #fda4af; }
+        :host-context(body.dark-mode) .stat-value,
+        :host-context(body.dark-mode) .ring-nilai,
+        :host-context(body.dark-mode) .kpi-value,
+        :host-context(body.dark-mode) .set-title,
+        :host-context(body.dark-mode) .student-name,
+        :host-context(body.dark-mode) .crn,
+        :host-context(body.dark-mode) h1,
+        :host-context(body.dark-mode) h2:not(.navbar *) {
+          color: var(--dk-text-strong);
+        }
+        :host-context(body.dark-mode) .stat-label,
+        :host-context(body.dark-mode) .student-sub,
+        :host-context(body.dark-mode) .kpi-label,
+        :host-context(body.dark-mode) .set-sub,
+        :host-context(body.dark-mode) .dEdit-label,
+        :host-context(body.dark-mode) .student-sub { color: var(--dk-text-soft); }
+        :host-context(body.dark-mode) .badge-good { background: #064e3b; color: #6ee7b7; }
+        :host-context(body.dark-mode) .badge-warn { background: #78350f; color: #fcd34d; }
+        :host-context(body.dark-mode) .badge-bad { background: #7f1d1d; color: #fca5a5; }
+        :host-context(body.dark-mode) .badge-status { background: var(--dk-bg-soft); color: var(--dk-text); border: 1px solid var(--dk-border); }
+        :host-context(body.dark-mode) .grade-A { background: #064e3b; color: #6ee7b7; }
+        :host-context(body.dark-mode) .grade-B { background: #1e3a8a; color: #93c5fd; }
+        :host-context(body.dark-mode) .grade-C { background: #78350f; color: #fcd34d; }
+        :host-context(body.dark-mode) .grade-D,
+        :host-context(body.dark-mode) .grade-E { background: #7f1d1d; color: #fca5a5; }
+        :host-context(body.dark-mode) .rank-chip { background: var(--dk-bg-soft); color: var(--dk-text); }
+        :host-context(body.dark-mode) .rank-chip.top { background: #b45309; color: #fde68a; }
+        :host-context(body.dark-mode) .podium-box.rank-1 { background: linear-gradient(180deg, #78350f 0%, #422006 100%); color: #fde68a; border-color: #b45309; }
+        :host-context(body.dark-mode) .podium-box.rank-2 { background: var(--dk-bg-soft); color: var(--dk-text); border-color: #475569; }
+        :host-context(body.dark-mode) .podium-box.rank-3 { background: var(--dk-bg-softer); color: var(--dk-text); border-color: #5b21b6; }
+        :host-context(body.dark-mode) .podium-score { color: #fde68a; }
+        :host-context(body.dark-mode) .podium-name { color: var(--dk-text-strong); }
+        :host-context(body.dark-mode) .tab-row,
+        :host-context(body.dark-mode) .tabs {
+          background: var(--dk-bg-card);
+          border-bottom-color: var(--dk-border);
+        }
+        :host-context(body.dark-mode) .tab-btn { color: var(--dk-text-soft); }
+        :host-context(body.dark-mode) .tab-btn:hover { color: var(--dk-text); }
+        :host-context(body.dark-mode) .tab-btn.active { color: #c4b5fd; border-bottom-color: #818cf8; }
+        :host-context(body.dark-mode) .mode-btn { color: var(--dk-text-soft); }
+        :host-context(body.dark-mode) .mode-btn.active { background: rgba(255,255,255,0.18); color: #f8fafc; }
+        :host-context(body.dark-mode) .nilai-table { background: var(--dk-bg-card); color: var(--dk-text); }
+        :host-context(body.dark-mode) .nilai-table th { background: var(--dk-bg-soft); color: var(--dk-text-strong); border-bottom-color: var(--dk-border); }
+        :host-context(body.dark-mode) .nilai-table td { border-bottom-color: var(--dk-border); color: var(--dk-text); }
+        :host-context(body.dark-mode) .nilai-table tr:hover { background: var(--dk-bg-soft); }
+        :host-context(body.dark-mode) .nilai-table tr.highlight-row { background: rgba(99,102,241,0.15); }
+        :host-context(body.dark-mode) .filter-select,
+        :host-context(body.dark-mode) .set-input,
+        :host-context(body.dark-mode) .dEdit-input,
+        :host-context(body.dark-mode) .nilai-input,
+        :host-context(body.dark-mode) .soal-textarea,
+        :host-context(body.dark-mode) .copas-area {
+          background: var(--dk-bg-soft);
+          color: var(--dk-text);
+          border-color: var(--dk-border);
+        }
+        :host-context(body.dark-mode) .progress-track { background: var(--dk-bg-soft); }
+        :host-context(body.dark-mode) .progress-bar { background: #818cf8; }
+        :host-context(body.dark-mode) .kpi-bar { background: var(--dk-bg-soft); }
+        :host-context(body.dark-mode) .lvl-0 { background: #1f2937; border-color: #2a3245; }
+        :host-context(body.dark-mode) .lvl-1 { background: #312e81; border-color: #4338ca; }
+        :host-context(body.dark-mode) .lvl-2 { background: #4338ca; border-color: #6366f1; }
+        :host-context(body.dark-mode) .lvl-3 { background: #6366f1; border-color: #818cf8; }
+        :host-context(body.dark-mode) .lvl-4 { background: #818cf8; border-color: #c7d2fe; }
+        :host-context(body.dark-mode) .box-heatmap { border-color: var(--dk-border); }
+        :host-context(body.dark-mode) .box-heatmap:hover { box-shadow: 0 0 0 2px #818cf8; }
+        :host-context(body.dark-mode) .empty-state { background: var(--dk-bg-card); color: var(--dk-text-soft); border-color: var(--dk-border); }
+        :host-context(body.dark-mode) .empty-state code { background: var(--dk-bg-soft); color: #c4b5fd; }
+        :host-context(body.dark-mode) .note-chip { background: var(--dk-bg-soft); color: var(--dk-text); border-color: var(--dk-border); }
+        :host-context(body.dark-mode) .log-area { background: var(--dk-bg-soft); color: var(--dk-text); border-color: var(--dk-border); }
+        :host-context(body.dark-mode) .log-area li { border-bottom-color: var(--dk-border); }
+        :host-context(body.dark-mode) .metric-mini { background: var(--dk-bg-soft); color: var(--dk-text); }
+        :host-context(body.dark-mode) .metric-mini div { color: var(--dk-text-soft); }
+        :host-context(body.dark-mode) .btn-primary { background: #4f46e5; color: #f8fafc; }
+        :host-context(body.dark-mode) .btn-primary:hover { background: #6366f1; }
+        :host-context(body.dark-mode) .retry-btn { background: #4f46e5; color: #f8fafc; }
+        :host-context(body.dark-mode) .retry-btn:hover { background: #6366f1; }
+        :host-context(body.dark-mode) .err-chip { background: #7f1d1d; color: #fecaca; border-color: #991b1b; }
+        :host-context(body.dark-mode) .error-banner { background: #7f1d1d; color: #fecaca; border-color: #991b1b; }
+        :host-context(body.dark-mode) .loading-banner { background: #1e1b4b; border-color: #4338ca; color: #c7d2fe; }
+        :host-context(body.dark-mode) .spinner { border-color: #4338ca; border-top-color: #818cf8; }
+        :host-context(body.dark-mode) .ld-log { color: var(--dk-text-soft); }
+        /* Inline-style overrides — !important needed to win over style="" */
+        :host-context(body.dark-mode) p[style*="color:#64748b"],
+        :host-context(body.dark-mode) p[style*="color:#1e293b"],
+        :host-context(body.dark-mode) h2[style*="color:#1e293b"] { color: var(--dk-text-soft) !important; }
+        :host-context(body.dark-mode) h2[style*="color:#1e293b"] { color: var(--dk-text-strong) !important; }
+        :host-context(body.dark-mode) .retry-btn[style*="background:#475569"] { background: var(--dk-bg-soft) !important; color: var(--dk-text) !important; }
+        :host-context(body.dark-mode) .retry-btn[style*="background:#4f46e5"] { background: #6366f1 !important; }
+        :host-context(body.dark-mode) .retry-btn[style*="background:#059669"] { background: #047857 !important; }
+      `,
     ];
   }
 

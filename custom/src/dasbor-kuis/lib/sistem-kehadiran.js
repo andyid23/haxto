@@ -712,6 +712,95 @@ export class AttendanceSystem extends I18NMixin(DDDSuper(LitElement)) {
           .sg { grid-template-columns: 1fr 1fr; }
         }
       `,
+      css`
+        /* ===== DARK MODE (gated on body.dark-mode) ===== */
+        :host-context(body.dark-mode) :host {
+          --dk-bg: #0b1020;
+          --dk-card: #111827;
+          --dk-soft: #1f2937;
+          --dk-softer: #182032;
+          --dk-border: #2a3245;
+          --dk-text: #e5e7eb;
+          --dk-text-soft: #94a3b8;
+          --dk-text-strong: #f8fafc;
+          --ddd-theme-background: var(--dk-bg);
+          --ddd-theme-color: var(--dk-text);
+          --ddd-theme-surface: var(--dk-card);
+          background: var(--dk-bg);
+          color: var(--dk-text);
+        }
+        :host-context(body.dark-mode) .hd { background: linear-gradient(135deg, #1e1b4b 0%, #312e81 55%, #4c1d95 100%); color: #f8fafc; }
+        :host-context(body.dark-mode) .hd h1 { color: #f8fafc; }
+        :host-context(body.dark-mode) .hd p { color: #c7d2fe; }
+        :host-context(body.dark-mode) .b { background: var(--dk-soft); color: var(--dk-text); }
+        :host-context(body.dark-mode) .b.g { background: #064e3b; color: #6ee7b7; }
+        :host-context(body.dark-mode) .b.o { background: #78350f; color: #fcd34d; }
+        :host-context(body.dark-mode) .tb { background: var(--dk-card); border-bottom-color: var(--dk-border); }
+        :host-context(body.dark-mode) .tbb { color: var(--dk-text-soft); }
+        :host-context(body.dark-mode) .tbb:hover { color: #c4b5fd; background: #1e1b4b; }
+        :host-context(body.dark-mode) .tbb.a { color: #c4b5fd; border-bottom-color: #818cf8; }
+        :host-context(body.dark-mode) .c { background: var(--dk-card); color: var(--dk-text); border-color: var(--dk-border); }
+        :host-context(body.dark-mode) .c h2 { color: #c4b5fd; }
+        :host-context(body.dark-mode) .c h3 { color: var(--dk-text-strong); }
+        :host-context(body.dark-mode) .bp.p { background: #4f46e5; color: #f8fafc; }
+        :host-context(body.dark-mode) .bp.p:hover { background: #6366f1; }
+        :host-context(body.dark-mode) .bp.s { background: transparent; color: #c4b5fd; border-color: #818cf8; }
+        :host-context(body.dark-mode) .bp.s:hover { background: #1e1b4b; }
+        :host-context(body.dark-mode) .bs { background: var(--dk-soft); color: var(--dk-text); border-color: var(--dk-border); }
+        :host-context(body.dark-mode) .bs:hover { background: #1e1b4b; }
+        :host-context(body.dark-mode) .bs.dg { color: #fca5a5; border-color: #7f1d1d; }
+        :host-context(body.dark-mode) .bs.dg:hover { background: #7f1d1d; }
+        :host-context(body.dark-mode) .srcbtn { background: var(--dk-soft); color: var(--dk-text); }
+        :host-context(body.dark-mode) .srcbtn:hover { background: #1e1b4b; }
+        :host-context(body.dark-mode) .qh,
+        :host-context(body.dark-mode) .rc .rm { color: #c4b5fd; }
+        :host-context(body.dark-mode) .qq,
+        :host-context(body.dark-mode) .gv,
+        :host-context(body.dark-mode) .smv,
+        :host-context(body.dark-mode) .qn { color: #f8fafc; }
+        :host-context(body.dark-mode) .qab { background: var(--dk-soft); color: var(--dk-text); border-color: var(--dk-border); }
+        :host-context(body.dark-mode) .qab:hover:not(:disabled) { border-color: #818cf8; background: #1e1b4b; }
+        :host-context(body.dark-mode) .qab.cc { border-color: #22c55e; background: #064e3b; color: #6ee7b7; }
+        :host-context(body.dark-mode) .qab.cw { border-color: #ef4444; background: #7f1d1d; color: #fca5a5; }
+        :host-context(body.dark-mode) .qf.p { background: #064e3b; color: #6ee7b7; }
+        :host-context(body.dark-mode) .qf.n { background: #7f1d1d; color: #fca5a5; }
+        :host-context(body.dark-mode) .sl,
+        :host-context(body.dark-mode) .crp,
+        :host-context(body.dark-mode) .sml,
+        :host-context(body.dark-mode) .hmh,
+        :host-context(body.dark-mode) .hml { color: var(--dk-text-soft); }
+        :host-context(body.dark-mode) .cri { background: var(--dk-softer); border-color: var(--dk-border); }
+        :host-context(body.dark-mode) .crn { color: var(--dk-text-strong); }
+        :host-context(body.dark-mode) .sm { background: var(--dk-softer); border-color: var(--dk-border); }
+        :host-context(body.dark-mode) .hc { background: #1e1b4b; color: #9ca3af; }
+        :host-context(body.dark-mode) .hc.l1 { background: #312e81; color: #c7d2fe; }
+        :host-context(body.dark-mode) .hc.l2 { background: #4338ca; color: #f8fafc; }
+        :host-context(body.dark-mode) .hc.l3 { background: #6366f1; color: #f8fafc; }
+        :host-context(body.dark-mode) .hc.l4 { background: #818cf8; color: #1e1b4b; }
+        :host-context(body.dark-mode) .li { background: var(--dk-soft); border-left-color: #94a3b8; }
+        :host-context(body.dark-mode) .li.reading { border-left-color: #818cf8; }
+        :host-context(body.dark-mode) .lt { color: var(--dk-text-soft); }
+        :host-context(body.dark-mode) .ld { color: var(--dk-text); }
+        :host-context(body.dark-mode) .gi { background: var(--dk-softer); border-color: var(--dk-border); }
+        :host-context(body.dark-mode) .gi.hl { background: #1e1b4b; }
+        :host-context(body.dark-mode) .gl { color: var(--dk-text-soft); }
+        :host-context(body.dark-mode) .gv.br { color: #c4b5fd; }
+        :host-context(body.dark-mode) .gt { background: var(--dk-card); color: var(--dk-text); }
+        :host-context(body.dark-mode) .gt th { background: var(--dk-soft); color: var(--dk-text-strong); border-bottom-color: var(--dk-border); }
+        :host-context(body.dark-mode) .gt td { border-bottom-color: var(--dk-border); }
+        :host-context(body.dark-mode) .ef,
+        :host-context(body.dark-mode) .qcrd { background: var(--dk-softer); border-color: var(--dk-border); }
+        :host-context(body.dark-mode) .et,
+        :host-context(body.dark-mode) .ecr input,
+        :host-context(body.dark-mode) .sin { background: var(--dk-soft); color: var(--dk-text); border-color: var(--dk-border); }
+        :host-context(body.dark-mode) .rl { color: var(--dk-text-soft); }
+        :host-context(body.dark-mode) .ti { background: #1e3a8a; border-left-color: #3b82f6; color: #bfdbfe; }
+        :host-context(body.dark-mode) .ti.w { background: #78350f; border-left-color: #f59e0b; color: #fde68a; }
+        :host-context(body.dark-mode) .t { background: #1e1b4b; color: #c7b5fd; border-color: #4338ca; }
+        /* Inline-style override: text colored #64748b in template */
+        :host-context(body.dark-mode) p[style*="color:#64748b"],
+        :host-context(body.dark-mode) div[style*="color:#64748b"] { color: var(--dk-text-soft) !important; }
+      `,
     ];
   }
 

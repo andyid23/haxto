@@ -481,7 +481,78 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
         .quiz-timer { display: flex; justify-content: center; margin-bottom: var(--ddd-spacing-4); }
         .import-box { border: var(--ddd-border-sm); border-radius: var(--ddd-radius-md); padding: var(--ddd-spacing-4); background: var(--ddd-theme-polaris-surface-hover); margin-top: var(--ddd-spacing-4); }
         .import-box h4 { margin: 0 0 var(--ddd-spacing-3) 0; color: var(--ddd-theme-primary); font-size: var(--ddd-font-size-4xs); }
-      `
+      `,
+      css`
+        /* ===== DARK MODE (DDD-token swap, gated on body.dark-mode) ===== */
+        :host-context(body.dark-mode) :host {
+          --dk-bg: #0b1020;
+          --dk-card: #111827;
+          --dk-soft: #1f2937;
+          --dk-border: #2a3245;
+          --dk-text: #e5e7eb;
+          --dk-text-soft: #94a3b8;
+          --dk-text-strong: #f8fafc;
+          --ddd-theme-background: var(--dk-bg);
+          --ddd-theme-color: var(--dk-text);
+          --ddd-theme-surface: var(--dk-card);
+          --ddd-theme-default-surface: var(--dk-card);
+          --ddd-theme-default-text: var(--dk-text);
+          --ddd-theme-default-white: #1f2937;
+          --ddd-theme-on-surface: var(--dk-text);
+          --ddd-theme-on-primary: #f8fafc;
+          --ddd-theme-primary: #c4b5fd;
+          --ddd-theme-accent: #818cf8;
+          --ddd-theme-secondary: var(--dk-text-soft);
+          --ddd-theme-polaris-surface: var(--dk-card);
+          --ddd-theme-polaris-border: var(--dk-border);
+          --ddd-theme-polaris-surface-hover: var(--dk-soft);
+          --ddd-theme-polaris-primary: #4f46e5;
+          --ddd-theme-success: #6ee7b7;
+          --ddd-theme-success-light: #064e3b;
+          --ddd-theme-success-text: #6ee7b7;
+          --ddd-theme-success-dark: #047857;
+          --ddd-theme-warning: #fcd34d;
+          --ddd-theme-warning-light: #78350f;
+          --ddd-theme-warning-text: #fde68a;
+          --ddd-theme-error: #fca5a5;
+          background: var(--dk-bg);
+          color: var(--dk-text);
+        }
+        :host-context(body.dark-mode) .quiz-card,
+        :host-context(body.dark-mode) .question-card,
+        :host-context(body.dark-mode) .locked-box,
+        :host-context(body.dark-mode) .result-box,
+        :host-context(body.dark-mode) .editor-screen,
+        :host-context(body.dark-mode) .editor-content,
+        :host-context(body.dark-mode) .add-question-form,
+        :host-context(body.dark-mode) .import-box {
+          background: var(--dk-card);
+          color: var(--dk-text);
+          border-color: var(--dk-border);
+        }
+        :host-context(body.dark-mode) .quiz-title,
+        :host-context(body.dark-mode) .question-text,
+        :host-context(body.dark-mode) .import-box h4 { color: var(--dk-text-strong); }
+        :host-context(body.dark-mode) .lock-msg { color: var(--dk-text-soft); }
+        :host-context(body.dark-mode) .btn-start { background-color: #4f46e5; color: #f8fafc; }
+        :host-context(body.dark-mode) .btn-start:hover { background-color: #6366f1; }
+        :host-context(body.dark-mode) .choice-row { background: var(--dk-soft); color: var(--dk-text); border-color: var(--dk-border); }
+        :host-context(body.dark-mode) .choice-row.correct { border-color: #22c55e; background: #064e3b; color: #6ee7b7; }
+        :host-context(body.dark-mode) .editor-select,
+        :host-context(body.dark-mode) .editor-input,
+        :host-context(body.dark-mode) .editor-textarea,
+        :host-context(body.dark-mode) .short-answer-input,
+        :host-context(body.dark-mode) .matching-select { background: var(--dk-soft); color: var(--dk-text); border-color: var(--dk-border); }
+        :host-context(body.dark-mode) .pgk-table { color: var(--dk-text); }
+        :host-context(body.dark-mode) .pgk-table th { background: var(--dk-soft); color: var(--dk-text-strong); }
+        :host-context(body.dark-mode) .pgk-table td { border-bottom-color: var(--dk-border); }
+        :host-context(body.dark-mode) .err-chip { background: #7f1d1d; color: #fecaca; border-color: #991b1b; }
+        :host-context(body.dark-mode) .btn-submit { background: #4f46e5; color: #f8fafc; }
+        :host-context(body.dark-mode) .btn-submit:hover { background: #6366f1; }
+        :host-context(body.dark-mode) .btn-edit-soal { background: var(--dk-soft); color: var(--dk-text); border-color: var(--dk-border); }
+        :host-context(body.dark-mode) .feedback-area { background: var(--dk-soft); color: var(--dk-text); }
+        :host-context(body.dark-mode) .score-circle { background: linear-gradient(135deg, #312e81, #4338ca); color: #f8fafc; }
+      `,
     ];
   }
 

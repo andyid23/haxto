@@ -25,7 +25,7 @@
       "name": "haxto",
       "domain": "",
       "created": 1787457359,
-      "updated": 1788392965,
+      "updated": 1788413098,
       "logo": "",
       "version": "26.0.1"
     },
@@ -294,14 +294,14 @@
       "id": "item-9bc01ccd-190b-45e4-ac15-8d4938403c5f",
       "indent": 0,
       "location": "pages/item-9bc01ccd-190b-45e4-ac15-8d4938403c5f/index.html",
-      "slug": "new-page",
-      "order": 3,
+      "slug": "tes-gelap-error",
+      "order": 4,
       "parent": null,
       "title": "halaman-dark",
       "description": "\n",
       "metadata": {
         "created": 1788236145,
-        "updated": 1788392965,
+        "updated": 1788413098,
         "images": [],
         "videos": [],
         "published": true,
@@ -325,7 +325,21 @@
             "name": "Fase-F-LM2.rtf",
             "size": 414499
           }
-        ]
+        ],
+        "theme": {
+          "element": "polaris-flex-theme",
+          "path": "@haxtheweb/polaris-theme/lib/polaris-flex-theme.js",
+          "name": "Polaris Flex",
+          "thumbnail": "@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-polaris-flex-theme-thumb.jpg",
+          "description": "Start with a blank site using the Polaris Flex",
+          "category": [
+            "Website"
+          ],
+          "hidden": false,
+          "priority": -1,
+          "terrible": false,
+          "key": "polaris-flex-theme"
+        }
       }
     }
   ]

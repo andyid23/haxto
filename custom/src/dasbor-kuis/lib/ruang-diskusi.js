@@ -672,6 +672,44 @@ export class RuangDiskusi extends I18NMixin(DDDSuper(LitElement)) {
           }
         }
       `,
+      css`
+        /* ===== DARK MODE (DDD-token swap, gated on body.dark-mode) ===== */
+        :host-context(body.dark-mode) :host {
+          --dk-bg: #0b1020;
+          --dk-card: #111827;
+          --dk-soft: #1f2937;
+          --dk-border: #2a3245;
+          --dk-text: #e5e7eb;
+          --dk-text-soft: #94a3b8;
+          --dk-text-strong: #f8fafc;
+          --ddd-theme-background: var(--dk-bg);
+          --ddd-theme-color: var(--dk-text);
+          --ddd-theme-surface: var(--dk-card);
+          --ddd-theme-default-surface: var(--dk-card);
+          --ddd-theme-default-text: var(--dk-text);
+          --ddd-theme-on-primary: #f8fafc;
+          --ddd-theme-primary: #c4b5fd;
+          --ddd-theme-accent: #818cf8;
+          --ddd-theme-secondary: var(--dk-text-soft);
+          --ddd-theme-polaris-surface: var(--dk-card);
+          --ddd-theme-polaris-border: var(--dk-border);
+          --ddd-theme-polaris-surface-hover: var(--dk-soft);
+          background: var(--dk-bg);
+          color: var(--dk-text);
+        }
+        :host-context(body.dark-mode) .forum-card,
+        :host-context(body.dark-mode) .comment-item,
+        :host-context(body.dark-mode) .reply-item,
+        :host-context(body.dark-mode) .editor,
+        :host-context(body.dark-mode) .sort-btn,
+        :host-context(body.dark-mode) .like-btn {
+          background: var(--dk-card);
+          color: var(--dk-text);
+          border-color: var(--dk-border);
+        }
+        :host-context(body.dark-mode) .sort-btn:hover,
+        :host-context(body.dark-mode) .like-btn:hover { background: var(--dk-soft); }
+      `,
     ];
   }
 
