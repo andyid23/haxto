@@ -25,7 +25,7 @@
       "name": "haxto",
       "domain": "",
       "created": 1787457359,
-      "updated": 1788421891,
+      "updated": 1788478966,
       "logo": "",
       "version": "26.0.1"
     },
@@ -45,13 +45,13 @@
       "indent": 0,
       "location": "pages/item-e25c1b60-c8b7-4360-b3e8-3533c93c3a92/index.html",
       "slug": "selamat-datang-pada-ulangan",
-      "order": 4,
+      "order": 5,
       "parent": null,
       "title": "Selamat Datang Pada Ulangan",
       "description": "Welcome to your new HAX site! Click edit on the top bar to get started\nWhat can I do?\nWe've got a ton of blocks that are easy to use and get a lot done with little effort, so much in fact we made a l",
       "metadata": {
         "created": 1787457359,
-        "updated": 1788173121,
+        "updated": 1788478966,
         "theme": {
           "element": "haxma-theme",
           "path": "@haxtheweb/haxma-theme/haxma-theme.js",
@@ -79,14 +79,14 @@
       "id": "item-641ef0af-6ba1-4523-bedd-5c0d0f85828b",
       "indent": 0,
       "location": "pages/item-641ef0af-6ba1-4523-bedd-5c0d0f85828b/index.html",
-      "slug": "latihan-ulangan-harian",
-      "order": 1,
+      "slug": "latihan-/-simulasi-kuis",
+      "order": 2,
       "parent": null,
       "title": "LATIHAN / SIMULASI KUIS",
       "description": "Halaman ulangan harian terintegrasi dengan timer, anti-confetti, dan jawaban tersembunyi.",
       "metadata": {
         "created": 1787466936,
-        "updated": 1788174350,
+        "updated": 1788478965,
         "published": true,
         "hideInMenu": true,
         "locked": false,
@@ -121,7 +121,7 @@
       "description": "soal latihan ",
       "metadata": {
         "created": 1787721767,
-        "updated": 1788173121,
+        "updated": 1788478965,
         "images": [],
         "videos": [],
         "published": true,
@@ -151,13 +151,13 @@
       "indent": 0,
       "location": "pages/item-43d63e69-4564-4ae3-80df-ffa7a6677b2b/index.html",
       "slug": "ulangan-harian-1-fase-f-lm1-f",
-      "order": 6,
+      "order": 8,
       "parent": null,
       "title": "Ulangan Harian 1 FASE F LM1-F",
       "description": "\n\n",
       "metadata": {
         "created": 1787854344,
-        "updated": 1788173121,
+        "updated": 1788478966,
         "images": [],
         "videos": [],
         "published": true,
@@ -187,7 +187,7 @@
       "indent": 0,
       "location": "pages/item-21768d19-1305-46c3-90af-ad2d1542d1b6/index.html",
       "slug": "ulangan-harian-1-fase-e-lm1-e",
-      "order": 5,
+      "order": 6,
       "parent": null,
       "title": "Ulangan Harian 1 Fase E LM1-E",
       "description": "📝 Kuis Ekosistem Periksa Fakta &#38; CRAAP, PENCARIAN LANJUTAN (LM1) Kelas X\n\nKerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban\n  benar/salah ditampilkan. Setelah logi",
@@ -196,7 +196,7 @@
         "created": 1788163319,
         "images": [],
         "videos": [],
-        "updated": 1788173121,
+        "updated": 1788478966,
         "theme": {
           "element": "polaris-flex-theme",
           "path": "@haxtheweb/polaris-theme/lib/polaris-flex-theme.js",
@@ -222,7 +222,7 @@
       "indent": 0,
       "location": "pages/item-792b811f-d307-4765-93cb-f20ed47c8097/index.html",
       "slug": "latihan-simulasi-kuis-fase-e-lm1",
-      "order": 2,
+      "order": 3,
       "parent": null,
       "title": "LATIHAN SIMULASI KUIS FASE-E-LM1",
       "description": "📝 Latihan Kuis Kelas X\nKerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban\n  benar/salah ditampilkan. Setelah login reload untuk menampilkan tombol mulai latihan ulangan",
@@ -231,7 +231,7 @@
         "created": 1788165602,
         "images": [],
         "videos": [],
-        "updated": 1788173121,
+        "updated": 1788478965,
         "theme": {
           "element": "polaris-flex-theme",
           "path": "@haxtheweb/polaris-theme/lib/polaris-flex-theme.js",
@@ -258,7 +258,7 @@
       "indent": 0,
       "location": "pages/item-426de1b9-5806-4751-8610-0c7e9478b242/index.html",
       "slug": "ekosistem-periksa-fakta-metode-craap",
-      "order": 3,
+      "order": 4,
       "parent": null,
       "title": "EKOSISTEM PERIKSA FAKTA & METODE CRAAP",
       "description": "📘 Cara Mengerjakan Latihan Simak materi dan pahami, lanjutkan soal latihan di bawah dengan login terlebih dahulu,   harap refresh bila tombol mulai latihan soal tidak muncul setelah login. 1. P",
@@ -267,7 +267,7 @@
         "created": 1788169908,
         "images": [],
         "videos": [],
-        "updated": 1788173121,
+        "updated": 1788478965,
         "theme": {
           "element": "terrible-resume-themes",
           "path": "@haxtheweb/terrible-themes/lib/terrible-resume-themes.js",
@@ -294,14 +294,14 @@
       "id": "item-9bc01ccd-190b-45e4-ac15-8d4938403c5f",
       "indent": 0,
       "location": "pages/item-9bc01ccd-190b-45e4-ac15-8d4938403c5f/index.html",
-      "slug": "tes-gelap-error",
-      "order": 5,
+      "slug": "halaman-dark",
+      "order": 7,
       "parent": null,
       "title": "halaman-dark",
       "description": "\n",
       "metadata": {
         "created": 1788236145,
-        "updated": 1788421891,
+        "updated": 1788478966,
         "images": [],
         "videos": [],
         "published": true,
@@ -339,7 +339,25 @@
           "priority": -1,
           "terrible": false,
           "key": "polaris-flex-theme"
-        }
+        },
+        "status": ""
+      }
+    },
+    {
+      "id": "item-fd7a0828-3867-49ac-8957-6d8f99585c6e",
+      "indent": 0,
+      "location": "pages/item-fd7a0828-3867-49ac-8957-6d8f99585c6e/index.html",
+      "slug": "materi-lm2-fase-f",
+      "order": 1,
+      "parent": null,
+      "title": "Materi LM2 Fase F",
+      "description": "",
+      "metadata": {
+        "locked": false,
+        "created": 1788478965,
+        "images": [],
+        "videos": [],
+        "updated": 1788478965
       }
     }
   ]
