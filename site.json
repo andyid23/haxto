@@ -25,7 +25,7 @@
       "name": "haxto",
       "domain": "",
       "created": 1787457359,
-      "updated": 1788479839,
+      "updated": 1788479872,
       "logo": "",
       "version": "26.0.1"
     },
@@ -357,13 +357,13 @@
         "created": 1788478965,
         "images": [],
         "videos": [],
-        "updated": 1788479839,
+        "updated": 1788479872,
         "theme": {
-          "element": "terrible-best-themes",
-          "path": "@haxtheweb/terrible-themes/lib/terrible-best-themes.js",
-          "name": "Terrible hockey",
-          "thumbnail": "@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-terrible-best-themes-thumb.jpg",
-          "description": "Start with a blank site using the Terrible hockey",
+          "element": "terrible-productionz-themes",
+          "path": "@haxtheweb/terrible-themes/lib/terrible-productionz-themes.js",
+          "name": "Terrible Productionz",
+          "thumbnail": "@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-terrible-productionz-themes-thumb.jpg",
+          "description": "Start with a blank site using the Terrible Productionz",
           "category": [
             "Fun",
             "Website"
@@ -371,7 +371,7 @@
           "hidden": false,
           "priority": 0,
           "terrible": true,
-          "key": "terrible-best-themes"
+          "key": "terrible-productionz-themes"
         },
         "published": true,
         "hideInMenu": true,
