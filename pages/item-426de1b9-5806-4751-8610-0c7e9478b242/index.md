@@ -1,5 +1,5 @@
-📘 Cara Mengerjakan Latihan
----------------------------
+📘 Cara Mengerjakan Latihan Kuis
+--------------------------------
 
 Simak materi dan pahami, lanjutkan soal latihan di bawah dengan login terlebih dahulu, harap refresh bila tombol mulai latihan soal tidak muncul setelah login.
 
@@ -69,7 +69,19 @@ Infodemi dapat dibendung secara efektif melalui kerja sama terstruktur seluruh k
 
 **Validitas ilmiah data dapat diperkuat dengan menghindari bias konfirmasi, merujuk pada situs berdomain resmi (.go.id atau .ac.id), serta memilih rujukan yang telah melalui peninjauan sejawat (peer-review)****.**
 
-**6\. Materi Pembelajaran sesuai Stimulus 2**
+### **📝 Kuis Penilaian LM1**
+
+**kerjakan kuis berikut untuk menguji pemahaman kamu tentang ekosistem periksa fakta dan metode CRAAP**
+
+<multiple-choice question="Apa tujuan utama dari ekosistem periksa fakta di masyarakat digital?" single-option="" randomize="" max-attempts="3" typeof="oer:Assessment" prefix="oer:http://oerschema.org/ schema:http://schema.org/ dc:http://purl.org/dc/terms/ foaf:http://xmlns.com/foaf/0.1/ cc:http://creativecommons.org/ns# bib:http://bib.schema.org " quiz-name="lm1-ekosistem" resource="#bd3c833e-7efe-439a-3972-38c84e57872e"><input type="checkbox" value="Untuk mempercepat penyebaran informasi agar lebih cepat dibaca publik"><input type="checkbox" value="Untuk menyaring dan memvalidasi fakta sekaligus membendung berita bohong (hoaks) di dunia digital" correct="correct"><input type="checkbox" value="Untuk menghapus seluruh berita digital yang ada di internet"><input type="checkbox" value="Untuk mengganti peran jurnalis profesional di media tradisional"></multiple-choice>
+
+<multiple-choice question="Manakah pernyataan berikut yang bukan bagian dari komponen ekonomi digital yang benar terkait ekosistem periksa fakta?" randomize="" max-attempts="3" typeof="oer:Assessment" prefix="oer:http://oerschema.org/ schema:http://schema.org/ dc:http://purl.org/dc/terms/ foaf:http://xmlns.com/foaf/0.1/ cc:http://creativecommons.org/ns# bib:http://bib.schema.org " quiz-name="lm1-komponen" resource="#6b31b4d9-3f15-89b4-1ea0-c9e67058a54a" data-hax-lock="data-hax-lock"><input type="checkbox" value="Organisasi Periksa Fakta Independen seperti CekFakta.com dan Turnbackhoax.id"><input type="checkbox" value="Jurnalis dan Peneliti yang secara aktif menyaring kebenaran berita"><input type="checkbox" value="Platform media sosial yang memantau aliran konten dan menandai postingan menyesatkan" correct="correct"><input type="checkbox" value="Publik yang menyebarkan hoaks tanpa verifikasi terlebih dahulu"><input type="checkbox" value="Instrumen hukum seperti UU ITE Pasal 45A ayat (1)" correct="correct"></multiple-choice>
+
+<multiple-choice question="Dalam Metode CRAAP, apa yang dimaksud dengan komponen Authority (Otoritas)?" single-option="" randomize="" max-attempts="3" typeof="oer:Assessment" prefix="oer:http://oerschema.org/ schema:http://schema.org/ dc:http://purl.org/dc/terms/ foaf:http://xmlns.com/foaf/0.1/ cc:http://creativecommons.org/ns# bib:http://bib.schema.org " quiz-name="lm1-craap" resource="#76471056-11a5-bba1-8f8c-8d91afeeffe4" data-hax-lock="data-hax-lock"><input type="checkbox" value="Mengevaluasi seberapa baru informasi tersebut berdasarkan tahun publikasinya"><input type="checkbox" value="Memeriksa kualifikasi penulis, kredibilitas lembaga penerbit, dan reputasi domain pengelolanya" correct="correct"><input type="checkbox" value="Mengukur seberapa cocok informasi dengan kebutuhan riset"><input type="checkbox" value="Menganalisis niat sebenarnya penulis ketika menulis artikel"></multiple-choice>
+
+<multiple-choice question="Apa perbedaan utama antara Membaca Vertikal dan Membaca Lateral (lateral reading)?" randomize="" max-attempts="3" typeof="oer:Assessment" prefix="oer:http://oerschema.org/ schema:http://schema.org/ dc:http://purl.org/dc/terms/ foaf:http://xmlns.com/foaf/0.1/ cc:http://creativecommons.org/ns# bib:http://bib.schema.org " quiz-name="lm1-baca" resource="#812f5d24-0d59-b4f5-ad0f-00554daf85ca" data-hax-lock="data-hax-lock"><input type="checkbox" value="Membaca Vertikal: hanya membaca satu halaman dari atas ke bawah dan mengandalkan visual internal" correct="correct"><input type="checkbox" value="Membaca Lateral: keluar dari situs web, membuka tab baru, dan mencari konsensus sumber luar tepercaya" correct="correct"><input type="checkbox" value="Membaca Vertikal lebih andal karena tidak perlu membuka banyak tab baru"><input type="checkbox" value="Membaca Lateral lebih lambat karena harus membuka banyak sumber berbeda" correct="correct"></multiple-choice>
+
+**7\. Materi Pembelajaran sesuai Stimulus 2**
 
 **Wacana Stimulus 2:**
 

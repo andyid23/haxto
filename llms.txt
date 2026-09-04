@@ -1,5 +1,7 @@
 # Media Pembelajaran Kelas XI Informatika SMA
 
+> belajar dan melatih pemahaman informatika SMA kelas 10 dan 11 X XI
+
 HAXcms is a file-based CMS: authored pages and metadata are stored as portable files, not locked into a database-only workflow.
 The canonical site structure is `site.json`, represented in JSON Outline Schema (`id`, `parent`, `order`, `slug`, `location`, and `metadata`).
 Use HAX CLI and ecosystem tooling to maintain human-authored content while keeping machine-readable outputs synchronized.
