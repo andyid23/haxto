@@ -6,7 +6,7 @@
     <description></description>
     <copyright>Copyright (C) 2026 https://localhost:3000/sites/haxto</copyright>
     <language>en-us</language>
-    <lastBuildDate>Fri, 04 Sep 2026 22:40:38 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 04 Sep 2026 22:44:29 GMT</lastBuildDate>
     <generator>HAXcms NodeJS</generator>
     <atom:link href="https://localhost:3000/sites/haxto/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
@@ -17,17 +17,17 @@
       <pubDate>Sun, 23 Aug 2026 03:55:59 GMT</pubDate>
     </item>
     <item>
-      <title>LATIHAN / SIMULASI KUIS</title>
-      <link>https://localhost:3000/sites/haxto/latihan-/-simulasi-kuis</link>
+      <title>LATIHAN SIMULASI KUIS</title>
+      <link>https://localhost:3000/sites/haxto/latihan-simulasi-kuis</link>
       <description>📝 Latihan Kuis Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban benar/salah ditampilkan. Setelah login reload untuk menampilkan tombol mulai latihan ulangan. Bisa mengulang latihan ulangan maksimal 4 kali. Nilai akhir akan diambil dari nilai terakhir yang dikumpulkan setelah waktu habis atau semua soal terjawab. Waktu Pengerjaan Soal 15 Menit Kalau mode gelap ... tidak bisa gunakan mode terang di smartphonemu&amp;#160;😄</description>
-      <guid>https://localhost:3000/sites/haxto/latihan-/-simulasi-kuis</guid>
+      <guid>https://localhost:3000/sites/haxto/latihan-simulasi-kuis</guid>
       <pubDate>Sun, 23 Aug 2026 06:35:36 GMT</pubDate>
     </item>
     <item>
-      <title>LM1 Simulasi Ulangan / Kuis Fase F</title>
-      <link>https://localhost:3000/sites/haxto/lm1-simulasi-ulangan-/-kuis-fase-f</link>
+      <title>LM1 Materi Kuis Fase F</title>
+      <link>https://localhost:3000/sites/haxto/lm1-materi-kuis-fase-f</link>
       <description>📘 Cara Mengerjakan Latihan Simak materi dan pahami, lanjutkan soal latihan di bawah dengan login terlebih dahulu, harap refresh bila tombol mulai latihan soal tidak muncul setelah login. TOPIK: OPTIMALISASI PENCARIAN LANJUTAN UNTUK RISET 1. Pendahuluan Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep inti serta implementasi dari sistem komputer, jaringan, dan kecakapan digital. Di tengah arus transformasi digital yang mengalir deras, literasi digital dan kemampuan b...</description>
-      <guid>https://localhost:3000/sites/haxto/lm1-simulasi-ulangan-/-kuis-fase-f</guid>
+      <guid>https://localhost:3000/sites/haxto/lm1-materi-kuis-fase-f</guid>
       <pubDate>Wed, 26 Aug 2026 05:22:47 GMT</pubDate>
     </item>
     <item>
@@ -53,10 +53,10 @@
       <pubDate>Mon, 31 Aug 2026 08:40:02 GMT</pubDate>
     </item>
     <item>
-      <title>EKOSISTEM PERIKSA FAKTA &amp; METODE CRAAP</title>
-      <link>https://localhost:3000/sites/haxto/ekosistem-periksa-fakta-metode-craap</link>
+      <title>LM1. EKOSISTEM PERIKSA FAKTA &amp; METODE CRAAP</title>
+      <link>https://localhost:3000/sites/haxto/lm1-ekosistem-periksa-fakta-metode-craap</link>
       <description>📘 Cara Mengerjakan Latihan Kuis Simak materi dan pahami, lanjutkan soal latihan di bawah dengan login terlebih dahulu, harap refresh bila tombol mulai latihan soal tidak muncul setelah login. 1. Pendahuluan Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep inti serta implementasi dari sistem komputasi, rekayasa, dan kecakapan digital di era modern . Di tengah derasnya arus informasi era Masyarakat 5.0, kita sering kali dihadapkan pada fenomena infodemi, yaitu ledakan...</description>
-      <guid>https://localhost:3000/sites/haxto/ekosistem-periksa-fakta-metode-craap</guid>
+      <guid>https://localhost:3000/sites/haxto/lm1-ekosistem-periksa-fakta-metode-craap</guid>
       <pubDate>Mon, 31 Aug 2026 09:51:48 GMT</pubDate>
     </item>
     <item>
@@ -75,9 +75,9 @@
     </item>
     <item>
       <title>Selamat Datang</title>
-      <link>https://localhost:3000/sites/haxto/welcome</link>
+      <link>https://localhost:3000/sites/haxto/selamat-datang</link>
       <description>ULANGAN INFORMATIKA KELAS X-XI Baca dengan seksama materi dan jawablah soal di bawahnya. Materi lengkap ada di buku Informatika SMA kelas X dan XI. Link Menuju Materi Kelas X Link Menuju Materi Kelas X Semboyan</description>
-      <guid>https://localhost:3000/sites/haxto/welcome</guid>
+      <guid>https://localhost:3000/sites/haxto/selamat-datang</guid>
       <pubDate>Fri, 04 Sep 2026 22:06:44 GMT</pubDate>
     </item>
   </channel>
