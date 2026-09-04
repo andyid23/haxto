@@ -757,13 +757,51 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</s
   <entry>
     <title>Welcome</title>
     <id>item-2a96eefc-f4ee-4153-95e7-e33a7782d977</id>
-    <updated>2026-09-04T22:12:13.000Z</updated>
+    <updated>2026-09-04T22:29:52.000Z</updated>
     <published>2026-09-04T22:06:44.000Z</published>
-    <summary></summary>
+    <summary>ULANGAN INFORMATIKA KELAS X-XI
+
+Read these important things!
+
+
+
+
+Link Menuju Materi Kelas X
+Link Menuju Materi Kelas X
+
+
+Semboyan
+
+
+
+
+
+
+</summary>
     <link href="https://localhost:3000/sites/haxto/welcome"/>
     
     <content type="html">
-      <![CDATA[ <p></p> ]]>
+      <![CDATA[ 
+<h3 data-primary="0" data-border="md" data-design-treatment="bg" data-padding="m">ULANGAN INFORMATIKA KELAS X-XI</h3>
+<p></p>
+<stop-note title="KUIS UJI PEMAHAMAN" accent-color="grey" icon="stopnoteicons:stop-icon" status="stop" message="&#60;strong&#62;Read these important things!&#60;/strong&#62;
+"><p slot="message"><strong>Read these important things!</strong>
+</p>
+
+</stop-note>
+<p></p>
+<p><a href="#">Link Menuju Materi Kelas X</a></p>
+<p><a href="#">Link Menuju Materi Kelas X</a></p>
+<img src="files/ilya-pavlov-OqtafYT5kTw-unsplash.jpg" loading="lazy"/><polaris-cta text="Explore Ulangan" link="https://www.kuis" type="primary" outlined filled></polaris-cta>
+<p></p>
+<h2 data-style-guide="headline" data-design-treatment="vert" data-primary="8" data-padding="xs" data-border-radius="xs">Semboyan</h2>
+<p></p>
+<img src="files/habits.jpg" loading="lazy"/><p></p>
+<p></p>
+<img src="files/belajar.jpg" loading="lazy"/><p></p>
+<p></p>
+<p></p>
+ ]]>
     </content>
   </entry>
 </feed>

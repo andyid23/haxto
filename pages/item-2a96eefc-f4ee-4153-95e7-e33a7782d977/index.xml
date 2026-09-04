@@ -7,15 +7,86 @@
 <order>0</order>
 <parent></parent>
 <title>Welcome</title>
-<description></description>
+<description>ULANGAN INFORMATIKA KELAS X-XI
+
+Read these important things!
+
+
+
+
+Link Menuju Materi Kelas X
+Link Menuju Materi Kelas X
+
+
+Semboyan
+
+
+
+
+
+
+</description>
 <metadata>
 <locked>false</locked>
 <created>1788559604</created>
 <images>
+<item>files/ilya-pavlov-OqtafYT5kTw-unsplash.jpg</item>
+<item>files/habits.jpg</item>
+<item>files/belajar.jpg</item>
 </images>
 <videos>
 </videos>
-<updated>1788559604</updated>
+<updated>1788560992</updated>
+<published>true</published>
+<status></status>
+<files>
+<item>
+<path>C:\Users\Dragon\Documents\github\andyid23\haxtheweb-kuis\haxto\files\ilya-pavlov-OqtafYT5kTw-unsplash.jpg</path>
+<fullUrl>/C:\Users\Dragon\Documents\github\andyid23\haxtheweb-kuis\haxto/files/ilya-pavlov-OqtafYT5kTw-unsplash.jpg</fullUrl>
+<url>files/ilya-pavlov-OqtafYT5kTw-unsplash.jpg</url>
+<type>image/jpeg</type>
+<name>ilya-pavlov-OqtafYT5kTw-unsplash.jpg</name>
+<size>98078</size>
+</item>
+<item>
+<path>C:\Users\Dragon\Documents\github\andyid23\haxtheweb-kuis\haxto\files\habits.jpg</path>
+<fullUrl>/C:\Users\Dragon\Documents\github\andyid23\haxtheweb-kuis\haxto/files/habits.jpg</fullUrl>
+<url>files/habits.jpg</url>
+<type>image/jpeg</type>
+<name>habits.jpg</name>
+<size>59170</size>
+</item>
+<item>
+<path>C:\Users\Dragon\Documents\github\andyid23\haxtheweb-kuis\haxto\files\belajar.jpg</path>
+<fullUrl>/C:\Users\Dragon\Documents\github\andyid23\haxtheweb-kuis\haxto/files/belajar.jpg</fullUrl>
+<url>files/belajar.jpg</url>
+<type>image/jpeg</type>
+<name>belajar.jpg</name>
+<size>37009</size>
+</item>
+</files>
+<hideInMenu>false</hideInMenu>
+<readtime>1</readtime>
 </metadata>
-<content><![CDATA[<p></p>]]></content>
+<content><![CDATA[
+<h3 data-primary="0" data-border="md" data-design-treatment="bg" data-padding="m">ULANGAN INFORMATIKA KELAS X-XI</h3>
+<p></p>
+<stop-note title="KUIS UJI PEMAHAMAN" accent-color="grey" icon="stopnoteicons:stop-icon" status="stop" message="&#60;strong&#62;Read these important things!&#60;/strong&#62;
+"><p slot="message"><strong>Read these important things!</strong>
+</p>
+
+</stop-note>
+<p></p>
+<p><a href="#">Link Menuju Materi Kelas X</a></p>
+<p><a href="#">Link Menuju Materi Kelas X</a></p>
+<img src="files/ilya-pavlov-OqtafYT5kTw-unsplash.jpg" loading="lazy"/><polaris-cta text="Explore Ulangan" link="https://www.kuis" type="primary" outlined filled></polaris-cta>
+<p></p>
+<h2 data-style-guide="headline" data-design-treatment="vert" data-primary="8" data-padding="xs" data-border-radius="xs">Semboyan</h2>
+<p></p>
+<img src="files/habits.jpg" loading="lazy"/><p></p>
+<p></p>
+<img src="files/belajar.jpg" loading="lazy"/><p></p>
+<p></p>
+<p></p>
+]]></content>
 </item>

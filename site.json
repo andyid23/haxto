@@ -25,7 +25,7 @@
       "name": "haxto",
       "domain": "",
       "created": 1787457359,
-      "updated": 1788559934,
+      "updated": 1788560992,
       "logo": "",
       "version": "26.0.1"
     },
@@ -390,13 +390,17 @@
       "order": 0,
       "parent": null,
       "title": "Welcome",
-      "description": "",
+      "description": "ULANGAN INFORMATIKA KELAS X-XI\n\nRead these important things!\n\n\n\n\nLink Menuju Materi Kelas X\nLink Menuju Materi Kelas X\n\n\nSemboyan\n\n\n\n\n\n\n",
       "metadata": {
         "locked": false,
         "created": 1788559604,
-        "images": [],
+        "images": [
+          "files/ilya-pavlov-OqtafYT5kTw-unsplash.jpg",
+          "files/habits.jpg",
+          "files/belajar.jpg"
+        ],
         "videos": [],
-        "updated": 1788559933,
+        "updated": 1788560992,
         "published": true,
         "status": "",
         "files": [
@@ -424,7 +428,9 @@
             "name": "belajar.jpg",
             "size": 37009
           }
-        ]
+        ],
+        "hideInMenu": false,
+        "readtime": 1
       }
     }
   ]
