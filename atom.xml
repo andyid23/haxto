@@ -3,7 +3,7 @@
   <title>Media Pembelajaran Kelas XI Informatika SMA</title>
   <link href="https://localhost:3000/sites/haxto/" rel="self" />
   <subtitle></subtitle>
-  <updated>2026-09-04T22:35:40.000Z</updated>
+  <updated>2026-09-04T22:40:38.000Z</updated>
   <author>
       <name>Andy Yulianto</name>
   </author>
@@ -757,7 +757,7 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</s
   <entry>
     <title>Selamat Datang</title>
     <id>item-2a96eefc-f4ee-4153-95e7-e33a7782d977</id>
-    <updated>2026-09-04T22:40:38.000Z</updated>
+    <updated>2026-09-04T22:42:05.000Z</updated>
     <published>2026-09-04T22:06:44.000Z</published>
     <summary>ULANGAN INFORMATIKA KELAS X-XI
 
@@ -790,17 +790,18 @@ Semboyan
 
 
 
+
 </stop-note>
 <p></p>
 <p><a href="#">Link Menuju Materi Kelas X</a></p>
 <p><a href="#">Link Menuju Materi Kelas X</a></p>
-<img src="files/ilya-pavlov-OqtafYT5kTw-unsplash.jpg" loading="lazy" data-width="100" data-padding="m" data-margin="s"/><polaris-cta text="Explore Ulangan" link="https://www.kuis" type="primary" outlined filled edit-mode="" data-padding="m" data-text-align="center"></polaris-cta>
+<img src="files/ilya-pavlov-OqtafYT5kTw-unsplash.jpg" loading="lazy" data-width="75" data-padding="m" data-margin="s"/><polaris-cta text="Explore Ulangan" link="https://www.kuis" type="primary" outlined filled edit-mode data-padding="m" data-text-align="center"></polaris-cta>
 <p></p>
 <h2 data-style-guide="headline" data-design-treatment="vert" data-primary="8" data-padding="xs" data-border-radius="xs" id="h2-1282437022">Semboyan</h2>
 <p></p>
-<img src="files/habits.jpg" loading="lazy" data-float-position="center" data-width="100" data-margin="s" data-padding="m"/><p></p>
+<img src="files/habits.jpg" loading="lazy" data-float-position="center" data-width="75" data-margin="s" data-padding="m"/><p></p>
 <p></p>
-<img src="files/belajar.jpg" loading="lazy" data-padding="xs" data-margin="m" data-width="100"/><p></p>
+<img src="files/belajar.jpg" loading="lazy" data-padding="xs" data-margin="m" data-width="75"/><p></p>
 <p></p>
 <p></p>
  ]]>
