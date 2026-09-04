@@ -415,6 +415,14 @@
             "type": "image/jpeg",
             "name": "habits.jpg",
             "size": 59170
+          },
+          {
+            "path": "C:\\Users\\Dragon\\Documents\\github\\andyid23\\haxtheweb-kuis\\haxto\\files\\belajar.jpg",
+            "fullUrl": "/C:\\Users\\Dragon\\Documents\\github\\andyid23\\haxtheweb-kuis\\haxto/files/belajar.jpg",
+            "url": "files/belajar.jpg",
+            "type": "image/jpeg",
+            "name": "belajar.jpg",
+            "size": 37009
           }
         ]
       }
