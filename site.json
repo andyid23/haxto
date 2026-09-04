@@ -25,7 +25,7 @@
       "name": "haxto",
       "domain": "",
       "created": 1787457359,
-      "updated": 1788560992,
+      "updated": 1788561072,
       "logo": "",
       "version": "26.0.1"
     },
@@ -400,7 +400,7 @@
           "files/belajar.jpg"
         ],
         "videos": [],
-        "updated": 1788560992,
+        "updated": 1788561072,
         "published": true,
         "status": "",
         "files": [
@@ -430,7 +430,23 @@
           }
         ],
         "hideInMenu": false,
-        "readtime": 1
+        "readtime": 1,
+        "theme": {
+          "element": "terrible-resume-themes",
+          "path": "@haxtheweb/terrible-themes/lib/terrible-resume-themes.js",
+          "name": "Terrible Resume",
+          "thumbnail": "@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-terrible-resume-themes-thumb.jpg",
+          "description": "Start with a blank site using the Terrible Resume",
+          "category": [
+            "Fun",
+            "Website"
+          ],
+          "hidden": false,
+          "priority": 0,
+          "terrible": true,
+          "key": "terrible-resume-themes"
+        },
+        "accentColor": "red"
       }
     }
   ]

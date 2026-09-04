@@ -16,7 +16,7 @@
       "files/belajar.jpg"
     ],
     "videos": [],
-    "updated": 1788560992,
+    "updated": 1788561072,
     "published": true,
     "status": "",
     "files": [
@@ -46,7 +46,23 @@
       }
     ],
     "hideInMenu": false,
-    "readtime": 1
+    "readtime": 1,
+    "theme": {
+      "element": "terrible-resume-themes",
+      "path": "@haxtheweb/terrible-themes/lib/terrible-resume-themes.js",
+      "name": "Terrible Resume",
+      "thumbnail": "@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-terrible-resume-themes-thumb.jpg",
+      "description": "Start with a blank site using the Terrible Resume",
+      "category": [
+        "Fun",
+        "Website"
+      ],
+      "hidden": false,
+      "priority": 0,
+      "terrible": true,
+      "key": "terrible-resume-themes"
+    },
+    "accentColor": "red"
   },
-  "content": "\n<h3 data-primary=\"0\" data-border=\"md\" data-design-treatment=\"bg\" data-padding=\"m\">ULANGAN INFORMATIKA KELAS X-XI</h3>\n<p></p>\n<stop-note title=\"KUIS UJI PEMAHAMAN\" accent-color=\"grey\" icon=\"stopnoteicons:stop-icon\" status=\"stop\" message=\"&#60;strong&#62;Read these important things!&#60;/strong&#62;\n\"><p slot=\"message\"><strong>Read these important things!</strong>\n</p>\n\n</stop-note>\n<p></p>\n<p><a href=\"#\">Link Menuju Materi Kelas X</a></p>\n<p><a href=\"#\">Link Menuju Materi Kelas X</a></p>\n<img src=\"files/ilya-pavlov-OqtafYT5kTw-unsplash.jpg\" loading=\"lazy\"/><polaris-cta text=\"Explore Ulangan\" link=\"https://www.kuis\" type=\"primary\" outlined filled></polaris-cta>\n<p></p>\n<h2 data-style-guide=\"headline\" data-design-treatment=\"vert\" data-primary=\"8\" data-padding=\"xs\" data-border-radius=\"xs\">Semboyan</h2>\n<p></p>\n<img src=\"files/habits.jpg\" loading=\"lazy\"/><p></p>\n<p></p>\n<img src=\"files/belajar.jpg\" loading=\"lazy\"/><p></p>\n<p></p>\n<p></p>\n"
+  "content": "\n<h3 data-primary=\"0\" data-border=\"md\" data-design-treatment=\"bg\" data-padding=\"m\" id=\"h3-1838830575\">ULANGAN INFORMATIKA KELAS X-XI</h3>\n<p></p>\n<stop-note title=\"KUIS UJI PEMAHAMAN\" accent-color=\"grey\" icon=\"stopnoteicons:stop-icon\" status=\"stop\" message=\"&#60;strong&#62;Read these important things!&#60;/strong&#62;\n\"><p slot=\"message\"><strong>Read these important things!</strong>\n</p>\n\n\n</stop-note>\n<p></p>\n<p><a href=\"#\">Link Menuju Materi Kelas X</a></p>\n<p><a href=\"#\">Link Menuju Materi Kelas X</a></p>\n<img src=\"files/ilya-pavlov-OqtafYT5kTw-unsplash.jpg\" loading=\"lazy\"/><polaris-cta text=\"Explore Ulangan\" link=\"https://www.kuis\" type=\"primary\" outlined filled edit-mode></polaris-cta>\n<p></p>\n<h2 data-style-guide=\"headline\" data-design-treatment=\"vert\" data-primary=\"8\" data-padding=\"xs\" data-border-radius=\"xs\" id=\"h2-1282437022\">Semboyan</h2>\n<p></p>\n<img src=\"files/habits.jpg\" loading=\"lazy\"/><p></p>\n<p></p>\n<img src=\"files/belajar.jpg\" loading=\"lazy\"/><p></p>\n<p></p>\n<p></p>\n"
 }

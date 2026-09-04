@@ -36,7 +36,7 @@ Semboyan
 </images>
 <videos>
 </videos>
-<updated>1788560992</updated>
+<updated>1788561072</updated>
 <published>true</published>
 <status></status>
 <files>
@@ -67,21 +67,38 @@ Semboyan
 </files>
 <hideInMenu>false</hideInMenu>
 <readtime>1</readtime>
+<theme>
+<element>terrible-resume-themes</element>
+<path>@haxtheweb/terrible-themes/lib/terrible-resume-themes.js</path>
+<name>Terrible Resume</name>
+<thumbnail>@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-terrible-resume-themes-thumb.jpg</thumbnail>
+<description>Start with a blank site using the Terrible Resume</description>
+<category>
+<item>Fun</item>
+<item>Website</item>
+</category>
+<hidden>false</hidden>
+<priority>0</priority>
+<terrible>true</terrible>
+<key>terrible-resume-themes</key>
+</theme>
+<accentColor>red</accentColor>
 </metadata>
 <content><![CDATA[
-<h3 data-primary="0" data-border="md" data-design-treatment="bg" data-padding="m">ULANGAN INFORMATIKA KELAS X-XI</h3>
+<h3 data-primary="0" data-border="md" data-design-treatment="bg" data-padding="m" id="h3-1838830575">ULANGAN INFORMATIKA KELAS X-XI</h3>
 <p></p>
 <stop-note title="KUIS UJI PEMAHAMAN" accent-color="grey" icon="stopnoteicons:stop-icon" status="stop" message="&#60;strong&#62;Read these important things!&#60;/strong&#62;
 "><p slot="message"><strong>Read these important things!</strong>
 </p>
 
+
 </stop-note>
 <p></p>
 <p><a href="#">Link Menuju Materi Kelas X</a></p>
 <p><a href="#">Link Menuju Materi Kelas X</a></p>
-<img src="files/ilya-pavlov-OqtafYT5kTw-unsplash.jpg" loading="lazy"/><polaris-cta text="Explore Ulangan" link="https://www.kuis" type="primary" outlined filled></polaris-cta>
+<img src="files/ilya-pavlov-OqtafYT5kTw-unsplash.jpg" loading="lazy"/><polaris-cta text="Explore Ulangan" link="https://www.kuis" type="primary" outlined filled edit-mode></polaris-cta>
 <p></p>
-<h2 data-style-guide="headline" data-design-treatment="vert" data-primary="8" data-padding="xs" data-border-radius="xs">Semboyan</h2>
+<h2 data-style-guide="headline" data-design-treatment="vert" data-primary="8" data-padding="xs" data-border-radius="xs" id="h2-1282437022">Semboyan</h2>
 <p></p>
 <img src="files/habits.jpg" loading="lazy"/><p></p>
 <p></p>
