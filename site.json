@@ -25,7 +25,7 @@
       "name": "haxto",
       "domain": "",
       "created": 1787457359,
-      "updated": 1788561072,
+      "updated": 1788561340,
       "logo": "",
       "version": "26.0.1"
     },
@@ -389,7 +389,7 @@
       "slug": "welcome",
       "order": 0,
       "parent": null,
-      "title": "Welcome",
+      "title": "Selamat Datang",
       "description": "ULANGAN INFORMATIKA KELAS X-XI\n\nRead these important things!\n\n\n\n\nLink Menuju Materi Kelas X\nLink Menuju Materi Kelas X\n\n\nSemboyan\n\n\n\n\n\n\n",
       "metadata": {
         "locked": false,
@@ -400,7 +400,7 @@
           "files/belajar.jpg"
         ],
         "videos": [],
-        "updated": 1788561072,
+        "updated": 1788561340,
         "published": true,
         "status": "",
         "files": [
@@ -446,7 +446,9 @@
           "terrible": true,
           "key": "terrible-resume-themes"
         },
-        "accentColor": "red"
+        "accentColor": "red",
+        "pageType": "strategy",
+        "image": "files/ilya-pavlov-OqtafYT5kTw-unsplash.jpg"
       }
     }
   ]

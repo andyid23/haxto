@@ -4,7 +4,7 @@ location: pages/item-2a96eefc-f4ee-4153-95e7-e33a7782d977/index.yaml
 slug: welcome
 order: 0
 parent: null
-title: Welcome
+title: Selamat Datang
 description: |+
   ULANGAN INFORMATIKA KELAS X-XI
 
@@ -32,7 +32,7 @@ metadata:
     - files/habits.jpg
     - files/belajar.jpg
   videos: []
-  updated: 1788561072
+  updated: 1788561340
   published: true
   status: ''
   files:
@@ -77,10 +77,13 @@ metadata:
     terrible: true
     key: terrible-resume-themes
   accentColor: red
+  pageType: strategy
+  image: files/ilya-pavlov-OqtafYT5kTw-unsplash.jpg
 content: >
 
   <h3 data-primary="0" data-border="md" data-design-treatment="bg"
-  data-padding="m" id="h3-1838830575">ULANGAN INFORMATIKA KELAS X-XI</h3>
+  data-padding="m" id="h3-1838830575" data-text-align="center">ULANGAN
+  INFORMATIKA KELAS X-XI</h3>
 
   <p></p>
 
@@ -88,9 +91,10 @@ content: >
   icon="stopnoteicons:stop-icon" status="stop" message="&#60;strong&#62;Read
   these important things!&#60;/strong&#62;
 
-  "><p slot="message"><strong>Read these important things!</strong>
+  "><p slot="message"><strong>Baca dengan seksama materi dan jawablah soal di
+  bawahnya. Materi lengkap ada di buku Informatika SMA kelas X dan
+  XI.</strong></p>
 
-  </p>
 
 
 

@@ -6,7 +6,7 @@
     <description></description>
     <copyright>Copyright (C) 2026 https://localhost:3000/sites/haxto</copyright>
     <language>en-us</language>
-    <lastBuildDate>Fri, 04 Sep 2026 22:29:52 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 04 Sep 2026 22:31:12 GMT</lastBuildDate>
     <generator>HAXcms NodeJS</generator>
     <atom:link href="https://localhost:3000/sites/haxto/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
@@ -74,9 +74,9 @@
       <pubDate>Thu, 03 Sep 2026 23:42:45 GMT</pubDate>
     </item>
     <item>
-      <title>Welcome</title>
+      <title>Selamat Datang</title>
       <link>https://localhost:3000/sites/haxto/welcome</link>
-      <description>ULANGAN INFORMATIKA KELAS X-XI Read these important things! Link Menuju Materi Kelas X Link Menuju Materi Kelas X Semboyan</description>
+      <description>ULANGAN INFORMATIKA KELAS X-XI Baca dengan seksama materi dan jawablah soal di bawahnya. Materi lengkap ada di buku Informatika SMA kelas X dan XI. Link Menuju Materi Kelas X Link Menuju Materi Kelas X Semboyan</description>
       <guid>https://localhost:3000/sites/haxto/welcome</guid>
       <pubDate>Fri, 04 Sep 2026 22:06:44 GMT</pubDate>
     </item>
