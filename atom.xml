@@ -3,7 +3,7 @@
   <title>Media Pembelajaran Kelas XI Informatika SMA</title>
   <link href="https://localhost:3000/sites/haxto/" rel="self" />
   <subtitle></subtitle>
-  <updated>2026-09-04T04:01:03.000Z</updated>
+  <updated>2026-09-04T04:05:31.000Z</updated>
   <author>
       <name>Andy Yulianto</name>
   </author>
@@ -460,9 +460,9 @@ apps-script-url="https://script.google.com/macros/s/AKfycby6leZPfcyjVfNtK_fAEnXI
     </content>
   </entry>
   <entry>
-    <title>Materi LM2 Fase F Verifikasi</title>
+    <title>LM2 Fase F Verifikasi</title>
     <id>item-fd7a0828-3867-49ac-8957-6d8f99585c6e</id>
-    <updated>2026-09-04T04:05:31.000Z</updated>
+    <updated>2026-09-04T04:07:00.000Z</updated>
     <published>2026-09-03T23:42:45.000Z</published>
     <summary>
 MODUL AJAR INFORMATIKA FASE F (KELAS XI)
@@ -487,7 +487,9 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</s
 
 
 
+
  untuk mengevaluasi informasi digital yang kompleks.</li>
+
 
 
 
@@ -501,7 +503,9 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</s
 
 
 
+
  <li>Peserta didik mampu <strong>menerapkan metode ilmiah seperti triangulasi</strong> untuk menguji keandalan dan validitas sumber data.</li>
+
 
 
 
@@ -511,6 +515,7 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</s
 </ul>
 <hr/><h3 id="h3-272661673"><strong>3. Materi dan Konsep Dasar</strong></h3>
 <h4 id="h4-1091508119"><strong>A. Membaca Lateral (<em>Lateral Reading</em>) vs. Membaca Vertikal</strong>
+
 
 
 
@@ -538,7 +543,9 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</s
 
 
 
+
  <li><strong>Triangulasi Sumber:</strong> Membandingkan keabsahan informasi dengan merujuk pada beberapa sumber data independen yang berbeda (misalnya membandingkan kesaksian tokoh, data survei, dan dokumen resmi kementerian).</li>
+
 
 
 
@@ -552,7 +559,9 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</s
 
 
 
+
  Melibatkan beberapa peneliti atau pengamat independen untuk mengevaluasi data yang sama guna mengurangi bias subjektif personal dan memastikan interpretasi data bersifat objektif.</li>
+
 
 
 
@@ -561,7 +570,7 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</s
 
 </ul>
 <p></p>
-<multiple-choice question="Metode triangulasi dalam verifikasi informasi bertujuan untuk..." single-option randomize max-attempts="0" typeof="oer:Assessment" resource="#61697532-a004-cf10-f293-175bf8b1eada" prefix="oer:http://oerschema.org/ schema:http://schema.org/ dc:http://purl.org/dc/terms/ foaf:http://xmlns.com/foaf/0.1/ cc:http://creativecommons.org/ns# bib:http://bib.schema.org " quiz-name="default">
+<multiple-choice question="Metode triangulasi dalam verifikasi informasi bertujuan untuk..." single-option randomize max-attempts="0" typeof="oer:Assessment" resource="#61697532-a004-cf10-f293-175bf8b1eada" prefix="oer:http://oerschema.org/ schema:http://schema.org/ dc:http://purl.org/dc/terms/ foaf:http://xmlns.com/foaf/0.1/ cc:http://creativecommons.org/ns# bib:http://bib.schema.org " quiz-name="default" data-hax-lock="data-hax-lock">
 
 
 
@@ -576,7 +585,9 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</s
 
 
 
+
  <li><strong>Pemeriksaan Metadata EXIF (<em>Exchangeable Image File Format</em>):</strong>
+
 
 
 
@@ -590,7 +601,9 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</s
 
 
 
+
  <li><strong>Evaluasi Kualitas Visual:</strong> Menganalisis aspek <strong>"Kebenaran Visual"</strong> untuk mendeteksi tanda-tanda manipulasi, rekayasa digital, atau penyuntingan yang tidak jujur pada objek gambar, serta aspek <strong>"Ketepatan Konten"</strong> untuk memastikan keselarasan visualisasi gambar dengan konteks berita yang dibahas.</li>
+
 
 
 
@@ -607,7 +620,7 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</s
 <input type="checkbox" value="Karena metadata EXIF tidak pernah tersedia di file gambar digital"><input type="checkbox" value="Karena metadata EXIF sangat rentan dihapus atau dimanipulasi" correct="correct"><input type="checkbox" value="Karena metadata EXIF hanya tersedia pada foto yang diambil dengan kamera profesional"><input type="checkbox" value="Karena metadata EXIF tidak mengandung informasi yang berguna"></multiple-choice>
 <h4 id="h4--322459575"><strong>D. Mengatasi Konflik Data Kontradiktif</strong></h4>
 <p>Apabila kita menemukan data statistik yang kontradiktif dari dua instansi pemerintah tepercaya (misalnya dua kementerian resmi), tindakan yang benar adalah <strong>memeriksa secara mendalam metodologi pengumpulan datanya</strong> serta konteks di balik pembuatan informasi dari kedua sumber tersebut, alih-alih langsung mengambil kesimpulan sepihak.</p>
-<multiple-choice question="Jika Anda menemukan data statistik yang kontradiktif dari dua kementerian resmi, tindakan yang tepat adalah..." single-option randomize max-attempts="0" typeof="oer:Assessment" resource="#61697532-a004-cf10-f293-175bf8b1eada" prefix="oer:http://oerschema.org/ schema:http://schema.org/ dc:http://purl.org/dc/terms/ foaf:http://xmlns.com/foaf/0.1/ cc:http://creativecommons.org/ns# bib:http://bib.schema.org " quiz-name="default">
+<multiple-choice question="Jika Anda menemukan data statistik yang kontradiktif dari dua kementerian resmi, tindakan yang tepat adalah..." single-option randomize max-attempts="0" typeof="oer:Assessment" resource="#61697532-a004-cf10-f293-175bf8b1eada" prefix="oer:http://oerschema.org/ schema:http://schema.org/ dc:http://purl.org/dc/terms/ foaf:http://xmlns.com/foaf/0.1/ cc:http://creativecommons.org/ns# bib:http://bib.schema.org " quiz-name="default" data-hax-lock="data-hax-lock">
 
 
 
@@ -621,6 +634,7 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</s
 
 
 
+
  <li><strong>Miskonsepsi 2: Metadata EXIF pada gambar bersifat permanen dan dapat dipercaya 100% karena datanya sangat detail.</strong><em>Faktanya:</em> Metadata EXIF sangat rentan dihapus, disunting, atau dimanipulasi secara sengaja oleh pembuat hoaks menggunakan perangkat lunak penyunting sebelum diunggah kembali ke internet.</li>
 
 
@@ -628,7 +642,9 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</s
 
 
 
+
  <li><strong>Miskonsepsi 3: Menghindari hoaks cukup dilakukan dengan membaca teks secara saksama dari awal hingga akhir paragraf.</strong><em>Faktanya:</em> Membaca saksama dalam satu situs (Membaca Vertikal) tetap membuat pembaca rawan terjebak jika informasi yang disajikan ditulis dengan gaya bahasa meyakinkan namun fiktif. Verifikasi hoaks mutlak memerlukan <strong>Membaca Lateral</strong> dengan melompat ke tab lain untuk mencari konsensus sumber luar.</li>
+
 
 
 
@@ -644,7 +660,9 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</s
 
 
 
+
  <li><strong>Metode Triangulasi</strong> meminimalkan bias subjektif dan menghindari bias konfirmasi dengan membandingkan minimal tiga sumber, metode, atau peneliti yang berbeda.</li>
+
 
 
 
@@ -658,6 +676,7 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</s
 
 
 
+
  <li><strong>Konflik data</strong> dari instansi kredibel yang kontradiktif diselesaikan dengan cara meneliti metodologi pengumpulan data dan konteks data dari masing-masing sumber.</li>
 
 
@@ -665,8 +684,9 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</s
 
 
 
+
 </ol>
-<multiple-choice question="Protokol HTTPS menjamin hal berikut, KECUALI..." single-option randomize max-attempts="0" typeof="oer:Assessment" resource="#61697532-a004-cf10-f293-175bf8b1eada" prefix="oer:http://oerschema.org/ schema:http://schema.org/ dc:http://purl.org/dc/terms/ foaf:http://xmlns.com/foaf/0.1/ cc:http://creativecommons.org/ns# bib:http://bib.schema.org " quiz-name="default">
+<multiple-choice question="Protokol HTTPS menjamin hal berikut, KECUALI..." single-option randomize max-attempts="0" typeof="oer:Assessment" resource="#61697532-a004-cf10-f293-175bf8b1eada" prefix="oer:http://oerschema.org/ schema:http://schema.org/ dc:http://purl.org/dc/terms/ foaf:http://xmlns.com/foaf/0.1/ cc:http://creativecommons.org/ns# bib:http://bib.schema.org " quiz-name="default" data-hax-lock="data-hax-lock">
 
 
 
@@ -674,6 +694,7 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</s
 <input type="checkbox" value="Keamanan transmisi data dari penyadapan pihak ketiga"><input type="checkbox" value="Penggunaan enkripsi SSL/TLS untuk melindungi data"><input type="checkbox" value="Kebenaran dan validitas informasi di dalam situs" correct="correct"><input type="checkbox" value="Perlindungan data antara klien dan server"></multiple-choice>
 <p></p>
 <hr/><h3 id="h3--679071797"><strong><br></strong>
+
 </h3>
 <h3 id="h3--679071797"><strong>6. Materi Pembelajaran (Skenario Aktivitas Mandiri)</strong></h3>
 <h4 id="h4--1435987985"><strong>Wacana Kasus Uji Verifikasi:</strong></h4>
@@ -687,7 +708,9 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</s
 
 
 
+
  <li><strong>Melakukan Reverse Image Search:</strong> Siswa mengunduh gambar kerusakan jalan tersebut dan mengunggahnya ke mesin pencari gambar (seperti Google Lens). Jika hasil pencarian menunjukkan bahwa gambar tersebut adalah foto kerusakan akibat gempa di negara lain pada tahun 2018, maka terbukti bahwa foto tersebut digunakan di luar konteks asli (hoaks konteks).</li>
+
 
 
 
@@ -701,7 +724,9 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</s
 
 
 
+
  <li><strong>Menguji dengan Triangulasi Sumber:</strong> Siswa memverifikasi kesaksian berita tersebut dengan membandingkan data dari minimal tiga portal berita kredibel yang independen, jurnal bencana yang telah di-<em>peer-review</em>, dan situs pemerintah resmi agar terhindar dari bias konfirmasi pribadi.</li>
+
 
 
 

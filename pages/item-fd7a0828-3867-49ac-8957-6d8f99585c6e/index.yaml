@@ -4,7 +4,7 @@ location: pages/item-fd7a0828-3867-49ac-8957-6d8f99585c6e/index.yaml
 slug: materi-lm2-fase-f
 order: 1
 parent: null
-title: Materi LM2 Fase F Verifikasi
+title: LM2 Fase F Verifikasi
 description: |-
 
   MODUL AJAR INFORMATIKA FASE F (KELAS XI)
@@ -16,7 +16,7 @@ metadata:
   created: 1788478965
   images: []
   videos: []
-  updated: 1788494731
+  updated: 1788494820
   theme:
     element: terrible-resume-themes
     path: '@haxtheweb/terrible-themes/lib/terrible-resume-themes.js'
@@ -36,6 +36,7 @@ metadata:
   accentColor: purple
   icon: av:art-track
   readtime: 6
+  pageType: module
 content: >
 
   <p></p>
@@ -73,7 +74,9 @@ content: >
 
 
 
+
    untuk mengevaluasi informasi digital yang kompleks.</li>
+
 
 
 
@@ -87,7 +90,9 @@ content: >
 
 
 
+
    <li>Peserta didik mampu <strong>menerapkan metode ilmiah seperti triangulasi</strong> untuk menguji keandalan dan validitas sumber data.</li>
+
 
 
 
@@ -100,6 +105,7 @@ content: >
 
   <h4 id="h4-1091508119"><strong>A. Membaca Lateral (<em>Lateral Reading</em>)
   vs. Membaca Vertikal</strong>
+
 
 
 
@@ -177,7 +183,9 @@ content: >
 
 
 
+
    <li><strong>Triangulasi Sumber:</strong> Membandingkan keabsahan informasi dengan merujuk pada beberapa sumber data independen yang berbeda (misalnya membandingkan kesaksian tokoh, data survei, dan dokumen resmi kementerian).</li>
+
 
 
 
@@ -191,7 +199,9 @@ content: >
 
 
 
+
    Melibatkan beberapa peneliti atau pengamat independen untuk mengevaluasi data yang sama guna mengurangi bias subjektif personal dan memastikan interpretasi data bersifat objektif.</li>
+
 
 
 
@@ -208,7 +218,7 @@ content: >
   prefix="oer:http://oerschema.org/ schema:http://schema.org/
   dc:http://purl.org/dc/terms/ foaf:http://xmlns.com/foaf/0.1/
   cc:http://creativecommons.org/ns# bib:http://bib.schema.org "
-  quiz-name="default">
+  quiz-name="default" data-hax-lock="data-hax-lock">
 
 
 
@@ -240,7 +250,9 @@ content: >
 
 
 
+
    <li><strong>Pemeriksaan Metadata EXIF (<em>Exchangeable Image File Format</em>):</strong>
+
 
 
 
@@ -254,7 +266,9 @@ content: >
 
 
 
+
    <li><strong>Evaluasi Kualitas Visual:</strong> Menganalisis aspek <strong>"Kebenaran Visual"</strong> untuk mendeteksi tanda-tanda manipulasi, rekayasa digital, atau penyuntingan yang tidak jujur pada objek gambar, serta aspek <strong>"Ketepatan Konten"</strong> untuk memastikan keselarasan visualisasi gambar dengan konteks berita yang dibahas.</li>
+
 
 
 
@@ -300,7 +314,7 @@ content: >
   prefix="oer:http://oerschema.org/ schema:http://schema.org/
   dc:http://purl.org/dc/terms/ foaf:http://xmlns.com/foaf/0.1/
   cc:http://creativecommons.org/ns# bib:http://bib.schema.org "
-  quiz-name="default">
+  quiz-name="default" data-hax-lock="data-hax-lock">
 
 
 
@@ -328,6 +342,7 @@ content: >
 
 
 
+
    <li><strong>Miskonsepsi 2: Metadata EXIF pada gambar bersifat permanen dan dapat dipercaya 100% karena datanya sangat detail.</strong><em>Faktanya:</em> Metadata EXIF sangat rentan dihapus, disunting, atau dimanipulasi secara sengaja oleh pembuat hoaks menggunakan perangkat lunak penyunting sebelum diunggah kembali ke internet.</li>
 
 
@@ -335,7 +350,9 @@ content: >
 
 
 
+
    <li><strong>Miskonsepsi 3: Menghindari hoaks cukup dilakukan dengan membaca teks secara saksama dari awal hingga akhir paragraf.</strong><em>Faktanya:</em> Membaca saksama dalam satu situs (Membaca Vertikal) tetap membuat pembaca rawan terjebak jika informasi yang disajikan ditulis dengan gaya bahasa meyakinkan namun fiktif. Verifikasi hoaks mutlak memerlukan <strong>Membaca Lateral</strong> dengan melompat ke tab lain untuk mencari konsensus sumber luar.</li>
+
 
 
 
@@ -355,7 +372,9 @@ content: >
 
 
 
+
    <li><strong>Metode Triangulasi</strong> meminimalkan bias subjektif dan menghindari bias konfirmasi dengan membandingkan minimal tiga sumber, metode, atau peneliti yang berbeda.</li>
+
 
 
 
@@ -369,7 +388,9 @@ content: >
 
 
 
+
    <li><strong>Konflik data</strong> dari instansi kredibel yang kontradiktif diselesaikan dengan cara meneliti metodologi pengumpulan data dan konteks data dari masing-masing sumber.</li>
+
 
 
 
@@ -384,7 +405,7 @@ content: >
   prefix="oer:http://oerschema.org/ schema:http://schema.org/
   dc:http://purl.org/dc/terms/ foaf:http://xmlns.com/foaf/0.1/
   cc:http://creativecommons.org/ns# bib:http://bib.schema.org "
-  quiz-name="default">
+  quiz-name="default" data-hax-lock="data-hax-lock">
 
 
 
@@ -399,6 +420,7 @@ content: >
   <p></p>
 
   <hr/><h3 id="h3--679071797"><strong><br></strong>
+
 
   </h3>
 
@@ -428,7 +450,9 @@ content: >
 
 
 
+
    <li><strong>Melakukan Reverse Image Search:</strong> Siswa mengunduh gambar kerusakan jalan tersebut dan mengunggahnya ke mesin pencari gambar (seperti Google Lens). Jika hasil pencarian menunjukkan bahwa gambar tersebut adalah foto kerusakan akibat gempa di negara lain pada tahun 2018, maka terbukti bahwa foto tersebut digunakan di luar konteks asli (hoaks konteks).</li>
+
 
 
 
@@ -442,7 +466,9 @@ content: >
 
 
 
+
    <li><strong>Menguji dengan Triangulasi Sumber:</strong> Siswa memverifikasi kesaksian berita tersebut dengan membandingkan data dari minimal tiga portal berita kredibel yang independen, jurnal bencana yang telah di-<em>peer-review</em>, dan situs pemerintah resmi agar terhindar dari bias konfirmasi pribadi.</li>
+
 
 
 
