@@ -36,7 +36,7 @@ Semboyan
 </images>
 <videos>
 </videos>
-<updated>1788561340</updated>
+<updated>1788561638</updated>
 <published>true</published>
 <status></status>
 <files>
@@ -85,6 +85,7 @@ Semboyan
 <accentColor>red</accentColor>
 <pageType>strategy</pageType>
 <image>files/ilya-pavlov-OqtafYT5kTw-unsplash.jpg</image>
+<icon>courseicons:strategy</icon>
 </metadata>
 <content><![CDATA[
 <h3 data-primary="0" data-border="md" data-design-treatment="bg" data-padding="m" id="h3-1838830575" data-text-align="center">ULANGAN INFORMATIKA KELAS X-XI</h3>
@@ -94,17 +95,18 @@ Semboyan
 
 
 
+
 </stop-note>
 <p></p>
 <p><a href="#">Link Menuju Materi Kelas X</a></p>
 <p><a href="#">Link Menuju Materi Kelas X</a></p>
-<img src="files/ilya-pavlov-OqtafYT5kTw-unsplash.jpg" loading="lazy"/><polaris-cta text="Explore Ulangan" link="https://www.kuis" type="primary" outlined filled edit-mode></polaris-cta>
+<img src="files/ilya-pavlov-OqtafYT5kTw-unsplash.jpg" loading="lazy" data-width="100" data-padding="m" data-margin="s"/><polaris-cta text="Explore Ulangan" link="https://www.kuis" type="primary" outlined filled edit-mode="" data-padding="m" data-text-align="center"></polaris-cta>
 <p></p>
 <h2 data-style-guide="headline" data-design-treatment="vert" data-primary="8" data-padding="xs" data-border-radius="xs" id="h2-1282437022">Semboyan</h2>
 <p></p>
-<img src="files/habits.jpg" loading="lazy"/><p></p>
+<img src="files/habits.jpg" loading="lazy" data-float-position="center" data-width="100" data-margin="s" data-padding="m"/><p></p>
 <p></p>
-<img src="files/belajar.jpg" loading="lazy"/><p></p>
+<img src="files/belajar.jpg" loading="lazy" data-padding="xs" data-margin="m" data-width="100"/><p></p>
 <p></p>
 <p></p>
 ]]></content>
