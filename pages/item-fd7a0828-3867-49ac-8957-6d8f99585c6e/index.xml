@@ -19,7 +19,7 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</d
 </images>
 <videos>
 </videos>
-<updated>1788479895</updated>
+<updated>1788492018</updated>
 <theme>
 <element>terrible-resume-themes</element>
 <path>@haxtheweb/terrible-themes/lib/terrible-resume-themes.js</path>
@@ -54,7 +54,9 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</d
 
 
 
+
  untuk mengevaluasi informasi digital yang kompleks.</li>
+
 
 
 
@@ -62,13 +64,16 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</d
 
 
 
+
  <li>Peserta didik mampu <strong>menerapkan metode ilmiah seperti triangulasi</strong> untuk menguji keandalan dan validitas sumber data.</li>
+
 
 
 
 </ul>
 <hr/><h3 id="h3-272661673"><strong>3. Materi dan Konsep Dasar</strong></h3>
 <h4 id="h4-1091508119"><strong>A. Membaca Lateral (<em>Lateral Reading</em>) vs. Membaca Vertikal</strong>
+
 
 
 
@@ -82,7 +87,9 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</d
 
 
 
+
  <li><strong>Triangulasi Sumber:</strong> Membandingkan keabsahan informasi dengan merujuk pada beberapa sumber data independen yang berbeda (misalnya membandingkan kesaksian tokoh, data survei, dan dokumen resmi kementerian).</li>
+
 
 
 
@@ -90,7 +97,9 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</d
 
 
 
+
  Melibatkan beberapa peneliti atau pengamat independen untuk mengevaluasi data yang sama guna mengurangi bias subjektif personal dan memastikan interpretasi data bersifat objektif.</li>
+
 
 
 
@@ -101,7 +110,9 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</d
 
 
 
+
  <li><strong>Pemeriksaan Metadata EXIF (<em>Exchangeable Image File Format</em>):</strong>
+
 
 
 
@@ -109,7 +120,9 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</d
 
 
 
+
  <li><strong>Evaluasi Kualitas Visual:</strong> Menganalisis aspek <strong>"Kebenaran Visual"</strong> untuk mendeteksi tanda-tanda manipulasi, rekayasa digital, atau penyuntingan yang tidak jujur pada objek gambar, serta aspek <strong>"Ketepatan Konten"</strong> untuk memastikan keselarasan visualisasi gambar dengan konteks berita yang dibahas.</li>
+
 
 
 
@@ -121,11 +134,14 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</d
 
 
 
+
  <li><strong>Miskonsepsi 2: Metadata EXIF pada gambar bersifat permanen dan dapat dipercaya 100% karena datanya sangat detail.</strong><em>Faktanya:</em> Metadata EXIF sangat rentan dihapus, disunting, atau dimanipulasi secara sengaja oleh pembuat hoaks menggunakan perangkat lunak penyunting sebelum diunggah kembali ke internet.</li>
 
 
 
+
  <li><strong>Miskonsepsi 3: Menghindari hoaks cukup dilakukan dengan membaca teks secara saksama dari awal hingga akhir paragraf.</strong><em>Faktanya:</em> Membaca saksama dalam satu situs (Membaca Vertikal) tetap membuat pembaca rawan terjebak jika informasi yang disajikan ditulis dengan gaya bahasa meyakinkan namun fiktif. Verifikasi hoaks mutlak memerlukan <strong>Membaca Lateral</strong> dengan melompat ke tab lain untuk mencari konsensus sumber luar.</li>
+
 
 
 
@@ -135,7 +151,9 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</d
 
 
 
+
  <li><strong>Metode Triangulasi</strong> meminimalkan bias subjektif dan menghindari bias konfirmasi dengan membandingkan minimal tiga sumber, metode, atau peneliti yang berbeda.</li>
+
 
 
 
@@ -143,7 +161,9 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</d
 
 
 
+
  <li><strong>Konflik data</strong> dari instansi kredibel yang kontradiktif diselesaikan dengan cara meneliti metodologi pengumpulan data dan konteks data dari masing-masing sumber.</li>
+
 
 
 
@@ -157,7 +177,9 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</d
 
 
 
+
  <li><strong>Melakukan Reverse Image Search:</strong> Siswa mengunduh gambar kerusakan jalan tersebut dan mengunggahnya ke mesin pencari gambar (seperti Google Lens). Jika hasil pencarian menunjukkan bahwa gambar tersebut adalah foto kerusakan akibat gempa di negara lain pada tahun 2018, maka terbukti bahwa foto tersebut digunakan di luar konteks asli (hoaks konteks).</li>
+
 
 
 
@@ -165,12 +187,51 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</d
 
 
 
+
  <li><strong>Menguji dengan Triangulasi Sumber:</strong> Siswa memverifikasi kesaksian berita tersebut dengan membandingkan data dari minimal tiga portal berita kredibel yang independen, jurnal bencana yang telah di-<em>peer-review</em>, dan situs pemerintah resmi agar terhindar dari bias konfirmasi pribadi.</li>
+
 
 
 
 </ol>
 <hr/><p>🎯 <strong>Nudge:</strong>Apakah Anda ingin saya membuatkan <strong>Kunci Lembar Jawab Cepat (Quick Answer Key Sheet)</strong> dalam bentuk tabel ringkas untuk paket soal AKM Stimulus 2 Kelas XI yang telah kita buat sebelumnya agar Anda dapat melakukan koreksi instan?</p>
+<stop-note accent-color="grey" title="" icon="stopnoteicons:stop-icon" status="stop"><strong>📋 Kuis Pemahaman Materi LM2</strong></stop-note>
+<p></p>
+<p></p>
+<multiple-choice question="Which is correct?" single-option randomize max-attempts="0" typeof="oer:Assessment" resource="#61697532-a004-cf10-f293-175bf8b1eada" prefix="oer:http://oerschema.org/ schema:http://schema.org/ dc:http://purl.org/dc/terms/ foaf:http://xmlns.com/foaf/0.1/ cc:http://creativecommons.org/ns# bib:http://bib.schema.org " quiz-name="default">
+<input type="checkbox" value="Answer 1" correct="correct"><input type="checkbox" value="Another potential answer"></multiple-choice>
+<p></p>
+<p></p>
+<multiple-choice-question randomize="" question="Apa kekurangan utama dari metode Membaca Vertikal dalam mengevaluasi informasi digital?">
+  <input type="radio" value="Membutuhkan waktu yang terlalu lama untuk membaca">
+  <input type="radio" value="Hanya dapat digunakan untuk situs berbahasa Indonesia">
+  <input type="radio" value="Mengandalkan elemen visual internal yang mudah dipalsukan" correct="correct">
+  <input type="radio" value="Tidak dapat digunakan pada situs dengan protokol HTTPS">
+</multiple-choice-question>
+<multiple-choice-question randomize="" question="Metode triangulasi dalam verifikasi informasi bertujuan untuk...">
+  <input type="radio" value="Mempercepat proses pencarian informasi di internet">
+  <input type="radio" value="Memperkuat validitas data dengan membandingkan beberapa sumber" correct="correct">
+  <input type="radio" value="Menghindari penggunaan situs dengan protokol HTTPS">
+  <input type="radio" value="Membuat konten menjadi lebih menarik secara visual">
+</multiple-choice-question>
+<multiple-choice-question randomize="" question="Mengapa metadata EXIF pada gambar tidak boleh dipercaya secara mutlak?">
+  <input type="radio" value="Karena metadata EXIF tidak pernah tersedia di file gambar digital">
+  <input type="radio" value="Karena metadata EXIF sangat rentan dihapus atau dimanipulasi" correct="correct">
+  <input type="radio" value="Karena metadata EXIF hanya tersedia pada foto yang diambil dengan kamera profesional">
+  <input type="radio" value="Karena metadata EXIF tidak mengandung informasi yang berguna">
+</multiple-choice-question>
+<multiple-choice-question randomize="" question="Protokol HTTPS menjamin hal berikut, KECUALI...">
+  <input type="radio" value="Keamanan transmisi data dari penyadapan pihak ketiga">
+  <input type="radio" value="Penggunaan enkripsi SSL/TLS untuk melindungi data">
+  <input type="radio" value="Kebenaran dan validitas informasi di dalam situs" correct="correct">
+  <input type="radio" value="Perlindungan data antara klien dan server">
+</multiple-choice-question>
+<multiple-choice-question randomize="" question="Jika Anda menemukan data statistik yang kontradiktif dari dua kementerian resmi, tindakan yang tepat adalah...">
+  <input type="radio" value="Memilih data dari kementerian yang lebih terkenang">
+  <input type="radio" value="Mengabaikan kedua data tersebut dan mencari sumber lain">
+  <input type="radio" value="Memeriksa metodologi pengumpulan data dan konteks dari kedua sumber" correct="correct">
+  <input type="radio" value="Mengambil rata-rata dari kedua data tersebut">
+</multiple-choice-question>
 <p></p>
 <p></p>
 <p></p>
