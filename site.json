@@ -398,7 +398,17 @@
         "videos": [],
         "updated": 1788559933,
         "published": true,
-        "status": ""
+        "status": "",
+        "files": [
+          {
+            "path": "C:\\Users\\Dragon\\Documents\\github\\andyid23\\haxtheweb-kuis\\haxto\\files\\ilya-pavlov-OqtafYT5kTw-unsplash.jpg",
+            "fullUrl": "/C:\\Users\\Dragon\\Documents\\github\\andyid23\\haxtheweb-kuis\\haxto/files/ilya-pavlov-OqtafYT5kTw-unsplash.jpg",
+            "url": "files/ilya-pavlov-OqtafYT5kTw-unsplash.jpg",
+            "type": "image/jpeg",
+            "name": "ilya-pavlov-OqtafYT5kTw-unsplash.jpg",
+            "size": 98078
+          }
+        ]
       }
     }
   ]
