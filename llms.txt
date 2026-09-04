@@ -18,7 +18,7 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [LATIHAN SIMULASI KUIS FASE-E-LM1](https://localhost:3000/sites/haxto/pages/item-792b811f-d307-4765-93cb-f20ed47c8097/index.md): 📝 Latihan Kuis Kelas X Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban benar/salah ditampilkan. Setelah login reload untuk menampilkan tombol mulai latihan ulangan
 - [EKOSISTEM PERIKSA FAKTA & METODE CRAAP](https://localhost:3000/sites/haxto/pages/item-426de1b9-5806-4751-8610-0c7e9478b242/index.md): 📘 Cara Mengerjakan Latihan Simak materi dan pahami, lanjutkan soal latihan di bawah dengan login terlebih dahulu, harap refresh bila tombol mulai latihan soal tidak muncul setelah login. 1. P
 - [halaman-dark](https://localhost:3000/sites/haxto/pages/item-9bc01ccd-190b-45e4-ac15-8d4938403c5f/index.md)
-- [Materi LM2 Fase F](https://localhost:3000/sites/haxto/pages/item-fd7a0828-3867-49ac-8957-6d8f99585c6e/index.md): MODUL AJAR INFORMATIKA FASE F (KELAS XI) TOPIK: VERIFIKASI INFORMASI DAN PERIKSA FAKTA (LITERASI DIGITAL) 1. Pendahuluan Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in
+- [Materi LM2 Fase F Verifikasi](https://localhost:3000/sites/haxto/pages/item-fd7a0828-3867-49ac-8957-6d8f99585c6e/index.md): MODUL AJAR INFORMATIKA FASE F (KELAS XI) TOPIK: VERIFIKASI INFORMASI DAN PERIKSA FAKTA (LITERASI DIGITAL) 1. Pendahuluan Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in
 
 ## Optional
 - [Search index](https://localhost:3000/sites/haxto/lunrSearchIndex.json): Lunr corpus for quick full-text retrieval.

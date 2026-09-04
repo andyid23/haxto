@@ -3,7 +3,7 @@
   <title>Media Pembelajaran Kelas XI Informatika SMA</title>
   <link href="https://localhost:3000/sites/haxto/" rel="self" />
   <subtitle></subtitle>
-  <updated>2026-09-04T03:20:18.000Z</updated>
+  <updated>2026-09-04T04:01:03.000Z</updated>
   <author>
       <name>Andy Yulianto</name>
   </author>
@@ -460,9 +460,9 @@ apps-script-url="https://script.google.com/macros/s/AKfycby6leZPfcyjVfNtK_fAEnXI
     </content>
   </entry>
   <entry>
-    <title>Materi LM2 Fase F</title>
+    <title>Materi LM2 Fase F Verifikasi</title>
     <id>item-fd7a0828-3867-49ac-8957-6d8f99585c6e</id>
-    <updated>2026-09-04T04:01:03.000Z</updated>
+    <updated>2026-09-04T04:05:31.000Z</updated>
     <published>2026-09-03T23:42:45.000Z</published>
     <summary>
 MODUL AJAR INFORMATIKA FASE F (KELAS XI)
@@ -474,7 +474,6 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</s
     <content type="html">
       <![CDATA[ 
 <p></p>
-<h2 id="h2--1604639835"><strong>MODUL AJAR INFORMATIKA FASE F (KELAS XI)</strong></h2>
 <h2 id="h2--879066373"><strong>TOPIK: VERIFIKASI INFORMASI DAN PERIKSA FAKTA (LITERASI DIGITAL)</strong></h2>
 <hr/><h3 id="h3-39465782"><strong>1. Pendahuluan</strong></h3>
 <p>Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep inti serta implementasi dari sistem komputasi, jaringan, dan kecakapan digital di era modern. Di tengah pesatnya perkembangan teknologi informasi, masyarakat saat ini hidup di era di mana alam nyata dan alam digital saling terintegrasi. Kondisi ini memicu terjadinya fenomena ledakan informasi digital yang mencakup berita akurat maupun berita bohong (hoaks) yang menyebar secara masif dan cepat.</p>
@@ -487,7 +486,9 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</s
 
 
 
+
  untuk mengevaluasi informasi digital yang kompleks.</li>
+
 
 
 
@@ -499,7 +500,9 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</s
 
 
 
+
  <li>Peserta didik mampu <strong>menerapkan metode ilmiah seperti triangulasi</strong> untuk menguji keandalan dan validitas sumber data.</li>
+
 
 
 
@@ -508,6 +511,7 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</s
 </ul>
 <hr/><h3 id="h3-272661673"><strong>3. Materi dan Konsep Dasar</strong></h3>
 <h4 id="h4-1091508119"><strong>A. Membaca Lateral (<em>Lateral Reading</em>) vs. Membaca Vertikal</strong>
+
 
 
 
@@ -533,7 +537,9 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</s
 
 
 
+
  <li><strong>Triangulasi Sumber:</strong> Membandingkan keabsahan informasi dengan merujuk pada beberapa sumber data independen yang berbeda (misalnya membandingkan kesaksian tokoh, data survei, dan dokumen resmi kementerian).</li>
+
 
 
 
@@ -545,7 +551,9 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</s
 
 
 
+
  Melibatkan beberapa peneliti atau pengamat independen untuk mengevaluasi data yang sama guna mengurangi bias subjektif personal dan memastikan interpretasi data bersifat objektif.</li>
+
 
 
 
@@ -567,7 +575,9 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</s
 
 
 
+
  <li><strong>Pemeriksaan Metadata EXIF (<em>Exchangeable Image File Format</em>):</strong>
+
 
 
 
@@ -579,7 +589,9 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</s
 
 
 
+
  <li><strong>Evaluasi Kualitas Visual:</strong> Menganalisis aspek <strong>"Kebenaran Visual"</strong> untuk mendeteksi tanda-tanda manipulasi, rekayasa digital, atau penyuntingan yang tidak jujur pada objek gambar, serta aspek <strong>"Ketepatan Konten"</strong> untuk memastikan keselarasan visualisasi gambar dengan konteks berita yang dibahas.</li>
+
 
 
 
@@ -595,8 +607,15 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</s
 <input type="checkbox" value="Karena metadata EXIF tidak pernah tersedia di file gambar digital"><input type="checkbox" value="Karena metadata EXIF sangat rentan dihapus atau dimanipulasi" correct="correct"><input type="checkbox" value="Karena metadata EXIF hanya tersedia pada foto yang diambil dengan kamera profesional"><input type="checkbox" value="Karena metadata EXIF tidak mengandung informasi yang berguna"></multiple-choice>
 <h4 id="h4--322459575"><strong>D. Mengatasi Konflik Data Kontradiktif</strong></h4>
 <p>Apabila kita menemukan data statistik yang kontradiktif dari dua instansi pemerintah tepercaya (misalnya dua kementerian resmi), tindakan yang benar adalah <strong>memeriksa secara mendalam metodologi pengumpulan datanya</strong> serta konteks di balik pembuatan informasi dari kedua sumber tersebut, alih-alih langsung mengambil kesimpulan sepihak.</p>
+<multiple-choice question="Jika Anda menemukan data statistik yang kontradiktif dari dua kementerian resmi, tindakan yang tepat adalah..." single-option randomize max-attempts="0" typeof="oer:Assessment" resource="#61697532-a004-cf10-f293-175bf8b1eada" prefix="oer:http://oerschema.org/ schema:http://schema.org/ dc:http://purl.org/dc/terms/ foaf:http://xmlns.com/foaf/0.1/ cc:http://creativecommons.org/ns# bib:http://bib.schema.org " quiz-name="default">
+
+
+
+
+<input type="checkbox" value="Memilih data dari kementerian yang lebih terkenal"><input type="checkbox" value="Mengabaikan kedua data tersebut dan mencari sumber lain"><input type="checkbox" value="Memeriksa metodologi pengumpulan data dan konteks dari kedua sumber" correct="correct"><input type="checkbox" value="Mengambil rata-rata dari kedua data tersebut"></multiple-choice>
 <hr/><h3 id="h3--2136781867"><strong>4. Miskonsepsi Umum</strong></h3>
 <ul><li><strong>Miskonsepsi 1: Tampilan situs web yang rapi, berlogo profesional, dan menggunakan protokol HTTPS sudah pasti kredibel.</strong><em>Faktanya:</em> Ini merupakan jebakan metode membaca vertikal. Elemen visual internal sangat mudah dipalsukan secara digital oleh pembuat hoaks. Protokol HTTPS hanya menjamin enkripsi transmisi data agar aman dari penyadapan, tetapi tidak menjamin kebenaran isi atau validitas informasi di dalam web tersebut.</li>
+
 
 
 
@@ -608,7 +627,9 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</s
 
 
 
+
  <li><strong>Miskonsepsi 3: Menghindari hoaks cukup dilakukan dengan membaca teks secara saksama dari awal hingga akhir paragraf.</strong><em>Faktanya:</em> Membaca saksama dalam satu situs (Membaca Vertikal) tetap membuat pembaca rawan terjebak jika informasi yang disajikan ditulis dengan gaya bahasa meyakinkan namun fiktif. Verifikasi hoaks mutlak memerlukan <strong>Membaca Lateral</strong> dengan melompat ke tab lain untuk mencari konsensus sumber luar.</li>
+
 
 
 
@@ -622,7 +643,9 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</s
 
 
 
+
  <li><strong>Metode Triangulasi</strong> meminimalkan bias subjektif dan menghindari bias konfirmasi dengan membandingkan minimal tiga sumber, metode, atau peneliti yang berbeda.</li>
+
 
 
 
@@ -634,19 +657,31 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</s
 
 
 
+
  <li><strong>Konflik data</strong> dari instansi kredibel yang kontradiktif diselesaikan dengan cara meneliti metodologi pengumpulan data dan konteks data dari masing-masing sumber.</li>
 
 
 
 
 
+
 </ol>
-<hr/><h3 id="h3--679071797"><strong>6. Materi Pembelajaran (Skenario Aktivitas Mandiri)</strong></h3>
+<multiple-choice question="Protokol HTTPS menjamin hal berikut, KECUALI..." single-option randomize max-attempts="0" typeof="oer:Assessment" resource="#61697532-a004-cf10-f293-175bf8b1eada" prefix="oer:http://oerschema.org/ schema:http://schema.org/ dc:http://purl.org/dc/terms/ foaf:http://xmlns.com/foaf/0.1/ cc:http://creativecommons.org/ns# bib:http://bib.schema.org " quiz-name="default">
+
+
+
+
+<input type="checkbox" value="Keamanan transmisi data dari penyadapan pihak ketiga"><input type="checkbox" value="Penggunaan enkripsi SSL/TLS untuk melindungi data"><input type="checkbox" value="Kebenaran dan validitas informasi di dalam situs" correct="correct"><input type="checkbox" value="Perlindungan data antara klien dan server"></multiple-choice>
+<p></p>
+<hr/><h3 id="h3--679071797"><strong><br></strong>
+</h3>
+<h3 id="h3--679071797"><strong>6. Materi Pembelajaran (Skenario Aktivitas Mandiri)</strong></h3>
 <h4 id="h4--1435987985"><strong>Wacana Kasus Uji Verifikasi:</strong></h4>
 <blockquote><p>Seorang siswa kelas XI menemukan postingan viral di media sosial yang menampilkan foto "kerusakan jalan raya akibat gempa bumi hari ini di sebuah daerah". Postingan tersebut menyertakan link artikel dari sebuah blog pribadi yang merinci kronologi kejadian dengan desain tata letak yang sangat rapi dan berlogo instansi kedokteran tepercaya.</p></blockquote>
 <h4 id="h4-2071373031"><strong>Panduan Langkah Eksplorasi Siswa:</strong></h4>
 <p>Siswa diarahkan untuk membedah kasus di atas secara kritis menggunakan langkah-langkah sistematis berikut:</p>
 <ol><li><strong>Menerapkan Membaca Lateral:</strong> Siswa segera keluar dari link blog tersebut, membuka tab baru di peramban, dan mencari tahu reputasi penulis blog serta kebenaran klaim gempa bumi hari ini menurut instansi resmi seperti BMKG atau BNPB.</li>
+
 
 
 
@@ -658,7 +693,9 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</s
 
 
 
+
  <li><strong>Menganalisis Kriteria Kebenaran Visual:</strong> Siswa meneliti objek foto untuk mendeteksi tanda-tanda penyuntingan piksel, manipulasi pencahayaan, atau bayangan yang tidak konsisten yang menunjukkan adanya rekayasa gambar.</li>
+
 
 
 
@@ -670,28 +707,12 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</s
 
 
 
+
 </ol>
 <hr/><p>🎯 <strong>N</strong>tabel ringkas untuk paket soal AKM Stimulus 2 Kelas XI</p>
 <stop-note accent-color="grey" title="" icon="stopnoteicons:stop-icon" status="stop"><strong>📋 Kuis Pemahaman Materi LM2</strong></stop-note>
 <p></p>
 <p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<multiple-choice question="Protokol HTTPS menjamin hal berikut, KECUALI..." single-option randomize max-attempts="0" typeof="oer:Assessment" resource="#61697532-a004-cf10-f293-175bf8b1eada" prefix="oer:http://oerschema.org/ schema:http://schema.org/ dc:http://purl.org/dc/terms/ foaf:http://xmlns.com/foaf/0.1/ cc:http://creativecommons.org/ns# bib:http://bib.schema.org " quiz-name="default">
-
-
-
-
-<input type="checkbox" value="Keamanan transmisi data dari penyadapan pihak ketiga"><input type="checkbox" value="Penggunaan enkripsi SSL/TLS untuk melindungi data"><input type="checkbox" value="Kebenaran dan validitas informasi di dalam situs" correct="correct"><input type="checkbox" value="Perlindungan data antara klien dan server"></multiple-choice>
-<multiple-choice question="Jika Anda menemukan data statistik yang kontradiktif dari dua kementerian resmi, tindakan yang tepat adalah..." single-option randomize max-attempts="0" typeof="oer:Assessment" resource="#61697532-a004-cf10-f293-175bf8b1eada" prefix="oer:http://oerschema.org/ schema:http://schema.org/ dc:http://purl.org/dc/terms/ foaf:http://xmlns.com/foaf/0.1/ cc:http://creativecommons.org/ns# bib:http://bib.schema.org " quiz-name="default">
-
-
-
-
-<input type="checkbox" value="Memilih data dari kementerian yang lebih terkenal"><input type="checkbox" value="Mengabaikan kedua data tersebut dan mencari sumber lain"><input type="checkbox" value="Memeriksa metodologi pengumpulan data dan konteks dari kedua sumber" correct="correct"><input type="checkbox" value="Mengambil rata-rata dari kedua data tersebut"></multiple-choice>
 <p></p>
 <p></p>
 <p></p>

@@ -25,7 +25,7 @@
       "name": "haxto",
       "domain": "",
       "created": 1787457359,
-      "updated": 1788494463,
+      "updated": 1788494731,
       "logo": "",
       "version": "26.0.1"
     },
@@ -350,14 +350,14 @@
       "slug": "materi-lm2-fase-f",
       "order": 1,
       "parent": null,
-      "title": "Materi LM2 Fase F",
+      "title": "Materi LM2 Fase F Verifikasi",
       "description": "\nMODUL AJAR INFORMATIKA FASE F (KELAS XI)\nTOPIK: VERIFIKASI INFORMASI DAN PERIKSA FAKTA (LITERASI DIGITAL)\n1. Pendahuluan\nInformatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in",
       "metadata": {
         "locked": false,
         "created": 1788478965,
         "images": [],
         "videos": [],
-        "updated": 1788494463,
+        "updated": 1788494731,
         "theme": {
           "element": "terrible-resume-themes",
           "path": "@haxtheweb/terrible-themes/lib/terrible-resume-themes.js",

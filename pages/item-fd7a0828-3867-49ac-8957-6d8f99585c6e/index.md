@@ -1,6 +1,3 @@
-**MODUL AJAR INFORMATIKA FASE F (KELAS XI)**
---------------------------------------------
-
 **TOPIK: VERIFIKASI INFORMASI DAN PERIKSA FAKTA (LITERASI DIGITAL)**
 --------------------------------------------------------------------
 
@@ -60,6 +57,8 @@ Kredibilitas informasi visual berupa gambar tidak boleh dinilai hanya dari ketaj
 
 Apabila kita menemukan data statistik yang kontradiktif dari dua instansi pemerintah tepercaya (misalnya dua kementerian resmi), tindakan yang benar adalah **memeriksa secara mendalam metodologi pengumpulan datanya** serta konteks di balik pembuatan informasi dari kedua sumber tersebut, alih-alih langsung mengambil kesimpulan sepihak.
 
+<multiple-choice question="Jika Anda menemukan data statistik yang kontradiktif dari dua kementerian resmi, tindakan yang tepat adalah..." single-option="" randomize="" max-attempts="0" typeof="oer:Assessment" resource="#61697532-a004-cf10-f293-175bf8b1eada" prefix="oer:http://oerschema.org/ schema:http://schema.org/ dc:http://purl.org/dc/terms/ foaf:http://xmlns.com/foaf/0.1/ cc:http://creativecommons.org/ns# bib:http://bib.schema.org " quiz-name="default"><input type="checkbox" value="Memilih data dari kementerian yang lebih terkenal"><input type="checkbox" value="Mengabaikan kedua data tersebut dan mencari sumber lain"><input type="checkbox" value="Memeriksa metodologi pengumpulan data dan konteks dari kedua sumber" correct="correct"><input type="checkbox" value="Mengambil rata-rata dari kedua data tersebut"></multiple-choice>
+
 * * *
 
 ### **4\. Miskonsepsi Umum**
@@ -77,7 +76,11 @@ Apabila kita menemukan data statistik yang kontradiktif dari dua instansi pemeri
 3.  **Kredibilitas visual (gambar)** wajib diuji secara kritis menggunakan _Reverse Image Search_ dan pemeriksaan metadata EXIF karena aspek visual sangat mudah dimanipulasi secara digital oleh pembuat hoaks.
 4.  **Konflik data** dari instansi kredibel yang kontradiktif diselesaikan dengan cara meneliti metodologi pengumpulan data dan konteks data dari masing-masing sumber.
 
+<multiple-choice question="Protokol HTTPS menjamin hal berikut, KECUALI..." single-option="" randomize="" max-attempts="0" typeof="oer:Assessment" resource="#61697532-a004-cf10-f293-175bf8b1eada" prefix="oer:http://oerschema.org/ schema:http://schema.org/ dc:http://purl.org/dc/terms/ foaf:http://xmlns.com/foaf/0.1/ cc:http://creativecommons.org/ns# bib:http://bib.schema.org " quiz-name="default"><input type="checkbox" value="Keamanan transmisi data dari penyadapan pihak ketiga"><input type="checkbox" value="Penggunaan enkripsi SSL/TLS untuk melindungi data"><input type="checkbox" value="Kebenaran dan validitas informasi di dalam situs" correct="correct"><input type="checkbox" value="Perlindungan data antara klien dan server"></multiple-choice>
+
 * * *
+
+### 
 
 ### **6\. Materi Pembelajaran (Skenario Aktivitas Mandiri)**
 
@@ -99,5 +102,3 @@ Siswa diarahkan untuk membedah kasus di atas secara kritis menggunakan langkah-l
 🎯 **N**tabel ringkas untuk paket soal AKM Stimulus 2 Kelas XI
 
 <stop-note accent-color="grey" title="" icon="stopnoteicons:stop-icon" status="stop"><strong>📋 Kuis Pemahaman Materi LM2</strong></stop-note>
-
-<multiple-choice question="Protokol HTTPS menjamin hal berikut, KECUALI..." single-option="" randomize="" max-attempts="0" typeof="oer:Assessment" resource="#61697532-a004-cf10-f293-175bf8b1eada" prefix="oer:http://oerschema.org/ schema:http://schema.org/ dc:http://purl.org/dc/terms/ foaf:http://xmlns.com/foaf/0.1/ cc:http://creativecommons.org/ns# bib:http://bib.schema.org " quiz-name="default"><input type="checkbox" value="Keamanan transmisi data dari penyadapan pihak ketiga"><input type="checkbox" value="Penggunaan enkripsi SSL/TLS untuk melindungi data"><input type="checkbox" value="Kebenaran dan validitas informasi di dalam situs" correct="correct"><input type="checkbox" value="Perlindungan data antara klien dan server"></multiple-choice> <multiple-choice question="Jika Anda menemukan data statistik yang kontradiktif dari dua kementerian resmi, tindakan yang tepat adalah..." single-option="" randomize="" max-attempts="0" typeof="oer:Assessment" resource="#61697532-a004-cf10-f293-175bf8b1eada" prefix="oer:http://oerschema.org/ schema:http://schema.org/ dc:http://purl.org/dc/terms/ foaf:http://xmlns.com/foaf/0.1/ cc:http://creativecommons.org/ns# bib:http://bib.schema.org " quiz-name="default"><input type="checkbox" value="Memilih data dari kementerian yang lebih terkenal"><input type="checkbox" value="Mengabaikan kedua data tersebut dan mencari sumber lain"><input type="checkbox" value="Memeriksa metodologi pengumpulan data dan konteks dari kedua sumber" correct="correct"><input type="checkbox" value="Mengambil rata-rata dari kedua data tersebut"></multiple-choice>
