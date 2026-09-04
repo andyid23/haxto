@@ -14,7 +14,7 @@ metadata:
   created: 1788169908
   images: []
   videos: []
-  updated: 1788565478
+  updated: 1788565934
   theme:
     element: terrible-resume-themes
     path: '@haxtheweb/terrible-themes/lib/terrible-resume-themes.js'
@@ -68,9 +68,11 @@ content: >
   dan bukan fakta di dunia digital</b><b>.</b></li>
 
 
+
   <li><b>Siswa mampu menggunakan cara membaca lateral (lateral reading) guna
   mengevaluasi keandalan berbagai informasi digital secara
   objektif</b><b>.</b></li>
+
 
 
   <li><b>Siswa mampu mengevaluasi validitas data dan kredibilitas sumber data
@@ -78,7 +80,27 @@ content: >
   CRAAP</b><b>.</b></li>
 
 
+
   </ul>
+
+  <multiple-choice question="Apa tujuan utama dari ekosistem periksa fakta di
+  masyarakat digital?" single-option randomize max-attempts="3"
+  typeof="oer:Assessment" prefix="oer:http://oerschema.org/
+  schema:http://schema.org/ dc:http://purl.org/dc/terms/
+  foaf:http://xmlns.com/foaf/0.1/ cc:http://creativecommons.org/ns#
+  bib:http://bib.schema.org " quiz-name="lm1-ekosistem"
+  resource="#bd3c833e-7efe-439a-3972-38c84e57872e">
+
+
+
+
+
+  <input type="checkbox" value="Untuk mempercepat penyebaran informasi agar
+  lebih cepat dibaca publik"><input type="checkbox" value="Untuk menyaring dan
+  memvalidasi fakta sekaligus membendung berita bohong (hoaks) di dunia digital"
+  correct="correct"><input type="checkbox" value="Untuk menghapus seluruh berita
+  digital yang ada di internet"><input type="checkbox" value="Untuk mengganti
+  peran jurnalis profesional di media tradisional"></multiple-choice>
 
   <p><b>3. Materi dan Konsep Dasar</b></p>
 
@@ -88,8 +110,10 @@ content: >
   baik yang akurat maupun yang berupa hoaks</b><b>.</b></li>
 
 
+
   <li><b>Komponen Ekosistem Periksa Fakta: Upaya kolaboratif nasional dan global
   untuk membendung hoaks, yang melibatkan</b><b>:</b></li>
+
 
 
   </ul>
@@ -99,16 +123,20 @@ content: >
   Turnbackhoax.id, atau Snopes)</b><b>.</b></li>
 
 
+
   <li><b>Jurnalis dan Peneliti: Profesional media yang secara aktif menyaring
   dan melacak kebenaran berita</b><b>.</b></li>
+
 
 
   <li><b>Platform Media Sosial: Berkolaborasi memonitor aliran konten dan
   menandai postingan yang menyesatkan</b><b>.</b></li>
 
 
+
   <li><b>Publik: Peran aktif masyarakat untuk menyaring informasi dan menahan
   diri dari menyebarkan berita yang belum terbukti valid</b><b>.</b></li>
+
 
 
   </ol>
@@ -118,13 +146,37 @@ content: >
   Tahun 2008 Pasal 45A ayat (1)</b><b>.</b></li>
 
 
+
   </ul>
+
+  <multiple-choice question="Manakah pernyataan berikut yang bukan bagian dari
+  komponen ekonomi digital yang benar terkait ekosistem periksa fakta?"
+  randomize max-attempts="3" typeof="oer:Assessment"
+  prefix="oer:http://oerschema.org/ schema:http://schema.org/
+  dc:http://purl.org/dc/terms/ foaf:http://xmlns.com/foaf/0.1/
+  cc:http://creativecommons.org/ns# bib:http://bib.schema.org "
+  quiz-name="lm1-komponen" resource="#6b31b4d9-3f15-89b4-1ea0-c9e67058a54a">
+
+
+
+
+
+
+  <input type="checkbox" value="Organisasi Periksa Fakta Independen seperti
+  CekFakta.com dan Turnbackhoax.id"><input type="checkbox" value="Jurnalis dan
+  Peneliti yang secara aktif menyaring kebenaran berita"><input type="checkbox"
+  value="Platform media sosial yang memantau aliran konten dan menandai
+  postingan menyesatkan" correct="correct"><input type="checkbox" value="Publik
+  yang menyebarkan hoaks tanpa verifikasi terlebih dahulu"><input
+  type="checkbox" value="Instrumen hukum seperti UU ITE Pasal 45A ayat (1)"
+  correct="correct"></multiple-choice>
 
   <p><b>B. Metode CRAAP dalam Mengevaluasi Konten Teks</b></p>
 
   <p><b="true">Kevalidan suatu dokumen teks dapat diuji secara terstruktur
   menggunakan instrumen ilmiah yang disebut Metode CRAAP, yang membagi evaluasi
   ke dalam lima indikator utama<b="true">:</b="true"></b="true">
+
 
   </p>
 
@@ -133,8 +185,10 @@ content: >
   sudah usang</b><b>.</b></li>
 
 
+
   <li><b>Relevance (Relevansi): Menguji kesesuaian informasi dengan topik tugas
   atau pertanyaan riset yang sedang kita selesaikan</b><b>.</b></li>
+
 
 
   <li><b>Authority (Otoritas): Memeriksa kualifikasi penulis, kredibilitas
@@ -144,16 +198,19 @@ content: >
   tertinggi</b><b>.</b></li>
 
 
+
   <li><b>Accuracy (Keakuratan): Memverifikasi kebenaran isi dokumen. Dokumen
   yang akurat harus didukung bukti logis atau referensi ilmiah tepercaya,
   disajikan secara profesional, serta bebas dari kesalahan tata bahasa dan salah
   ketik (typo)</b><b>.</b></li>
 
 
+
   <li><b>Purpose (Tujuan): Menganalisis motif penulisan. Kita harus peka
   mendeteksi adanya bias komersial (seperti situs web yang murni bertujuan
   menjual produk tertentu sehingga cenderung menyajikan klaim sepihak tanpa
   menyajikan risiko secara berimbang)</b><b>.</b></li>
+
 
 
   </ol>
@@ -206,78 +263,12 @@ content: >
   terstruktur seluruh komponen ekosistem periksa fakta dan kepatuhan terhadap UU
   ITE Pasal 45A ayat (1)<b="true">.</b="true"></b="true">
 
+
   </p>
 
   <p><b>Metode CRAAP (Currency, Relevance, Authority, Accuracy, Purpose)
   membantu kita mengidentifikasi kredibilitas suatu naskah tertulis di internet
   secara objektif dan ilmiah</b><b>.</b></p>
-
-  <p><b>Membaca Lateral mengajarkan kita untuk tidak langsung memercayai isi
-  satu situs web, melainkan melompat antar-tab guna melacak reputasi luar dan
-  mencari konsensus sumber independen</b><b>.</b></p>
-
-  <p><b>Validitas ilmiah data dapat diperkuat dengan menghindari bias
-  konfirmasi, merujuk pada situs berdomain resmi (.go.id atau .ac.id), serta
-  memilih rujukan yang telah melalui peninjauan sejawat
-  (peer-review)</b><b>.</b></p>
-
-  <p><b><br></b>
-
-
-  </p>
-
-  <h3 id="h3-kuis-tambahan"><b>📝 Kuis Penilaian LM1</b></h3>
-
-  <p><b>kerjakan kuis berikut untuk menguji pemahaman kamu tentang ekosistem
-  periksa fakta dan metode CRAAP</b></p>
-
-  <p></p>
-
-  <multiple-choice question="Apa tujuan utama dari ekosistem periksa fakta di
-  masyarakat digital?" single-option randomize max-attempts="3"
-  typeof="oer:Assessment" prefix="oer:http://oerschema.org/
-  schema:http://schema.org/ dc:http://purl.org/dc/terms/
-  foaf:http://xmlns.com/foaf/0.1/ cc:http://creativecommons.org/ns#
-  bib:http://bib.schema.org " quiz-name="lm1-ekosistem"
-  resource="#bd3c833e-7efe-439a-3972-38c84e57872e">
-
-
-
-
-
-  <input type="checkbox" value="Untuk mempercepat penyebaran informasi agar
-  lebih cepat dibaca publik"><input type="checkbox" value="Untuk menyaring dan
-  memvalidasi fakta sekaligus membendung berita bohong (hoaks) di dunia digital"
-  correct="correct"><input type="checkbox" value="Untuk menghapus seluruh berita
-  digital yang ada di internet"><input type="checkbox" value="Untuk mengganti
-  peran jurnalis profesional di media tradisional"></multiple-choice>
-
-  <p></p>
-
-  <multiple-choice question="Manakah pernyataan berikut yang bukan bagian dari
-  komponen ekonomi digital yang benar terkait ekosistem periksa fakta?"
-  randomize max-attempts="3" typeof="oer:Assessment"
-  prefix="oer:http://oerschema.org/ schema:http://schema.org/
-  dc:http://purl.org/dc/terms/ foaf:http://xmlns.com/foaf/0.1/
-  cc:http://creativecommons.org/ns# bib:http://bib.schema.org "
-  quiz-name="lm1-komponen" resource="#6b31b4d9-3f15-89b4-1ea0-c9e67058a54a"
-  data-hax-lock="data-hax-lock">
-
-
-
-
-
-
-  <input type="checkbox" value="Organisasi Periksa Fakta Independen seperti
-  CekFakta.com dan Turnbackhoax.id"><input type="checkbox" value="Jurnalis dan
-  Peneliti yang secara aktif menyaring kebenaran berita"><input type="checkbox"
-  value="Platform media sosial yang memantau aliran konten dan menandai
-  postingan menyesatkan" correct="correct"><input type="checkbox" value="Publik
-  yang menyebarkan hoaks tanpa verifikasi terlebih dahulu"><input
-  type="checkbox" value="Instrumen hukum seperti UU ITE Pasal 45A ayat (1)"
-  correct="correct"></multiple-choice>
-
-  <p></p>
 
   <multiple-choice question="Dalam Metode CRAAP, apa yang dimaksud dengan
   komponen Authority (Otoritas)?" single-option randomize max-attempts="3"
@@ -285,8 +276,7 @@ content: >
   schema:http://schema.org/ dc:http://purl.org/dc/terms/
   foaf:http://xmlns.com/foaf/0.1/ cc:http://creativecommons.org/ns#
   bib:http://bib.schema.org " quiz-name="lm1-craap"
-  resource="#76471056-11a5-bba1-8f8c-8d91afeeffe4"
-  data-hax-lock="data-hax-lock">
+  resource="#76471056-11a5-bba1-8f8c-8d91afeeffe4">
 
 
 
@@ -300,7 +290,14 @@ content: >
   value="Menganalisis niat sebenarnya penulis ketika menulis
   artikel"></multiple-choice>
 
-  <p></p>
+  <p><b>Membaca Lateral mengajarkan kita untuk tidak langsung memercayai isi
+  satu situs web, melainkan melompat antar-tab guna melacak reputasi luar dan
+  mencari konsensus sumber independen</b><b>.</b></p>
+
+  <p><b>Validitas ilmiah data dapat diperkuat dengan menghindari bias
+  konfirmasi, merujuk pada situs berdomain resmi (.go.id atau .ac.id), serta
+  memilih rujukan yang telah melalui peninjauan sejawat
+  (peer-review)</b><b>.</b></p>
 
   <multiple-choice question="Apa perbedaan utama antara Membaca Vertikal dan
   Membaca Lateral (lateral reading)?" randomize max-attempts="3"
@@ -308,8 +305,7 @@ content: >
   schema:http://schema.org/ dc:http://purl.org/dc/terms/
   foaf:http://xmlns.com/foaf/0.1/ cc:http://creativecommons.org/ns#
   bib:http://bib.schema.org " quiz-name="lm1-baca"
-  resource="#812f5d24-0d59-b4f5-ad0f-00554daf85ca"
-  data-hax-lock="data-hax-lock">
+  resource="#812f5d24-0d59-b4f5-ad0f-00554daf85ca">
 
 
 
@@ -323,6 +319,24 @@ content: >
   banyak tab baru"><input type="checkbox" value="Membaca Lateral lebih lambat
   karena harus membuka banyak sumber berbeda"
   correct="correct"></multiple-choice>
+
+  <p><b><br></b>
+
+
+
+  </p>
+
+  <h3 id="h3-kuis-tambahan"><br></h3>
+
+  <p></p>
+
+  <p></p>
+
+  <p></p>
+
+  <p></p>
+
+  <p></p>
 
   <p></p>
 
@@ -353,16 +367,19 @@ content: >
   (.go.id)?</b></li>
 
 
+
   <li><b>Analisis Keakuratan (Accuracy): Siswa memverifikasi apakah klaim
   tersebut didukung oleh rujukan ilmiah atau jurnal yang telah
   di-peer-review</b><b>. Ia juga meneliti apakah teks disajikan secara
   profesional dan bebas dari banyak kesalahan tik (typo)</b><b>.</b></li>
 
 
+
   <li><b>Analisis Tujuan (Purpose): Siswa menganalisis apakah artikel tersebut
   memiliki bias komersial (tujuan terselubung untuk mempromosikan dan menjual
   produk minyak herbal tersebut secara sepihak tanpa memaparkan risiko medis
   secara berimbang)</b><b>.</b></li>
+
 
 
   <li><b>Triangulasi Data: Untuk menghindari bias konfirmasi (hanya memercayai
@@ -372,13 +389,15 @@ content: >
   (CekFakta.com)</b><b>.</b></li>
 
 
+
   </ul>
 
   <p></p>
 
-  <p></p>
+  <h3><strong>📝 Kuis Penilaian LM1</strong></h3>
 
-  <p></p>
+  <p><strong>kerjakan kuis berikut untuk menguji pemahaman kamu tentang
+  ekosistem periksa fakta dan metode CRAAP</strong></p>
 
   <quiz-user-auth
   apps-script-url="https://script.google.com/macros/s/AKfycbxGvruTao7sbhdjhT9TJ1c2Mn1bjOS-yWUCbmMfW2W-3_dj-sf6XSFCpDJCK6ETYCqy/exec"
