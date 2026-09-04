@@ -61,7 +61,7 @@ content: >
   <p></p>
 
   <quiz-user-auth
-  apps-script-url="https://script.google.com/macros/s/AKfycbyuprudZkCq_YCQ-CqqD_huzndsbA6zHsg_ICfqPnlB97dhcrm1xJjGxJ3u4Jp8DjJQ/exec"
+  apps-script-url="https://script.google.com/macros/s/AKfycbxGvruTao7sbhdjhT9TJ1c2Mn1bjOS-yWUCbmMfW2W-3_dj-sf6XSFCpDJCK6ETYCqy/exec"
   auto-login _student-id=""></quiz-user-auth>
 
   <latihan-kuis mode="siswa" allow-retake max-retake="4" duration="900"
@@ -227,3 +227,4 @@ content: >
   _attempt-ke="0">
 
   </latihan-kuis>
+

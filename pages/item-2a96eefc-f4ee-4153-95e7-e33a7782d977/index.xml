@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-2a96eefc-f4ee-4153-95e7-e33a7782d977</id>
+<indent>0</indent>
+<location>pages/item-2a96eefc-f4ee-4153-95e7-e33a7782d977/index.xml</location>
+<slug>welcome</slug>
+<order>0</order>
+<parent></parent>
+<title>Welcome</title>
+<description></description>
+<metadata>
+<locked>false</locked>
+<created>1788559604</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1788559604</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

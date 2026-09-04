@@ -6,7 +6,7 @@
     <description></description>
     <copyright>Copyright (C) 2026 https://localhost:3000/sites/haxto</copyright>
     <language>en-us</language>
-    <lastBuildDate>Fri, 04 Sep 2026 04:05:31 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 04 Sep 2026 22:06:45 GMT</lastBuildDate>
     <generator>HAXcms NodeJS</generator>
     <atom:link href="https://localhost:3000/sites/haxto/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
@@ -24,10 +24,10 @@
       <pubDate>Sun, 23 Aug 2026 06:35:36 GMT</pubDate>
     </item>
     <item>
-      <title>Materi Simulasi Ulangan / Kuis</title>
-      <link>https://localhost:3000/sites/haxto/materi-simulasi-ulangan-/-kuis</link>
+      <title>LM1 Simulasi Ulangan / Kuis Fase F</title>
+      <link>https://localhost:3000/sites/haxto/lm1-simulasi-ulangan-/-kuis-fase-f</link>
       <description>📘 Cara Mengerjakan Latihan Simak materi dan pahami, lanjutkan soal latihan di bawah dengan login terlebih dahulu, harap refresh bila tombol mulai latihan soal tidak muncul setelah login. TOPIK: OPTIMALISASI PENCARIAN LANJUTAN UNTUK RISET 1. Pendahuluan Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep inti serta implementasi dari sistem komputer, jaringan, dan kecakapan digital. Di tengah arus transformasi digital yang mengalir deras, literasi digital dan kemampuan b...</description>
-      <guid>https://localhost:3000/sites/haxto/materi-simulasi-ulangan-/-kuis</guid>
+      <guid>https://localhost:3000/sites/haxto/lm1-simulasi-ulangan-/-kuis-fase-f</guid>
       <pubDate>Wed, 26 Aug 2026 05:22:47 GMT</pubDate>
     </item>
     <item>
@@ -68,10 +68,17 @@
     </item>
     <item>
       <title>LM2 Fase F Verifikasi</title>
-      <link>https://localhost:3000/sites/haxto/materi-lm2-fase-f</link>
+      <link>https://localhost:3000/sites/haxto/lm2-fase-f-verifikasi</link>
       <description>TOPIK: VERIFIKASI INFORMASI DAN PERIKSA FAKTA (LITERASI DIGITAL) 1. Pendahuluan Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep inti serta implementasi dari sistem komputasi, jaringan, dan kecakapan digital di era modern. Di tengah pesatnya perkembangan teknologi informasi, masyarakat saat ini hidup di era di mana alam nyata dan alam digital saling terintegrasi. Kondisi ini memicu terjadinya fenomena ledakan informasi digital yang mencakup berita akurat maupun berit...</description>
-      <guid>https://localhost:3000/sites/haxto/materi-lm2-fase-f</guid>
+      <guid>https://localhost:3000/sites/haxto/lm2-fase-f-verifikasi</guid>
       <pubDate>Thu, 03 Sep 2026 23:42:45 GMT</pubDate>
+    </item>
+    <item>
+      <title>Welcome</title>
+      <link>https://localhost:3000/sites/haxto/welcome</link>
+      <description></description>
+      <guid>https://localhost:3000/sites/haxto/welcome</guid>
+      <pubDate>Fri, 04 Sep 2026 22:06:44 GMT</pubDate>
     </item>
   </channel>
 </rss>

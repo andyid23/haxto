@@ -38,7 +38,7 @@ content: >
   terlebih dahulu,
     harap refresh bila tombol mulai latihan soal tidak muncul setelah login.</p>
   <quiz-user-auth id="auth"
-  apps-script-url="https://script.google.com/macros/s/AKfycbyuprudZkCq_YCQ-CqqD_huzndsbA6zHsg_ICfqPnlB97dhcrm1xJjGxJ3u4Jp8DjJQ/exec"
+  apps-script-url="https://script.google.com/macros/s/AKfycbxGvruTao7sbhdjhT9TJ1c2Mn1bjOS-yWUCbmMfW2W-3_dj-sf6XSFCpDJCK6ETYCqy/exec"
   auto-login></quiz-user-auth>
 
   <h4 id="h4--664910474"><strong>TOPIK: OPTIMALISASI PENCARIAN LANJUTAN UNTUK
@@ -198,7 +198,7 @@ content: >
     </ul>
   <latihan-kuis mode="siswa" allow-retake max-retake="5" duration="900"
   timer-autostart shuffle-questions shuffle-choices kategori="formatif"
-  apps-script-url="https://script.google.com/macros/s/AKfycbyuprudZkCq_YCQ-CqqD_huzndsbA6zHsg_ICfqPnlB97dhcrm1xJjGxJ3u4Jp8DjJQ/exec"
+  apps-script-url="https://script.google.com/macros/s/AKfycbxGvruTao7sbhdjhT9TJ1c2Mn1bjOS-yWUCbmMfW2W-3_dj-sf6XSFCpDJCK6ETYCqy/exec"
   kd-materi="LD-1 Latihan" student-id="" judul-materi="Materi: Pencarian"
   teks-materi="Baca materi di atas, lalu kerjakan kuis. Kamu bisa mengulang
   sampai 4 kali." show-sheet-link soal-file-url="./files/soal-contoh.json"
@@ -366,3 +366,4 @@ content: >
   _attempt-ke="0"  >
 
   </latihan-kuis>
+
