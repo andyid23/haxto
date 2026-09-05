@@ -6,7 +6,7 @@
     <description>belajar dan melatih pemahaman informatika SMA kelas 10 dan 11 X XI</description>
     <copyright>Copyright (C) 2026 https://localhost:3000/sites/haxto</copyright>
     <language>en-us</language>
-    <lastBuildDate>Fri, 04 Sep 2026 23:44:38 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 05 Sep 2026 00:24:36 GMT</lastBuildDate>
     <generator>HAXcms NodeJS</generator>
     <atom:link href="https://localhost:3000/sites/haxto/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
@@ -17,10 +17,10 @@
       <pubDate>Sun, 23 Aug 2026 03:55:59 GMT</pubDate>
     </item>
     <item>
-      <title>LATIHAN SIMULASI KUIS</title>
-      <link>https://localhost:3000/sites/haxto/latihan-simulasi-kuis</link>
+      <title>LATIHAN SIMULASI KUIS LM1</title>
+      <link>https://localhost:3000/sites/haxto/latihan-simulasi-kuis-lm1</link>
       <description>📝 Latihan Kuis Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban benar/salah ditampilkan. Setelah login reload untuk menampilkan tombol mulai latihan ulangan. Bisa mengulang latihan ulangan maksimal 4 kali. Nilai akhir akan diambil dari nilai terakhir yang dikumpulkan setelah waktu habis atau semua soal terjawab. Waktu Pengerjaan Soal 15 Menit Kalau mode gelap ... tidak bisa gunakan mode terang di smartphonemu&amp;#160;😄</description>
-      <guid>https://localhost:3000/sites/haxto/latihan-simulasi-kuis</guid>
+      <guid>https://localhost:3000/sites/haxto/latihan-simulasi-kuis-lm1</guid>
       <pubDate>Sun, 23 Aug 2026 06:35:36 GMT</pubDate>
     </item>
     <item>
