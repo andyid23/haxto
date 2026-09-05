@@ -1,30 +1,20 @@
-# Media Pembelajaran Kelas XI Informatika SMA
+# {{ title }}
 
-> belajar dan melatih pemahaman informatika SMA kelas 10 dan 11 X XI
+> {{ description }}
 
-HAXcms is a file-based CMS: authored pages and metadata are stored as portable files, not locked into a database-only workflow.
-The canonical site structure is `site.json`, represented in JSON Outline Schema (`id`, `parent`, `order`, `slug`, `location`, and `metadata`).
-Use HAX CLI and ecosystem tooling to maintain human-authored content while keeping machine-readable outputs synchronized.
+HAXcms is a file-based CMS where authored content and metadata are stored as portable files.
+The canonical structure is expressed in `site.json` using JSON Outline Schema (`id`, `parent`, `order`, `slug`, `location`, and `metadata`).
+Use HAX CLI and ecosystem tooling to keep human-authored pages and machine-readable outputs synchronized.
 Managed files (feeds, search indexes, manifests, and this `llms.txt`) are generated artifacts and should be rebuilt by tooling.
 
 ## Core resources
-- [site.json](https://localhost:3000/sites/haxto/site.json): Canonical site manifest and navigation tree in JSON Outline Schema format.
-- [llms.txt](https://localhost:3000/sites/haxto/llms.txt): LLM-oriented guide to this site and its machine-readable resources.
 
-## Pages
-- [Selamat Datang Dashbor](https://localhost:3000/sites/haxto/pages/item-e25c1b60-c8b7-4360-b3e8-3533c93c3a92/index.md): Welcome to your new HAX site! Click edit on the top bar to get started What can I do? We've got a ton of blocks that are easy to use and get a lot done with little effort, so much in fact we made a l
-- [LATIHAN SIMULASI KUIS LM1](https://localhost:3000/sites/haxto/pages/item-641ef0af-6ba1-4523-bedd-5c0d0f85828b/index.md): Halaman ulangan harian terintegrasi dengan timer, anti-confetti, dan jawaban tersembunyi.
-- [LM1 Materi Kuis Fase F](https://localhost:3000/sites/haxto/pages/item-ba9170fc-d0c5-49c4-bb1b-327ff46aa871/index.md): soal latihan
-- [Ulangan Harian 1 FASE F LM1-F](https://localhost:3000/sites/haxto/pages/item-43d63e69-4564-4ae3-80df-ffa7a6677b2b/index.md)
-- [Ulangan Harian 1 Fase E LM1-E](https://localhost:3000/sites/haxto/pages/item-21768d19-1305-46c3-90af-ad2d1542d1b6/index.md): 📝 Kuis Ekosistem Periksa Fakta &#38; CRAAP, PENCARIAN LANJUTAN (LM1) Kelas X Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban benar/salah ditampilkan. Setelah logi
-- [LATIHAN SIMULASI KUIS FASE-E-LM1](https://localhost:3000/sites/haxto/pages/item-792b811f-d307-4765-93cb-f20ed47c8097/index.md): 📝 Latihan Kuis Kelas X Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban benar/salah ditampilkan. Setelah login reload untuk menampilkan tombol mulai latihan ulangan
-- [LM1. EKOSISTEM PERIKSA FAKTA & METODE CRAAP](https://localhost:3000/sites/haxto/pages/item-426de1b9-5806-4751-8610-0c7e9478b242/index.md): 📘 Cara Mengerjakan Latihan Simak materi dan pahami, lanjutkan soal latihan di bawah dengan login terlebih dahulu, harap refresh bila tombol mulai latihan soal tidak muncul setelah login. 1. P
-- [halaman-dark tes bug](https://localhost:3000/sites/haxto/pages/item-9bc01ccd-190b-45e4-ac15-8d4938403c5f/index.md)
-- [LM2 Fase F Verifikasi](https://localhost:3000/sites/haxto/pages/item-fd7a0828-3867-49ac-8957-6d8f99585c6e/index.md): MODUL AJAR INFORMATIKA FASE F (KELAS XI) TOPIK: VERIFIKASI INFORMASI DAN PERIKSA FAKTA (LITERASI DIGITAL) 1. Pendahuluan Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in
-- [Selamat Datang](https://localhost:3000/sites/haxto/pages/item-2a96eefc-f4ee-4153-95e7-e33a7782d977/index.md): ULANGAN INFORMATIKA KELAS X-XI Read these important things! Link Menuju Materi Kelas X Link Menuju Materi Kelas X Semboyan
+- [site.json]({{ basePath }}site.json): Canonical site manifest and navigation tree in JSON Outline Schema format.
+- [llms.txt]({{ basePath }}llms.txt): LLM-oriented guide to this site and its machine-readable resources.
 
 ## Optional
-- [Search index](https://localhost:3000/sites/haxto/lunrSearchIndex.json): Lunr corpus for quick full-text retrieval.
-- [RSS feed](https://localhost:3000/sites/haxto/rss.xml): Site updates in RSS format.
-- [Atom feed](https://localhost:3000/sites/haxto/atom.xml): Site updates in Atom format.
-- [Sitemap](https://localhost:3000/sites/haxto/sitemap.xml): URL-level discovery map for the published site.
+
+- [Search index]({{ basePath }}lunrSearchIndex.json): Lunr corpus for quick full-text retrieval.
+- [RSS feed]({{ basePath }}rss.xml): Site updates in RSS format.
+- [Atom feed]({{ basePath }}atom.xml): Site updates in Atom format.
+- [Sitemap]({{ basePath }}sitemap.xml): URL-level discovery map for the published site.

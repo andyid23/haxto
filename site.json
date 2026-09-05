@@ -1,6 +1,6 @@
 {
   "id": "6404f0ee-e94d-444b-bcb9-6a79135066d8",
-  "title": "Media Pembelajaran Kelas X dan XI Informatika SMA",
+  "title": "Media Pembelajaran dan Kuis Kelas X - XI Informatika SMA",
   "author": "",
   "description": "belajar dan melatih pemahaman informatika SMA kelas 10 dan 11 X XI",
   "license": "by-sa",
@@ -25,7 +25,7 @@
       "name": "haxto",
       "domain": "",
       "created": 1787457359,
-      "updated": 1788607964,
+      "updated": 1788608054,
       "logo": "",
       "version": "26.0.1"
     },
