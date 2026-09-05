@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
-    <title>Media Pembelajaran Kelas XI Informatika SMA</title>
+    <title>Media Pembelajaran dan Kuis Kelas X - XI Informatika SMA</title>
     <link>https://localhost:3000/sites/haxto/</link>
     <description>belajar dan melatih pemahaman informatika SMA kelas 10 dan 11 X XI</description>
     <copyright>Copyright (C) 2026 https://localhost:3000/sites/haxto</copyright>
     <language>en-us</language>
-    <lastBuildDate>Sat, 05 Sep 2026 00:24:36 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 05 Sep 2026 11:34:14 GMT</lastBuildDate>
     <generator>HAXcms NodeJS</generator>
     <atom:link href="https://localhost:3000/sites/haxto/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
@@ -19,21 +19,21 @@
     <item>
       <title>LATIHAN SIMULASI KUIS LM1</title>
       <link>https://localhost:3000/sites/haxto/latihan-simulasi-kuis-lm1</link>
-      <description>📝 Latihan Kuis Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban benar/salah ditampilkan. Setelah login reload untuk menampilkan tombol mulai latihan ulangan. Bisa mengulang latihan ulangan maksimal 4 kali. Nilai akhir akan diambil dari nilai terakhir yang dikumpulkan setelah waktu habis atau semua soal terjawab. Waktu Pengerjaan Soal 15 Menit Kalau mode gelap ... tidak bisa gunakan mode terang di smartphonemu&amp;#160;😄</description>
+      <description>📝 Latihan Kuis LM1 F Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban benar/salah ditampilkan. Setelah login reload untuk menampilkan tombol mulai latihan ulangan. Bisa mengulang latihan ulangan maksimal 4 kali. Nilai akhir akan diambil dari nilai terakhir yang dikumpulkan setelah waktu habis atau semua soal terjawab. Waktu Pengerjaan Soal 15 Menit Kalau mode gelap ... tidak bisa gunakan mode terang di smartphonemu&amp;#160;😄</description>
       <guid>https://localhost:3000/sites/haxto/latihan-simulasi-kuis-lm1</guid>
       <pubDate>Sun, 23 Aug 2026 06:35:36 GMT</pubDate>
     </item>
     <item>
       <title>LM1 Materi Kuis Fase F</title>
       <link>https://localhost:3000/sites/haxto/lm1-materi-kuis-fase-f</link>
-      <description>📘 Cara Mengerjakan Latihan Simak materi dan pahami, lanjutkan soal latihan di bawah dengan login terlebih dahulu, harap refresh bila tombol mulai latihan soal tidak muncul setelah login. TOPIK: OPTIMALISASI PENCARIAN LANJUTAN UNTUK RISET 1. Pendahuluan Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep inti serta implementasi dari sistem komputer, jaringan, dan kecakapan digital. Di tengah arus transformasi digital yang mengalir deras, literasi digital dan kemampuan b...</description>
+      <description>📘 Cara Mengerjakan Latihan Kuis Simak materi dan pahami, lanjutkan soal latihan di bawah dengan login terlebih dahulu, harap refresh bila tombol mulai latihan soal tidak muncul setelah login. TOPIK: OPTIMALISASI PENCARIAN LANJUTAN UNTUK RISET 1. Pendahuluan Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep inti serta implementasi dari sistem komputer, jaringan, dan kecakapan digital. Di tengah arus transformasi digital yang mengalir deras, literasi digital dan kemamp...</description>
       <guid>https://localhost:3000/sites/haxto/lm1-materi-kuis-fase-f</guid>
       <pubDate>Wed, 26 Aug 2026 05:22:47 GMT</pubDate>
     </item>
     <item>
       <title>Ulangan Harian 1 FASE F LM1-F</title>
       <link>https://localhost:3000/sites/haxto/ulangan-harian-1-fase-f-lm1-f</link>
-      <description>📝 Kuis OPTIMALISASI PENCARIAN LANJUTAN UNTUK RISET (LM1) Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban benar/salah ditampilkan. Setelah login reload untuk menampilkan tombol mulai &amp;#160;ulangan. Nilai akhir akan diambil dari nilai terakhir yang dikumpulkan setelah waktu habis atau semua soal terjawab. Waktu Pengerjaan Soal 15 Menit&amp;#160;🤐 Kalau mode gelap tidak bisa gunakan mode terang di smartphonemu&amp;#160;😄 Ulangan</description>
+      <description>📝 Kuis OPTIMALISASI PENCARIAN LANJUTAN UNTUK RISET (LM1) Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban benar/salah ditampilkan. Setelah login reload untuk menampilkan tombol mulai &amp;#160;ulangan. Nilai akhir akan diambil dari nilai terakhir yang dikumpulkan setelah waktu habis atau semua soal terjawab. Waktu Pengerjaan Soal 15 Menit&amp;#160;🤐 Kalau mode gelap tidak bisa gunakan mode terang di smartphonemu&amp;#160;😄</description>
       <category>Literasi Digital</category>
       <guid>https://localhost:3000/sites/haxto/ulangan-harian-1-fase-f-lm1-f</guid>
       <pubDate>Thu, 27 Aug 2026 18:12:24 GMT</pubDate>
@@ -41,7 +41,7 @@
     <item>
       <title>Ulangan Harian 1 Fase E LM1-E</title>
       <link>https://localhost:3000/sites/haxto/ulangan-harian-1-fase-e-lm1-e</link>
-      <description>📝 Kuis Ekosistem Periksa Fakta &amp;#38; CRAAP, PENCARIAN LANJUTAN (LM1) Kelas X Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban benar/salah ditampilkan. Setelah login reload untuk menampilkan tombol mulai &amp;#160;ulangan. Nilai akhir akan diambil dari nilai terakhir yang dikumpulkan setelah waktu habis atau semua soal terjawab. Waktu Pengerjaan Soal 15 Menit&amp;#160;🤐 Kalau mode gelap tidak bisa gunakan mode terang di smartphonemu&amp;#160;😄</description>
+      <description>📝 Kuis Ekosistem Periksa Fakta &amp;#38; CRAAP(LM1) Kelas X Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban benar/salah ditampilkan. Setelah login reload untuk menampilkan tombol mulai &amp;#160;ulangan. Nilai akhir akan diambil dari nilai terakhir yang dikumpulkan setelah waktu habis atau semua soal terjawab dan klik selesai. Waktu Pengerjaan Soal 13 Menit&amp;#160;🤐 Kalau mode gelap tidak bisa gunakan mode terang di smartphonemu&amp;#160;😄</description>
       <guid>https://localhost:3000/sites/haxto/ulangan-harian-1-fase-e-lm1-e</guid>
       <pubDate>Mon, 31 Aug 2026 08:01:59 GMT</pubDate>
     </item>
