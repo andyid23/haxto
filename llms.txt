@@ -22,6 +22,7 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [halaman-dark tes bug](https://localhost:3000/sites/haxto/pages/item-9bc01ccd-190b-45e4-ac15-8d4938403c5f/index.md)
 - [LM2 Fase F Verifikasi](https://localhost:3000/sites/haxto/pages/item-fd7a0828-3867-49ac-8957-6d8f99585c6e/index.md): MODUL AJAR INFORMATIKA FASE F (KELAS XI) TOPIK: VERIFIKASI INFORMASI DAN PERIKSA FAKTA (LITERASI DIGITAL) 1. Pendahuluan Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in
 - [Selamat Datang](https://localhost:3000/sites/haxto/pages/item-2a96eefc-f4ee-4153-95e7-e33a7782d977/index.md): ULANGAN INFORMATIKA KELAS X-XI Read these important things! Link Menuju Materi Kelas X Link Menuju Materi Kelas X Semboyan
+- [Ulangan Harian 2 FASE F LM2](https://localhost:3000/sites/haxto/pages/item-cc3c0230-cd78-4c49-996b-e5f77752a46a/index.md)
 
 ## Optional
 - [Search index](https://localhost:3000/sites/haxto/lunrSearchIndex.json): Lunr corpus for quick full-text retrieval.

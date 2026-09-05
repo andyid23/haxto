@@ -21,6 +21,7 @@ export class TimerKuis extends I18NMixin(DDDSuper(LitElement)) {
     return {
       ...super.properties,
       duration: { type: Number, attribute: "duration", reflect: true },
+      remaining: { type: Number, attribute: "remaining", reflect: true },
       autostart: { type: Boolean, attribute: "autostart", reflect: true },
       _remaining: { state: true },
       _running: { state: true },
@@ -48,7 +49,11 @@ export class TimerKuis extends I18NMixin(DDDSuper(LitElement)) {
 
   connectedCallback() {
     super.connectedCallback();
-    this._remaining = this.duration;
+    if (this.remaining != null && !isNaN(this.remaining)) {
+      this._remaining = this.remaining;
+    } else {
+      this._remaining = this.duration;
+    }
     if (this.autostart) {
       this.start();
     }
@@ -60,7 +65,14 @@ export class TimerKuis extends I18NMixin(DDDSuper(LitElement)) {
   }
 
   updated(changed) {
-    if (changed.has("duration") && !this._running) {
+    if (changed.has("remaining") && this.remaining != null && !isNaN(this.remaining)) {
+      this._remaining = this.remaining;
+      if (this._running && this._remaining > 0) {
+        this._clearInterval();
+        this._running = false;
+        this.start();
+      }
+    } else if (changed.has("duration") && !this._running) {
       this._remaining = this.duration;
     }
   }

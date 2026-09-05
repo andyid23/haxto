@@ -1819,6 +1819,19 @@
             },
             {
               "kind": "method",
+              "name": "_restoreAnswerState",
+              "parameters": [
+                {
+                  "name": "index"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_resetForNavigation"
+            },
+            {
+              "kind": "method",
               "name": "_goToQuestion",
               "parameters": [
                 {
@@ -3447,6 +3460,18 @@
             },
             {
               "kind": "method",
+              "name": "_onVisibilityChange"
+            },
+            {
+              "kind": "method",
+              "name": "_kirimLogTabSwitch"
+            },
+            {
+              "kind": "method",
+              "name": "_kunciKuisTabSwitch"
+            },
+            {
+              "kind": "method",
               "name": "_loadSession",
               "description": "Baca sesi siswa dari localStorage (TTL 24j) — agar cek status jalan saat reload."
             },
@@ -4043,6 +4068,26 @@
             },
             {
               "kind": "field",
+              "name": "_tabSwitchWarning",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "_tabSwitchWarning"
+            },
+            {
+              "kind": "field",
+              "name": "_tabSwitchCount",
+              "privacy": "public",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "attribute": "_tabSwitchCount"
+            },
+            {
+              "kind": "field",
               "name": "t",
               "type": {
                 "text": "object"
@@ -4434,6 +4479,22 @@
               },
               "default": "\"\"",
               "fieldName": "_soalFileUrlCache"
+            },
+            {
+              "name": "_tabSwitchWarning",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "_tabSwitchWarning"
+            },
+            {
+              "name": "_tabSwitchCount",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "fieldName": "_tabSwitchCount"
             }
           ],
           "mixins": [
@@ -6315,6 +6376,16 @@
                 "text": "object"
               },
               "default": "{ ...this.t, title: \"Waktu Kuis\", start: \"Mulai\", pause: \"Jeda\", reset: \"Ulang\", done: \"Waktu habis\", }"
+            },
+            {
+              "kind": "field",
+              "name": "remaining",
+              "privacy": "public",
+              "type": {
+                "text": "number"
+              },
+              "attribute": "remaining",
+              "reflects": true
             }
           ],
           "events": [
@@ -6333,6 +6404,13 @@
               },
               "default": "300",
               "fieldName": "duration"
+            },
+            {
+              "name": "remaining",
+              "type": {
+                "text": "number"
+              },
+              "fieldName": "remaining"
             },
             {
               "name": "autostart",

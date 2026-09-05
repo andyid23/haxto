@@ -1,4 +1,23 @@
-
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-cc3c0230-cd78-4c49-996b-e5f77752a46a</id>
+<indent>0</indent>
+<location>pages/item-cc3c0230-cd78-4c49-996b-e5f77752a46a/index.xml</location>
+<slug>ulangan-harian-2-fase-f-lm2</slug>
+<order>8</order>
+<parent></parent>
+<title>Ulangan Harian 2 FASE F LM2</title>
+<description></description>
+<metadata>
+<locked>false</locked>
+<created>1788628387</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1788628387</updated>
+</metadata>
+<content><![CDATA[
 <h2 id="h2--2080334786">📝 Kuis OPTIMALISASI PENCARIAN LANJUTAN UNTUK RISET (LM1)</h2>
 <p></p>
 <p>Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban
@@ -34,3 +53,5 @@ Ulangan
 >
 </latihan-kuis>
 
+]]></content>
+</item>

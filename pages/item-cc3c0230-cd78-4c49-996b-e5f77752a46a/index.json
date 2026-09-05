@@ -1,0 +1,18 @@
+{
+  "id": "item-cc3c0230-cd78-4c49-996b-e5f77752a46a",
+  "indent": 0,
+  "location": "pages/item-cc3c0230-cd78-4c49-996b-e5f77752a46a/index.json",
+  "slug": "ulangan-harian-2-fase-f-lm2",
+  "order": 8,
+  "parent": null,
+  "title": "Ulangan Harian 2 FASE F LM2",
+  "description": "",
+  "metadata": {
+    "locked": false,
+    "created": 1788628387,
+    "images": [],
+    "videos": [],
+    "updated": 1788628387
+  },
+  "content": "\n<h2 id=\"h2--2080334786\">📝 Kuis OPTIMALISASI PENCARIAN LANJUTAN UNTUK RISET (LM1)</h2>\n<p></p>\n<p>Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban\n  benar/salah ditampilkan. Setelah login <mark>reload</mark>untuk menampilkan <mark>tombol mulai</mark>&#160;ulangan. Nilai akhir akan diambil dari nilai terakhir yang dikumpulkan setelah waktu habis atau semua soal terjawab. Waktu Pengerjaan Soal 13 Menit&#160;🤐</p>\n<p>Kalau <b><u>mode gelap</u></b>\n tidak bisa gunakan <mark>mode terang</mark> di smartphonemu&#160;😄</p>\n<quiz-user-auth apps-script-url=\"https://script.google.com/macros/s/AKfycbyt6bfek-Is4YPJ2cux2H5Bp2Vk62wokK0-4Bl4wWy1uQM1VURByUgq-F_z0i2TxrEE/exec\" auto-login _student-id=\"\"></quiz-user-auth>\n\n\nUlangan\n\n\n\n<latihan-kuis\n  mode=\"siswa\"\n  duration=\"800\"\n  timer-autostart=\"true\"\n  hide-pause-restart=\"true\"\n  hide-confetti=\"true\"\n  hide-answers=\"true\"\n  hide-score=\"true\"\n  shuffle-questions=\"true\"\n  shuffle-choices=\"true\"\n  kategori=\"sumatif_lm\"  apps-script-url=\"https://script.google.com/macros/s/AKfycbxGvruTao7sbhdjhT9TJ1c2Mn1bjOS-yWUCbmMfW2W-3_dj-sf6XSFCpDJCK6ETYCqy/exec\"\n  kd-materi=\"LM1\"\n  materi-url=\"./lm1-materi-kuis-fase-f\"\n  student-id=\"\"\n  judul-kuis=\"Ulangan Harian\"\n  allow-backward-nav=\"true\"\n  show-question-nav\n  show-sheet-link=\"false\"\n  soal-file-url=\"./files/2026-stimulus1-faseF.json\"\n>\n</latihan-kuis>\n\n"
+}

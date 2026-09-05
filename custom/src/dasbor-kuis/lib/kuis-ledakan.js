@@ -1008,40 +1008,58 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     this._answeredSet = new Set();
     this._userAnswers = new Map();
     this._reviewMode = false;
+    // Jika ada _shuffledQuestions yang sudah di-restore dari localStorage
+    // (oleh _resumeAttemptIfAny), JANGAN acak ulang — gunakan urutan yang sama.
+    const hasResumed = Array.isArray(this._shuffledQuestions) && this._shuffledQuestions.length > 0;
     let base = Array.isArray(this.questions) ? this.questions : DEFAULT_QUESTIONS;
-    if (this.shuffleQuestions) base = this._shuffleArray(base);
-    if (!Array.isArray(base)) base = DEFAULT_QUESTIONS;
+    if (hasResumed) {
+      base = this._shuffledQuestions;
+    } else {
+      if (this.shuffleQuestions) base = this._shuffleArray(base);
+      if (!Array.isArray(base)) base = DEFAULT_QUESTIONS;
+    }
     this._maxPoints =
       (this.questions || []).reduce((sum, q) => sum + this._maxPoinSoal(q), 0) || 1;
-    if (this.shuffleChoices) {
-      this._shuffledQuestions = base.map((q, origIdx) => {
-        if (!Array.isArray(q.choices) || q.type === "pgk" || q.type === "matching") return { ...q, _originalIndex: origIdx };
-        const pairs = q.choices.map((c, i) => ({ text: c, origIndex: i }));
-        const shuffled = this._shuffleArray(pairs);
-        return {
-          ...q,
-          choices: shuffled.map((p) => p.text),
-          _correctMap: shuffled.map((p) => p.origIndex),
-          _originalIndex: origIdx,
-        };
-      });
-    } else {
-      // SELALU isi _shuffledQuestions (urutan mungkin sudah diacak) agar
-      // _getActiveQuestions memakai urutan soal yang baru.
-      this._shuffledQuestions = base.map((q, i) => ({ ...q, _originalIndex: i }));
+    if (!hasResumed) {
+      if (this.shuffleChoices) {
+        this._shuffledQuestions = base.map((q, origIdx) => {
+          if (!Array.isArray(q.choices) || q.type === "pgk" || q.type === "matching") return { ...q, _originalIndex: origIdx };
+          const pairs = q.choices.map((c, i) => ({ text: c, origIndex: i }));
+          const shuffled = this._shuffleArray(pairs);
+          return {
+            ...q,
+            choices: shuffled.map((p) => p.text),
+            _correctMap: shuffled.map((p) => p.origIndex),
+            _originalIndex: origIdx,
+          };
+        });
+      } else {
+        // SELALU isi _shuffledQuestions (urutan mungkin sudah diacak) agar
+        // _getActiveQuestions memakai urutan soal yang baru.
+        this._shuffledQuestions = base.map((q, i) => ({ ...q, _originalIndex: i }));
+      }
     }
     if (!Array.isArray(this._shuffledQuestions)) this._shuffledQuestions = [];
     this._resetState();
     if (this.lockAfterComplete && this.studentId && this.kdMateri) {
       this._attemptStart = Date.now();
-      try {
-        localStorage.setItem(this._attemptKey(), JSON.stringify({
-          start: this._attemptStart,
-          duration: this.timerDuration,
-          questions: this._shuffledQuestions,
-        }));
-      } catch (_) {}
+      this._saveAttempt();
     }
+  }
+
+  /** Simpan state attempt (soal, jawaban, waktu) ke localStorage. */
+  _saveAttempt() {
+    if (!this.lockAfterComplete || !this.studentId || !this.kdMateri) return;
+    try {
+      const userAnswers = Array.from(this._userAnswers.entries()).map(([idx, val]) => [idx, val]);
+      localStorage.setItem(this._attemptKey(), JSON.stringify({
+        start: this._attemptStart,
+        duration: this.timerDuration,
+        questions: this._shuffledQuestions,
+        userAnswers,
+        currentIdx: this._currentIdx,
+      }));
+    } catch (_) {}
   }
 
   _getActiveQuestions() {
@@ -1100,6 +1118,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
       isCorrect: benar,
       points: benar ? (soal.points || 1) : 0,
     });
+    this._saveAttempt();
     this._autoAdvance();
   }
 
@@ -1147,6 +1166,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
       isCorrect: isCorrect,
       points: isCorrect ? (soal.points || 1) : 0,
     });
+    this._saveAttempt();
     this._autoAdvance();
   }
 
@@ -1198,6 +1218,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
       points: benar,
       correctAnswers: statements.map((st, i) => st.answer),
     });
+    this._saveAttempt();
     this._autoAdvance();
   }
 
@@ -1244,6 +1265,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
       points: earned,
       correctPairs: s.correctPairs,
     });
+    this._saveAttempt();
     this._autoAdvance();
   }
 
@@ -1280,20 +1302,30 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
       points: isCorrect ? (soal.points || 1) : 0,
       correctAnswers: s.acceptedAnswers || [],
     });
+    this._saveAttempt();
     this._autoAdvance();
   }
 
   _restoreAnswerState(index) {
     const ua = this._userAnswers.get(index);
     if (!ua) return;
-    if (ua.selectedAnswers instanceof Set || Array.isArray(ua.selectedAnswers)) {
-      this._selectedAnswers = new Set(ua.selectedAnswers);
+    // Handle plain objects from JSON round-trip (Set → {0:1, 1:2})
+    const toSet = (v) => v instanceof Set ? v : Array.isArray(v) ? new Set(v) : (v && typeof v === "object" ? new Set(Object.values(v)) : new Set());
+    if (ua.selectedAnswers) {
+      this._selectedAnswers = toSet(ua.selectedAnswers);
+      this._answered = true;
     } else if (typeof ua.selected === "number") {
       this._selected = ua.selected;
+      this._answered = true;
     } else if (ua.text) {
       this._shortAnswerText = ua.text;
+      this._answered = true;
     } else if (ua.selected && typeof ua.selected === "object") {
       this._matchAnswers = { ...ua.selected };
+      this._answered = true;
+    }
+    if (this._answered) {
+      this._answeredSet.add(index);
     }
   }
 
@@ -1548,6 +1580,16 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     this._shuffledQuestions = data.questions;
     this._attemptStart = data.start;
     this._resumeRemaining = remaining;
+    // Restore current index (soal terakhir yang dikerjakan)
+    if (typeof data.currentIdx === "number") {
+      this._currentIdx = data.currentIdx;
+    }
+    // Restore jawaban yang sudah disimpan
+    if (Array.isArray(data.userAnswers)) {
+      this._userAnswers = new Map(data.userAnswers);
+      // Restore state untuk soal saat ini
+      this._restoreAnswerState(this._currentIdx);
+    }
     this._screen = "question";
     this.requestUpdate();
   }
@@ -1723,7 +1765,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
               })}
             </nav>`
           : ""}
-        ${(this.timerDuration > 0 || this._resumeRemaining > 0)
+        ${this.timerDuration > 0
           ? html`<div class="quiz-timer">
               <timer-kuis
                 duration="${this._resumeRemaining || this.timerDuration}"

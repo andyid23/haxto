@@ -75,6 +75,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
       _terkunci: { state: true },
       _resumeRemaining: { state: true },
       _soalFileUrlCache: { state: true },
+      _tabSwitchWarning: { state: true },
     };
   }
 
@@ -129,8 +130,10 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     this._terkunci = false;
     this._resumeRemaining = null;
     this._soalFileUrlCache = "";
+    this._tabSwitchWarning = false;
     this._onAuthLogin = this._onAuthLogin.bind(this);
     this._onAuthLogout = this._onAuthLogout.bind(this);
+    this._onVisibilityChange = this._onVisibilityChange.bind(this);
     this.t = {
       ...this.t,
       bacaMateri: "🔗 Buka URL Materi",
@@ -154,6 +157,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     // agar nilai terikat Student ID sebelum kuis dimulai.
     globalThis.addEventListener("quiz-user-login", this._onAuthLogin);
     globalThis.addEventListener("quiz-user-logout", this._onAuthLogout);
+    globalThis.addEventListener("visibilitychange", this._onVisibilityChange);
     // T (persistent lock / best score): baca sesi lokal lalu muat status kuis.
     this._loadSession();
     this._muatStatusKuis();
@@ -162,6 +166,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
   disconnectedCallback() {
     globalThis.removeEventListener("quiz-user-login", this._onAuthLogin);
     globalThis.removeEventListener("quiz-user-logout", this._onAuthLogout);
+    globalThis.removeEventListener("visibilitychange", this._onVisibilityChange);
     super.disconnectedCallback();
   }
 
@@ -200,6 +205,13 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     this.studentNis = "";
     this.studentAbsen = "";
     this.studentKelas = "";
+  }
+
+  _onVisibilityChange() {
+    if (document.visibilityState === "hidden" && this._mulai && !this._selesai) {
+      this._tabSwitchWarning = true;
+      this.requestUpdate();
+    }
   }
 
   /** Baca sesi siswa dari localStorage (TTL 24j) — agar cek status jalan saat reload. */
@@ -383,6 +395,11 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
       this._selesai = true;
       this._resumeRemaining = null;
       this._hapusWaktuMulai();
+      // Hapus data attempt latihan-kuis supaya reload berikutnya = fresh attempt
+      try {
+        globalThis.localStorage.removeItem(this._attemptKey());
+        globalThis.localStorage.removeItem(this._timerKey());
+      } catch (_) {}
       // L: hitung attempt ter-submit (bukan klik Ulangi) agar reload-trick tak bobol batas.
       if (this.maxRetake) {
         this._attemptKe++;
@@ -468,6 +485,29 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
           background: var(--ddd-theme-success-light, #e8f5e9);
           display: inline-block;
         }
+        .tab-warning-overlay {
+          position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+          background: rgba(0,0,0,0.7);
+          display: flex; align-items: center; justify-content: center;
+          z-index: 9999;
+        }
+        .tab-warning-card {
+          background: var(--ddd-theme-default-white);
+          border-radius: var(--ddd-radius-lg);
+          padding: var(--ddd-spacing-6);
+          max-width: 400px;
+          text-align: center;
+        }
+        .tab-warning-icon { font-size: 48px; margin-bottom: var(--ddd-spacing-3); }
+        .tab-warning-title { font-size: var(--ddd-font-size-l); font-weight: 800; color: var(--ddd-theme-primary); margin-bottom: var(--ddd-spacing-2); }
+        .tab-warning-text { font-size: var(--ddd-font-size-4xs); color: var(--ddd-theme-on-surface); margin-bottom: var(--ddd-spacing-4); }
+        .tab-warning-close {
+          padding: var(--ddd-spacing-3) var(--ddd-spacing-5);
+          background: var(--ddd-theme-polaris-primary);
+          color: var(--ddd-theme-on-primary);
+          border: none; border-radius: var(--ddd-radius-sm);
+          font-weight: 700; cursor: pointer;
+        }
       `,
       css`
         /* ===== DARK MODE (DDD-token swap, gated on body.dark-mode) ===== */
@@ -521,6 +561,10 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
         :host-context(body.dark-mode) .err-chip { background: #7f1d1d; color: #fecaca; border-color: #991b1b; }
         :host-context(body.dark-mode) .btn-mulai { background: #4f46e5; color: #f8fafc; }
         :host-context(body.dark-mode) .btn-mulai:hover { background: #6366f1; }
+        :host-context(body.dark-mode) .tab-warning-card { background: var(--dk-card); color: var(--dk-text); }
+        :host-context(body.dark-mode) .tab-warning-title { color: var(--dk-text-strong); }
+        :host-context(body.dark-mode) .tab-warning-text { color: var(--dk-text); }
+        :host-context(body.dark-mode) .tab-warning-close { background: #4f46e5; color: #f8fafc; }
       `,
     ];
   }
@@ -592,6 +636,16 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
                 ?autostart="${this.timerAutostart}"
                 @timer-kuis-expired="${this._onWaktuHabis}">
               </timer-kuis>
+              ${this._tabSwitchWarning && this._mulai && !this._selesai
+                ? html`<div class="tab-warning-overlay" role="alert">
+                    <div class="tab-warning-card">
+                      <div class="tab-warning-icon">⚠️</div>
+                      <div class="tab-warning-title">Fokus pada kuis</div>
+                      <div class="tab-warning-text">Anda membuka tab lain. Gunakan waktu untuk menjawab soal. Timer tetap berjalan.</div>
+                      <button class="tab-warning-close" @click=${() => { this._tabSwitchWarning = false; this.requestUpdate(); }}>Lanjutkan</button>
+                    </div>
+                  </div>`
+                : nothing}
 
               <kuis-ledakan
                 @dasbor-kuis-log="${this._onKuisLog}"
