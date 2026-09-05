@@ -1819,6 +1819,23 @@
             },
             {
               "kind": "method",
+              "name": "_goToQuestion",
+              "parameters": [
+                {
+                  "name": "index"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_goToPrevQuestion"
+            },
+            {
+              "kind": "method",
+              "name": "_goToNextQuestion"
+            },
+            {
+              "kind": "method",
               "name": "_autoAdvance"
             },
             {
@@ -1870,6 +1887,26 @@
               "kind": "method",
               "name": "_resumeAttemptIfAny",
               "description": "Resume attempt yang belum submit bila ada (anti-refresh): kembalikan sisa waktu & urutan soal."
+            },
+            {
+              "kind": "method",
+              "name": "_startReviewMode"
+            },
+            {
+              "kind": "method",
+              "name": "_renderReviewScreen"
+            },
+            {
+              "kind": "method",
+              "name": "_renderReviewQuestion",
+              "parameters": [
+                {
+                  "name": "idx"
+                },
+                {
+                  "name": "q"
+                }
+              ]
             },
             {
               "kind": "method",
@@ -2194,6 +2231,61 @@
             },
             {
               "kind": "field",
+              "name": "showQuestionNav",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true",
+              "attribute": "show-question-nav",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "allowBackwardNav",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "allow-backward-nav",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "practiceMode",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "practice-mode",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "questionDelay",
+              "privacy": "public",
+              "type": {
+                "text": "number"
+              },
+              "default": "1800",
+              "attribute": "question-delay",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "reviewAnswers",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true",
+              "attribute": "review-answers",
+              "reflects": true
+            },
+            {
+              "kind": "field",
               "name": "editable",
               "privacy": "public",
               "type": {
@@ -2379,6 +2471,20 @@
               },
               "default": "false",
               "attribute": "_answered"
+            },
+            {
+              "kind": "field",
+              "name": "_answeredSet",
+              "privacy": "public",
+              "default": "new Set()",
+              "attribute": "_answeredSet"
+            },
+            {
+              "kind": "field",
+              "name": "_userAnswers",
+              "privacy": "public",
+              "default": "new Map()",
+              "attribute": "_userAnswers"
             },
             {
               "kind": "field",
@@ -2575,6 +2681,16 @@
               },
               "default": "\"\"",
               "attribute": "_importStatus"
+            },
+            {
+              "kind": "field",
+              "name": "_reviewMode",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "_reviewMode"
             },
             {
               "kind": "field",
@@ -2835,6 +2951,46 @@
               "fieldName": "lockAfterComplete"
             },
             {
+              "name": "show-question-nav",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true",
+              "fieldName": "showQuestionNav"
+            },
+            {
+              "name": "allow-backward-nav",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "allowBackwardNav"
+            },
+            {
+              "name": "practice-mode",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "practiceMode"
+            },
+            {
+              "name": "question-delay",
+              "type": {
+                "text": "number"
+              },
+              "default": "1800",
+              "fieldName": "questionDelay"
+            },
+            {
+              "name": "review-answers",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true",
+              "fieldName": "reviewAnswers"
+            },
+            {
               "name": "_locked",
               "type": {
                 "text": "boolean"
@@ -2998,6 +3154,16 @@
               },
               "default": "false",
               "fieldName": "_answered"
+            },
+            {
+              "name": "_answeredSet",
+              "default": "new Set()",
+              "fieldName": "_answeredSet"
+            },
+            {
+              "name": "_userAnswers",
+              "default": "new Map()",
+              "fieldName": "_userAnswers"
             },
             {
               "name": "_score",
@@ -3198,6 +3364,14 @@
               },
               "default": "\"\"",
               "fieldName": "_importStatus"
+            },
+            {
+              "name": "_reviewMode",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "_reviewMode"
             }
           ],
           "mixins": [
@@ -3693,6 +3867,61 @@
             },
             {
               "kind": "field",
+              "name": "showQuestionNav",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true",
+              "attribute": "show-question-nav",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "allowBackwardNav",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "allow-backward-nav",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "practiceMode",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "practice-mode",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "questionDelay",
+              "privacy": "public",
+              "type": {
+                "text": "number"
+              },
+              "default": "1800",
+              "attribute": "question-delay",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "reviewAnswers",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true",
+              "attribute": "review-answers",
+              "reflects": true
+            },
+            {
+              "kind": "field",
               "name": "timerAutostart",
               "privacy": "public",
               "type": {
@@ -3801,6 +4030,16 @@
               },
               "default": "null",
               "attribute": "_resumeRemaining"
+            },
+            {
+              "kind": "field",
+              "name": "_soalFileUrlCache",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "_soalFileUrlCache"
             },
             {
               "kind": "field",
@@ -4061,6 +4300,46 @@
               "fieldName": "hideScore"
             },
             {
+              "name": "show-question-nav",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true",
+              "fieldName": "showQuestionNav"
+            },
+            {
+              "name": "allow-backward-nav",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "allowBackwardNav"
+            },
+            {
+              "name": "practice-mode",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "practiceMode"
+            },
+            {
+              "name": "question-delay",
+              "type": {
+                "text": "number"
+              },
+              "default": "1800",
+              "fieldName": "questionDelay"
+            },
+            {
+              "name": "review-answers",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true",
+              "fieldName": "reviewAnswers"
+            },
+            {
               "name": "timer-autostart",
               "type": {
                 "text": "boolean"
@@ -4147,6 +4426,14 @@
               },
               "default": "null",
               "fieldName": "_resumeRemaining"
+            },
+            {
+              "name": "_soalFileUrlCache",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "_soalFileUrlCache"
             }
           ],
           "mixins": [

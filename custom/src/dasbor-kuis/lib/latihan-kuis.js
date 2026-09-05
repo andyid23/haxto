@@ -58,6 +58,11 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
       hideConfetti: { type: Boolean, attribute: "hide-confetti", reflect: true },
       hideAnswers: { type: Boolean, attribute: "hide-answers", reflect: true },
       hideScore: { type: Boolean, attribute: "hide-score", reflect: true },
+      showQuestionNav: { type: Boolean, attribute: "show-question-nav", reflect: true },
+      allowBackwardNav: { type: Boolean, attribute: "allow-backward-nav", reflect: true },
+      practiceMode: { type: Boolean, attribute: "practice-mode", reflect: true },
+      questionDelay: { type: Number, attribute: "question-delay", reflect: true },
+      reviewAnswers: { type: Boolean, attribute: "review-answers", reflect: true },
       timerAutostart: { type: Boolean, attribute: "timer-autostart", reflect: true },
       _mulai: { state: true },
       _selesai: { state: true },
@@ -69,6 +74,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
       _attemptKe: { state: true },
       _terkunci: { state: true },
       _resumeRemaining: { state: true },
+      _soalFileUrlCache: { state: true },
     };
   }
 
@@ -106,6 +112,11 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     this.hideConfetti = false;
     this.hideAnswers = false;
     this.hideScore = false;
+    this.showQuestionNav = true;
+    this.allowBackwardNav = false;
+    this.practiceMode = false;
+    this.questionDelay = 1800;
+    this.reviewAnswers = true;
     this.timerAutostart = true;
     this._mulai = false;
     this._selesai = false;
@@ -117,6 +128,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     this._attemptKe = 0;
     this._terkunci = false;
     this._resumeRemaining = null;
+    this._soalFileUrlCache = "";
     this._onAuthLogin = this._onAuthLogin.bind(this);
     this._onAuthLogout = this._onAuthLogout.bind(this);
     this.t = {
@@ -327,20 +339,29 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
 
   updated(changed) {
     super.updated(changed);
-    if (changed.has("soalFileUrl") && this.soalFileUrl) {
+    if (
+      changed.has("soalFileUrl") &&
+      this.soalFileUrl &&
+      this.soalFileUrl !== this._soalFileUrlCache
+    ) {
       this._muatSoalDariFile(this.soalFileUrl);
     }
   }
 
   async _muatSoalDariFile(url) {
+    this._soalFileUrlCache = url;
     try {
       const r = await fetch(url);
       if (!r.ok) throw new Error("HTTP " + r.status);
       const d = await r.json();
-      if (!Array.isArray(d)) throw new Error("Bukan array JSON");
+      if (!Array.isArray(d) || d.length === 0) throw new Error("Bukan array JSON / kosong");
       this.questions = d;
       this._pesan = "";
     } catch (e) {
+      this._soalFileUrlCache = "";
+      if (!this.questions || this.questions.length === 0) {
+        this.questions = [];
+      }
       this._pesan = "Gagal memuat file soal: " + e.message;
     }
   }
@@ -591,7 +612,12 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
                 .kategori="${this.kategori}"
                 .hideConfetti="${this.hideConfetti}"
                 .hideAnswers="${this.hideAnswers}"
-                .hideScore="${this.hideScore}">
+                .hideScore="${this.hideScore}"
+                .showQuestionNav="${this.showQuestionNav}"
+                .allowBackwardNav="${this.allowBackwardNav}"
+                .practiceMode="${this.practiceMode}"
+                .questionDelay="${this.questionDelay}"
+                .reviewAnswers="${this.reviewAnswers}">
               </kuis-ledakan>
             `}
       </div>
@@ -706,6 +732,41 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
             description: "Menyembunyikan angka skor berjalan di layar soal dan lingkaran nilai akhir.",
           },
           {
+            property: "showQuestionNav",
+            title: "Tampilkan Navigasi Nomor Soal",
+            inputMethod: "boolean",
+            description: "Tampilkan tombol navigasi nomor soal di kuis.",
+            default: true,
+          },
+          {
+            property: "allowBackwardNav",
+            title: "Izinkan Navigasi Mundur",
+            inputMethod: "boolean",
+            description: "true = siswa boleh melompat ke soal yang sudah dijawab. Default false (nav maju saja).",
+            default: false,
+          },
+          {
+            property: "practiceMode",
+            title: "Mode Latihan",
+            inputMethod: "boolean",
+            description: "Aktifkan untuk mode latihan: tidak ada auto-advance, tombol Berikutnya/Kembali tersedia.",
+            default: false,
+          },
+          {
+            property: "questionDelay",
+            title: "Jeda Soal (ms)",
+            inputMethod: "number",
+            description: "Jeda auto-advance antar soal (hanya berlaku mode kuis, bukan practice mode).",
+            default: 1800,
+          },
+          {
+            property: "reviewAnswers",
+            title: "Tinjau Jawaban di Akhir",
+            inputMethod: "boolean",
+            description: "Tampilkan tombol 'Tinjau Jawaban' di layar hasil.",
+            default: true,
+          },
+          {
             property: "duration",
             title: "Durasi Kuis (detik)",
             inputMethod: "number",
@@ -768,7 +829,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
             property: "questions",
             title: "Soal (JSON)",
             inputMethod: "code-editor",
-            description: "Array soal AKM/PG. Format lama {q,a,b,c,k} didukung.",
+            description: "Array soal AKM/PG. Format lama {q,a,b,c,k} didukung. Field opsional: {hint} — petunjuk muncul sebagai <details>.",
           },
           {
             property: "soalFileUrl",

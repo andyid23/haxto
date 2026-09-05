@@ -80,7 +80,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
           {
             property: "questions",
             title: "Soal (JSON)",
-            description: "Array soal AKM: PG {question, choices, correctIndex}, PG kompleks {correctAnswers:[0,2]}, PGK {type:'pgk', statements:[{text,answer}]}, menjodohkan {type:'matching', leftItems, rightItems, correctPairs}, isian {type:'shortAnswer', acceptedAnswers}, gambar soal {image}, pilihan bergambar {text,image}. Skor: PGK 1 poin per pernyataan benar, menjodohkan 1 poin per pasangan benar. Format lama {q,a,b,c,k} tetap didukung.",
+            description: "Array soal AKM: PG {question, choices, correctIndex}, PG kompleks {correctAnswers:[0,2]}, PGK {type:'pgk', statements:[{text,answer}]}, menjodohkan {type:'matching', leftItems, rightItems, correctPairs}, isian {type:'shortAnswer', acceptedAnswers}, gambar soal {image}, pilihan bergambar {text,image}. Skor: PGK 1 poin per pernyataan benar, menjodohkan 1 poin per pasangan benar. Format lama {q,a,b,c,k} tetap didukung. Field opsional: {hint} — petunjuk yang muncul sebagai <details>.",
             inputMethod: "code-editor",
           },
           {
@@ -106,6 +106,41 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
             title: "Nonaktifkan Konfeti",
             description: "Tidak menampilkan efek konfeti saat jawaban benar",
             inputMethod: "boolean",
+          },
+          {
+            property: "showQuestionNav",
+            title: "Tampilkan Navigasi Nomor Soal",
+            description: "Tampilkan tombol navigasi nomor soal di atas kuis. Setelah maju otomatis, navigasi mundur ke soal yang sudah dijawab dinonaktifkan.",
+            inputMethod: "boolean",
+            default: true,
+          },
+          {
+            property: "allowBackwardNav",
+            title: "Izinkan Navigasi Mundur",
+            description: "true = siswa boleh melompat ke soal yang sudah dijawab. Default false (nav maju saja setelah submit).",
+            inputMethod: "boolean",
+            default: false,
+          },
+          {
+            property: "practiceMode",
+            title: "Mode Latihan",
+            description: "Aktifkan untuk mode latihan: tidak ada auto-advance, tombol Berikutnya/Kembali tersedia, navigasi bebas.",
+            inputMethod: "boolean",
+            default: false,
+          },
+          {
+            property: "questionDelay",
+            title: "Jeda Soal (ms)",
+            description: "Jeda dalam milidetik sebelum auto-advance ke soal berikutnya. Hanya berlaku mode kuis (bukan practice mode). Default 1800.",
+            inputMethod: "number",
+            default: 1800,
+          },
+          {
+            property: "reviewAnswers",
+            title: "Tinjau Jawaban di Akhir",
+            description: "Tampilkan tombol 'Tinjau Jawaban' di layar hasil untuk mereview semua soal & jawaban yang diberikan.",
+            inputMethod: "boolean",
+            default: true,
           },
           {
             property: "timerDuration",
@@ -159,6 +194,9 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
           "_editorOrigin",
           "_importText",
           "_importStatus",
+          "_reviewMode",
+          "_userAnswers",
+          "_answeredSet",
         ],
       },
       demoSchema: [
@@ -247,6 +285,27 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
         attribute: "lock-after-complete",
         reflect: true,
       },
+      showQuestionNav: {
+        type: Boolean,
+        attribute: "show-question-nav",
+        reflect: true,
+      },
+      allowBackwardNav: {
+        type: Boolean,
+        attribute: "allow-backward-nav",
+        reflect: true,
+      },
+      practiceMode: {
+        type: Boolean,
+        attribute: "practice-mode",
+        reflect: true,
+      },
+      questionDelay: { type: Number, attribute: "question-delay", reflect: true },
+      reviewAnswers: {
+        type: Boolean,
+        attribute: "review-answers",
+        reflect: true,
+      },
       _locked: { state: true },
       _lockChecked: { state: true },
       studentId: { type: String, attribute: "student-id", reflect: true },
@@ -268,6 +327,8 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
       _matchAnswers: { state: true },
       _shortAnswerText: { state: true },
       _answered: { state: true },
+      _answeredSet: { state: true },
+      _userAnswers: { state: true },
       _score: { state: true },
       _maxPoints: { state: true },
       _feedbackText: { state: true },
@@ -304,6 +365,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
       _editorOrigin: { state: true },
       _importText: { state: true },
       _importStatus: { state: true },
+      _reviewMode: { state: true },
     };
   }
 
@@ -332,6 +394,11 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     this.shuffleChoices = false;
     this.shuffleQuestions = false;
     this.lockAfterComplete = true;
+    this.showQuestionNav = true;
+    this.allowBackwardNav = false;
+    this.practiceMode = false;
+    this.questionDelay = 1800;
+    this.reviewAnswers = true;
     this.editable = false;
     this.studentId = "";
     this.studentName = "";
@@ -350,6 +417,8 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     this._matchAnswers = {};
     this._shortAnswerText = "";
     this._answered = false;
+    this._answeredSet = new Set();
+    this._userAnswers = new Map();
     this._score = 0;
     this._maxPoints = 0;
     this._feedbackText = "";
@@ -370,6 +439,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     this._editorOrigin = "result";
     this._importText = "";
     this._importStatus = "";
+    this._reviewMode = false;
     this._resetEditorForm();
     this._authHandler = this._authHandler.bind(this);
   }
@@ -401,6 +471,47 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
         }
         .btn-start:hover { background-color: var(--ddd-theme-accent, #6d28d9); }
         .question-text { font-size: var(--ddd-font-size-4xs); font-weight: 700; color: var(--ddd-theme-on-surface); margin-bottom: var(--ddd-spacing-4); }
+        .hint-box { margin-bottom: var(--ddd-spacing-3); border: var(--ddd-border-xs); border-radius: var(--ddd-radius-sm); padding: var(--ddd-spacing-3); background: var(--ddd-theme-polaris-surface-hover); }
+        .hint-box summary { cursor: pointer; font-weight: 700; font-size: var(--ddd-font-size-4xs); color: var(--ddd-theme-primary); list-style: none; }
+        .hint-box summary::before { content: "💡 "; }
+        .hint-box div { margin-top: var(--ddd-spacing-2); font-size: var(--ddd-font-size-4xs); color: var(--ddd-theme-default-text); }
+        .question-nav {
+            display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--ddd-spacing-4);
+            padding: var(--ddd-spacing-3);
+            background: var(--ddd-theme-polaris-surface-hover);
+            border: var(--ddd-border-xs);
+            border-radius: var(--ddd-radius-sm);
+          }
+          .question-nav .q-dot {
+            min-width: 36px; min-height: 36px; padding: 0 8px;
+            border: var(--ddd-border-sm); background: var(--ddd-theme-default-white);
+            color: var(--ddd-theme-on-surface);
+            border-radius: var(--ddd-radius-sm);
+            font-weight: 700; font-size: var(--ddd-font-size-4xs);
+            cursor: pointer; transition: background 0.15s, color 0.15s, border-color 0.15s;
+            font-family: inherit;
+          }
+          .question-nav .q-dot:hover:not(.disabled) { border-color: var(--ddd-theme-primary); }
+          .question-nav .q-dot.current {
+            background: var(--ddd-theme-primary, #4f46e5);
+            color: var(--ddd-theme-on-primary, #fff);
+            border-color: var(--ddd-theme-primary, #4f46e5);
+          }
+          .question-nav .q-dot.answered:not(.current) {
+            border-color: var(--ddd-theme-success, #2e7d32);
+            color: var(--ddd-theme-success, #2e7d32);
+          }
+          .question-nav .q-dot.disabled {
+            background: var(--ddd-theme-polaris-surface-hover);
+            color: var(--ddd-theme-secondary);
+            cursor: not-allowed; opacity: 0.55;
+            border-color: var(--ddd-theme-polaris-border);
+          }
+          .question-nav .q-dot.unanswered {
+            background: var(--ddd-theme-warning-light, #fff3cd);
+            border-color: var(--ddd-theme-warning, #ffc107);
+            color: var(--ddd-theme-warning-text, #856404);
+          }
         .question-image img { max-width: 100%; max-height: 260px; border-radius: 10px; margin-bottom: var(--ddd-spacing-4); border: var(--ddd-border-xs); }
         .choices-stack { display: flex; flex-direction: column; gap: 10px; }
         .choice-row {
@@ -446,11 +557,36 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
           border: none; border-radius: var(--ddd-radius-sm); font-size: var(--ddd-font-size-4xs); font-weight: 700; cursor: pointer; margin-top: var(--ddd-spacing-3);
         }
         .btn-submit:hover { background-color: var(--ddd-theme-accent); }
+        .practice-nav .btn-back { flex: 1; padding: var(--ddd-spacing-3); background: var(--ddd-theme-polaris-surface); color: var(--ddd-theme-on-surface); border: var(--ddd-border-xs); border-radius: var(--ddd-radius-sm); font-size: var(--ddd-font-size-4xs); font-weight: 700; cursor: pointer; }
+        .practice-nav .btn-back:disabled { opacity: 0.4; cursor: not-allowed; }
+        .practice-nav .btn-next { flex: 2; padding: var(--ddd-spacing-3); background: var(--ddd-theme-polaris-primary); color: var(--ddd-theme-on-primary); border: none; border-radius: var(--ddd-radius-sm); font-size: var(--ddd-font-size-4xs); font-weight: 700; cursor: pointer; }
+        .practice-nav .btn-next:disabled { opacity: 0.4; cursor: not-allowed; }
         .feedback-area {
           margin-top: var(--ddd-spacing-4); padding: var(--ddd-spacing-3) var(--ddd-spacing-3); border-radius: var(--ddd-radius-md); font-size: var(--ddd-font-size-4xs); font-weight: 600;
         }
         .feedback-area.positive { background: var(--ddd-theme-success-light); color: var(--ddd-theme-success-text); border: var(--ddd-border-xs); }
         .feedback-area.negative { background: var(--ddd-theme-error-light); color: var(--ddd-theme-error-text); border: var(--ddd-border-xs); }
+
+        .review-summary { display: flex; justify-content: center; gap: var(--ddd-spacing-5); margin: var(--ddd-spacing-4) 0; }
+        .review-stat { text-align: center; }
+        .review-stat-label { display: block; font-size: var(--ddd-font-size-4xs); color: var(--ddd-theme-secondary); font-weight: 600; }
+        .review-stat-value { display: block; font-size: var(--ddd-font-size-3xs); font-weight: 800; }
+        .review-stat-value.positive { color: var(--ddd-theme-success-text); }
+        .review-stat-value.negative { color: var(--ddd-theme-error-text); }
+        .review-questions { display: flex; flex-direction: column; gap: var(--ddd-spacing-3); margin: var(--ddd-spacing-4) 0; }
+        .review-question { border: var(--ddd-border-xs); border-radius: var(--ddd-radius-md); padding: var(--ddd-spacing-3); background: var(--ddd-theme-polaris-surface-hover); }
+        .review-qnum { font-size: var(--ddd-font-size-4xs); font-weight: 800; color: var(--ddd-theme-primary); margin-bottom: var(--ddd-spacing-2); }
+        .review-qtext { font-size: var(--ddd-font-size-4xs); font-weight: 700; color: var(--ddd-theme-on-surface); margin-bottom: var(--ddd-spacing-3); }
+        .review-mc { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px; }
+        .review-mc li { padding: 4px 8px; border-radius: var(--ddd-radius-xs); font-size: var(--ddd-font-size-4xs); }
+        .review-mc li.review-correct { background: var(--ddd-theme-success-light); color: var(--ddd-theme-success-text); font-weight: 700; }
+        .review-mc li.review-selected-wrong { background: var(--ddd-theme-error-light); color: var(--ddd-theme-error-text); font-weight: 700; }
+        .review-short { margin: var(--ddd-spacing-2) 0; font-size: var(--ddd-font-size-4xs); }
+        .review-label { font-weight: 700; color: var(--ddd-theme-secondary); }
+        .review-value { color: var(--ddd-theme-on-surface); }
+        .review-badge { display: inline-block; padding: 2px 10px; border-radius: var(--ddd-radius-xs); font-size: var(--ddd-font-size-4xs); font-weight: 700; margin-top: var(--ddd-spacing-2); }
+        .review-badge.positive { background: var(--ddd-theme-success-light); color: var(--ddd-theme-success-text); }
+        .review-badge.negative { background: var(--ddd-theme-error-light); color: var(--ddd-theme-error-text); }
 
         .btn-edit-soal {
           display: block; width: 100%; padding: var(--ddd-spacing-3); margin-top: var(--ddd-spacing-3); background-color: var(--ddd-theme-secondary);
@@ -538,6 +674,8 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
         :host-context(body.dark-mode) .btn-start:hover { background-color: #6366f1; }
         :host-context(body.dark-mode) .choice-row { background: var(--dk-soft); color: var(--dk-text); border-color: var(--dk-border); }
         :host-context(body.dark-mode) .choice-row.correct { border-color: #22c55e; background: #064e3b; color: #6ee7b7; }
+        :host-context(body.dark-mode) .choice-row.wrong { border-color: #f87171; background: #7f1d1d; color: #fecaca; }
+        :host-context(body.dark-mode) .choice-row.selected { border-color: #818cf8; background: #1e1b4b; color: #e0e7ff; }
         :host-context(body.dark-mode) .editor-select,
         :host-context(body.dark-mode) .editor-input,
         :host-context(body.dark-mode) .editor-textarea,
@@ -552,6 +690,18 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
         :host-context(body.dark-mode) .btn-edit-soal { background: var(--dk-soft); color: var(--dk-text); border-color: var(--dk-border); }
         :host-context(body.dark-mode) .feedback-area { background: var(--dk-soft); color: var(--dk-text); }
         :host-context(body.dark-mode) .score-circle { background: linear-gradient(135deg, #312e81, #4338ca); color: #f8fafc; }
+        :host-context(body.dark-mode) .hint-box { background: var(--dk-soft); border-color: var(--dk-border); }
+        :host-context(body.dark-mode) .question-nav { background: var(--dk-soft); border-color: var(--dk-border); }
+        :host-context(body.dark-mode) .question-nav .q-dot { background: var(--dk-card); color: var(--dk-text); border-color: var(--dk-border); }
+        :host-context(body.dark-mode) .question-nav .q-dot.unanswered {
+          background: #78350f;
+          border-color: #fcd34d;
+          color: #fde68a;
+        }
+        :host-context(body.dark-mode) .review-question { background: var(--dk-soft); border-color: var(--dk-border); }
+        :host-context(body.dark-mode) .review-qtext { color: var(--dk-text-strong); }
+        :host-context(body.dark-mode) .practice-nav .btn-back { background: var(--dk-soft); color: var(--dk-text); border-color: var(--dk-border); }
+        :host-context(body.dark-mode) .practice-nav .btn-next { background: #4f46e5; color: #f8fafc; }
       `,
     ];
   }
@@ -742,6 +892,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
       rightItems: Array.isArray(soal.rightItems) ? soal.rightItems : [],
       correctPairs: soal.correctPairs || {},
       acceptedAnswers: Array.isArray(soal.acceptedAnswers) ? soal.acceptedAnswers : [],
+      hint: soal.hint || "",
       originalIndex: soal._originalIndex >= 0 ? soal._originalIndex : null,
     };
   }
@@ -854,8 +1005,12 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     this._currentIdx = 0;
     this._score = 0;
     this._confettiFired = false;
+    this._answeredSet = new Set();
+    this._userAnswers = new Map();
+    this._reviewMode = false;
     let base = Array.isArray(this.questions) ? this.questions : DEFAULT_QUESTIONS;
     if (this.shuffleQuestions) base = this._shuffleArray(base);
+    if (!Array.isArray(base)) base = DEFAULT_QUESTIONS;
     this._maxPoints =
       (this.questions || []).reduce((sum, q) => sum + this._maxPoinSoal(q), 0) || 1;
     if (this.shuffleChoices) {
@@ -875,6 +1030,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
       // _getActiveQuestions memakai urutan soal yang baru.
       this._shuffledQuestions = base.map((q, i) => ({ ...q, _originalIndex: i }));
     }
+    if (!Array.isArray(this._shuffledQuestions)) this._shuffledQuestions = [];
     this._resetState();
     if (this.lockAfterComplete && this.studentId && this.kdMateri) {
       this._attemptStart = Date.now();
@@ -938,6 +1094,12 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
       this._feedbackText = `Yah, Salah. Jawaban benar: ${correctNames}`;
       this._feedbackPositive = false;
     }
+    this._answeredSet.add(this._currentIdx);
+    this._userAnswers.set(this._currentIdx, {
+      selected: indexKey,
+      isCorrect: benar,
+      points: benar ? (soal.points || 1) : 0,
+    });
     this._autoAdvance();
   }
 
@@ -979,6 +1141,12 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
       this._feedbackText = `Jawaban belum tepat. Kunci: ${correctNames}`;
       this._feedbackPositive = false;
     }
+    this._answeredSet.add(this._currentIdx);
+    this._userAnswers.set(this._currentIdx, {
+      selectedAnswers: new Set(this._selectedAnswers),
+      isCorrect: isCorrect,
+      points: isCorrect ? (soal.points || 1) : 0,
+    });
     this._autoAdvance();
   }
 
@@ -1023,6 +1191,13 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
         this._feedbackPositive = benar > 0;
       }
     }
+    this._answeredSet.add(this._currentIdx);
+    this._userAnswers.set(this._currentIdx, {
+      selected: { ...this._matchAnswers },
+      isCorrect: benar === total,
+      points: benar,
+      correctAnswers: statements.map((st, i) => st.answer),
+    });
     this._autoAdvance();
   }
 
@@ -1062,6 +1237,13 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
       }
     }
     if (!this.hideConfetti && correctCount === left.length) this._fireConfetti();
+    this._answeredSet.add(this._currentIdx);
+    this._userAnswers.set(this._currentIdx, {
+      selected: { ...this._matchAnswers },
+      isCorrect: correctCount === left.length,
+      points: earned,
+      correctPairs: s.correctPairs,
+    });
     this._autoAdvance();
   }
 
@@ -1091,10 +1273,77 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
       this._feedbackText = `Yah, Salah. Jawaban benar: ${(s.acceptedAnswers || []).join(" / ")}`;
       this._feedbackPositive = false;
     }
+    this._answeredSet.add(this._currentIdx);
+    this._userAnswers.set(this._currentIdx, {
+      text: this._shortAnswerText,
+      isCorrect: isCorrect,
+      points: isCorrect ? (soal.points || 1) : 0,
+      correctAnswers: s.acceptedAnswers || [],
+    });
     this._autoAdvance();
   }
 
+  _restoreAnswerState(index) {
+    const ua = this._userAnswers.get(index);
+    if (!ua) return;
+    if (ua.selectedAnswers instanceof Set || Array.isArray(ua.selectedAnswers)) {
+      this._selectedAnswers = new Set(ua.selectedAnswers);
+    } else if (typeof ua.selected === "number") {
+      this._selected = ua.selected;
+    } else if (ua.text) {
+      this._shortAnswerText = ua.text;
+    } else if (ua.selected && typeof ua.selected === "object") {
+      this._matchAnswers = { ...ua.selected };
+    }
+  }
+
+  _resetForNavigation() {
+    this._answered = false;
+    this._feedbackText = "";
+    this._feedbackPositive = false;
+  }
+
+  _goToQuestion(index) {
+    if (typeof index !== "number" || index < 0) return;
+    const active = this._getActiveQuestions();
+    if (!Array.isArray(active) || index >= active.length) return;
+    if (index === this._currentIdx) return;
+    if (this.practiceMode) {
+      // practice mode: allow full backward/forward navigation
+    } else if (
+      !this.allowBackwardNav &&
+      this._answeredSet.has(index) &&
+      index < this._currentIdx
+    ) {
+      return;
+    }
+    if (this._advanceTimer) {
+      clearTimeout(this._advanceTimer);
+      this._advanceTimer = null;
+    }
+    this._currentIdx = index;
+    this._restoreAnswerState(index);
+    this._resetForNavigation();
+  }
+
+  _goToPrevQuestion() {
+    if (this._currentIdx > 0) {
+      this._goToQuestion(this._currentIdx - 1);
+    }
+  }
+
+  _goToNextQuestion() {
+    const active = this._getActiveQuestions();
+    if (this._currentIdx < active.length - 1) {
+      this._currentIdx++;
+      this._resetState();
+      this.requestUpdate();
+    } else if (this._currentIdx === active.length - 1) {
+      this._selesaiKuis();
+    }
+  }
   _autoAdvance() {
+    if (this.practiceMode) return;
     if (this._advanceTimer) clearTimeout(this._advanceTimer);
     this._advanceTimer = setTimeout(() => {
       this._advanceTimer = null;
@@ -1102,10 +1351,9 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
       if (this._currentIdx < active.length - 1) {
         this._currentIdx++;
         this._resetState();
-      } else {
-        this._selesaiKuis();
       }
-    }, 1800);
+      // Jangan auto-submit di soal terakhir; tombol "Selesai" yang menangani submit.
+    }, this.questionDelay || 1800);
   }
 
   _buatIdLog() {
@@ -1287,13 +1535,17 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
       data = JSON.parse(localStorage.getItem(this._attemptKey()) || "null");
     } catch (_) {}
     if (!data) return;
+    if (!Array.isArray(data.questions) || data.questions.length === 0) {
+      try { localStorage.removeItem(this._attemptKey()); } catch (_) {}
+      return;
+    }
     const elapsed = Math.floor((Date.now() - data.start) / 1000);
     const remaining = (data.duration || 0) - elapsed;
     if (remaining <= 0) {
       try { localStorage.removeItem(this._attemptKey()); } catch (_) {}
       return;
     }
-    this._shuffledQuestions = data.questions || this._shuffledQuestions;
+    this._shuffledQuestions = data.questions;
     this._attemptStart = data.start;
     this._resumeRemaining = remaining;
     this._screen = "question";
@@ -1331,6 +1583,10 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
 
     if (this._screen === "editor") return this._renderEditorScreen();
 
+    if (this._reviewMode && this._screen === "question") {
+      return this._renderReviewScreen();
+    }
+
     if (this._screen === "question") return this._renderQuestionScreen();
 
     if (this._screen === "result") {
@@ -1351,9 +1607,86 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
                 this.requestUpdate();
               }}>Ulangi Kuis</button>`
             : html`<span class="err-chip">ℹ️ Kuis terkunci. Hubungi guru untuk mengulang.</span>`}
+          ${this.reviewAnswers && this._shuffledQuestions.length > 0 && !this._reviewMode
+            ? html`<button class="btn-start" style="margin-top:var(--ddd-spacing-3);" @click=${this._startReviewMode}>Tinjau Jawaban</button>`
+            : ""}
         </div>
       `;
     }
+  }
+
+  _startReviewMode() {
+    this._reviewMode = true;
+    this._screen = "question";
+    this._currentIdx = 0;
+    this._resetState();
+    this.requestUpdate();
+  }
+
+  _renderReviewScreen() {
+    const active = this._getActiveQuestions();
+    const persentase = Math.round((this._score / this._maxPoints) * 100);
+    const benarCount = [...this._answeredSet].filter((i) => {
+      const ua = this._userAnswers.get(i);
+      return ua && ua.isCorrect;
+    }).length;
+    const salahCount = [...this._answeredSet].filter((i) => {
+      const ua = this._userAnswers.get(i);
+      return ua && !ua.isCorrect;
+    }).length;
+    const dilewati = active.length - this._answeredSet.size;
+    return html`
+      <div class="quiz-card result-box review-screen">
+        <h3 class="quiz-title">🎊 Hasil Evaluasi Anda</h3>
+        ${this.hideScore ? "" : html`<div class="score-circle">${persentase}%</div>`}
+        <div class="review-summary">
+          <div class="review-stat"><span class="review-stat-label">Benar</span><span class="review-stat-value positive">${benarCount}</span></div>
+          <div class="review-stat"><span class="review-stat-label">Salah</span><span class="review-stat-value negative">${salahCount}</span></div>
+          <div class="review-stat"><span class="review-stat-label">Dilewati</span><span class="review-stat-value">${dilewati}</span></div>
+        </div>
+        <div class="review-questions">
+          ${active.map((soal, i) => this._renderReviewQuestion(i, soal))}
+        </div>
+        <button class="btn-start" style="margin-top:var(--ddd-spacing-4);" @click=${() => {
+          this._reviewMode = false;
+          this._screen = "result";
+          this.requestUpdate();
+        }}>Selesai</button>
+      </div>
+    `;
+  }
+
+  _renderReviewQuestion(idx, q) {
+    const soal = this._normalisasiSoal(q);
+    const s = this._siapkanSoal(soal);
+    if (!s) return html``;
+    const ua = this._userAnswers.get(idx) || {};
+    const qType = s.type || "mc";
+    const huruf = ["A", "B", "C", "D", "E", "F"];
+    const korrectPositions = soal._correctMap
+      ? s.correctAnswers.map((i) => soal._correctMap.indexOf(i))
+      : s.correctAnswers;
+    return html`
+      <div class="review-question">
+        <div class="review-qnum">Soal ${idx + 1}</div>
+        <div class="review-qtext">${s.teks}</div>
+        ${qType === "mc"
+          ? html`<ul class="review-mc">${s.pilihan.map((pil, i) => {
+              let cls = "";
+              if (korrectPositions.includes(i)) cls = "review-correct";
+              else if (!s.isMulti && ua.selected === i) cls = "review-selected-wrong";
+              else if (s.isMulti && ua.selectedAnswers && ua.selectedAnswers.has(i)) cls = "review-selected-wrong";
+              return html`<li class="${cls}">${huruf[i] || i + 1}. ${pil}</li>`;
+            })}</ul>`
+          : ""}
+        ${qType === "shortAnswer"
+          ? html`<div class="review-short"><span class="review-label">Jawaban Anda:</span> <span class="review-value">${ua.text || "(tidak menjawab)"}</span></div>`
+          : ""}
+        ${ua.isCorrect
+          ? html`<span class="review-badge positive">✓ Benar (+${ua.points || 0})</span>`
+          : html`<span class="review-badge negative">✗ Salah</span>`}
+      </div>
+    `;
   }
 
   _renderQuestionScreen() {
@@ -1370,6 +1703,26 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
           <span>Soal ${this._currentIdx + 1} dari ${active.length}</span>
           ${this.hideScore ? "" : html`<span>Skor Berjalan: ${this._score}</span>`}
         </div>
+        ${this.showQuestionNav && active.length > 1
+          ? html`<nav class="question-nav" aria-label="Navigasi nomor soal">
+              ${active.map((_q, i) => {
+                const isCurrent = i === this._currentIdx;
+                const isAnswered = this._answeredSet.has(i);
+                const isUnanswered = !isAnswered && !isCurrent;
+                const isDisabled =
+                  !this.allowBackwardNav && isAnswered && i < this._currentIdx;
+                const cls = `q-dot ${isCurrent ? "current" : ""} ${isAnswered ? "answered" : ""} ${isUnanswered ? "unanswered" : ""} ${isDisabled ? "disabled" : ""}`;
+                return html`<button
+                  type="button"
+                  class="${cls}"
+                  ?disabled=${isDisabled}
+                  aria-label="Loncat ke soal nomor ${i + 1}"
+                  aria-current=${isCurrent ? "true" : "false"}
+                  @click=${() => this._goToQuestion(i)}
+                >${i + 1}</button>`;
+              })}
+            </nav>`
+          : ""}
         ${(this.timerDuration > 0 || this._resumeRemaining > 0)
           ? html`<div class="quiz-timer">
               <timer-kuis
@@ -1384,12 +1737,34 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
         ${s.image
           ? html`<div class="question-image"><img src="${s.image}" alt="Gambar soal" loading="lazy" /></div>`
           : ""}
+        ${s.hint
+          ? html`<details class="hint-box"><summary>💡 Petunjuk</summary><div>${s.hint}</div></details>`
+          : ""}
         ${qType === "pgk" ? this._renderPGK(s) : ""}
         ${qType === "matching" ? this._renderMatching(s) : ""}
         ${qType === "shortAnswer" ? this._renderShortAnswer(s) : ""}
         ${qType === "mc" ? this._renderMC(s, soal) : ""}
         ${this._feedbackText
           ? html`<div class="feedback-area ${this._feedbackPositive ? "positive" : "negative"}" aria-live="polite">${this._feedbackText}</div>`
+          : ""}
+        ${this._currentIdx === active.length - 1
+          ? html`<button type="button" class="btn-submit" style="margin-top:var(--ddd-spacing-4);"
+              @click=${this._selesaiKuis}
+              aria-label="Selesai dan lihat skor">Selesai — Lihat Skor</button>`
+          : ""}
+        ${this.practiceMode
+          ? html`<div class="practice-nav" style="display:flex; gap:var(--ddd-spacing-3); margin-top:var(--ddd-spacing-4);">
+              <button type="button" class="btn-back"
+                ?disabled=${this._currentIdx === 0}
+                @click=${this._goToPrevQuestion}
+                aria-label="Soal sebelumnya">← Kembali</button>
+              <button type="button" class="btn-next"
+                ?disabled=${this._currentIdx === active.length - 1 ? false : !this._answered}
+                @click=${this._goToNextQuestion}
+                aria-label="${this._currentIdx === active.length - 1 ? 'Selesai kuis' : 'Soal berikutnya'}">
+                ${this._currentIdx === active.length - 1 ? 'Selesai →' : 'Berikutnya →'}
+              </button>
+            </div>`
           : ""}
       </div>
     `;
@@ -1418,7 +1793,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
               ?disabled=${disabled}
               @click=${() => (s.isMulti ? this._toggleMultiAnswer(i) : this._pilihJawaban(i))}
               aria-label="Pilihan ${huruf[i] || i + 1}: ${pil}"
-            >${s.isMulti && this._selectedAnswers.has(i) ? "✓ " : ""}${huruf[i] || i + 1}. ${pil}
+            >${(s.isMulti ? this._selectedAnswers.has(i) : this._selected === i) ? "✓ " : ""}${huruf[i] || i + 1}. ${pil}
             ${pilImg
               ? html`<br /><img class="choice-image" src="${pilImg}" alt="Gambar pilihan ${huruf[i] || i + 1}" loading="lazy" />`
               : ""}</button>
