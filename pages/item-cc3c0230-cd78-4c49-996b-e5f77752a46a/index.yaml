@@ -17,7 +17,7 @@ metadata:
   created: 1788628387
   images: []
   videos: []
-  updated: 1788629138
+  updated: 1788629262
   theme:
     element: polaris-flex-theme
     path: '@haxtheweb/polaris-theme/lib/polaris-flex-theme.js'
@@ -32,7 +32,7 @@ metadata:
     terrible: false
     key: polaris-flex-theme
   published: true
-  hideInMenu: false
+  hideInMenu: true
   readtime: 1
 content: >
 
@@ -248,7 +248,6 @@ content: >
   konfirmasi disebut metode...&quot;,&quot;hint&quot;:&quot;Istilah ini berakar
   dari teknik penggabungan tiga sudut
   pandang/sumber.&quot;,&quot;acceptedAnswers&quot;:[&quot;Triangulasi&quot;,&quot;triangulasi&quot;]}]"
-  data-hax-lock="data-hax-lock" _attempt-ke="0"
-  _soal-file-url-cache="./files/2026-stimulus2-faseF.json">
+  _attempt-ke="0" _soal-file-url-cache="./files/2026-stimulus2-faseF.json">
 
   </latihan-kuis>
