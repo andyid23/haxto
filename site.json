@@ -25,7 +25,7 @@
       "name": "haxto",
       "domain": "",
       "created": 1787457359,
-      "updated": 1788628387,
+      "updated": 1788628561,
       "logo": "",
       "version": "26.0.1"
     },
@@ -460,13 +460,30 @@
       "order": 8,
       "parent": null,
       "title": "Ulangan Harian 2 FASE F LM2",
-      "description": "",
+      "description": "📝 Kuis Verifikasi Informasi &#38; Periksa Fakta (LM2)\n\nKerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban\n  benar/salah tidak ditampilkan. Setelah login reloaduntuk men",
       "metadata": {
         "locked": false,
         "created": 1788628387,
         "images": [],
         "videos": [],
-        "updated": 1788628387
+        "updated": 1788628561,
+        "theme": {
+          "element": "polaris-flex-theme",
+          "path": "@haxtheweb/polaris-theme/lib/polaris-flex-theme.js",
+          "name": "Polaris Flex",
+          "thumbnail": "@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-polaris-flex-theme-thumb.jpg",
+          "description": "Start with a blank site using the Polaris Flex",
+          "category": [
+            "Website"
+          ],
+          "hidden": false,
+          "priority": -1,
+          "terrible": false,
+          "key": "polaris-flex-theme"
+        },
+        "published": true,
+        "hideInMenu": false,
+        "readtime": 1
       }
     }
   ]
