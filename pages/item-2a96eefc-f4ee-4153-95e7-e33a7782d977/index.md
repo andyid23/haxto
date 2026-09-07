@@ -1,3 +1,5 @@
+Belajar dan berlatih setiap saat!
+
 ### ULANGAN INFORMATIKA KELAS X-XI
 
 <stop-note title="KUIS UJI PEMAHAMAN" accent-color="grey" icon="stopnoteicons:stop-icon" status="stop" message="<strong>Read these important things!</strong>
@@ -13,6 +15,10 @@
 Semboyan
 --------
 
-![](files/habits.jpg)
+> Ilmu itu ada dimana-mana, pengetahuan dimana-mana tersebar, kalau kita bersedia membaca, dan bersedia mendengar.
+
+![Bila seseorang banyak melatih dan mengulang, terpaksa ataupun sukarela, dia pasti akan menguasai keahlian tertentu. Inilah namanya pembentukan kebiasaan alias habits.](files/habits.jpg)
+
+> Bila seseorang banyak melatih dan mengulang, terpaksa ataupun sukarela, dia pasti akan menguasai keahlian tertentu. Inilah namanya pembentukan kebiasaan alias habits.
 
 ![](files/belajar.jpg)

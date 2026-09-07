@@ -3,7 +3,7 @@
   <title>Media Pembelajaran dan Kuis Kelas X - XI Informatika SMA</title>
   <link href="https://localhost:3000/sites/haxto/" rel="self" />
   <subtitle>belajar dan melatih pemahaman informatika SMA kelas 10 dan 11 X XI</subtitle>
-  <updated>2026-09-07T02:45:43.000Z</updated>
+  <updated>2026-09-07T03:00:35.000Z</updated>
   <author>
       <name>Andy Yulianto</name>
   </author>
@@ -968,7 +968,7 @@ cover-image="./files/belajar.jpg"
   <entry>
     <title>Selamat Datang</title>
     <id>item-2a96eefc-f4ee-4153-95e7-e33a7782d977</id>
-    <updated>2026-09-07T03:00:35.000Z</updated>
+    <updated>2026-09-07T23:11:50.000Z</updated>
     <published>2026-09-04T22:06:44.000Z</published>
     <summary>ULANGAN INFORMATIKA KELAS X-XI
 
@@ -993,10 +993,12 @@ Semboyan
     
     <content type="html">
       <![CDATA[ 
+<p>Belajar dan berlatih setiap saat!</p>
 <h3 data-primary="0" data-border="md" data-design-treatment="bg" data-padding="m" id="h3-1838830575" data-text-align="center">ULANGAN INFORMATIKA KELAS X-XI</h3>
 <p></p>
 <stop-note title="KUIS UJI PEMAHAMAN" accent-color="grey" icon="stopnoteicons:stop-icon" status="stop" message="&#60;strong&#62;Read these important things!&#60;/strong&#62;
 "><p slot="message"><strong>Baca dengan seksama materi dan jawablah soal di bawahnya. Materi lengkap ada di buku Informatika SMA kelas X dan XI.</strong></p>
+
 
 
 
@@ -1007,18 +1009,21 @@ Semboyan
 <p></p>
 <ul><li><a href="./lm1-ekosistem-periksa-fakta-metode-craap">Link Menuju Materi Kelas X</a></li>
 
+
 </ul>
 <ul><li><a href="./lm1-materi-kuis-fase-f">Link Menuju Materi Kelas XI</a></li>
 
+
 <li><a href="./lm2-fase-f-verifikasi">Link Menuju Materi Kelas XI LM2</a>&#160;</li>
+
 
 </ul>
 <img src="files/ilya-pavlov-OqtafYT5kTw-unsplash.jpg" loading="lazy" data-width="75" data-padding="m" data-margin="s"/><polaris-cta text="Explore Ulangan" link="https://www.kuis" type="primary" outlined filled edit-mode data-padding="m" data-text-align="center"></polaris-cta>
 <p></p>
 <h2 data-style-guide="headline" data-design-treatment="vert" data-primary="8" data-padding="xs" data-border-radius="xs" id="h2-1282437022">Semboyan</h2>
 <p></p>
-<img src="files/habits.jpg" loading="lazy" data-float-position="center" data-width="75" data-margin="s" data-padding="m"/><p></p>
-<p></p>
+<blockquote><q lang="id">Ilmu itu ada dimana-mana, pengetahuan dimana-mana tersebar, kalau kita bersedia membaca, dan bersedia mendengar.</q></blockquote>
+<img src="files/habits.jpg" loading="lazy" data-float-position="center" data-width="75" data-margin="s" data-padding="m" alt="Bila seseorang banyak melatih dan mengulang, terpaksa ataupun sukarela, dia pasti akan menguasai keahlian tertentu. Inilah namanya pembentukan kebiasaan alias habits."/><blockquote><q lang="id">Bila seseorang banyak melatih dan mengulang, terpaksa ataupun sukarela, dia pasti akan menguasai keahlian tertentu. Inilah namanya pembentukan kebiasaan alias habits.</q></blockquote>
 <img src="files/belajar.jpg" loading="lazy" data-padding="xs" data-margin="m" data-width="75"/><p></p>
 <p></p>
 <p></p>
