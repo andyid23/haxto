@@ -3,7 +3,7 @@
   <title>Media Pembelajaran dan Kuis Kelas X - XI Informatika SMA</title>
   <link href="https://localhost:3000/sites/haxto/" rel="self" />
   <subtitle>belajar dan melatih pemahaman informatika SMA kelas 10 dan 11 X XI</subtitle>
-  <updated>2026-09-05T17:30:44.000Z</updated>
+  <updated>2026-09-07T01:59:22.000Z</updated>
   <author>
       <name>Andy Yulianto</name>
   </author>
@@ -289,12 +289,12 @@ We&apos;ve got a ton of blocks that are easy to use and get a lot done with litt
   allow-retake="true"
   max-retake="4"
   duration="600"
-  judul-materi="Latihan Ulangan - Bab 1 Sub Topik Verifikasi Data"
+  judul-materi="Latihan Ulangan - Bab 1 Sub Topik OPTIMALISASI PENCARIAN LANJUTAN UNTUK RISET"
   teks-materi="Ini adalah sesi latihan ulangan. Kerjakan berulang, lihat petunjuk, dan tinjau jawaban. Baca materi di bawah, lalu kerjakan kuis. Kamu bisa mengulang sampai 4 kali."
   judul-kuis="Latihan Ulangan - Bab 1"
   apps-script-url="https://script.google.com/macros/s/AKfycbzUtnG3jkbt5yarQr5K8zTeZDf3cceBovBe5pmz6taoCGf3gT4tU7AwzpeNc35Gt0p1/exec"
-  kd-materi="LM2 Latihan"
-  materi-url="./lm2-fase-f-verifikasi"
+  kd-materi="LM1 Latihan"
+  materi-url="./lm1-materi-kuis-fase-f"
   kategori="formatif"
 materi-file="./files/Fase-F-LM2.docx" 
 cover-image="./files/belajar.jpg"
@@ -670,7 +670,7 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</s
     <content type="html">
       <![CDATA[ 
 <p></p>
-<h2 id="h2--879066373"><strong>TOPIK: VERIFIKASI INFORMASI DAN PERIKSA FAKTA (LITERASI DIGITAL)</strong></h2>
+<h2 id="h2--879066373"><strong>TOPIK: VERIFIKASI INFORMASI DAN PERIKSA FAKTA (LITERASI DIGITAL) Fase F</strong></h2>
 <hr/><h3 id="h3-39465782"><strong>1. Pendahuluan</strong></h3>
 <p>Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep inti serta implementasi dari sistem komputasi, jaringan, dan kecakapan digital di era modern. Di tengah pesatnya perkembangan teknologi informasi, masyarakat saat ini hidup di era di mana alam nyata dan alam digital saling terintegrasi. Kondisi ini memicu terjadinya fenomena ledakan informasi digital yang mencakup berita akurat maupun berita bohong (hoaks) yang menyebar secara masif dan cepat.</p>
 <p>Kemampuan berpikir kritis dan literasi digital menjadi prasyarat mutlak bagi setiap warga digital agar mampu menyikapi beragam data yang tersedia di internet secara bijak. Melalui pemahaman yang mendalam tentang verifikasi informasi, peserta didik tidak hanya terhindar dari disinformasi yang merugikan, tetapi juga mampu membangun ketahanan terhadap manipulasi informasi di dunia maya.</p>
@@ -930,8 +930,8 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</s
 
 
 </ol>
-<hr/><p>🎯 <strong>N</strong>tabel ringkas untuk paket soal AKM Stimulus 2 Kelas XI</p>
-<stop-note accent-color="grey" title="" icon="stopnoteicons:stop-icon" status="stop"><strong>📋 Kuis Pemahaman Materi LM2</strong></stop-note>
+<hr/><p>🎯 <strong>Tabel Ringkas</strong> untuk paket soal AKM Stimulus 2 Kelas XI</p>
+<stop-note accent-color="grey" title="" icon="stopnoteicons:stop-icon" status="stop"><strong>📋 Latihan Kuis Pemahaman Materi VERIFIKASI INFORMASI DAN PERIKSA FAKTA </strong></stop-note>
 <p></p>
 <p></p>
 <p></p>
@@ -939,13 +939,36 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</s
 <p></p>
 <p></p>
 
- ]]>
+
+<latihan-kuis
+  mode="siswa"
+  allow-retake="true"
+  max-retake="4"
+  duration="600"
+  judul-materi="Latihan Ulangan - Bab 1 Sub Topik VERIFIKASI INFORMASI DAN PERIKSA FAKTA (LITERASI DIGITAL) Fase F"
+  teks-materi="Ini adalah sesi latihan ulangan. Kerjakan berulang, lihat petunjuk, dan tinjau jawaban. Baca materi di bawah, lalu kerjakan kuis. Kamu bisa mengulang sampai 4 kali."
+  judul-kuis="Latihan Ulangan - Bab 1"
+  apps-script-url="https://script.google.com/macros/s/AKfycbzUtnG3jkbt5yarQr5K8zTeZDf3cceBovBe5pmz6taoCGf3gT4tU7AwzpeNc35Gt0p1/exec"
+  kd-materi="LM2 Latihan"
+  materi-url="./lm2-fase-f-verifikasi"
+  kategori="formatif"
+materi-file="./files/Fase-F-LM2.docx" 
+cover-image="./files/belajar.jpg"
+  student-kelas=""
+  soal-file-url="./files/2026-stimulus2-faseF.json"
+  practice-mode="true"
+  show-question-nav
+  allow-backward-nav="true"
+  question-delay="0"
+  review-answers
+  timer-autostart="false">
+</latihan-kuis> ]]>
     </content>
   </entry>
   <entry>
     <title>Selamat Datang</title>
     <id>item-2a96eefc-f4ee-4153-95e7-e33a7782d977</id>
-    <updated>2026-09-07T01:59:22.000Z</updated>
+    <updated>2026-09-07T02:45:43.000Z</updated>
     <published>2026-09-04T22:06:44.000Z</published>
     <summary>ULANGAN INFORMATIKA KELAS X-XI
 
@@ -977,11 +1000,15 @@ Semboyan
 
 
 
+
 </stop-note>
 <quiz-user-auth apps-script-url="https://script.google.com/macros/s/AKfycbzUtnG3jkbt5yarQr5K8zTeZDf3cceBovBe5pmz6taoCGf3gT4tU7AwzpeNc35Gt0p1/exec" auto-login _student-id=""></quiz-user-auth>
 <p></p>
-<p><a href="/lm1-ekosistem-periksa-fakta-metode-craap">Link Menuju Materi Kelas X</a></p>
-<p><a href="/lm1-materi-kuis-fase-f">Link Menuju Materi Kelas XI</a></p>
+<ul><li><a href="/lm1-ekosistem-periksa-fakta-metode-craap">Link Menuju Materi Kelas X</a></li>
+</ul>
+<ul><li><a href="/lm1-materi-kuis-fase-f">Link Menuju Materi Kelas XI</a></li>
+<li><a href="/lm2-fase-f-verifikasi">Link Menuju Materi Kelas XI LM2</a>&#160;</li>
+</ul>
 <img src="files/ilya-pavlov-OqtafYT5kTw-unsplash.jpg" loading="lazy" data-width="75" data-padding="m" data-margin="s"/><polaris-cta text="Explore Ulangan" link="https://www.kuis" type="primary" outlined filled edit-mode data-padding="m" data-text-align="center"></polaris-cta>
 <p></p>
 <h2 data-style-guide="headline" data-design-treatment="vert" data-primary="8" data-padding="xs" data-border-radius="xs" id="h2-1282437022">Semboyan</h2>

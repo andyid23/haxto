@@ -32,7 +32,7 @@ metadata:
     - files/habits.jpg
     - files/belajar.jpg
   videos: []
-  updated: 1788746362
+  updated: 1788749143
   published: true
   status: ''
   files:
@@ -99,6 +99,7 @@ content: >
 
 
 
+
   </stop-note>
 
   <quiz-user-auth
@@ -107,10 +108,17 @@ content: >
 
   <p></p>
 
-  <p><a href="/lm1-ekosistem-periksa-fakta-metode-craap">Link Menuju Materi
-  Kelas X</a></p>
+  <ul><li><a href="/lm1-ekosistem-periksa-fakta-metode-craap">Link Menuju Materi
+  Kelas X</a></li>
 
-  <p><a href="/lm1-materi-kuis-fase-f">Link Menuju Materi Kelas XI</a></p>
+  </ul>
+
+  <ul><li><a href="/lm1-materi-kuis-fase-f">Link Menuju Materi Kelas XI</a></li>
+
+  <li><a href="/lm2-fase-f-verifikasi">Link Menuju Materi Kelas XI
+  LM2</a>&#160;</li>
+
+  </ul>
 
   <img src="files/ilya-pavlov-OqtafYT5kTw-unsplash.jpg" loading="lazy"
   data-width="75" data-padding="m" data-margin="s"/><polaris-cta text="Explore
