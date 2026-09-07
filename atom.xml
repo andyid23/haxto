@@ -3,7 +3,7 @@
   <title>Media Pembelajaran dan Kuis Kelas X - XI Informatika SMA</title>
   <link href="https://localhost:3000/sites/haxto/" rel="self" />
   <subtitle>belajar dan melatih pemahaman informatika SMA kelas 10 dan 11 X XI</subtitle>
-  <updated>2026-09-07T01:59:22.000Z</updated>
+  <updated>2026-09-07T02:45:43.000Z</updated>
   <author>
       <name>Andy Yulianto</name>
   </author>
@@ -968,7 +968,7 @@ cover-image="./files/belajar.jpg"
   <entry>
     <title>Selamat Datang</title>
     <id>item-2a96eefc-f4ee-4153-95e7-e33a7782d977</id>
-    <updated>2026-09-07T02:45:43.000Z</updated>
+    <updated>2026-09-07T03:00:35.000Z</updated>
     <published>2026-09-04T22:06:44.000Z</published>
     <summary>ULANGAN INFORMATIKA KELAS X-XI
 
@@ -1001,13 +1001,17 @@ Semboyan
 
 
 
+
 </stop-note>
 <quiz-user-auth apps-script-url="https://script.google.com/macros/s/AKfycbzUtnG3jkbt5yarQr5K8zTeZDf3cceBovBe5pmz6taoCGf3gT4tU7AwzpeNc35Gt0p1/exec" auto-login _student-id=""></quiz-user-auth>
 <p></p>
-<ul><li><a href="/lm1-ekosistem-periksa-fakta-metode-craap">Link Menuju Materi Kelas X</a></li>
+<ul><li><a href="./lm1-ekosistem-periksa-fakta-metode-craap">Link Menuju Materi Kelas X</a></li>
+
 </ul>
-<ul><li><a href="/lm1-materi-kuis-fase-f">Link Menuju Materi Kelas XI</a></li>
-<li><a href="/lm2-fase-f-verifikasi">Link Menuju Materi Kelas XI LM2</a>&#160;</li>
+<ul><li><a href="./lm1-materi-kuis-fase-f">Link Menuju Materi Kelas XI</a></li>
+
+<li><a href="./lm2-fase-f-verifikasi">Link Menuju Materi Kelas XI LM2</a>&#160;</li>
+
 </ul>
 <img src="files/ilya-pavlov-OqtafYT5kTw-unsplash.jpg" loading="lazy" data-width="75" data-padding="m" data-margin="s"/><polaris-cta text="Explore Ulangan" link="https://www.kuis" type="primary" outlined filled edit-mode data-padding="m" data-text-align="center"></polaris-cta>
 <p></p>
