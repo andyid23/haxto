@@ -49,13 +49,13 @@ content: >
 
    tidak bisa gunakan <mark>mode terang</mark> di smartphonemu&#160;😄</p>
   <quiz-user-auth
-  apps-script-url="https://script.google.com/macros/s/AKfycbxGvruTao7sbhdjhT9TJ1c2Mn1bjOS-yWUCbmMfW2W-3_dj-sf6XSFCpDJCK6ETYCqy/exec"
+  apps-script-url="https://script.google.com/macros/s/AKfycbzUtnG3jkbt5yarQr5K8zTeZDf3cceBovBe5pmz6taoCGf3gT4tU7AwzpeNc35Gt0p1/exec"
   auto-login _student-id=""></quiz-user-auth>
 
   <latihan-kuis mode="siswa" duration="600" timer-autostart hide-pause-restart
   hide-confetti hide-answers hide-score shuffle-questions shuffle-choices
   kategori="sumatif_lm"
-  apps-script-url="https://script.google.com/macros/s/AKfycbxGvruTao7sbhdjhT9TJ1c2Mn1bjOS-yWUCbmMfW2W-3_dj-sf6XSFCpDJCK6ETYCqy/exec"
+  apps-script-url="https://script.google.com/macros/s/AKfycbzUtnG3jkbt5yarQr5K8zTeZDf3cceBovBe5pmz6taoCGf3gT4tU7AwzpeNc35Gt0p1/exec"
   kd-materi="LM2" materi-url="./lm2-materi-kuis-fase-f" student-id=""
   judul-kuis="Ulangan Harian 2 Verifikasi Informasi &amp; Periksa Fakta"
   allow-backward-nav show-question-nav show-sheet-link
