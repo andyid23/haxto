@@ -436,6 +436,14 @@
             "type": "image/jpeg",
             "name": "ilmu.jpg",
             "size": 60081
+          },
+          {
+            "path": "C:\\Users\\Dragon\\Documents\\github\\andyid23\\haxtheweb-kuis\\haxto\\files\\hijab.jpg",
+            "fullUrl": "/C:\\Users\\Dragon\\Documents\\github\\andyid23\\haxtheweb-kuis\\haxto/files/hijab.jpg",
+            "url": "files/hijab.jpg",
+            "type": "image/jpeg",
+            "name": "hijab.jpg",
+            "size": 29914
           }
         ],
         "hideInMenu": false,
