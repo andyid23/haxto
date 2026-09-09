@@ -32,7 +32,7 @@ metadata:
     - files/habits.jpg
     - files/belajar.jpg
   videos: []
-  updated: 1788946235
+  updated: 1788947983
   published: true
   status: ''
   files:
@@ -68,6 +68,14 @@ metadata:
       type: image/jpeg
       name: ilmu.jpg
       size: 60081
+    - path: >-
+        C:\Users\Dragon\Documents\github\andyid23\haxtheweb-kuis\haxto\files\hijab.jpg
+      fullUrl: >-
+        /C:\Users\Dragon\Documents\github\andyid23\haxtheweb-kuis\haxto/files/hijab.jpg
+      url: files/hijab.jpg
+      type: image/jpeg
+      name: hijab.jpg
+      size: 29914
   hideInMenu: false
   readtime: 1
   theme:
@@ -114,6 +122,7 @@ content: >
 
 
 
+
   </stop-note>
 
   <quiz-user-auth
@@ -129,10 +138,12 @@ content: >
 
 
 
+
   </ul>
 
   <ul><li><a href="./lm1-materi-kuis-fase-f">Link Menuju Materi Kelas
   XI</a></li>
+
 
 
 
@@ -145,12 +156,13 @@ content: >
 
 
 
+
   </ul>
 
   <img src="files/ilya-pavlov-OqtafYT5kTw-unsplash.jpg" loading="lazy"
   data-width="75" data-padding="m" data-margin="s"/><polaris-cta text="Explore
-  Web" link="https://www.andyux.my.id" type="primary" outlined filled
-  edit-mode="" data-padding="m" data-text-align="center"></polaris-cta>
+  Web" link="https://www.andyux.my.id" type="primary" outlined filled edit-mode
+  data-padding="m" data-text-align="center"></polaris-cta>
 
   <p></p>
 
@@ -159,7 +171,18 @@ content: >
 
   <p></p>
 
-  <blockquote></blockquote>
+  <p></p>
+
+  <media-image source="files/hijab.jpg" card citation="Felix Siauw UPA"
+  accent-color="grey" size="wide" offset="none" caption="&quot;Mungkin selama
+  ini Allah meghijabmu dari mahligai pernikahan yang lo harapkan karena maksiat
+  lo tetap jalan.&quot;" modal-title="&quot;Mungkin selama ini Allah meghijabmu
+  dari mahligai pernikahan yang lo harapkan karena maksiat lo tetap
+  jalan.&quot;" _has-caption></media-image>
+
+  <p></p>
+
+  <p></p>
 
   <p></p>
 

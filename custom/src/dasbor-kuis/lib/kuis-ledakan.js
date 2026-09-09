@@ -1341,7 +1341,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     if (index < 0 || index >= active.length) return false;
     
     // Prevent navigation if timer is not running and user hasn't started
-    if (!this._started && index !== 0) return false;
+    
     
     // Existing validation logic
     if (this.practiceMode) {

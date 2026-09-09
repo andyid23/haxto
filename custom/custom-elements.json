@@ -1837,6 +1837,15 @@
             },
             {
               "kind": "method",
+              "name": "_canNavigateTo",
+              "parameters": [
+                {
+                  "name": "index"
+                }
+              ]
+            },
+            {
+              "kind": "method",
               "name": "_goToQuestion",
               "parameters": [
                 {

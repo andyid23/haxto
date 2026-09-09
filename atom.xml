@@ -990,7 +990,7 @@ cover-image="./files/belajar.jpg"
   <entry>
     <title>Selamat Datang</title>
     <id>item-2a96eefc-f4ee-4153-95e7-e33a7782d977</id>
-    <updated>2026-09-09T09:30:35.000Z</updated>
+    <updated>2026-09-09T09:59:43.000Z</updated>
     <published>2026-09-04T22:06:44.000Z</published>
     <summary>ULANGAN INFORMATIKA KELAS X-XI
 
@@ -1028,10 +1028,12 @@ Semboyan
 
 
 
+
 </stop-note>
 <quiz-user-auth apps-script-url="https://script.google.com/macros/s/AKfycbzUtnG3jkbt5yarQr5K8zTeZDf3cceBovBe5pmz6taoCGf3gT4tU7AwzpeNc35Gt0p1/exec" auto-login _student-id=""></quiz-user-auth>
 <p></p>
 <ul><li><a href="./lm1-ekosistem-periksa-fakta-metode-craap">Link Menuju Materi Kelas X</a></li>
+
 
 
 
@@ -1042,17 +1044,22 @@ Semboyan
 
 
 
+
 <li><a href="./lm2-fase-f-verifikasi">Link Menuju Materi Kelas XI LM2</a>&#160;</li>
 
 
 
 
+
 </ul>
-<img src="files/ilya-pavlov-OqtafYT5kTw-unsplash.jpg" loading="lazy" data-width="75" data-padding="m" data-margin="s"/><polaris-cta text="Explore Web" link="https://www.andyux.my.id" type="primary" outlined filled edit-mode="" data-padding="m" data-text-align="center"></polaris-cta>
+<img src="files/ilya-pavlov-OqtafYT5kTw-unsplash.jpg" loading="lazy" data-width="75" data-padding="m" data-margin="s"/><polaris-cta text="Explore Web" link="https://www.andyux.my.id" type="primary" outlined filled edit-mode data-padding="m" data-text-align="center"></polaris-cta>
 <p></p>
 <h2 data-style-guide="headline" data-design-treatment="vert" data-primary="8" data-padding="xs" data-border-radius="xs" id="h2-1282437022">Semboyan</h2>
 <p></p>
-<blockquote></blockquote>
+<p></p>
+<media-image source="files/hijab.jpg" card citation="Felix Siauw UPA" accent-color="grey" size="wide" offset="none" caption="&quot;Mungkin selama ini Allah meghijabmu dari mahligai pernikahan yang lo harapkan karena maksiat lo tetap jalan.&quot;" modal-title="&quot;Mungkin selama ini Allah meghijabmu dari mahligai pernikahan yang lo harapkan karena maksiat lo tetap jalan.&quot;" _has-caption></media-image>
+<p></p>
+<p></p>
 <p></p>
 <media-image source="files/tangis-sedih.jpg" card citation="Felix Siauw" accent-color="grey" size="wide" offset="none" link="files/tangis-sedih.jpg" caption="Bagiku lebih baik tangis kesedihanmu, daripada kelak tangis penyesalanmu" modal-title="Bagiku lebih baik tangis kesedihanmu, daripada kelak tangis penyesalanmu" _has-caption disable-zoom></media-image>
 <p></p>
