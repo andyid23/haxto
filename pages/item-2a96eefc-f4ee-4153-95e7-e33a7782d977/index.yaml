@@ -32,7 +32,7 @@ metadata:
     - files/habits.jpg
     - files/belajar.jpg
   videos: []
-  updated: 1788946147
+  updated: 1788946235
   published: true
   status: ''
   files:
@@ -113,6 +113,7 @@ content: >
 
 
 
+
   </stop-note>
 
   <quiz-user-auth
@@ -127,10 +128,12 @@ content: >
 
 
 
+
   </ul>
 
   <ul><li><a href="./lm1-materi-kuis-fase-f">Link Menuju Materi Kelas
   XI</a></li>
+
 
 
 
@@ -141,11 +144,12 @@ content: >
 
 
 
+
   </ul>
 
   <img src="files/ilya-pavlov-OqtafYT5kTw-unsplash.jpg" loading="lazy"
   data-width="75" data-padding="m" data-margin="s"/><polaris-cta text="Explore
-  Ulangan" link="https://www.andyux.my.id" type="primary" outlined filled
+  Web" link="https://www.andyux.my.id" type="primary" outlined filled
   edit-mode="" data-padding="m" data-text-align="center"></polaris-cta>
 
   <p></p>
@@ -157,16 +161,13 @@ content: >
 
   <blockquote></blockquote>
 
-  <blockquote>Bagiku lebih baik tangis kesedihanmu, daripada kelak tangis
-  penyesalanmu. - Felix Siauw</blockquote>
-
   <p></p>
 
-  <media-image source="https://dummyimage.com/300x200/000/fff" card
-  citation="Felix Siauw" accent-color="grey" size="wide" offset="none"
-  link="files/tangis-sedih.jpg" caption="Bagiku lebih baik tangis kesedihanmu,
-  daripada kelak tangis penyesalanmu" modal-title="Bagiku lebih baik tangis
-  kesedihanmu, daripada kelak tangis penyesalanmu" _has-caption></media-image>
+  <media-image source="files/tangis-sedih.jpg" card citation="Felix Siauw"
+  accent-color="grey" size="wide" offset="none" link="files/tangis-sedih.jpg"
+  caption="Bagiku lebih baik tangis kesedihanmu, daripada kelak tangis
+  penyesalanmu" modal-title="Bagiku lebih baik tangis kesedihanmu, daripada
+  kelak tangis penyesalanmu" _has-caption disable-zoom></media-image>
 
   <p></p>
 
@@ -181,9 +182,9 @@ content: >
   data-width="75" data-margin="s" data-padding="m" alt="Bila seseorang banyak
   melatih dan mengulang, terpaksa ataupun sukarela, dia pasti akan menguasai
   keahlian tertentu. Inilah namanya pembentukan kebiasaan alias
-  habits."/><blockquote><q lang="id">Bila seseorang banyak melatih dan
-  mengulang, terpaksa ataupun sukarela, dia pasti akan menguasai keahlian
-  tertentu. Inilah namanya pembentukan kebiasaan alias habits.</q></blockquote>
+  habits."/><blockquote>Bila seseorang banyak melatih dan mengulang, terpaksa
+  ataupun sukarela, dia pasti akan menguasai keahlian tertentu. Inilah namanya
+  pembentukan kebiasaan alias habits.<br></blockquote>
 
   <img src="files/belajar.jpg" loading="lazy" data-padding="xs" data-margin="m"
   data-width="75"/><p></p>

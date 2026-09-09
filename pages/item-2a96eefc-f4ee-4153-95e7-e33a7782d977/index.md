@@ -15,10 +15,8 @@ Belajar dan berlatih setiap saat!
 Semboyan
 --------
 
-> Bagiku lebih baik tangis kesedihanmu, daripada kelak tangis penyesalanmu. - Felix Siauw
-
 ![Bila seseorang banyak melatih dan mengulang, terpaksa ataupun sukarela, dia pasti akan menguasai keahlian tertentu. Inilah namanya pembentukan kebiasaan alias habits.](files/habits.jpg)
 
-> Bila seseorang banyak melatih dan mengulang, terpaksa ataupun sukarela, dia pasti akan menguasai keahlian tertentu. Inilah namanya pembentukan kebiasaan alias habits.
+> Bila seseorang banyak melatih dan mengulang, terpaksa ataupun sukarela, dia pasti akan menguasai keahlian tertentu. Inilah namanya pembentukan kebiasaan alias habits.  
 
 ![](files/belajar.jpg)
