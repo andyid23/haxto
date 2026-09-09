@@ -428,6 +428,14 @@
             "type": "image/jpeg",
             "name": "belajar.jpg",
             "size": 37009
+          },
+          {
+            "path": "C:\\Users\\Dragon\\Documents\\github\\andyid23\\haxtheweb-kuis\\haxto\\files\\ilmu.jpg",
+            "fullUrl": "/C:\\Users\\Dragon\\Documents\\github\\andyid23\\haxtheweb-kuis\\haxto/files/ilmu.jpg",
+            "url": "files/ilmu.jpg",
+            "type": "image/jpeg",
+            "name": "ilmu.jpg",
+            "size": 60081
           }
         ],
         "hideInMenu": false,

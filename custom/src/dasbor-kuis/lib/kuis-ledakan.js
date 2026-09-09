@@ -1335,11 +1335,15 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     this._feedbackPositive = false;
   }
 
-  _goToQuestion(index) {
-    if (typeof index !== "number" || index < 0) return;
+  _canNavigateTo(index) {
+    // Validate timer state before allowing navigation
     const active = this._getActiveQuestions();
-    if (!Array.isArray(active) || index >= active.length) return;
-    if (index === this._currentIdx) return;
+    if (index < 0 || index >= active.length) return false;
+    
+    // Prevent navigation if timer is not running and user hasn't started
+    if (!this._started && index !== 0) return false;
+    
+    // Existing validation logic
     if (this.practiceMode) {
       // practice mode: allow full backward/forward navigation
     } else if (
@@ -1347,8 +1351,17 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
       this._answeredSet.has(index) &&
       index < this._currentIdx
     ) {
-      return;
+      return false;
     }
+    
+    return true;
+  }
+
+  _goToQuestion(index) {
+    if (!this._canNavigateTo(index)) return;
+    const active = this._getActiveQuestions();
+    if (index >= active.length) return;
+    if (index === this._currentIdx) return;
     if (this._advanceTimer) {
       clearTimeout(this._advanceTimer);
       this._advanceTimer = null;

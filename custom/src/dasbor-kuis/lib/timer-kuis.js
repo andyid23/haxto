@@ -49,12 +49,18 @@ export class TimerKuis extends I18NMixin(DDDSuper(LitElement)) {
 
   connectedCallback() {
     super.connectedCallback();
-    if (this.remaining != null && !isNaN(this.remaining)) {
+    
+    // Fix: Prioritize _resumeRemaining from parent
+    if (this._resumeRemaining != null && !isNaN(this._resumeRemaining)) {
+      this._remaining = this._resumeRemaining;
+    } else if (this.remaining != null && !isNaN(this.remaining)) {
       this._remaining = this.remaining;
     } else {
       this._remaining = this.duration;
     }
-    if (this.autostart) {
+    
+    // Only autostart if timer should actually run
+    if (this.autostart && this._remaining > 0) {
       this.start();
     }
   }

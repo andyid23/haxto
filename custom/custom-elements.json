@@ -1762,6 +1762,11 @@
             },
             {
               "kind": "method",
+              "name": "_saveAttempt",
+              "description": "Simpan state attempt (soal, jawaban, waktu) ke localStorage."
+            },
+            {
+              "kind": "method",
               "name": "_getActiveQuestions"
             },
             {
@@ -3464,14 +3469,6 @@
             },
             {
               "kind": "method",
-              "name": "_kirimLogTabSwitch"
-            },
-            {
-              "kind": "method",
-              "name": "_kunciKuisTabSwitch"
-            },
-            {
-              "kind": "method",
               "name": "_loadSession",
               "description": "Baca sesi siswa dari localStorage (TTL 24j) — agar cek status jalan saat reload."
             },
@@ -4078,16 +4075,6 @@
             },
             {
               "kind": "field",
-              "name": "_tabSwitchCount",
-              "privacy": "public",
-              "type": {
-                "text": "number"
-              },
-              "default": "0",
-              "attribute": "_tabSwitchCount"
-            },
-            {
-              "kind": "field",
               "name": "t",
               "type": {
                 "text": "object"
@@ -4487,14 +4474,6 @@
               },
               "default": "false",
               "fieldName": "_tabSwitchWarning"
-            },
-            {
-              "name": "_tabSwitchCount",
-              "type": {
-                "text": "number"
-              },
-              "default": "0",
-              "fieldName": "_tabSwitchCount"
             }
           ],
           "mixins": [

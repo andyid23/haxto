@@ -275,14 +275,14 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
   }
 
   _bacaSisaWaktu() {
-    if (!this.studentId || !this.kdMateri) return null;
+    if (!this.studentId || !this.kdMateri) return 0;
     try {
       const d = JSON.parse(globalThis.localStorage.getItem(this._timerKey()) || "null");
-      if (!d) return null;
+      if (!d) return 0;
       const sisa = d.duration - Math.floor((Date.now() - d.start) / 1000);
       return sisa > 0 ? sisa : 0;
     } catch (_) {
-      return null;
+      return 0;
     }
   }
 
@@ -295,7 +295,9 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
   _cobaResumeTimer() {
     const sisa = this._bacaSisaWaktu();
     const kuota = this.maxRetake === 0 || this._attemptKe < this.maxRetake + 1;
-    if (sisa && sisa > 0 && kuota) {
+    
+    // Fix: Handle null/undefined and proper quota check
+    if (kuota && sisa != null && sisa > 0) {
       this._mulai = true;
       this._resumeRemaining = sisa;
     }
