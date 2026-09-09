@@ -15,7 +15,7 @@ Belajar dan berlatih setiap saat!
 Semboyan
 --------
 
-> Ilmu itu ada dimana-mana, pengetahuan dimana-mana tersebar, kalau kita bersedia membaca, dan bersedia mendengar.
+> Bagiku lebih baik tangis kesedihanmu, daripada kelak tangis penyesalanmu. - Felix Siauw
 
 ![Bila seseorang banyak melatih dan mengulang, terpaksa ataupun sukarela, dia pasti akan menguasai keahlian tertentu. Inilah namanya pembentukan kebiasaan alias habits.](files/habits.jpg)
 
