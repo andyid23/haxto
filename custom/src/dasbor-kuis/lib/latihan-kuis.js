@@ -76,6 +76,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
       _resumeRemaining: { state: true },
       _soalFileUrlCache: { state: true },
       _tabSwitchWarning: { state: true },
+      _userStarted: { state: true },
     };
   }
 
@@ -131,6 +132,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     this._resumeRemaining = null;
     this._soalFileUrlCache = "";
     this._tabSwitchWarning = false;
+    this._userStarted = false;
     this._onAuthLogin = this._onAuthLogin.bind(this);
     this._onAuthLogout = this._onAuthLogout.bind(this);
     this._onVisibilityChange = this._onVisibilityChange.bind(this);
@@ -205,13 +207,54 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     this.studentNis = "";
     this.studentAbsen = "";
     this.studentKelas = "";
-  }
+}
 
   _onVisibilityChange() {
     if (document.visibilityState === "hidden" && this._mulai && !this._selesai) {
+      // Save timer state when tab hidden
+      const remaining = this._bacaSisaWaktu();
+      if (remaining > 0) {
+        try {
+          const key = `latihan_kuis_remaining_${this.studentId}_${this.kdMateri}`;
+          globalThis.localStorage.setItem(key, String(remaining));
+        } catch (_) {}
+      }
       this._tabSwitchWarning = true;
       this.requestUpdate();
+    } else if (document.visibilityState === "visible" && this._mulai && !this._selesai) {
+      // Restore timer state when tab visible (only if quiz in progress)
+      try {
+        const key = `latihan_kuis_remaining_${this.studentId}_${this.kdMateri}`;
+        const remainingStr = globalThis.localStorage.getItem(key);
+        if (remainingStr) {
+          const remaining = parseInt(remainingStr, 10);
+          if (!isNaN(remaining) && remaining > 0) {
+            this._resumeRemaining = remaining;
+            globalThis.localStorage.removeItem(key);
+            // Explicit re-render to update timer component
+            this.requestUpdate();
+          }
+        }
+      } catch (_) {}
     }
+  }
+
+  /** Log kuis dimulai - buat verifikasi di spreadsheet. */
+  _logMulaiKuis() {
+    if (!this.studentId || !this.kdMateri) return;
+    try {
+      const key = `latihan_kuis_mulai_${this.studentId}_${this.kdMateri}`;
+      globalThis.localStorage.setItem(key, String(Date.now()));
+    } catch (_) {}
+  }
+
+  /** Log kuis selesai - buat verifikasi di spreadsheet. */
+  _logSelesaiKuis() {
+    if (!this.studentId || !this.kdMateri) return;
+    try {
+      const key = `latihan_kuis_selesai_${this.studentId}_${this.kdMateri}`;
+      globalThis.localStorage.setItem(key, String(Date.now()));
+    } catch (_) {}
   }
 
   /** Baca sesi siswa dari localStorage (TTL 24j) — agar cek status jalan saat reload. */
@@ -331,8 +374,8 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
         // Gagal → biarkan attempt (graceful), jangan kunci salah.
       })
       .finally(() => {
-        // Hanya resume timer jika quiz belum terkunci & belum selesai.
-        if (!this._terkunci && !this._selesai) {
+        // Only resume if user hasn't manually started the quiz
+        if (!this._userStarted && !this._terkunci && !this._selesai) {
           this._cobaResumeTimer();
         }
         this.requestUpdate();
@@ -381,6 +424,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
   }
 
   _onWaktuHabis() {
+    this._logSelesaiKuis();
     const kuis = this.shadowRoot && this.shadowRoot.querySelector("kuis-ledakan");
     if (kuis && kuis._screen !== "result" && typeof kuis._selesaiKuis === "function") {
       kuis._selesaiKuis();
@@ -393,6 +437,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
 
   _onKuisLog(e) {
     if (e.detail && e.detail.payload && typeof e.detail.payload.score === "number") {
+      this._logSelesaiKuis();
       this._skor = e.detail.payload.score;
       this._selesai = true;
       this._resumeRemaining = null;
@@ -417,9 +462,11 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
       this.requestUpdate();
       return;
     }
+    this._userStarted = true;
     this._terkunci = false;
     this._mulai = true;
     this._simpanWaktuMulai();
+    this._logMulaiKuis();
     await this.updateComplete;
     const kuis = this.shadowRoot && this.shadowRoot.querySelector("kuis-ledakan");
     const timer = this.shadowRoot && this.shadowRoot.querySelector("timer-kuis");
@@ -633,7 +680,8 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
           : html`
               ${this._pesan ? html`<p class="err-chip">${this._pesan}</p>` : nothing}
               <timer-kuis
-                duration="${this._resumeRemaining != null ? this._resumeRemaining : this.duration}"
+                duration="${this.duration}"
+                .remaining="${this._resumeRemaining}"
                 ?hide-controls="${this.hidePauseRestart}"
                 ?autostart="${this.timerAutostart}"
                 @timer-kuis-expired="${this._onWaktuHabis}">

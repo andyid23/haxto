@@ -49,16 +49,14 @@ export class TimerKuis extends I18NMixin(DDDSuper(LitElement)) {
 
   connectedCallback() {
     super.connectedCallback();
-    
-    // Fix: Prioritize _resumeRemaining from parent
-    if (this._resumeRemaining != null && !isNaN(this._resumeRemaining)) {
-      this._remaining = this._resumeRemaining;
-    } else if (this.remaining != null && !isNaN(this.remaining)) {
+
+    // Prioritize: remaining (from parent for resume) > duration
+    if (this.remaining != null && !isNaN(this.remaining) && this.remaining > 0) {
       this._remaining = this.remaining;
     } else {
       this._remaining = this.duration;
     }
-    
+
     // Only autostart if timer should actually run
     if (this.autostart && this._remaining > 0) {
       this.start();
@@ -71,14 +69,19 @@ export class TimerKuis extends I18NMixin(DDDSuper(LitElement)) {
   }
 
   updated(changed) {
+    // Handle remaining changes (for resume from parent)
     if (changed.has("remaining") && this.remaining != null && !isNaN(this.remaining)) {
       this._remaining = this.remaining;
-      if (this._running && this._remaining > 0) {
+      // If timer is running, restart with new value
+      if (this._running) {
         this._clearInterval();
         this._running = false;
         this.start();
       }
-    } else if (changed.has("duration") && !this._running) {
+    }
+
+    // Handle duration changes (only if not running and no remaining set)
+    if (changed.has("duration") && !this._running && this.remaining == null) {
       this._remaining = this.duration;
     }
   }

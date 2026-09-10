@@ -3478,6 +3478,16 @@
             },
             {
               "kind": "method",
+              "name": "_logMulaiKuis",
+              "description": "Log kuis dimulai - buat verifikasi di spreadsheet."
+            },
+            {
+              "kind": "method",
+              "name": "_logSelesaiKuis",
+              "description": "Log kuis selesai - buat verifikasi di spreadsheet."
+            },
+            {
+              "kind": "method",
               "name": "_loadSession",
               "description": "Baca sesi siswa dari localStorage (TTL 24j) — agar cek status jalan saat reload."
             },
@@ -4084,6 +4094,16 @@
             },
             {
               "kind": "field",
+              "name": "_userStarted",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "_userStarted"
+            },
+            {
+              "kind": "field",
               "name": "t",
               "type": {
                 "text": "object"
@@ -4483,6 +4503,14 @@
               },
               "default": "false",
               "fieldName": "_tabSwitchWarning"
+            },
+            {
+              "name": "_userStarted",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "_userStarted"
             }
           ],
           "mixins": [

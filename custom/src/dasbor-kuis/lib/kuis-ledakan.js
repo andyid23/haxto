@@ -1339,10 +1339,15 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     // Validate timer state before allowing navigation
     const active = this._getActiveQuestions();
     if (index < 0 || index >= active.length) return false;
-    
-    // Prevent navigation if timer is not running and user hasn't started
-    
-    
+     
+    // Prevent navigation if timer has expired and quiz is finished
+    if (this._screen === "result") return false;
+     
+    // Prevent navigation to unanswered questions when timer is stuck (remaining <= 0)
+    if (this.timerDuration > 0 && this._resumeRemaining !== undefined && this._resumeRemaining <= 0) {
+      if (index !== this._currentIdx) return false;
+    }
+     
     // Existing validation logic
     if (this.practiceMode) {
       // practice mode: allow full backward/forward navigation
@@ -1353,7 +1358,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     ) {
       return false;
     }
-    
+     
     return true;
   }
 
@@ -1380,6 +1385,12 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
   _goToNextQuestion() {
     const active = this._getActiveQuestions();
     if (this._currentIdx < active.length - 1) {
+      if (!this._answered && this._currentIdx >= 0) {
+        this._feedbackText = "Silakan jawab soal ini terlebih dahulu.";
+        this._feedbackPositive = false;
+        this.requestUpdate();
+        return;
+      }
       this._currentIdx++;
       this._resetState();
       this.requestUpdate();

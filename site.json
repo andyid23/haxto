@@ -444,6 +444,14 @@
             "type": "image/jpeg",
             "name": "hijab.jpg",
             "size": 29914
+          },
+          {
+            "path": "C:\\Users\\Dragon\\Documents\\github\\andyid23\\haxtheweb-kuis\\haxto\\files\\cantik.jpg",
+            "fullUrl": "/C:\\Users\\Dragon\\Documents\\github\\andyid23\\haxtheweb-kuis\\haxto/files/cantik.jpg",
+            "url": "files/cantik.jpg",
+            "type": "image/jpeg",
+            "name": "cantik.jpg",
+            "size": 39801
           }
         ],
         "hideInMenu": false,

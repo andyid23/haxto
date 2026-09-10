@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Media Pembelajaran dan Kuis Kelas X - XI Informatika SMA</title>
-  <link href="https://localhost/sites/haxto/" rel="self" />
+  <link href="https://localhost:3000/sites/haxto/" rel="self" />
   <subtitle>belajar dan melatih pemahaman informatika SMA kelas 10 dan 11 X XI</subtitle>
   <updated>2026-09-09T09:59:44.000Z</updated>
   <author>
       <name>Andy Yulianto</name>
   </author>
-  <id>https://localhost/sites/haxto/</id>
+  <id>https://localhost:3000/sites/haxto/</id>
   
   <entry>
     <title>Selamat Datang Dashbor</title>
@@ -17,7 +17,7 @@
     <summary>Welcome to your new HAX site! Click edit on the top bar to get started
 What can I do?
 We&apos;ve got a ton of blocks that are easy to use and get a lot done with little effort, so much in fact we made a l</summary>
-    <link href="https://localhost/sites/haxto/selamat-datang-dashbor"/>
+    <link href="https://localhost:3000/sites/haxto/selamat-datang-dashbor"/>
     
     <content type="html">
       <![CDATA[ 
@@ -77,7 +77,7 @@ We&apos;ve got a ton of blocks that are easy to use and get a lot done with litt
     <updated>2026-09-05T17:13:06.000Z</updated>
     <published>2026-08-23T06:35:36.000Z</published>
     <summary>Halaman ulangan harian terintegrasi dengan timer, anti-confetti, dan jawaban tersembunyi.</summary>
-    <link href="https://localhost/sites/haxto/latihan-simulasi-kuis-lm1"/>
+    <link href="https://localhost:3000/sites/haxto/latihan-simulasi-kuis-lm1"/>
     
     <content type="html">
       <![CDATA[ 
@@ -124,7 +124,7 @@ We&apos;ve got a ton of blocks that are easy to use and get a lot done with litt
     <updated>2026-09-05T17:13:06.000Z</updated>
     <published>2026-08-26T05:22:47.000Z</published>
     <summary>soal latihan </summary>
-    <link href="https://localhost/sites/haxto/lm1-materi-kuis-fase-f"/>
+    <link href="https://localhost:3000/sites/haxto/lm1-materi-kuis-fase-f"/>
     
     <content type="html">
       <![CDATA[ 
@@ -317,7 +317,7 @@ cover-image="./files/belajar.jpg"
     <summary>
 
 </summary>
-    <link href="https://localhost/sites/haxto/ulangan-harian-1-fase-f-lm1-f"/>
+    <link href="https://localhost:3000/sites/haxto/ulangan-harian-1-fase-f-lm1-f"/>
     <category term="Literasi Digital" label="Literasi Digital" />
     <content type="html">
       <![CDATA[ 
@@ -368,7 +368,7 @@ Ulangan
 
 Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban
   benar/salah ditampilkan. Setelah logi</summary>
-    <link href="https://localhost/sites/haxto/ulangan-harian-1-fase-e-lm1-e"/>
+    <link href="https://localhost:3000/sites/haxto/ulangan-harian-1-fase-e-lm1-e"/>
     
     <content type="html">
       <![CDATA[ 
@@ -413,7 +413,7 @@ Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban
     <summary>📝 Latihan Kuis Kelas X
 Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban
   benar/salah ditampilkan. Setelah login reload untuk menampilkan tombol mulai latihan ulangan</summary>
-    <link href="https://localhost/sites/haxto/latihan-simulasi-kuis-fase-e-lm1"/>
+    <link href="https://localhost:3000/sites/haxto/latihan-simulasi-kuis-fase-e-lm1"/>
     
     <content type="html">
       <![CDATA[ 
@@ -462,7 +462,7 @@ Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban
     <updated>2026-09-05T17:13:05.000Z</updated>
     <published>2026-08-31T09:51:48.000Z</published>
     <summary>📘 Cara Mengerjakan Latihan Simak materi dan pahami, lanjutkan soal latihan di bawah dengan login terlebih dahulu,   harap refresh bila tombol mulai latihan soal tidak muncul setelah login. 1. P</summary>
-    <link href="https://localhost/sites/haxto/lm1-ekosistem-periksa-fakta-metode-craap"/>
+    <link href="https://localhost:3000/sites/haxto/lm1-ekosistem-periksa-fakta-metode-craap"/>
     
     <content type="html">
       <![CDATA[ 
@@ -640,7 +640,7 @@ Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban
     <published>2026-09-01T04:15:45.000Z</published>
     <summary>
 </summary>
-    <link href="https://localhost/sites/haxto/halaman-dark-tes-bug"/>
+    <link href="https://localhost:3000/sites/haxto/halaman-dark-tes-bug"/>
     
     <content type="html">
       <![CDATA[ 
@@ -687,7 +687,7 @@ MODUL AJAR INFORMATIKA FASE F (KELAS XI)
 TOPIK: VERIFIKASI INFORMASI DAN PERIKSA FAKTA (LITERASI DIGITAL)
 1. Pendahuluan
 Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</summary>
-    <link href="https://localhost/sites/haxto/lm2-fase-f-verifikasi"/>
+    <link href="https://localhost:3000/sites/haxto/lm2-fase-f-verifikasi"/>
     
     <content type="html">
       <![CDATA[ 
@@ -1011,7 +1011,7 @@ Semboyan
 
 
 </summary>
-    <link href="https://localhost/sites/haxto/selamat-datang"/>
+    <link href="https://localhost:3000/sites/haxto/selamat-datang"/>
     
     <content type="html">
       <![CDATA[ 
@@ -1080,7 +1080,7 @@ Semboyan
 
 Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban
   benar/salah tidak ditampilkan. Setelah login reloaduntuk men</summary>
-    <link href="https://localhost/sites/haxto/ulangan-harian-2-fase-f-lm2"/>
+    <link href="https://localhost:3000/sites/haxto/ulangan-harian-2-fase-f-lm2"/>
     
     <content type="html">
       <![CDATA[ 
@@ -1126,7 +1126,19 @@ cover-image="./files/ilya-pavlov-OqtafYT5kTw-unsplash.jpg"
     <updated>2026-09-10T05:27:26.000Z</updated>
     <published>2026-09-10T05:27:26.000Z</published>
     <summary></summary>
-    <link href="https://localhost/sites/haxto/panduan-belajar"/>
+    <link href="https://localhost:3000/sites/haxto/panduan-belajar"/>
+    
+    <content type="html">
+      <![CDATA[ <p></p> ]]>
+    </content>
+  </entry>
+  <entry>
+    <title>Membangun Nalar Kritis</title>
+    <id>item-dde1c0fd-f420-4b71-810f-9c35ddb708de</id>
+    <updated>2026-09-10T05:27:34.000Z</updated>
+    <published>2026-09-10T05:27:34.000Z</published>
+    <summary></summary>
+    <link href="https://localhost:3000/sites/haxto/membangun-nalar-kritis"/>
     
     <content type="html">
       <![CDATA[ <p></p> ]]>
