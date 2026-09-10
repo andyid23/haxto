@@ -502,6 +502,22 @@
         "hideInMenu": true,
         "readtime": 1
       }
+    },
+    {
+      "id": "item-e12a0834-0a9a-410c-821b-1c23b7001872",
+      "indent": 0,
+      "location": "pages/item-e12a0834-0a9a-410c-821b-1c23b7001872/index.html",
+      "slug": "panduan-belajar",
+      "order": 0,
+      "parent": null,
+      "title": "PANDUAN BELAJAR",
+      "description": "",
+      "metadata": {
+        "created": 1789018046,
+        "updated": 1789018046,
+        "images": [],
+        "videos": []
+      }
     }
   ]
 }
