@@ -1,1 +1,2 @@
 cli: hax start haxto --theme "custom-theme"
+cli: hax site node:add --title "PANDUAN BELAJAR" --slug "aturan-belajar-siswa" --published "true"
