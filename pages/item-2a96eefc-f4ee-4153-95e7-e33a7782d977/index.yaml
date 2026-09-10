@@ -32,7 +32,7 @@ metadata:
     - files/habits.jpg
     - files/belajar.jpg
   videos: []
-  updated: 1788947983
+  updated: 1789084141
   published: true
   status: ''
   files:
@@ -76,6 +76,14 @@ metadata:
       type: image/jpeg
       name: hijab.jpg
       size: 29914
+    - path: >-
+        C:\Users\Dragon\Documents\github\andyid23\haxtheweb-kuis\haxto\files\cantik.jpg
+      fullUrl: >-
+        /C:\Users\Dragon\Documents\github\andyid23\haxtheweb-kuis\haxto/files/cantik.jpg
+      url: files/cantik.jpg
+      type: image/jpeg
+      name: cantik.jpg
+      size: 39801
   hideInMenu: false
   readtime: 1
   theme:
@@ -123,6 +131,7 @@ content: >
 
 
 
+
   </stop-note>
 
   <quiz-user-auth
@@ -139,6 +148,7 @@ content: >
 
 
 
+
   </ul>
 
   <ul><li><a href="./lm1-materi-kuis-fase-f">Link Menuju Materi Kelas
@@ -149,8 +159,10 @@ content: >
 
 
 
+
   <li><a href="./lm2-fase-f-verifikasi">Link Menuju Materi Kelas XI
   LM2</a>&#160;</li>
+
 
 
 
@@ -168,6 +180,16 @@ content: >
 
   <h2 data-style-guide="headline" data-design-treatment="vert" data-primary="8"
   data-padding="xs" data-border-radius="xs" id="h2-1282437022">Semboyan</h2>
+
+  <p></p>
+
+  <p></p>
+
+  <media-image source="files/cantik.jpg" card citation="Felix Y Siauw"
+  accent-color="grey" size="wide" offset="none" caption="Yang menarik bagi mata,
+  belum tentu menyenangkan jiwa. - Felix Siauw" modal-title="Yang menarik bagi
+  mata, belum tentu menyenangkan jiwa. - Felix Siauw"
+  _has-caption></media-image>
 
   <p></p>
 
