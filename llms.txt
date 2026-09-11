@@ -24,7 +24,6 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Selamat Datang](https://localhost:3000/sites/haxto/pages/item-2a96eefc-f4ee-4153-95e7-e33a7782d977/index.md): ULANGAN INFORMATIKA KELAS X-XI Read these important things! Link Menuju Materi Kelas X Link Menuju Materi Kelas X Semboyan
 - [Ulangan Harian 2 FASE F LM2](https://localhost:3000/sites/haxto/pages/item-cc3c0230-cd78-4c49-996b-e5f77752a46a/index.md): 📝 Kuis Verifikasi Informasi &#38; Periksa Fakta (LM2) Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban benar/salah tidak ditampilkan. Setelah login reloaduntuk men
 - [PANDUAN BELAJAR](https://localhost:3000/sites/haxto/pages/item-e12a0834-0a9a-410c-821b-1c23b7001872/index.md)
-- [Membangun Nalar Kritis](https://localhost:3000/sites/haxto/pages/item-dde1c0fd-f420-4b71-810f-9c35ddb708de/index.md)
 
 ## Optional
 - [Search index](https://localhost:3000/sites/haxto/lunrSearchIndex.json): Lunr corpus for quick full-text retrieval.

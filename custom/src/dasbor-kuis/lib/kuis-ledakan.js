@@ -1433,7 +1433,8 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     }
     this._screen = "result";
     this._maxPoints = (this.questions || []).reduce((sum, q) => sum + this._maxPoinSoal(q), 0) || 1;
-    const totalSkor = Math.round((this._score / this._maxPoints) * 100);
+    const rawSkor = Math.round((this._score / this._maxPoints) * 100);
+    const totalSkor = Math.max(0, Math.min(100, rawSkor));
 
     if (!this._confettiFired && !this.hideConfetti) {
       this._confettiFired = true;
@@ -1656,7 +1657,8 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     if (this._screen === "question") return this._renderQuestionScreen();
 
     if (this._screen === "result") {
-      const persentase = Math.round((this._score / this._maxPoints) * 100);
+      const rawPersentase = Math.round((this._score / this._maxPoints) * 100);
+      const persentase = Math.max(0, Math.min(100, rawPersentase));
       return html`
         <div class="quiz-card result-box">
           <h3 class="quiz-title">🎊 Hasil Evaluasi Anda</h3>
@@ -1691,7 +1693,8 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
 
   _renderReviewScreen() {
     const active = this._getActiveQuestions();
-    const persentase = Math.round((this._score / this._maxPoints) * 100);
+    const rawPersentase = Math.round((this._score / this._maxPoints) * 100);
+    const persentase = Math.max(0, Math.min(100, rawPersentase));
     const benarCount = [...this._answeredSet].filter((i) => {
       const ua = this._userAnswers.get(i);
       return ua && ua.isCorrect;

@@ -2003,7 +2003,7 @@ if (this.mode === "guru" || this.mode === "dosen") {
     ];
     const panggilan = daftar
       .filter(([k]) => d[k] != null && String(d[k]).trim() !== "")
-      .map(([k]) => ({ kategori: k, skor: this._num(d[k]) }));
+      .map(([k]) => ({ kategori: k, skor: Math.max(0, Math.min(100, this._num(d[k]))) }));
     if (!panggilan.length) {
       this._note = "Isi minimal satu nilai (Nilai Akhir/UTS/UAS) terlebih dahulu.";
       this.requestUpdate();
@@ -2768,7 +2768,7 @@ if (this.mode === "guru" || this.mode === "dosen") {
       .map(([kategori, v, label]) => ({
         kategori,
         label,
-        skor: this._num(v),
+        skor: Math.max(0, Math.min(100, this._num(v))),
       }));
     if (!panggilan.length) {
       this._note = "Isi minimal satu kolom nilai terlebih dahulu.";
@@ -2821,9 +2821,9 @@ if (this.mode === "guru" || this.mode === "dosen") {
     }
     const calls = [];
     if (String(d.uts).trim() !== "")
-      calls.push({ kategori: "uts", skor: this._num(d.uts) });
+      calls.push({ kategori: "uts", skor: Math.max(0, Math.min(100, this._num(d.uts))) });
     if (String(d.uas).trim() !== "")
-      calls.push({ kategori: "uas", skor: this._num(d.uas) });
+      calls.push({ kategori: "uas", skor: Math.max(0, Math.min(100, this._num(d.uas))) });
     if (!calls.length) {
       this._note = "Isi Skor UTS dan/atau UAS terlebih dahulu.";
       this.requestUpdate();
