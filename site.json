@@ -452,6 +452,14 @@
             "type": "image/jpeg",
             "name": "cantik.jpg",
             "size": 39801
+          },
+          {
+            "path": "C:\\Users\\Dragon\\Documents\\github\\andyid23\\haxtheweb-kuis\\haxto\\files\\nasihat-kebaikan.jpg",
+            "fullUrl": "/C:\\Users\\Dragon\\Documents\\github\\andyid23\\haxtheweb-kuis\\haxto/files/nasihat-kebaikan.jpg",
+            "url": "files/nasihat-kebaikan.jpg",
+            "type": "image/jpeg",
+            "name": "nasihat-kebaikan.jpg",
+            "size": 46551
           }
         ],
         "hideInMenu": false,
