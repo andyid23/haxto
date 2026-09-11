@@ -32,7 +32,7 @@ metadata:
     - files/habits.jpg
     - files/belajar.jpg
   videos: []
-  updated: 1789084141
+  updated: 1789137324
   published: true
   status: ''
   files:
@@ -84,6 +84,22 @@ metadata:
       type: image/jpeg
       name: cantik.jpg
       size: 39801
+    - path: >-
+        C:\Users\Dragon\Documents\github\andyid23\haxtheweb-kuis\haxto\files\nasihat-kebaikan.jpg
+      fullUrl: >-
+        /C:\Users\Dragon\Documents\github\andyid23\haxtheweb-kuis\haxto/files/nasihat-kebaikan.jpg
+      url: files/nasihat-kebaikan.jpg
+      type: image/jpeg
+      name: nasihat-kebaikan.jpg
+      size: 46551
+    - path: >-
+        C:\Users\Dragon\Documents\github\andyid23\haxtheweb-kuis\haxto\files\nasihat-kebaikan_1.jpg
+      fullUrl: >-
+        /C:\Users\Dragon\Documents\github\andyid23\haxtheweb-kuis\haxto/files/nasihat-kebaikan_1.jpg
+      url: files/nasihat-kebaikan_1.jpg
+      type: image/jpeg
+      name: nasihat-kebaikan_1.jpg
+      size: 46551
   hideInMenu: false
   readtime: 1
   theme:
@@ -132,6 +148,7 @@ content: >
 
 
 
+
   </stop-note>
 
   <quiz-user-auth
@@ -142,6 +159,7 @@ content: >
 
   <ul><li><a href="./lm1-ekosistem-periksa-fakta-metode-craap">Link Menuju
   Materi Kelas X</a></li>
+
 
 
 
@@ -160,8 +178,10 @@ content: >
 
 
 
+
   <li><a href="./lm2-fase-f-verifikasi">Link Menuju Materi Kelas XI
   LM2</a>&#160;</li>
+
 
 
 
@@ -180,6 +200,17 @@ content: >
 
   <h2 data-style-guide="headline" data-design-treatment="vert" data-primary="8"
   data-padding="xs" data-border-radius="xs" id="h2-1282437022">Semboyan</h2>
+
+  <p></p>
+
+  <p></p>
+
+  <media-image source="files/nasihat-kebaikan_1.jpg" citation="Kutipan Felix
+  Siauw" accent-color="grey" size="wide" offset="none" caption="Yang bijak
+  mencari kebenaran dari nasihat, yang bebal mencari kesalahan dari penasihat. -
+  Felix Siauw" box link="files/nasihat-kebaikan.jpg" modal-title="Yang bijak
+  mencari kebenaran dari nasihat, yang bebal mencari kesalahan dari penasihat. -
+  Felix Siauw" _has-caption></media-image>
 
   <p></p>
 
