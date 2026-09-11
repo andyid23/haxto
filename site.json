@@ -460,6 +460,14 @@
             "type": "image/jpeg",
             "name": "nasihat-kebaikan.jpg",
             "size": 46551
+          },
+          {
+            "path": "C:\\Users\\Dragon\\Documents\\github\\andyid23\\haxtheweb-kuis\\haxto\\files\\nasihat-kebaikan_1.jpg",
+            "fullUrl": "/C:\\Users\\Dragon\\Documents\\github\\andyid23\\haxtheweb-kuis\\haxto/files/nasihat-kebaikan_1.jpg",
+            "url": "files/nasihat-kebaikan_1.jpg",
+            "type": "image/jpeg",
+            "name": "nasihat-kebaikan_1.jpg",
+            "size": 46551
           }
         ],
         "hideInMenu": false,
