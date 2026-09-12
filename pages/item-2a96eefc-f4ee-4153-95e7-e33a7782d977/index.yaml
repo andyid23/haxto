@@ -32,7 +32,7 @@ metadata:
     - files/habits.jpg
     - files/belajar.jpg
   videos: []
-  updated: 1789137324
+  updated: 1789172848
   published: true
   status: ''
   files:
@@ -100,6 +100,22 @@ metadata:
       type: image/jpeg
       name: nasihat-kebaikan_1.jpg
       size: 46551
+    - path: >-
+        C:\Users\Dragon\Documents\github\andyid23\haxtheweb-kuis\haxto\files\sholat.jpg
+      fullUrl: >-
+        /C:\Users\Dragon\Documents\github\andyid23\haxtheweb-kuis\haxto/files/sholat.jpg
+      url: files/sholat.jpg
+      type: image/jpeg
+      name: sholat.jpg
+      size: 124745
+    - path: >-
+        C:\Users\Dragon\Documents\github\andyid23\haxtheweb-kuis\haxto\files\sholat_1.jpg
+      fullUrl: >-
+        /C:\Users\Dragon\Documents\github\andyid23\haxtheweb-kuis\haxto/files/sholat_1.jpg
+      url: files/sholat_1.jpg
+      type: image/jpeg
+      name: sholat_1.jpg
+      size: 124745
   hideInMenu: false
   readtime: 1
   theme:
@@ -149,6 +165,7 @@ content: >
 
 
 
+
   </stop-note>
 
   <quiz-user-auth
@@ -159,6 +176,7 @@ content: >
 
   <ul><li><a href="./lm1-ekosistem-periksa-fakta-metode-craap">Link Menuju
   Materi Kelas X</a></li>
+
 
 
 
@@ -179,8 +197,10 @@ content: >
 
 
 
+
   <li><a href="./lm2-fase-f-verifikasi">Link Menuju Materi Kelas XI
   LM2</a>&#160;</li>
+
 
 
 
@@ -210,7 +230,7 @@ content: >
   mencari kebenaran dari nasihat, yang bebal mencari kesalahan dari penasihat. -
   Felix Siauw" box link="files/nasihat-kebaikan.jpg" modal-title="Yang bijak
   mencari kebenaran dari nasihat, yang bebal mencari kesalahan dari penasihat. -
-  Felix Siauw" _has-caption></media-image>
+  Felix Siauw" _has-caption disable-zoom></media-image>
 
   <p></p>
 
@@ -264,6 +284,12 @@ content: >
 
   <img src="files/belajar.jpg" loading="lazy" data-padding="xs" data-margin="m"
   data-width="75"/><p></p>
+
+  <media-image source="files/sholat_1.jpg" citation="https://pin.it/21ysy6nha"
+  accent-color="grey" size="wide" offset="none" link="files/sholat.jpg"
+  figure-label-description="Pinterest sumber" caption="Apa gunanya hidup 1000
+  tahun kalau tak sholat" box modal-title="Apa gunanya hidup 1000 tahun kalau
+  tak sholat - Pinterest sumber" _has-caption></media-image>
 
   <p></p>
 
