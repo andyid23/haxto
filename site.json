@@ -476,6 +476,14 @@
             "type": "image/jpeg",
             "name": "sholat.jpg",
             "size": 124745
+          },
+          {
+            "path": "C:\\Users\\Dragon\\Documents\\github\\andyid23\\haxtheweb-kuis\\haxto\\files\\sholat_1.jpg",
+            "fullUrl": "/C:\\Users\\Dragon\\Documents\\github\\andyid23\\haxtheweb-kuis\\haxto/files/sholat_1.jpg",
+            "url": "files/sholat_1.jpg",
+            "type": "image/jpeg",
+            "name": "sholat_1.jpg",
+            "size": 124745
           }
         ],
         "hideInMenu": false,
