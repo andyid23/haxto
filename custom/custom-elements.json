@@ -3478,6 +3478,62 @@
             },
             {
               "kind": "method",
+              "name": "_enableAntiCheat"
+            },
+            {
+              "kind": "method",
+              "name": "_disableAntiCheat"
+            },
+            {
+              "kind": "method",
+              "name": "_preventCopy",
+              "parameters": [
+                {
+                  "name": "e"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_preventPaste",
+              "parameters": [
+                {
+                  "name": "e"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_preventContext",
+              "parameters": [
+                {
+                  "name": "e"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_preventSelect",
+              "parameters": [
+                {
+                  "name": "e"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_logCurangan",
+              "parameters": [
+                {
+                  "name": "type"
+                },
+                {
+                  "name": "detail"
+                }
+              ]
+            },
+            {
+              "kind": "method",
               "name": "_logMulaiKuis",
               "description": "Log kuis dimulai - buat verifikasi di spreadsheet."
             },
@@ -3558,6 +3614,23 @@
             {
               "kind": "method",
               "name": "_mulaiLatihan"
+            },
+            {
+              "kind": "method",
+              "name": "_kirimLogSession",
+              "parameters": [
+                {
+                  "name": "status"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_mulaiRemidi"
+            },
+            {
+              "kind": "method",
+              "name": "_hitungNilaiAkhir"
             },
             {
               "kind": "field",
@@ -4104,6 +4177,119 @@
             },
             {
               "kind": "field",
+              "name": "kkm",
+              "privacy": "public",
+              "type": {
+                "text": "number"
+              },
+              "default": "75",
+              "attribute": "kkm",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "remidiMode",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "remidi-mode",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "remidiSoalUrl",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "remidi-soal-url",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "nilaiAkhir",
+              "privacy": "public",
+              "type": {
+                "text": "null"
+              },
+              "default": "null",
+              "attribute": "nilaiAkhir"
+            },
+            {
+              "kind": "field",
+              "name": "sudahRemidi",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "sudahRemidi"
+            },
+            {
+              "kind": "field",
+              "name": "_needsRemidi",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "_needsRemidi"
+            },
+            {
+              "kind": "field",
+              "name": "_skorAwal",
+              "privacy": "public",
+              "type": {
+                "text": "null"
+              },
+              "default": "null",
+              "attribute": "_skorAwal"
+            },
+            {
+              "kind": "field",
+              "name": "_remidiSoal",
+              "privacy": "public",
+              "type": {
+                "text": "array"
+              },
+              "default": "[]",
+              "attribute": "_remidiSoal"
+            },
+            {
+              "kind": "field",
+              "name": "_tabSwitchCount",
+              "privacy": "public",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "attribute": "_tabSwitchCount"
+            },
+            {
+              "kind": "field",
+              "name": "_visibilityChangeCount",
+              "privacy": "public",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "attribute": "_visibilityChangeCount"
+            },
+            {
+              "kind": "field",
+              "name": "_waktuMulai",
+              "privacy": "public",
+              "type": {
+                "text": "null"
+              },
+              "default": "null",
+              "attribute": "_waktuMulai"
+            },
+            {
+              "kind": "field",
               "name": "t",
               "type": {
                 "text": "object"
@@ -4511,6 +4697,94 @@
               },
               "default": "false",
               "fieldName": "_userStarted"
+            },
+            {
+              "name": "kkm",
+              "type": {
+                "text": "number"
+              },
+              "default": "75",
+              "fieldName": "kkm"
+            },
+            {
+              "name": "remidi-mode",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "remidiMode"
+            },
+            {
+              "name": "remidi-soal-url",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "remidiSoalUrl"
+            },
+            {
+              "name": "nilaiAkhir",
+              "type": {
+                "text": "null"
+              },
+              "default": "null",
+              "fieldName": "nilaiAkhir"
+            },
+            {
+              "name": "sudahRemidi",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "sudahRemidi"
+            },
+            {
+              "name": "_needsRemidi",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "_needsRemidi"
+            },
+            {
+              "name": "_skorAwal",
+              "type": {
+                "text": "null"
+              },
+              "default": "null",
+              "fieldName": "_skorAwal"
+            },
+            {
+              "name": "_remidiSoal",
+              "type": {
+                "text": "array"
+              },
+              "default": "[]",
+              "fieldName": "_remidiSoal"
+            },
+            {
+              "name": "_tabSwitchCount",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "fieldName": "_tabSwitchCount"
+            },
+            {
+              "name": "_visibilityChangeCount",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "fieldName": "_visibilityChangeCount"
+            },
+            {
+              "name": "_waktuMulai",
+              "type": {
+                "text": "null"
+              },
+              "default": "null",
+              "fieldName": "_waktuMulai"
             }
           ],
           "mixins": [

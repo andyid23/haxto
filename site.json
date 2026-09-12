@@ -468,6 +468,14 @@
             "type": "image/jpeg",
             "name": "nasihat-kebaikan_1.jpg",
             "size": 46551
+          },
+          {
+            "path": "C:\\Users\\Dragon\\Documents\\github\\andyid23\\haxtheweb-kuis\\haxto\\files\\sholat.jpg",
+            "fullUrl": "/C:\\Users\\Dragon\\Documents\\github\\andyid23\\haxtheweb-kuis\\haxto/files/sholat.jpg",
+            "url": "files/sholat.jpg",
+            "type": "image/jpeg",
+            "name": "sholat.jpg",
+            "size": 124745
           }
         ],
         "hideInMenu": false,
