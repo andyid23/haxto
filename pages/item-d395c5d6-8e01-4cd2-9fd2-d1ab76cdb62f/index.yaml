@@ -5,11 +5,32 @@ slug: new-item
 order: 4
 parent: null
 title: New item
-description: ''
+description: |+
+  Materi Pengenalan Google Collabs
+
 metadata:
   locked: false
   created: 1789517726
   images: []
   videos: []
-  updated: 1789517726
-content: <p></p>
+  updated: 1789517971
+  theme:
+    element: journey-sidebar-theme
+    path: '@haxtheweb/journey-theme/lib/journey-sidebar-theme.js'
+    name: Journey Side
+    thumbnail: >-
+      @haxtheweb/haxcms-elements/lib/theme-screenshots/theme-journey-sidebar-theme-thumb.jpg
+    description: Start with a blank site using the Journey Side
+    category:
+      - Website
+    hidden: true
+    priority: 0
+    terrible: false
+    key: journey-sidebar-theme
+  published: true
+  hideInMenu: false
+  readtime: 1
+content: |
+
+  <p>Materi Pengenalan Google Collabs</p>
+  <p></p>
