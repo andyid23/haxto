@@ -13,20 +13,20 @@ metadata:
   created: 1789517726
   images: []
   videos: []
-  updated: 1789519486
+  updated: 1789519583
   theme:
-    element: spacebook-theme
-    path: '@haxtheweb/spacebook-theme/spacebook-theme.js'
-    name: Space Book
+    element: polaris-flex-theme
+    path: '@haxtheweb/polaris-theme/lib/polaris-flex-theme.js'
+    name: Polaris Flex
     thumbnail: >-
-      @haxtheweb/haxcms-elements/lib/theme-screenshots/theme-spacebook-theme-thumb.jpg
-    description: Start with a blank site using the Space Book
+      @haxtheweb/haxcms-elements/lib/theme-screenshots/theme-polaris-flex-theme-thumb.jpg
+    description: Start with a blank site using the Polaris Flex
     category:
       - Website
     hidden: false
-    priority: 0
+    priority: -1
     terrible: false
-    key: spacebook-theme
+    key: polaris-flex-theme
   published: true
   hideInMenu: false
   readtime: 1
@@ -54,6 +54,7 @@ content: >
   sign-in, silakan masuk menggunakan akun Google/Gmail kamu.</li>
 
 
+
   </ol>
 
   <p></p>
@@ -68,6 +69,12 @@ content: >
   <p>2. Cek Lingkungan IDE</p>
 
   <p>pilih New Notebook untuk membuat catatan baru</p>
+
+  <p>3.&#160;Ketikan perintah print (&#8220;Hello World&#8221;) di area kerja
+  editor Google Colab, kemudian jalankan program dengan menekan tombol segitiga
+  di kiri kode program</p>
+
+  <p></p>
 
   <p></p>
 

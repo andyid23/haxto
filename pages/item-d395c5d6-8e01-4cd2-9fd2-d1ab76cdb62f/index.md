@@ -7,3 +7,5 @@ Langkah-langkah
 2\. Cek Lingkungan IDE
 
 pilih New Notebook untuk membuat catatan baru
+
+3. Ketikan perintah print (“Hello World”) di area kerja editor Google Colab, kemudian jalankan program dengan menekan tombol segitiga di kiri kode program
