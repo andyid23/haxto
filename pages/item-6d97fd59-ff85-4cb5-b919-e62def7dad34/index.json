@@ -1,0 +1,18 @@
+{
+  "id": "item-6d97fd59-ff85-4cb5-b919-e62def7dad34",
+  "indent": 0,
+  "location": "pages/item-6d97fd59-ff85-4cb5-b919-e62def7dad34/index.json",
+  "slug": "copy-of-ulangan-harian-2-fase-f-lm2",
+  "order": 10,
+  "parent": null,
+  "title": "Copy of Ulangan Harian 2 FASE F LM2",
+  "description": "",
+  "metadata": {
+    "locked": false,
+    "created": 1789540077,
+    "images": [],
+    "videos": [],
+    "updated": 1789540077
+  },
+  "content": "\n<h2 id=\"h2--2080334786\">📝 Kuis Verifikasi Informasi &#38; Periksa Fakta (LM2)</h2>\n<p></p>\n<p>Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban\n  benar/salah tidak ditampilkan. Nilai akhir akan diambil dari nilai terakhir yang dikumpulkan setelah waktu habis atau semua soal terjawab. Waktu Pengerjaan Soal 10 Menit&#160;🤐</p>\n<p>Kalau <b><u>mode gelap</u></b> tidak bisa gunakan <mark>mode terang</mark> di smartphonemu&#160;😄</p>\n<!--<quiz-user-auth apps-script-url=\"https://script.google.com/macros/s/AKfycbzUtnG3jkbt5yarQr5K8zTeZDf3cceBovBe5pmz6taoCGf3gT4tU7AwzpeNc35Gt0p1/exec\" auto-login _student-id=\"\"></quiz-user-auth>-->\n\n<latihan-kuis\n  mode=\"siswa\"\n  duration=\"600\"\n  timer-autostart=\"true\"\n  hide-pause-restart=\"true\"\n  hide-confetti=\"true\"\n  hide-answers=\"true\"\n  hide-score=\"true\"\n  shuffle-questions=\"true\"\n  shuffle-choices=\"true\"\n  kategori=\"sumatif_lm\"\n  apps-script-url=\"https://script.google.com/macros/s/AKfycbzrdnwwjnmnVPYaNMdglqVe5gSWVQlEi46d9eCd9vjgPgGJ6jPi_X2P1OIEtpcXj0CU/exec\"\n  kd-materi=\"LM2\"\n  materi-url=\"./lm2-materi-kuis-fase-f\"\n  student-id=\"\"\n  judul-kuis=\"Ulangan Harian 2 Verifikasi Informasi & Periksa Fakta\"\n  allow-backward-nav=\"true\"\n  show-question-nav\n  show-sheet-link=\"false\"\n  soal-file-url=\"./files/2026-stimulus2-faseF.json\"\n  materi-file=\"./files/Fase-F-LM2.docx\"\ncover-image=\"./files/ilya-pavlov-OqtafYT5kTw-unsplash.jpg\"\n>\n</latihan-kuis>\n"
+}
