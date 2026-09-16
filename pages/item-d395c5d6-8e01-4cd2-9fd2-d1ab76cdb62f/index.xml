@@ -17,20 +17,20 @@
 </images>
 <videos>
 </videos>
-<updated>1789518172</updated>
+<updated>1789518199</updated>
 <theme>
-<element>clean-two</element>
-<path>@haxtheweb/clean-two/clean-two.js</path>
-<name>Clean Two</name>
-<thumbnail>@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-clean-two-thumb.jpg</thumbnail>
-<description>Start with a blank site using the Clean Two</description>
+<element>polaris-flex-theme</element>
+<path>@haxtheweb/polaris-theme/lib/polaris-flex-theme.js</path>
+<name>Polaris Flex</name>
+<thumbnail>@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-polaris-flex-theme-thumb.jpg</thumbnail>
+<description>Start with a blank site using the Polaris Flex</description>
 <category>
-<item>Course</item>
+<item>Website</item>
 </category>
 <hidden>false</hidden>
-<priority>0</priority>
+<priority>-1</priority>
 <terrible>false</terrible>
-<key>clean-two</key>
+<key>polaris-flex-theme</key>
 </theme>
 <published>true</published>
 <hideInMenu>false</hideInMenu>
