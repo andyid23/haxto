@@ -25,7 +25,7 @@
       "name": "haxto",
       "domain": "",
       "created": 1787457359,
-      "updated": 1789518571,
+      "updated": 1789518612,
       "logo": "",
       "version": "26.0.1"
     },
@@ -548,7 +548,7 @@
       "id": "item-d395c5d6-8e01-4cd2-9fd2-d1ab76cdb62f",
       "indent": 0,
       "location": "pages/item-d395c5d6-8e01-4cd2-9fd2-d1ab76cdb62f/index.html",
-      "slug": "new-item",
+      "slug": "google-collabs",
       "order": 4,
       "parent": null,
       "title": "Google Collabs",
@@ -558,20 +558,20 @@
         "created": 1789517726,
         "images": [],
         "videos": [],
-        "updated": 1789518571,
+        "updated": 1789518612,
         "theme": {
-          "element": "spacebook-theme",
-          "path": "@haxtheweb/spacebook-theme/spacebook-theme.js",
-          "name": "Space Book",
-          "thumbnail": "@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-spacebook-theme-thumb.jpg",
-          "description": "Start with a blank site using the Space Book",
+          "element": "simple-blog",
+          "path": "@haxtheweb/simple-blog/simple-blog.js",
+          "name": "Simple Blog",
+          "thumbnail": "@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-simple-blog-thumb.jpg",
+          "description": "Start with a blank site using the Simple Blog",
           "category": [
             "Website"
           ],
-          "hidden": false,
+          "hidden": true,
           "priority": 0,
           "terrible": false,
-          "key": "spacebook-theme"
+          "key": "simple-blog"
         },
         "published": true,
         "hideInMenu": false,

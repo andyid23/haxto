@@ -3,7 +3,7 @@
 <id>item-d395c5d6-8e01-4cd2-9fd2-d1ab76cdb62f</id>
 <indent>0</indent>
 <location>pages/item-d395c5d6-8e01-4cd2-9fd2-d1ab76cdb62f/index.xml</location>
-<slug>new-item</slug>
+<slug>google-collabs</slug>
 <order>4</order>
 <parent></parent>
 <title>Google Collabs</title>
@@ -17,20 +17,20 @@
 </images>
 <videos>
 </videos>
-<updated>1789518571</updated>
+<updated>1789518612</updated>
 <theme>
-<element>spacebook-theme</element>
-<path>@haxtheweb/spacebook-theme/spacebook-theme.js</path>
-<name>Space Book</name>
-<thumbnail>@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-spacebook-theme-thumb.jpg</thumbnail>
-<description>Start with a blank site using the Space Book</description>
+<element>simple-blog</element>
+<path>@haxtheweb/simple-blog/simple-blog.js</path>
+<name>Simple Blog</name>
+<thumbnail>@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-simple-blog-thumb.jpg</thumbnail>
+<description>Start with a blank site using the Simple Blog</description>
 <category>
 <item>Website</item>
 </category>
-<hidden>false</hidden>
+<hidden>true</hidden>
 <priority>0</priority>
 <terrible>false</terrible>
-<key>spacebook-theme</key>
+<key>simple-blog</key>
 </theme>
 <published>true</published>
 <hideInMenu>false</hideInMenu>
