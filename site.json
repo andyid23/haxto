@@ -578,7 +578,17 @@
         "hideInMenu": false,
         "readtime": 1,
         "accentColor": "purple",
-        "icon": "av:album"
+        "icon": "av:album",
+        "files": [
+          {
+            "path": "C:\\Users\\Dragon\\Documents\\github\\andyid23\\haxtheweb-kuis\\haxto\\files\\collabs.jpg",
+            "fullUrl": "/C:\\Users\\Dragon\\Documents\\github\\andyid23\\haxtheweb-kuis\\haxto/files/collabs.jpg",
+            "url": "files/collabs.jpg",
+            "type": "image/jpeg",
+            "name": "collabs.jpg",
+            "size": 42030
+          }
+        ]
       }
     }
   ]
