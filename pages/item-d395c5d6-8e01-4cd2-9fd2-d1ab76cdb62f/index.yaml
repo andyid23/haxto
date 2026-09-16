@@ -13,7 +13,7 @@ metadata:
   created: 1789517726
   images: []
   videos: []
-  updated: 1789518612
+  updated: 1789518670
   theme:
     element: simple-blog
     path: '@haxtheweb/simple-blog/simple-blog.js'
