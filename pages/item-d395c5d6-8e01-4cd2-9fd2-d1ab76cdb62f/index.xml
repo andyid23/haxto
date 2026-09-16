@@ -17,20 +17,20 @@
 </images>
 <videos>
 </videos>
-<updated>1789517971</updated>
+<updated>1789518006</updated>
 <theme>
-<element>journey-sidebar-theme</element>
-<path>@haxtheweb/journey-theme/lib/journey-sidebar-theme.js</path>
-<name>Journey Side</name>
-<thumbnail>@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-journey-sidebar-theme-thumb.jpg</thumbnail>
-<description>Start with a blank site using the Journey Side</description>
+<element>journey-theme</element>
+<path>@haxtheweb/journey-theme/journey-theme.js</path>
+<name>Journey</name>
+<thumbnail>@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-journey-theme-thumb.jpg</thumbnail>
+<description>Start with a blank site using the Journey</description>
 <category>
 <item>Website</item>
 </category>
-<hidden>true</hidden>
-<priority>0</priority>
+<hidden>false</hidden>
+<priority>-1</priority>
 <terrible>false</terrible>
-<key>journey-sidebar-theme</key>
+<key>journey-theme</key>
 </theme>
 <published>true</published>
 <hideInMenu>false</hideInMenu>
