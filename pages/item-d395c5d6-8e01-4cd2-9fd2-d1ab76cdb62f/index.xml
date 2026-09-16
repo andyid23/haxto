@@ -17,20 +17,20 @@
 </images>
 <videos>
 </videos>
-<updated>1789518092</updated>
+<updated>1789518135</updated>
 <theme>
-<element>journey-theme</element>
-<path>@haxtheweb/journey-theme/journey-theme.js</path>
-<name>Journey</name>
-<thumbnail>@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-journey-theme-thumb.jpg</thumbnail>
-<description>Start with a blank site using the Journey</description>
+<element>clean-two</element>
+<path>@haxtheweb/clean-two/clean-two.js</path>
+<name>Clean Two</name>
+<thumbnail>@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-clean-two-thumb.jpg</thumbnail>
+<description>Start with a blank site using the Clean Two</description>
 <category>
-<item>Website</item>
+<item>Course</item>
 </category>
 <hidden>false</hidden>
-<priority>-1</priority>
+<priority>0</priority>
 <terrible>false</terrible>
-<key>journey-theme</key>
+<key>clean-two</key>
 </theme>
 <published>true</published>
 <hideInMenu>false</hideInMenu>

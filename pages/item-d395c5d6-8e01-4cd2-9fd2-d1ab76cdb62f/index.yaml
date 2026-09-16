@@ -13,20 +13,19 @@ metadata:
   created: 1789517726
   images: []
   videos: []
-  updated: 1789518092
+  updated: 1789518135
   theme:
-    element: journey-theme
-    path: '@haxtheweb/journey-theme/journey-theme.js'
-    name: Journey
-    thumbnail: >-
-      @haxtheweb/haxcms-elements/lib/theme-screenshots/theme-journey-theme-thumb.jpg
-    description: Start with a blank site using the Journey
+    element: clean-two
+    path: '@haxtheweb/clean-two/clean-two.js'
+    name: Clean Two
+    thumbnail: '@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-clean-two-thumb.jpg'
+    description: Start with a blank site using the Clean Two
     category:
-      - Website
+      - Course
     hidden: false
-    priority: -1
+    priority: 0
     terrible: false
-    key: journey-theme
+    key: clean-two
   published: true
   hideInMenu: false
   readtime: 1
