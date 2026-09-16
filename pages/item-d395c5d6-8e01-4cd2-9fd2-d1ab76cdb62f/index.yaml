@@ -13,7 +13,7 @@ metadata:
   created: 1789517726
   images: []
   videos: []
-  updated: 1789528237
+  updated: 1789528799
   theme:
     element: polaris-flex-theme
     path: '@haxtheweb/polaris-theme/lib/polaris-flex-theme.js'
@@ -116,7 +116,9 @@ content: >
   kompleks karena beban pemrosesan ditangani oleh server Google.</li>
 
 
+
    <li><strong>Miskonsepsi</strong>: Google Colab hanya digunakan oleh ahli kecerdasan buatan (AI) atau ilmuwan data tingkat lanjut. <strong>Fakta</strong>: Meskipun Colab sangat powerful untuk AI, platform ini justru dirancang agar mudah diakses oleh pemula. Siswa sekolah dapat menggunakannya untuk belajar logika pemrograman dasar, membuat kalkulator sederhana, atau mengotomatisasi tugas harian.</li>
+
 
 
   </ol>
@@ -131,10 +133,13 @@ content: >
   perhitungan ke layar.</li>
 
 
+
    <li>Pintasan <code>Shift + Enter</code> adalah cara tercepat untuk menjalankan kode dalam sebuah sel.</li>
 
 
+
    <li>File Colab secara otomatis tersimpan di Google Drive dan dapat diekspor dalam format <code>.ipynb</code> atau <code>.py</code>.</li>
+
 
 
   </ul>
@@ -150,6 +155,7 @@ content: >
   <ol>
     <li>Buka Google Colab Buka aplikasi melalui link <a href="https://colab.research.google.com/" target="_blank">https://colab.research.google.com/</a>. Jika diminta untuk sign-in,
       silakan masuk menggunakan akun Google/Gmail kamu.</li>
+
 
 
 
@@ -179,16 +185,14 @@ content: >
 
   <p></p>
 
-  <video-player source="https://www.youtube.com/watch?v=LrS7dqokTLE"
-  data-width="75" data-margin="center" accent-color="grey"
-  crossorigin="anonymous" sticky-corner="none"
-  resource="#198c9992-283a-4069-32d7-9d0fe707c1f2"
+  <video-player source="https://youtu.be/RPj7Zt1FDbU" data-width="75"
+  data-margin="center" accent-color="grey" crossorigin="anonymous"
+  sticky-corner="none" resource="#198c9992-283a-4069-32d7-9d0fe707c1f2"
   prefix="oer:http://oerschema.org/ schema:http://schema.org/
   dc:http://purl.org/dc/terms/ foaf:http://xmlns.com/foaf/0.1/
   cc:http://creativecommons.org/ns# bib:http://bib.schema.org " element-visible
   lang="en" thumbnail-src="https://youtu.be/RPj7Zt1FDbU" source-type="youtube"
-  source-data="[{&quot;src&quot;:&quot;https://www.youtube.com/embed/LrS7dqokTLE&quot;,&quot;type&quot;:&quot;&quot;}]"
-  audio-description-source=""></video-player>
+  source-data="[{&quot;src&quot;:&quot;https://www.youtube.com/embed/RPj7Zt1FDbU&quot;,&quot;type&quot;:&quot;&quot;}]"></video-player>
 
   <p></p>
 
@@ -274,77 +278,11 @@ content: >
   timer-minutes="0" timer-seconds="0" hide-pause-restart _attempt-start="0"
   _resume-remaining="0" _current-idx="0" _selected-answers="{}"
   _match-answers="{}" _answered-set="{}" _user-answers="{}" _max-points="0"
-  _shuffled-questions="[]"
-  _temp-questions="[{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Apa
-  keunggulan utama menggunakan Google Colab dibandingkan menginstal Python
-  secara lokal di komputer?&quot;,&quot;hint&quot;:&quot;Colab berjalan di cloud
-  sehingga tidak memerlukan penyetelan awal di perangkat
-  lokal.&quot;,&quot;choices&quot;:[&quot;Memerlukan koneksi internet yang
-  sangat cepat untuk setiap baris kode&quot;,&quot;Tidak memerlukan proses
-  instalasi perangkat lunak dan konfigurasi lingkungan yang
-  rumit&quot;,&quot;Hanya dapat digunakan untuk menjalankan satu jenis bahasa
-  pemrograman selain Python&quot;,&quot;Menyimpan data secara permanen hanya di
-  hard disk komputer lokal&quot;,&quot;Tidak mendukung penggunaan pustaka
-  (library)
-  tambahan&quot;],&quot;correctIndex&quot;:1},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Perintah
-  Python yang benar untuk menampilkan teks \&quot;Selamat Belajar\&quot; di
-  layar output adalah...&quot;,&quot;hint&quot;:&quot;Gunakan fungsi bawaan
-  Python untuk mencetak/menampilkan
-  teks.&quot;,&quot;choices&quot;:[&quot;echo(\&quot;Selamat
-  Belajar\&quot;)&quot;,&quot;console.log(\&quot;Selamat
-  Belajar\&quot;)&quot;,&quot;print(\&quot;Selamat
-  Belajar\&quot;)&quot;,&quot;output(\&quot;Selamat
-  Belajar\&quot;)&quot;,&quot;write(\&quot;Selamat
-  Belajar\&quot;)&quot;],&quot;correctIndex&quot;:2},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Di
-  dalam antarmuka Google Colab, kombinasi tombol keyboard (shortcut) yang
-  berfungsi untuk menjalankan kode pada sel aktif dan langsung berpindah ke sel
-  di bawahnya adalah...&quot;,&quot;hint&quot;:&quot;Gunakan kombinasi tombol
-  Shift dan Enter.&quot;,&quot;choices&quot;:[&quot;Ctrl + C&quot;,&quot;Shift +
-  Enter&quot;,&quot;Alt + F4&quot;,&quot;Ctrl + S&quot;,&quot;Tab +
-  Enter&quot;],&quot;correctIndex&quot;:1},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Seorang
-  siswa baru saja membuka Google Colab untuk pertama kalinya. Langkah-langkah
-  valid yang dapat ia lakukan untuk mulai bekerja adalah...\n(1) Mengklik tombol
-  \&quot;Notebook Baru\&quot; di halaman utama.\n(2) Langsung mengetik kode di
-  mesin pencari Google.\n(3) Menambahkan sel kode baru dengan mengklik tombol
-  \&quot;+ Kode\&quot;.\n(4) Menginstal ulang sistem operasi Windows agar Python
-  bisa berjalan.&quot;,&quot;hint&quot;:&quot;Langkah yang valid adalah poin (1)
-  dan (3).&quot;,&quot;choices&quot;:[&quot;(1) dan (2)&quot;,&quot;(1) dan
-  (3)&quot;,&quot;(2) dan (4)&quot;,&quot;(1), (2), dan (3)&quot;,&quot;(2),
-  (3), dan
-  (4)&quot;],&quot;correctIndex&quot;:1},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Perhatikan
-  kode Python berikut yang dijalankan di dua sel berbeda:\nSel 1: x = 10\nSel 2:
-  print(x + 5)\nPernyataan yang benar mengenai eksekusi kode tersebut
-  adalah...\n(1) Output yang dihasilkan adalah 15.\n(2) Variabel x harus
-  didefinisikan di sel yang sama dengan perintah print agar berhasil.\n(3)
-  Google Colab mempertahankan nilai variabel x di memori selama sesi notebook
-  aktif.\n(4) Kode akan menghasilkan error karena x tidak dikenali di Sel
-  2.&quot;,&quot;hint&quot;:&quot;Variabel dalam memori sesi yang sama tetap
-  tersimpan dan dapat diakses antar-sel.&quot;,&quot;choices&quot;:[&quot;(1)
-  dan (2)&quot;,&quot;(1) dan (3)&quot;,&quot;(2) dan (4)&quot;,&quot;(1), (2),
-  dan (3)&quot;,&quot;(3) dan
-  (4)&quot;],&quot;correctIndex&quot;:1},{&quot;type&quot;:&quot;pgk&quot;,&quot;question&quot;:&quot;Tentukan
-  keabsahan dari pernyataan
-  berikut!&quot;,&quot;statements&quot;:[{&quot;text&quot;:&quot;File notebook
-  Google Colab secara default tersimpan otomatis di akun Google Drive pengguna
-  yang sedang login.&quot;,&quot;answer&quot;:true},{&quot;text&quot;:&quot;Sel
-  teks (Text Cell) di Google Colab hanya bisa digunakan untuk menulis kode
-  Python, tidak bisa untuk menulis penjelasan atau
-  dokumentasi.&quot;,&quot;answer&quot;:false}]},{&quot;type&quot;:&quot;matching&quot;,&quot;question&quot;:&quot;Pasangkan
-  istilah atau fitur di lajur kiri dengan deskripsi fungsinya yang tepat di
-  lajur
-  kanan!&quot;,&quot;leftItems&quot;:[&quot;.ipynb&quot;,&quot;print()&quot;,&quot;Google
-  Drive&quot;,&quot;Markdown&quot;],&quot;rightItems&quot;:[&quot;Fungsi dasar
-  Python untuk menampilkan output ke layar.&quot;,&quot;Format file asli
-  notebook yang menyimpan kode, output, dan teks
-  penjelasan.&quot;,&quot;Platform cloud tempat penyimpanan otomatis file
-  notebook Colab.&quot;,&quot;Bahasa markup yang digunakan di sel teks untuk
-  memformat penjelasan (seperti membuat tebal atau
-  judul).&quot;],&quot;correctPairs&quot;:{&quot;0&quot;:1,&quot;1&quot;:0,&quot;2&quot;:2,&quot;3&quot;:3}}]"
-  _editing-index="4" _temp-question-type="mc" _temp-question-points="1"
-  _temp-correct-index="1" _temp-correct-answers="[]"
-  _temp-left-items="[&quot;&quot;,&quot;&quot;]"
+  _shuffled-questions="[]" _temp-questions="[]" _editing-index="-1"
+  _temp-question-type="mc" _temp-question-points="1" _temp-correct-index="0"
+  _temp-correct-answers="[]" _temp-left-items="[&quot;&quot;,&quot;&quot;]"
   _temp-right-items="[&quot;&quot;,&quot;&quot;]" _temp-correct-pairs="{}"
-  _temp-accepted-statements="[]" _temp-statements="[]" _editor-origin="start" 
+  _temp-accepted-statements="[]" _temp-statements="[]" _editor-origin="result"
   _temp-question-text="Perhatikan kode Python berikut yang dijalankan di dua sel
   berbeda:
 
@@ -364,5 +302,5 @@ content: >
 
   (4) Kode akan menghasilkan error karena x tidak dikenali di Sel 2."
   _temp-choice0="(1) dan (2)" _temp-choice1="(1) dan (3)" _temp-choice2="(2) dan
-  (4)" _temp-choice3="(1), (2), dan (3)" _temp-choice4="(3) dan
-  (4)"></kuis-ledakan>
+  (4)" _temp-choice3="(1), (2), dan (3)" _temp-choice4="(3) dan (4)"
+  ></kuis-ledakan>
