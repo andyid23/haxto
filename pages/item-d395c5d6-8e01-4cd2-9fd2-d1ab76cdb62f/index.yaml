@@ -4,7 +4,7 @@ location: pages/item-d395c5d6-8e01-4cd2-9fd2-d1ab76cdb62f/index.yaml
 slug: new-item
 order: 4
 parent: null
-title: New item
+title: Google Collabs
 description: |+
   Materi Pengenalan Google Collabs
 
@@ -13,20 +13,20 @@ metadata:
   created: 1789517726
   images: []
   videos: []
-  updated: 1789518413
+  updated: 1789518455
   theme:
-    element: polaris-theme
-    path: '@haxtheweb/polaris-theme/polaris-theme.js'
-    name: Polaris
+    element: spacebook-theme
+    path: '@haxtheweb/spacebook-theme/spacebook-theme.js'
+    name: Space Book
     thumbnail: >-
-      @haxtheweb/haxcms-elements/lib/theme-screenshots/theme-polaris-theme-thumb.jpg
-    description: Start with a blank site using the Polaris
+      @haxtheweb/haxcms-elements/lib/theme-screenshots/theme-spacebook-theme-thumb.jpg
+    description: Start with a blank site using the Space Book
     category:
       - Website
     hidden: false
-    priority: 10
+    priority: 0
     terrible: false
-    key: polaris-theme
+    key: spacebook-theme
   published: true
   hideInMenu: false
   readtime: 1

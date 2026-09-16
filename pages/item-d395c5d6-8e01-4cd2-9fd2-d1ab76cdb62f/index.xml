@@ -6,7 +6,7 @@
 <slug>new-item</slug>
 <order>4</order>
 <parent></parent>
-<title>New item</title>
+<title>Google Collabs</title>
 <description>Materi Pengenalan Google Collabs
 
 </description>
@@ -17,20 +17,20 @@
 </images>
 <videos>
 </videos>
-<updated>1789518413</updated>
+<updated>1789518455</updated>
 <theme>
-<element>polaris-theme</element>
-<path>@haxtheweb/polaris-theme/polaris-theme.js</path>
-<name>Polaris</name>
-<thumbnail>@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-polaris-theme-thumb.jpg</thumbnail>
-<description>Start with a blank site using the Polaris</description>
+<element>spacebook-theme</element>
+<path>@haxtheweb/spacebook-theme/spacebook-theme.js</path>
+<name>Space Book</name>
+<thumbnail>@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-spacebook-theme-thumb.jpg</thumbnail>
+<description>Start with a blank site using the Space Book</description>
 <category>
 <item>Website</item>
 </category>
 <hidden>false</hidden>
-<priority>10</priority>
+<priority>0</priority>
 <terrible>false</terrible>
-<key>polaris-theme</key>
+<key>spacebook-theme</key>
 </theme>
 <published>true</published>
 <hideInMenu>false</hideInMenu>
