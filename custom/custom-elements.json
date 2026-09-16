@@ -95,6 +95,69 @@
             },
             {
               "kind": "method",
+              "name": "_handleNetworkChange",
+              "parameters": [
+                {
+                  "name": "status"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_resolveSoalUrl",
+              "parameters": [
+                {
+                  "name": "url"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_muatSoalDariFile",
+              "parameters": [
+                {
+                  "name": "url"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_sortLeaderboard",
+              "parameters": [
+                {
+                  "name": "key"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_sortPeringkat",
+              "parameters": [
+                {
+                  "name": "key"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_getSortedLeaderboardRows",
+              "parameters": [
+                {
+                  "name": "rows"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_getSortedPeringkatRows",
+              "parameters": [
+                {
+                  "name": "rows"
+                }
+              ]
+            },
+            {
+              "kind": "method",
               "name": "_loadProfile"
             },
             {
@@ -150,6 +213,18 @@
             },
             {
               "kind": "method",
+              "name": "_resolveRole"
+            },
+            {
+              "kind": "method",
+              "name": "_isGuru"
+            },
+            {
+              "kind": "method",
+              "name": "_isSiswa"
+            },
+            {
+              "kind": "method",
               "name": "_deteksiErrorBackend",
               "parameters": [
                 {
@@ -196,6 +271,15 @@
             },
             {
               "kind": "method",
+              "name": "_canonKelas",
+              "parameters": [
+                {
+                  "name": "v"
+                }
+              ]
+            },
+            {
+              "kind": "method",
               "name": "_rowValue",
               "parameters": [
                 {
@@ -203,6 +287,33 @@
                 },
                 {
                   "name": "key"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_normalizeRosterRow",
+              "parameters": [
+                {
+                  "name": "r"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_normalizeLeaderboardRow",
+              "parameters": [
+                {
+                  "name": "row"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_normalizeSiswaData",
+              "parameters": [
+                {
+                  "name": "data"
                 }
               ]
             },
@@ -218,7 +329,7 @@
             {
               "kind": "method",
               "name": "_renderDashboardPembelajaran",
-              "description": "🎯 Dashboard Pembelajaran — Kuis + Kehadiran + Nilai (via sistem-kehadiran)."
+              "description": "📚 Ruang Pertemuan — Kuis + Kehadiran + Nilai + Latihan (via sistem-kehadiran + latihan-kuis)."
             },
             {
               "kind": "method",
@@ -266,7 +377,27 @@
             },
             {
               "kind": "method",
+              "name": "_bukaKunciKuisGuru"
+            },
+            {
+              "kind": "method",
+              "name": "_generateRapor"
+            },
+            {
+              "kind": "method",
+              "name": "_simpanBobot"
+            },
+            {
+              "kind": "method",
+              "name": "_muatBobot"
+            },
+            {
+              "kind": "method",
               "name": "_renderPantauanGuru"
+            },
+            {
+              "kind": "method",
+              "name": "_materiCol"
             },
             {
               "kind": "method",
@@ -488,8 +619,19 @@
               "type": {
                 "text": "string"
               },
-              "default": "\"XI-1\"",
+              "default": "\"\"",
               "attribute": "kelas",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "tema",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "tema",
               "reflects": true
             },
             {
@@ -571,6 +713,50 @@
             },
             {
               "kind": "field",
+              "name": "soalFileUrl",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "soal-file-url",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "remidiMode",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "remidi-mode",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "remidiSoalUrl",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "remidi-soal-url",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "kkm",
+              "privacy": "public",
+              "type": {
+                "text": "number"
+              },
+              "default": "75",
+              "attribute": "kkm",
+              "reflects": true
+            },
+            {
+              "kind": "field",
               "name": "shuffleChoices",
               "privacy": "public",
               "type": {
@@ -632,6 +818,20 @@
               },
               "default": "false",
               "attribute": "_isFlushing"
+            },
+            {
+              "kind": "field",
+              "name": "_syncRetryCount",
+              "type": {
+                "text": "number"
+              },
+              "default": "0"
+            },
+            {
+              "kind": "field",
+              "name": "_networkStatus",
+              "privacy": "public",
+              "attribute": "_networkStatus"
             },
             {
               "kind": "field",
@@ -715,12 +915,142 @@
             },
             {
               "kind": "field",
+              "name": "_bobotTugas",
+              "privacy": "public",
+              "type": {
+                "text": "number"
+              },
+              "default": "1",
+              "attribute": "_bobotTugas"
+            },
+            {
+              "kind": "field",
+              "name": "_bobotLM",
+              "privacy": "public",
+              "type": {
+                "text": "number"
+              },
+              "default": "3",
+              "attribute": "_bobotLM"
+            },
+            {
+              "kind": "field",
+              "name": "_bobotSTS",
+              "privacy": "public",
+              "type": {
+                "text": "number"
+              },
+              "default": "2",
+              "attribute": "_bobotSTS"
+            },
+            {
+              "kind": "field",
+              "name": "_bobotSAS",
+              "privacy": "public",
+              "type": {
+                "text": "number"
+              },
+              "default": "2",
+              "attribute": "_bobotSAS"
+            },
+            {
+              "kind": "field",
+              "name": "_raporStatus",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "_raporStatus"
+            },
+            {
+              "kind": "field",
+              "name": "_soalFileUrlCache",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "_soalFileUrlCache"
+            },
+            {
+              "kind": "field",
+              "name": "_leaderSortKey",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"nilai\"",
+              "attribute": "_leaderSortKey"
+            },
+            {
+              "kind": "field",
+              "name": "_leaderSortDir",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"desc\"",
+              "attribute": "_leaderSortDir"
+            },
+            {
+              "kind": "field",
+              "name": "_peringkatSortKey",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"rata\"",
+              "attribute": "_peringkatSortKey"
+            },
+            {
+              "kind": "field",
+              "name": "_peringkatSortDir",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"desc\"",
+              "attribute": "_peringkatSortDir"
+            },
+            {
+              "kind": "field",
+              "name": "_unlockSid",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "_unlockSid"
+            },
+            {
+              "kind": "field",
+              "name": "_unlockMateri",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"LM1\"",
+              "attribute": "_unlockMateri"
+            },
+            {
+              "kind": "field",
+              "name": "_unlockMsg",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "_unlockMsg"
+            },
+            {
+              "kind": "field",
               "name": "_serverData",
               "privacy": "public",
               "type": {
                 "text": "object"
               },
-              "default": "{ roster: [], leaderboard: [], siswa: null, history: [], }",
+              "default": "{ roster: [], leaderboard: [], siswa: null, history: [], calendar: [], }",
               "attribute": "_serverData"
             },
             {
@@ -737,11 +1067,11 @@
             },
             {
               "kind": "field",
-              "name": "_onOnlineBound"
+              "name": "_boundHandleOnline"
             },
             {
               "kind": "field",
-              "name": "_onFocusBound"
+              "name": "_boundHandleFocus"
             },
             {
               "kind": "field",
@@ -751,6 +1081,16 @@
                 "text": "string"
               },
               "attribute": "kategori",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "role",
               "reflects": true
             },
             {
@@ -819,8 +1159,16 @@
               "type": {
                 "text": "string"
               },
-              "default": "\"XI-1\"",
+              "default": "\"\"",
               "fieldName": "kelas"
+            },
+            {
+              "name": "tema",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "tema"
             },
             {
               "name": "student-id",
@@ -861,6 +1209,13 @@
               },
               "default": "false",
               "fieldName": "allowModeSwitch"
+            },
+            {
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "role"
             },
             {
               "name": "judul-kuis",
@@ -911,6 +1266,38 @@
               "fieldName": "hideConfetti"
             },
             {
+              "name": "soal-file-url",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "soalFileUrl"
+            },
+            {
+              "name": "remidi-mode",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "remidiMode"
+            },
+            {
+              "name": "remidi-soal-url",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "remidiSoalUrl"
+            },
+            {
+              "name": "kkm",
+              "type": {
+                "text": "number"
+              },
+              "default": "75",
+              "fieldName": "kkm"
+            },
+            {
               "name": "_activeTab",
               "type": {
                 "text": "string"
@@ -923,7 +1310,7 @@
               "type": {
                 "text": "object"
               },
-              "default": "{ roster: [], leaderboard: [], siswa: null, history: [], }",
+              "default": "{ roster: [], leaderboard: [], siswa: null, history: [], calendar: [], }",
               "fieldName": "_serverData"
             },
             {
@@ -933,6 +1320,10 @@
               },
               "default": "false",
               "fieldName": "_isFlushing"
+            },
+            {
+              "name": "_networkStatus",
+              "fieldName": "_networkStatus"
             },
             {
               "name": "_loading",
@@ -1005,6 +1396,110 @@
               },
               "default": "\"\"",
               "fieldName": "_simulabankSoalUrl"
+            },
+            {
+              "name": "_bobotTugas",
+              "type": {
+                "text": "number"
+              },
+              "default": "1",
+              "fieldName": "_bobotTugas"
+            },
+            {
+              "name": "_bobotLM",
+              "type": {
+                "text": "number"
+              },
+              "default": "3",
+              "fieldName": "_bobotLM"
+            },
+            {
+              "name": "_bobotSTS",
+              "type": {
+                "text": "number"
+              },
+              "default": "2",
+              "fieldName": "_bobotSTS"
+            },
+            {
+              "name": "_bobotSAS",
+              "type": {
+                "text": "number"
+              },
+              "default": "2",
+              "fieldName": "_bobotSAS"
+            },
+            {
+              "name": "_raporStatus",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "_raporStatus"
+            },
+            {
+              "name": "_soalFileUrlCache",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "_soalFileUrlCache"
+            },
+            {
+              "name": "_leaderSortKey",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"nilai\"",
+              "fieldName": "_leaderSortKey"
+            },
+            {
+              "name": "_leaderSortDir",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"desc\"",
+              "fieldName": "_leaderSortDir"
+            },
+            {
+              "name": "_peringkatSortKey",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"rata\"",
+              "fieldName": "_peringkatSortKey"
+            },
+            {
+              "name": "_peringkatSortDir",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"desc\"",
+              "fieldName": "_peringkatSortDir"
+            },
+            {
+              "name": "_unlockSid",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "_unlockSid"
+            },
+            {
+              "name": "_unlockMateri",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"LM1\"",
+              "fieldName": "_unlockMateri"
+            },
+            {
+              "name": "_unlockMsg",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "_unlockMsg"
             }
           ],
           "mixins": [
@@ -1039,6 +1534,220 @@
           "declaration": {
             "name": "QuizDashboard",
             "module": "src/dasbor-kuis/dasbor-kuis.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/dasbor-kuis/lib/backend-api.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "BackendApi - Centralized API service for Google Apps Script backend\nExtracted from dasbor-kuis.js for better maintainability\n\nHandles: API calls, queue management, data fetching",
+          "name": "BackendApi",
+          "members": [
+            {
+              "kind": "method",
+              "name": "setUrl",
+              "parameters": [
+                {
+                  "name": "url",
+                  "description": "Apps Script web app URL",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "description": "Set the Apps Script URL"
+            },
+            {
+              "kind": "method",
+              "name": "apiGet",
+              "parameters": [
+                {
+                  "name": "params",
+                  "description": "Request parameters",
+                  "type": {
+                    "text": "Object"
+                  }
+                }
+              ],
+              "description": "Make API request to Apps Script",
+              "return": {
+                "type": {
+                  "text": "Promise<Object>"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "logActivity",
+              "parameters": [
+                {
+                  "name": "logData",
+                  "description": "Activity log data",
+                  "type": {
+                    "text": "Object"
+                  }
+                }
+              ],
+              "description": "Log activity to backend",
+              "return": {
+                "type": {
+                  "text": "Promise<void>"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_addToQueue",
+              "parameters": [
+                {
+                  "name": "logData",
+                  "description": "Log data to queue",
+                  "type": {
+                    "text": "Object"
+                  }
+                }
+              ],
+              "description": "Add log to sync queue"
+            },
+            {
+              "kind": "method",
+              "name": "flushQueue",
+              "description": "Flush sync queue to backend",
+              "return": {
+                "type": {
+                  "text": "Promise<void>"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "getStudentRoster",
+              "parameters": [
+                {
+                  "name": "kdMateri",
+                  "description": "Topic code",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "description": "Get student roster",
+              "return": {
+                "type": {
+                  "text": "Promise<Array>"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "getLeaderboard",
+              "parameters": [
+                {
+                  "name": "kdMateri",
+                  "description": "Topic code",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "description": "Get leaderboard",
+              "return": {
+                "type": {
+                  "text": "Promise<Array>"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "getScores",
+              "parameters": [
+                {
+                  "name": "kdMateri",
+                  "description": "Topic code",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "studentId",
+                  "description": "Student ID",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "description": "Get scores",
+              "return": {
+                "type": {
+                  "text": "Promise<Object>"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "getActivityHistory",
+              "parameters": [
+                {
+                  "name": "kdMateri",
+                  "description": "Topic code",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "description": "Get activity history",
+              "return": {
+                "type": {
+                  "text": "Promise<Array>"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "getBankSoal",
+              "parameters": [
+                {
+                  "name": "kdMateri",
+                  "description": "Topic code",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "description": "Get bank soal (question bank)",
+              "return": {
+                "type": {
+                  "text": "Promise<Array>"
+                }
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_appsScriptUrl",
+              "default": "appsScriptUrl"
+            },
+            {
+              "kind": "field",
+              "name": "_isFlushing",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "BackendApi",
+          "declaration": {
+            "name": "BackendApi",
+            "module": "src/dasbor-kuis/lib/backend-api.js"
           }
         }
       ]
@@ -1667,6 +2376,21 @@
             },
             {
               "kind": "method",
+              "name": "_handleKeyboard",
+              "parameters": [
+                {
+                  "name": "e"
+                }
+              ],
+              "description": "Keyboard navigation handler for accessibility.\r\nSupports:\r\n- Arrow Left/Right: Navigate between questions\r\n- Enter: Submit answer (for short answer, PGK, matching)\r\n- Number keys 1-9: Jump to question number"
+            },
+            {
+              "kind": "method",
+              "name": "_submitCurrentAnswer",
+              "description": "Submit answer based on current question type."
+            },
+            {
+              "kind": "method",
               "name": "_loadSession"
             },
             {
@@ -1764,6 +2488,32 @@
               "kind": "method",
               "name": "_saveAttempt",
               "description": "Simpan state attempt (soal, jawaban, waktu) ke localStorage."
+            },
+            {
+              "kind": "method",
+              "name": "_sessionTokenKey"
+            },
+            {
+              "kind": "method",
+              "name": "_buatSessionToken",
+              "description": "Buat token sesi unik menggunakan crypto.getRandomValues.\r\nToken disimpan di localStorage dan dikirim ke backend untuk validasi."
+            },
+            {
+              "kind": "method",
+              "name": "_saveSessionToken"
+            },
+            {
+              "kind": "method",
+              "name": "_loadSessionToken"
+            },
+            {
+              "kind": "method",
+              "name": "_clearSessionToken"
+            },
+            {
+              "kind": "method",
+              "name": "_cekSesiAktif",
+              "description": "Validasi sesi: jika ada token aktif yang belum kedaluwarsa,\r\nhambat pembukaan sesi baru (anti-multi-login)."
             },
             {
               "kind": "method",
@@ -1872,6 +2622,19 @@
             {
               "kind": "method",
               "name": "_selesaiKuis"
+            },
+            {
+              "kind": "method",
+              "name": "_logActivity",
+              "parameters": [
+                {
+                  "name": "tipe"
+                },
+                {
+                  "name": "payload",
+                  "default": "{}"
+                }
+              ]
             },
             {
               "kind": "method",
@@ -2464,6 +3227,21 @@
             },
             {
               "kind": "field",
+              "name": "_quizEngine",
+              "default": "new QuizEngine(this)"
+            },
+            {
+              "kind": "field",
+              "name": "_questionRenderer",
+              "default": "new QuestionRenderer()"
+            },
+            {
+              "kind": "field",
+              "name": "_scoreCalculator",
+              "default": "new ScoreCalculator()"
+            },
+            {
+              "kind": "field",
               "name": "_selectedAnswers",
               "privacy": "public",
               "default": "new Set()",
@@ -2641,6 +3419,26 @@
             },
             {
               "kind": "field",
+              "name": "_sessionToken",
+              "privacy": "public",
+              "type": {
+                "text": "null"
+              },
+              "default": "null",
+              "attribute": "_sessionToken"
+            },
+            {
+              "kind": "field",
+              "name": "_sessionExpired",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "_sessionExpired"
+            },
+            {
+              "kind": "field",
               "name": "_resumeRemaining",
               "privacy": "public",
               "type": {
@@ -2718,6 +3516,22 @@
               },
               "default": "false",
               "attribute": "_reviewMode"
+            },
+            {
+              "kind": "field",
+              "name": "_autoSaveInterval",
+              "privacy": "public",
+              "type": {
+                "text": "null"
+              },
+              "default": "null",
+              "attribute": "_autoSaveInterval"
+            },
+            {
+              "kind": "field",
+              "name": "_questionStartTime",
+              "privacy": "public",
+              "attribute": "_questionStartTime"
             },
             {
               "kind": "field",
@@ -3026,6 +3840,10 @@
               "fieldName": "_locked"
             },
             {
+              "name": "_questionStartTime",
+              "fieldName": "_questionStartTime"
+            },
+            {
               "name": "_lockChecked",
               "type": {
                 "text": "boolean"
@@ -3120,6 +3938,22 @@
               },
               "default": "0",
               "fieldName": "_attemptStart"
+            },
+            {
+              "name": "_sessionToken",
+              "type": {
+                "text": "null"
+              },
+              "default": "null",
+              "fieldName": "_sessionToken"
+            },
+            {
+              "name": "_sessionExpired",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "_sessionExpired"
             },
             {
               "name": "_resumeRemaining",
@@ -3255,6 +4089,14 @@
               },
               "default": "[]",
               "fieldName": "_shuffledQuestions"
+            },
+            {
+              "name": "_autoSaveInterval",
+              "type": {
+                "text": "null"
+              },
+              "default": "null",
+              "fieldName": "_autoSaveInterval"
             },
             {
               "name": "_editing",
@@ -3461,6 +4303,22 @@
             },
             {
               "kind": "method",
+              "name": "_antiCheatKey"
+            },
+            {
+              "kind": "method",
+              "name": "_saveAntiCheatState"
+            },
+            {
+              "kind": "method",
+              "name": "_restoreAntiCheatState"
+            },
+            {
+              "kind": "method",
+              "name": "_clearAntiCheatState"
+            },
+            {
+              "kind": "method",
               "name": "_onAuthLogin",
               "parameters": [
                 {
@@ -3475,6 +4333,51 @@
             {
               "kind": "method",
               "name": "_onVisibilityChange"
+            },
+            {
+              "kind": "method",
+              "name": "_onWindowBlur"
+            },
+            {
+              "kind": "method",
+              "name": "_onWindowFocus"
+            },
+            {
+              "kind": "method",
+              "name": "_cekThresholdCurang",
+              "description": "Cek apakah tab switch count sudah melewati threshold curang."
+            },
+            {
+              "kind": "method",
+              "name": "_lanjutkanKuis",
+              "description": "Dialog 3x: siswa memilih untuk lanjut kerjakan kuis."
+            },
+            {
+              "kind": "method",
+              "name": "_kumpulkanSekarang",
+              "description": "Dialog 3x: siswa memilih untuk kumpulkan nilai sekarang."
+            },
+            {
+              "kind": "method",
+              "name": "_laporKeGuru",
+              "description": "Dialog 3x: siswa laporkan ke guru, lanjutkan kuis tapi catat (reset counter)."
+            },
+            {
+              "kind": "method",
+              "name": "_onFullscreenChange"
+            },
+            {
+              "kind": "method",
+              "name": "_handleWarningKeydown",
+              "parameters": [
+                {
+                  "name": "e"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_requestFullscreen"
             },
             {
               "kind": "method",
@@ -3534,6 +4437,11 @@
             },
             {
               "kind": "method",
+              "name": "_generateSessionToken",
+              "description": "Generate session token unik untuk identifikasi attempt ini."
+            },
+            {
+              "kind": "method",
               "name": "_logMulaiKuis",
               "description": "Log kuis dimulai - buat verifikasi di spreadsheet."
             },
@@ -3541,6 +4449,32 @@
               "kind": "method",
               "name": "_logSelesaiKuis",
               "description": "Log kuis selesai - buat verifikasi di spreadsheet."
+            },
+            {
+              "kind": "method",
+              "name": "_logActivity",
+              "parameters": [
+                {
+                  "name": "tipe_aktivitas"
+                },
+                {
+                  "name": "payload_data",
+                  "default": "{}"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_sendLogDirect",
+              "parameters": [
+                {
+                  "name": "tipe_aktivitas"
+                },
+                {
+                  "name": "payload"
+                }
+              ],
+              "description": "Kirim log langsung ke backend via fetch (tidak bergantung event bubbling)"
             },
             {
               "kind": "method",
@@ -3630,7 +4564,39 @@
             },
             {
               "kind": "method",
+              "name": "_resetKunciGuru"
+            },
+            {
+              "kind": "method",
               "name": "_hitungNilaiAkhir"
+            },
+            {
+              "kind": "method",
+              "name": "_remidiKey"
+            },
+            {
+              "kind": "method",
+              "name": "_saveRemidiState"
+            },
+            {
+              "kind": "method",
+              "name": "_restoreRemidiState"
+            },
+            {
+              "kind": "method",
+              "name": "_clearRemidiState"
+            },
+            {
+              "kind": "field",
+              "name": "_effectiveRemidiMode",
+              "description": "Mode remidi efektif: true jika HAX attribute di-set ATAU (auto) ada remidiSoalUrl + skor<KKM.",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "_latihanOnlyMode",
+              "description": "Mode latihan saja (tanpa timer & tanpa lock) — popup warning tidak agresif.",
+              "readonly": true
             },
             {
               "kind": "field",
@@ -3876,7 +4842,7 @@
               "type": {
                 "text": "boolean"
               },
-              "default": "false",
+              "default": "true",
               "attribute": "allow-retake",
               "reflects": true
             },
@@ -4280,6 +5246,26 @@
             },
             {
               "kind": "field",
+              "name": "_windowBlurCount",
+              "privacy": "public",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "attribute": "_windowBlurCount"
+            },
+            {
+              "kind": "field",
+              "name": "_windowFocusCount",
+              "privacy": "public",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "attribute": "_windowFocusCount"
+            },
+            {
+              "kind": "field",
               "name": "_waktuMulai",
               "privacy": "public",
               "type": {
@@ -4290,11 +5276,84 @@
             },
             {
               "kind": "field",
+              "name": "tabSwitchThreshold",
+              "privacy": "public",
+              "type": {
+                "text": "number"
+              },
+              "default": "3",
+              "attribute": "tab-switch-threshold",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "_curangLogged",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "_curangLogged"
+            },
+            {
+              "kind": "field",
+              "name": "_warningCount",
+              "privacy": "public",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "attribute": "_warningCount"
+            },
+            {
+              "kind": "field",
+              "name": "_forceChoiceDialog",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "_forceChoiceDialog"
+            },
+            {
+              "kind": "field",
+              "name": "_sessionLogged",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "_sessionLogged"
+            },
+            {
+              "kind": "field",
+              "name": "_sessionToken",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\""
+            },
+            {
+              "kind": "field",
               "name": "t",
               "type": {
                 "text": "object"
               },
               "default": "{ ...this.t, bacaMateri: \"🔗 Buka URL Materi\", unduhMateri: \"📎 Unduh File Materi\", }"
+            },
+            {
+              "kind": "field",
+              "name": "_fullscreenWarning",
+              "privacy": "public",
+              "attribute": "_fullscreenWarning"
+            }
+          ],
+          "events": [
+            {
+              "name": "dasbor-kuis-log",
+              "type": {
+                "text": "CustomEvent"
+              }
             }
           ],
           "attributes": [
@@ -4471,7 +5530,7 @@
               "type": {
                 "text": "boolean"
               },
-              "default": "false",
+              "default": "true",
               "fieldName": "allowRetake"
             },
             {
@@ -4779,12 +5838,72 @@
               "fieldName": "_visibilityChangeCount"
             },
             {
+              "name": "_windowBlurCount",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "fieldName": "_windowBlurCount"
+            },
+            {
+              "name": "_windowFocusCount",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "fieldName": "_windowFocusCount"
+            },
+            {
+              "name": "_fullscreenWarning",
+              "fieldName": "_fullscreenWarning"
+            },
+            {
               "name": "_waktuMulai",
               "type": {
                 "text": "null"
               },
               "default": "null",
               "fieldName": "_waktuMulai"
+            },
+            {
+              "name": "tab-switch-threshold",
+              "type": {
+                "text": "number"
+              },
+              "default": "3",
+              "fieldName": "tabSwitchThreshold"
+            },
+            {
+              "name": "_curangLogged",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "_curangLogged"
+            },
+            {
+              "name": "_warningCount",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "fieldName": "_warningCount"
+            },
+            {
+              "name": "_forceChoiceDialog",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "_forceChoiceDialog"
+            },
+            {
+              "name": "_sessionLogged",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "_sessionLogged"
             }
           ],
           "mixins": [
@@ -4819,6 +5938,443 @@
           "declaration": {
             "name": "LatihanKuis",
             "module": "src/dasbor-kuis/lib/latihan-kuis.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/dasbor-kuis/lib/mode-handler.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "ModeHandler - Role-based mode switching logic\nExtracted from dasbor-kuis.js for better maintainability\n\nHandles: guru/siswa/admin mode switching based on user role",
+          "name": "ModeHandler",
+          "members": [
+            {
+              "kind": "method",
+              "name": "getModeForRole",
+              "static": true,
+              "parameters": [
+                {
+                  "name": "userRole",
+                  "description": "User's role (guru/siswa/admin)",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "requestedMode",
+                  "description": "Requested mode (guru/siswa)",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "description": "Determine mode based on user role and requested mode",
+              "return": {
+                "type": {
+                  "text": "string"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "hasAccess",
+              "static": true,
+              "parameters": [
+                {
+                  "name": "userRole",
+                  "description": "User's role",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "feature",
+                  "description": "Feature name",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "description": "Check if user has access to a specific feature",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "getRoleDisplayName",
+              "static": true,
+              "parameters": [
+                {
+                  "name": "role",
+                  "description": "Role code",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "description": "Get role display name",
+              "return": {
+                "type": {
+                  "text": "string"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "getAllowedModes",
+              "static": true,
+              "parameters": [
+                {
+                  "name": "role",
+                  "description": "User's role",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "description": "Get allowed modes for a role",
+              "return": {
+                "type": {
+                  "text": "Array<string>"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "canChangeRole",
+              "static": true,
+              "parameters": [
+                {
+                  "name": "currentRole",
+                  "description": "Current user role",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "newRole",
+                  "description": "Requested new role",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "description": "Validate role change",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "getUIConfig",
+              "static": true,
+              "parameters": [
+                {
+                  "name": "role",
+                  "description": "User's role",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "description": "Get role-based UI configuration",
+              "return": {
+                "type": {
+                  "text": "Object"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ModeHandler",
+          "declaration": {
+            "name": "ModeHandler",
+            "module": "src/dasbor-kuis/lib/mode-handler.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/dasbor-kuis/lib/question-renderer.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "QuestionRenderer",
+          "members": [
+            {
+              "kind": "method",
+              "name": "renderMC",
+              "static": true,
+              "parameters": [
+                {
+                  "name": "soal",
+                  "description": "Question data",
+                  "type": {
+                    "text": "Object"
+                  }
+                },
+                {
+                  "name": "state",
+                  "description": "Current quiz state",
+                  "type": {
+                    "text": "Object"
+                  }
+                }
+              ],
+              "description": "Render Multiple Choice question",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderPGKompleks",
+              "static": true,
+              "parameters": [
+                {
+                  "name": "soal",
+                  "description": "Question data",
+                  "type": {
+                    "text": "Object"
+                  }
+                },
+                {
+                  "name": "state",
+                  "description": "Current quiz state",
+                  "type": {
+                    "text": "Object"
+                  }
+                }
+              ],
+              "description": "Render Multiple Correct (PG Kompleks) question",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderPGK",
+              "static": true,
+              "parameters": [
+                {
+                  "name": "soal",
+                  "description": "Question data",
+                  "type": {
+                    "text": "Object"
+                  }
+                },
+                {
+                  "name": "state",
+                  "description": "Current quiz state",
+                  "type": {
+                    "text": "Object"
+                  }
+                }
+              ],
+              "description": "Render PGK (Pernyataan yang Benar/Salah) question",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderMatching",
+              "static": true,
+              "parameters": [
+                {
+                  "name": "soal",
+                  "description": "Question data",
+                  "type": {
+                    "text": "Object"
+                  }
+                },
+                {
+                  "name": "state",
+                  "description": "Current quiz state",
+                  "type": {
+                    "text": "Object"
+                  }
+                }
+              ],
+              "description": "Render Matching question",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderShortAnswer",
+              "static": true,
+              "parameters": [
+                {
+                  "name": "soal",
+                  "description": "Question data",
+                  "type": {
+                    "text": "Object"
+                  }
+                },
+                {
+                  "name": "state",
+                  "description": "Current quiz state",
+                  "type": {
+                    "text": "Object"
+                  }
+                }
+              ],
+              "description": "Render Short Answer question",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "QuestionRenderer",
+          "declaration": {
+            "name": "QuestionRenderer",
+            "module": "src/dasbor-kuis/lib/question-renderer.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/dasbor-kuis/lib/quiz-engine.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "QuizEngine - Core quiz logic module\nExtracted from kuis-ledakan.js for better maintainability\n\nHandles: quiz start, answer submission, scoring, timing",
+          "name": "QuizEngine",
+          "members": [
+            {
+              "kind": "method",
+              "name": "getAnswerTime",
+              "description": "Calculate answer timing using host's question start time",
+              "return": {
+                "type": {
+                  "text": "number"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "resetQuestionTimer",
+              "description": "Reset question timer when navigating to new question"
+            },
+            {
+              "kind": "method",
+              "name": "isSuspiciousTiming",
+              "parameters": [
+                {
+                  "name": "answerTime",
+                  "description": "Time in ms to answer",
+                  "type": {
+                    "text": "number"
+                  }
+                },
+                {
+                  "name": "minTime",
+                  "default": "3000",
+                  "description": "Minimum expected time (default 3 seconds)",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ],
+              "description": "Validate answer timing for anti-cheating",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "calculateScore",
+              "parameters": [
+                {
+                  "name": "isCorrect",
+                  "description": "Whether answer is correct",
+                  "type": {
+                    "text": "boolean"
+                  }
+                },
+                {
+                  "name": "points",
+                  "default": "1",
+                  "description": "Points for this question",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ],
+              "description": "Calculate score based on answer correctness",
+              "return": {
+                "type": {
+                  "text": "number"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "getTimingData",
+              "description": "Get answer timing data for logging",
+              "return": {
+                "type": {
+                  "text": "Object"
+                }
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_host",
+              "default": "host"
+            },
+            {
+              "kind": "field",
+              "name": "_questionStartTime",
+              "type": {
+                "text": "null"
+              },
+              "default": "null"
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "QuizEngine",
+          "declaration": {
+            "name": "QuizEngine",
+            "module": "src/dasbor-kuis/lib/quiz-engine.js"
           }
         }
       ]
@@ -4936,6 +6492,10 @@
               "name": "haxProperties",
               "static": true,
               "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "basePath"
             },
             {
               "kind": "field",
@@ -5825,6 +7385,213 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/dasbor-kuis/lib/score-calculator.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "ScoreCalculator - Scoring and result calculation\nExtracted from kuis-ledakan.js for better maintainability\n\nHandles: score calculation, result submission, leaderboard",
+          "name": "ScoreCalculator",
+          "members": [
+            {
+              "kind": "method",
+              "name": "calculatePercentage",
+              "static": true,
+              "parameters": [
+                {
+                  "name": "score",
+                  "description": "Current score",
+                  "type": {
+                    "text": "number"
+                  }
+                },
+                {
+                  "name": "maxPoints",
+                  "description": "Maximum possible points",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ],
+              "description": "Calculate total score percentage",
+              "return": {
+                "type": {
+                  "text": "number"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "formatScore",
+              "static": true,
+              "parameters": [
+                {
+                  "name": "score",
+                  "description": "Score value",
+                  "type": {
+                    "text": "number"
+                  }
+                },
+                {
+                  "name": "maxPoints",
+                  "description": "Maximum points",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ],
+              "description": "Format score for display",
+              "return": {
+                "type": {
+                  "text": "string"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "hasPassed",
+              "static": true,
+              "parameters": [
+                {
+                  "name": "score",
+                  "description": "Score value",
+                  "type": {
+                    "text": "number"
+                  }
+                },
+                {
+                  "name": "maxPoints",
+                  "description": "Maximum points",
+                  "type": {
+                    "text": "number"
+                  }
+                },
+                {
+                  "name": "kkm",
+                  "default": "70",
+                  "description": "Minimum passing grade",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ],
+              "description": "Check if score meets KKM (minimum passing grade)",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "calculateScore",
+              "parameters": [
+                {
+                  "name": "isCorrect",
+                  "description": "Whether answer is correct",
+                  "type": {
+                    "text": "boolean"
+                  }
+                },
+                {
+                  "name": "points",
+                  "default": "1",
+                  "description": "Points for this question",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ],
+              "description": "Calculate score based on answer correctness",
+              "return": {
+                "type": {
+                  "text": "number"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "prepareSubmission",
+              "static": true,
+              "parameters": [
+                {
+                  "name": "quizData",
+                  "description": "Quiz data",
+                  "type": {
+                    "text": "Object"
+                  }
+                }
+              ],
+              "description": "Prepare result data for submission",
+              "return": {
+                "type": {
+                  "text": "Object"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "getGrade",
+              "static": true,
+              "parameters": [
+                {
+                  "name": "percentage",
+                  "description": "Score percentage",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ],
+              "description": "Get score grade based on percentage",
+              "return": {
+                "type": {
+                  "text": "string"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "needsRemediation",
+              "static": true,
+              "parameters": [
+                {
+                  "name": "percentage",
+                  "description": "Score percentage",
+                  "type": {
+                    "text": "number"
+                  }
+                },
+                {
+                  "name": "kkm",
+                  "default": "70",
+                  "description": "Minimum passing grade",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ],
+              "description": "Check if score needs remediation",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ScoreCalculator",
+          "declaration": {
+            "name": "ScoreCalculator",
+            "module": "src/dasbor-kuis/lib/score-calculator.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/dasbor-kuis/lib/sistem-kehadiran.js",
       "declarations": [
         {
@@ -6550,6 +8317,360 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/dasbor-kuis/lib/tema-ceria-dasbor.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "`tema-ceria-dasbor`\nShell tema Ceria (Image 1+2) — kalender & productivity terintegrasi,\nfilter Kelas & Materi dinamis sesuai sheet Users / best practice.\nBungkus `dasbor-kuis tema=\"ceria\"` dan teruskan props.",
+          "name": "TemaCeriaDasbor",
+          "members": [
+            {
+              "kind": "field",
+              "name": "tag",
+              "static": true,
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "haxProperties",
+              "static": true,
+              "readonly": true
+            },
+            {
+              "kind": "method",
+              "name": "_apiGet",
+              "parameters": [
+                {
+                  "name": "params"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_fetchFilters"
+            },
+            {
+              "kind": "method",
+              "name": "_isAvailable",
+              "parameters": [
+                {
+                  "name": "m"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_onKelasChange",
+              "parameters": [
+                {
+                  "name": "e"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_onMateriChange",
+              "parameters": [
+                {
+                  "name": "e"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_selectProd",
+              "parameters": [
+                {
+                  "name": "m"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_monthLabel",
+              "parameters": [
+                {
+                  "name": "d"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_prevMonth"
+            },
+            {
+              "kind": "method",
+              "name": "_nextMonth"
+            },
+            {
+              "kind": "method",
+              "name": "_lmForDay",
+              "parameters": [
+                {
+                  "name": "day"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_calendarDays"
+            },
+            {
+              "kind": "method",
+              "name": "_onCalDay",
+              "parameters": [
+                {
+                  "name": "d"
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "appsScriptUrl",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "apps-script-url",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "mode",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"guru\"",
+              "attribute": "mode",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "kelas",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "kelas",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "kdMateri",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Pertemuan 1\"",
+              "attribute": "kd-materi",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "studentId",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "student-id",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "namaSiswa",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "nama-siswa",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "_opsiKelas",
+              "privacy": "public",
+              "type": {
+                "text": "array"
+              },
+              "default": "[]",
+              "attribute": "_opsiKelas"
+            },
+            {
+              "kind": "field",
+              "name": "_opsiMateri",
+              "privacy": "public",
+              "type": {
+                "text": "array"
+              },
+              "default": "[]",
+              "attribute": "_opsiMateri"
+            },
+            {
+              "kind": "field",
+              "name": "_availableLM",
+              "privacy": "public",
+              "default": "new Set()",
+              "attribute": "_availableLM"
+            },
+            {
+              "kind": "field",
+              "name": "_cal",
+              "privacy": "public",
+              "default": "new Date()",
+              "attribute": "_cal"
+            },
+            {
+              "kind": "field",
+              "name": "_prodActive",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "_prodActive"
+            },
+            {
+              "kind": "field",
+              "name": "_canonKelas"
+            }
+          ],
+          "events": [
+            {
+              "name": "kelas-change",
+              "type": {
+                "text": "CustomEvent"
+              }
+            },
+            {
+              "name": "lm-not-available",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "apps-script-url",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "appsScriptUrl"
+            },
+            {
+              "name": "mode",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"guru\"",
+              "fieldName": "mode"
+            },
+            {
+              "name": "kelas",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "kelas"
+            },
+            {
+              "name": "kd-materi",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Pertemuan 1\"",
+              "fieldName": "kdMateri"
+            },
+            {
+              "name": "student-id",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "studentId"
+            },
+            {
+              "name": "nama-siswa",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "namaSiswa"
+            },
+            {
+              "name": "_opsiKelas",
+              "type": {
+                "text": "array"
+              },
+              "default": "[]",
+              "fieldName": "_opsiKelas"
+            },
+            {
+              "name": "_opsiMateri",
+              "type": {
+                "text": "array"
+              },
+              "default": "[]",
+              "fieldName": "_opsiMateri"
+            },
+            {
+              "name": "_availableLM",
+              "default": "new Set()",
+              "fieldName": "_availableLM"
+            },
+            {
+              "name": "_cal",
+              "default": "new Date()",
+              "fieldName": "_cal"
+            },
+            {
+              "name": "_prodActive",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "_prodActive"
+            }
+          ],
+          "mixins": [
+            {
+              "name": "DDDSuper",
+              "package": "@haxtheweb/d-d-d/d-d-d.js"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "tema-ceria-dasbor",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "TemaCeriaDasbor",
+          "declaration": {
+            "name": "TemaCeriaDasbor",
+            "module": "src/dasbor-kuis/lib/tema-ceria-dasbor.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "declaration": {
+            "name": "TemaCeriaDasbor",
+            "module": "src/dasbor-kuis/lib/tema-ceria-dasbor.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/dasbor-kuis/lib/timer-kuis.js",
       "declarations": [
         {
@@ -6562,6 +8683,31 @@
               "name": "tag",
               "static": true,
               "readonly": true
+            },
+            {
+              "kind": "method",
+              "name": "_onVisChange"
+            },
+            {
+              "kind": "method",
+              "name": "_startKey"
+            },
+            {
+              "kind": "method",
+              "name": "_saveStartTime",
+              "parameters": [
+                {
+                  "name": "timestamp"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_loadStartTime"
+            },
+            {
+              "kind": "method",
+              "name": "_clearStartTime"
             },
             {
               "kind": "method",
@@ -6676,6 +8822,24 @@
               },
               "attribute": "remaining",
               "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "kdMateri",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "kd-materi"
+            },
+            {
+              "kind": "field",
+              "name": "studentId",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "student-id"
             }
           ],
           "events": [
@@ -6709,6 +8873,20 @@
               },
               "default": "false",
               "fieldName": "autostart"
+            },
+            {
+              "name": "kd-materi",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "kdMateri"
+            },
+            {
+              "name": "student-id",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "studentId"
             },
             {
               "name": "_remaining",
@@ -6784,6 +8962,10 @@
             },
             {
               "kind": "method",
+              "name": "_onVisChange"
+            },
+            {
+              "kind": "method",
               "name": "_meta",
               "parameters": [
                 {
@@ -6829,6 +9011,45 @@
             },
             {
               "kind": "method",
+              "name": "_startKey",
+              "parameters": [
+                {
+                  "name": "phase"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_saveStartTime",
+              "parameters": [
+                {
+                  "name": "phase"
+                },
+                {
+                  "name": "timestamp"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_loadStartTime",
+              "parameters": [
+                {
+                  "name": "phase"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_clearStartTime",
+              "parameters": [
+                {
+                  "name": "phase"
+                }
+              ]
+            },
+            {
+              "kind": "method",
               "name": "_tick",
               "parameters": [
                 {
@@ -6848,6 +9069,33 @@
             {
               "kind": "method",
               "name": "_renderTimer",
+              "parameters": [
+                {
+                  "name": "phase"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_onStart",
+              "parameters": [
+                {
+                  "name": "phase"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_onPause",
+              "parameters": [
+                {
+                  "name": "phase"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_onReset",
               "parameters": [
                 {
                   "name": "phase"
@@ -6948,9 +9196,39 @@
                 "text": "object"
               },
               "default": "{ ...this.t, materi: \"Waktu Materi\", kuis: \"Waktu Kuis\", start: \"Mulai\", pause: \"Jeda\", reset: \"Ulang\", done: \"Waktu habis\", }"
+            },
+            {
+              "kind": "field",
+              "name": "kdMateri",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "kd-materi"
+            },
+            {
+              "kind": "field",
+              "name": "studentId",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "student-id"
             }
           ],
           "events": [
+            {
+              "name": "timer-materi-expired",
+              "type": {
+                "text": "CustomEvent"
+              }
+            },
+            {
+              "name": "timer-kuis-expired",
+              "type": {
+                "text": "CustomEvent"
+              }
+            },
             {
               "type": {
                 "text": "CustomEvent"
@@ -6981,6 +9259,20 @@
               },
               "default": "false",
               "fieldName": "autostartMateri"
+            },
+            {
+              "name": "kd-materi",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "kdMateri"
+            },
+            {
+              "name": "student-id",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "studentId"
             },
             {
               "name": "_sisaMateri",

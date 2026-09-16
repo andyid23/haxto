@@ -45,6 +45,7 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
       kategori: { type: String, attribute: "kategori", reflect: true },
       mode: { type: String, attribute: "mode", reflect: true },
       kelas: { type: String, attribute: "kelas", reflect: true },
+      tema: { type: String, attribute: "tema", reflect: true },
       studentId: { type: String, attribute: "student-id", reflect: true },
       namaSiswa: { type: String, attribute: "nama-siswa", reflect: true },
       nis: { type: String, attribute: "nis", reflect: true },
@@ -54,6 +55,7 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
         attribute: "allow-mode-switch",
         reflect: true,
       },
+      role: { type: String, attribute: "role", reflect: true },
       judulKuis: { type: String, attribute: "judul-kuis", reflect: true },
       questions: {
         type: Array,
@@ -112,9 +114,14 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
         attribute: "hide-confetti",
         reflect: true,
       },
+      soalFileUrl: { type: String, attribute: "soal-file-url", reflect: true },
+      remidiMode: { type: Boolean, attribute: "remidi-mode", reflect: true },
+      remidiSoalUrl: { type: String, attribute: "remidi-soal-url", reflect: true },
+      kkm: { type: Number, attribute: "kkm", reflect: true },
       _activeTab: { state: true },
       _serverData: { state: true },
       _isFlushing: { state: true },
+      _networkStatus: { state: true },
       _loading: { state: true },
       _serverError: { state: true },
       _peringkatKelas: { state: true },
@@ -125,6 +132,19 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
       _soalText: { state: true },
       _copasTSV: { state: true },
       _simulabankSoalUrl: { state: true },
+      _bobotTugas: { state: true },
+      _bobotLM: { state: true },
+      _bobotSTS: { state: true },
+      _bobotSAS: { state: true },
+      _raporStatus: { state: true },
+      _soalFileUrlCache: { state: true },
+      _leaderSortKey: { state: true },
+      _leaderSortDir: { state: true },
+      _peringkatSortKey: { state: true },
+      _peringkatSortDir: { state: true },
+      _unlockSid: { state: true },
+      _unlockMateri: { state: true },
+      _unlockMsg: { state: true },
     };
   }
 
@@ -144,11 +164,11 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
         designTreatment: false,
       },
       gizmo: {
-        title: "Dasbor Evaluasi Terintegrasi V5",
-        description: "Dasbor monitoring Guru, Leaderboard Kelas, dan ruang evaluasi mandiri siswa.",
+        title: "Dasbor Guru — Evaluasi & Pantauan Kelas",
+        description: "Dasbor Guru terpadu: Pantauan Kelas, Leaderboard, Peringkat, Ruang Pertemuan (Kuis & Nilai per Pertemuan), Input Nilai, Bank Soal, dan Diskusi. Mode Siswa menampilkan Rapor & Ruang Belajar.",
         icon: "icons:dashboard",
         color: "indigo",
-        tags: ["Dasbor", "Evaluasi", "Monitoring"],
+        tags: ["Dasbor", "Evaluasi", "Monitoring", "Guru"],
         meta: { author: "andyinformatika23-hash" },
       },
       settings: {
@@ -170,11 +190,11 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
           {
             property: "mode",
             title: "Mode Tampilan",
-            description: "Mode Guru menampilkan seluruh tab admin (Pantauan, Leaderboard, Peringkat Nilai Bimbingan Kelas, Dashboard Pembelajaran, Input Nilai, Kuis, Diskusi, Edit Soal, Atur); Mode Siswa menampilkan hasil nilai & evaluasi mandiri. Label 'dosen' kini untuk kemunduran dan diperlakukan sebagai Guru.",
+            description: "Guru: Pantauan Kelas + Leaderboard + Peringkat + Ruang Pertemuan (Kuis & Nilai per Pertemuan) + Input Nilai + Bank Soal + Diskusi + Pengaturan. Siswa: Rapor & Ruang Pertemuan (Evaluasi mandiri).",
             inputMethod: "select",
             options: {
-              guru: "Guru - Admin Kelas Lengkap",
-              siswa: "Siswa - Hasil Nilai & Evaluasi Mandiri",
+              guru: "Guru - Dasbor Kelas Lengkap",
+              siswa: "Siswa - Rapor & Ruang Belajar",
             },
           },
           {
@@ -188,6 +208,42 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
             title: "Kelas (Filter Guru)",
             description: "Filter pantauan guru per kelas, misal: XI-1. Kosongkan untuk semua kelas.",
             inputMethod: "textfield",
+          },
+          {
+            property: "soalFileUrl",
+            title: "File Soal JSON (per LM)",
+            description: "URL file JSON soal (array). Jika diisi, soal dimuat dari file per kdMateri/LM — seperti latihan-kuis soal-file-url. Kosongkan untuk pakai questions inline atau Bank Soal sheet.",
+            inputMethod: "haxupload",
+            required: false,
+          },
+          {
+            property: "remidiMode",
+            title: "Aktifkan Mode Remidi",
+            inputMethod: "boolean",
+            description: "Jika aktif, siswa dengan nilai < KKM bisa mengerjakan remidi.",
+          },
+          {
+            property: "remidiSoalUrl",
+            title: "URL Soal Remidi (JSON)",
+            inputMethod: "haxupload",
+            description: "File .json soal remidi; digunakan jika siswa tidak mencapai KKM.",
+          },
+          {
+            property: "kkm",
+            title: "KKM (Kriteria Ketuntasan Minimal)",
+            inputMethod: "number",
+            description: "Nilai minimum untuk lulus. Default 75. Jika nilai < KKM, siswa harus remidi.",
+            default: 75,
+          },
+          {
+            property: "tema",
+            title: "Tema Visual",
+            description: "Tema tampilan: default (DDD polos) atau ceria (pastel bermain, kalender & kartu kursus seperti referensi).",
+            inputMethod: "select",
+            options: {
+              "": "Default — DDD",
+              ceria: "Ceria — Pastel Bermain (Image 1+2)",
+            },
           },
           {
             property: "studentId",
@@ -216,12 +272,12 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
           {
             property: "judulKuis",
             title: "Judul Kuis Evaluasi",
-            description: "Judul kartu kuis pada tab Evaluasi Kuis (dapat diedit oleh guru/dosen).",
+            description: "Judul kartu kuis pada tab Evaluasi (dapat diedit Guru).",
             inputMethod: "textfield",
           },
           {
             property: "questions",
-            title: "Soal Bank (Json) - Edit Guru/Dosen",
+            title: "Soal Bank (Json) - Edit Guru",
             description: "Array soal AKM: PG {question, choices, correctIndex}, PG kompleks {correctAnswers:[0,2]}, PGK {type:'pgk', statements:[{text,answer}]}, menjodohkan {type:'matching', leftItems, rightItems, correctPairs}, isian {type:'shortAnswer', acceptedAnswers}, gambar soal {image}, pilihan bergambar {text,image}. Kosongkan untuk memuat otomatis dari Bank Soal sheet.",
             inputMethod: "code-editor",
           },
@@ -286,7 +342,8 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
     this.forumApiUrl = "";
     this.kdMateri = "Pertemuan 1";
     this.mode = "guru";
-    this.kelas = "XI-1";
+    this.kelas = "";
+    this.tema = "";
     this.studentId = "STD-65108053";
     this.namaSiswa = "Andy Yulianto";
     this.nis = "";
@@ -294,12 +351,18 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
     this.allowModeSwitch = false;
     this.judulKuis = "Evaluasi Kuis Interaktif";
     this.questions = [];
+    this.soalFileUrl = "";
+    this.remidiMode = false;
+    this.remidiSoalUrl = "";
+    this.kkm = 75;
     this.shuffleChoices = false;
     this.hideAnswers = false;
     this.hideScore = false;
     this.hideConfetti = false;
     this._activeTab = "pantauan";
     this._isFlushing = false;
+    this._syncRetryCount = 0;
+    this._networkStatus = globalThis.navigator?.onLine ? "online" : "offline";
     this._loading = false;
     this._serverError = "";
     this._peringkatKelas = "";
@@ -308,17 +371,31 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
     this._note = "";
     this._copasTSV = null;
     this._simulabankSoalUrl = "";
+    this._bobotTugas = 1;
+    this._bobotLM = 3;
+    this._bobotSTS = 2;
+    this._bobotSAS = 2;
+    this._raporStatus = "";
+    this._soalFileUrlCache = "";
+    this._leaderSortKey = "nilai";
+    this._leaderSortDir = "desc";
+    this._peringkatSortKey = "rata";
+    this._peringkatSortDir = "desc";
+    this._unlockSid = "";
+    this._unlockMateri = "LM1";
+    this._unlockMsg = "";
     this._serverData = {
       roster: [],
       leaderboard: [],
       siswa: null,
       history: [],
+      calendar: [],
     };
     this._onUserLoginBound = this._onUserLogin.bind(this);
     this._onUserLogoutBound = this._onUserLogout.bind(this);
     this._onLogEventBound = this._onLogEvent.bind(this);
-    this._onOnlineBound = () => this._flushQueue();
-    this._onFocusBound = () => this._flushQueue();
+    this._boundHandleOnline = this._handleNetworkChange.bind(this, "online");
+    this._boundHandleFocus = this._flushQueue.bind(this);
   }
 
   connectedCallback() {
@@ -337,8 +414,8 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
     globalThis.addEventListener("quiz-user-login", this._onUserLoginBound);
     globalThis.addEventListener("quiz-user-logout", this._onUserLogoutBound);
     globalThis.addEventListener("dasbor-kuis-log", this._onLogEventBound);
-    globalThis.addEventListener("online", this._onOnlineBound);
-    globalThis.addEventListener("focus", this._onFocusBound);
+    globalThis.addEventListener("online", this._boundHandleOnline);
+    globalThis.addEventListener("focus", this._boundHandleFocus);
     this._flushQueue();
   }
 
@@ -346,13 +423,26 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
     globalThis.removeEventListener("quiz-user-login", this._onUserLoginBound);
     globalThis.removeEventListener("quiz-user-logout", this._onUserLogoutBound);
     globalThis.removeEventListener("dasbor-kuis-log", this._onLogEventBound);
-    globalThis.removeEventListener("online", this._onOnlineBound);
-    globalThis.removeEventListener("focus", this._onFocusBound);
+    globalThis.removeEventListener("online", this._boundHandleOnline);
+    globalThis.removeEventListener("focus", this._boundHandleFocus);
     super.disconnectedCallback();
+  }
+
+  _handleNetworkChange(status) {
+    this._networkStatus = status;
+    if (status === "online") {
+      this._syncRetryCount = 0;
+      this._flushQueue();
+    }
   }
 
   updated(changed) {
     super.updated(changed);
+    // migrasi: label lama "dosen" -> "guru" (hapus dosen, hanya guru)
+    if (this.mode === "dosen") {
+      this.mode = "guru";
+      return;
+    }
     if (changed.has("mode")) {
       this._activeTab =
         this.mode === "siswa" ? "pembelajaran" : "pantauan";
@@ -363,10 +453,99 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
       changed.has("studentId") ||
       changed.has("namaSiswa") ||
       changed.has("absen") ||
-      changed.has("nis")
+      changed.has("nis") ||
+      changed.has("appsScriptUrl") ||
+      changed.has("kdMateri") ||
+      changed.has("forumApiUrl")
     ) {
       this.fetchDataKomplit();
     }
+    if (changed.has("soalFileUrl") && this.soalFileUrl && this.soalFileUrl !== this._soalFileUrlCache) {
+      this._muatSoalDariFile(this.soalFileUrl);
+    }
+    // jika soalFileUrl mengandung placeholder {kdMateri}/{lm}, muat ulang saat kdMateri ganti
+    if (changed.has("kdMateri") && this.soalFileUrl && (this.soalFileUrl.includes("{kdMateri}") || this.soalFileUrl.includes("{lm}"))) {
+      this._muatSoalDariFile(this.soalFileUrl);
+    }
+  }
+
+  _resolveSoalUrl(url) {
+    if (!url) return url;
+    const lm = String(this.kdMateri||"").trim() || "LM1";
+    const lmNum = (lm.match(/(\d+)/)||[])[1] || "1";
+    return url.replaceAll("{kdMateri}", lm).replaceAll("{lm}", `LM${lmNum}`).replaceAll("{LM}", `LM${lmNum}`);
+  }
+
+  async _muatSoalDariFile(url) {
+    const resolved = this._resolveSoalUrl(url);
+    this._soalFileUrlCache = url;
+    try {
+      const r = await fetch(resolved);
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      const d = await r.json();
+      if (!Array.isArray(d) || d.length === 0) throw new Error("Bukan array JSON");
+      this.questions = d;
+      this._note = `✅ Soal dimuat dari file: ${d.length} soal (${resolved.split("/").pop()}) — ${this.kdMateri}`;
+    } catch (e) {
+      this._soalFileUrlCache = "";
+      this._note = "⚠️ Gagal muat soal-file-url: " + e.message + ` (${this._resolveSoalUrl(url)})`;
+    }
+    this.requestUpdate();
+  }
+
+  _sortLeaderboard(key) {
+    if (this._leaderSortKey === key) {
+      this._leaderSortDir = this._leaderSortDir === "asc" ? "desc" : "asc";
+    } else {
+      this._leaderSortKey = key;
+      this._leaderSortDir = key === "absen" || key === "nama" ? "asc" : "desc";
+    }
+    this.requestUpdate();
+  }
+
+  _sortPeringkat(key) {
+    if (this._peringkatSortKey === key) {
+      this._peringkatSortDir = this._peringkatSortDir === "asc" ? "desc" : "asc";
+    } else {
+      this._peringkatSortKey = key;
+      this._peringkatSortDir = key === "absen" || key === "nama" ? "asc" : "desc";
+    }
+    this.requestUpdate();
+  }
+
+  _getSortedLeaderboardRows(rows) {
+    const key = this._leaderSortKey || "nilai";
+    const dir = this._leaderSortDir === "asc" ? 1 : -1;
+    const sorted = [...rows].sort((a,b)=>{
+      let va, vb;
+      if (key==="absen") { va = this._num(a._absen); vb = this._num(b._absen); }
+      else if (key==="nama") { va = String(a._nama).toLowerCase(); vb = String(b._nama).toLowerCase(); return va.localeCompare(vb)*dir; }
+      else if (key==="kelas") { va = String(a._kelas).toLowerCase(); vb = String(b._kelas).toLowerCase(); return va.localeCompare(vb)*dir; }
+      else if (key==="nilai") { va = this._num(a._nilai); vb = this._num(b._nilai); }
+      else { va = this._num(a._nilai); vb = this._num(b._nilai); }
+      if (va < vb) return -1*dir;
+      if (va > vb) return 1*dir;
+      return (this._num(a._absen)-this._num(b._absen));
+    });
+    return sorted.map((r,i)=> ({...r, _rank:i+1}));
+  }
+
+  _getSortedPeringkatRows(rows) {
+    const key = this._peringkatSortKey || "rata";
+    const dir = this._peringkatSortDir === "asc" ? 1 : -1;
+    const sorted = [...rows].sort((a,b)=>{
+      let va, vb;
+      if (key==="absen") { va = this._num(a._absen); vb = this._num(b._absen); }
+      else if (key==="nama") { va = String(a._nama).toLowerCase(); vb = String(b._nama).toLowerCase(); return va.localeCompare(vb)*dir; }
+      else if (key==="kelas") { va = String(a._kelas).toLowerCase(); vb = String(b._kelas).toLowerCase(); return va.localeCompare(vb)*dir; }
+      else if (key==="rata") { va = this._num(a._rata); vb = this._num(b._rata); }
+      else if (key==="nilaiAkhir") { va = this._num(a._nilaiAkhir); vb = this._num(b._nilaiAkhir); }
+      else { va = this._num(a._rata); vb = this._num(b._rata); }
+      if (va < vb) return -1*dir;
+      if (va > vb) return 1*dir;
+      return (this._num(a._absen)-this._num(b._absen));
+    });
+    return sorted;
   }
 
   _loadProfile() {
@@ -416,6 +595,12 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
 
   _onUserLogout() {
     this._serverData = { roster: [], leaderboard: [], siswa: null, history: [] };
+    this.studentId = "";
+    this.namaSiswa = "";
+    this.nis = "";
+    this.absen = "";
+    this.kelas = "";
+    try { localStorage.clear(); } catch (_) {}
     this.requestUpdate();
   }
 
@@ -504,6 +689,21 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
       .catch((e) => ({ status: "error", message: `Jaringan: ${e.message}` }));
   }
 
+  // Role-based access: explicit role property takes precedence over mode
+  _resolveRole() {
+    if (this.role) return this.role;
+    if (this.mode === "guru" || this.mode === "dosen" || this.mode === "lecturer") {
+      return "guru";
+    }
+    return "siswa";
+  }
+  _isGuru() {
+    return this._resolveRole() === "guru";
+  }
+  _isSiswa() {
+    return this._resolveRole() === "siswa";
+  }
+
   _deteksiErrorBackend(...respon) {
     for (const r of respon) {
       if (!r) continue;
@@ -536,11 +736,15 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
     }
     this._loading = true;
     try {
-if (this.mode === "guru" || this.mode === "dosen") {
-        const [roster, leaderboard] = await Promise.all([
-          this._apiGet({ action: "getStudentRoster", kelas: this.kelas }),
-          this._apiGet({ action: "getLeaderboard", kelas: this.kelas }),
+ if (this.mode === "guru") {
+        // ambil SEMUA kelas lalu filter client-side dengan _canonKelas agar "XI - 1" == "XI-1" == "XI 1"
+        // opsi B: kalender gabung 4 sheet (15 hari/LM) — best effort, tidak blokir roster
+        const [roster, leaderboard, calRes] = await Promise.all([
+          this._apiGet({ action: "getStudentRoster", kelas: "" }),
+          this._apiGet({ action: "getLeaderboard", kelas: "" }),
+          this._apiGet({ action: "getCalendar", kelas: this.kelas || "", kdMateri: this.kdMateri || "" }).catch(()=>null),
         ]);
+        const cal = calRes && (calRes.calendar || calRes.history) ? (calRes.calendar || calRes.history) : [];
         this._serverError = this._deteksiErrorBackend(roster, leaderboard);
         const cached = this._bacaCacheLokal();
         const lb =
@@ -550,12 +754,19 @@ if (this.mode === "guru" || this.mode === "dosen") {
             : Array.isArray(leaderboard.data)
               ? leaderboard.data
               : null);
-        const rosterList = Array.isArray(roster.roster)
-          ? roster.roster.filter(
-              (r) =>
-                !this.kelas || !r.kelas || String(r.kelas) === String(this.kelas),
-            )
+        const rosterListRaw = Array.isArray(roster.roster) ? roster.roster : null;
+        const rosterList = rosterListRaw
+          ? rosterListRaw
+              .map((r) => this._normalizeRosterRow(r))
+              .filter(
+                (r) =>
+                  !this._canonKelas(this.kelas) ||
+                  !this._canonKelas(r.kelas) ||
+                  this._canonKelas(r.kelas) === this._canonKelas(this.kelas),
+              )
           : null;
+        // normalisasi leaderboard V6 -> format lama agar render tidak 0%
+        const lbNorm = lb ? lb.map((row) => this._normalizeLeaderboardRow(row)) : lb;
 
         if (this._serverError) {
           if (cached && Array.isArray(cached.roster)) {
@@ -567,7 +778,7 @@ if (this.mode === "guru" || this.mode === "dosen") {
             };
             this._serverError += " (menampilkan data cache lokal).";
           }
-        } else if (!lb) {
+        } else if (!lbNorm) {
           this._serverError =
             "getLeaderboard pada backend aktif belum mengembalikan data leaderboard (hanya daftar pertemuan/sheet). Deploy lib/codev5.gs lalu Deploy > New version.";
           this._serverData = {
@@ -576,18 +787,19 @@ if (this.mode === "guru" || this.mode === "dosen") {
             leaderboard:
               cached && Array.isArray(cached.leaderboard) ? cached.leaderboard : [],
           };
-          localStorage.setItem("a3_v5_activity_logs_cache", JSON.stringify(this._serverData));
+          // jangan cache partial saat lb kosong — hindari pollute
         } else {
           this._serverData = {
             ...this._serverData,
             roster: rosterList || [],
-            leaderboard: lb,
+            leaderboard: lbNorm,
           };
+          if (cal && cal.length) this._serverData.calendar = cal;
           localStorage.setItem("a3_v5_activity_logs_cache", JSON.stringify(this._serverData));
         }
       } else {
         const sid = this.studentId;
-        const [skor, riwayat] = await Promise.all([
+        const [skor, riwayat, calSiswa] = await Promise.all([
           this._apiGet({ action: "getScores", studentId: sid }),
           this._apiGet({
             action: "getActivityHistory",
@@ -595,7 +807,9 @@ if (this.mode === "guru" || this.mode === "dosen") {
             kdMateri: this.kdMateri,
             days: 28,
           }),
+          this._apiGet({ action: "getCalendar", studentId: sid, kelas: this.kelas||"", kdMateri: this.kdMateri||"" }).catch(()=>null),
         ]);
+        const calArr = calSiswa && (calSiswa.calendar||calSiswa.history) ? (calSiswa.calendar||calSiswa.history) : [];
         this._serverError = this._deteksiErrorBackend(skor, riwayat);
         if (this._serverError) {
           const cached = this._bacaCacheLokal();
@@ -609,10 +823,13 @@ if (this.mode === "guru" || this.mode === "dosen") {
             this._serverError += " (menampilkan data cache lokal).";
           }
         } else {
+          const siswaRaw = (skor && skor.data) || null;
+          const siswaNorm = siswaRaw ? this._normalizeSiswaData(siswaRaw) : null;
           this._serverData = {
             ...this._serverData,
-            siswa: (skor && skor.data) || null,
+            siswa: siswaNorm,
             history: (riwayat && riwayat.history) || [],
+            calendar: calArr || [],
           };
           localStorage.setItem("a3_v5_activity_logs_cache", JSON.stringify(this._serverData));
         }
@@ -704,6 +921,13 @@ if (this.mode === "guru" || this.mode === "dosen") {
     }
     if (queue.length === 0) return;
 
+    // Jika sudah gagal berturut-turut sebanyak 5 kali atau lebih, bekukan antrean sementara
+    // Ini penting agar tidak terus-menerus memakan kuota akses harian Google API saat server down
+    if (this._syncRetryCount >= 5) {
+      console.warn("[Dashboard] Sinkronisasi dibekukan sementara akibat 5x eror beruntun.");
+      return;
+    }
+
     // Kunci flush global: mencegah beberapa instansi <dasbor-kuis> mengirim
     // antrean yang sama secara bersamaan (satu id_log = satu request maksimal).
     this._isFlushing = true;
@@ -735,6 +959,8 @@ if (this.mode === "guru" || this.mode === "dosen") {
           .filter((log, i) => hasil[i] && hasil[i].status === "ok")
           .map((log) => log.id_log),
       );
+      // RESET KEGAGALAN SAAT SUKSES DITERIMA
+      this._syncRetryCount = 0;
       let masukanTerbaru = [];
       try {
         masukanTerbaru = JSON.parse(
@@ -748,17 +974,37 @@ if (this.mode === "guru" || this.mode === "dosen") {
       localStorage.setItem("a3_v5_sync_queue", JSON.stringify(sisa));
       if (sisa.length < masukanTerbaru.length) this.fetchDataKomplit();
     } catch (e) {
-      console.error("Sinkronisasi tertunda", e);
+      this._syncRetryCount++;
+      console.error("[Dashboard] Gagal terhubung ke GAS backend (Jaringan Terputus):", e);
     } finally {
       this._isFlushing = false;
       globalThis.__a3V5FlushLock = false;
       this.requestUpdate();
+
+      const remainingQueue = JSON.parse(globalThis.localStorage.getItem("a3_v5_sync_queue") || "[]");
+
+      if (remainingQueue.length > 0 && this._networkStatus === "online") {
+        const delayTime = this._syncRetryCount > 0
+          ? Math.pow(2, this._syncRetryCount) * 1000
+          : 1000;
+
+        console.log(`[Dashboard] Mencoba sinkronisasi berikutnya dalam ${delayTime / 1000} detik. (Gagal: ${this._syncRetryCount}x)`);
+
+        setTimeout(() => this._flushQueue(), delayTime);
+      }
     }
   }
 
   _num(v) {
     const n = parseInt(v);
     return isNaN(n) ? 0 : n;
+  }
+
+  _canonKelas(v) {
+    return String(v || "")
+      .trim()
+      .toLowerCase()
+      .replace(/[^a-z0-9]/g, "");
   }
 
   _rowValue(row, key) {
@@ -768,6 +1014,68 @@ if (this.mode === "guru" || this.mode === "dosen") {
       (k2) => String(k2).trim().toLowerCase() === String(key).toLowerCase(),
     );
     return k ? row[k] : "";
+  }
+
+  _normalizeRosterRow(r) {
+    if (!r || typeof r !== "object") return r;
+    const nr = { ...r };
+    // codev6 -> legacy aliases yang dipakai _renderPantauanGuru & _buildPeringkat
+    if (nr.nilaiRapor !== undefined && nr.nilaiAkhir === undefined) nr.nilaiAkhir = nr.nilaiRapor;
+    if (nr.intervalCapaian !== undefined && nr.grade === undefined) nr.grade = nr.intervalCapaian;
+    if (nr.rerataLM !== undefined && nr.uh === undefined) nr.uh = nr.rerataLM;
+    if (nr.rerataLM !== undefined && nr["Rerata_LM"] === undefined) nr["Rerata_LM"] = nr.rerataLM;
+    if (nr.sas !== undefined && nr.uas === undefined) nr.uas = nr.sas;
+    if (nr.sts !== undefined && nr.uts === undefined) nr.uts = nr.sts;
+    // pastikan numeric fields selalu ada
+    return nr;
+  }
+
+  _normalizeLeaderboardRow(row) {
+    if (!row || typeof row !== "object") return row;
+    const nr = { ...row };
+    // codev6 header: Nilai_Rapor, Interval_Capaian, Rerata_LM, STS, SAS
+    const alias = (src, dst) => {
+      if (nr[src] !== undefined && nr[dst] === undefined) nr[dst] = nr[src];
+      if (nr[src.toLowerCase()] !== undefined && nr[dst] === undefined) nr[dst] = nr[src.toLowerCase()];
+    };
+    alias("Nilai_Rapor", "Rata-rata Skor");
+    alias("Nilai_Rapor", "Nilai Akhir");
+    alias("Interval_Capaian", "Status Kuis Terakhir");
+    alias("Interval_Capaian", "Grade");
+    alias("Rerata_LM", "Rata-rata LM");
+    alias("Rerata_LM", "Rerata LM");
+    alias("STS", "Skor UTS");
+    alias("STS", "UTS");
+    alias("SAS", "Skor UAS");
+    alias("SAS", "UAS");
+    alias("STS", "Skor STS");
+    alias("SAS", "Skor SAS");
+    // StudentID alias
+    if (nr.StudentID !== undefined && nr["Student ID"] === undefined) nr["Student ID"] = nr.StudentID;
+    return nr;
+  }
+
+  _normalizeSiswaData(data) {
+    if (!data || typeof data !== "object") return data;
+    const d = { ...data };
+    // V6 -> legacy mapping untuk _renderHasilSiswa
+    if (d.nilaiRapor !== undefined && d.nilaiAkhir === undefined) d.nilaiAkhir = d.nilaiRapor;
+    if (d.intervalCapaian !== undefined && d.grade === undefined) d.grade = d.intervalCapaian;
+    if (d.rerataLM !== undefined && d.uh === undefined) d.uh = d.rerataLM;
+    if (d.rerataLM !== undefined && d.rerata_lm !== undefined && d.uh === undefined) d.uh = d.rerata_lm;
+    if (d.sts !== undefined) {
+      if (!d.uts) d.uts = { highest: d.sts, average: d.sts };
+      if (d.uts && typeof d.uts === "object" && d.uts.highest === undefined) d.uts.highest = d.sts;
+    }
+    if (d.sas !== undefined) {
+      if (!d.uas) d.uas = { highest: d.sas, average: d.sas };
+      if (d.uas && typeof d.uas === "object" && d.uas.highest === undefined) d.uas.highest = d.sas;
+    }
+    // deskripsi capaian
+    if (d.deskripsiCapaian && !d.deskripsi_capaian) d.deskripsi_capaian = d.deskripsiCapaian;
+    // ulanganHarian fallback dari rerataLM
+    if (!d.ulanganHarian && d.rerataLM !== undefined) d.ulanganHarian = { average: d.rerataLM, highest: d.rerataLM };
+    return d;
   }
 
   static get styles() {
@@ -794,7 +1102,7 @@ if (this.mode === "guru" || this.mode === "dosen") {
 
         /* Navbar */
         .navbar {
-          background: linear-gradient(120deg, #312e81 0%, #4f46e5 55%, #6d28d9 100%);
+          background: var(--ddd-primary-13);
           color: #ffffff;
           padding: var(--ddd-spacing-5) var(--ddd-spacing-6);
           display: flex;
@@ -893,7 +1201,7 @@ if (this.mode === "guru" || this.mode === "dosen") {
           color: #4338ca;
         }
         .tab-btn.active {
-          background: linear-gradient(120deg, #4f46e5, #6d28d9);
+          background: var(--ddd-primary-13);
           color: #ffffff;
           box-shadow: var(--ddd-boxShadow-sm);
         }
@@ -1270,7 +1578,7 @@ if (this.mode === "guru" || this.mode === "dosen") {
           gap: var(--ddd-spacing-2);
           margin-top: var(--ddd-spacing-4);
           padding: 10px 18px;
-          background: linear-gradient(120deg, #4f46e5, #6d28d9);
+          background: var(--ddd-primary-13);
           color: #ffffff;
           border: none;
           border-radius: var(--ddd-radius-md);
@@ -1602,7 +1910,7 @@ if (this.mode === "guru" || this.mode === "dosen") {
           border-color: var(--dk-border);
         }
         :host-context(body.dark-mode) .navbar {
-          background: linear-gradient(120deg, #1e1b4b 0%, #312e81 55%, #4c1d95 100%);
+          background: var(--ddd-primary-13);
           color: #f8fafc;
         }
         :host-context(body.dark-mode) .stat-icon.i-indigo { background: #312e81; color: #c7d2fe; }
@@ -1683,10 +1991,10 @@ if (this.mode === "guru" || this.mode === "dosen") {
         :host-context(body.dark-mode) .log-area li { border-bottom-color: var(--dk-border); }
         :host-context(body.dark-mode) .metric-mini { background: var(--dk-bg-soft); color: var(--dk-text); }
         :host-context(body.dark-mode) .metric-mini div { color: var(--dk-text-soft); }
-        :host-context(body.dark-mode) .btn-primary { background: #4f46e5; color: #f8fafc; }
-        :host-context(body.dark-mode) .btn-primary:hover { background: #6366f1; }
-        :host-context(body.dark-mode) .retry-btn { background: #4f46e5; color: #f8fafc; }
-        :host-context(body.dark-mode) .retry-btn:hover { background: #6366f1; }
+        :host-context(body.dark-mode) .btn-primary { background: var(--ddd-primary-13); color: #f8fafc; }
+        :host-context(body.dark-mode) .btn-primary:hover { background: var(--ddd-primary-14); }
+        :host-context(body.dark-mode) .retry-btn { background: var(--ddd-primary-13); color: #f8fafc; }
+        :host-context(body.dark-mode) .retry-btn:hover { background: var(--ddd-primary-14); }
         :host-context(body.dark-mode) .err-chip { background: #7f1d1d; color: #fecaca; border-color: #991b1b; }
         :host-context(body.dark-mode) .error-banner { background: #7f1d1d; color: #fecaca; border-color: #991b1b; }
         :host-context(body.dark-mode) .loading-banner { background: #1e1b4b; border-color: #4338ca; color: #c7d2fe; }
@@ -1700,6 +2008,112 @@ if (this.mode === "guru" || this.mode === "dosen") {
         :host-context(body.dark-mode) .retry-btn[style*="background:#475569"] { background: var(--dk-bg-soft) !important; color: var(--dk-text) !important; }
         :host-context(body.dark-mode) .retry-btn[style*="background:#4f46e5"] { background: #6366f1 !important; }
         :host-context(body.dark-mode) .retry-btn[style*="background:#059669"] { background: #047857 !important; }
+      `,
+      css`
+        /* ============================================================
+           TEMA CERIA — Pastel Bermain (Image 1+2) gated on [tema="ceria"]
+           Palette: periwinkle #E6E9FF, peach #FFEDD5, lavender #EDE9FE,
+           pills: anatomyBlue #3B82F6, green #10B981, pink #EC4899
+           Radius 20-24px, shadow soft, card putih, tab pill
+           ============================================================ */
+        :host([tema="ceria"]) {
+          background: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 50%, #F5EFFF 100%);
+          padding: var(--ddd-spacing-4);
+        }
+        :host([tema="ceria"]) .app-container {
+          background: #ffffff;
+          border-radius: 24px;
+          box-shadow: 0 8px 32px rgba(79,70,229,0.12), 0 2px 8px rgba(79,70,229,0.06);
+          border: 1px solid #E0E7FF;
+          overflow: hidden;
+        }
+        :host([tema="ceria"]) .navbar {
+          background: #ffffff;
+          color: #1e293b;
+          border-bottom: 1px solid #E0E7FF;
+          padding: var(--ddd-spacing-4) var(--ddd-spacing-6);
+        }
+        :host([tema="ceria"]) .navbar h1 { color: #312e81; font-size: 18px; }
+        :host([tema="ceria"]) .logo-badge {
+          background: linear-gradient(135deg, #818CF8, #C084FC);
+          color: #fff; border: none; width: 36px; height: 36px; border-radius: 12px;
+        }
+        :host([tema="ceria"]) .user-pill {
+          background: #EEF2FF; color: #4338ca; border: 1px solid #C7D2FE;
+          backdrop-filter: none;
+        }
+        :host([tema="ceria"]) .mode-switch { background: #F1F5F9; border: 1px solid #E2E8F0; }
+        :host([tema="ceria"]) .mode-btn { color: #64748b; }
+        :host([tema="ceria"]) .mode-btn.active { background: #312E81; color: #fff; }
+        :host([tema="ceria"]) .tabs {
+          background: #F8FAFF; border-bottom: 1px solid #E0E7FF;
+          padding: var(--ddd-spacing-3); gap: var(--ddd-spacing-2);
+        }
+        :host([tema="ceria"]) .tab-btn {
+          background: #fff; border: 1px solid #E0E7FF; color: #64748b;
+          border-radius: 999px; padding: 8px 16px; font-size: 12px;
+          box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+        }
+        :host([tema="ceria"]) .tab-btn:hover { background: #EEF2FF; color: #4338ca; border-color: #C7D2FE; }
+        :host([tema="ceria"]) .tab-btn.active {
+          background: #312E81; color: #fff; border-color: #312E81;
+          box-shadow: 0 4px 12px rgba(49,46,129,0.25);
+        }
+        :host([tema="ceria"]) .main-content { background: #F8FAFF; padding: var(--ddd-spacing-5); }
+        :host([tema="ceria"]) .stats-grid { gap: var(--ddd-spacing-4); }
+        :host([tema="ceria"]) .stat-card {
+          background: #fff; border: 1px solid #E0E7FF; border-radius: 20px;
+          box-shadow: 0 4px 16px rgba(79,70,229,0.06); padding: var(--ddd-spacing-5);
+        }
+        :host([tema="ceria"]) .stat-card:nth-child(1) .stat-icon { background: #DBEAFE; }
+        :host([tema="ceria"]) .stat-card:nth-child(2) .stat-icon { background: #EDE9FE; }
+        :host([tema="ceria"]) .stat-card:nth-child(3) .stat-icon { background: #FFEDD5; }
+        :host([tema="ceria"]) .stat-card:nth-child(4) .stat-icon { background: #FCE7F3; }
+        :host([tema="ceria"]) .card-siswa {
+          background: #fff; border: 1px solid #E0E7FF; border-radius: 20px;
+          box-shadow: 0 4px 16px rgba(79,70,229,0.05);
+        }
+        :host([tema="ceria"]) .card-siswa.lvl-high { border-top: 4px solid #10B981; }
+        :host([tema="ceria"]) .card-siswa.lvl-mid { border-top: 4px solid #F59E0B; }
+        :host([tema="ceria"]) .card-siswa.lvl-low { border-top: 4px solid #EF4444; }
+        :host([tema="ceria"]) .podium-box { border-radius: 20px; border: 1px solid #E0E7FF; }
+        :host([tema="ceria"]) .podium-box.rank-1 { background: linear-gradient(180deg, #FEF3C7, #fff); border-color: #FCD34D; }
+        :host([tema="ceria"]) .table-wrap, :host([tema="ceria"]) .nilai-table-wrap { border-radius: 16px; border: 1px solid #E0E7FF; }
+        :host([tema="ceria"]) .kpi-card {
+          background: #fff; border: 1px solid #E0E7FF; border-radius: 16px;
+          box-shadow: 0 2px 8px rgba(79,70,229,0.04);
+        }
+        :host([tema="ceria"]) .filter-select {
+          background: #fff; border: 1px solid #C7D2FE; border-radius: 999px;
+          padding: 6px 14px; font-size: 12px; color: #4338ca; font-weight: 600;
+        }
+        :host([tema="ceria"]) .retry-btn {
+          border-radius: 999px; padding: 8px 16px; font-size: 12px;
+        }
+        :host([tema="ceria"]) .grade-ring-card {
+          background: linear-gradient(135deg, #312E81, #7C3AED); border-radius: 20px;
+        }
+        :host([tema="ceria"]) .card-panel {
+          background: #fff; border: 1px solid #E0E7FF; border-radius: 20px;
+          box-shadow: 0 4px 16px rgba(79,70,229,0.05);
+        }
+        :host([tema="ceria"]) .detail-panel {
+          background: #F5F3FF; border: 1px solid #DDD6FE; border-radius: 20px;
+        }
+        :host([tema="ceria"]) .empty-state {
+          background: #fff; border: 2px dashed #C7D2FE; border-radius: 20px;
+        }
+        :host([tema="ceria"]) .status-footer {
+          background: #EEF2FF; border-top: 1px solid #E0E7FF; color: #64748b;
+        }
+        /* Pills productivity ala Image 1 bottom */
+        :host([tema="ceria"]) .badge-good { background: #D1FAE5; color: #065F46; border-radius: 999px; }
+        :host([tema="ceria"]) .badge-warn { background: #FEF3C7; color: #92400E; border-radius: 999px; }
+        :host([tema="ceria"]) .badge-bad { background: #FEE2E2; color: #991B1B; border-radius: 999px; }
+        :host([tema="ceria"]) .grade-chip { border-radius: 999px; }
+        :host([tema="ceria"]) .grade-A { background: #DBEAFE; color: #1E40AF; }
+        :host([tema="ceria"]) .grade-B { background: #EDE9FE; color: #6D28D9; }
+        :host([tema="ceria"]) .grade-C { background: #FFEDD5; color: #9A3412; }
       `,
     ];
   }
@@ -1715,36 +2129,35 @@ if (this.mode === "guru" || this.mode === "dosen") {
       queueLength = 0;
     }
 
-    const isGuru = this.mode === "guru" || this.mode === "dosen";
+    const isGuru = this._isGuru();
     const tabs = isGuru
       ? [
-          { id: "pantauan", label: "📊 Pantauan Guru" },
-          { id: "leaderboard", label: "🏆 Leaderboard Kelas" },
-          { id: "peringkat", label: "🏆 Peringkat Nilai Bimbingan Kelas" },
-          { id: "kehadiran", label: "🎯 Dashboard Pembelajaran" },
+          { id: "pantauan", label: "📊 Pantauan Kelas" },
+          { id: "leaderboard", label: "🏆 Leaderboard" },
+          { id: "peringkat", label: "🏆 Peringkat Kelas" },
+          { id: "kehadiran", label: "📚 Ruang Pertemuan" },
           { id: "nilai", label: "✏️ Input Nilai" },
-          { id: "kuis", label: "📝 Evaluasi Kuis" },
-          { id: "forum", label: "💬 Ruang Diskusi" },
-          { id: "soal", label: "🗂️ Edit Soal" },
-          { id: "atur", label: "⚙️ Atur" },
+          { id: "kuis", label: "📝 Evaluasi" },
+          { id: "forum", label: "💬 Diskusi" },
+          { id: "soal", label: "🗂️ Bank Soal" },
+          { id: "atur", label: "⚙️ Pengaturan" },
         ]
       : [
-          { id: "pembelajaran", label: "🎯 Dashboard Pembelajaran" },
-          { id: "hasil", label: "📈 Hasil & Nilai" },
-          { id: "kuis", label: "📝 Evaluasi Kuis" },
-          { id: "forum", label: "💬 Ruang Diskusi" },
+          { id: "pembelajaran", label: "📚 Ruang Pertemuan" },
+          { id: "hasil", label: "📈 Rapor Saya" },
+          { id: "kuis", label: "📝 Evaluasi" },
+          { id: "forum", label: "💬 Diskusi" },
         ];
 
-    const identitas =
-      this.mode === "siswa" ? this.namaSiswa || "Siswa" : "Guru / Wali Kelas";
+    const identitas = this._isSiswa() ? this.namaSiswa || "Siswa" : "Guru / Wali Kelas";
 
     return html`
       <div class="app-container">
         <div class="navbar">
           <h1><span class="logo-badge">🎓</span> ${
-            this.mode === "siswa"
-              ? "Dasbor Evaluasi Siswa V5"
-              : "Dasbor Evaluasi Guru V5"
+            this._isSiswa()
+              ? "Dasbor Siswa — Ruang Belajar"
+              : "Dasbor Guru — Evaluasi & Pantauan Kelas"
           }</h1>
           <div class="navbar-right">
             <div
@@ -1754,7 +2167,7 @@ if (this.mode === "guru" || this.mode === "dosen") {
               ?hidden=${!this.allowModeSwitch}
             >
               <button
-                class="mode-btn ${this.mode === "guru" || this.mode === "dosen" ? "active" : ""}"
+                class="mode-btn ${this.mode === "guru" ? "active" : ""}"
                 @click=${() => (this.mode = "guru")}
               >👨‍🏫 Guru</button>
               <button
@@ -1781,7 +2194,7 @@ if (this.mode === "guru" || this.mode === "dosen") {
 
         <div class="main-content">
           ${(this._loading &&
-            (this.mode === "guru" || this.mode === "dosen"
+            (this.mode === "guru"
               ? this._activeTab === "pantauan" || this._activeTab === "peringkat"
               : this._activeTab === "pembelajaran" || this._activeTab === "hasil"))
             ? html`
@@ -1806,7 +2219,7 @@ if (this.mode === "guru" || this.mode === "dosen") {
   }
 
   _renderContent() {
-    if (this.mode === "guru" || this.mode === "dosen") {
+    if (this.mode === "guru") {
       if (this._activeTab === "pantauan") return this._renderPantauanGuru();
       if (this._activeTab === "leaderboard") return this._renderLeaderboard();
       if (this._activeTab === "peringkat")
@@ -1817,7 +2230,8 @@ if (this.mode === "guru" || this.mode === "dosen") {
       if (this._activeTab === "kuis") return this._renderKuisWadah();
       if (this._activeTab === "soal") return this._renderEditSoal();
       if (this._activeTab === "atur") return this._renderPengaturan();
-      if (this._activeTab === "forum")
+      if (this._activeTab === "forum") {
+        const isGuruView = this._isGuru();
         return html`
           <ruang-diskusi
             .forumApiUrl=${this.forumApiUrl || this.appsScriptUrl}
@@ -1826,7 +2240,7 @@ if (this.mode === "guru" || this.mode === "dosen") {
             .studentId=${this.studentId}
             .studentName=${this.namaSiswa || "Guru"}
             .studentKelas=${this.kelas}
-            .viewMode=${this.mode === "guru" ? "lecturer" : "student"}
+            .viewMode=${isGuruView ? "lecturer" : "student"}
             forum-topic="Diskusi Materi ${this.kdMateri}"
           ></ruang-diskusi>
           <kirim-tugas
@@ -1841,6 +2255,7 @@ if (this.mode === "guru" || this.mode === "dosen") {
             assignment-title="Tugas Mandiri ${this.kdMateri}"
           ></kirim-tugas>
         `;
+      }
     } else {
       if (this._activeTab === "pembelajaran")
         return this._renderDashboardPembelajaran();
@@ -1887,7 +2302,7 @@ if (this.mode === "guru" || this.mode === "dosen") {
         .studentAbsen=${this.absen}
         .studentKelas=${this.kelas}
         .judul=${this.judulKuis}
-        .questions=${this.questions}
+        .questions=${this.questions && this.questions.length > 0 ? this.questions : undefined}
         .shuffleChoices=${this.shuffleChoices}
         .hideAnswers=${this.hideAnswers}
         .hideScore=${this.hideScore}
@@ -1896,8 +2311,9 @@ if (this.mode === "guru" || this.mode === "dosen") {
     `;
   }
 
-  /** 🎯 Dashboard Pembelajaran — Kuis + Kehadiran + Nilai (via sistem-kehadiran). */
+  /** 📚 Ruang Pertemuan — Kuis + Kehadiran + Nilai + Latihan (via sistem-kehadiran + latihan-kuis). */
   _renderDashboardPembelajaran() {
+    const showLatihan = this.mode === "siswa" || this.allowModeSwitch;
     return html`
       <sistem-kehadiran
         .appsScriptUrl=${this.appsScriptUrl}
@@ -1906,6 +2322,26 @@ if (this.mode === "guru" || this.mode === "dosen") {
         .namaSiswa=${this.namaSiswa || "Siswa"}
         .mode=${this.mode}
       ></sistem-kehadiran>
+      ${showLatihan ? html`
+        <div style="margin-top: var(--ddd-spacing-5);">
+          <latihan-kuis
+            .appsScriptUrl=${this.appsScriptUrl}
+            .kdMateri=${this.kdMateri}
+            .studentId=${this.studentId}
+            .studentName=${this.namaSiswa}
+            .studentNis=${this.nis}
+            .studentAbsen=${this.absen}
+            .studentKelas=${this.kelas}
+            .questions=${this.questions && this.questions.length > 0 ? this.questions : undefined}
+            .judulKuis=${this.judulKuis}
+            .mode=${this.mode}
+            .remidiMode=${this.remidiMode}
+            .remidiSoalUrl=${this.remidiSoalUrl}
+            .kkm=${this.kkm}
+            kategori="sumatif_lm"
+          ></latihan-kuis>
+        </div>
+      ` : ""}
     `;
   }
 
@@ -1925,8 +2361,9 @@ if (this.mode === "guru" || this.mode === "dosen") {
     return html`
       <h2 style="margin-top:0; color:#1e293b;">✏️ Input Nilai Manual</h2>
       <p style="color:#64748b; font-size:13px;">
-        Isi Nilai Akhir, UTS, dan/atau UAS per siswa lalu klik
-        <strong>☁️ Kirim</strong> untuk mencatatnya ke sheet Nilai Manual.
+        Isi Nilai Akhir, UTS, UAS, dan/atau <strong>Tugas/Formatit</strong> per siswa lalu klik
+        <strong>☁️ Kirim</strong> untuk mencatatnya ke sheet <code>Nilai Manual</code>.
+        Nilai Tugas/Formatit akan masuk kategori <code>formatif</code> di sheet <code>db_asesmen</code>.
       </p>
       <div class="nilai-table-wrap">
         <table class="nilai-table">
@@ -1938,13 +2375,14 @@ if (this.mode === "guru" || this.mode === "dosen") {
               <th>Nilai Akhir</th>
               <th>UTS</th>
               <th>UAS</th>
+              <th>Tugas/Formatit</th>
               <th>Aksi</th>
             </tr>
           </thead>
           <tbody>
             ${roster.map((r, i) => {
               const d = draft[i] || {};
-              const ada = d.nilaiAkhir != null || d.uts != null || d.uas != null;
+              const ada = d.nilaiAkhir != null || d.uts != null || d.uas != null || d.tugas != null;
               const sid = r.studentId || r._sid;
               return html`
                 <tr>
@@ -1965,6 +2403,10 @@ if (this.mode === "guru" || this.mode === "dosen") {
                   <td>
                     <input class="nilai-input" type="number" min="0" max="100" placeholder="-" .value=${d.uas ?? ""}
                       @input=${(e) => this._ubahNilai(i, "uas", e.target.value)} />
+                  </td>
+                  <td>
+                    <input class="nilai-input" type="number" min="0" max="100" placeholder="-" .value=${d.tugas ?? ""}
+                      @input=${(e) => this._ubahNilai(i, "tugas", e.target.value)} />
                   </td>
                   <td>
                     <button class="retry-btn" ?disabled=${!ada || !sid} @click=${() => this._kirimNilaiSiswa(i)}>☁️ Kirim</button>
@@ -2000,12 +2442,13 @@ if (this.mode === "guru" || this.mode === "dosen") {
       ["nilaiAkhir", "nilaiAkhir"],
       ["uts", "uts"],
       ["uas", "uas"],
+      ["tugas", "formatif"],
     ];
     const panggilan = daftar
       .filter(([k]) => d[k] != null && String(d[k]).trim() !== "")
-      .map(([k]) => ({ kategori: k, skor: Math.max(0, Math.min(100, this._num(d[k]))) }));
+      .map(([k, kategori]) => ({ kategori, skor: Math.max(0, Math.min(100, this._num(d[k]))) }));
     if (!panggilan.length) {
-      this._note = "Isi minimal satu nilai (Nilai Akhir/UTS/UAS) terlebih dahulu.";
+      this._note = "Isi minimal satu nilai (Nilai Akhir/UTS/UAS/Tugas) terlebih dahulu.";
       this.requestUpdate();
       return;
     }
@@ -2032,6 +2475,7 @@ if (this.mode === "guru" || this.mode === "dosen") {
         nilaiAkhir: this._num(d.nilaiAkhir),
         uts: this._num(d.uts),
         uas: this._num(d.uas),
+        tugas: this._num(d.tugas),
       });
       this._note = `✅ ${panggilan.map((p) => p.kategori).join(", ")} untuk ${r.nama || sid} tercatat di sheet Nilai Manual.`;
     } else {
@@ -2184,11 +2628,205 @@ if (this.mode === "guru" || this.mode === "dosen") {
           </label>
         </div>
       </div>
+
+      <!-- Generate Rapor Section -->
+      <div class="card-panel" style="margin-top: var(--ddd-spacing-4);">
+        <h3 style="margin-top:0; color:#1e293b;">📊 Generate Rapor</h3>
+        <p style="color:#64748b; font-size:13px;">
+          Generate laporan akumulasi nilai dari data di sheet <code>db_asesmen</code>.
+          Data akan tertulis di sheet <code>Akumulasi_Nilai_Rapor</code>.
+        </p>
+        <div class="set-row">
+          <button class="retry-btn" @click=${this._generateRapor} ?disabled=${!this.appsScriptUrl}>
+            🔄 Generate Rapor Sekarang
+          </button>
+          ${this._raporStatus ? html`<span style="margin-left:var(--ddd-spacing-3); color:#16a34a;">${this._raporStatus}</span>` : nothing}
+        </div>
+      </div>
+
+      <!-- Bobot Nilai Section -->
+      <div class="card-panel" style="margin-top: var(--ddd-spacing-4);">
+        <h3 style="margin-top:0; color:#1e293b;">⚖️ Pengaturan Bobot Nilai</h3>
+        <p style="color:#64748b; font-size:13px;">
+          Keterampilan melekat di dalam Tujuan Pembelajaran (TP) — tidak dipisah.
+          Nilai akhir LM sudah termasuk skor tulis + skor performa.
+        </p>
+        <p style="color:#64748b; font-size:13px;">
+          <strong>Rumus:</strong> Nilai Rapor = (Σ LM × bobot_LM + STS × bobot_STS + SAS × bobot_SAS) / Σ bobot
+        </p>
+        <div class="set-row">
+          <div>
+            <div class="set-title">Bobot LM per TP (Sumatif)</div>
+            <div class="set-sub">Bobot untuk setiap LM/UH (default: 3)</div>
+          </div>
+          <input class="nilai-input" type="number" min="0" max="10" .value=${this._bobotLM ?? 3}
+            @change=${(e) => (this._bobotLM = parseInt(e.target.value) || 3)} />
+        </div>
+        <div class="set-row">
+          <div>
+            <div class="set-title">Bobot Tugas/Formatif</div>
+            <div class="set-sub">Bobot untuk nilai tugas dan formatif (default: 1)</div>
+          </div>
+          <input class="nilai-input" type="number" min="0" max="10" .value=${this._bobotTugas ?? 1}
+            @change=${(e) => (this._bobotTugas = parseInt(e.target.value) || 1)} />
+        </div>
+        <div class="set-row">
+          <div>
+            <div class="set-title">Bobot STS (UTS)</div>
+            <div class="set-sub">Bobot untuk Sumatif Tengah Semester (default: 2). 0 = tidak masuk rapor.</div>
+          </div>
+          <input class="nilai-input" type="number" min="0" max="10" .value=${this._bobotSTS ?? 2}
+            @change=${(e) => (this._bobotSTS = parseInt(e.target.value) || 0)} />
+        </div>
+        <div class="set-row">
+          <div>
+            <div class="set-title">Bobot UAS (SAS)</div>
+            <div class="set-sub">Bobot untuk Sumatif Akhir Semester (default: 2). 0 = tidak masuk rapor.</div>
+          </div>
+          <input class="nilai-input" type="number" min="0" max="10" .value=${this._bobotSAS ?? 2}
+            @change=${(e) => (this._bobotSAS = parseInt(e.target.value) || 0)} />
+        </div>
+        <div class="set-row" style="margin-top: var(--ddd-spacing-4);">
+          <button class="retry-btn" @click=${this._simpanBobot} ?disabled=${!this.appsScriptUrl}>
+            💾 Simpan Pengaturan Bobot
+          </button>
+          <button class="retry-btn" style="background:#475569;" @click=${this._muatBobot}>
+            🔄 Muat Bobot Tersimpan
+          </button>
+        </div>
+      </div>
+
+      <!-- Buka Kunci Kuis (Guru) -->
+      <div class="card-panel" style="margin-top: var(--ddd-spacing-4); border-left: 4px solid #f59e0b;">
+        <h3 style="margin-top:0; color:#1e293b;">🔓 Buka Kunci Soal Terkunci (Guru)</h3>
+        <p style="color:#64748b; font-size:13px;">Jika siswa terkunci di <code>LM1</code> dan tidak bisa remidi, buka via tombol di bawah atau via <code>latihan-kuis</code> (mode guru). Kuis remidi <b>tidak terkunci</b> otomatis jika <code>remidi-mode</code> aktif.</p>
+        <div class="set-row">
+          <div>
+            <div class="set-title">Student ID</div>
+            <div class="set-sub">Kosongkan = pakai Student ID aktif (${this.studentId || "-"})</div>
+          </div>
+          <input class="set-input" .value=${this._unlockSid || ""} placeholder="STD-..."
+            @input=${(e)=> this._unlockSid = e.target.value.trim()} />
+        </div>
+        <div class="set-row">
+          <div>
+            <div class="set-title">Kode Materi / LM</div>
+            <div class="set-sub">Mis. LM1, LM2 — sama dengan <code>kd-materi</code></div>
+          </div>
+          <input class="set-input" .value=${this._unlockMateri || ""} placeholder="LM1"
+            @input=${(e)=> this._unlockMateri = e.target.value.trim()} />
+        </div>
+        <div class="set-row" style="margin-top: var(--ddd-spacing-3);">
+          <button class="retry-btn" style="background:#f59e0b;" @click=${this._bukaKunciKuisGuru} ?disabled=${!this.appsScriptUrl}>🔓 Buka Kunci</button>
+          ${this._unlockMsg ? html`<span style="margin-left:12px; font-size:13px; color:${this._unlockMsg.startsWith('✅')?'#16a34a':'#dc2626'};">${this._unlockMsg}</span>` : nothing}
+        </div>
+        <p style="font-size:11px; color:#94a3b8; margin:8px 0 0;">Properties remidi: <code>remidi-mode</code> + <code>remidi-soal-url</code> (sama file + <code>shuffle-choices</code>) → saat <code>score &lt; kkm</code> tombol <code>Mulai Remidi</code> muncul dan <b>lewati kunci</b>.</p>
+      </div>
+
       <div class="note-chip">
         Perubahan diterapkan langsung pada properti komponen — tersimpan bila halaman
         disimpan melalui editor HAX.
       </div>
     `;
+  }
+
+  async _bukaKunciKuisGuru(){
+    const sid = (this._unlockSid || this.studentId || "").trim();
+    const lm = (this._unlockMateri || this.kdMateri || "LM1").trim();
+    if (!sid) { this._unlockMsg = "⚠️ Isi Student ID dulu."; this.requestUpdate(); return; }
+    if (!this.appsScriptUrl) { this._unlockMsg = "⚠️ URL Apps Script belum diatur."; this.requestUpdate(); return; }
+    this._unlockMsg = "⏳ Membuka...";
+    this.requestUpdate();
+    try{
+      const qs = new URLSearchParams({action:"resetQuizLock", studentId: sid, kdMateri: lm});
+      const r = await fetch(`${this.appsScriptUrl}?${qs.toString()}`, {method:"GET", mode:"cors"});
+      const j = await r.json();
+      if (j && j.status==="ok") {
+        this._unlockMsg = `✅ Kunci ${lm} dibuka — ${j.deleted||0} sesi dihapus. Siswa bisa ulang/remidi.`;
+        try{ localStorage.removeItem(`latihan_kuis_attempt_${sid}_${lm}`); localStorage.removeItem(`latihan_kuis_time_${sid}_${lm}`);}catch(_){}
+      } else {
+        this._unlockMsg = "⚠️ Gagal: " + (j.message||"unknown");
+      }
+    }catch(e){ this._unlockMsg = "⚠️ Error: " + e.message; }
+    this.requestUpdate();
+  }
+
+  // ---------- GENERATE RAPOR & BOBOT ----------
+  async _generateRapor() {
+    if (!this.appsScriptUrl) {
+      this._note = "⚠️ URL Apps Script belum diatur (tab Atur).";
+      this.requestUpdate();
+      return;
+    }
+    this._raporStatus = "⏳ Membuat laporan...";
+    this._note = "";
+    this.requestUpdate();
+    try {
+      const result = await this._apiGet({ action: "generateReport" });
+      if (result && result.status === "ok") {
+        this._raporStatus = `✅ Rapor berhasil dibuat. ${result.students || 0} siswa diproses.`;
+        this._note = "✅ Rapor berhasil di-generate. Lihat sheet Akumulasi_Nilai_Rapor.";
+      } else {
+        this._raporStatus = "";
+        this._note = "⚠️ Gagal: " + (result && result.message ? result.message : "cek konsol.");
+      }
+    } catch (e) {
+      this._raporStatus = "";
+      this._note = "⚠️ Error: " + e.message;
+    }
+    this.requestUpdate();
+  }
+
+  async _simpanBobot() {
+    if (!this.appsScriptUrl) {
+      this._note = "⚠️ URL Apps Script belum diatur (tab Atur).";
+      this.requestUpdate();
+      return;
+    }
+    const bobot = {
+      tugas: this._bobotTugas ?? 1,
+      lm: this._bobotLM ?? 3,
+      sts: this._bobotSTS ?? 2,
+      sas: this._bobotSAS ?? 2,
+    };
+    this._note = "⏳ Menyimpan bobot...";
+    this.requestUpdate();
+    try {
+      const result = await this._apiGet({ action: "saveBobot", ...bobot });
+      if (result && result.status === "ok") {
+        this._note = "✅ Bobot tersimpan. Generate rapor untuk melihat hasil.";
+      } else {
+        this._note = "⚠️ Gagal: " + (result && result.message ? result.message : "cek konsol.");
+      }
+    } catch (e) {
+      this._note = "⚠️ Error: " + e.message;
+    }
+    this.requestUpdate();
+  }
+
+  async _muatBobot() {
+    if (!this.appsScriptUrl) {
+      this._note = "⚠️ URL Apps Script belum diatur (tab Atur).";
+      this.requestUpdate();
+      return;
+    }
+    this._note = "⏳ Memuat bobot...";
+    this.requestUpdate();
+    try {
+      const result = await this._apiGet({ action: "getBobot" });
+      if (result && result.status === "ok" && result.bobot) {
+        this._bobotTugas = result.bobot.tugas ?? 1;
+        this._bobotLM = result.bobot.lm ?? 3;
+        this._bobotSTS = result.bobot.sts ?? 2;
+        this._bobotSAS = result.bobot.sas ?? 2;
+        this._note = "✅ Bobot dimuat.";
+      } else {
+        this._note = "ℹ️ Belum ada bobot tersimpan, menggunakan default.";
+      }
+    } catch (e) {
+      this._note = "⚠️ Error: " + e.message;
+    }
+    this.requestUpdate();
   }
 
   // ---------- GURU: PANTAUAN ----------
@@ -2224,8 +2862,10 @@ if (this.mode === "guru" || this.mode === "dosen") {
       ? Math.round(roster.reduce((a, r) => a + this._num(r.nilaiAkhir), 0) / roster.length)
       : 0;
 
+    const filterLabel = String(this.kelas || "").trim() ? `Filter: ${this.kelas}` : "Semua kelas";
     return html`
       <h2 style="margin-top: 0; color: #1e293b;">Peta Pantauan & Rekapitulasi Kelas</h2>
+      <div class="note-chip" style="margin-bottom:12px;">Menampilkan ${roster.length} siswa — ${filterLabel}. Kosongkan filter Kelas di tab Atur untuk melihat semua.</div>
 
       <div class="stats-grid">
         <div class="stat-card">
@@ -2300,9 +2940,20 @@ if (this.mode === "guru" || this.mode === "dosen") {
     `;
   }
 
+  _materiCol() {
+    const m = String(this.kdMateri||"").trim();
+    const lm = m.match(/^LM\s*0?(\d+)$/i);
+    if (lm) return `LM${lm[1]}`;
+    const p = m.match(/^Pertemuan\s*0?(\d+)$/i);
+    if (p) return `LM${p[1]}`;
+    if (/^STS$/i.test(m)) return "STS";
+    if (/^SAS$/i.test(m)) return "SAS";
+    return "";
+  }
+
   // ---------- GURU: LEADERBOARD ----------
   _renderLeaderboard() {
-    const list = this._serverData.leaderboard || [];
+    let list = this._serverData.leaderboard || [];
     if (list.length === 0) {
       return html`
         <h2 style="color:#1e293b;">🏆 Peringkat Nilai Bimbingan Kelas</h2>
@@ -2316,32 +2967,45 @@ if (this.mode === "guru" || this.mode === "dosen") {
         </div>
       `;
     }
-
-    const rows = list.map((r, i) => {
-      const nilai = this._num(this._rowValue(r, "Rata-rata Skor"));
+    // filter kelas via canon (sinkron dengan tema-ceria) dan sort by materi LM jika aktif
+    const kelasFilter = this._canonKelas(this._peringkatKelas || this.kelas || "");
+    if (kelasFilter) list = list.filter((r)=> this._canonKelas(this._rowValue(r,"Kelas"))===kelasFilter);
+    const materiCol = this._materiCol();
+    const rosterByIdL = new Map((this._serverData.roster||[]).map((rr)=> [String(rr.studentId), rr]));
+    const rowsRaw = list.map((r, i) => {
+      const colVal = materiCol ? this._num(this._rowValue(r, materiCol)) : null;
+      const nilai = colVal!=null && colVal>0 ? colVal : this._num(this._rowValue(r, "Nilai_Rapor") || this._rowValue(r, "Rata-rata Skor"));
+      const sidLB = String(this._rowValue(r, "StudentID") || this._rowValue(r, "Student ID") || "");
+      const rosterMatch = rosterByIdL.get(sidLB) || (this._serverData.roster||[]).find((rr)=> String(rr.nis)===String(this._rowValue(r,"NIS"))) || null;
+      const absenLB = String(this._rowValue(r, "Absen") || rosterMatch?.absen || "").trim();
       return {
         ...r,
         _rank: i + 1,
         _nilai: nilai,
-        _nama: String(this._rowValue(r, "Nama") || "-"),
-        _absen: String(this._rowValue(r, "Absen") || ""),
-        _kelas: String(this._rowValue(r, "Kelas") || ""),
-        _totalKuis: this._num(this._rowValue(r, "Total Kuis")),
-        _totalAktivitas: this._num(this._rowValue(r, "Total Aktivitas")),
+        _lmNilai: colVal,
+        _nama: String(this._rowValue(r, "Nama") || rosterMatch?.nama || "-"),
+        _absen: absenLB,
+        _kelas: String(this._rowValue(r, "Kelas") || rosterMatch?.kelas || ""),
+        _totalKuis: this._num(this._rowValue(r, "Total Kuis") || rosterMatch?.totalKuis || 0),
+        _totalAktivitas: this._num(this._rowValue(r, "Total Aktivitas") || rosterMatch?.totalActivities || 0),
         _reading: this._num(this._rowValue(r, "Reading")),
         _quizAct: this._num(this._rowValue(r, "Quiz Activity")),
         _forum: this._num(this._rowValue(r, "Discussion")),
-        _status: String(this._rowValue(r, "Status Kuis Terakhir") || "N/A"),
+        _status: String(this._rowValue(r, "Status Kuis Terakhir") || rosterMatch?.grade || "N/A"),
         _pertemuan: this._num(this._rowValue(r, "Jumlah Pertemuan")),
       };
     });
 
+    // base rows (nilai sudah memperhitungkan materiCol), lalu terapkan sort user (klik header)
+    const baseRows = rowsRaw.map((r,i)=> ({...r, _rank:i+1}));
+    // jika user belum klik sort, default sort by nilai (materi-aware) desc
+    const rows = (this._leaderSortKey && this._leaderSortKey!=="nilai") ? this._getSortedLeaderboardRows(baseRows) : (()=>{ const s=[...baseRows].sort((a,b)=> (b._nilai||0)-(a._nilai||0)); return s.map((r,i)=>({...r,_rank:i+1})); })();
     const r1 = rows[0] || { _nama: "-", _nilai: 0 };
     const r2 = rows[1] || { _nama: "-", _nilai: 0 };
     const r3 = rows[2] || { _nama: "-", _nilai: 0 };
 
     return html`
-      <h2 style="color:#1e293b;">🏆 Peringkat Nilai Bimbingan Kelas</h2>
+      <h2 style="color:#1e293b;">🏆 Peringkat Nilai Bimbingan Kelas ${materiCol ? html`<span style="background:#EEF2FF; color:#4338CA; border:1px solid #C7D2FE; border-radius:999px; padding:4px 10px; font-size:11px; margin-left:8px;">Filter: ${materiCol}${kelasFilter?` • Kelas ${this._peringkatKelas||this.kelas}`:""}</span>` : kelasFilter ? html`<span style="background:#EEF2FF; color:#4338CA; border:1px solid #C7D2FE; border-radius:999px; padding:4px 10px; font-size:11px; margin-left:8px;">Kelas ${this._peringkatKelas||this.kelas}</span>` : ""}</h2>
       <div class="podium-section">
         <div class="podium-box rank-2">
           <div class="podium-medal">🥈</div>
@@ -2368,10 +3032,11 @@ if (this.mode === "guru" || this.mode === "dosen") {
           <thead>
             <tr>
               <th>#</th>
-              <th>Nama</th>
-              <th>Kelas</th>
+              <th @click=${()=>this._sortLeaderboard("nama")} style="cursor:pointer; user-select:none;">Nama ${this._leaderSortKey==="nama" ? (this._leaderSortDir==="asc"?"▲":"▼") : "↕"}</th>
+              <th @click=${()=>this._sortLeaderboard("kelas")} style="cursor:pointer; user-select:none;">Kelas ${this._leaderSortKey==="kelas" ? (this._leaderSortDir==="asc"?"▲":"▼") : "↕"}</th>
+              <th @click=${()=>this._sortLeaderboard("absen")} style="cursor:pointer; user-select:none; background:${this._leaderSortKey==="absen" ? "#EEF2FF" : "transparent"};">Absen ${this._leaderSortKey==="absen" ? (this._leaderSortDir==="asc"?"▲":"▼") : "↕"}</th>
               <th>Kuis</th>
-              <th>Rata-rata Skor</th>
+              <th @click=${()=>this._sortLeaderboard("nilai")} style="cursor:pointer; user-select:none;">${materiCol ? materiCol : "Rata-rata Skor"} ${this._leaderSortKey==="nilai" ? (this._leaderSortDir==="asc"?"▲":"▼") : "↕"}</th>
               <th>Aktivitas</th>
               <th>📖</th>
               <th>📝</th>
@@ -2385,8 +3050,9 @@ if (this.mode === "guru" || this.mode === "dosen") {
               (r) => html`
                 <tr class="${r._rank <= 3 ? "highlight-row" : ""}">
                   <td><span class="rank-chip ${r._rank === 1 ? "top" : ""}">${r._rank}</span></td>
-                  <td><strong>${r._absen ? r._absen + ". " : ""}${r._nama}</strong></td>
+                  <td><strong>${r._nama}</strong></td>
                   <td>${r._kelas}</td>
+                  <td style="text-align:center; font-weight:700;">${r._absen || "-"}</td>
                   <td>${r._totalKuis}</td>
                   <td><strong>${r._nilai}%</strong></td>
                   <td>${r._totalAktivitas}</td>
@@ -2406,18 +3072,35 @@ if (this.mode === "guru" || this.mode === "dosen") {
     `;
   }
 
-  // ---------- DOSEN: PERINGKAT NILAI BIMBINGAN KELAS ----------
+  // ---------- GURU: PERINGKAT KELAS ----------
   _opsiKelas() {
-    const set = new Set();
-    (this._serverData.roster || []).forEach((r) => {
-      if (r.kelas) set.add(String(r.kelas));
-    });
+    const canonMap = new Map(); // canon -> display label (first seen, cleaned)
+    const rosterCanons = new Set();
+    const add = (raw, isRoster) => {
+      const s = String(raw || "").trim();
+      if (!s) return;
+      const canon = this._canonKelas(s);
+      if (!canon) return;
+      if (isRoster) rosterCanons.add(canon);
+      if (!canonMap.has(canon)) {
+        let label = s.toUpperCase().replace(/\s+/g, " ").replace(/\s*-\s*/g, "-").trim();
+        if (label.includes(" ") && !label.includes("-")) label = label.replace(/\s+/g, "-");
+        if (/^X\d+$/i.test(label)) label = label.replace(/^X/i, "X-");
+        canonMap.set(canon, label);
+      }
+    };
+    (this._serverData.roster || []).forEach((r) => add(r.kelas, true));
+    // leaderboard hanya sebagai pelengkap jika kelas sudah ada di roster (hindari hantu XI-6 dari Akumulasi lama)
     (this._serverData.leaderboard || []).forEach((r) => {
       const k = this._rowValue(r, "Kelas");
-      if (k) set.add(String(k));
+      const canon = this._canonKelas(k);
+      if (!canon) return;
+      if (rosterCanons.size > 0 && !rosterCanons.has(canon)) return;
+      add(k, false);
     });
-    if (this.kelas) set.add(String(this.kelas));
-    return [...set].sort();
+    if (this.kelas) add(this.kelas, true);
+    if (this._peringkatKelas) add(this._peringkatKelas, true);
+    return [...canonMap.values()].sort();
   }
 
   _bacaEditNilai(sid) {
@@ -2446,8 +3129,27 @@ if (this.mode === "guru" || this.mode === "dosen") {
   }
 
   _buildPeringkat() {
-    const lb = this._serverData.leaderboard || [];
+    let lb = this._serverData.leaderboard || [];
     const roster = this._serverData.roster || [];
+    // fallback: jika leaderboard kosong tapi roster ada (mis. generateReport belum jalan atau filter kelas), bangun peringkat dari roster
+    if ((!lb || lb.length === 0) && roster.length > 0) {
+      lb = roster.map((r) => ({
+        "Student ID": r.studentId || r._sid || "",
+        Nama: r.nama || "",
+        Kelas: r.kelas || "",
+        Absen: r.absen || "",
+        NIS: r.nis || "",
+        "Rata-rata Skor": r.nilaiAkhir ?? r.nilaiRapor ?? r.uh ?? 0,
+        "Nilai_Rapor": r.nilaiAkhir ?? r.nilaiRapor ?? 0,
+        "Status Kuis Terakhir": r.grade || r.intervalCapaian || "N/A",
+        "Interval_Capaian": r.grade || r.intervalCapaian || "N/A",
+        "Skor UTS": r.uts ?? r.sts ?? 0,
+        "Skor UAS": r.uas ?? r.sas ?? 0,
+        "Total Kuis": r.totalKuis ?? 0,
+        "Total Aktivitas": r.totalActivities ?? 0,
+        "Jumlah Pertemuan": r.pertemuan ?? 0,
+      }));
+    }
     const rosterById = {};
     roster.forEach((r) => {
       if (r.studentId) rosterById[r.studentId] = r;
@@ -2504,21 +3206,21 @@ if (this.mode === "guru" || this.mode === "dosen") {
   }
 
   _filterPeringkat(rows) {
-    const k = this._peringkatKelas || this.kelas || "";
+    const k = this._canonKelas(this._peringkatKelas || this.kelas || "");
     if (!k) return rows;
-    return rows.filter(
-      (r) => String(r._kelas).toLowerCase() === String(k).toLowerCase(),
-    );
+    return rows.filter((r) => this._canonKelas(r._kelas) === k);
   }
 
   _ubahFilterKelas(val) {
     this._peringkatKelas = val;
-    this.kelas = val;
+    // jangan ubah this.kelas agar tidak trigger fetchDataKomplit via updated() watcher
+    // filter peringkat murni client-side; pantauan tetap pakai this.kelas (Atur)
     this.requestUpdate();
   }
 
   _renderPeringkatBimbingan() {
-    const rows = this._filterPeringkat(this._buildPeringkat());
+    const rowsRaw = this._filterPeringkat(this._buildPeringkat());
+    const rows = this._getSortedPeringkatRows(rowsRaw);
     const opsi = this._opsiKelas();
     const filter = this._peringkatKelas || this.kelas || "";
     const adaData = (this._serverData.leaderboard || []).length > 0;
@@ -2582,15 +3284,15 @@ if (this.mode === "guru" || this.mode === "dosen") {
                     <thead>
                       <tr>
                         <th>#</th>
-                        <th>Nama (klik)</th>
-                        <th>Kelas</th>
-                        <th>Absen</th>
+                        <th @click=${()=>this._sortPeringkat("nama")} style="cursor:pointer;">Nama ${this._peringkatSortKey==="nama" ? (this._peringkatSortDir==="asc"?"▲":"▼") : "↕"}</th>
+                        <th @click=${()=>this._sortPeringkat("kelas")} style="cursor:pointer;">Kelas ${this._peringkatSortKey==="kelas" ? (this._peringkatSortDir==="asc"?"▲":"▼") : "↕"}</th>
+                        <th @click=${()=>this._sortPeringkat("absen")} style="cursor:pointer; background:${this._peringkatSortKey==="absen" ? "#EEF2FF" : "transparent"};">Absen ${this._peringkatSortKey==="absen" ? (this._peringkatSortDir==="asc"?"▲":"▼") : "↕"}</th>
                         <th>Kuis</th>
-                        <th>Rata-rata</th>
+                        <th @click=${()=>this._sortPeringkat("rata")} style="cursor:pointer;">Rata-rata ${this._peringkatSortKey==="rata" ? (this._peringkatSortDir==="asc"?"▲":"▼") : "↕"}</th>
                         <th>Aktivitas</th>
                         <th>UTS</th>
                         <th>UAS</th>
-                        <th>Nilai Akhir</th>
+                        <th @click=${()=>this._sortPeringkat("nilaiAkhir")} style="cursor:pointer;">Nilai Akhir ${this._peringkatSortKey==="nilaiAkhir" ? (this._peringkatSortDir==="asc"?"▲":"▼") : "↕"}</th>
                         <th>Grade</th>
                         <th>Status</th>
                       </tr>
@@ -2990,6 +3692,8 @@ if (this.mode === "guru" || this.mode === "dosen") {
     const grade = String(s.grade || "-");
     const ringDeg = Math.max(0, Math.min(100, nilaiAkhir)) * 3.6;
 
+    const lmArr = Array.isArray(s.lm) ? s.lm : (Array.isArray(s.LM) ? s.LM : []);
+    const hasLM = lmArr.length > 0 && lmArr.some((v) => this._num(v) > 0);
     const kpiList = [
       { label: "Kehadiran", value: kehadiran, unit: "%" },
       { label: "Rata-rata UH", value: uh, unit: "" },
@@ -3027,6 +3731,27 @@ if (this.mode === "guru" || this.mode === "dosen") {
               `,
             )}
           </div>
+          ${hasLM ? html`
+            <div class="card-siswa" style="padding: var(--ddd-spacing-4); margin-top: var(--ddd-spacing-4);">
+              <h4 style="margin:0 0 8px; color:#1e293b;">📚 Nilai per LM (Tujuan Pembelajaran)</h4>
+              <p style="margin:0 0 12px; font-size:11px; color:#94a3b8;">Tap LM untuk filter pertemuan • Data dari <code>Akumulasi_Nilai_Rapor</code> kolom LM1..LMn</p>
+              <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(86px,1fr)); gap: var(--ddd-spacing-2);">
+                ${lmArr.map((v, i) => {
+                  const skor = this._num(v);
+                  const isActiveMateri = String(this.kdMateri || "").trim().toLowerCase() === `lm${i+1}`.toLowerCase() || String(this.kdMateri || "").trim() === `Pertemuan ${i+1}`;
+                  return html`
+                    <button @click=${() => { this.kdMateri = `LM${i+1}`; this.requestUpdate(); }}
+                      style="border:1px solid ${isActiveMateri ? '#4F46E5' : '#E2E8F0'}; background:${skor>=75 ? '#ECFDF5' : skor>=60 ? '#FFFBEB' : skor>0 ? '#FEF2F2' : '#F8FAFC'}; border-radius:12px; padding:10px 6px; text-align:center; cursor:pointer;">
+                      <div style="font-size:11px; font-weight:700; color:#475569;">LM${i+1}</div>
+                      <div style="font-size:18px; font-weight:800; color:${skor>=75 ? '#065F46' : skor>=60 ? '#92400E' : skor>0 ? '#991B1B' : '#94A3B8'};">${skor || "-"}</div>
+                      <div style="font-size:10px; color:#94a3b8;">${skor>=75 ? 'Mencapai TP' : skor>=60 ? 'Pengayaan' : skor>0 ? 'Remedial' : 'Belum ada'}</div>
+                    </button>
+                  `;
+                })}
+              </div>
+              ${s.deskripsiCapaian ? html`<div style="margin-top:12px; background:#F8FAFF; border:1px solid #E0E7FF; border-radius:12px; padding:12px; font-size:12px; color:#334155;">💬 ${s.deskripsiCapaian}</div>` : ""}
+            </div>
+          ` : ""}
         </div>
       </div>
 
@@ -3053,9 +3778,15 @@ if (this.mode === "guru" || this.mode === "dosen") {
 
   _gabungRiwayat() {
     const mapHari = {};
-    (this._serverData.history || []).forEach((h) => {
-      if (h && h.date) mapHari[String(h.date).slice(0, 10)] = this._num(h.count);
-    });
+    // Opsi B: kalender gabung (kuis+hadir+tugas) jika ada, prioritas
+    const cal = this._serverData.calendar || [];
+    if (Array.isArray(cal) && cal.length > 0) {
+      cal.forEach((h)=> { if(h && h.date) mapHari[String(h.date).slice(0,10)] = this._num(h.count || (h.kuis||0)+(h.hadir||0)+(h.tugas||0)); });
+    } else {
+      (this._serverData.history || []).forEach((h) => {
+        if (h && h.date) mapHari[String(h.date).slice(0, 10)] = this._num(h.count);
+      });
+    }
     try {
       const lokal = JSON.parse(
         localStorage.getItem("a3_v5_activity_logs") || "[]",

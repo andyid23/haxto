@@ -1,0 +1,18 @@
+{
+  "id": "item-d395c5d6-8e01-4cd2-9fd2-d1ab76cdb62f",
+  "indent": 0,
+  "location": "pages/item-d395c5d6-8e01-4cd2-9fd2-d1ab76cdb62f/index.json",
+  "slug": "new-item",
+  "order": 4,
+  "parent": null,
+  "title": "New item",
+  "description": "",
+  "metadata": {
+    "locked": false,
+    "created": 1789517726,
+    "images": [],
+    "videos": [],
+    "updated": 1789517726
+  },
+  "content": "<p></p>"
+}

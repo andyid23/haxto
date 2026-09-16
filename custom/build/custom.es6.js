@@ -1,4 +1,4 @@
-var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e){throw t=0,e}};import{css as Ae,html as dt}from"@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";import{PolarisFlexTheme as Me}from"@haxtheweb/polaris-theme/lib/polaris-flex-theme.js";import"@haxtheweb/haxcms-elements/lib/ui-components/blocks/site-children-block.js";import{DDDSuper as F}from"@haxtheweb/d-d-d/d-d-d.js";import{I18NMixin as R}from"@haxtheweb/i18n-manager/lib/I18NMixin.js";var Ze=$e((la,bt)=>{let Kt=class extends Me{static get styles(){return[super.styles,Ae`
+import{css as Me,html as lt}from"@haxtheweb/haxcms-elements/lib/core/HAXCMSLitElementTheme.js";import{PolarisFlexTheme as Ie}from"@haxtheweb/polaris-theme/lib/polaris-flex-theme.js";import"@haxtheweb/haxcms-elements/lib/ui-components/blocks/site-children-block.js";import{DDDSuper as B}from"@haxtheweb/d-d-d/d-d-d.js";import{I18NMixin as j}from"@haxtheweb/i18n-manager/lib/I18NMixin.js";let Dt=class extends Ie{static get styles(){return[super.styles,Me`
         :host {
           display: block;
         }
@@ -30,7 +30,7 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
           font-family: "Roboto Condensed", sans-serif;
           font-size: 16px;
         }
-      `]}renderHeaderSlot(){return dt``}renderSideBar(){return dt`
+      `]}renderHeaderSlot(){return lt``}renderSideBar(){return lt`
     <aside
           role="complementary"
           aria-label="Primary Sidebar"
@@ -44,31 +44,31 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
             ></site-children-block>
           </section>
         </aside>
-    `}renderFooterContactInformation(){return dt``}renderFooterSecondarySlot(){return dt``}renderFooterPrimarySlot(){return dt``}static get tag(){return"custom-haxkuis-theme"}constructor(){super()}};customElements.define(Kt.tag,Kt);/**
+    `}renderFooterContactInformation(){return lt``}renderFooterSecondarySlot(){return lt``}renderFooterPrimarySlot(){return lt``}static get tag(){return"custom-haxkuis-theme"}constructor(){super()}};customElements.define(Dt.tag,Dt);/**
  * @license
  * Copyright 2019 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
- */const ft=globalThis,wt=ft.ShadowRoot&&(ft.ShadyCSS===void 0||ft.ShadyCSS.nativeShadow)&&"adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.prototype,St=Symbol(),Pt=new WeakMap;let Lt=class{constructor(t,e,a){if(this._$cssResult$=!0,a!==St)throw Error("CSSResult is not constructable. Use `unsafeCSS` or `css` instead.");this.cssText=t,this.t=e}get styleSheet(){let t=this.o;const e=this.t;if(wt&&t===void 0){const a=e!==void 0&&e.length===1;a&&(t=Pt.get(e)),t===void 0&&((this.o=t=new CSSStyleSheet).replaceSync(this.cssText),a&&Pt.set(e,t))}return t}toString(){return this.cssText}};const Ie=u=>new Lt(typeof u=="string"?u:u+"",void 0,St),C=(u,...t)=>{const e=u.length===1?u[0]:t.reduce((a,i,s)=>a+(r=>{if(r._$cssResult$===!0)return r.cssText;if(typeof r=="number")return r;throw Error("Value passed to 'css' function must be a 'css' function result: "+r+". Use 'unsafeCSS' to pass non-literal values, but take care to ensure page security.")})(i)+u[s+1],u[0]);return new Lt(e,u,St)},Te=(u,t)=>{if(wt)u.adoptedStyleSheets=t.map(e=>e instanceof CSSStyleSheet?e:e.styleSheet);else for(const e of t){const a=document.createElement("style"),i=ft.litNonce;i!==void 0&&a.setAttribute("nonce",i),a.textContent=e.cssText,u.appendChild(a)}},Dt=wt?u=>u:u=>u instanceof CSSStyleSheet?(t=>{let e="";for(const a of t.cssRules)e+=a.cssText;return Ie(e)})(u):u;/**
+ */const _t=globalThis,$t=_t.ShadowRoot&&(_t.ShadyCSS===void 0||_t.ShadyCSS.nativeShadow)&&"adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.prototype,At=Symbol(),Pt=new WeakMap;let Rt=class{constructor(t,e,a){if(this._$cssResult$=!0,a!==At)throw Error("CSSResult is not constructable. Use `unsafeCSS` or `css` instead.");this.cssText=t,this.t=e}get styleSheet(){let t=this.o;const e=this.t;if($t&&t===void 0){const a=e!==void 0&&e.length===1;a&&(t=Pt.get(e)),t===void 0&&((this.o=t=new CSSStyleSheet).replaceSync(this.cssText),a&&Pt.set(e,t))}return t}toString(){return this.cssText}};const Te=h=>new Rt(typeof h=="string"?h:h+"",void 0,At),z=(h,...t)=>{const e=h.length===1?h[0]:t.reduce((a,i,r)=>a+(s=>{if(s._$cssResult$===!0)return s.cssText;if(typeof s=="number")return s;throw Error("Value passed to 'css' function must be a 'css' function result: "+s+". Use 'unsafeCSS' to pass non-literal values, but take care to ensure page security.")})(i)+h[r+1],h[0]);return new Rt(e,h,At)},Ce=(h,t)=>{if($t)h.adoptedStyleSheets=t.map(e=>e instanceof CSSStyleSheet?e:e.styleSheet);else for(const e of t){const a=document.createElement("style"),i=_t.litNonce;i!==void 0&&a.setAttribute("nonce",i),a.textContent=e.cssText,h.appendChild(a)}},Bt=$t?h=>h:h=>h instanceof CSSStyleSheet?(t=>{let e="";for(const a of t.cssRules)e+=a.cssText;return Te(e)})(h):h;/**
  * @license
  * Copyright 2017 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
- */const{is:Ce,defineProperty:ze,getOwnPropertyDescriptor:qe,getOwnPropertyNames:Ee,getOwnPropertySymbols:Ue,getPrototypeOf:Ne}=Object,j=globalThis,Ft=j.trustedTypes,Ke=Ft?Ft.emptyScript:"",Pe=j.reactiveElementPolyfillSupport,ot=(u,t)=>u,$t={toAttribute(u,t){switch(t){case Boolean:u=u?Ke:null;break;case Object:case Array:u=u==null?u:JSON.stringify(u)}return u},fromAttribute(u,t){let e=u;switch(t){case Boolean:e=u!==null;break;case Number:e=u===null?null:Number(u);break;case Object:case Array:try{e=JSON.parse(u)}catch{e=null}}return e}},Rt=(u,t)=>!Ce(u,t),jt={attribute:!0,type:String,converter:$t,reflect:!1,useDefault:!1,hasChanged:Rt};Symbol.metadata??(Symbol.metadata=Symbol("metadata")),j.litPropertyMetadata??(j.litPropertyMetadata=new WeakMap);let X=class extends HTMLElement{static addInitializer(t){this._$Ei(),(this.l??(this.l=[])).push(t)}static get observedAttributes(){return this.finalize(),this._$Eh&&[...this._$Eh.keys()]}static createProperty(t,e=jt){if(e.state&&(e.attribute=!1),this._$Ei(),this.prototype.hasOwnProperty(t)&&((e=Object.create(e)).wrapped=!0),this.elementProperties.set(t,e),!e.noAccessor){const a=Symbol(),i=this.getPropertyDescriptor(t,a,e);i!==void 0&&ze(this.prototype,t,i)}}static getPropertyDescriptor(t,e,a){const{get:i,set:s}=qe(this.prototype,t)??{get(){return this[e]},set(r){this[e]=r}};return{get:i,set(r){const n=i?.call(this);s?.call(this,r),this.requestUpdate(t,n,a)},configurable:!0,enumerable:!0}}static getPropertyOptions(t){return this.elementProperties.get(t)??jt}static _$Ei(){if(this.hasOwnProperty(ot("elementProperties")))return;const t=Ne(this);t.finalize(),t.l!==void 0&&(this.l=[...t.l]),this.elementProperties=new Map(t.elementProperties)}static finalize(){if(this.hasOwnProperty(ot("finalized")))return;if(this.finalized=!0,this._$Ei(),this.hasOwnProperty(ot("properties"))){const e=this.properties,a=[...Ee(e),...Ue(e)];for(const i of a)this.createProperty(i,e[i])}const t=this[Symbol.metadata];if(t!==null){const e=litPropertyMetadata.get(t);if(e!==void 0)for(const[a,i]of e)this.elementProperties.set(a,i)}this._$Eh=new Map;for(const[e,a]of this.elementProperties){const i=this._$Eu(e,a);i!==void 0&&this._$Eh.set(i,e)}this.elementStyles=this.finalizeStyles(this.styles)}static finalizeStyles(t){const e=[];if(Array.isArray(t)){const a=new Set(t.flat(1/0).reverse());for(const i of a)e.unshift(Dt(i))}else t!==void 0&&e.push(Dt(t));return e}static _$Eu(t,e){const a=e.attribute;return a===!1?void 0:typeof a=="string"?a:typeof t=="string"?t.toLowerCase():void 0}constructor(){super(),this._$Ep=void 0,this.isUpdatePending=!1,this.hasUpdated=!1,this._$Em=null,this._$Ev()}_$Ev(){this._$ES=new Promise(t=>this.enableUpdating=t),this._$AL=new Map,this._$E_(),this.requestUpdate(),this.constructor.l?.forEach(t=>t(this))}addController(t){(this._$EO??(this._$EO=new Set)).add(t),this.renderRoot!==void 0&&this.isConnected&&t.hostConnected?.()}removeController(t){this._$EO?.delete(t)}_$E_(){const t=new Map,e=this.constructor.elementProperties;for(const a of e.keys())this.hasOwnProperty(a)&&(t.set(a,this[a]),delete this[a]);t.size>0&&(this._$Ep=t)}createRenderRoot(){const t=this.shadowRoot??this.attachShadow(this.constructor.shadowRootOptions);return Te(t,this.constructor.elementStyles),t}connectedCallback(){this.renderRoot??(this.renderRoot=this.createRenderRoot()),this.enableUpdating(!0),this._$EO?.forEach(t=>t.hostConnected?.())}enableUpdating(t){}disconnectedCallback(){this._$EO?.forEach(t=>t.hostDisconnected?.())}attributeChangedCallback(t,e,a){this._$AK(t,a)}_$ET(t,e){const a=this.constructor.elementProperties.get(t),i=this.constructor._$Eu(t,a);if(i!==void 0&&a.reflect===!0){const s=(a.converter?.toAttribute!==void 0?a.converter:$t).toAttribute(e,a.type);this._$Em=t,s==null?this.removeAttribute(i):this.setAttribute(i,s),this._$Em=null}}_$AK(t,e){const a=this.constructor,i=a._$Eh.get(t);if(i!==void 0&&this._$Em!==i){const s=a.getPropertyOptions(i),r=typeof s.converter=="function"?{fromAttribute:s.converter}:s.converter?.fromAttribute!==void 0?s.converter:$t;this._$Em=i;const n=r.fromAttribute(e,s.type);this[i]=n??this._$Ej?.get(i)??n,this._$Em=null}}requestUpdate(t,e,a,i=!1,s){if(t!==void 0){const r=this.constructor;if(i===!1&&(s=this[t]),a??(a=r.getPropertyOptions(t)),!((a.hasChanged??Rt)(s,e)||a.useDefault&&a.reflect&&s===this._$Ej?.get(t)&&!this.hasAttribute(r._$Eu(t,a))))return;this.C(t,e,a)}this.isUpdatePending===!1&&(this._$ES=this._$EP())}C(t,e,{useDefault:a,reflect:i,wrapped:s},r){a&&!(this._$Ej??(this._$Ej=new Map)).has(t)&&(this._$Ej.set(t,r??e??this[t]),s!==!0||r!==void 0)||(this._$AL.has(t)||(this.hasUpdated||a||(e=void 0),this._$AL.set(t,e)),i===!0&&this._$Em!==t&&(this._$Eq??(this._$Eq=new Set)).add(t))}async _$EP(){this.isUpdatePending=!0;try{await this._$ES}catch(e){Promise.reject(e)}const t=this.scheduleUpdate();return t!=null&&await t,!this.isUpdatePending}scheduleUpdate(){return this.performUpdate()}performUpdate(){if(!this.isUpdatePending)return;if(!this.hasUpdated){if(this.renderRoot??(this.renderRoot=this.createRenderRoot()),this._$Ep){for(const[i,s]of this._$Ep)this[i]=s;this._$Ep=void 0}const a=this.constructor.elementProperties;if(a.size>0)for(const[i,s]of a){const{wrapped:r}=s,n=this[i];r!==!0||this._$AL.has(i)||n===void 0||this.C(i,void 0,s,n)}}let t=!1;const e=this._$AL;try{t=this.shouldUpdate(e),t?(this.willUpdate(e),this._$EO?.forEach(a=>a.hostUpdate?.()),this.update(e)):this._$EM()}catch(a){throw t=!1,this._$EM(),a}t&&this._$AE(e)}willUpdate(t){}_$AE(t){this._$EO?.forEach(e=>e.hostUpdated?.()),this.hasUpdated||(this.hasUpdated=!0,this.firstUpdated(t)),this.updated(t)}_$EM(){this._$AL=new Map,this.isUpdatePending=!1}get updateComplete(){return this.getUpdateComplete()}getUpdateComplete(){return this._$ES}shouldUpdate(t){return!0}update(t){this._$Eq&&(this._$Eq=this._$Eq.forEach(e=>this._$ET(e,this[e]))),this._$EM()}updated(t){}firstUpdated(t){}};X.elementStyles=[],X.shadowRootOptions={mode:"open"},X[ot("elementProperties")]=new Map,X[ot("finalized")]=new Map,Pe?.({ReactiveElement:X}),(j.reactiveElementVersions??(j.reactiveElementVersions=[])).push("2.1.2");/**
+ */const{is:Ee,defineProperty:ze,getOwnPropertyDescriptor:qe,getOwnPropertyNames:Ue,getOwnPropertySymbols:Ke,getPrototypeOf:Le}=Object,G=globalThis,jt=G.trustedTypes,Fe=jt?jt.emptyScript:"",Ne=G.reactiveElementPolyfillSupport,ct=(h,t)=>h,Mt={toAttribute(h,t){switch(t){case Boolean:h=h?Fe:null;break;case Object:case Array:h=h==null?h:JSON.stringify(h)}return h},fromAttribute(h,t){let e=h;switch(t){case Boolean:e=h!==null;break;case Number:e=h===null?null:Number(h);break;case Object:case Array:try{e=JSON.parse(h)}catch{e=null}}return e}},Ot=(h,t)=>!Ee(h,t),Gt={attribute:!0,type:String,converter:Mt,reflect:!1,useDefault:!1,hasChanged:Ot};Symbol.metadata??(Symbol.metadata=Symbol("metadata")),G.litPropertyMetadata??(G.litPropertyMetadata=new WeakMap);let et=class extends HTMLElement{static addInitializer(t){this._$Ei(),(this.l??(this.l=[])).push(t)}static get observedAttributes(){return this.finalize(),this._$Eh&&[...this._$Eh.keys()]}static createProperty(t,e=Gt){if(e.state&&(e.attribute=!1),this._$Ei(),this.prototype.hasOwnProperty(t)&&((e=Object.create(e)).wrapped=!0),this.elementProperties.set(t,e),!e.noAccessor){const a=Symbol(),i=this.getPropertyDescriptor(t,a,e);i!==void 0&&ze(this.prototype,t,i)}}static getPropertyDescriptor(t,e,a){const{get:i,set:r}=qe(this.prototype,t)??{get(){return this[e]},set(s){this[e]=s}};return{get:i,set(s){const d=i?.call(this);r?.call(this,s),this.requestUpdate(t,d,a)},configurable:!0,enumerable:!0}}static getPropertyOptions(t){return this.elementProperties.get(t)??Gt}static _$Ei(){if(this.hasOwnProperty(ct("elementProperties")))return;const t=Le(this);t.finalize(),t.l!==void 0&&(this.l=[...t.l]),this.elementProperties=new Map(t.elementProperties)}static finalize(){if(this.hasOwnProperty(ct("finalized")))return;if(this.finalized=!0,this._$Ei(),this.hasOwnProperty(ct("properties"))){const e=this.properties,a=[...Ue(e),...Ke(e)];for(const i of a)this.createProperty(i,e[i])}const t=this[Symbol.metadata];if(t!==null){const e=litPropertyMetadata.get(t);if(e!==void 0)for(const[a,i]of e)this.elementProperties.set(a,i)}this._$Eh=new Map;for(const[e,a]of this.elementProperties){const i=this._$Eu(e,a);i!==void 0&&this._$Eh.set(i,e)}this.elementStyles=this.finalizeStyles(this.styles)}static finalizeStyles(t){const e=[];if(Array.isArray(t)){const a=new Set(t.flat(1/0).reverse());for(const i of a)e.unshift(Bt(i))}else t!==void 0&&e.push(Bt(t));return e}static _$Eu(t,e){const a=e.attribute;return a===!1?void 0:typeof a=="string"?a:typeof t=="string"?t.toLowerCase():void 0}constructor(){super(),this._$Ep=void 0,this.isUpdatePending=!1,this.hasUpdated=!1,this._$Em=null,this._$Ev()}_$Ev(){this._$ES=new Promise(t=>this.enableUpdating=t),this._$AL=new Map,this._$E_(),this.requestUpdate(),this.constructor.l?.forEach(t=>t(this))}addController(t){(this._$EO??(this._$EO=new Set)).add(t),this.renderRoot!==void 0&&this.isConnected&&t.hostConnected?.()}removeController(t){this._$EO?.delete(t)}_$E_(){const t=new Map,e=this.constructor.elementProperties;for(const a of e.keys())this.hasOwnProperty(a)&&(t.set(a,this[a]),delete this[a]);t.size>0&&(this._$Ep=t)}createRenderRoot(){const t=this.shadowRoot??this.attachShadow(this.constructor.shadowRootOptions);return Ce(t,this.constructor.elementStyles),t}connectedCallback(){this.renderRoot??(this.renderRoot=this.createRenderRoot()),this.enableUpdating(!0),this._$EO?.forEach(t=>t.hostConnected?.())}enableUpdating(t){}disconnectedCallback(){this._$EO?.forEach(t=>t.hostDisconnected?.())}attributeChangedCallback(t,e,a){this._$AK(t,a)}_$ET(t,e){const a=this.constructor.elementProperties.get(t),i=this.constructor._$Eu(t,a);if(i!==void 0&&a.reflect===!0){const r=(a.converter?.toAttribute!==void 0?a.converter:Mt).toAttribute(e,a.type);this._$Em=t,r==null?this.removeAttribute(i):this.setAttribute(i,r),this._$Em=null}}_$AK(t,e){const a=this.constructor,i=a._$Eh.get(t);if(i!==void 0&&this._$Em!==i){const r=a.getPropertyOptions(i),s=typeof r.converter=="function"?{fromAttribute:r.converter}:r.converter?.fromAttribute!==void 0?r.converter:Mt;this._$Em=i;const d=s.fromAttribute(e,r.type);this[i]=d??this._$Ej?.get(i)??d,this._$Em=null}}requestUpdate(t,e,a,i=!1,r){if(t!==void 0){const s=this.constructor;if(i===!1&&(r=this[t]),a??(a=s.getPropertyOptions(t)),!((a.hasChanged??Ot)(r,e)||a.useDefault&&a.reflect&&r===this._$Ej?.get(t)&&!this.hasAttribute(s._$Eu(t,a))))return;this.C(t,e,a)}this.isUpdatePending===!1&&(this._$ES=this._$EP())}C(t,e,{useDefault:a,reflect:i,wrapped:r},s){a&&!(this._$Ej??(this._$Ej=new Map)).has(t)&&(this._$Ej.set(t,s??e??this[t]),r!==!0||s!==void 0)||(this._$AL.has(t)||(this.hasUpdated||a||(e=void 0),this._$AL.set(t,e)),i===!0&&this._$Em!==t&&(this._$Eq??(this._$Eq=new Set)).add(t))}async _$EP(){this.isUpdatePending=!0;try{await this._$ES}catch(e){Promise.reject(e)}const t=this.scheduleUpdate();return t!=null&&await t,!this.isUpdatePending}scheduleUpdate(){return this.performUpdate()}performUpdate(){if(!this.isUpdatePending)return;if(!this.hasUpdated){if(this.renderRoot??(this.renderRoot=this.createRenderRoot()),this._$Ep){for(const[i,r]of this._$Ep)this[i]=r;this._$Ep=void 0}const a=this.constructor.elementProperties;if(a.size>0)for(const[i,r]of a){const{wrapped:s}=r,d=this[i];s!==!0||this._$AL.has(i)||d===void 0||this.C(i,void 0,r,d)}}let t=!1;const e=this._$AL;try{t=this.shouldUpdate(e),t?(this.willUpdate(e),this._$EO?.forEach(a=>a.hostUpdate?.()),this.update(e)):this._$EM()}catch(a){throw t=!1,this._$EM(),a}t&&this._$AE(e)}willUpdate(t){}_$AE(t){this._$EO?.forEach(e=>e.hostUpdated?.()),this.hasUpdated||(this.hasUpdated=!0,this.firstUpdated(t)),this.updated(t)}_$EM(){this._$AL=new Map,this.isUpdatePending=!1}get updateComplete(){return this.getUpdateComplete()}getUpdateComplete(){return this._$ES}shouldUpdate(t){return!0}update(t){this._$Eq&&(this._$Eq=this._$Eq.forEach(e=>this._$ET(e,this[e]))),this._$EM()}updated(t){}firstUpdated(t){}};et.elementStyles=[],et.shadowRootOptions={mode:"open"},et[ct("elementProperties")]=new Map,et[ct("finalized")]=new Map,Ne?.({ReactiveElement:et}),(G.reactiveElementVersions??(G.reactiveElementVersions=[])).push("2.1.2");/**
  * @license
  * Copyright 2017 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
- */const nt=globalThis,Ot=u=>u,vt=nt.trustedTypes,Bt=vt?vt.createPolicy("lit-html",{createHTML:u=>u}):void 0,Qt="$lit$",O=`lit$${Math.random().toFixed(9).slice(2)}$`,Ht="?"+O,Le=`<${Ht}>`,H=document,lt=()=>H.createComment(""),ct=u=>u===null||typeof u!="object"&&typeof u!="function",At=Array.isArray,De=u=>At(u)||typeof u?.[Symbol.iterator]=="function",Mt=`[ 	
-\f\r]`,ut=/<(?:(!--|\/[^a-zA-Z])|(\/?[a-zA-Z][^>\s]*)|(\/?$))/g,Jt=/-->/g,Wt=/>/g,J=RegExp(`>|${Mt}(?:([^\\s"'>=/]+)(${Mt}*=${Mt}*(?:[^ 	
-\f\r"'\`<>=]|("|')|))|$)`,"g"),Gt=/'/g,Vt=/"/g,Yt=/^(?:script|style|textarea|title)$/i,Fe=u=>(t,...e)=>({_$litType$:u,strings:t,values:e}),d=Fe(1),Z=Symbol.for("lit-noChange"),w=Symbol.for("lit-nothing"),Xt=new WeakMap,W=H.createTreeWalker(H,129);function Zt(u,t){if(!At(u)||!u.hasOwnProperty("raw"))throw Error("invalid template strings array");return Bt!==void 0?Bt.createHTML(t):t}const Re=(u,t)=>{const e=u.length-1,a=[];let i,s=t===2?"<svg>":t===3?"<math>":"",r=ut;for(let n=0;n<e;n++){const c=u[n];let h,p,f=-1,A=0;for(;A<c.length&&(r.lastIndex=A,p=r.exec(c),p!==null);)A=r.lastIndex,r===ut?p[1]==="!--"?r=Jt:p[1]!==void 0?r=Wt:p[2]!==void 0?(Yt.test(p[2])&&(i=RegExp("</"+p[2],"g")),r=J):p[3]!==void 0&&(r=J):r===J?p[0]===">"?(r=i??ut,f=-1):p[1]===void 0?f=-2:(f=r.lastIndex-p[2].length,h=p[1],r=p[3]===void 0?J:p[3]==='"'?Vt:Gt):r===Vt||r===Gt?r=J:r===Jt||r===Wt?r=ut:(r=J,i=void 0);const P=r===J&&u[n+1].startsWith("/>")?" ":"";s+=r===ut?c+Le:f>=0?(a.push(h),c.slice(0,f)+Qt+c.slice(f)+O+P):c+O+(f===-2?n:P)}return[Zt(u,s+(u[e]||"<?>")+(t===2?"</svg>":t===3?"</math>":"")),a]};class mt{constructor({strings:t,_$litType$:e},a){let i;this.parts=[];let s=0,r=0;const n=t.length-1,c=this.parts,[h,p]=Re(t,e);if(this.el=mt.createElement(h,a),W.currentNode=this.el.content,e===2||e===3){const f=this.el.content.firstChild;f.replaceWith(...f.childNodes)}for(;(i=W.nextNode())!==null&&c.length<n;){if(i.nodeType===1){if(i.hasAttributes())for(const f of i.getAttributeNames())if(f.endsWith(Qt)){const A=p[r++],P=i.getAttribute(f).split(O),Y=/([.?@])?(.*)/.exec(A);c.push({type:1,index:s,name:Y[2],strings:P,ctor:Y[1]==="."?Oe:Y[1]==="?"?Be:Y[1]==="@"?Qe:kt}),i.removeAttribute(f)}else f.startsWith(O)&&(c.push({type:6,index:s}),i.removeAttribute(f));if(Yt.test(i.tagName)){const f=i.textContent.split(O),A=f.length-1;if(A>0){i.textContent=vt?vt.emptyScript:"";for(let P=0;P<A;P++)i.append(f[P],lt()),W.nextNode(),c.push({type:2,index:++s});i.append(f[A],lt())}}}else if(i.nodeType===8)if(i.data===Ht)c.push({type:2,index:s});else{let f=-1;for(;(f=i.data.indexOf(O,f+1))!==-1;)c.push({type:7,index:s}),f+=O.length-1}s++}}static createElement(t,e){const a=H.createElement("template");return a.innerHTML=t,a}}function tt(u,t,e=u,a){if(t===Z)return t;let i=a!==void 0?e._$Co?.[a]:e._$Cl;const s=ct(t)?void 0:t._$litDirective$;return i?.constructor!==s&&(i?._$AO?.(!1),s===void 0?i=void 0:(i=new s(u),i._$AT(u,e,a)),a!==void 0?(e._$Co??(e._$Co=[]))[a]=i:e._$Cl=i),i!==void 0&&(t=tt(u,i._$AS(u,t.values),i,a)),t}class je{constructor(t,e){this._$AV=[],this._$AN=void 0,this._$AD=t,this._$AM=e}get parentNode(){return this._$AM.parentNode}get _$AU(){return this._$AM._$AU}u(t){const{el:{content:e},parts:a}=this._$AD,i=(t?.creationScope??H).importNode(e,!0);W.currentNode=i;let s=W.nextNode(),r=0,n=0,c=a[0];for(;c!==void 0;){if(r===c.index){let h;c.type===2?h=new gt(s,s.nextSibling,this,t):c.type===1?h=new c.ctor(s,c.name,c.strings,this,t):c.type===6&&(h=new He(s,this,t)),this._$AV.push(h),c=a[++n]}r!==c?.index&&(s=W.nextNode(),r++)}return W.currentNode=H,i}p(t){let e=0;for(const a of this._$AV)a!==void 0&&(a.strings!==void 0?(a._$AI(t,a,e),e+=a.strings.length-2):a._$AI(t[e])),e++}}class gt{get _$AU(){return this._$AM?._$AU??this._$Cv}constructor(t,e,a,i){this.type=2,this._$AH=w,this._$AN=void 0,this._$AA=t,this._$AB=e,this._$AM=a,this.options=i,this._$Cv=i?.isConnected??!0}get parentNode(){let t=this._$AA.parentNode;const e=this._$AM;return e!==void 0&&t?.nodeType===11&&(t=e.parentNode),t}get startNode(){return this._$AA}get endNode(){return this._$AB}_$AI(t,e=this){t=tt(this,t,e),ct(t)?t===w||t==null||t===""?(this._$AH!==w&&this._$AR(),this._$AH=w):t!==this._$AH&&t!==Z&&this._(t):t._$litType$!==void 0?this.$(t):t.nodeType!==void 0?this.T(t):De(t)?this.k(t):this._(t)}O(t){return this._$AA.parentNode.insertBefore(t,this._$AB)}T(t){this._$AH!==t&&(this._$AR(),this._$AH=this.O(t))}_(t){this._$AH!==w&&ct(this._$AH)?this._$AA.nextSibling.data=t:this.T(H.createTextNode(t)),this._$AH=t}$(t){const{values:e,_$litType$:a}=t,i=typeof a=="number"?this._$AC(t):(a.el===void 0&&(a.el=mt.createElement(Zt(a.h,a.h[0]),this.options)),a);if(this._$AH?._$AD===i)this._$AH.p(e);else{const s=new je(i,this),r=s.u(this.options);s.p(e),this.T(r),this._$AH=s}}_$AC(t){let e=Xt.get(t.strings);return e===void 0&&Xt.set(t.strings,e=new mt(t)),e}k(t){At(this._$AH)||(this._$AH=[],this._$AR());const e=this._$AH;let a,i=0;for(const s of t)i===e.length?e.push(a=new gt(this.O(lt()),this.O(lt()),this,this.options)):a=e[i],a._$AI(s),i++;i<e.length&&(this._$AR(a&&a._$AB.nextSibling,i),e.length=i)}_$AR(t=this._$AA.nextSibling,e){for(this._$AP?.(!1,!0,e);t!==this._$AB;){const a=Ot(t).nextSibling;Ot(t).remove(),t=a}}setConnected(t){this._$AM===void 0&&(this._$Cv=t,this._$AP?.(t))}}class kt{get tagName(){return this.element.tagName}get _$AU(){return this._$AM._$AU}constructor(t,e,a,i,s){this.type=1,this._$AH=w,this._$AN=void 0,this.element=t,this.name=e,this._$AM=i,this.options=s,a.length>2||a[0]!==""||a[1]!==""?(this._$AH=Array(a.length-1).fill(new String),this.strings=a):this._$AH=w}_$AI(t,e=this,a,i){const s=this.strings;let r=!1;if(s===void 0)t=tt(this,t,e,0),r=!ct(t)||t!==this._$AH&&t!==Z,r&&(this._$AH=t);else{const n=t;let c,h;for(t=s[0],c=0;c<s.length-1;c++)h=tt(this,n[a+c],e,c),h===Z&&(h=this._$AH[c]),r||(r=!ct(h)||h!==this._$AH[c]),h===w?t=w:t!==w&&(t+=(h??"")+s[c+1]),this._$AH[c]=h}r&&!i&&this.j(t)}j(t){t===w?this.element.removeAttribute(this.name):this.element.setAttribute(this.name,t??"")}}class Oe extends kt{constructor(){super(...arguments),this.type=3}j(t){this.element[this.name]=t===w?void 0:t}}class Be extends kt{constructor(){super(...arguments),this.type=4}j(t){this.element.toggleAttribute(this.name,!!t&&t!==w)}}class Qe extends kt{constructor(t,e,a,i,s){super(t,e,a,i,s),this.type=5}_$AI(t,e=this){if((t=tt(this,t,e,0)??w)===Z)return;const a=this._$AH,i=t===w&&a!==w||t.capture!==a.capture||t.once!==a.once||t.passive!==a.passive,s=t!==w&&(a===w||i);i&&this.element.removeEventListener(this.name,this,a),s&&this.element.addEventListener(this.name,this,t),this._$AH=t}handleEvent(t){typeof this._$AH=="function"?this._$AH.call(this.options?.host??this.element,t):this._$AH.handleEvent(t)}}class He{constructor(t,e,a){this.element=t,this.type=6,this._$AN=void 0,this._$AM=e,this.options=a}get _$AU(){return this._$AM._$AU}_$AI(t){tt(this,t)}}const Je=nt.litHtmlPolyfillSupport;Je?.(mt,gt),(nt.litHtmlVersions??(nt.litHtmlVersions=[])).push("3.3.3");const We=(u,t,e)=>{const a=e?.renderBefore??t;let i=a._$litPart$;if(i===void 0){const s=e?.renderBefore??null;a._$litPart$=i=new gt(t.insertBefore(lt(),s),s,void 0,e??{})}return i._$AI(u),i};/**
+ */const ut=globalThis,Qt=h=>h,yt=ut.trustedTypes,Ht=yt?yt.createPolicy("lit-html",{createHTML:h=>h}):void 0,Jt="$lit$",Q=`lit$${Math.random().toFixed(9).slice(2)}$`,Wt="?"+Q,De=`<${Wt}>`,V=document,ht=()=>V.createComment(""),pt=h=>h===null||typeof h!="object"&&typeof h!="function",It=Array.isArray,Pe=h=>It(h)||typeof h?.[Symbol.iterator]=="function",Tt=`[ 	
+\f\r]`,mt=/<(?:(!--|\/[^a-zA-Z])|(\/?[a-zA-Z][^>\s]*)|(\/?$))/g,Vt=/-->/g,Yt=/>/g,Y=RegExp(`>|${Tt}(?:([^\\s"'>=/]+)(${Tt}*=${Tt}*(?:[^ 	
+\f\r"'\`<>=]|("|')|))|$)`,"g"),Xt=/'/g,Zt=/"/g,te=/^(?:script|style|textarea|title)$/i,Re=h=>(t,...e)=>({_$litType$:h,strings:t,values:e}),o=Re(1),at=Symbol.for("lit-noChange"),f=Symbol.for("lit-nothing"),ee=new WeakMap,X=V.createTreeWalker(V,129);function ae(h,t){if(!It(h)||!h.hasOwnProperty("raw"))throw Error("invalid template strings array");return Ht!==void 0?Ht.createHTML(t):t}const Be=(h,t)=>{const e=h.length-1,a=[];let i,r=t===2?"<svg>":t===3?"<math>":"",s=mt;for(let d=0;d<e;d++){const l=h[d];let p,u,m=-1,A=0;for(;A<l.length&&(s.lastIndex=A,u=s.exec(l),u!==null);)A=s.lastIndex,s===mt?u[1]==="!--"?s=Vt:u[1]!==void 0?s=Yt:u[2]!==void 0?(te.test(u[2])&&(i=RegExp("</"+u[2],"g")),s=Y):u[3]!==void 0&&(s=Y):s===Y?u[0]===">"?(s=i??mt,m=-1):u[1]===void 0?m=-2:(m=s.lastIndex-u[2].length,p=u[1],s=u[3]===void 0?Y:u[3]==='"'?Zt:Xt):s===Zt||s===Xt?s=Y:s===Vt||s===Yt?s=mt:(s=Y,i=void 0);const $=s===Y&&h[d+1].startsWith("/>")?" ":"";r+=s===mt?l+De:m>=0?(a.push(p),l.slice(0,m)+Jt+l.slice(m)+Q+$):l+Q+(m===-2?d:$)}return[ae(h,r+(h[e]||"<?>")+(t===2?"</svg>":t===3?"</math>":"")),a]};class vt{constructor({strings:t,_$litType$:e},a){let i;this.parts=[];let r=0,s=0;const d=t.length-1,l=this.parts,[p,u]=Be(t,e);if(this.el=vt.createElement(p,a),X.currentNode=this.el.content,e===2||e===3){const m=this.el.content.firstChild;m.replaceWith(...m.childNodes)}for(;(i=X.nextNode())!==null&&l.length<d;){if(i.nodeType===1){if(i.hasAttributes())for(const m of i.getAttributeNames())if(m.endsWith(Jt)){const A=u[s++],$=i.getAttribute(m).split(Q),M=/([.?@])?(.*)/.exec(A);l.push({type:1,index:r,name:M[2],strings:$,ctor:M[1]==="."?Oe:M[1]==="?"?Ge:M[1]==="@"?Qe:xt}),i.removeAttribute(m)}else m.startsWith(Q)&&(l.push({type:6,index:r}),i.removeAttribute(m));if(te.test(i.tagName)){const m=i.textContent.split(Q),A=m.length-1;if(A>0){i.textContent=yt?yt.emptyScript:"";for(let $=0;$<A;$++)i.append(m[$],ht()),X.nextNode(),l.push({type:2,index:++r});i.append(m[A],ht())}}}else if(i.nodeType===8)if(i.data===Wt)l.push({type:2,index:r});else{let m=-1;for(;(m=i.data.indexOf(Q,m+1))!==-1;)l.push({type:7,index:r}),m+=Q.length-1}r++}}static createElement(t,e){const a=V.createElement("template");return a.innerHTML=t,a}}function it(h,t,e=h,a){if(t===at)return t;let i=a!==void 0?e._$Co?.[a]:e._$Cl;const r=pt(t)?void 0:t._$litDirective$;return i?.constructor!==r&&(i?._$AO?.(!1),r===void 0?i=void 0:(i=new r(h),i._$AT(h,e,a)),a!==void 0?(e._$Co??(e._$Co=[]))[a]=i:e._$Cl=i),i!==void 0&&(t=it(h,i._$AS(h,t.values),i,a)),t}class je{constructor(t,e){this._$AV=[],this._$AN=void 0,this._$AD=t,this._$AM=e}get parentNode(){return this._$AM.parentNode}get _$AU(){return this._$AM._$AU}u(t){const{el:{content:e},parts:a}=this._$AD,i=(t?.creationScope??V).importNode(e,!0);X.currentNode=i;let r=X.nextNode(),s=0,d=0,l=a[0];for(;l!==void 0;){if(s===l.index){let p;l.type===2?p=new ft(r,r.nextSibling,this,t):l.type===1?p=new l.ctor(r,l.name,l.strings,this,t):l.type===6&&(p=new He(r,this,t)),this._$AV.push(p),l=a[++d]}s!==l?.index&&(r=X.nextNode(),s++)}return X.currentNode=V,i}p(t){let e=0;for(const a of this._$AV)a!==void 0&&(a.strings!==void 0?(a._$AI(t,a,e),e+=a.strings.length-2):a._$AI(t[e])),e++}}class ft{get _$AU(){return this._$AM?._$AU??this._$Cv}constructor(t,e,a,i){this.type=2,this._$AH=f,this._$AN=void 0,this._$AA=t,this._$AB=e,this._$AM=a,this.options=i,this._$Cv=i?.isConnected??!0}get parentNode(){let t=this._$AA.parentNode;const e=this._$AM;return e!==void 0&&t?.nodeType===11&&(t=e.parentNode),t}get startNode(){return this._$AA}get endNode(){return this._$AB}_$AI(t,e=this){t=it(this,t,e),pt(t)?t===f||t==null||t===""?(this._$AH!==f&&this._$AR(),this._$AH=f):t!==this._$AH&&t!==at&&this._(t):t._$litType$!==void 0?this.$(t):t.nodeType!==void 0?this.T(t):Pe(t)?this.k(t):this._(t)}O(t){return this._$AA.parentNode.insertBefore(t,this._$AB)}T(t){this._$AH!==t&&(this._$AR(),this._$AH=this.O(t))}_(t){this._$AH!==f&&pt(this._$AH)?this._$AA.nextSibling.data=t:this.T(V.createTextNode(t)),this._$AH=t}$(t){const{values:e,_$litType$:a}=t,i=typeof a=="number"?this._$AC(t):(a.el===void 0&&(a.el=vt.createElement(ae(a.h,a.h[0]),this.options)),a);if(this._$AH?._$AD===i)this._$AH.p(e);else{const r=new je(i,this),s=r.u(this.options);r.p(e),this.T(s),this._$AH=r}}_$AC(t){let e=ee.get(t.strings);return e===void 0&&ee.set(t.strings,e=new vt(t)),e}k(t){It(this._$AH)||(this._$AH=[],this._$AR());const e=this._$AH;let a,i=0;for(const r of t)i===e.length?e.push(a=new ft(this.O(ht()),this.O(ht()),this,this.options)):a=e[i],a._$AI(r),i++;i<e.length&&(this._$AR(a&&a._$AB.nextSibling,i),e.length=i)}_$AR(t=this._$AA.nextSibling,e){for(this._$AP?.(!1,!0,e);t!==this._$AB;){const a=Qt(t).nextSibling;Qt(t).remove(),t=a}}setConnected(t){this._$AM===void 0&&(this._$Cv=t,this._$AP?.(t))}}class xt{get tagName(){return this.element.tagName}get _$AU(){return this._$AM._$AU}constructor(t,e,a,i,r){this.type=1,this._$AH=f,this._$AN=void 0,this.element=t,this.name=e,this._$AM=i,this.options=r,a.length>2||a[0]!==""||a[1]!==""?(this._$AH=Array(a.length-1).fill(new String),this.strings=a):this._$AH=f}_$AI(t,e=this,a,i){const r=this.strings;let s=!1;if(r===void 0)t=it(this,t,e,0),s=!pt(t)||t!==this._$AH&&t!==at,s&&(this._$AH=t);else{const d=t;let l,p;for(t=r[0],l=0;l<r.length-1;l++)p=it(this,d[a+l],e,l),p===at&&(p=this._$AH[l]),s||(s=!pt(p)||p!==this._$AH[l]),p===f?t=f:t!==f&&(t+=(p??"")+r[l+1]),this._$AH[l]=p}s&&!i&&this.j(t)}j(t){t===f?this.element.removeAttribute(this.name):this.element.setAttribute(this.name,t??"")}}class Oe extends xt{constructor(){super(...arguments),this.type=3}j(t){this.element[this.name]=t===f?void 0:t}}class Ge extends xt{constructor(){super(...arguments),this.type=4}j(t){this.element.toggleAttribute(this.name,!!t&&t!==f)}}class Qe extends xt{constructor(t,e,a,i,r){super(t,e,a,i,r),this.type=5}_$AI(t,e=this){if((t=it(this,t,e,0)??f)===at)return;const a=this._$AH,i=t===f&&a!==f||t.capture!==a.capture||t.once!==a.once||t.passive!==a.passive,r=t!==f&&(a===f||i);i&&this.element.removeEventListener(this.name,this,a),r&&this.element.addEventListener(this.name,this,t),this._$AH=t}handleEvent(t){typeof this._$AH=="function"?this._$AH.call(this.options?.host??this.element,t):this._$AH.handleEvent(t)}}class He{constructor(t,e,a){this.element=t,this.type=6,this._$AN=void 0,this._$AM=e,this.options=a}get _$AU(){return this._$AM._$AU}_$AI(t){it(this,t)}}const Je=ut.litHtmlPolyfillSupport;Je?.(vt,ft),(ut.litHtmlVersions??(ut.litHtmlVersions=[])).push("3.3.3");const We=(h,t,e)=>{const a=e?.renderBefore??t;let i=a._$litPart$;if(i===void 0){const r=e?.renderBefore??null;a._$litPart$=i=new ft(t.insertBefore(ht(),r),r,void 0,e??{})}return i._$AI(h),i};/**
  * @license
  * Copyright 2017 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
- */const ht=globalThis;class U extends X{constructor(){super(...arguments),this.renderOptions={host:this},this._$Do=void 0}createRenderRoot(){var e;const t=super.createRenderRoot();return(e=this.renderOptions).renderBefore??(e.renderBefore=t.firstChild),t}update(t){const e=this.render();this.hasUpdated||(this.renderOptions.isConnected=this.isConnected),super.update(t),this._$Do=We(e,this.renderRoot,this.renderOptions)}connectedCallback(){super.connectedCallback(),this._$Do?.setConnected(!0)}disconnectedCallback(){super.disconnectedCallback(),this._$Do?.setConnected(!1)}render(){return Z}}U._$litElement$=!0,U.finalized=!0,ht.litElementHydrateSupport?.({LitElement:U});const Ge=ht.litElementPolyfillSupport;Ge?.({LitElement:U}),(ht.litElementVersions??(ht.litElementVersions=[])).push("4.2.2");var bt={};(function u(t,e,a,i){var s=!!(t.Worker&&t.Blob&&t.Promise&&t.OffscreenCanvas&&t.OffscreenCanvasRenderingContext2D&&t.HTMLCanvasElement&&t.HTMLCanvasElement.prototype.transferControlToOffscreen&&t.URL&&t.URL.createObjectURL),r=typeof Path2D=="function"&&typeof DOMMatrix=="function",n=(function(){if(!t.OffscreenCanvas)return!1;try{var l=new OffscreenCanvas(1,1),o=l.getContext("2d");o.fillRect(0,0,1,1);var m=l.transferToImageBitmap();o.createPattern(m,"no-repeat")}catch{return!1}return!0})();function c(){}function h(l){var o=e.exports.Promise,m=o!==void 0?o:t.Promise;return typeof m=="function"?new m(l):(l(c,c),null)}var p=(function(l,o){return{transform:function(m){if(l)return m;if(o.has(m))return o.get(m);var b=new OffscreenCanvas(m.width,m.height),v=b.getContext("2d");return v.drawImage(m,0,0),o.set(m,b),b},clear:function(){o.clear()}}})(n,new Map),f=(function(){var l=Math.floor(16.666666666666668),o,m,b={},v=0;return typeof requestAnimationFrame=="function"&&typeof cancelAnimationFrame=="function"?(o=function(k){var _=Math.random();return b[_]=requestAnimationFrame(function g(y){v===y||v+l-1<y?(v=y,delete b[_],k()):b[_]=requestAnimationFrame(g)}),_},m=function(k){b[k]&&cancelAnimationFrame(b[k])}):(o=function(k){return setTimeout(k,l)},m=function(k){return clearTimeout(k)}),{frame:o,cancel:m}})(),A=(function(){var l,o,m={};function b(v){function k(_,g){v.postMessage({options:_||{},callback:g})}v.init=function(g){var y=g.transferControlToOffscreen();v.postMessage({canvas:y},[y])},v.fire=function(g,y,S){if(o)return k(g,null),o;var M=Math.random().toString(36).slice(2);return o=h(function($){function I(z){z.data.callback===M&&(delete m[M],v.removeEventListener("message",I),o=null,p.clear(),S(),$())}v.addEventListener("message",I),k(g,M),m[M]=I.bind(null,{data:{callback:M}})}),o},v.reset=function(){v.postMessage({reset:!0});for(var g in m)m[g](),delete m[g]}}return function(){if(l)return l;if(!a&&s){var v=["var CONFETTI, SIZE = {}, module = {};","("+u.toString()+")(this, module, true, SIZE);","onmessage = function(msg) {","  if (msg.data.options) {","    CONFETTI(msg.data.options).then(function () {","      if (msg.data.callback) {","        postMessage({ callback: msg.data.callback });","      }","    });","  } else if (msg.data.reset) {","    CONFETTI && CONFETTI.reset();","  } else if (msg.data.resize) {","    SIZE.width = msg.data.resize.width;","    SIZE.height = msg.data.resize.height;","  } else if (msg.data.canvas) {","    SIZE.width = msg.data.canvas.width;","    SIZE.height = msg.data.canvas.height;","    CONFETTI = module.exports.create(msg.data.canvas);","  }","}"].join(`
-`);try{l=new Worker(URL.createObjectURL(new Blob([v])))}catch(k){return typeof console<"u"&&typeof console.warn=="function"&&console.warn("\u{1F38A} Could not load worker",k),null}b(l)}return l}})(),P={particleCount:50,angle:90,spread:45,startVelocity:45,decay:.9,gravity:1,drift:0,ticks:200,x:.5,y:.5,shapes:["square","circle"],zIndex:100,colors:["#26ccff","#a25afd","#ff5e7e","#88ff5a","#fcff42","#ffa62d","#ff36ff"],disableForReducedMotion:!1,scalar:1};function Y(l,o){return o?o(l):l}function ee(l){return l!=null}function T(l,o,m){return Y(l&&ee(l[o])?l[o]:P[o],m)}function ae(l){return l<0?0:Math.floor(l)}function ie(l,o){return Math.floor(Math.random()*(o-l))+l}function _t(l){return parseInt(l,16)}function se(l){return l.map(re)}function re(l){var o=String(l).replace(/[^0-9a-f]/gi,"");return o.length<6&&(o=o[0]+o[0]+o[1]+o[1]+o[2]+o[2]),{r:_t(o.substring(0,2)),g:_t(o.substring(2,4)),b:_t(o.substring(4,6))}}function de(l){var o=T(l,"origin",Object);return o.x=T(o,"x",Number),o.y=T(o,"y",Number),o}function oe(l){l.width=document.documentElement.clientWidth,l.height=document.documentElement.clientHeight}function ne(l){var o=l.getBoundingClientRect();l.width=o.width,l.height=o.height}function le(l){var o=document.createElement("canvas");return o.style.position="fixed",o.style.top="0px",o.style.left="0px",o.style.pointerEvents="none",o.style.zIndex=l,o}function ce(l,o,m,b,v,k,_,g,y){l.save(),l.translate(o,m),l.rotate(k),l.scale(b,v),l.arc(0,0,1,_,g,y),l.restore()}function ue(l){var o=l.angle*(Math.PI/180),m=l.spread*(Math.PI/180);return{x:l.x,y:l.y,wobble:Math.random()*10,wobbleSpeed:Math.min(.11,Math.random()*.1+.05),velocity:l.startVelocity*.5+Math.random()*l.startVelocity,angle2D:-o+(.5*m-Math.random()*m),tiltAngle:(Math.random()*(.75-.25)+.25)*Math.PI,color:l.color,shape:l.shape,tick:0,totalTicks:l.ticks,decay:l.decay,drift:l.drift,random:Math.random()+2,tiltSin:0,tiltCos:0,wobbleX:0,wobbleY:0,gravity:l.gravity*3,ovalScalar:.6,scalar:l.scalar,flat:l.flat}}function he(l,o){o.x+=Math.cos(o.angle2D)*o.velocity+o.drift,o.y+=Math.sin(o.angle2D)*o.velocity+o.gravity,o.velocity*=o.decay,o.flat?(o.wobble=0,o.wobbleX=o.x+10*o.scalar,o.wobbleY=o.y+10*o.scalar,o.tiltSin=0,o.tiltCos=0,o.random=1):(o.wobble+=o.wobbleSpeed,o.wobbleX=o.x+10*o.scalar*Math.cos(o.wobble),o.wobbleY=o.y+10*o.scalar*Math.sin(o.wobble),o.tiltAngle+=.1,o.tiltSin=Math.sin(o.tiltAngle),o.tiltCos=Math.cos(o.tiltAngle),o.random=Math.random()+2);var m=o.tick++/o.totalTicks,b=o.x+o.random*o.tiltCos,v=o.y+o.random*o.tiltSin,k=o.wobbleX+o.random*o.tiltCos,_=o.wobbleY+o.random*o.tiltSin;if(l.fillStyle="rgba("+o.color.r+", "+o.color.g+", "+o.color.b+", "+(1-m)+")",l.beginPath(),r&&o.shape.type==="path"&&typeof o.shape.path=="string"&&Array.isArray(o.shape.matrix))l.fill(me(o.shape.path,o.shape.matrix,o.x,o.y,Math.abs(k-b)*.1,Math.abs(_-v)*.1,Math.PI/10*o.wobble));else if(o.shape.type==="bitmap"){var g=Math.PI/10*o.wobble,y=Math.abs(k-b)*.1,S=Math.abs(_-v)*.1,M=o.shape.bitmap.width*o.scalar,$=o.shape.bitmap.height*o.scalar,I=new DOMMatrix([Math.cos(g)*y,Math.sin(g)*y,-Math.sin(g)*S,Math.cos(g)*S,o.x,o.y]);I.multiplySelf(new DOMMatrix(o.shape.matrix));var z=l.createPattern(p.transform(o.shape.bitmap),"no-repeat");z.setTransform(I),l.globalAlpha=1-m,l.fillStyle=z,l.fillRect(o.x-M/2,o.y-$/2,M,$),l.globalAlpha=1}else if(o.shape==="circle")l.ellipse?l.ellipse(o.x,o.y,Math.abs(k-b)*o.ovalScalar,Math.abs(_-v)*o.ovalScalar,Math.PI/10*o.wobble,0,2*Math.PI):ce(l,o.x,o.y,Math.abs(k-b)*o.ovalScalar,Math.abs(_-v)*o.ovalScalar,Math.PI/10*o.wobble,0,2*Math.PI);else if(o.shape==="star")for(var x=Math.PI/2*3,E=4*o.scalar,N=8*o.scalar,K=o.x,D=o.y,Q=5,L=Math.PI/Q;Q--;)K=o.x+Math.cos(x)*N,D=o.y+Math.sin(x)*N,l.lineTo(K,D),x+=L,K=o.x+Math.cos(x)*E,D=o.y+Math.sin(x)*E,l.lineTo(K,D),x+=L;else l.moveTo(Math.floor(o.x),Math.floor(o.y)),l.lineTo(Math.floor(o.wobbleX),Math.floor(v)),l.lineTo(Math.floor(k),Math.floor(_)),l.lineTo(Math.floor(b),Math.floor(o.wobbleY));return l.closePath(),l.fill(),o.tick<o.totalTicks}function pe(l,o,m,b,v){var k=o.slice(),_=l.getContext("2d"),g,y,S=h(function(M){function $(){g=y=null,_.clearRect(0,0,b.width,b.height),p.clear(),v(),M()}function I(){a&&!(b.width===i.width&&b.height===i.height)&&(b.width=l.width=i.width,b.height=l.height=i.height),!b.width&&!b.height&&(m(l),b.width=l.width,b.height=l.height),_.clearRect(0,0,b.width,b.height),k=k.filter(function(z){return he(_,z)}),k.length?g=f.frame(I):$()}g=f.frame(I),y=$});return{addFettis:function(M){return k=k.concat(M),S},canvas:l,promise:S,reset:function(){g&&f.cancel(g),y&&y()}}}function Ct(l,o){var m=!l,b=!!T(o||{},"resize"),v=!1,k=T(o,"disableForReducedMotion",Boolean),_=s&&!!T(o||{},"useWorker"),g=_?A():null,y=m?oe:ne,S=l&&g?!!l.__confetti_initialized:!1,M=typeof matchMedia=="function"&&matchMedia("(prefers-reduced-motion)").matches,$;function I(x,E,N){for(var K=T(x,"particleCount",ae),D=T(x,"angle",Number),Q=T(x,"spread",Number),L=T(x,"startVelocity",Number),fe=T(x,"decay",Number),ve=T(x,"gravity",Number),ke=T(x,"drift",Number),qt=T(x,"colors",se),_e=T(x,"ticks",Number),Et=T(x,"shapes"),ye=T(x,"scalar"),xe=!!T(x,"flat"),Ut=de(x),Nt=K,xt=[],we=l.width*Ut.x,Se=l.height*Ut.y;Nt--;)xt.push(ue({x:we,y:Se,angle:D,spread:Q,startVelocity:L,color:qt[Nt%qt.length],shape:Et[ie(0,Et.length)],ticks:_e,decay:fe,gravity:ve,drift:ke,scalar:ye,flat:xe}));return $?$.addFettis(xt):($=pe(l,xt,y,E,N),$.promise)}function z(x){var E=k||T(x,"disableForReducedMotion",Boolean),N=T(x,"zIndex",Number);if(E&&M)return h(function(L){L()});m&&$?l=$.canvas:m&&!l&&(l=le(N),document.body.appendChild(l)),b&&!S&&y(l);var K={width:l.width,height:l.height};g&&!S&&g.init(l),S=!0,g&&(l.__confetti_initialized=!0);function D(){if(g){var L={getBoundingClientRect:function(){if(!m)return l.getBoundingClientRect()}};y(L),g.postMessage({resize:{width:L.width,height:L.height}});return}K.width=K.height=null}function Q(){$=null,b&&(v=!1,t.removeEventListener("resize",D)),m&&l&&(document.body.contains(l)&&document.body.removeChild(l),l=null,S=!1)}return b&&!v&&(v=!0,t.addEventListener("resize",D,!1)),g?g.fire(x,K,Q):I(x,K,Q)}return z.reset=function(){g&&g.reset(),$&&$.reset()},z}var yt;function zt(){return yt||(yt=Ct(null,{useWorker:!0,resize:!0})),yt}function me(l,o,m,b,v,k,_){var g=new Path2D(l),y=new Path2D;y.addPath(g,new DOMMatrix(o));var S=new Path2D;return S.addPath(y,new DOMMatrix([Math.cos(_)*v,Math.sin(_)*v,-Math.sin(_)*k,Math.cos(_)*k,m,b])),S}function ge(l){if(!r)throw new Error("path confetti are not supported in this browser");var o,m;typeof l=="string"?o=l:(o=l.path,m=l.matrix);var b=new Path2D(o),v=document.createElement("canvas"),k=v.getContext("2d");if(!m){for(var _=1e3,g=_,y=_,S=0,M=0,$,I,z=0;z<_;z+=2)for(var x=0;x<_;x+=2)k.isPointInPath(b,z,x,"nonzero")&&(g=Math.min(g,z),y=Math.min(y,x),S=Math.max(S,z),M=Math.max(M,x));$=S-g,I=M-y;var E=10,N=Math.min(E/$,E/I);m=[N,0,0,N,-Math.round($/2+g)*N,-Math.round(I/2+y)*N]}return{type:"path",path:o,matrix:m}}function be(l){var o,m=1,b="#000000",v='"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", "EmojiOne Color", "Android Emoji", "Twemoji Mozilla", "system emoji", sans-serif';typeof l=="string"?o=l:(o=l.text,m="scalar"in l?l.scalar:m,v="fontFamily"in l?l.fontFamily:v,b="color"in l?l.color:b);var k=10*m,_=""+k+"px "+v,g=new OffscreenCanvas(k,k),y=g.getContext("2d");y.font=_;var S=y.measureText(o),M=Math.ceil(S.actualBoundingBoxRight+S.actualBoundingBoxLeft),$=Math.ceil(S.actualBoundingBoxAscent+S.actualBoundingBoxDescent),I=2,z=S.actualBoundingBoxLeft+I,x=S.actualBoundingBoxAscent+I;M+=I+I,$+=I+I,g=new OffscreenCanvas(M,$),y=g.getContext("2d"),y.font=_,y.fillStyle=b,y.fillText(o,z,x);var E=1/m;return{type:"bitmap",bitmap:g.transferToImageBitmap(),matrix:[E,0,0,E,-M*E/2,-$*E/2]}}e.exports=function(){return zt().apply(this,arguments)},e.exports.reset=function(){zt().reset()},e.exports.create=Ct,e.exports.shapeFromPath=ge,e.exports.shapeFromText=be})((function(){return typeof window<"u"?window:typeof self<"u"?self:this||{}})(),bt,!1);var Ve=bt.exports;bt.exports.create;class It extends R(F(U)){static get tag(){return"timer-kuis"}static get properties(){return{...super.properties,duration:{type:Number,attribute:"duration",reflect:!0},remaining:{type:Number,attribute:"remaining",reflect:!0},autostart:{type:Boolean,attribute:"autostart",reflect:!0},_remaining:{state:!0},_running:{state:!0},hideControls:{type:Boolean,attribute:"hide-controls",reflect:!0}}}constructor(){super(),this.duration=300,this.autostart=!1,this.hideControls=!1,this._remaining=this.duration,this._running=!1,this._intervalId=null,this.t={...this.t,title:"Waktu Kuis",start:"Mulai",pause:"Jeda",reset:"Ulang",done:"Waktu habis"}}connectedCallback(){super.connectedCallback(),this.remaining!=null&&!isNaN(this.remaining)&&this.remaining>0?this._remaining=this.remaining:this._remaining=this.duration,this.autostart&&this._remaining>0&&this.start()}disconnectedCallback(){this._clearInterval(),super.disconnectedCallback()}updated(t){t.has("remaining")&&this.remaining!=null&&!isNaN(this.remaining)&&(this._remaining=this.remaining,this._running&&(this._clearInterval(),this._running=!1,this.start())),t.has("duration")&&!this._running&&this.remaining==null&&(this._remaining=this.duration)}start(){this._running||(this._remaining<=0&&(this._remaining=this.duration),this._running=!0,this._clearInterval(),this._intervalId=setInterval(()=>this._tick(),1e3))}pause(){this._running=!1,this._clearInterval()}reset(){this._clearInterval(),this._running=!1,this._remaining=this.duration}_clearInterval(){this._intervalId&&(clearInterval(this._intervalId),this._intervalId=null)}_tick(){this._remaining>0&&(this._remaining-=1),this._remaining<=0&&(this._remaining=0,this._running=!1,this._clearInterval(),this._onExpire())}_onExpire(){this.dispatchEvent(new CustomEvent("timer-kuis-expired",{detail:{duration:this.duration},bubbles:!0,composed:!0}))}_format(t){const e=Math.floor(t/60),a=t%60;return`${String(e).padStart(2,"0")}:${String(a).padStart(2,"0")}`}static get styles(){return[super.styles,C`
+ */const gt=globalThis;class F extends et{constructor(){super(...arguments),this.renderOptions={host:this},this._$Do=void 0}createRenderRoot(){var e;const t=super.createRenderRoot();return(e=this.renderOptions).renderBefore??(e.renderBefore=t.firstChild),t}update(t){const e=this.render();this.hasUpdated||(this.renderOptions.isConnected=this.isConnected),super.update(t),this._$Do=We(e,this.renderRoot,this.renderOptions)}connectedCallback(){super.connectedCallback(),this._$Do?.setConnected(!0)}disconnectedCallback(){super.disconnectedCallback(),this._$Do?.setConnected(!1)}render(){return at}}F._$litElement$=!0,F.finalized=!0,gt.litElementHydrateSupport?.({LitElement:F});const Ve=gt.litElementPolyfillSupport;Ve?.({LitElement:F}),(gt.litElementVersions??(gt.litElementVersions=[])).push("4.2.2");var Ct={};(function h(t,e,a,i){var r=!!(t.Worker&&t.Blob&&t.Promise&&t.OffscreenCanvas&&t.OffscreenCanvasRenderingContext2D&&t.HTMLCanvasElement&&t.HTMLCanvasElement.prototype.transferControlToOffscreen&&t.URL&&t.URL.createObjectURL),s=typeof Path2D=="function"&&typeof DOMMatrix=="function",d=(function(){if(!t.OffscreenCanvas)return!1;try{var c=new OffscreenCanvas(1,1),n=c.getContext("2d");n.fillRect(0,0,1,1);var g=c.transferToImageBitmap();n.createPattern(g,"no-repeat")}catch{return!1}return!0})();function l(){}function p(c){var n=e.exports.Promise,g=n!==void 0?n:t.Promise;return typeof g=="function"?new g(c):(c(l,l),null)}var u=(function(c,n){return{transform:function(g){if(c)return g;if(n.has(g))return n.get(g);var v=new OffscreenCanvas(g.width,g.height),k=v.getContext("2d");return k.drawImage(g,0,0),n.set(g,v),v},clear:function(){n.clear()}}})(d,new Map),m=(function(){var c=Math.floor(16.666666666666668),n,g,v={},k=0;return typeof requestAnimationFrame=="function"&&typeof cancelAnimationFrame=="function"?(n=function(_){var x=Math.random();return v[x]=requestAnimationFrame(function b(w){k===w||k+c-1<w?(k=w,delete v[x],_()):v[x]=requestAnimationFrame(b)}),x},g=function(_){v[_]&&cancelAnimationFrame(v[_])}):(n=function(_){return setTimeout(_,c)},g=function(_){return clearTimeout(_)}),{frame:n,cancel:g}})(),A=(function(){var c,n,g={};function v(k){function _(x,b){k.postMessage({options:x||{},callback:b})}k.init=function(b){var w=b.transferControlToOffscreen();k.postMessage({canvas:w},[w])},k.fire=function(b,w,I){if(n)return _(b,null),n;var C=Math.random().toString(36).slice(2);return n=p(function(T){function E(q){q.data.callback===C&&(delete g[C],k.removeEventListener("message",E),n=null,u.clear(),I(),T())}k.addEventListener("message",E),_(b,C),g[C]=E.bind(null,{data:{callback:C}})}),n},k.reset=function(){k.postMessage({reset:!0});for(var b in g)g[b](),delete g[b]}}return function(){if(c)return c;if(!a&&r){var k=["var CONFETTI, SIZE = {}, module = {};","("+h.toString()+")(this, module, true, SIZE);","onmessage = function(msg) {","  if (msg.data.options) {","    CONFETTI(msg.data.options).then(function () {","      if (msg.data.callback) {","        postMessage({ callback: msg.data.callback });","      }","    });","  } else if (msg.data.reset) {","    CONFETTI && CONFETTI.reset();","  } else if (msg.data.resize) {","    SIZE.width = msg.data.resize.width;","    SIZE.height = msg.data.resize.height;","  } else if (msg.data.canvas) {","    SIZE.width = msg.data.canvas.width;","    SIZE.height = msg.data.canvas.height;","    CONFETTI = module.exports.create(msg.data.canvas);","  }","}"].join(`
+`);try{c=new Worker(URL.createObjectURL(new Blob([k])))}catch(_){return typeof console<"u"&&typeof console.warn=="function"&&console.warn("\u{1F38A} Could not load worker",_),null}v(c)}return c}})(),$={particleCount:50,angle:90,spread:45,startVelocity:45,decay:.9,gravity:1,drift:0,ticks:200,x:.5,y:.5,shapes:["square","circle"],zIndex:100,colors:["#26ccff","#a25afd","#ff5e7e","#88ff5a","#fcff42","#ffa62d","#ff36ff"],disableForReducedMotion:!1,scalar:1};function M(c,n){return n?n(c):c}function U(c){return c!=null}function y(c,n,g){return M(c&&U(c[n])?c[n]:$[n],g)}function O(c){return c<0?0:Math.floor(c)}function kt(c,n){return Math.floor(Math.random()*(n-c))+c}function J(c){return parseInt(c,16)}function de(c){return c.map(oe)}function oe(c){var n=String(c).replace(/[^0-9a-f]/gi,"");return n.length<6&&(n=n[0]+n[0]+n[1]+n[1]+n[2]+n[2]),{r:J(n.substring(0,2)),g:J(n.substring(2,4)),b:J(n.substring(4,6))}}function ne(c){var n=y(c,"origin",Object);return n.x=y(n,"x",Number),n.y=y(n,"y",Number),n}function le(c){c.width=document.documentElement.clientWidth,c.height=document.documentElement.clientHeight}function ce(c){var n=c.getBoundingClientRect();c.width=n.width,c.height=n.height}function ue(c){var n=document.createElement("canvas");return n.style.position="fixed",n.style.top="0px",n.style.left="0px",n.style.pointerEvents="none",n.style.zIndex=c,n}function he(c,n,g,v,k,_,x,b,w){c.save(),c.translate(n,g),c.rotate(_),c.scale(v,k),c.arc(0,0,1,x,b,w),c.restore()}function pe(c){var n=c.angle*(Math.PI/180),g=c.spread*(Math.PI/180);return{x:c.x,y:c.y,wobble:Math.random()*10,wobbleSpeed:Math.min(.11,Math.random()*.1+.05),velocity:c.startVelocity*.5+Math.random()*c.startVelocity,angle2D:-n+(.5*g-Math.random()*g),tiltAngle:(Math.random()*(.75-.25)+.25)*Math.PI,color:c.color,shape:c.shape,tick:0,totalTicks:c.ticks,decay:c.decay,drift:c.drift,random:Math.random()+2,tiltSin:0,tiltCos:0,wobbleX:0,wobbleY:0,gravity:c.gravity*3,ovalScalar:.6,scalar:c.scalar,flat:c.flat}}function me(c,n){n.x+=Math.cos(n.angle2D)*n.velocity+n.drift,n.y+=Math.sin(n.angle2D)*n.velocity+n.gravity,n.velocity*=n.decay,n.flat?(n.wobble=0,n.wobbleX=n.x+10*n.scalar,n.wobbleY=n.y+10*n.scalar,n.tiltSin=0,n.tiltCos=0,n.random=1):(n.wobble+=n.wobbleSpeed,n.wobbleX=n.x+10*n.scalar*Math.cos(n.wobble),n.wobbleY=n.y+10*n.scalar*Math.sin(n.wobble),n.tiltAngle+=.1,n.tiltSin=Math.sin(n.tiltAngle),n.tiltCos=Math.cos(n.tiltAngle),n.random=Math.random()+2);var g=n.tick++/n.totalTicks,v=n.x+n.random*n.tiltCos,k=n.y+n.random*n.tiltSin,_=n.wobbleX+n.random*n.tiltCos,x=n.wobbleY+n.random*n.tiltSin;if(c.fillStyle="rgba("+n.color.r+", "+n.color.g+", "+n.color.b+", "+(1-g)+")",c.beginPath(),s&&n.shape.type==="path"&&typeof n.shape.path=="string"&&Array.isArray(n.shape.matrix))c.fill(be(n.shape.path,n.shape.matrix,n.x,n.y,Math.abs(_-v)*.1,Math.abs(x-k)*.1,Math.PI/10*n.wobble));else if(n.shape.type==="bitmap"){var b=Math.PI/10*n.wobble,w=Math.abs(_-v)*.1,I=Math.abs(x-k)*.1,C=n.shape.bitmap.width*n.scalar,T=n.shape.bitmap.height*n.scalar,E=new DOMMatrix([Math.cos(b)*w,Math.sin(b)*w,-Math.sin(b)*I,Math.cos(b)*I,n.x,n.y]);E.multiplySelf(new DOMMatrix(n.shape.matrix));var q=c.createPattern(u.transform(n.shape.bitmap),"no-repeat");q.setTransform(E),c.globalAlpha=1-g,c.fillStyle=q,c.fillRect(n.x-C/2,n.y-T/2,C,T),c.globalAlpha=1}else if(n.shape==="circle")c.ellipse?c.ellipse(n.x,n.y,Math.abs(_-v)*n.ovalScalar,Math.abs(x-k)*n.ovalScalar,Math.PI/10*n.wobble,0,2*Math.PI):he(c,n.x,n.y,Math.abs(_-v)*n.ovalScalar,Math.abs(x-k)*n.ovalScalar,Math.PI/10*n.wobble,0,2*Math.PI);else if(n.shape==="star")for(var S=Math.PI/2*3,L=4*n.scalar,N=8*n.scalar,D=n.x,R=n.y,W=5,P=Math.PI/W;W--;)D=n.x+Math.cos(S)*N,R=n.y+Math.sin(S)*N,c.lineTo(D,R),S+=P,D=n.x+Math.cos(S)*L,R=n.y+Math.sin(S)*L,c.lineTo(D,R),S+=P;else c.moveTo(Math.floor(n.x),Math.floor(n.y)),c.lineTo(Math.floor(n.wobbleX),Math.floor(k)),c.lineTo(Math.floor(_),Math.floor(x)),c.lineTo(Math.floor(v),Math.floor(n.wobbleY));return c.closePath(),c.fill(),n.tick<n.totalTicks}function ge(c,n,g,v,k){var _=n.slice(),x=c.getContext("2d"),b,w,I=p(function(C){function T(){b=w=null,x.clearRect(0,0,v.width,v.height),u.clear(),k(),C()}function E(){a&&!(v.width===i.width&&v.height===i.height)&&(v.width=c.width=i.width,v.height=c.height=i.height),!v.width&&!v.height&&(g(c),v.width=c.width,v.height=c.height),x.clearRect(0,0,v.width,v.height),_=_.filter(function(q){return me(x,q)}),_.length?b=m.frame(E):T()}b=m.frame(E),w=T});return{addFettis:function(C){return _=_.concat(C),I},canvas:c,promise:I,reset:function(){b&&m.cancel(b),w&&w()}}}function qt(c,n){var g=!c,v=!!y(n||{},"resize"),k=!1,_=y(n,"disableForReducedMotion",Boolean),x=r&&!!y(n||{},"useWorker"),b=x?A():null,w=g?le:ce,I=c&&b?!!c.__confetti_initialized:!1,C=typeof matchMedia=="function"&&matchMedia("(prefers-reduced-motion)").matches,T;function E(S,L,N){for(var D=y(S,"particleCount",O),R=y(S,"angle",Number),W=y(S,"spread",Number),P=y(S,"startVelocity",Number),ke=y(S,"decay",Number),_e=y(S,"gravity",Number),ye=y(S,"drift",Number),Kt=y(S,"colors",de),xe=y(S,"ticks",Number),Lt=y(S,"shapes"),we=y(S,"scalar"),Se=!!y(S,"flat"),Ft=ne(S),Nt=D,St=[],$e=c.width*Ft.x,Ae=c.height*Ft.y;Nt--;)St.push(pe({x:$e,y:Ae,angle:R,spread:W,startVelocity:P,color:Kt[Nt%Kt.length],shape:Lt[kt(0,Lt.length)],ticks:xe,decay:ke,gravity:_e,drift:ye,scalar:we,flat:Se}));return T?T.addFettis(St):(T=ge(c,St,w,L,N),T.promise)}function q(S){var L=_||y(S,"disableForReducedMotion",Boolean),N=y(S,"zIndex",Number);if(L&&C)return p(function(P){P()});g&&T?c=T.canvas:g&&!c&&(c=ue(N),document.body.appendChild(c)),v&&!I&&w(c);var D={width:c.width,height:c.height};b&&!I&&b.init(c),I=!0,b&&(c.__confetti_initialized=!0);function R(){if(b){var P={getBoundingClientRect:function(){if(!g)return c.getBoundingClientRect()}};w(P),b.postMessage({resize:{width:P.width,height:P.height}});return}D.width=D.height=null}function W(){T=null,v&&(k=!1,t.removeEventListener("resize",R)),g&&c&&(document.body.contains(c)&&document.body.removeChild(c),c=null,I=!1)}return v&&!k&&(k=!0,t.addEventListener("resize",R,!1)),b?b.fire(S,D,W):E(S,D,W)}return q.reset=function(){b&&b.reset(),T&&T.reset()},q}var wt;function Ut(){return wt||(wt=qt(null,{useWorker:!0,resize:!0})),wt}function be(c,n,g,v,k,_,x){var b=new Path2D(c),w=new Path2D;w.addPath(b,new DOMMatrix(n));var I=new Path2D;return I.addPath(w,new DOMMatrix([Math.cos(x)*k,Math.sin(x)*k,-Math.sin(x)*_,Math.cos(x)*_,g,v])),I}function ve(c){if(!s)throw new Error("path confetti are not supported in this browser");var n,g;typeof c=="string"?n=c:(n=c.path,g=c.matrix);var v=new Path2D(n),k=document.createElement("canvas"),_=k.getContext("2d");if(!g){for(var x=1e3,b=x,w=x,I=0,C=0,T,E,q=0;q<x;q+=2)for(var S=0;S<x;S+=2)_.isPointInPath(v,q,S,"nonzero")&&(b=Math.min(b,q),w=Math.min(w,S),I=Math.max(I,q),C=Math.max(C,S));T=I-b,E=C-w;var L=10,N=Math.min(L/T,L/E);g=[N,0,0,N,-Math.round(T/2+b)*N,-Math.round(E/2+w)*N]}return{type:"path",path:n,matrix:g}}function fe(c){var n,g=1,v="#000000",k='"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", "EmojiOne Color", "Android Emoji", "Twemoji Mozilla", "system emoji", sans-serif';typeof c=="string"?n=c:(n=c.text,g="scalar"in c?c.scalar:g,k="fontFamily"in c?c.fontFamily:k,v="color"in c?c.color:v);var _=10*g,x=""+_+"px "+k,b=new OffscreenCanvas(_,_),w=b.getContext("2d");w.font=x;var I=w.measureText(n),C=Math.ceil(I.actualBoundingBoxRight+I.actualBoundingBoxLeft),T=Math.ceil(I.actualBoundingBoxAscent+I.actualBoundingBoxDescent),E=2,q=I.actualBoundingBoxLeft+E,S=I.actualBoundingBoxAscent+E;C+=E+E,T+=E+E,b=new OffscreenCanvas(C,T),w=b.getContext("2d"),w.font=x,w.fillStyle=v,w.fillText(n,q,S);var L=1/g;return{type:"bitmap",bitmap:b.transferToImageBitmap(),matrix:[L,0,0,L,-C*L/2,-T*L/2]}}e.exports=function(){return Ut().apply(this,arguments)},e.exports.reset=function(){Ut().reset()},e.exports.create=qt,e.exports.shapeFromPath=ve,e.exports.shapeFromText=fe})((function(){return typeof window<"u"?window:typeof self<"u"?self:this||{}})(),Ct,!1);var Ye=Ct.exports;Ct.exports.create;class Et extends j(B(F)){static get tag(){return"timer-kuis"}static get properties(){return{...super.properties,duration:{type:Number,attribute:"duration",reflect:!0},remaining:{type:Number,attribute:"remaining",reflect:!0},autostart:{type:Boolean,attribute:"autostart",reflect:!0},kdMateri:{type:String,attribute:"kd-materi"},studentId:{type:String,attribute:"student-id"},_remaining:{state:!0},_running:{state:!0},hideControls:{type:Boolean,attribute:"hide-controls",reflect:!0}}}constructor(){super(),this.duration=300,this.autostart=!1,this.hideControls=!1,this._remaining=this.duration,this._running=!1,this._intervalId=null,this.t={...this.t,title:"Waktu Kuis",start:"Mulai",pause:"Jeda",reset:"Ulang",done:"Waktu habis"}}connectedCallback(){super.connectedCallback(),this.remaining!=null&&!isNaN(this.remaining)&&this.remaining>0?this._remaining=this.remaining:this._remaining=this.duration;const t=this._loadStartTime();if(t>0){const e=Math.floor((Date.now()-t)/1e3),a=Math.max(0,this.duration-e);a>0&&a<this._remaining&&(this._remaining=a)}this._onVisChange=this._onVisChange.bind(this),globalThis.addEventListener("visibilitychange",this._onVisChange),this.autostart&&this._remaining>0&&this.start()}disconnectedCallback(){globalThis.removeEventListener("visibilitychange",this._onVisChange),this._clearInterval(),super.disconnectedCallback()}_onVisChange(){if(document.hidden)this._running&&this.pause();else{const t=this._loadStartTime();if(t>0){const e=Math.floor((Date.now()-t)/1e3);this._remaining=Math.max(0,this.duration-e)}this.autostart&&this._remaining>0&&!this._running&&this.start(),this._remaining<=0&&!this._running&&(this._remaining=0,this._running=!1,this._clearInterval(),this._clearStartTime(),this._onExpire())}}_startKey(){return`timer_kuis_start_${this.kdMateri||"default"}_${this.studentId||"default"}`}_saveStartTime(t){try{globalThis.localStorage.setItem(this._startKey(),String(t))}catch{}}_loadStartTime(){try{const t=parseInt(globalThis.localStorage.getItem(this._startKey())||"0",10);return isNaN(t)?0:t}catch{return 0}}_clearStartTime(){try{globalThis.localStorage.removeItem(this._startKey())}catch{}}updated(t){t.has("remaining")&&this.remaining!=null&&!isNaN(this.remaining)&&(this._remaining=this.remaining,this._running&&(this._clearInterval(),this._running=!1,this.start())),t.has("duration")&&!this._running&&this.remaining==null&&(this._remaining=this.duration)}start(){this._running||(this._remaining<=0&&(this._remaining=this.duration),this._running=!0,this._clearInterval(),this._saveStartTime(Date.now()-(this.duration-this._remaining)*1e3),this._intervalId=setInterval(()=>this._tick(),1e3))}pause(){this._running=!1,this._clearInterval();const t=this._loadStartTime();if(t>0){const e=Math.floor((Date.now()-t)/1e3);this._remaining=Math.max(0,this.duration-e)}}reset(){this._clearInterval(),this._running=!1,this._remaining=this.duration,this._clearStartTime()}_clearInterval(){this._intervalId&&(clearInterval(this._intervalId),this._intervalId=null)}_tick(){const t=this._loadStartTime();if(t>0){const e=Math.floor((Date.now()-t)/1e3);this._remaining=Math.max(0,this.duration-e)}else this._remaining>0&&(this._remaining-=1);this._remaining<=0&&(this._remaining=0,this._running=!1,this._clearInterval(),this._clearStartTime(),this._onExpire())}_onExpire(){this.dispatchEvent(new CustomEvent("timer-kuis-expired",{detail:{duration:this.duration},bubbles:!0,composed:!0}))}_format(t){const e=Math.floor(t/60),a=t%60;return`${String(e).padStart(2,"0")}:${String(a).padStart(2,"0")}`}static get styles(){return[super.styles,z`
         :host { display: block; }
         .timer-card {
           display: inline-flex; align-items: center; gap: var(--ddd-spacing-4);
-          background: var(--ddd-theme-polaris-surface, #fff);
-          border: 1px solid var(--ddd-theme-polaris-border, #e0e0e0);
+          background: var(--ddd-theme-surface);
+          border: 1px solid var(--ddd-border-sm);
           border-radius: var(--ddd-radius-lg);
           padding: var(--ddd-spacing-4) var(--ddd-spacing-5);
           font-family: var(--ddd-font-primary);
@@ -80,63 +80,131 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
           color: var(--ddd-theme-primary); font-variant-numeric: tabular-nums;
           min-width: 90px; text-align: center;
         }
-        .time.warn { color: var(--ddd-theme-error, #d32f2f); }
+        .time.warn { color: var(--ddd-theme-error); }
         .controls { display: flex; gap: var(--ddd-spacing-2); }
         button {
           font-family: var(--ddd-font-primary); font-size: var(--ddd-font-size-s);
           padding: var(--ddd-spacing-2) var(--ddd-spacing-4);
-          border-radius: var(--ddd-radius-md); border: 1px solid var(--ddd-theme-polaris-border, #e0e0e0);
-          background: var(--ddd-theme-default-surface, #fff); color: var(--ddd-theme-primary);
+          border-radius: var(--ddd-radius-md); border: 1px solid var(--ddd-border-sm);
+          background: var(--ddd-theme-default-surface); color: var(--ddd-theme-primary);
           cursor: pointer;
         }
         button:hover { background: rgba(103,80,164,0.08); }
         button:disabled { opacity: 0.5; cursor: not-allowed; }
-        .done { margin-top: var(--ddd-spacing-2); color: var(--ddd-theme-error, #d32f2f); font-size: var(--ddd-font-size-s); }
-      `,C`
-        /* ===== DARK MODE (DDD-token swap, gated on body.dark-mode) ===== */
-        :host-context(body.dark-mode) :host {
-          --dk-bg: #0b1020;
-          --dk-card: #111827;
-          --dk-soft: #1f2937;
-          --dk-border: #2a3245;
-          --dk-text: #e5e7eb;
-          --dk-text-soft: #94a3b8;
-          --dk-text-strong: #f8fafc;
-          --ddd-theme-background: var(--dk-bg);
-          --ddd-theme-color: var(--dk-text);
-          --ddd-theme-surface: var(--dk-card);
-          --ddd-theme-default-surface: var(--dk-card);
-          --ddd-theme-on-primary: #f8fafc;
-          --ddd-theme-primary: #c4b5fd;
-          --ddd-theme-secondary: var(--dk-text-soft);
-          --ddd-theme-polaris-surface: var(--dk-card);
-          --ddd-theme-polaris-border: var(--dk-border);
-          --ddd-theme-error: #fca5a5;
-          background: var(--dk-bg);
-          color: var(--dk-text);
+        .done { margin-top: var(--ddd-spacing-2); color: var(--ddd-theme-error); font-size: var(--ddd-font-size-s); }
+      `,z`
+        @media (prefers-color-scheme: dark) {
+          :host {
+            --ddd-theme-background: #0b1020;
+            --ddd-theme-color: #e5e7eb;
+            --ddd-theme-surface: #111827;
+            --ddd-theme-default-surface: #111827;
+            --ddd-theme-primary: #c4b5fd;
+            --ddd-theme-secondary: #94a3b8;
+            --ddd-theme-error: #fca5a5;
+            --ddd-border-color: #2a3245;
+            --ddd-border-sm: 1px solid #2a3245;
+            background: #0b1020;
+            color: #e5e7eb;
+          }
+          .title { color: #94a3b8; }
+          .time { color: #c4b5fd; }
+          .time.warn { color: #fca5a5; }
         }
-        :host-context(body.dark-mode) .card,
-        :host-context(body.dark-mode) button {
-          background: var(--dk-card);
-          color: var(--dk-text);
-          border-color: var(--dk-border);
-        }
-        :host-context(body.dark-mode) .title { color: var(--dk-text-soft); }
-        :host-context(body.dark-mode) .time { color: #c4b5fd; }
-        :host-context(body.dark-mode) .time.warn { color: #fca5a5; }
-      `]}render(){const t=this._remaining<=10;return d`
-      <div class="timer-card">
+      `]}render(){const t=this._remaining<=10,e=t?`${this.t.title}: ${this._format(this._remaining)} hampir habis`:this.t.title;return o`
+      <div class="timer-card" role="timer" aria-live="polite" aria-label="${e}">
         <div class="meta">
           <span class="title">${this.t.title}</span>
           <span class="time ${t?"warn":""}">${this._format(this._remaining)}</span>
         </div>
         <div class="controls">
-          ${this.hideControls?"":d`${this._running?d`<button @click="${this.pause}">⏸️ ${this.t.pause}</button>`:d`<button @click="${this.start}" ?disabled="${this._remaining<=0}">▶️ ${this.t.start}</button>`}
-              <button @click="${this.reset}">↺ ${this.t.reset}</button>`}
+          ${this.hideControls?"":o`${this._running?o`<button @click="${this.pause}" aria-pressed="true" aria-label="Jeda timer">⏸️ ${this.t.pause}</button>`:o`<button @click="${this.start}" aria-pressed="false" aria-label="Mulai timer" ?disabled="${this._remaining<=0}">▶️ ${this.t.start}</button>`}
+              <button @click="${this.reset}" aria-label="Atur ulang timer">↺ ${this.t.reset}</button>`}
         </div>
       </div>
-      ${this._remaining<=0?d`<div class="done" role="alert">⏰ ${this.t.done}</div>`:""}
-    `}static get haxProperties(){return{canScale:!0,canPosition:!0,canEditSource:!1,gizmo:{title:"Timer Kuis",description:"Timer hitung mundur untuk kuis dengan auto-submit via event timer-kuis-expired",icon:"icons:timer",color:"purple",tags:["Education","Timer","Quiz"]},settings:{configure:[{property:"duration",title:"Durasi (detik)",inputMethod:"number",description:"Lama waktu pengerjaan kuis dalam detik",default:300},{property:"autostart",title:"Mulai Otomatis",inputMethod:"boolean",default:!1}]},saveOptions:{unsetAttributes:[]}}}}customElements.get(It.tag)||globalThis.customElements.define(It.tag,It);const pt=[{q:"Apa kegunaan utama metode connectedCallback pada LitElement?",a:"Menginisialisasi nilai variabel dasar",b:"Mendeteksi elemen saat berhasil diinjeksikan ke struktur DOM",c:"Menghapus event listener global",k:"b"},{q:"Bagaimana cara mencegah timeout 6 menit pada Google Apps Script?",a:"Menggunakan penulisan masal berbasis batch I/O",b:"Menulis ke banyak sheet terpisah",c:"Memperbanyak rumus formula cell",k:"a"}];class V extends R(F(U)){static get tag(){return"kuis-ledakan"}static get haxProperties(){return{api:"1",canScale:!0,canPosition:!1,canEditSource:!0,type:"element",designSystem:{accent:!0,primary:!0,card:!0,text:!0,designTreatment:!1},gizmo:{title:"Kuis Ledakan (Evaluasi Mandiri)",description:"Kuis interaktif evaluasi mandiri yang mengunci skor dan mengirim aktivitas ke dasbor Apps Script.",icon:"icons:question-answer",color:"cyan",tags:["Kuis","Evaluasi","Interaktif"],meta:{author:"andyinformatika23-hash"}},settings:{configure:[{property:"judul",title:"Judul Kuis",description:"Judul yang tampil di kartu kuis.",inputMethod:"textfield",required:!0},{property:"appsScriptUrl",title:"URL Web App Google Apps Script",description:"URL /exec Apps Script untuk mengirim hasil kuis (action=logActivity).",inputMethod:"textfield"},{property:"kdMateri",title:"Kode Topik / Pertemuan",description:"Kode materi yang tercatat pada log aktivitas.",inputMethod:"textfield"},{property:"kategori",title:"Kategori Kuis",description:"sumatif_lm \u2192 skor masuk rapor (db_asesmen); formatif \u2192 progres saja, tidak masuk rapor (db_aktivitas).",inputMethod:"select",options:{sumatif_lm:"Sumatif (Rapor LM)",formatif:"Formatif (Progres)"},default:"sumatif_lm"},{property:"mode",title:"Mode Tampilan",description:"Mode guru menampilkan tombol ulang; mode siswa fokus mengerjakan.",inputMethod:"select",options:{guru:"Guru - Pantauan",dosen:"Dosen - Bimbingan",siswa:"Siswa - Evaluasi Mandiri"}},{property:"questions",title:"Soal (JSON)",description:"Array soal AKM: PG {question, choices, correctIndex}, PG kompleks {correctAnswers:[0,2]}, PGK {type:'pgk', statements:[{text,answer}]}, menjodohkan {type:'matching', leftItems, rightItems, correctPairs}, isian {type:'shortAnswer', acceptedAnswers}, gambar soal {image}, pilihan bergambar {text,image}. Skor: PGK 1 poin per pernyataan benar, menjodohkan 1 poin per pasangan benar. Format lama {q,a,b,c,k} tetap didukung. Field opsional: {hint} \u2014 petunjuk yang muncul sebagai <details>.",inputMethod:"code-editor"},{property:"shuffleChoices",title:"Acak Pilihan Jawaban",description:"Mengacak urutan pilihan jawaban setiap kali kuis dimulai",inputMethod:"boolean"},{property:"hideAnswers",title:"Sembunyikan Jawaban",description:"Tidak menampilkan jawaban benar/salah setelah menjawab",inputMethod:"boolean"},{property:"hideScore",title:"Sembunyikan Nilai",description:"Menyembunyikan angka skor berjalan di layar soal dan lingkaran nilai akhir (pesan selesai tetap tampil)",inputMethod:"boolean"},{property:"hideConfetti",title:"Nonaktifkan Konfeti",description:"Tidak menampilkan efek konfeti saat jawaban benar",inputMethod:"boolean"},{property:"showQuestionNav",title:"Tampilkan Navigasi Nomor Soal",description:"Tampilkan tombol navigasi nomor soal di atas kuis. Setelah maju otomatis, navigasi mundur ke soal yang sudah dijawab dinonaktifkan.",inputMethod:"boolean",default:!0},{property:"allowBackwardNav",title:"Izinkan Navigasi Mundur",description:"true = siswa boleh melompat ke soal yang sudah dijawab. Default false (nav maju saja setelah submit).",inputMethod:"boolean",default:!1},{property:"practiceMode",title:"Mode Latihan",description:"Aktifkan untuk mode latihan: tidak ada auto-advance, tombol Berikutnya/Kembali tersedia, navigasi bebas.",inputMethod:"boolean",default:!1},{property:"questionDelay",title:"Jeda Soal (ms)",description:"Jeda dalam milidetik sebelum auto-advance ke soal berikutnya. Hanya berlaku mode kuis (bukan practice mode). Default 1800.",inputMethod:"number",default:1800},{property:"reviewAnswers",title:"Tinjau Jawaban di Akhir",description:"Tampilkan tombol 'Tinjau Jawaban' di layar hasil untuk mereview semua soal & jawaban yang diberikan.",inputMethod:"boolean",default:!0},{property:"timerDuration",title:"Durasi Timer (detik)",description:"0 = tanpa timer. >0 menampilkan <timer-kuis> & auto-submit saat habis.",inputMethod:"number",default:0},{property:"timerAutostart",title:"Timer Mulai Otomatis",inputMethod:"boolean",default:!0}],advanced:[],developer:[]},saveOptions:{wipeSlot:!1,unsetAttributes:["_screen","_currentIdx","_selected","_answered","_score","_advanceTimer","_editing","_tempQuestions","_editingIndex","_tempQuestionText","_tempQuestionImage","_tempQuestionType","_tempQuestionPoints","_tempChoice0","_tempChoice1","_tempChoice2","_tempChoice3","_tempChoiceImage0","_tempChoiceImage1","_tempChoiceImage2","_tempChoiceImage3","_tempCorrectIndex","_tempCorrectAnswers","_tempLeftItems","_tempRightItems","_tempCorrectPairs","_tempAcceptedAnswers","_tempAcceptedStatements","_tempStatements","_editorOrigin","_importText","_importStatus","_reviewMode","_userAnswers","_answeredSet"]},demoSchema:[{tag:"kuis-ledakan",properties:{judul:"Evaluasi Kuis Interaktif",mode:"siswa",kdMateri:"Pertemuan 1"},content:""}]}}static get properties(){return{...super.properties,questions:{type:Array,attribute:"questions",reflect:!0,converter:{fromAttribute(t){if(t==null||t==="")return;if(Array.isArray(t)||typeof t=="object")return t;const e=String(t).trim();if(!(!e||e.includes("[object Object]"))&&(e.startsWith("[")||e.startsWith("{")))try{const a=JSON.parse(e);return Array.isArray(a)?a:a&&typeof a=="object"&&Array.isArray(a.questions)?a.questions:void 0}catch{return}},toAttribute(t){if(!Array.isArray(t))return null;try{return JSON.stringify(t)}catch{return null}}}},judul:{type:String,attribute:"judul",reflect:!0},appsScriptUrl:{type:String,attribute:"apps-script-url",reflect:!0},kdMateri:{type:String,attribute:"kd-materi",reflect:!0},kategori:{type:String,attribute:"kategori",reflect:!0},mode:{type:String,attribute:"mode",reflect:!0},hideConfetti:{type:Boolean,attribute:"hide-confetti",reflect:!0},hideAnswers:{type:Boolean,attribute:"hide-answers",reflect:!0},hideScore:{type:Boolean,attribute:"hide-score",reflect:!0},editable:{type:Boolean,attribute:!0,reflect:!0},shuffleChoices:{type:Boolean,attribute:"shuffle-choices",reflect:!0},shuffleQuestions:{type:Boolean,attribute:"shuffle-questions",reflect:!0},lockAfterComplete:{type:Boolean,attribute:"lock-after-complete",reflect:!0},showQuestionNav:{type:Boolean,attribute:"show-question-nav",reflect:!0},allowBackwardNav:{type:Boolean,attribute:"allow-backward-nav",reflect:!0},practiceMode:{type:Boolean,attribute:"practice-mode",reflect:!0},questionDelay:{type:Number,attribute:"question-delay",reflect:!0},reviewAnswers:{type:Boolean,attribute:"review-answers",reflect:!0},_locked:{state:!0},_lockChecked:{state:!0},studentId:{type:String,attribute:"student-id",reflect:!0},studentName:{type:String,attribute:"student-name",reflect:!0},studentNis:{type:String,attribute:"student-nis",reflect:!0},studentAbsen:{type:String,attribute:"student-absen",reflect:!0},studentKelas:{type:String,attribute:"student-kelas",reflect:!0},timerDuration:{type:Number,attribute:"timer-duration",reflect:!0},timerMinutes:{type:Number,attribute:"timer-minutes",reflect:!0},timerSeconds:{type:Number,attribute:"timer-seconds",reflect:!0},timerAutostart:{type:Boolean,attribute:"timer-autostart",reflect:!0},hidePauseRestart:{type:Boolean,attribute:"hide-pause-restart",reflect:!0},_attemptStart:{state:!0},_resumeRemaining:{state:!0},_screen:{state:!0},_currentIdx:{state:!0},_selected:{state:!0},_selectedAnswers:{state:!0},_matchAnswers:{state:!0},_shortAnswerText:{state:!0},_answered:{state:!0},_answeredSet:{state:!0},_userAnswers:{state:!0},_score:{state:!0},_maxPoints:{state:!0},_feedbackText:{state:!0},_feedbackPositive:{state:!0},_advanceTimer:{state:!0},_megaConfettiFrameId:{state:!0},_bankStatus:{state:!0},_shuffledQuestions:{state:!0},_editing:{state:!0},_tempQuestions:{state:!0},_editingIndex:{state:!0},_tempQuestionText:{state:!0},_tempQuestionImage:{state:!0},_tempQuestionType:{state:!0},_tempQuestionPoints:{state:!0},_tempChoice0:{state:!0},_tempChoice1:{state:!0},_tempChoice2:{state:!0},_tempChoice3:{state:!0},_tempChoice4:{state:!0},_tempChoiceImage0:{state:!0},_tempChoiceImage1:{state:!0},_tempChoiceImage2:{state:!0},_tempChoiceImage3:{state:!0},_tempChoiceImage4:{state:!0},_tempCorrectIndex:{state:!0},_tempCorrectAnswers:{state:!0},_tempLeftItems:{state:!0},_tempRightItems:{state:!0},_tempCorrectPairs:{state:!0},_tempAcceptedAnswers:{state:!0},_tempAcceptedStatements:{state:!0},_tempStatements:{state:!0},_editorOrigin:{state:!0},_importText:{state:!0},_importStatus:{state:!0},_reviewMode:{state:!0}}}constructor(){super(),this.t={...this.t,importTitle:"Impor Soal (JSON / .txt)",importFromText:"Impor dari Teks",importPlaceholder:'[{"question":"...","choices":["A","B"],"correctIndex":0}]'};let t=Ve;t&&typeof t!="function"&&typeof t.default=="function"&&(t=t.default),this._confettiFn=t,this.questions=pt,this.judul="Evaluasi Kuis Interaktif",this.appsScriptUrl="",this.kdMateri="Pertemuan 1",this.kategori="sumatif_lm",this.mode="siswa",this.hideConfetti=!1,this.hideAnswers=!1,this.hideScore=!1,this.shuffleChoices=!1,this.shuffleQuestions=!1,this.lockAfterComplete=!0,this.showQuestionNav=!0,this.allowBackwardNav=!1,this.practiceMode=!1,this.questionDelay=1800,this.reviewAnswers=!0,this.editable=!1,this.studentId="",this.studentName="",this.studentNis="",this.studentAbsen="",this.studentKelas="",this.timerDuration=0,this.timerAutostart=!0,this.timerMinutes=0,this.timerSeconds=0,this.hidePauseRestart=!0,this._screen="start",this._currentIdx=0,this._selected=-1,this._selectedAnswers=new Set,this._matchAnswers={},this._shortAnswerText="",this._answered=!1,this._answeredSet=new Set,this._userAnswers=new Map,this._score=0,this._maxPoints=0,this._feedbackText="",this._feedbackPositive=!1,this._advanceTimer=null,this._megaConfettiFrameId=null,this._bankStatus="",this._bankLoaded=!1,this._confettiFired=!1,this._shuffledQuestions=[],this._locked=!1,this._lockChecked=!1,this._attemptStart=0,this._resumeRemaining=0,this._editing=!1,this._tempQuestions=[],this._editingIndex=-1,this._editorOrigin="result",this._importText="",this._importStatus="",this._reviewMode=!1,this._resetEditorForm(),this._authHandler=this._authHandler.bind(this)}static get styles(){return[super.styles,C`
+      ${this._remaining<=0?o`<div class="done" role="alert">⏰ ${this.t.done}</div>`:""}
+    `}static get haxProperties(){return{api:"1",canScale:!0,canPosition:!0,canEditSource:!1,type:"element",designSystem:{accent:!0,primary:!0,card:!0,text:!0,designTreatment:!1},gizmo:{title:"Timer Kuis",description:"Timer hitung mundur untuk kuis dengan auto-submit via event timer-kuis-expired",icon:"icons:timer",color:"purple",tags:["Education","Timer","Quiz"]},settings:{configure:[{property:"duration",title:"Durasi (detik)",inputMethod:"number",description:"Lama waktu pengerjaan kuis dalam detik",default:300},{property:"autostart",title:"Mulai Otomatis",inputMethod:"boolean",default:!1}]},saveOptions:{unsetAttributes:[]},demoSchema:[{tag:"timer-kuis",properties:{duration:300,autostart:!1},content:""},{tag:"timer-kuis",properties:{duration:60,autostart:!0},content:""}]}}}customElements.get(Et.tag)||globalThis.customElements.define(Et.tag,Et);class Xe{constructor(t){this._host=t,this._questionStartTime=null}getAnswerTime(){return this._host._questionStartTime?Date.now()-this._host._questionStartTime:0}resetQuestionTimer(){this._questionStartTime=Date.now()}isSuspiciousTiming(t,e=3e3){return t>0&&t<e}calculateScore(t,e=1){return t?e:0}getTimingData(){return{questionStartTime:this._questionStartTime,currentTime:Date.now()}}}class ie{static renderMC(t,e){const{selected:a,selectedAnswers:i,answered:r,feedbackText:s,feedbackPositive:d,hideAnswers:l}=e,p=e.isMulti,u=t.choices||[],m=t._correctMap?(e.correctAnswers||[]).map(A=>t._correctMap.indexOf(A)):e.correctAnswers||[];return o`
+      <div class="choices-container">
+        ${u.map((A,$)=>{const M=p?i.has($):a===$,U=m.includes($);let y="choice-row";M&&r&&!l?y+=U?" correct":" wrong":M&&(y+=" selected");const O=r,kt=e.pilihanImages&&e.pilihanImages[$],J=["A","B","C","D","E","F"];return o`
+            <button
+              class="${y} ${O?"disabled":""}"
+              ?disabled=${O}
+              @click=${()=>e.onSelect($)}
+              aria-label="Pilihan ${J[$]||$+1}: ${A}"
+            >${M&&r&&!l&&U?"\u2713 ":""}${J[$]||$+1}. ${A}
+            ${kt?o`<br /><img class="choice-image" src="${kt}" alt="Gambar pilihan ${J[$]||$+1}" loading="lazy" />`:""}
+            </button>
+          `})}
+      </div>
+      ${l?"":s?o`<div class="feedback ${d?"correct":"wrong"}">${s}</div>`:""}
+      ${p&&!r?o`<button class="btn-submit" @click=${e.onSubmit}>Kirim Jawaban (${i.size} dipilih)</button>`:""}
+    `}static renderPGKompleks(t,e){const{selectedAnswers:a,answered:i,feedbackText:r,feedbackPositive:s,hideAnswers:d}=e,l=a||new Set;return o`
+      <div class="choices-container">
+        ${t.choices.map((p,u)=>{const m=l.has(u),A=(t.correctAnswers||[]).includes(u);let $="choice-row multi-correct";return i&&!d?(A&&($+=" correct"),m&&!A&&($+=" wrong")):m&&($+=" selected"),o`
+            <button
+              class="${$} ${disabled?"disabled":""}"
+              ?disabled=${disabled}
+              @click=${()=>e.onToggle(u)}
+              aria-label="Pilihan ${huruf[u]||u+1}: ${p} ${m?"(dipilih)":""}"
+            >${!d&&m&&i&&A?"\u2713 ":""}${huruf[u]||u+1}. ${p}
+            </button>
+          `})}
+      </div>
+      ${i?"":o`<button class="btn-submit" @click=${e.onSubmit}>Kirim Jawaban</button>`}
+      ${d?"":r?o`<div class="feedback ${s?"correct":"wrong"}">${r}</div>`:""}
+    `}static renderPGK(t,e){const{pgkAnswers:a,answered:i,feedbackText:r,feedbackPositive:s,hideAnswers:d}=e;return o`
+      <div class="pgk-container">
+        ${(t.statements||[]).map((l,p)=>{const u=a?a[p]:null;return o`
+            <div class="pgk-statement">
+              <div class="statement-text">${p+1}. ${l.text}</div>
+              <div class="statement-options">
+                <button class="pgk-btn ${u===!0?"selected":""}" 
+                  @click=${()=>e.onPGK(p,!0)}
+                  ?disabled=${i}>
+                  ${i&&!d&&l.answer===!0?"\u2713 ":""}Benar
+                </button>
+                <button class="pgk-btn ${u===!1?"selected":""}" 
+                  @click=${()=>e.onPGK(p,!1)}
+                  ?disabled=${i}>
+                  ${i&&!d&&l.answer===!1?"\u2713 ":""}Salah
+                </button>
+              </div>
+            </div>
+          `})}
+      </div>
+      ${i?"":o`<button class="btn-submit" @click=${e.onSubmit}>Kirim Jawaban</button>`}
+      ${d?"":r?o`<div class="feedback ${s?"correct":"wrong"}">${r}</div>`:""}
+    `}static renderMatching(t,e){const{matchAnswers:a,answered:i,feedbackText:r,feedbackPositive:s,hideAnswers:d}=e;return o`
+      <div class="matching-container">
+        <div class="matching-left">
+          ${(t.leftItems||[]).map((l,p)=>o`
+            <div class="match-item left">${l}</div>
+          `)}
+        </div>
+        <div class="matching-right">
+          ${(t.rightItems||[]).map((l,p)=>{const u=a?a[p]:null;return o`
+              <div class="match-item right ${u!==null?"matched":""}" 
+                @click=${()=>e.onMatchRight(p)}>
+                <span class="match-label">${l}</span>
+                ${d?"":u!==null?o`<span class="match-connector">← ${t.leftItems[u]}</span>`:""}
+              </div>
+            `})}
+        </div>
+      </div>
+      ${i?"":o`<button class="btn-submit" @click=${e.onSubmit}>Kirim Jawaban</button>`}
+      ${d?"":r?o`<div class="feedback ${s?"correct":"wrong"}">${r}</div>`:""}
+    `}static renderShortAnswer(t,e){const{shortAnswerText:a,answered:i,feedbackText:r,feedbackPositive:s,hideAnswers:d}=e;return o`
+      <div class="short-answer-container">
+        <input type="text" 
+          class="short-answer-input"
+          .value=${a||""}
+          @input=${l=>e.onInput(l.target.value)}
+          placeholder="Ketik jawaban Anda..."
+          ?disabled=${i}>
+        ${i?"":o`<button class="btn-submit" @click=${e.onSubmit}>Kirim Jawaban</button>`}
+      </div>
+      ${d?"":r?o`<div class="feedback ${s?"correct":"wrong"}">${r}</div>`:""}
+    `}}class se{static calculatePercentage(t,e){return!e||e===0?0:Math.round(t/e*100)}static formatScore(t,e){const a=this.calculatePercentage(t,e);return`${t}/${e} (${a}%)`}static hasPassed(t,e,a=70){return this.calculatePercentage(t,e)>=a}calculateScore(t,e=1){return t?e:0}static prepareSubmission(t){const{studentId:e,kdMateri:a,kategori:i,judul:r,score:s,maxPoints:d,answerTimings:l}=t;return{student_id:e,kd_materi:a,kategori:i||"sumatif_lm",metadata_kuis:r,skor:s,skor_maks:d,persentase:this.calculatePercentage(s,d),timestamp:new Date().toISOString(),answer_timings:l||[]}}static getGrade(t){return t>=90?"A":t>=80?"B":t>=70?"C":t>=60?"D":"E"}static needsRemediation(t,e=70){return t<e}}const bt=[{q:"Apa kegunaan utama metode connectedCallback pada LitElement?",a:"Menginisialisasi nilai variabel dasar",b:"Mendeteksi elemen saat berhasil diinjeksikan ke struktur DOM",c:"Menghapus event listener global",k:"b"},{q:"Bagaimana cara mencegah timeout 6 menit pada Google Apps Script?",a:"Menggunakan penulisan masal berbasis batch I/O",b:"Menulis ke banyak sheet terpisah",c:"Memperbanyak rumus formula cell",k:"a"}];class tt extends j(B(F)){static get tag(){return"kuis-ledakan"}static get haxProperties(){return{api:"1",canScale:!0,canPosition:!1,canEditSource:!0,type:"element",designSystem:{accent:!0,primary:!0,card:!0,text:!0,designTreatment:!1},gizmo:{title:"Kuis Ledakan (Evaluasi Mandiri)",description:"Kuis interaktif evaluasi mandiri yang mengunci skor dan mengirim aktivitas ke dasbor Apps Script.",icon:"icons:question-answer",color:"cyan",tags:["Kuis","Evaluasi","Interaktif"],meta:{author:"andyinformatika23-hash"}},settings:{configure:[{property:"judul",title:"Judul Kuis",description:"Judul yang tampil di kartu kuis.",inputMethod:"textfield",required:!0},{property:"appsScriptUrl",title:"URL Web App Google Apps Script",description:"URL /exec Apps Script untuk mengirim hasil kuis (action=logActivity).",inputMethod:"textfield"},{property:"kdMateri",title:"Kode Topik / Pertemuan",description:"Kode materi yang tercatat pada log aktivitas.",inputMethod:"textfield"},{property:"kategori",title:"Kategori Kuis",description:"sumatif_lm \u2192 skor masuk rapor (db_asesmen); formatif \u2192 progres saja, tidak masuk rapor (db_aktivitas).",inputMethod:"select",options:{sumatif_lm:"Sumatif (Rapor LM)",formatif:"Formatif (Progres)"},default:"sumatif_lm"},{property:"mode",title:"Mode Tampilan",description:"Mode guru menampilkan tombol ulang; mode siswa fokus mengerjakan.",inputMethod:"select",options:{guru:"Guru - Pantauan",dosen:"Dosen - Bimbingan",siswa:"Siswa - Evaluasi Mandiri"}},{property:"questions",title:"Soal (JSON)",description:"Array soal AKM: PG {question, choices, correctIndex}, PG kompleks {correctAnswers:[0,2]}, PGK {type:'pgk', statements:[{text,answer}]}, menjodohkan {type:'matching', leftItems, rightItems, correctPairs}, isian {type:'shortAnswer', acceptedAnswers}, gambar soal {image}, pilihan bergambar {text,image}. Skor: PGK 1 poin per pernyataan benar, menjodohkan 1 poin per pasangan benar. Format lama {q,a,b,c,k} tetap didukung. Field opsional: {hint} \u2014 petunjuk yang muncul sebagai <details>.",inputMethod:"code-editor"},{property:"shuffleChoices",title:"Acak Pilihan Jawaban",description:"Mengacak urutan pilihan jawaban setiap kali kuis dimulai",inputMethod:"boolean"},{property:"hideAnswers",title:"Sembunyikan Jawaban",description:"Tidak menampilkan jawaban benar/salah setelah menjawab",inputMethod:"boolean"},{property:"hideScore",title:"Sembunyikan Nilai",description:"Menyembunyikan angka skor berjalan di layar soal dan lingkaran nilai akhir (pesan selesai tetap tampil)",inputMethod:"boolean"},{property:"hideConfetti",title:"Nonaktifkan Konfeti",description:"Tidak menampilkan efek konfeti saat jawaban benar",inputMethod:"boolean"},{property:"showQuestionNav",title:"Tampilkan Navigasi Nomor Soal",description:"Tampilkan tombol navigasi nomor soal di atas kuis. Setelah maju otomatis, navigasi mundur ke soal yang sudah dijawab dinonaktifkan.",inputMethod:"boolean",default:!0},{property:"allowBackwardNav",title:"Izinkan Navigasi Mundur",description:"true = siswa boleh melompat ke soal yang sudah dijawab. Default false (nav maju saja setelah submit).",inputMethod:"boolean",default:!1},{property:"practiceMode",title:"Mode Latihan",description:"Aktifkan untuk mode latihan: tidak ada auto-advance, tombol Berikutnya/Kembali tersedia, navigasi bebas.",inputMethod:"boolean",default:!1},{property:"questionDelay",title:"Jeda Soal (ms)",description:"Jeda dalam milidetik sebelum auto-advance ke soal berikutnya. Hanya berlaku mode kuis (bukan practice mode). Default 1800.",inputMethod:"number",default:1800},{property:"reviewAnswers",title:"Tinjau Jawaban di Akhir",description:"Tampilkan tombol 'Tinjau Jawaban' di layar hasil untuk mereview semua soal & jawaban yang diberikan.",inputMethod:"boolean",default:!0},{property:"timerDuration",title:"Durasi Timer (detik)",description:"0 = tanpa timer. >0 menampilkan <timer-kuis> & auto-submit saat habis.",inputMethod:"number",default:0},{property:"timerAutostart",title:"Timer Mulai Otomatis",inputMethod:"boolean",default:!0}],advanced:[],developer:[]},saveOptions:{wipeSlot:!1,unsetAttributes:["_screen","_currentIdx","_selected","_answered","_score","_advanceTimer","_editing","_tempQuestions","_editingIndex","_tempQuestionText","_tempQuestionImage","_tempQuestionType","_tempQuestionPoints","_tempChoice0","_tempChoice1","_tempChoice2","_tempChoice3","_tempChoiceImage0","_tempChoiceImage1","_tempChoiceImage2","_tempChoiceImage3","_tempCorrectIndex","_tempCorrectAnswers","_tempLeftItems","_tempRightItems","_tempCorrectPairs","_tempAcceptedAnswers","_tempAcceptedStatements","_tempStatements","_editorOrigin","_importText","_importStatus","_reviewMode","_userAnswers","_answeredSet","_sessionToken","_sessionExpired"]},demoSchema:[{tag:"kuis-ledakan",properties:{judul:"Evaluasi Kuis Interaktif",mode:"siswa",kdMateri:"Pertemuan 1"},content:""}]}}static get properties(){return{...super.properties,questions:{type:Array,attribute:"questions",reflect:!0,converter:{fromAttribute(t){if(t==null||t==="")return;if(Array.isArray(t)||typeof t=="object")return t;const e=String(t).trim();if(!(!e||e.includes("[object Object]"))&&(e.startsWith("[")||e.startsWith("{")))try{const a=JSON.parse(e);return Array.isArray(a)?a:a&&typeof a=="object"&&Array.isArray(a.questions)?a.questions:void 0}catch{return}},toAttribute(t){if(!Array.isArray(t))return null;try{return JSON.stringify(t)}catch{return null}}}},judul:{type:String,attribute:"judul",reflect:!0},appsScriptUrl:{type:String,attribute:"apps-script-url",reflect:!0},kdMateri:{type:String,attribute:"kd-materi",reflect:!0},kategori:{type:String,attribute:"kategori",reflect:!0},mode:{type:String,attribute:"mode",reflect:!0},hideConfetti:{type:Boolean,attribute:"hide-confetti",reflect:!0},hideAnswers:{type:Boolean,attribute:"hide-answers",reflect:!0},hideScore:{type:Boolean,attribute:"hide-score",reflect:!0},editable:{type:Boolean,attribute:!0,reflect:!0},shuffleChoices:{type:Boolean,attribute:"shuffle-choices",reflect:!0},shuffleQuestions:{type:Boolean,attribute:"shuffle-questions",reflect:!0},lockAfterComplete:{type:Boolean,attribute:"lock-after-complete",reflect:!0},showQuestionNav:{type:Boolean,attribute:"show-question-nav",reflect:!0},allowBackwardNav:{type:Boolean,attribute:"allow-backward-nav",reflect:!0},practiceMode:{type:Boolean,attribute:"practice-mode",reflect:!0},questionDelay:{type:Number,attribute:"question-delay",reflect:!0},reviewAnswers:{type:Boolean,attribute:"review-answers",reflect:!0},_locked:{state:!0},_questionStartTime:{state:!0},_lockChecked:{state:!0},studentId:{type:String,attribute:"student-id",reflect:!0},studentName:{type:String,attribute:"student-name",reflect:!0},studentNis:{type:String,attribute:"student-nis",reflect:!0},studentAbsen:{type:String,attribute:"student-absen",reflect:!0},studentKelas:{type:String,attribute:"student-kelas",reflect:!0},timerDuration:{type:Number,attribute:"timer-duration",reflect:!0},timerMinutes:{type:Number,attribute:"timer-minutes",reflect:!0},timerSeconds:{type:Number,attribute:"timer-seconds",reflect:!0},timerAutostart:{type:Boolean,attribute:"timer-autostart",reflect:!0},hidePauseRestart:{type:Boolean,attribute:"hide-pause-restart",reflect:!0},_attemptStart:{state:!0},_sessionToken:{state:!0},_sessionExpired:{state:!0},_resumeRemaining:{state:!0},_screen:{state:!0},_currentIdx:{state:!0},_selected:{state:!0},_selectedAnswers:{state:!0},_matchAnswers:{state:!0},_shortAnswerText:{state:!0},_answered:{state:!0},_answeredSet:{state:!0},_userAnswers:{state:!0},_score:{state:!0},_maxPoints:{state:!0},_feedbackText:{state:!0},_feedbackPositive:{state:!0},_advanceTimer:{state:!0},_megaConfettiFrameId:{state:!0},_bankStatus:{state:!0},_shuffledQuestions:{state:!0},_autoSaveInterval:{state:!0},_editing:{state:!0},_tempQuestions:{state:!0},_editingIndex:{state:!0},_tempQuestionText:{state:!0},_tempQuestionImage:{state:!0},_tempQuestionType:{state:!0},_tempQuestionPoints:{state:!0},_tempChoice0:{state:!0},_tempChoice1:{state:!0},_tempChoice2:{state:!0},_tempChoice3:{state:!0},_tempChoice4:{state:!0},_tempChoiceImage0:{state:!0},_tempChoiceImage1:{state:!0},_tempChoiceImage2:{state:!0},_tempChoiceImage3:{state:!0},_tempChoiceImage4:{state:!0},_tempCorrectIndex:{state:!0},_tempCorrectAnswers:{state:!0},_tempLeftItems:{state:!0},_tempRightItems:{state:!0},_tempCorrectPairs:{state:!0},_tempAcceptedAnswers:{state:!0},_tempAcceptedStatements:{state:!0},_tempStatements:{state:!0},_editorOrigin:{state:!0},_importText:{state:!0},_importStatus:{state:!0},_reviewMode:{state:!0}}}constructor(){super(),this.t={...this.t,importTitle:"Impor Soal (JSON / .txt)",importFromText:"Impor dari Teks",importPlaceholder:'[{"question":"...","choices":["A","B"],"correctIndex":0}]'};let t=Ye;t&&typeof t!="function"&&typeof t.default=="function"&&(t=t.default),this._confettiFn=t,this.questions=bt,this.judul="Evaluasi Kuis Interaktif",this.appsScriptUrl="",this.kdMateri="Pertemuan 1",this.kategori="sumatif_lm",this.mode="siswa",this.hideConfetti=!1,this.hideAnswers=!1,this.hideScore=!1,this.shuffleChoices=!1,this.shuffleQuestions=!1,this.lockAfterComplete=!0,this.showQuestionNav=!0,this.allowBackwardNav=!1,this.practiceMode=!1,this.questionDelay=1800,this.reviewAnswers=!0,this.editable=!1,this.studentId="",this.studentName="",this.studentNis="",this.studentAbsen="",this.studentKelas="",this.timerDuration=0,this.timerAutostart=!0,this.timerMinutes=0,this.timerSeconds=0,this.hidePauseRestart=!0,this._screen="start",this._currentIdx=0,this._selected=-1,this._quizEngine=new Xe(this),this._questionRenderer=new ie,this._scoreCalculator=new se,this._selectedAnswers=new Set,this._matchAnswers={},this._shortAnswerText="",this._answered=!1,this._answeredSet=new Set,this._userAnswers=new Map,this._score=0,this._maxPoints=0,this._feedbackText="",this._feedbackPositive=!1,this._advanceTimer=null,this._megaConfettiFrameId=null,this._bankStatus="",this._bankLoaded=!1,this._confettiFired=!1,this._shuffledQuestions=[],this._locked=!1,this._lockChecked=!1,this._attemptStart=0,this._sessionToken=null,this._sessionExpired=!1,this._resumeRemaining=0,this._editing=!1,this._tempQuestions=[],this._editingIndex=-1,this._editorOrigin="result",this._importText="",this._importStatus="",this._reviewMode=!1,this._resetEditorForm(),this._autoSaveInterval=null,this._authHandler=this._authHandler.bind(this)}static get styles(){return[super.styles,z`
         :host { display: block; font-family: var(--ddd-font-navigation, system-ui, sans-serif); }
         .quiz-card {
           background: var(--ddd-theme-default-white);
@@ -149,16 +217,16 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
         }
         .locked-box {
           text-align: center;
-          border: 2px dashed var(--ddd-theme-primary, #4f46e5);
+          border: 2px dashed var(--ddd-theme-primary);
         }
         .lock-icon { font-size: 40px; }
         .lock-msg { color: var(--ddd-theme-secondary); font-weight: 600; }
         .quiz-title { color: var(--ddd-theme-primary); font-size: var(--ddd-font-size-l); font-weight: 800; margin-top: 0; text-align: center; }
         .btn-start {
-          display: block; width: 100%; padding: var(--ddd-spacing-4); background-color: var(--ddd-theme-polaris-primary, #4f46e5); color: var(--ddd-theme-on-primary, #ffffff);
+          display: block; width: 100%; padding: var(--ddd-spacing-4); background-color: var(--ddd-theme-polaris-primary); color: var(--ddd-theme-on-primary);
           border: none; border-radius: var(--ddd-radius-sm); font-size: var(--ddd-font-size-4xs); font-weight: 700; cursor: pointer; transition: background 0.2s;
         }
-        .btn-start:hover { background-color: var(--ddd-theme-accent, #6d28d9); }
+        .btn-start:hover { background-color: var(--ddd-theme-accent); }
         .question-text { font-size: var(--ddd-font-size-4xs); font-weight: 700; color: var(--ddd-theme-on-surface); margin-bottom: var(--ddd-spacing-4); }
         .hint-box { margin-bottom: var(--ddd-spacing-3); border: var(--ddd-border-xs); border-radius: var(--ddd-radius-sm); padding: var(--ddd-spacing-3); background: var(--ddd-theme-polaris-surface-hover); }
         .hint-box summary { cursor: pointer; font-weight: 700; font-size: var(--ddd-font-size-4xs); color: var(--ddd-theme-primary); list-style: none; }
@@ -182,13 +250,13 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
           }
           .question-nav .q-dot:hover:not(.disabled) { border-color: var(--ddd-theme-primary); }
           .question-nav .q-dot.current {
-            background: var(--ddd-theme-primary, #4f46e5);
-            color: var(--ddd-theme-on-primary, #fff);
-            border-color: var(--ddd-theme-primary, #4f46e5);
+            background: var(--ddd-theme-primary);
+            color: var(--ddd-theme-on-primary);
+            border-color: var(--ddd-theme-primary);
           }
           .question-nav .q-dot.answered:not(.current) {
-            border-color: var(--ddd-theme-success, #2e7d32);
-            color: var(--ddd-theme-success, #2e7d32);
+            border-color: var(--ddd-theme-success);
+            color: var(--ddd-theme-success);
           }
           .question-nav .q-dot.disabled {
             background: var(--ddd-theme-polaris-surface-hover);
@@ -197,9 +265,9 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
             border-color: var(--ddd-theme-polaris-border);
           }
           .question-nav .q-dot.unanswered {
-            background: var(--ddd-theme-warning-light, #fff3cd);
-            border-color: var(--ddd-theme-warning, #ffc107);
-            color: var(--ddd-theme-warning-text, #856404);
+            background: var(--ddd-theme-warning-light);
+            border-color: var(--ddd-theme-warning);
+            color: var(--ddd-theme-warning-text);
           }
         .question-image img { max-width: 100%; max-height: 260px; border-radius: 10px; margin-bottom: var(--ddd-spacing-4); border: var(--ddd-border-xs); }
         .choices-stack { display: flex; flex-direction: column; gap: 10px; }
@@ -306,7 +374,7 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
         .quiz-timer { display: flex; justify-content: center; margin-bottom: var(--ddd-spacing-4); }
         .import-box { border: var(--ddd-border-sm); border-radius: var(--ddd-radius-md); padding: var(--ddd-spacing-4); background: var(--ddd-theme-polaris-surface-hover); margin-top: var(--ddd-spacing-4); }
         .import-box h4 { margin: 0 0 var(--ddd-spacing-3) 0; color: var(--ddd-theme-primary); font-size: var(--ddd-font-size-4xs); }
-      `,C`
+      `,z`
         /* ===== DARK MODE (DDD-token swap, gated on body.dark-mode) ===== */
         :host-context(body.dark-mode) :host {
           --dk-bg: #0b1020;
@@ -390,71 +458,71 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
         :host-context(body.dark-mode) .review-qtext { color: var(--dk-text-strong); }
         :host-context(body.dark-mode) .practice-nav .btn-back { background: var(--dk-soft); color: var(--dk-text); border-color: var(--dk-border); }
         :host-context(body.dark-mode) .practice-nav .btn-next { background: #4f46e5; color: #f8fafc; }
-      `]}updated(t){if(super.updated(t),t.has("questions")&&!Array.isArray(this.questions)&&(this.questions=pt),t.has("timerMinutes")||t.has("timerSeconds")){const e=(this.timerMinutes||0)*60+(this.timerSeconds||0);this.timerDuration!==e&&(this.timerDuration=e)}else if(t.has("timerDuration")){const e=Math.floor((this.timerDuration||0)/60),a=(this.timerDuration||0)%60;this.timerMinutes!==e&&(this.timerMinutes=e),this.timerSeconds!==a&&(this.timerSeconds=a)}this._screen==="question"&&this._resumeRemaining>0&&(this._resumeRemaining=0)}connectedCallback(){if(super.connectedCallback(),globalThis.HaxStore&&typeof globalThis.HaxStore.requestAvailability=="function"){const t=globalThis.HaxStore.requestAvailability();t&&!t.elementList[V.tag]&&(t.elementList[V.tag]=V.haxProperties)}globalThis.addEventListener("quiz-user-login",this._authHandler),globalThis.addEventListener("quiz-user-session-changed",this._authHandler),this._loadSession(),this._resumeAttemptIfAny()}disconnectedCallback(){this._advanceTimer&&(clearTimeout(this._advanceTimer),this._advanceTimer=null),globalThis.removeEventListener("quiz-user-login",this._authHandler),globalThis.removeEventListener("quiz-user-session-changed",this._authHandler),this._cancelMegaConfetti(),super.disconnectedCallback()}_authHandler(t){const e=t&&t.detail||{};e.studentId&&(this.studentId=e.studentId),e.nama&&(this.studentName=e.nama),e.nis&&(this.studentNis=e.nis),e.absen&&(this.studentAbsen=e.absen),e.kelas&&(this.studentKelas=e.kelas)}_loadSession(){try{const t=JSON.parse(globalThis.localStorage.getItem("quiz_user_session"));if(!t||!t.studentId)return;if(t.expiresAt&&Date.now()>t.expiresAt){globalThis.localStorage.removeItem("quiz_user_session");return}this.studentId=t.studentId||"",this.studentName=t.nama||"",this.studentNis=t.nis||"",this.studentAbsen=t.absen||"",this.studentKelas=t.kelas||""}catch{}}_cancelMegaConfetti(){this._megaConfettiFrameId&&(globalThis.cancelAnimationFrame(this._megaConfettiFrameId),this._megaConfettiFrameId=null)}_onTimerExpired(){this._screen==="question"&&this._selesaiKuis()}forceFinish(){this._selesaiKuis()}async _muatBankSoal(){if(!(this._bankLoaded||!this.appsScriptUrl||this.hasAttribute("questions"))){this._bankLoaded=!0;try{const t=this.appsScriptUrl.includes("?")?"&":"?",e=await fetch(this.appsScriptUrl+t+"action=getBankSoal");if(!e.ok)return;const a=await e.text(),i=JSON.parse(a);if(i&&i.status==="ok"&&Array.isArray(i.soal)){const s=i.soal.filter(r=>r&&(r.soal||r.question)&&(Array.isArray(r.choices)?r.choices.length>=2:!0));s.length>0&&(this.questions=s.slice(0,10),this._bankStatus="Soal dimuat dari Bank Soal (AKM).",this.requestUpdate())}}catch{}}}_getChoiceText(t){return typeof t=="string"?t:t&&t.text||""}_getChoiceImage(t){return t&&typeof t=="object"&&t.image||""}_normalisasiSoal(t){if(t&&Array.isArray(t.choices)&&t.choices.length)return t;const e=[t.a,t.b,t.c,t.d,t.e,t.f].filter(i=>i!==""&&i!=null&&i!==void 0);if(!e.length)return t;const a=["a","b","c","d","e","f"];return{...t,question:t.question||t.q||"",choices:e,correctIndex:typeof t.correctIndex=="number"?t.correctIndex:a.indexOf(String(t.k).toLowerCase())}}_siapkanSoal(t){if(!t)return null;const e=this._normalisasiSoal(t);let a=[],i=[];Array.isArray(e.choices)&&e.choices.length&&(a=e.choices.map(c=>this._getChoiceText(c)),i=e.choices.map(c=>this._getChoiceImage(c))),a.length||(a=["Pilihan A","Pilihan B"]),i.length||(i=a.map(()=>""));let s=null,r=[];const n=["a","b","c","d","e","f"];if(Array.isArray(e.correctAnswers))r=e.correctAnswers;else if(typeof e.correctIndex=="number"&&e.correctIndex>=0&&e.correctIndex<a.length)r=[e.correctIndex];else if(e.correctIndex!=null&&!isNaN(parseInt(e.correctIndex,10))){const c=parseInt(e.correctIndex,10);c>=0&&c<a.length&&(r=[c])}else e.k!=null&&n.includes(String(e.k).toLowerCase())&&(r=[n.indexOf(String(e.k).toLowerCase())]);return r[0]!=null&&(s=a[r[0]]),s===null&&(s=a[0]),{type:e.type||"mc",teks:e.question||e.q||e.soal||"",image:e.image||"",pilihan:a,pilihanImages:i,kunci:s,correctAnswers:r,isMulti:r.length>1,statements:Array.isArray(e.statements)?e.statements:[],leftItems:Array.isArray(e.leftItems)?e.leftItems:[],rightItems:Array.isArray(e.rightItems)?e.rightItems:[],correctPairs:e.correctPairs||{},acceptedAnswers:Array.isArray(e.acceptedAnswers)?e.acceptedAnswers:[],hint:e.hint||"",originalIndex:e._originalIndex>=0?e._originalIndex:null}}_fireConfetti(){if(!(this.hideConfetti||typeof this._confettiFn!="function"))try{const t={ticks:220,gravity:.85,decay:.92,startVelocity:42,zIndex:9999};this._confettiFn({...t,particleCount:70,spread:85,scalar:1.05,origin:{x:.5,y:.62}}),this._confettiFn({...t,particleCount:45,angle:58,spread:65,scalar:1.1,origin:{x:.1,y:.7}}),this._confettiFn({...t,particleCount:45,angle:122,spread:65,scalar:1.1,origin:{x:.9,y:.7}})}catch(t){console.error("[kuis-ledakan] Konfeti gagal dieksekusi",t)}}_fireMegaConfetti(){if(!(this.hideConfetti||typeof this._confettiFn!="function"))try{this._cancelMegaConfetti();const t=Date.now()+900,e=()=>{this._confettiFn({particleCount:3,angle:60,spread:55,origin:{x:0,y:.7},colors:["#ff0000","#00ff00","#0000ff","#ffff00"]}),this._confettiFn({particleCount:3,angle:120,spread:55,origin:{x:1,y:.7},colors:["#ff0000","#00ff00","#0000ff","#ffff00"]}),Date.now()<t?this._megaConfettiFrameId=globalThis.requestAnimationFrame(e):this._megaConfettiFrameId=null};this._megaConfettiFrameId=globalThis.requestAnimationFrame(e)}catch(t){console.error("[kuis-ledakan] Mega konfeti gagal dieksekusi",t)}}_shuffleArray(t){const e=[...t];for(let a=e.length-1;a>0;a--){const i=Math.floor(Math.random()*(a+1));[e[a],e[i]]=[e[i],e[a]]}return e}get _inHaxEditor(){return!!(globalThis.HaxStore&&typeof globalThis.HaxStore.requestAvailability=="function"&&globalThis.HaxStore.requestAvailability().editMode)}_maxPoinSoal(t){if(!t)return 1;if(t.type==="pgk"){const e=Array.isArray(t.statements)?t.statements.length:0;return t.points!=null?t.points:e||1}if(t.type==="matching"){const e=Array.isArray(t.leftItems)?t.leftItems.length:0;return t.points!=null?t.points:e||1}return t.points||1}_startQuiz(){this._screen="question",this._currentIdx=0,this._score=0,this._confettiFired=!1,this._answeredSet=new Set,this._userAnswers=new Map,this._reviewMode=!1;const t=Array.isArray(this._shuffledQuestions)&&this._shuffledQuestions.length>0;let e=Array.isArray(this.questions)?this.questions:pt;t?e=this._shuffledQuestions:(this.shuffleQuestions&&(e=this._shuffleArray(e)),Array.isArray(e)||(e=pt)),this._maxPoints=(this.questions||[]).reduce((a,i)=>a+this._maxPoinSoal(i),0)||1,t||(this.shuffleChoices?this._shuffledQuestions=e.map((a,i)=>{if(!Array.isArray(a.choices)||a.type==="pgk"||a.type==="matching")return{...a,_originalIndex:i};const s=a.choices.map((n,c)=>({text:n,origIndex:c})),r=this._shuffleArray(s);return{...a,choices:r.map(n=>n.text),_correctMap:r.map(n=>n.origIndex),_originalIndex:i}}):this._shuffledQuestions=e.map((a,i)=>({...a,_originalIndex:i}))),Array.isArray(this._shuffledQuestions)||(this._shuffledQuestions=[]),this._resetState(),this.lockAfterComplete&&this.studentId&&this.kdMateri&&(this._attemptStart=Date.now(),this._saveAttempt())}_saveAttempt(){if(!(!this.lockAfterComplete||!this.studentId||!this.kdMateri))try{const t=Array.from(this._userAnswers.entries()).map(([e,a])=>[e,a]);localStorage.setItem(this._attemptKey(),JSON.stringify({start:this._attemptStart,duration:this.timerDuration,questions:this._shuffledQuestions,userAnswers:t,currentIdx:this._currentIdx}))}catch{}}_getActiveQuestions(){return this._shuffledQuestions.length>0?this._shuffledQuestions:this.questions}_resetState(){this._selected=-1,this._selectedAnswers=new Set,this._matchAnswers={},this._shortAnswerText="",this._answered=!1,this._feedbackText="",this._feedbackPositive=!1}_pilihJawaban(t,e){if(this._answered)return;const a=this._getActiveQuestions(),i=this._normalisasiSoal(a[this._currentIdx]),s=this._siapkanSoal(i);let r=!1;if(s.isMulti){const c=new Set(this._selectedAnswers);c.has(t)?c.delete(t):c.add(t),this._selectedAnswers=c,this._selected=t,this.requestUpdate();return}this._selected=t,this._answered=!0;const n=i._correctMap?s.correctAnswers.map(c=>i._correctMap.indexOf(c)):s.correctAnswers;if(r=n.includes(t),r)this._score+=i.points||1,this._fireConfetti(),this.hideAnswers||(this._feedbackText="Mantap, Benar!",this._feedbackPositive=!0);else if(!this.hideAnswers){const c=n.map(h=>s.pilihan[h]).join(", ");this._feedbackText=`Yah, Salah. Jawaban benar: ${c}`,this._feedbackPositive=!1}this._answeredSet.add(this._currentIdx),this._userAnswers.set(this._currentIdx,{selected:t,isCorrect:r,points:r?i.points||1:0}),this._saveAttempt(),this._autoAdvance()}_toggleMultiAnswer(t){if(this._answered)return;const e=new Set(this._selectedAnswers);e.has(t)?e.delete(t):e.add(t),this._selectedAnswers=e,this.requestUpdate()}_submitMultiAnswers(){if(this._answered||this._selectedAnswers.size===0)return;const t=this._getActiveQuestions(),e=this._normalisasiSoal(t[this._currentIdx]),a=this._siapkanSoal(e);this._answered=!0;const i=new Set(a.correctAnswers),s=e._correctMap?new Set([...this._selectedAnswers].map(n=>e._correctMap[n])):this._selectedAnswers,r=i.size===s.size&&[...i].every(n=>s.has(n));if(r)this._score+=e.points||1,this._fireConfetti(),this.hideAnswers||(this._feedbackText="Mantap, Benar!",this._feedbackPositive=!0);else if(!this.hideAnswers){const n=[...i].map(c=>{const h=e._correctMap?e._correctMap.indexOf(c):c;return a.pilihan[h]}).join(", ");this._feedbackText=`Jawaban belum tepat. Kunci: ${n}`,this._feedbackPositive=!1}this._answeredSet.add(this._currentIdx),this._userAnswers.set(this._currentIdx,{selectedAnswers:new Set(this._selectedAnswers),isCorrect:r,points:r?e.points||1:0}),this._saveAttempt(),this._autoAdvance()}_setPGK(t,e){this._answered||(this._matchAnswers={...this._matchAnswers,[t]:e})}_submitPGK(){if(this._answered)return;const t=this._getActiveQuestions()[this._currentIdx],e=this._siapkanSoal(t).statements||[];if(Object.keys(this._matchAnswers).length<e.length){this._feedbackText="Pilih Benar atau Salah untuk semua pernyataan.",this._feedbackPositive=!1,this.requestUpdate();return}this._answered=!0;const a=e.map(r=>r.answer);let i=0;for(let r=0;r<e.length;r++)this._matchAnswers[r]===a[r]&&i++;const s=e.length;if(i===s)this._score+=this._maxPoinSoal(t),this._fireConfetti(),this.hideAnswers||(this._feedbackText="Mantap, semua pernyataan benar!",this._feedbackPositive=!0);else if(this._score+=i,!this.hideAnswers){const r=e.map((n,c)=>`${c+1}: ${n.answer?"Benar":"Salah"}`).join(", ");this._feedbackText=`${i}/${s} pernyataan benar (+${i} poin). Kunci: ${r}`,this._feedbackPositive=i>0}this._answeredSet.add(this._currentIdx),this._userAnswers.set(this._currentIdx,{selected:{...this._matchAnswers},isCorrect:i===s,points:i,correctAnswers:e.map((r,n)=>r.answer)}),this._saveAttempt(),this._autoAdvance()}_submitMatching(){if(this._answered)return;const t=this._getActiveQuestions()[this._currentIdx],e=this._siapkanSoal(t),a=e.leftItems||[];if(Object.keys(this._matchAnswers).length<a.length){this._feedbackText="Pilih pasangan untuk semua item kiri.",this._feedbackPositive=!1,this.requestUpdate();return}this._answered=!0;let i=0;for(let n=0;n<a.length;n++)this._matchAnswers[n]===e.correctPairs[n]&&i++;const s=this._maxPoinSoal(t),r=Math.min(i,s);if(this._score+=r,!this.hideAnswers)if(i===a.length)this._feedbackText=`Mantap, Benar! (${i}/${a.length} pasangan, +${r} poin)`,this._feedbackPositive=!0;else if(i>0)this._feedbackText=`${i}/${a.length} pasangan benar (+${r} poin). Lanjutkan!`,this._feedbackPositive=!0;else{const n=Object.entries(e.correctPairs).map(([c,h])=>`${parseInt(c)+1}\u2192${String.fromCharCode(65+h)}`).join(", ");this._feedbackText=`Yah, Salah. Kunci: ${n}`,this._feedbackPositive=!1}!this.hideConfetti&&i===a.length&&this._fireConfetti(),this._answeredSet.add(this._currentIdx),this._userAnswers.set(this._currentIdx,{selected:{...this._matchAnswers},isCorrect:i===a.length,points:r,correctPairs:e.correctPairs}),this._saveAttempt(),this._autoAdvance()}_submitShortAnswer(){if(this._answered)return;const t=this._shortAnswerText.trim().toLowerCase();if(!t){this._feedbackText="Ketik jawaban terlebih dahulu.",this._feedbackPositive=!1,this.requestUpdate();return}const e=this._getActiveQuestions()[this._currentIdx],a=this._siapkanSoal(e);this._answered=!0;const i=(a.acceptedAnswers||[]).map(s=>s.toLowerCase()).some(s=>t.includes(s));i?(this._score+=e.points||1,this._fireConfetti(),this.hideAnswers||(this._feedbackText="Mantap, Benar!",this._feedbackPositive=!0)):this.hideAnswers||(this._feedbackText=`Yah, Salah. Jawaban benar: ${(a.acceptedAnswers||[]).join(" / ")}`,this._feedbackPositive=!1),this._answeredSet.add(this._currentIdx),this._userAnswers.set(this._currentIdx,{text:this._shortAnswerText,isCorrect:i,points:i?e.points||1:0,correctAnswers:a.acceptedAnswers||[]}),this._saveAttempt(),this._autoAdvance()}_restoreAnswerState(t){const e=this._userAnswers.get(t);if(!e)return;const a=i=>i instanceof Set?i:Array.isArray(i)?new Set(i):i&&typeof i=="object"?new Set(Object.values(i)):new Set;e.selectedAnswers?(this._selectedAnswers=a(e.selectedAnswers),this._answered=!0):typeof e.selected=="number"?(this._selected=e.selected,this._answered=!0):e.text?(this._shortAnswerText=e.text,this._answered=!0):e.selected&&typeof e.selected=="object"&&(this._matchAnswers={...e.selected},this._answered=!0),this._answered&&this._answeredSet.add(t)}_resetForNavigation(){this._answered=!1,this._feedbackText="",this._feedbackPositive=!1}_canNavigateTo(t){const e=this._getActiveQuestions();return!(t<0||t>=e.length||this._screen==="result"||this.timerDuration>0&&this._resumeRemaining!==void 0&&this._resumeRemaining<=0&&t!==this._currentIdx||!this.practiceMode&&!this.allowBackwardNav&&this._answeredSet.has(t)&&t<this._currentIdx)}_goToQuestion(t){if(!this._canNavigateTo(t))return;const e=this._getActiveQuestions();t>=e.length||t!==this._currentIdx&&(this._advanceTimer&&(clearTimeout(this._advanceTimer),this._advanceTimer=null),this._currentIdx=t,this._restoreAnswerState(t),this._resetForNavigation())}_goToPrevQuestion(){this._currentIdx>0&&this._goToQuestion(this._currentIdx-1)}_goToNextQuestion(){const t=this._getActiveQuestions();if(this._currentIdx<t.length-1){if(!this._answered&&this._currentIdx>=0){this._feedbackText="Silakan jawab soal ini terlebih dahulu.",this._feedbackPositive=!1,this.requestUpdate();return}this._currentIdx++,this._resetState(),this.requestUpdate()}else this._currentIdx===t.length-1&&this._selesaiKuis()}_autoAdvance(){this.practiceMode||(this._advanceTimer&&clearTimeout(this._advanceTimer),this._advanceTimer=setTimeout(()=>{this._advanceTimer=null;const t=this._getActiveQuestions();this._currentIdx<t.length-1&&(this._currentIdx++,this._resetState())},this.questionDelay||1800))}_buatIdLog(){try{const t=new Uint8Array(8);globalThis.crypto.getRandomValues(t);let e="";return t.forEach(a=>e+=a.toString(16).padStart(2,"0")),`LOG-${Date.now()}-${e.toUpperCase()}`}catch{return`LOG-${Date.now()}-${Math.random().toString(36).substr(2,10).toUpperCase()}`}}_selesaiKuis(){if(this._screen==="result")return;this._advanceTimer&&(clearTimeout(this._advanceTimer),this._advanceTimer=null),this._screen="result",this._maxPoints=(this.questions||[]).reduce((i,s)=>i+this._maxPoinSoal(s),0)||1;const t=Math.round(this._score/this._maxPoints*100),e=Math.max(0,Math.min(100,t));!this._confettiFired&&!this.hideConfetti&&(this._confettiFired=!0,e>=80?this._fireMegaConfetti():this._fireConfetti());const a=this._buatIdLog();this.dispatchEvent(new CustomEvent("dasbor-kuis-log",{detail:{id_log:a,tipe:"quiz",payload:{score:e,jenisKuis:this.kategori,kdMateri:this.kdMateri,kategori:this.kategori,metadataKuis:this.judul,timestamp:new Date().toISOString()}},bubbles:!0,composed:!0})),this._kirimHasilLangsung(a,e),this.lockAfterComplete&&(this._locked=!0);try{localStorage.removeItem(this._attemptKey())}catch{}}async _kirimHasilLangsung(t,e){if(!this.appsScriptUrl||!this.studentId)return;const a=new Date().toISOString(),i={action:"logActivity",studentId:this.studentId,nama:this.studentName||"",nis:this.studentNis||"",absen:this.studentAbsen||"",kelas:this.studentKelas||"",type:"quiz",description:JSON.stringify({score:e,jenisKuis:this.kategori||"sumatif_lm",kdMateri:this.kdMateri||"",metadataKuis:this.judul,timestamp:a}),timestamp:a,kdMateri:this.kdMateri||"",kategori:this.kategori||"sumatif_lm",id_log:t};try{const s=await(await fetch(`${this.appsScriptUrl}?${new URLSearchParams(i).toString()}`,{method:"GET",mode:"cors"})).text();let r=null;try{r=JSON.parse(s)}catch{}this._bankStatus=r&&r.status==="ok"?r.duplikat?"\u2705 Skor sudah tercatat sebelumnya (duplikat dilewati).":"\u2705 Skor & status kuis terkirim ke database V5.":r&&r.message?"\u26A0\uFE0F "+r.message:"\u26A0\uFE0F Backend merespons non-JSON \u2014 cek atribut apps-script-url.",this.requestUpdate()}catch{this._bankStatus="\u26A0\uFE0F Hasil tersimpan lokal; kirim ulang saat online.",this.requestUpdate()}}async _cekKunci(){if(!this.lockAfterComplete||!this.appsScriptUrl||!this.studentId||!this.kdMateri){this._lockChecked=!0;return}try{const t=`${this.appsScriptUrl}${this.appsScriptUrl.includes("?")?"&":"?"}action=getQuizLock&studentId=${encodeURIComponent(this.studentId)}&kdMateri=${encodeURIComponent(this.kdMateri)}`,e=await(await fetch(t,{method:"GET",mode:"cors"})).json();this._locked=!!(e&&e.locked)}catch{this._locked=!1}this._lockChecked=!0,this.requestUpdate()}async _bukaKunci(){if(!(!this.appsScriptUrl||!this.studentId||!this.kdMateri)){try{const t=`${this.appsScriptUrl}${this.appsScriptUrl.includes("?")?"&":"?"}action=resetQuizLock&studentId=${encodeURIComponent(this.studentId)}&kdMateri=${encodeURIComponent(this.kdMateri)}`;await fetch(t,{method:"GET",mode:"cors"})}catch{}this._locked=!1,this._screen="start";try{localStorage.removeItem(this._attemptKey())}catch{}this.requestUpdate()}}async _onStartClick(){if(!this.studentId){this._redirectToLogin();return}if(await this._cekKunci(),this._locked){this.requestUpdate();return}await this._muatBankSoal(),this._startQuiz()}_redirectToLogin(){const t=document.querySelector("quiz-user-auth");t&&(t.scrollIntoView({behavior:"smooth",block:"center"}),typeof t.focus=="function"&&t.focus()),this.dispatchEvent(new CustomEvent("kuis-need-login",{bubbles:!0,composed:!0,detail:{kdMateri:this.kdMateri}})),this.requestUpdate()}_attemptKey(){return`kuis-ledakan:attempt:${this.studentId}:${this.kdMateri}`}_resumeAttemptIfAny(){if(!this.lockAfterComplete||!this.studentId||!this.kdMateri)return;let t=null;try{t=JSON.parse(localStorage.getItem(this._attemptKey())||"null")}catch{}if(!t)return;if(!Array.isArray(t.questions)||t.questions.length===0){try{localStorage.removeItem(this._attemptKey())}catch{}return}const e=Math.floor((Date.now()-t.start)/1e3),a=(t.duration||0)-e;if(a<=0){try{localStorage.removeItem(this._attemptKey())}catch{}return}this._shuffledQuestions=t.questions,this._attemptStart=t.start,this._resumeRemaining=a,typeof t.currentIdx=="number"&&(this._currentIdx=t.currentIdx),Array.isArray(t.userAnswers)&&(this._userAnswers=new Map(t.userAnswers),this._restoreAnswerState(this._currentIdx)),this._screen="question",this.requestUpdate()}render(){if(this._screen==="start")return this._locked&&this.mode!=="guru"?d`
+      `]}updated(t){if(super.updated(t),t.has("questions")&&!Array.isArray(this.questions)&&(this.questions=bt),t.has("timerMinutes")||t.has("timerSeconds")){const e=(this.timerMinutes||0)*60+(this.timerSeconds||0);this.timerDuration!==e&&(this.timerDuration=e)}else if(t.has("timerDuration")){const e=Math.floor((this.timerDuration||0)/60),a=(this.timerDuration||0)%60;this.timerMinutes!==e&&(this.timerMinutes=e),this.timerSeconds!==a&&(this.timerSeconds=a)}this._screen==="question"&&this._resumeRemaining>0&&(this._resumeRemaining=0)}connectedCallback(){if(super.connectedCallback(),globalThis.HaxStore&&typeof globalThis.HaxStore.requestAvailability=="function"){const t=globalThis.HaxStore.requestAvailability();t&&!t.elementList[tt.tag]&&(t.elementList[tt.tag]=tt.haxProperties)}globalThis.addEventListener("quiz-user-login",this._authHandler),globalThis.addEventListener("quiz-user-session-changed",this._authHandler),this._loadSession(),this._resumeAttemptIfAny(),this._handleKeyboard=this._handleKeyboard.bind(this),globalThis.addEventListener("keydown",this._handleKeyboard)}disconnectedCallback(){this._advanceTimer&&(clearTimeout(this._advanceTimer),this._advanceTimer=null),globalThis.removeEventListener("quiz-user-login",this._authHandler),globalThis.removeEventListener("quiz-user-session-changed",this._authHandler),globalThis.removeEventListener("keydown",this._handleKeyboard),this._cancelMegaConfetti(),super.disconnectedCallback()}_authHandler(t){const e=t&&t.detail||{};e.studentId&&(this.studentId=e.studentId),e.nama&&(this.studentName=e.nama),e.nis&&(this.studentNis=e.nis),e.absen&&(this.studentAbsen=e.absen),e.kelas&&(this.studentKelas=e.kelas)}_handleKeyboard(t){if(this._screen!=="question")return;const e=this._getActiveQuestions();if(!e||e.length===0)return;const a=t.target&&t.target.tagName;if(!(a==="INPUT"||a==="TEXTAREA"||a==="SELECT"))switch(t.key){case"ArrowLeft":t.preventDefault(),this._goToPrevQuestion();break;case"ArrowRight":t.preventDefault(),this._goToNextQuestion();break;case"Enter":!this._answered&&this._screen==="question"&&(t.preventDefault(),this._submitCurrentAnswer());break;default:const i=parseInt(t.key,10);!isNaN(i)&&i>=1&&i<=e.length&&(t.preventDefault(),this._goToQuestion(i-1));break}}_submitCurrentAnswer(){if(this._answered)return;const t=this._getActiveQuestions()[this._currentIdx];if(!t)return;const e=this._siapkanSoal(t);switch(e.type||"mc"){case"shortAnswer":this._submitShortAnswer();break;case"pgk":this._submitPGK();break;case"matching":this._submitMatching();break;case"mc":e.isMulti&&this._submitMultiAnswers();break}}_loadSession(){try{const t=JSON.parse(globalThis.localStorage.getItem("quiz_user_session"));if(!t||!t.studentId)return;if(t.expiresAt&&Date.now()>t.expiresAt){globalThis.localStorage.removeItem("quiz_user_session");return}this.studentId=t.studentId||"",this.studentName=t.nama||"",this.studentNis=t.nis||"",this.studentAbsen=t.absen||"",this.studentKelas=t.kelas||""}catch{}}_cancelMegaConfetti(){this._megaConfettiFrameId&&(globalThis.cancelAnimationFrame(this._megaConfettiFrameId),this._megaConfettiFrameId=null)}_onTimerExpired(){this._screen==="question"&&this._selesaiKuis()}forceFinish(){this._selesaiKuis()}async _muatBankSoal(){if(!(this._bankLoaded||!this.appsScriptUrl||this.hasAttribute("questions"))){this._bankLoaded=!0;try{const t=this.appsScriptUrl.includes("?")?"&":"?",e=await fetch(this.appsScriptUrl+t+"action=getBankSoal");if(!e.ok)return;const a=await e.text(),i=JSON.parse(a);if(i&&i.status==="ok"&&Array.isArray(i.soal)){const r=i.soal.filter(s=>s&&(s.soal||s.question)&&(Array.isArray(s.choices)?s.choices.length>=2:!0));r.length>0&&(this.questions=r.slice(0,10),this._bankStatus="Soal dimuat dari Bank Soal (AKM).",this.requestUpdate())}}catch{}}}_getChoiceText(t){return typeof t=="string"?t:t&&t.text||""}_getChoiceImage(t){return t&&typeof t=="object"&&t.image||""}_normalisasiSoal(t){if(!t)return null;if(t&&Array.isArray(t.choices)&&t.choices.length)return t;const e=[t.a,t.b,t.c,t.d,t.e,t.f].filter(i=>i!==""&&i!=null&&i!==void 0);if(!e.length)return t;const a=["a","b","c","d","e","f"];return{...t,question:t.question||t.q||"",choices:e,correctIndex:typeof t.correctIndex=="number"?t.correctIndex:a.indexOf(String(t.k).toLowerCase())}}_siapkanSoal(t){if(!t)return null;const e=this._normalisasiSoal(t);let a=[],i=[];Array.isArray(e.choices)&&e.choices.length&&(a=e.choices.map(l=>this._getChoiceText(l)),i=e.choices.map(l=>this._getChoiceImage(l))),a.length||(a=["Pilihan A","Pilihan B"]),i.length||(i=a.map(()=>""));let r=null,s=[];const d=["a","b","c","d","e","f"];if(Array.isArray(e.correctAnswers))s=e.correctAnswers;else if(typeof e.correctIndex=="number"&&e.correctIndex>=0&&e.correctIndex<a.length)s=[e.correctIndex];else if(e.correctIndex!=null&&!isNaN(parseInt(e.correctIndex,10))){const l=parseInt(e.correctIndex,10);l>=0&&l<a.length&&(s=[l])}else e.k!=null&&d.includes(String(e.k).toLowerCase())&&(s=[d.indexOf(String(e.k).toLowerCase())]);return s[0]!=null&&(r=a[s[0]]),r===null&&(r=a[0]),{type:e.type||"mc",teks:e.question||e.q||e.soal||"",image:e.image||"",pilihan:a,pilihanImages:i,kunci:r,correctAnswers:s,isMulti:s.length>1,statements:Array.isArray(e.statements)?e.statements:[],leftItems:Array.isArray(e.leftItems)?e.leftItems:[],rightItems:Array.isArray(e.rightItems)?e.rightItems:[],correctPairs:e.correctPairs||{},acceptedAnswers:Array.isArray(e.acceptedAnswers)?e.acceptedAnswers:[],hint:e.hint||"",originalIndex:e._originalIndex>=0?e._originalIndex:null}}_fireConfetti(){if(!(this.hideConfetti||typeof this._confettiFn!="function"))try{const t={ticks:220,gravity:.85,decay:.92,startVelocity:42,zIndex:9999};this._confettiFn({...t,particleCount:70,spread:85,scalar:1.05,origin:{x:.5,y:.62}}),this._confettiFn({...t,particleCount:45,angle:58,spread:65,scalar:1.1,origin:{x:.1,y:.7}}),this._confettiFn({...t,particleCount:45,angle:122,spread:65,scalar:1.1,origin:{x:.9,y:.7}})}catch(t){console.error("[kuis-ledakan] Konfeti gagal dieksekusi",t)}}_fireMegaConfetti(){if(!(this.hideConfetti||typeof this._confettiFn!="function"))try{this._cancelMegaConfetti();const t=Date.now()+900,e=()=>{this._confettiFn({particleCount:3,angle:60,spread:55,origin:{x:0,y:.7},colors:["#ff0000","#00ff00","#0000ff","#ffff00"]}),this._confettiFn({particleCount:3,angle:120,spread:55,origin:{x:1,y:.7},colors:["#ff0000","#00ff00","#0000ff","#ffff00"]}),Date.now()<t?this._megaConfettiFrameId=globalThis.requestAnimationFrame(e):this._megaConfettiFrameId=null};this._megaConfettiFrameId=globalThis.requestAnimationFrame(e)}catch(t){console.error("[kuis-ledakan] Mega konfeti gagal dieksekusi",t)}}_shuffleArray(t){const e=[...t];for(let a=e.length-1;a>0;a--){const i=Math.floor(Math.random()*(a+1));[e[a],e[i]]=[e[i],e[a]]}return e}get _inHaxEditor(){return!!(globalThis.HaxStore&&typeof globalThis.HaxStore.requestAvailability=="function"&&globalThis.HaxStore.requestAvailability().editMode)}_maxPoinSoal(t){if(!t)return 1;if(t.type==="pgk"){const e=Array.isArray(t.statements)?t.statements.length:0;return t.points!=null?t.points:e||1}if(t.type==="matching"){const e=Array.isArray(t.leftItems)?t.leftItems.length:0;return t.points!=null?t.points:e||1}return t.points||1}_startQuiz(){this._screen="question",this._currentIdx=0,this._score=0,this._confettiFired=!1,this._answeredSet=new Set,this._userAnswers=new Map,this._reviewMode=!1,this._questionStartTime=Date.now();const t=Array.isArray(this._shuffledQuestions)&&this._shuffledQuestions.length>0;let e=Array.isArray(this.questions)?this.questions:bt;t?e=this._shuffledQuestions:(this.shuffleQuestions&&(e=this._shuffleArray(e)),Array.isArray(e)||(e=bt)),this._maxPoints=(this.questions||[]).reduce((a,i)=>a+this._maxPoinSoal(i),0)||1,t||(this._buatSessionToken(),this._saveSessionToken(),this.shuffleChoices?this._shuffledQuestions=e.map((a,i)=>{if(!Array.isArray(a.choices)||a.type==="pgk"||a.type==="matching")return{...a,_originalIndex:i};const r=a.choices.map((d,l)=>({text:d,origIndex:l})),s=this._shuffleArray(r);return{...a,choices:s.map(d=>d.text),_correctMap:s.map(d=>d.origIndex),_originalIndex:i}}):this._shuffledQuestions=e.map((a,i)=>({...a,_originalIndex:i}))),Array.isArray(this._shuffledQuestions)||(this._shuffledQuestions=[]),this._resetState(),this._autoSaveInterval=setInterval(()=>{this._screen==="question"&&this.lockAfterComplete&&this.studentId&&this.kdMateri&&this._saveAttempt()},15e3),this.lockAfterComplete&&this.studentId&&this.kdMateri&&(this._attemptStart=Date.now(),this._saveAttempt())}_saveAttempt(){if(!(!this.lockAfterComplete||!this.studentId||!this.kdMateri))try{const t=Array.from(this._userAnswers.entries()).map(([e,a])=>[e,a]);localStorage.setItem(this._attemptKey(),JSON.stringify({start:this._attemptStart,duration:this.timerDuration,questions:this._shuffledQuestions,userAnswers:t,currentIdx:this._currentIdx,sessionToken:this._sessionToken}))}catch{}}_sessionTokenKey(){return`kuis-ledakan:session:${this.studentId}:${this.kdMateri}`}_buatSessionToken(){try{const t=new Uint8Array(16);globalThis.crypto.getRandomValues(t);let e="";return t.forEach(a=>e+=a.toString(16).padStart(2,"0")),this._sessionToken=`${Date.now()}-${e}`,this._sessionToken}catch{return this._sessionToken=`sess-${Date.now()}-${Math.random().toString(36).slice(2,10)}`,this._sessionToken}}_saveSessionToken(){if(!(!this.studentId||!this.kdMateri||!this._sessionToken))try{localStorage.setItem(this._sessionTokenKey(),JSON.stringify({token:this._sessionToken,start:Date.now(),duration:this.timerDuration||this.duration||300}))}catch{}}_loadSessionToken(){if(!this.studentId||!this.kdMateri)return null;try{const t=JSON.parse(localStorage.getItem(this._sessionTokenKey())||"null");return!t||!t.token?null:Date.now()-t.start>t.duration*1e3+6e4?(localStorage.removeItem(this._sessionTokenKey()),null):(this._sessionToken=t.token,t.token)}catch{return null}}_clearSessionToken(){if(this._sessionToken=null,this.studentId&&this.kdMateri)try{localStorage.removeItem(this._sessionTokenKey())}catch{}}_cekSesiAktif(){const t=this._loadSessionToken();return t?(this._sessionExpired=!1,{active:!0,token:t}):(this._sessionExpired=!0,{active:!1,token:null})}_getActiveQuestions(){return this._shuffledQuestions.length>0?this._shuffledQuestions:this.questions}_resetState(){this._selected=-1,this._selectedAnswers=new Set,this._matchAnswers={},this._shortAnswerText="",this._answered=!1,this._feedbackText="",this._feedbackPositive=!1}_pilihJawaban(t,e){if(this._answered||this._userAnswers.has(this._currentIdx))return;const a=this._getActiveQuestions(),i=this._normalisasiSoal(a[this._currentIdx]),r=this._siapkanSoal(i);let s=!1;if(r.isMulti){const u=new Set(this._selectedAnswers);u.has(t)?u.delete(t):u.add(t),this._selectedAnswers=u,this._selected=t,this.requestUpdate();return}this._selected=t,this._answered=!0;const d=i._correctMap?r.correctAnswers.map(u=>i._correctMap.indexOf(u)):r.correctAnswers;if(s=d.includes(t),s)this._score+=i.points||1,this._fireConfetti(),this.hideAnswers||(this._feedbackText="Mantap, Benar!",this._feedbackPositive=!0);else if(!this.hideAnswers){const u=d.map(m=>r.pilihan[m]).join(", ");this._feedbackText=`Yah, Salah. Jawaban benar: ${u}`,this._feedbackPositive=!1}this._answeredSet.add(this._currentIdx);const l=this._quizEngine.getAnswerTime();this._quizEngine.isSuspiciousTiming(l)&&this._logActivity("suspicious_timing",{questionIndex:this._currentIdx,answerTimeMs:l,minThresholdMs:3e3});const p=this._scoreCalculator.calculateScore(s,i.points||1);this._userAnswers.set(this._currentIdx,{selected:t,isCorrect:s,points:s?i.points||1:0,score:p,answerTime:l,timestamp:new Date().toISOString()}),this._saveAttempt(),this._autoAdvance()}_toggleMultiAnswer(t){if(this._answered)return;const e=new Set(this._selectedAnswers);e.has(t)?e.delete(t):e.add(t),this._selectedAnswers=e,this.requestUpdate()}_submitMultiAnswers(){if(this._answered||this._selectedAnswers.size===0||this._userAnswers.has(this._currentIdx))return;const t=this._getActiveQuestions(),e=this._normalisasiSoal(t[this._currentIdx]),a=this._siapkanSoal(e);this._answered=!0;const i=new Set(a.correctAnswers),r=e._correctMap?new Set([...this._selectedAnswers].map(d=>e._correctMap[d])):this._selectedAnswers,s=i.size===r.size&&[...i].every(d=>r.has(d));if(s)this._score+=e.points||1,this._fireConfetti(),this.hideAnswers||(this._feedbackText="Mantap, Benar!",this._feedbackPositive=!0);else if(!this.hideAnswers){const d=[...i].map(l=>{const p=e._correctMap?e._correctMap.indexOf(l):l;return a.pilihan[p]}).join(", ");this._feedbackText=`Jawaban belum tepat. Kunci: ${d}`,this._feedbackPositive=!1}this._answeredSet.add(this._currentIdx),this._userAnswers.set(this._currentIdx,{selectedAnswers:new Set(this._selectedAnswers),isCorrect:s,points:s?e.points||1:0}),this._saveAttempt(),this._autoAdvance()}_setPGK(t,e){this._answered||(this._matchAnswers={...this._matchAnswers,[t]:e})}_submitPGK(){if(this._answered||this._userAnswers.has(this._currentIdx))return;const t=this._getActiveQuestions()[this._currentIdx],e=this._siapkanSoal(t).statements||[];if(Object.keys(this._matchAnswers).length<e.length){this._feedbackText="Pilih Benar atau Salah untuk semua pernyataan.",this._feedbackPositive=!1,this.requestUpdate();return}this._answered=!0;const a=e.map(s=>s.answer);let i=0;for(let s=0;s<e.length;s++)this._matchAnswers[s]===a[s]&&i++;const r=e.length;if(i===r)this._score+=this._maxPoinSoal(t),this._fireConfetti(),this.hideAnswers||(this._feedbackText="Mantap, semua pernyataan benar!",this._feedbackPositive=!0);else if(this._score+=i,!this.hideAnswers){const s=e.map((d,l)=>`${l+1}: ${d.answer?"Benar":"Salah"}`).join(", ");this._feedbackText=`${i}/${r} pernyataan benar (+${i} poin). Kunci: ${s}`,this._feedbackPositive=i>0}this._answeredSet.add(this._currentIdx),this._userAnswers.set(this._currentIdx,{selected:{...this._matchAnswers},isCorrect:i===r,points:i,correctAnswers:e.map((s,d)=>s.answer)}),this._saveAttempt(),this._autoAdvance()}_submitMatching(){if(this._answered||this._userAnswers.has(this._currentIdx))return;const t=this._getActiveQuestions()[this._currentIdx],e=this._siapkanSoal(t),a=e.leftItems||[];if(Object.keys(this._matchAnswers).length<a.length){this._feedbackText="Pilih pasangan untuk semua item kiri.",this._feedbackPositive=!1,this.requestUpdate();return}this._answered=!0;let i=0;for(let d=0;d<a.length;d++)this._matchAnswers[d]===e.correctPairs[d]&&i++;const r=this._maxPoinSoal(t),s=Math.min(i,r);if(this._score+=s,!this.hideAnswers)if(i===a.length)this._feedbackText=`Mantap, Benar! (${i}/${a.length} pasangan, +${s} poin)`,this._feedbackPositive=!0;else if(i>0)this._feedbackText=`${i}/${a.length} pasangan benar (+${s} poin). Lanjutkan!`,this._feedbackPositive=!0;else{const d=Object.entries(e.correctPairs).map(([l,p])=>`${parseInt(l)+1}\u2192${String.fromCharCode(65+p)}`).join(", ");this._feedbackText=`Yah, Salah. Kunci: ${d}`,this._feedbackPositive=!1}!this.hideConfetti&&i===a.length&&this._fireConfetti(),this._answeredSet.add(this._currentIdx),this._userAnswers.set(this._currentIdx,{selected:{...this._matchAnswers},isCorrect:i===a.length,points:s,correctPairs:e.correctPairs}),this._saveAttempt(),this._autoAdvance()}_submitShortAnswer(){if(this._answered||this._userAnswers.has(this._currentIdx))return;const t=this._shortAnswerText.trim().toLowerCase();if(!t){this._feedbackText="Ketik jawaban terlebih dahulu.",this._feedbackPositive=!1,this.requestUpdate();return}const e=this._getActiveQuestions()[this._currentIdx],a=this._siapkanSoal(e);this._answered=!0;const i=(a.acceptedAnswers||[]).map(r=>r.toLowerCase()).some(r=>t.includes(r));i?(this._score+=e.points||1,this._fireConfetti(),this.hideAnswers||(this._feedbackText="Mantap, Benar!",this._feedbackPositive=!0)):this.hideAnswers||(this._feedbackText=`Yah, Salah. Jawaban benar: ${(a.acceptedAnswers||[]).join(" / ")}`,this._feedbackPositive=!1),this._answeredSet.add(this._currentIdx),this._userAnswers.set(this._currentIdx,{text:this._shortAnswerText,isCorrect:i,points:i?e.points||1:0,correctAnswers:a.acceptedAnswers||[]}),this._saveAttempt(),this._autoAdvance()}_restoreAnswerState(t){const e=this._userAnswers.get(t);if(!e)return;const a=i=>i instanceof Set?i:Array.isArray(i)?new Set(i):i&&typeof i=="object"?new Set(Object.values(i)):new Set;if(e.selectedAnswers?(this._selectedAnswers=a(e.selectedAnswers),this._answered=!0):typeof e.selected=="number"?(this._selected=e.selected,this._answered=!0):e.text?(this._shortAnswerText=e.text,this._answered=!0):e.selected&&typeof e.selected=="object"&&(this._matchAnswers={...e.selected},this._answered=!0),this._answered&&(this._answeredSet.add(t),!this.hideAnswers)){const i=this._getActiveQuestions()[t],r=i?this._siapkanSoal(this._normalisasiSoal(i)):null;if(e.isCorrect)this._feedbackText=r&&r.type==="pgk"?"Mantap, semua pernyataan benar!":(r&&r.type,"Mantap, Benar!"),this._feedbackPositive=!0;else if(e.isCorrect===!1){if(r&&r.type==="shortAnswer"){const s=(r.acceptedAnswers||[]).join(" / ");this._feedbackText=s?"Yah, Salah. Jawaban benar: "+s:"Yah, Salah."}else if(r&&r.type==="pgk")this._feedbackText="Jawaban belum tepat. Periksa kembali pernyataan Anda.";else if(r&&r.type==="matching")this._feedbackText="Yah, Salah. Periksa kembali pasangan Anda.";else{const s=r?r.correctAnswers.map(function(d){return r.pilihan[d]}).join(", "):"";this._feedbackText=s?"Yah, Salah. Jawaban benar: "+s:"Yah, Salah."}this._feedbackPositive=!1}}}_resetForNavigation(){this._answered=!1,this._feedbackText="",this._feedbackPositive=!1}_canNavigateTo(t){const e=this._getActiveQuestions();return!(t<0||t>=e.length||this._screen==="result"||this.timerDuration>0&&this._resumeRemaining!==void 0&&this._resumeRemaining<=0&&t!==this._currentIdx||!this.practiceMode&&!this.allowBackwardNav&&this._answeredSet.has(t)&&t<this._currentIdx)}_goToQuestion(t){if(!this._canNavigateTo(t))return;const e=this._getActiveQuestions();t>=e.length||t!==this._currentIdx&&(this._advanceTimer&&(clearTimeout(this._advanceTimer),this._advanceTimer=null),this._currentIdx=t,this._questionStartTime=Date.now(),this._resetState(),this._restoreAnswerState(t),this.requestUpdate())}_goToPrevQuestion(){this._currentIdx>0&&this._goToQuestion(this._currentIdx-1)}_goToNextQuestion(){const t=this._getActiveQuestions();if(this._currentIdx<t.length-1){if(!this._answered&&this._currentIdx>=0){this._feedbackText="Silakan jawab soal ini terlebih dahulu.",this._feedbackPositive=!1,this.requestUpdate();return}this._currentIdx++,this._resetState(),this._restoreAnswerState(this._currentIdx),this.requestUpdate()}else this._currentIdx===t.length-1&&this._selesaiKuis()}_autoAdvance(){this.practiceMode||(this._advanceTimer&&clearTimeout(this._advanceTimer),this._advanceTimer=setTimeout(()=>{this._advanceTimer=null;const t=this._getActiveQuestions();this._currentIdx<t.length-1&&(this._currentIdx++,this._resetState(),this._restoreAnswerState(this._currentIdx),this.requestUpdate())},this.questionDelay||1800))}_buatIdLog(){try{const t=new Uint8Array(8);globalThis.crypto.getRandomValues(t);let e="";return t.forEach(a=>e+=a.toString(16).padStart(2,"0")),`LOG-${Date.now()}-${e.toUpperCase()}`}catch{return`LOG-${Date.now()}-${Math.random().toString(36).substr(2,10).toUpperCase()}`}}_selesaiKuis(){if(this._screen==="result")return;this._advanceTimer&&(clearTimeout(this._advanceTimer),this._advanceTimer=null),this._autoSaveInterval&&(clearInterval(this._autoSaveInterval),this._autoSaveInterval=null),this._screen="result",this._maxPoints=(this.questions||[]).reduce((r,s)=>r+this._maxPoinSoal(s),0)||1;const t=se.calculatePercentage(this._score,this._maxPoints),e=Math.max(0,Math.min(100,t));!this._confettiFired&&!this.hideConfetti&&(this._confettiFired=!0,e>=80?this._fireMegaConfetti():this._fireConfetti());const a=this._buatIdLog(),i=Array.from(this._userAnswers.entries()).map(([r,s])=>({questionIndex:r,answerTime:s.answerTime||0,timestamp:s.timestamp}));this.dispatchEvent(new CustomEvent("dasbor-kuis-log",{detail:{id_log:a,tipe:"quiz",payload:{score:e,jenisKuis:this.kategori,kdMateri:this.kdMateri,kategori:this.kategori,metadataKuis:this.judul,timestamp:new Date().toISOString(),answerTimings:i,sessionToken:this._sessionToken}},bubbles:!0,composed:!0})),this.closest("dasbor-kuis")||this._kirimHasilLangsung(a,e),this.lockAfterComplete&&(this._locked=!0),this._clearSessionToken();try{localStorage.removeItem(this._attemptKey())}catch{}}_logActivity(t,e={}){try{this.dispatchEvent(new CustomEvent("dasbor-kuis-log",{detail:{tipe:t,payload:{...e,studentId:this.studentId,kdMateri:this.kdMateri}},bubbles:!0,composed:!0}))}catch{}}async _kirimHasilLangsung(t,e){if(!this.appsScriptUrl||!this.studentId)return;const a=new Date().toISOString(),i={action:"logActivity",studentId:this.studentId,nama:this.studentName||"",nis:this.studentNis||"",absen:this.studentAbsen||"",kelas:this.studentKelas||"",type:"quiz",description:JSON.stringify({score:e,jenisKuis:this.kategori||"sumatif_lm",kdMateri:this.kdMateri||"",metadataKuis:this.judul,timestamp:a}),timestamp:a,kdMateri:this.kdMateri||"",kategori:this.kategori||"sumatif_lm",id_log:t,sessionToken:this._sessionToken||""};try{const r=await(await fetch(`${this.appsScriptUrl}?${new URLSearchParams(i).toString()}`,{method:"GET",mode:"cors"})).text();let s=null;try{s=JSON.parse(r)}catch{}this._bankStatus=s&&s.status==="ok"?s.duplikat?"\u2705 Skor sudah tercatat sebelumnya (duplikat dilewati).":"\u2705 Skor & status kuis terkirim ke database V5.":s&&s.message?"\u26A0\uFE0F "+s.message:"\u26A0\uFE0F Backend merespons non-JSON \u2014 cek atribut apps-script-url.",this.requestUpdate()}catch{this._bankStatus="\u26A0\uFE0F Hasil tersimpan lokal; kirim ulang saat online.",this.requestUpdate()}}async _cekKunci(){if(!this.lockAfterComplete||!this.appsScriptUrl||!this.studentId||!this.kdMateri){this._lockChecked=!0;return}try{const t=`${this.appsScriptUrl}${this.appsScriptUrl.includes("?")?"&":"?"}action=getQuizLock&studentId=${encodeURIComponent(this.studentId)}&kdMateri=${encodeURIComponent(this.kdMateri)}`,e=await(await fetch(t,{method:"GET",mode:"cors"})).json();this._locked=!!(e&&e.locked)}catch{this._locked=!1}this._lockChecked=!0,this.requestUpdate()}async _bukaKunci(){if(!(!this.appsScriptUrl||!this.studentId||!this.kdMateri)){try{const t=`${this.appsScriptUrl}${this.appsScriptUrl.includes("?")?"&":"?"}action=resetQuizLock&studentId=${encodeURIComponent(this.studentId)}&kdMateri=${encodeURIComponent(this.kdMateri)}`;await fetch(t,{method:"GET",mode:"cors"})}catch{}this._locked=!1,this._autoSaveInterval&&(clearInterval(this._autoSaveInterval),this._autoSaveInterval=null),this._screen="start";try{localStorage.removeItem(this._attemptKey())}catch{}this.requestUpdate()}}async _onStartClick(){if(!this.studentId){this._redirectToLogin();return}if(await this._cekKunci(),this._locked){this.requestUpdate();return}this._cekSesiAktif().active&&!this._locked&&(this._bankStatus="\u26A0\uFE0F Sesi kuis masih aktif. Jika Anda me-refresh, sesi sebelumnya akan dilanjutkan.",this.requestUpdate()),await this._muatBankSoal(),this._startQuiz()}_redirectToLogin(){const t=document.querySelector("quiz-user-auth");t&&(t.scrollIntoView({behavior:"smooth",block:"center"}),typeof t.focus=="function"&&t.focus()),this.dispatchEvent(new CustomEvent("kuis-need-login",{bubbles:!0,composed:!0,detail:{kdMateri:this.kdMateri}})),this.requestUpdate()}_attemptKey(){return`kuis-ledakan:attempt:${this.studentId}:${this.kdMateri}`}_resumeAttemptIfAny(){if(!this.lockAfterComplete||!this.studentId||!this.kdMateri)return;let t=null;try{t=JSON.parse(localStorage.getItem(this._attemptKey())||"null")}catch{}if(!t)return;if(!Array.isArray(t.questions)||t.questions.length===0){try{localStorage.removeItem(this._attemptKey())}catch{}return}const e=Math.floor((Date.now()-t.start)/1e3),a=(t.duration||0)-e;if(a<=0){try{localStorage.removeItem(this._attemptKey())}catch{}return}this._shuffledQuestions=t.questions,this._attemptStart=t.start,this._resumeRemaining=a,this._sessionToken=t.sessionToken||this._loadSessionToken(),typeof t.currentIdx=="number"&&(this._currentIdx=t.currentIdx),Array.isArray(t.userAnswers)&&(this._userAnswers=new Map(t.userAnswers),this._restoreAnswerState(this._currentIdx)),this._screen="question",this.requestUpdate()}render(){if(this._screen==="start")return this._locked&&this.mode!=="guru"?o`
           <div class="quiz-card locked-box">
             <div class="lock-icon">🔒</div>
             <h3 class="quiz-title">${this.judul}</h3>
             <p class="lock-msg">Kuis terkunci. Hubungi guru untuk mengulang.</p>
           </div>
-        `:d`
+        `:o`
         <div class="quiz-card">
           <h3 class="quiz-title">📝 ${this.judul}</h3>
           <p style="color: var(--ddd-theme-secondary); text-align: center; margin-bottom: var(--ddd-spacing-5);">Selesaikan seluruh pertanyaan kuis di bawah ini secara mandiri untuk mengunci status kelulusan nilai pada lembar kendali dasbor.</p>
           <button class="btn-start" @click=${this._onStartClick} aria-label="Mulai mengerjakan kuis">Mulai Pengerjaan Kuis</button>
-          ${this.studentId?"":d`<p class="err-chip" style="background:var(--ddd-theme-warning-light,#fef3c7);border-color:var(--ddd-theme-warning,#fcd34d);color:var(--ddd-theme-warning-text,#92400e);margin-top:10px;">ℹ️ Harap login untuk mengerjakan kuis.</p>`}
-          ${this._locked&&this.mode==="guru"?d`<button class="btn-edit-soal" @click=${this._bukaKunci} aria-label="Buka kunci kuis">🔓 Buka Kunci / Ulangi</button>`:""}
-          ${this._inHaxEditor?d`<button class="btn-edit-soal" @click=${this._openEditor} aria-label="Edit soal kuis">✏️ Edit Soal</button>`:""}
+          ${this.studentId?"":o`<p class="err-chip" style="background:var(--ddd-theme-warning-light,#fef3c7);border-color:var(--ddd-theme-warning,#fcd34d);color:var(--ddd-theme-warning-text,#92400e);margin-top:10px;">ℹ️ Harap login untuk mengerjakan kuis.</p>`}
+          ${this._locked&&this.mode==="guru"?o`<button class="btn-edit-soal" @click=${this._bukaKunci} aria-label="Buka kunci kuis">🔓 Buka Kunci / Ulangi</button>`:""}
+          ${this._inHaxEditor?o`<button class="btn-edit-soal" @click=${this._openEditor} aria-label="Edit soal kuis">✏️ Edit Soal</button>`:""}
         </div>
-      `;if(this._screen==="editor")return this._renderEditorScreen();if(this._reviewMode&&this._screen==="question")return this._renderReviewScreen();if(this._screen==="question")return this._renderQuestionScreen();if(this._screen==="result"){const t=Math.round(this._score/this._maxPoints*100),e=Math.max(0,Math.min(100,t));return d`
+      `;if(this._screen==="editor")return this._renderEditorScreen();if(this._reviewMode&&this._screen==="question")return this._renderReviewScreen();if(this._screen==="question")return this._renderQuestionScreen();if(this._screen==="result"){const t=Math.round(this._score/this._maxPoints*100),e=Math.max(0,Math.min(100,t));return o`
         <div class="quiz-card result-box">
           <h3 class="quiz-title">🎊 Hasil Evaluasi Anda</h3>
-          ${this.hideScore?"":d`<div class="score-circle">${e}%</div>`}
+          ${this.hideScore?"":o`<div class="score-circle" aria-label="Skor: ${e}%">${e}%</div>`}
           <p style="font-weight:700; color:var(--ddd-theme-default-text); margin-bottom:4px;">Kuis Selesai Dikerjakan!</p>
           <p style="color:var(--ddd-theme-secondary); font-size:14px; margin-top:0; margin-bottom: var(--ddd-spacing-4);">Skor Anda telah dikunci dan dikirim masuk ke antrean database tunggal V5.</p>
-          ${this._bankStatus?d`<p class="err-chip">ℹ️ ${this._bankStatus}</p>`:""}
+          ${this._bankStatus?o`<p class="err-chip">ℹ️ ${this._bankStatus}</p>`:""}
           <p class="err-chip" style="background:var(--ddd-theme-polaris-surface-hover);border-color:var(--ddd-theme-primary);color:var(--ddd-theme-primary);">ℹ️ Siswa: ${this.studentName||"-"} (NIS ${this.studentNis||"-"}, Kelas ${this.studentKelas||"-"})</p>
-          ${this.mode==="guru"&&!this.hidePauseRestart?d`<button class="btn-start" style="background-color:var(--ddd-theme-secondary);" @click=${()=>{this._screen="start",this.requestUpdate()}}>Ulangi Kuis</button>`:d`<span class="err-chip">ℹ️ Kuis terkunci. Hubungi guru untuk mengulang.</span>`}
-          ${this.reviewAnswers&&this._shuffledQuestions.length>0&&!this._reviewMode?d`<button class="btn-start" style="margin-top:var(--ddd-spacing-3);" @click=${this._startReviewMode}>Tinjau Jawaban</button>`:""}
+          ${this.mode==="guru"&&!this.hidePauseRestart?o`<button class="btn-start" style="background-color:var(--ddd-theme-secondary);" @click=${()=>{this._screen="start",this.requestUpdate()}}>Ulangi Kuis</button>`:o`<span class="err-chip">ℹ️ Kuis terkunci. Hubungi guru untuk mengulang.</span>`}
+          ${this.reviewAnswers&&this._shuffledQuestions.length>0&&!this._reviewMode?o`<button class="btn-start" style="margin-top:var(--ddd-spacing-3);" @click=${this._startReviewMode}>Tinjau Jawaban</button>`:""}
         </div>
-      `}}_startReviewMode(){this._reviewMode=!0,this._screen="question",this._currentIdx=0,this._resetState(),this.requestUpdate()}_renderReviewScreen(){const t=this._getActiveQuestions(),e=Math.round(this._score/this._maxPoints*100),a=Math.max(0,Math.min(100,e)),i=[...this._answeredSet].filter(n=>{const c=this._userAnswers.get(n);return c&&c.isCorrect}).length,s=[...this._answeredSet].filter(n=>{const c=this._userAnswers.get(n);return c&&!c.isCorrect}).length,r=t.length-this._answeredSet.size;return d`
+      `}}_startReviewMode(){this._reviewMode=!0,this._screen="question",this._currentIdx=0,this._resetState(),this.requestUpdate()}_renderReviewScreen(){const t=this._getActiveQuestions(),e=Math.round(this._score/this._maxPoints*100),a=Math.max(0,Math.min(100,e)),i=[...this._answeredSet].filter(d=>{const l=this._userAnswers.get(d);return l&&l.isCorrect}).length,r=[...this._answeredSet].filter(d=>{const l=this._userAnswers.get(d);return l&&!l.isCorrect}).length,s=t.length-this._answeredSet.size;return o`
       <div class="quiz-card result-box review-screen">
         <h3 class="quiz-title">🎊 Hasil Evaluasi Anda</h3>
-        ${this.hideScore?"":d`<div class="score-circle">${a}%</div>`}
-        <div class="review-summary">
+        ${this.hideScore?"":o`<div class="score-circle" aria-label="Skor: ${a}%">${a}%</div>`}
+        <div class="review-summary" role="region" aria-label="Ringkasan hasil evaluasi">
           <div class="review-stat"><span class="review-stat-label">Benar</span><span class="review-stat-value positive">${i}</span></div>
-          <div class="review-stat"><span class="review-stat-label">Salah</span><span class="review-stat-value negative">${s}</span></div>
-          <div class="review-stat"><span class="review-stat-label">Dilewati</span><span class="review-stat-value">${r}</span></div>
+          <div class="review-stat"><span class="review-stat-label">Salah</span><span class="review-stat-value negative">${r}</span></div>
+          <div class="review-stat"><span class="review-stat-label">Dilewati</span><span class="review-stat-value">${s}</span></div>
         </div>
         <div class="review-questions">
-          ${t.map((n,c)=>this._renderReviewQuestion(c,n))}
+          ${t.map((d,l)=>this._renderReviewQuestion(l,d))}
         </div>
         <button class="btn-start" style="margin-top:var(--ddd-spacing-4);" @click=${()=>{this._reviewMode=!1,this._screen="result",this.requestUpdate()}}>Selesai</button>
       </div>
-    `}_renderReviewQuestion(t,e){const a=this._normalisasiSoal(e),i=this._siapkanSoal(a);if(!i)return d``;const s=this._userAnswers.get(t)||{},r=i.type||"mc",n=["A","B","C","D","E","F"],c=a._correctMap?i.correctAnswers.map(h=>a._correctMap.indexOf(h)):i.correctAnswers;return d`
+    `}_renderReviewQuestion(t,e){const a=this._normalisasiSoal(e),i=this._siapkanSoal(a);if(!i)return o``;const r=this._userAnswers.get(t)||{},s=i.type||"mc",d=["A","B","C","D","E","F"],l=a._correctMap?i.correctAnswers.map(p=>a._correctMap.indexOf(p)):i.correctAnswers;return o`
       <div class="review-question">
         <div class="review-qnum">Soal ${t+1}</div>
         <div class="review-qtext">${i.teks}</div>
-        ${r==="mc"?d`<ul class="review-mc">${i.pilihan.map((h,p)=>{let f="";return c.includes(p)?f="review-correct":(!i.isMulti&&s.selected===p||i.isMulti&&s.selectedAnswers&&s.selectedAnswers.has(p))&&(f="review-selected-wrong"),d`<li class="${f}">${n[p]||p+1}. ${h}</li>`})}</ul>`:""}
-        ${r==="shortAnswer"?d`<div class="review-short"><span class="review-label">Jawaban Anda:</span> <span class="review-value">${s.text||"(tidak menjawab)"}</span></div>`:""}
-        ${s.isCorrect?d`<span class="review-badge positive">✓ Benar (+${s.points||0})</span>`:d`<span class="review-badge negative">✗ Salah</span>`}
+        ${s==="mc"?o`<ul class="review-mc">${i.pilihan.map((p,u)=>{let m="";return this.hideAnswers||(l.includes(u)?m="review-correct":(!i.isMulti&&r.selected===u||i.isMulti&&r.selectedAnswers&&r.selectedAnswers.has(u))&&(m="review-selected-wrong")),o`<li class="${m}">${d[u]||u+1}. ${p}</li>`})}</ul>`:""}
+        ${s==="shortAnswer"?o`<div class="review-short"><span class="review-label">Jawaban Anda:</span> <span class="review-value">${r.text||"(tidak menjawab)"}</span></div>`:""}
+        ${this.hideAnswers?"":r.isCorrect?o`<span class="review-badge positive">✓ Benar (+${r.points||0})</span>`:o`<span class="review-badge negative">✗ Salah</span>`}
       </div>
-    `}_renderQuestionScreen(){const t=this._getActiveQuestions(),e=this._normalisasiSoal(t[this._currentIdx]),a=this._siapkanSoal(e);if(!a)return d`<div class="quiz-card result-box">Soal tidak valid.</div>`;const i=a.type||"mc";return d`
+    `}_renderQuestionScreen(){const t=this._getActiveQuestions(),e=this._normalisasiSoal(t[this._currentIdx]),a=this._siapkanSoal(e);if(!a)return o`<div class="quiz-card result-box">Soal tidak valid.</div>`;const i=a.type||"mc";return o`
       <div class="quiz-card">
         <div style="display:flex; justify-content:space-between; font-size:12px; font-weight:bold; color:var(--ddd-theme-secondary); margin-bottom:10px;">
           <span>Soal ${this._currentIdx+1} dari ${t.length}</span>
-          ${this.hideScore?"":d`<span>Skor Berjalan: ${this._score}</span>`}
+          ${this.hideScore?"":o`<span>Skor Berjalan: ${this._score}</span>`}
         </div>
-        ${this.showQuestionNav&&t.length>1?d`<nav class="question-nav" aria-label="Navigasi nomor soal">
-              ${t.map((s,r)=>{const n=r===this._currentIdx,c=this._answeredSet.has(r),h=!c&&!n,p=!this.allowBackwardNav&&c&&r<this._currentIdx;return d`<button
+        ${this.showQuestionNav&&t.length>1?o`<nav class="question-nav" aria-label="Navigasi nomor soal">
+              ${t.map((r,s)=>{const d=s===this._currentIdx,l=this._answeredSet.has(s),p=!l&&!d,u=!this.allowBackwardNav&&l&&s<this._currentIdx;return o`<button
                   type="button"
-                  class="${`q-dot ${n?"current":""} ${c?"answered":""} ${h?"unanswered":""} ${p?"disabled":""}`}"
-                  ?disabled=${p}
-                  aria-label="Loncat ke soal nomor ${r+1}"
-                  aria-current=${n?"true":"false"}
-                  @click=${()=>this._goToQuestion(r)}
-                >${r+1}</button>`})}
+                  class="${`q-dot ${d?"current":""} ${l?"answered":""} ${p?"unanswered":""} ${u?"disabled":""}`}"
+                  ?disabled=${u}
+                  aria-label="Loncat ke soal nomor ${s+1}"
+                  aria-current=${d?"true":"false"}
+                  @click=${()=>this._goToQuestion(s)}
+                >${s+1}</button>`})}
             </nav>`:""}
-        ${this.timerDuration>0?d`<div class="quiz-timer">
+        ${this.timerDuration>0?o`<div class="quiz-timer">
               <timer-kuis
                 duration="${this._resumeRemaining||this.timerDuration}"
                 ?autostart="${this.timerAutostart}"
@@ -463,17 +531,17 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
               ></timer-kuis>
             </div>`:""}
         <div class="question-text">${a.teks}</div>
-        ${a.image?d`<div class="question-image"><img src="${a.image}" alt="Gambar soal" loading="lazy" /></div>`:""}
-        ${a.hint?d`<details class="hint-box"><summary>💡 Petunjuk</summary><div>${a.hint}</div></details>`:""}
+        ${a.image?o`<div class="question-image"><img src="${a.image}" alt="Gambar soal" loading="lazy" /></div>`:""}
+        ${a.hint?o`<details class="hint-box"><summary>💡 Petunjuk</summary><div>${a.hint}</div></details>`:""}
         ${i==="pgk"?this._renderPGK(a):""}
         ${i==="matching"?this._renderMatching(a):""}
         ${i==="shortAnswer"?this._renderShortAnswer(a):""}
         ${i==="mc"?this._renderMC(a,e):""}
-        ${this._feedbackText?d`<div class="feedback-area ${this._feedbackPositive?"positive":"negative"}" aria-live="polite">${this._feedbackText}</div>`:""}
-        ${this._currentIdx===t.length-1?d`<button type="button" class="btn-submit" style="margin-top:var(--ddd-spacing-4);"
+        ${this._feedbackText?o`<div class="feedback-area ${this._feedbackPositive?"positive":"negative"}" aria-live="polite">${this._feedbackText}</div>`:""}
+        ${this._currentIdx===t.length-1?o`<button type="button" class="btn-submit" style="margin-top:var(--ddd-spacing-4);"
               @click=${this._selesaiKuis}
               aria-label="Selesai dan lihat skor">Selesai — Lihat Skor</button>`:""}
-        ${this.practiceMode?d`<div class="practice-nav" style="display:flex; gap:var(--ddd-spacing-3); margin-top:var(--ddd-spacing-4);">
+        ${this.practiceMode?o`<div class="practice-nav" style="display:flex; gap:var(--ddd-spacing-3); margin-top:var(--ddd-spacing-4);">
               <button type="button" class="btn-back"
                 ?disabled=${this._currentIdx===0}
                 @click=${this._goToPrevQuestion}
@@ -486,26 +554,13 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
               </button>
             </div>`:""}
       </div>
-    `}_renderMC(t,e){const a=["A","B","C","D","E","F"],i=e._correctMap?t.correctAnswers.map(s=>e._correctMap.indexOf(s)):t.correctAnswers;return d`
-      <div class="choices-stack">
-        ${t.pilihan.map((s,r)=>{let n="";this._answered&&!this.hideAnswers?i.includes(r)?n="correct":(t.isMulti?this._selectedAnswers.has(r):this._selected===r)&&(n="wrong"):(t.isMulti?this._selectedAnswers.has(r):this._selected===r)&&(n="selected");const c=this._answered,h=t.pilihanImages&&t.pilihanImages[r];return d`
-            <button
-              class="choice-row ${n} ${c?"disabled":""}"
-              ?disabled=${c}
-              @click=${()=>t.isMulti?this._toggleMultiAnswer(r):this._pilihJawaban(r)}
-              aria-label="Pilihan ${a[r]||r+1}: ${s}"
-            >${(t.isMulti?this._selectedAnswers.has(r):this._selected===r)?"\u2713 ":""}${a[r]||r+1}. ${s}
-            ${h?d`<br /><img class="choice-image" src="${h}" alt="Gambar pilihan ${a[r]||r+1}" loading="lazy" />`:""}</button>
-          `})}
-      </div>
-      ${t.isMulti&&!this._answered?d`<button class="btn-submit" @click=${this._submitMultiAnswers}>Kirim Jawaban (${this._selectedAnswers.size} dipilih)</button>`:""}
-    `}_renderPGK(t){const e=t.statements||[];return d`
+    `}_renderMC(t,e){return ie.renderMC(e,{selected:this._selected,selectedAnswers:this._selectedAnswers,answered:this._answered,correctAnswers:e._correctMap?t.correctAnswers.map(a=>e._correctMap.indexOf(a)):t.correctAnswers,isMulti:t.isMulti,pilihan:t.pilihan,pilihanImages:t.pilihanImages,onSelect:a=>t.isMulti?this._toggleMultiAnswer(a):this._pilihJawaban(a),onToggle:a=>this._toggleMultiAnswer(a),onSubmit:()=>this._submitMultiAnswers(),hideAnswers:this.hideAnswers})}_renderPGK(t){const e=t.statements||[];return o`
       <table class="pgk-table" aria-label="Soal pilihan ganda kompleks benar atau salah">
         <thead>
           <tr><th>Pernyataan</th><th>Benar</th><th>Salah</th></tr>
         </thead>
         <tbody>
-          ${e.map((a,i)=>d`
+          ${e.map((a,i)=>o`
               <tr>
                 <td>${a.text}</td>
                 <td class="pgk-cell">
@@ -522,34 +577,34 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
             `)}
         </tbody>
       </table>
-      ${this._answered?"":d`<button class="btn-submit" @click=${this._submitPGK}>Kirim Jawaban</button>`}
-    `}_renderMatching(t){const e=t.leftItems||[],a=t.rightItems||[];return d`
+      ${this._answered?"":o`<button class="btn-submit" ?disabled=${this._answered} @click=${this._submitPGK}>Kirim Jawaban</button>`}
+    `}_renderMatching(t){const e=t.leftItems||[],a=t.rightItems||[];return o`
       <div class="matching-container">
-        ${e.map((i,s)=>d`
+        ${e.map((i,r)=>o`
             <div class="matching-row">
-              <span class="matching-item">${s+1}. ${i}</span>
+              <span class="matching-item">${r+1}. ${i}</span>
               <span>→</span>
-              <select name="matching-${s}" class="matching-select" ?disabled=${this._answered}
-                @change=${r=>{this._matchAnswers={...this._matchAnswers,[s]:parseInt(r.target.value,10)},this.requestUpdate()}}
-                aria-label="Pasangkan item ${s+1}">
+              <select name="matching-${r}" class="matching-select" ?disabled=${this._answered}
+                @change=${s=>{this._matchAnswers={...this._matchAnswers,[r]:parseInt(s.target.value,10)},this.requestUpdate()}}
+                aria-label="Pasangkan item ${r+1}">
                 <option value="-1">-- Pilih --</option>
-                ${a.map((r,n)=>d`
-                    <option value="${n}" ?selected=${this._matchAnswers[s]===n}>${String.fromCharCode(65+n)}. ${r}</option>
+                ${a.map((s,d)=>o`
+                    <option value="${d}" ?selected=${this._matchAnswers[r]===d}>${String.fromCharCode(65+d)}. ${s}</option>
                   `)}
               </select>
             </div>
           `)}
       </div>
-      ${this._answered?"":d`<button class="btn-submit" @click=${this._submitMatching}>Kirim Jawaban</button>`}
-    `}_renderShortAnswer(t){return d`
+      ${this._answered?"":o`<button class="btn-submit" ?disabled=${this._answered} @click=${this._submitMatching}>Kirim Jawaban</button>`}
+    `}_renderShortAnswer(t){return o`
       <div class="short-answer-container">
         <input type="text" name="short-answer" class="short-answer-input" ?disabled=${this._answered}
           placeholder="Ketik jawaban..." .value=${this._shortAnswerText}
           @input=${e=>this._shortAnswerText=e.target.value}
           aria-label="Ketik jawaban singkat" />
       </div>
-      ${this._answered?"":d`<button class="btn-submit" @click=${this._submitShortAnswer}>Kirim Jawaban</button>`}
-    `}_handleImportFile(t){const e=t.target.files&&t.target.files[0];if(!e)return;const a=new globalThis.FileReader;a.onload=()=>{try{this._parseImported(String(a.result||""))}catch(i){this._importStatus="\u26A0\uFE0F Gagal membaca file: "+(i.message||i),this.requestUpdate()}},a.onerror=()=>{this._importStatus="\u26A0\uFE0F Gagal membaca file.",this.requestUpdate()},a.readAsText(e)}_importFromText(){this._parseImported(this._importText)}_parseImported(t){const e=(t||"").trim();if(!e){this._importStatus="\u26A0\uFE0F Input kosong.",this.requestUpdate();return}let a;try{a=JSON.parse(e)}catch(r){this._importStatus="\u26A0\uFE0F Format JSON tidak valid: "+(r.message||r),this.requestUpdate();return}let i;if(Array.isArray(a))i=a;else if(a&&typeof a=="object")if(Array.isArray(a.questions))i=a.questions;else if(Array.isArray(a.soal))i=a.soal;else if(Array.isArray(a.data))i=a.data;else{this._importStatus="\u26A0\uFE0F Objek tidak mengandung array questions/soal/data.",this.requestUpdate();return}else{this._importStatus="\u26A0\uFE0F Format tidak dikenali (harus array atau objek wrapper).",this.requestUpdate();return}const s=i.map(r=>this._normalisasiUntukEditor(r)).filter(Boolean);if(s.length===0){this._importStatus="\u26A0\uFE0F Tidak ada soal valid.",this.requestUpdate();return}this._tempQuestions=[...this._tempQuestions,...s],this._saveQuestionsLocal(),this._importStatus=`\u2705 ${s.length} soal diimpor.`,this._importText="",this.requestUpdate()}_normalisasiUntukEditor(t){if(!t||typeof t!="object")return null;const e=String(t.type||t.tipe||"mc").toLowerCase(),a=t.question||t.q||t.soal||"";if(!a||typeof a!="string")return null;const i={type:e,question:a.trim(),image:t.image||"",points:t.points||1};if(e==="mc"){let s=Array.isArray(t.choices)?t.choices:[],r=typeof t.correctIndex=="number"?t.correctIndex:-1,n=Array.isArray(t.correctAnswers)?t.correctAnswers:null;if(s.length<2){const c=this._normalisasiSoal(t);c&&Array.isArray(c.choices)&&c.choices.length>=2&&(s=c.choices,n?n=c.correctAnswers:r<0&&c.correctIndex>=0?r=c.correctIndex:r<0&&t.k!=null&&(r=["a","b","c","d","e","f"].indexOf(String(t.k).toLowerCase())))}if(s.length<2)return null;i.choices=s,n&&n.length>1?i.correctAnswers=n:r>=0?i.correctIndex=r:i.correctIndex=0}else if(e==="pgk"){const s=Array.isArray(t.statements)?t.statements:[];if(s.length<2)return null;i.statements=s}else if(e==="matching"){const s=Array.isArray(t.leftItems)?t.leftItems:[],r=Array.isArray(t.rightItems)?t.rightItems:[];if(s.length<2||r.length<2)return null;i.leftItems=s,i.rightItems=r,i.correctPairs=t.correctPairs&&typeof t.correctPairs=="object"?t.correctPairs:{}}else if(e==="shortAnswer"){const s=Array.isArray(t.acceptedAnswers)?t.acceptedAnswers:t.acceptedAnswers||t.answer||t.jawaban?[String(t.acceptedAnswers||t.answer||t.jawaban)]:[];i.acceptedAnswers=s}return i}_slug(t){return String(t||"").toLowerCase().trim().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"").slice(0,40)||"default"}_storageKey(){return"kuis-ledakan:soal:"+(this.id||this.kdMateri||this._slug(this.judul)||"default")}_saveQuestionsLocal(){try{globalThis.localStorage.setItem(this._storageKey(),JSON.stringify(this._tempQuestions))}catch{}}_loadQuestionsLocal(){try{const t=globalThis.localStorage.getItem(this._storageKey());if(!t)return null;const e=JSON.parse(t);return Array.isArray(e)?e:null}catch{return null}}_openEditor(){this._editing||(this._editing=!0,this._editingIndex=-1,this._editorOrigin="start",this._tempQuestions=JSON.parse(JSON.stringify(this.questions||pt)),this._resetEditorForm(),this._screen="editor",this.requestUpdate())}_saveAll(){this._screen==="editor"&&(!Array.isArray(this._tempQuestions)||this._tempQuestions.length===0||(this.questions=JSON.parse(JSON.stringify(this._tempQuestions)),this._editing=!1,this._editingIndex=-1,this._screen=this._editorOrigin||"start",this._editorOrigin="start",this._saveQuestionsLocal(),this.dispatchEvent(new CustomEvent("questions-changed",{bubbles:!0,composed:!0,detail:{questions:this.questions}})),this.requestUpdate()))}_cancelAll(){this._screen==="editor"&&(this._editing=!1,this._editingIndex=-1,this._screen=this._editorOrigin||"start",this._editorOrigin="start",this.requestUpdate())}_renderEditorScreen(){const t=this._tempQuestionType||"mc";return d`
+      ${this._answered?"":o`<button class="btn-submit" ?disabled=${this._answered} @click=${this._submitShortAnswer}>Kirim Jawaban</button>`}
+    `}_handleImportFile(t){const e=t.target.files&&t.target.files[0];if(!e)return;const a=new globalThis.FileReader;a.onload=()=>{try{this._parseImported(String(a.result||""))}catch(i){this._importStatus="\u26A0\uFE0F Gagal membaca file: "+(i.message||i),this.requestUpdate()}},a.onerror=()=>{this._importStatus="\u26A0\uFE0F Gagal membaca file.",this.requestUpdate()},a.readAsText(e)}_importFromText(){this._parseImported(this._importText)}_parseImported(t){const e=(t||"").trim();if(!e){this._importStatus="\u26A0\uFE0F Input kosong.",this.requestUpdate();return}let a;try{a=JSON.parse(e)}catch(s){this._importStatus="\u26A0\uFE0F Format JSON tidak valid: "+(s.message||s),this.requestUpdate();return}let i;if(Array.isArray(a))i=a;else if(a&&typeof a=="object")if(Array.isArray(a.questions))i=a.questions;else if(Array.isArray(a.soal))i=a.soal;else if(Array.isArray(a.data))i=a.data;else{this._importStatus="\u26A0\uFE0F Objek tidak mengandung array questions/soal/data.",this.requestUpdate();return}else{this._importStatus="\u26A0\uFE0F Format tidak dikenali (harus array atau objek wrapper).",this.requestUpdate();return}const r=i.map(s=>this._normalisasiUntukEditor(s)).filter(Boolean);if(r.length===0){this._importStatus="\u26A0\uFE0F Tidak ada soal valid.",this.requestUpdate();return}this._tempQuestions=[...this._tempQuestions,...r],this._saveQuestionsLocal(),this._importStatus=`\u2705 ${r.length} soal diimpor.`,this._importText="",this.requestUpdate()}_normalisasiUntukEditor(t){if(!t||typeof t!="object")return null;const e=String(t.type||t.tipe||"mc").toLowerCase(),a=t.question||t.q||t.soal||"";if(!a||typeof a!="string")return null;const i={type:e,question:a.trim(),image:t.image||"",points:t.points||1};if(e==="mc"){let r=Array.isArray(t.choices)?t.choices:[],s=typeof t.correctIndex=="number"?t.correctIndex:-1,d=Array.isArray(t.correctAnswers)?t.correctAnswers:null;if(r.length<2){const l=this._normalisasiSoal(t);l&&Array.isArray(l.choices)&&l.choices.length>=2&&(r=l.choices,d?d=l.correctAnswers:s<0&&l.correctIndex>=0?s=l.correctIndex:s<0&&t.k!=null&&(s=["a","b","c","d","e","f"].indexOf(String(t.k).toLowerCase())))}if(r.length<2)return null;i.choices=r,d&&d.length>1?i.correctAnswers=d:s>=0?i.correctIndex=s:i.correctIndex=0}else if(e==="pgk"){const r=Array.isArray(t.statements)?t.statements:[];if(r.length<2)return null;i.statements=r}else if(e==="matching"){const r=Array.isArray(t.leftItems)?t.leftItems:[],s=Array.isArray(t.rightItems)?t.rightItems:[];if(r.length<2||s.length<2)return null;i.leftItems=r,i.rightItems=s,i.correctPairs=t.correctPairs&&typeof t.correctPairs=="object"?t.correctPairs:{}}else if(e==="shortAnswer"){const r=Array.isArray(t.acceptedAnswers)?t.acceptedAnswers:t.acceptedAnswers||t.answer||t.jawaban?[String(t.acceptedAnswers||t.answer||t.jawaban)]:[];i.acceptedAnswers=r}return i}_slug(t){return String(t||"").toLowerCase().trim().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"").slice(0,40)||"default"}_storageKey(){return"kuis-ledakan:soal:"+(this.id||this.kdMateri||this._slug(this.judul)||"default")}_saveQuestionsLocal(){try{globalThis.localStorage.setItem(this._storageKey(),JSON.stringify(this._tempQuestions))}catch{}}_loadQuestionsLocal(){try{const t=globalThis.localStorage.getItem(this._storageKey());if(!t)return null;const e=JSON.parse(t);return Array.isArray(e)?e:null}catch{return null}}_openEditor(){this._editing||(this._editing=!0,this._editingIndex=-1,this._editorOrigin="start",this._tempQuestions=JSON.parse(JSON.stringify(this.questions||bt)),this._resetEditorForm(),this._screen="editor",this.requestUpdate())}_saveAll(){this._screen==="editor"&&(!Array.isArray(this._tempQuestions)||this._tempQuestions.length===0||(this.questions=JSON.parse(JSON.stringify(this._tempQuestions)),this._editing=!1,this._editingIndex=-1,this._screen=this._editorOrigin||"start",this._editorOrigin="start",this._saveQuestionsLocal(),this.dispatchEvent(new CustomEvent("questions-changed",{bubbles:!0,composed:!0,detail:{questions:this.questions}})),this.requestUpdate()))}_cancelAll(){this._screen==="editor"&&(this._editing=!1,this._editingIndex=-1,this._screen=this._editorOrigin||"start",this._editorOrigin="start",this.requestUpdate())}_renderEditorScreen(){const t=this._tempQuestionType||"mc";return o`
       <div class="quiz-card editor-screen">
         <header class="edit-header">
           <h3 class="quiz-title" style="margin-bottom:8px;">✏️ Edit Soal</h3>
@@ -575,7 +630,7 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
               <input type="number" min="1" class="editor-input" style="width:60px;text-align:center;"
                 .value=${this._tempQuestionPoints} @input=${e=>{this._tempQuestionPoints=parseInt(e.target.value,10)||1}}>
             </div>
-            ${this._tempQuestionImage?d`<div style="text-align:center;margin:8px 0;"><img src=${this._tempQuestionImage} style="max-width:200px;border-radius:6px;border:1px solid var(--ddd-theme-polaris-border);" alt="Pratinjau gambar soal" /></div>`:""}
+            ${this._tempQuestionImage?o`<div style="text-align:center;margin:8px 0;"><img src=${this._tempQuestionImage} style="max-width:200px;border-radius:6px;border:1px solid var(--ddd-theme-polaris-border);" alt="Pratinjau gambar soal" /></div>`:""}
 
             <textarea class="question-text-input" .value=${this._tempQuestionText}
               @input=${e=>this._tempQuestionText=e.target.value}
@@ -590,9 +645,9 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
           </form>
 
           <div class="questions-list">
-            ${this._tempQuestions.map((e,a)=>d`
+            ${this._tempQuestions.map((e,a)=>o`
               <div class="question-card">
-                ${this._editingIndex===a?d`
+                ${this._editingIndex===a?o`
                   <div class="edit-form">
                     <div style="display:flex;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
                       <select class="editor-select" .value=${this._tempQuestionType} @change=${i=>{this._tempQuestionType=i.target.value,this.requestUpdate()}}>
@@ -620,11 +675,11 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
                       <button type="button" class="btn-submit" style="background:var(--ddd-theme-secondary);" @click=${this._cancelEditQuestion}>Batal</button>
                     </div>
                   </div>
-                `:d`
+                `:o`
                   <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;">
                     <div>
                       <strong style="color:var(--ddd-theme-primary);">[${(e.type||"mc").toUpperCase()}]</strong> ${e.question}
-                      ${e.image?d`<span style="font-size:11px;color:var(--ddd-theme-secondary);">[gambar]</span>`:""}
+                      ${e.image?o`<span style="font-size:11px;color:var(--ddd-theme-secondary);">[gambar]</span>`:""}
                       <span style="font-size:11px;color:var(--ddd-theme-success);font-weight:bold;">[${e.points||1} poin]</span>
                     </div>
                     <div style="display:flex;gap:6px;">
@@ -646,13 +701,13 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
               <button class="btn-submit" @click="${this._importFromText}">📋 ${this.t.importFromText}</button>
               <input type="file" accept=".json,.txt,application/json" @change="${this._handleImportFile}" />
             </div>
-            ${this._importStatus?d`<p class="err-chip">${this._importStatus}</p>`:""}
+            ${this._importStatus?o`<p class="err-chip">${this._importStatus}</p>`:""}
           </div>
         </div>
       </div>
-    `}_renderEditorMC(){return this._tempCorrectAnswers.length>1,d`
+    `}_renderEditorMC(){return this._tempCorrectAnswers.length>1,o`
       <div class="choices-container">
-        ${[0,1,2,3,4].map(t=>d`
+        ${[0,1,2,3,4].map(t=>o`
           <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:6px;">
             <input class="editor-input" style="flex:1;min-width:120px;" .value=${this[`_tempChoice${t}`]}
               @input=${e=>this[`_tempChoice${t}`]=e.target.value}
@@ -665,18 +720,18 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
                 @change=${e=>{e.target.checked?this._tempCorrectAnswers=[...this._tempCorrectAnswers,t]:this._tempCorrectAnswers=this._tempCorrectAnswers.filter(a=>a!==t),this._tempCorrectAnswers.length<=1&&(this._tempCorrectIndex=t.toString()),this.requestUpdate()}} />
               Benar
             </label>
-            ${this[`_tempChoiceImage${t}`]?d`<img src=${this[`_tempChoiceImage${t}`]} style="max-height:32px;border-radius:3px;" alt="Pratinjau pilihan ${t+1}" />`:""}
+            ${this[`_tempChoiceImage${t}`]?o`<img src=${this[`_tempChoiceImage${t}`]} style="max-height:32px;border-radius:3px;" alt="Pratinjau pilihan ${t+1}" />`:""}
           </div>
         `)}
       </div>
-      ${this._tempCorrectAnswers.length<=1?d`<div style="font-size:11px;color:var(--ddd-theme-secondary);margin-top:4px;">Centang 1 jawaban benar. Centang lebih dari 1 untuk mode PG Kompleks.</div>`:d`<div style="font-size:11px;color:var(--ddd-theme-primary);margin-top:4px;font-weight:bold;">Mode PG Kompleks: ${this._tempCorrectAnswers.length} jawaban benar dipilih</div>`}
-    `}_renderEditorPGK(){const t=Array.isArray(this._tempStatements)?this._tempStatements:[];return d`<div style="margin:8px 0;font-size:13px;">
+      ${this._tempCorrectAnswers.length<=1?o`<div style="font-size:11px;color:var(--ddd-theme-secondary);margin-top:4px;">Centang 1 jawaban benar. Centang lebih dari 1 untuk mode PG Kompleks.</div>`:o`<div style="font-size:11px;color:var(--ddd-theme-primary);margin-top:4px;font-weight:bold;">Mode PG Kompleks: ${this._tempCorrectAnswers.length} jawaban benar dipilih</div>`}
+    `}_renderEditorPGK(){const t=Array.isArray(this._tempStatements)?this._tempStatements:[];return o`<div style="margin:8px 0;font-size:13px;">
       <div style="font-weight:500;margin-bottom:4px;">Pernyataan (${t.length} pernyataan):</div>
-      ${t.map((e,a)=>d`
+      ${t.map((e,a)=>o`
         <div style="display:flex;gap:6px;align-items:center;margin-bottom:6px;flex-wrap:wrap;">
           <input class="editor-input" style="flex:1;min-width:200px;"
             .value=${e&&e.text||""}
-            @input=${i=>{const s=[...this._tempStatements];s[a]={...s[a],text:i.target.value},this._tempStatements=s}}
+            @input=${i=>{const r=[...this._tempStatements];r[a]={...r[a],text:i.target.value},this._tempStatements=r}}
             placeholder="Teks pernyataan ${a+1}" />
           <label style="font-size:12px;display:flex;align-items:center;gap:2px;">
             <input type="radio" name="pgk-st-${a}" ?checked=${e&&e.answer===!0}
@@ -689,18 +744,18 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
             Salah
           </label>
           <button type="button" style="font-size:11px;padding:2px 8px;border-radius:4px;border:1px solid var(--ddd-theme-polaris-border);cursor:pointer;background:var(--ddd-theme-error-light);color:var(--ddd-theme-error);"
-            @click=${()=>{this._tempStatements=this._tempStatements.filter((i,s)=>s!==a)}}>🗑️</button>
+            @click=${()=>{this._tempStatements=this._tempStatements.filter((i,r)=>r!==a)}}>🗑️</button>
         </div>
       `)}
       <button type="button" style="font-size:11px;margin-top:4px;padding:2px 8px;border-radius:4px;border:1px solid var(--ddd-theme-polaris-border);cursor:pointer;"
         @click=${()=>{this._tempStatements=[...this._tempStatements,{text:"",answer:!0}]}}>➕ Tambah Pernyataan</button>
-    </div>`}_renderEditorMatching(){const t=Array.isArray(this._tempLeftItems)?this._tempLeftItems:[],e=Array.isArray(this._tempRightItems)?this._tempRightItems:[];return d`<div style="margin:8px 0;font-size:13px;">
+    </div>`}_renderEditorMatching(){const t=Array.isArray(this._tempLeftItems)?this._tempLeftItems:[],e=Array.isArray(this._tempRightItems)?this._tempRightItems:[];return o`<div style="margin:8px 0;font-size:13px;">
       <div style="display:flex;gap:16px;flex-wrap:wrap;">
         <div style="flex:1;min-width:200px;">
           <div style="font-weight:500;margin-bottom:4px;">Item Kiri:</div>
-          ${t.map((a,i)=>d`
+          ${t.map((a,i)=>o`
             <input class="editor-input" style="width:100%;margin:4px 0;"
-              .value=${a} @input=${s=>{const r=[...this._tempLeftItems];r[i]=s.target.value,this._tempLeftItems=r}}
+              .value=${a} @input=${r=>{const s=[...this._tempLeftItems];s[i]=r.target.value,this._tempLeftItems=s}}
               placeholder="Item ${i+1}">
           `)}
           <button type="button" style="font-size:11px;margin-top:4px;padding:2px 8px;border-radius:4px;border:1px solid var(--ddd-theme-polaris-border);cursor:pointer;"
@@ -708,9 +763,9 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
         </div>
         <div style="flex:1;min-width:200px;">
           <div style="font-weight:500;margin-bottom:4px;">Item Kanan:</div>
-          ${e.map((a,i)=>d`
+          ${e.map((a,i)=>o`
             <input class="editor-input" style="width:100%;margin:4px 0;"
-              .value=${a} @input=${s=>{const r=[...this._tempRightItems];r[i]=s.target.value,this._tempRightItems=r}}
+              .value=${a} @input=${r=>{const s=[...this._tempRightItems];s[i]=r.target.value,this._tempRightItems=s}}
               placeholder="Item ${String.fromCharCode(65+i)}">
           `)}
           <button type="button" style="font-size:11px;margin-top:4px;padding:2px 8px;border-radius:4px;border:1px solid var(--ddd-theme-polaris-border);cursor:pointer;"
@@ -719,36 +774,48 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
       </div>
       <div style="margin-top:8px;">
         <div style="font-weight:500;margin-bottom:4px;">Pasangan (Item Kiri → Item Kanan):</div>
-        ${t.map((a,i)=>{const s=this._tempCorrectPairs&&this._tempCorrectPairs[i]!=null?this._tempCorrectPairs[i]:i<e.length?i:0;return d`
+        ${t.map((a,i)=>{const r=this._tempCorrectPairs&&this._tempCorrectPairs[i]!=null?this._tempCorrectPairs[i]:i<e.length?i:0;return o`
             <div style="display:flex;gap:6px;align-items:center;margin-bottom:6px;">
               <span style="font-size:12px;font-weight:600;min-width:100px;">Item ${i+1} →</span>
               <select class="editor-input" style="flex:1;"
-                @change=${r=>{this._tempCorrectPairs={...this._tempCorrectPairs,[i]:parseInt(r.target.value,10)}}}>
-                ${e.map((r,n)=>d`
-                  <option value="${n}" ?selected=${s===n}>${String.fromCharCode(65+n)}. ${r||`Item ${String.fromCharCode(65+n)}`}</option>
+                @change=${s=>{this._tempCorrectPairs={...this._tempCorrectPairs,[i]:parseInt(s.target.value,10)}}}>
+                ${e.map((s,d)=>o`
+                  <option value="${d}" ?selected=${r===d}>${String.fromCharCode(65+d)}. ${s||`Item ${String.fromCharCode(65+d)}`}</option>
                 `)}
               </select>
             </div>
           `})}
         <button type="button" style="font-size:11px;margin-top:4px;padding:2px 8px;border-radius:4px;border:1px solid var(--ddd-theme-polaris-border);cursor:pointer;"
-          @click=${()=>{const a={};t.forEach((i,s)=>{a[s]=s<e.length?s:0}),this._tempCorrectPairs=a}}>🔄 Auto-map</button>
+          @click=${()=>{const a={};t.forEach((i,r)=>{a[r]=r<e.length?r:0}),this._tempCorrectPairs=a}}>🔄 Auto-map</button>
       </div>
-    </div>`}_syncCorrectPairs(t,e,a){const i={};for(let s=0;s<e;s++){const r=t&&t[s];i[s]=typeof r=="number"&&r>=0&&r<a?r:0}return i}_renderEditorShortAnswer(){return d`<div style="margin:8px 0;font-size:13px;">
+    </div>`}_syncCorrectPairs(t,e,a){const i={};for(let r=0;r<e;r++){const s=t&&t[r];i[r]=typeof s=="number"&&s>=0&&s<a?s:0}return i}_renderEditorShortAnswer(){return o`<div style="margin:8px 0;font-size:13px;">
       <div style="font-weight:500;margin-bottom:4px;">Jawaban yang diterima (pisahkan koma):</div>
       <input class="editor-input" style="width:100%;"
         placeholder="contoh: biomassa, sekam padi, limbah pertanian"
         .value=${this._tempAcceptedAnswers} @input=${t=>{this._tempAcceptedAnswers=t.target.value}}>
-    </div>`}_addQuestion(){if(!this._tempQuestionText.trim())return;const t=this._tempQuestionType||"mc",e={type:t,question:this._tempQuestionText.trim()};if(this._tempQuestionImage.trim()&&(e.image=this._tempQuestionImage.trim()),this._tempQuestionPoints>1&&(e.points=this._tempQuestionPoints),t==="mc"){if(!this._tempChoice0.trim()||!this._tempChoice1.trim())return;e.choices=[0,1,2,3,4].map(a=>{const i=this[`_tempChoice${a}`]?.trim();if(!i)return null;const s=this[`_tempChoiceImage${a}`]?.trim();return s?{text:i,image:s}:i}).filter(Boolean),this._tempCorrectAnswers.length>1?e.correctAnswers=[...this._tempCorrectAnswers]:e.correctIndex=parseInt(this._tempCorrectIndex,10)}else t==="pgk"?e.statements=Array.isArray(this._tempStatements)?[...this._tempStatements]:[]:t==="matching"?(e.leftItems=[...this._tempLeftItems],e.rightItems=[...this._tempRightItems],e.correctPairs={...this._tempCorrectPairs}):t==="shortAnswer"&&(e.acceptedAnswers=this._tempAcceptedAnswers.split(",").map(a=>a.trim()).filter(Boolean));this._tempQuestions=[...this._tempQuestions,e],this._resetEditorForm(),this.requestUpdate()}_deleteQuestion(t){this._tempQuestions.length<=3||(this._tempQuestions=this._tempQuestions.filter((e,a)=>a!==t),this._editingIndex===t?(this._editingIndex=-1,this._resetEditorForm()):this._editingIndex>t&&this._editingIndex--,this.requestUpdate())}_resetEditorForm(){this._tempQuestionText="",this._tempChoice0="",this._tempChoice1="",this._tempChoice2="",this._tempChoice3="",this._tempChoice4="",this._tempChoiceImage0="",this._tempChoiceImage1="",this._tempChoiceImage2="",this._tempChoiceImage3="",this._tempChoiceImage4="",this._tempCorrectIndex="0",this._tempCorrectAnswers=[],this._tempQuestionImage="",this._tempQuestionType="mc",this._tempQuestionPoints=1,this._tempLeftItems=["",""],this._tempRightItems=["",""],this._tempCorrectPairs={},this._tempAcceptedAnswers="",this._tempAcceptedStatements="[]",this._tempStatements=[]}_startEditQuestion(t){if(t<0||t>=this._tempQuestions.length)return;this._editingIndex=t;const e=this._tempQuestions[t];this._tempQuestionText=e.question||"",this._tempQuestionImage=e.image||"",this._tempQuestionType=e.type||"mc",this._tempQuestionPoints=e.points||1;const a=e.choices||[];this._tempChoice0=this._getChoiceText(a[0])||"",this._tempChoice1=this._getChoiceText(a[1])||"",this._tempChoice2=this._getChoiceText(a[2])||"",this._tempChoice3=this._getChoiceText(a[3])||"",this._tempChoice4=this._getChoiceText(a[4])||"",this._tempChoiceImage0=this._getChoiceImage(a[0])||"",this._tempChoiceImage1=this._getChoiceImage(a[1])||"",this._tempChoiceImage2=this._getChoiceImage(a[2])||"",this._tempChoiceImage3=this._getChoiceImage(a[3])||"",this._tempChoiceImage4=this._getChoiceImage(a[4])||"",this._tempCorrectIndex=e.correctIndex!=null?e.correctIndex.toString():"0",this._tempCorrectAnswers=e.correctAnswers||[],this._tempLeftItems=e.leftItems||["",""],this._tempRightItems=e.rightItems||["",""],this._tempCorrectPairs=e.correctPairs||{},this._tempAcceptedAnswers=(e.acceptedAnswers||[]).join(", "),this._tempAcceptedStatements=JSON.stringify(e.statements||[]),this._tempStatements=e.statements?JSON.parse(JSON.stringify(e.statements)):[],this.requestUpdate()}_saveEditQuestion(){if(!this._tempQuestionText.trim()||this._editingIndex<0||this._editingIndex>=this._tempQuestions.length)return;const t=this._tempQuestionType||"mc",e={type:t,question:this._tempQuestionText.trim()};this._tempQuestionImage.trim()&&(e.image=this._tempQuestionImage.trim()),this._tempQuestionPoints>1&&(e.points=this._tempQuestionPoints),t==="mc"?(e.choices=[0,1,2,3,4].map(a=>{const i=this[`_tempChoice${a}`]?.trim();if(!i)return null;const s=this[`_tempChoiceImage${a}`]?.trim();return s?{text:i,image:s}:i}).filter(Boolean),this._tempCorrectAnswers.length>1?e.correctAnswers=[...this._tempCorrectAnswers]:e.correctIndex=parseInt(this._tempCorrectIndex,10)):t==="pgk"?e.statements=Array.isArray(this._tempStatements)?[...this._tempStatements]:[]:t==="matching"?(e.leftItems=[...this._tempLeftItems],e.rightItems=[...this._tempRightItems],e.correctPairs={...this._tempCorrectPairs}):t==="shortAnswer"&&(e.acceptedAnswers=this._tempAcceptedAnswers.split(",").map(a=>a.trim()).filter(Boolean)),this._tempQuestions=this._tempQuestions.map((a,i)=>i===this._editingIndex?e:a),this._editingIndex=-1,this._resetEditorForm(),this.requestUpdate()}_cancelEditQuestion(){this._editingIndex<0||(this._editingIndex=-1,this._resetEditorForm(),this.requestUpdate())}}customElements.get(V.tag)||customElements.define(V.tag,V);var Ye=Object.defineProperty,Xe=(u,t,e)=>t in u?Ye(u,t,{enumerable:!0,configurable:!0,writable:!0,value:e}):u[t]=e,G=(u,t,e)=>Xe(u,typeof t!="symbol"?t+"":t,e);const B=class q extends R(F(U)){static get tag(){return"sistem-kehadiran"}static get properties(){return{...super.properties,appsScriptUrl:{type:String,attribute:"apps-script-url",reflect:!0},kdMateri:{type:String,attribute:"kd-materi",reflect:!0},studentId:{type:String,attribute:"student-id",reflect:!0},namaSiswa:{type:String,attribute:"nama-siswa",reflect:!0},mode:{type:String,attribute:"mode",reflect:!0},questions:{type:Array,attribute:"questions",reflect:!0,converter:{fromAttribute(t){if(t==null||t==="")return;if(Array.isArray(t))return t;const e=String(t).trim();if(!(!e||e.includes("[object Object]"))&&(e.startsWith("[")||e.startsWith("{")))try{const a=JSON.parse(e);return Array.isArray(a)?a:a&&typeof a=="object"&&Array.isArray(a.questions)?a.questions:void 0}catch{return}},toAttribute(t){if(!Array.isArray(t))return null;try{return JSON.stringify(t)}catch{return null}}}},_tab:{state:!0},_toast:{state:!0},_logs:{state:!0},_serverHistory:{state:!0},_quizScreen:{state:!0},_quizIdx:{state:!0},_quizAnswered:{state:!0},_quizSel:{state:!0},_quizFb:{state:!0},_quizFbPos:{state:!0},_editIdx:{state:!0},_edit:{state:!0}}}constructor(){super(),this.appsScriptUrl="",this.kdMateri="Pertemuan 1",this.studentId="",this.namaSiswa="Siswa",this.mode="siswa",this.questions=this._load(q.QUESTIONS_KEY,null)||[...q.DEFAULT_QUESTIONS],this.thresholds={...q.DEFAULT_THRESHOLDS,...this._load(q.THRESHOLD_KEY,{})},this.grades={...q.DEFAULT_GRADES,...this._load(q.GRADES_KEY,{})},this._tab="kehadiran",this._toast="",this._toastT=null,this._logs=this._load(q.LOGS_KEY,[]),this._serverHistory=[],this._quizScreen="start",this._quizIdx=0,this._quizAnswered=!1,this._quizSel=-1,this._quizFb="",this._quizFbPos=!1,this._quizScore=0,this._editIdx=-1,this._edit={q:"",c0:"",c1:"",c2:"",c3:"",correct:"0"},this._lastScroll=0,this._onScrollBound=this._onScroll.bind(this)}connectedCallback(){super.connectedCallback(),this._logs=this._load(q.LOGS_KEY,[]),globalThis.addEventListener("scroll",this._onScrollBound,{passive:!0}),this._muatRiwayatServer()}disconnectedCallback(){globalThis.removeEventListener("scroll",this._onScrollBound),this._toastT&&clearTimeout(this._toastT),super.disconnectedCallback()}updated(t){super.updated(t),(t.has("appsScriptUrl")||t.has("studentId")||t.has("kdMateri"))&&this._muatRiwayatServer()}_load(t,e){try{const a=localStorage.getItem(t);return a?JSON.parse(a):e}catch{return e}}_save(t,e){try{localStorage.setItem(t,JSON.stringify(e))}catch{}}_rem(t){try{localStorage.removeItem(t)}catch{}}_show(t){this._toast=t,this._toastT&&clearTimeout(this._toastT),this._toastT=setTimeout(()=>{this._toast="",this.requestUpdate()},3200),this.requestUpdate()}get _connected(){return!!this.appsScriptUrl}_buatIdLog(){try{const t=new Uint8Array(8);globalThis.crypto.getRandomValues(t);let e="";return t.forEach(a=>e+=a.toString(16).padStart(2,"0")),`LOG-${Date.now()}-${e.toUpperCase()}`}catch{return`LOG-${Date.now()}-${Math.random().toString(36).substr(2,10).toUpperCase()}`}}_log(t,e){const a={id:"log-"+Date.now()+"-"+Math.random(),timestamp:new Date().toISOString(),type:t,description:e};this._logs=[a,...this._logs],this._save(q.LOGS_KEY,this._logs);try{const i={reading:{catatan:e},download:{catatan:e},discussion:{catatan:e},quiz:{score:0}};if(t==="quiz"){const s=String(e||"").match(/Skor:\s*(\d+)%/);s&&(i.quiz.score=parseInt(s[1],10))}this.dispatchEvent(new CustomEvent("dasbor-kuis-log",{detail:{id_log:this._buatIdLog(),tipe:t,payload:{...i[t],timestamp:a.timestamp}},bubbles:!0,composed:!0}))}catch{}(this._tab==="kehadiran"||this._tab==="nilai")&&this.requestUpdate()}pemicuAksiManual(t,e){this._log(t,e),this._show(`Simulasi ${t} tercatat!`),this.requestUpdate()}_sim(t){const e={reading:["Membaca Modul 1","Membaca Modul 2","Mengeksplorasi Halaman"],download:["Mengunduh PDF Panduan.pdf","Mengunduh Source Code.zip"],discussion:["Mengirimkan pertanyaan di Forum","Membalas tanggapan di diskusi"]}[t];this._log(t,e[Math.floor(Math.random()*e.length)]),this._show(`Simulasi ${t} tercatat!`)}_clearLogs(){this._logs=[],this._rem(q.LOGS_KEY),this._show("Log direset!"),this.requestUpdate()}_onScroll(){const t=Date.now();globalThis.scrollY<300||t-this._lastScroll<6e4||(this._lastScroll=t,this._log("reading",`Membaca materi (Scroll ${Math.round(globalThis.scrollY)}px)`))}async _muatRiwayatServer(){if(!this.appsScriptUrl||!this.studentId)return;const t=new URLSearchParams({action:"getActivityHistory",studentId:this.studentId,kdMateri:this.kdMateri||"",days:28});try{const e=await(await fetch(`${this.appsScriptUrl}?${t.toString()}`)).text(),a=e.trim().charAt(0)==="{"?JSON.parse(e):{};Array.isArray(a&&a.history)?this._serverHistory=a.history:a&&Array.isArray(a.data)&&(this._serverHistory=a.data),a&&a.history!==void 0&&this.requestUpdate()}catch{}}_tglKey(t){const e=t||new Date,a=i=>String(i).padStart(2,"0");return`${e.getFullYear()}-${a(e.getMonth()+1)}-${a(e.getDate())}`}_weekly(){const t=new Date(Date.now()-6048e5),e=(this._logs||[]).filter(n=>n&&new Date(n.timestamp)>=t),a=this.thresholds,i={reading:e.filter(n=>n.type==="reading").length,quiz:e.filter(n=>n.type==="quiz").length,discussion:e.filter(n=>n.type==="discussion").length,total:e.length},s={reading:i.reading>=a.minReading,quiz:i.quiz>=a.minQuiz,discussion:i.discussion>=a.minDiscussion,total:i.total>=a.minWeeklyActivities},r=(s.reading?1:0)+(s.quiz?1:0)+(s.discussion?1:0)+(s.total?1:0);return{counts:i,goals:s,pct:Math.round(r/4*100),status:r>=3?"HADIR":"BELUM LENGKAP"}}_streak(){const t=this._logs||[];let e=0;for(let a=0;a<30;a++){const i=new Date;i.setDate(i.getDate()-a);const s=this._tglKey(i);if(t.some(r=>r&&this._tglKey(new Date(r.timestamp))===s))e++;else if(a>0)break}return e}_heatmap(){const t={};(this._logs||[]).forEach(a=>{if(!a||!a.timestamp)return;const i=this._tglKey(new Date(a.timestamp));t[i]=(t[i]||0)+1}),(this._serverHistory||[]).forEach(a=>{if(!a||!a.date)return;const i=String(a.date).slice(0,10);t[i]=(t[i]||0)+(parseInt(a.count,10)||0)});const e=[];for(let a=27;a>=0;a--){const i=new Date;i.setDate(i.getDate()-a),i.setHours(0,0,0,0);const s=this._tglKey(i);e.push({date:i,count:t[s]||0})}return e}_grade(){const t=this._weekly().pct,e=(this._logs||[]).filter(n=>n&&n.type==="quiz");let a=0;e.length&&(a=Math.max(...e.map(n=>{const c=String(n.description||"").match(/Skor:\s*(\d+)%/);return c?parseInt(c[1],10):0})));const i=this.grades,s=(t*i.attendanceWeight+a*i.quizWeight+i.uts*i.utsWeight+i.uas*i.uasWeight)/100;let r="E";return s>=85?r="A":s>=80?r="A-":s>=75?r="B+":s>=70?r="B":s>=65?r="B-":s>=60?r="C+":s>=55?r="C":s>=40&&(r="D"),{att:t,quiz:a,final:Math.round(s*10)/10,grade:r}}_mulaiQuiz(){this._quizScreen==="result"&&(this._quizScore=0),this._quizScreen="question",this._quizIdx=0,this._quizAnswered=!1,this._quizSel=-1,this._quizFb="",this.requestUpdate()}_pilihQuiz(t){if(this._quizAnswered)return;this._quizAnswered=!0,this._quizSel=t;const e=this.questions[this._quizIdx];e&&t===e.correctIndex?(this._quizScore++,this._quizFb="\u2705 Benar!",this._quizFbPos=!0):(this._quizFb=e?`\u274C Salah. Jawaban: ${e.choices[e.correctIndex]}`:"Soal tidak valid",this._quizFbPos=!1),this.requestUpdate(),setTimeout(()=>this._nextQuiz(),1200)}_nextQuiz(){if(this._quizIdx<this.questions.length-1)this._quizIdx++,this._quizAnswered=!1,this._quizSel=-1,this._quizFb="";else{const t=Math.round(this._quizScore/this.questions.length*100);this._quizScreen="result",this._log("quiz",`Menyelesaikan Kuis (Skor: ${t}%)`),this.dispatchEvent(new CustomEvent("dasbor-kuis-log",{detail:{id_log:this._buatIdLog(),tipe:"quiz",payload:{score:t,jenisKuis:"formatif",metadataKuis:"Dashboard Pembelajaran",timestamp:new Date().toISOString()}},bubbles:!0,composed:!0}))}this.requestUpdate()}_resetQuiz(){this._quizScreen="start",this._quizScore=0,this.requestUpdate()}_tambahSoal(){const t=this._edit;if(!t.q||!t.c0||!t.c1||!t.c2||!t.c3)return this._show("Semua field harus diisi!");this.questions=[...this.questions,{question:t.q,choices:[t.c0,t.c1,t.c2,t.c3],correctIndex:parseInt(t.correct,10)}],this._save(q.QUESTIONS_KEY,this.questions),this._edit={q:"",c0:"",c1:"",c2:"",c3:"",correct:"0"},this._show("Soal ditambahkan!"),this.requestUpdate()}_editMulai(t){const e=this.questions[t];this._editIdx=t,this._edit={q:e.question,c0:e.choices[0],c1:e.choices[1],c2:e.choices[2],c3:e.choices[3],correct:String(e.correctIndex)},this.requestUpdate()}_simpanSoal(){const t=this._edit;if(!t.q)return this._show("Pertanyaan tidak boleh kosong!");this.questions=this.questions.map((e,a)=>a===this._editIdx?{question:t.q,choices:[t.c0,t.c1,t.c2,t.c3],correctIndex:parseInt(t.correct,10)}:e),this._save(q.QUESTIONS_KEY,this.questions),this._editIdx=-1,this._edit={q:"",c0:"",c1:"",c2:"",c3:"",correct:"0"},this._show("Soal diupdate!"),this.requestUpdate()}_hapusSoal(t){if(this.questions.length<=3)return this._show("Minimal 3 soal!");this.questions=this.questions.filter((e,a)=>a!==t),this._save(q.QUESTIONS_KEY,this.questions),this._editIdx===t&&(this._editIdx=-1,this._edit={q:"",c0:"",c1:"",c2:"",c3:"",correct:"0"}),this._show("Soal dihapus!"),this.requestUpdate()}_updThreshold(t,e){this.thresholds={...this.thresholds,[t]:parseInt(e,10)},this._save(q.THRESHOLD_KEY,this.thresholds),this.requestUpdate()}_updGrade(t,e){this.grades={...this.grades,[t]:parseInt(e,10)},this._save(q.GRADES_KEY,this.grades),this.requestUpdate()}static get styles(){return[super.styles,C`
+    </div>`}_addQuestion(){if(!this._tempQuestionText.trim())return;const t=this._tempQuestionType||"mc",e={type:t,question:this._tempQuestionText.trim()};if(this._tempQuestionImage.trim()&&(e.image=this._tempQuestionImage.trim()),this._tempQuestionPoints>1&&(e.points=this._tempQuestionPoints),t==="mc"){if(!this._tempChoice0.trim()||!this._tempChoice1.trim())return;e.choices=[0,1,2,3,4].map(a=>{const i=this[`_tempChoice${a}`]?.trim();if(!i)return null;const r=this[`_tempChoiceImage${a}`]?.trim();return r?{text:i,image:r}:i}).filter(Boolean),this._tempCorrectAnswers.length>1?e.correctAnswers=[...this._tempCorrectAnswers]:e.correctIndex=parseInt(this._tempCorrectIndex,10)}else t==="pgk"?e.statements=Array.isArray(this._tempStatements)?[...this._tempStatements]:[]:t==="matching"?(e.leftItems=[...this._tempLeftItems],e.rightItems=[...this._tempRightItems],e.correctPairs={...this._tempCorrectPairs}):t==="shortAnswer"&&(e.acceptedAnswers=this._tempAcceptedAnswers.split(",").map(a=>a.trim()).filter(Boolean));this._tempQuestions=[...this._tempQuestions,e],this._resetEditorForm(),this.requestUpdate()}_deleteQuestion(t){this._tempQuestions.length<=3||(this._tempQuestions=this._tempQuestions.filter((e,a)=>a!==t),this._editingIndex===t?(this._editingIndex=-1,this._resetEditorForm()):this._editingIndex>t&&this._editingIndex--,this.requestUpdate())}_resetEditorForm(){this._tempQuestionText="",this._tempChoice0="",this._tempChoice1="",this._tempChoice2="",this._tempChoice3="",this._tempChoice4="",this._tempChoiceImage0="",this._tempChoiceImage1="",this._tempChoiceImage2="",this._tempChoiceImage3="",this._tempChoiceImage4="",this._tempCorrectIndex="0",this._tempCorrectAnswers=[],this._tempQuestionImage="",this._tempQuestionType="mc",this._tempQuestionPoints=1,this._tempLeftItems=["",""],this._tempRightItems=["",""],this._tempCorrectPairs={},this._tempAcceptedAnswers="",this._tempAcceptedStatements="[]",this._tempStatements=[]}_startEditQuestion(t){if(t<0||t>=this._tempQuestions.length)return;this._editingIndex=t;const e=this._tempQuestions[t];this._tempQuestionText=e.question||"",this._tempQuestionImage=e.image||"",this._tempQuestionType=e.type||"mc",this._tempQuestionPoints=e.points||1;const a=e.choices||[];this._tempChoice0=this._getChoiceText(a[0])||"",this._tempChoice1=this._getChoiceText(a[1])||"",this._tempChoice2=this._getChoiceText(a[2])||"",this._tempChoice3=this._getChoiceText(a[3])||"",this._tempChoice4=this._getChoiceText(a[4])||"",this._tempChoiceImage0=this._getChoiceImage(a[0])||"",this._tempChoiceImage1=this._getChoiceImage(a[1])||"",this._tempChoiceImage2=this._getChoiceImage(a[2])||"",this._tempChoiceImage3=this._getChoiceImage(a[3])||"",this._tempChoiceImage4=this._getChoiceImage(a[4])||"",this._tempCorrectIndex=e.correctIndex!=null?e.correctIndex.toString():"0",this._tempCorrectAnswers=e.correctAnswers||[],this._tempLeftItems=e.leftItems||["",""],this._tempRightItems=e.rightItems||["",""],this._tempCorrectPairs=e.correctPairs||{},this._tempAcceptedAnswers=(e.acceptedAnswers||[]).join(", "),this._tempAcceptedStatements=JSON.stringify(e.statements||[]),this._tempStatements=e.statements?JSON.parse(JSON.stringify(e.statements)):[],this.requestUpdate()}_saveEditQuestion(){if(!this._tempQuestionText.trim()||this._editingIndex<0||this._editingIndex>=this._tempQuestions.length)return;const t=this._tempQuestionType||"mc",e={type:t,question:this._tempQuestionText.trim()};this._tempQuestionImage.trim()&&(e.image=this._tempQuestionImage.trim()),this._tempQuestionPoints>1&&(e.points=this._tempQuestionPoints),t==="mc"?(e.choices=[0,1,2,3,4].map(a=>{const i=this[`_tempChoice${a}`]?.trim();if(!i)return null;const r=this[`_tempChoiceImage${a}`]?.trim();return r?{text:i,image:r}:i}).filter(Boolean),this._tempCorrectAnswers.length>1?e.correctAnswers=[...this._tempCorrectAnswers]:e.correctIndex=parseInt(this._tempCorrectIndex,10)):t==="pgk"?e.statements=Array.isArray(this._tempStatements)?[...this._tempStatements]:[]:t==="matching"?(e.leftItems=[...this._tempLeftItems],e.rightItems=[...this._tempRightItems],e.correctPairs={...this._tempCorrectPairs}):t==="shortAnswer"&&(e.acceptedAnswers=this._tempAcceptedAnswers.split(",").map(a=>a.trim()).filter(Boolean)),this._tempQuestions=this._tempQuestions.map((a,i)=>i===this._editingIndex?e:a),this._editingIndex=-1,this._resetEditorForm(),this.requestUpdate()}_cancelEditQuestion(){this._editingIndex<0||(this._editingIndex=-1,this._resetEditorForm(),this.requestUpdate())}}customElements.get(tt.tag)||customElements.define(tt.tag,tt);var Ze=Object.defineProperty,ta=(h,t,e)=>t in h?Ze(h,t,{enumerable:!0,configurable:!0,writable:!0,value:e}):h[t]=e,Z=(h,t,e)=>ta(h,typeof t!="symbol"?t+"":t,e);const H=class K extends j(B(F)){static get tag(){return"sistem-kehadiran"}static get properties(){return{...super.properties,appsScriptUrl:{type:String,attribute:"apps-script-url",reflect:!0},kdMateri:{type:String,attribute:"kd-materi",reflect:!0},studentId:{type:String,attribute:"student-id",reflect:!0},namaSiswa:{type:String,attribute:"nama-siswa",reflect:!0},mode:{type:String,attribute:"mode",reflect:!0},questions:{type:Array,attribute:"questions",reflect:!0,converter:{fromAttribute(t){if(t==null||t==="")return;if(Array.isArray(t))return t;const e=String(t).trim();if(!(!e||e.includes("[object Object]"))&&(e.startsWith("[")||e.startsWith("{")))try{const a=JSON.parse(e);return Array.isArray(a)?a:a&&typeof a=="object"&&Array.isArray(a.questions)?a.questions:void 0}catch{return}},toAttribute(t){if(!Array.isArray(t))return null;try{return JSON.stringify(t)}catch{return null}}}},_tab:{state:!0},_toast:{state:!0},_logs:{state:!0},_serverHistory:{state:!0},_quizScreen:{state:!0},_quizIdx:{state:!0},_quizAnswered:{state:!0},_quizSel:{state:!0},_quizFb:{state:!0},_quizFbPos:{state:!0},_editIdx:{state:!0},_edit:{state:!0}}}constructor(){super(),this.appsScriptUrl="",this.kdMateri="Pertemuan 1",this.studentId="",this.namaSiswa="Siswa",this.mode="siswa",this.questions=this._load(K.QUESTIONS_KEY,null)||[...K.DEFAULT_QUESTIONS],this.thresholds={...K.DEFAULT_THRESHOLDS,...this._load(K.THRESHOLD_KEY,{})},this.grades={...K.DEFAULT_GRADES,...this._load(K.GRADES_KEY,{})},this._tab="kehadiran",this._toast="",this._toastT=null,this._logs=this._load(K.LOGS_KEY,[]),this._serverHistory=[],this._quizScreen="start",this._quizIdx=0,this._quizAnswered=!1,this._quizSel=-1,this._quizFb="",this._quizFbPos=!1,this._quizScore=0,this._editIdx=-1,this._edit={q:"",c0:"",c1:"",c2:"",c3:"",correct:"0"},this._lastScroll=0,this._onScrollBound=this._onScroll.bind(this)}connectedCallback(){super.connectedCallback(),this._logs=this._load(K.LOGS_KEY,[]),globalThis.addEventListener("scroll",this._onScrollBound,{passive:!0}),this._muatRiwayatServer()}disconnectedCallback(){globalThis.removeEventListener("scroll",this._onScrollBound),this._toastT&&clearTimeout(this._toastT),super.disconnectedCallback()}updated(t){super.updated(t),(t.has("appsScriptUrl")||t.has("studentId")||t.has("kdMateri"))&&this._muatRiwayatServer()}_load(t,e){try{const a=localStorage.getItem(t);return a?JSON.parse(a):e}catch{return e}}_save(t,e){try{localStorage.setItem(t,JSON.stringify(e))}catch{}}_rem(t){try{localStorage.removeItem(t)}catch{}}_show(t){this._toast=t,this._toastT&&clearTimeout(this._toastT),this._toastT=setTimeout(()=>{this._toast="",this.requestUpdate()},3200),this.requestUpdate()}get _connected(){return!!this.appsScriptUrl}_buatIdLog(){try{const t=new Uint8Array(8);globalThis.crypto.getRandomValues(t);let e="";return t.forEach(a=>e+=a.toString(16).padStart(2,"0")),`LOG-${Date.now()}-${e.toUpperCase()}`}catch{return`LOG-${Date.now()}-${Math.random().toString(36).substr(2,10).toUpperCase()}`}}_log(t,e){const a={id:"log-"+Date.now()+"-"+Math.random(),timestamp:new Date().toISOString(),type:t,description:e};this._logs=[a,...this._logs],this._save(K.LOGS_KEY,this._logs);try{const i={reading:{catatan:e},download:{catatan:e},discussion:{catatan:e},quiz:{score:0}};if(t==="quiz"){const r=String(e||"").match(/Skor:\s*(\d+)%/);r&&(i.quiz.score=parseInt(r[1],10))}this.dispatchEvent(new CustomEvent("dasbor-kuis-log",{detail:{id_log:this._buatIdLog(),tipe:t,payload:{...i[t],timestamp:a.timestamp}},bubbles:!0,composed:!0}))}catch{}(this._tab==="kehadiran"||this._tab==="nilai")&&this.requestUpdate()}pemicuAksiManual(t,e){this._log(t,e),this._show(`Simulasi ${t} tercatat!`),this.requestUpdate()}_sim(t){const e={reading:["Membaca Modul 1","Membaca Modul 2","Mengeksplorasi Halaman"],download:["Mengunduh PDF Panduan.pdf","Mengunduh Source Code.zip"],discussion:["Mengirimkan pertanyaan di Forum","Membalas tanggapan di diskusi"]}[t];this._log(t,e[Math.floor(Math.random()*e.length)]),this._show(`Simulasi ${t} tercatat!`)}_clearLogs(){this._logs=[],this._rem(K.LOGS_KEY),this._show("Log direset!"),this.requestUpdate()}_onScroll(){const t=Date.now();globalThis.scrollY<300||t-this._lastScroll<6e4||(this._lastScroll=t,this._log("reading",`Membaca materi (Scroll ${Math.round(globalThis.scrollY)}px)`))}async _muatRiwayatServer(){if(!this.appsScriptUrl||!this.studentId)return;const t=new URLSearchParams({action:"getActivityHistory",studentId:this.studentId,kdMateri:this.kdMateri||"",days:28});try{const e=await(await fetch(`${this.appsScriptUrl}?${t.toString()}`)).text(),a=e.trim().charAt(0)==="{"?JSON.parse(e):{};Array.isArray(a&&a.history)?this._serverHistory=a.history:a&&Array.isArray(a.data)&&(this._serverHistory=a.data),a&&a.history!==void 0&&this.requestUpdate()}catch{}}_tglKey(t){const e=t||new Date,a=i=>String(i).padStart(2,"0");return`${e.getFullYear()}-${a(e.getMonth()+1)}-${a(e.getDate())}`}_weekly(){const t=new Date(Date.now()-6048e5),e=(this._logs||[]).filter(d=>d&&new Date(d.timestamp)>=t),a=this.thresholds,i={reading:e.filter(d=>d.type==="reading").length,quiz:e.filter(d=>d.type==="quiz").length,discussion:e.filter(d=>d.type==="discussion").length,total:e.length},r={reading:i.reading>=a.minReading,quiz:i.quiz>=a.minQuiz,discussion:i.discussion>=a.minDiscussion,total:i.total>=a.minWeeklyActivities},s=(r.reading?1:0)+(r.quiz?1:0)+(r.discussion?1:0)+(r.total?1:0);return{counts:i,goals:r,pct:Math.round(s/4*100),status:s>=3?"HADIR":"BELUM LENGKAP"}}_streak(){const t=this._logs||[];let e=0;for(let a=0;a<30;a++){const i=new Date;i.setDate(i.getDate()-a);const r=this._tglKey(i);if(t.some(s=>s&&this._tglKey(new Date(s.timestamp))===r))e++;else if(a>0)break}return e}_heatmap(){const t={};(this._logs||[]).forEach(a=>{if(!a||!a.timestamp)return;const i=this._tglKey(new Date(a.timestamp));t[i]=(t[i]||0)+1}),(this._serverHistory||[]).forEach(a=>{if(!a||!a.date)return;const i=String(a.date).slice(0,10);t[i]=(t[i]||0)+(parseInt(a.count,10)||0)});const e=[];for(let a=27;a>=0;a--){const i=new Date;i.setDate(i.getDate()-a),i.setHours(0,0,0,0);const r=this._tglKey(i);e.push({date:i,count:t[r]||0})}return e}_grade(){const t=this._weekly().pct,e=(this._logs||[]).filter(d=>d&&d.type==="quiz");let a=0;e.length&&(a=Math.max(...e.map(d=>{const l=String(d.description||"").match(/Skor:\s*(\d+)%/);return l?parseInt(l[1],10):0})));const i=this.grades,r=(t*i.attendanceWeight+a*i.quizWeight+i.uts*i.utsWeight+i.uas*i.uasWeight)/100;let s="E";return r>=85?s="A":r>=80?s="A-":r>=75?s="B+":r>=70?s="B":r>=65?s="B-":r>=60?s="C+":r>=55?s="C":r>=40&&(s="D"),{att:t,quiz:a,final:Math.round(r*10)/10,grade:s}}_mulaiQuiz(){this._quizScreen==="result"&&(this._quizScore=0),this._quizScreen="question",this._quizIdx=0,this._quizAnswered=!1,this._quizSel=-1,this._quizFb="",this.requestUpdate()}_pilihQuiz(t){if(this._quizAnswered)return;this._quizAnswered=!0,this._quizSel=t;const e=this.questions[this._quizIdx];e&&t===e.correctIndex?(this._quizScore++,this._quizFb="\u2705 Benar!",this._quizFbPos=!0):(this._quizFb=e?`\u274C Salah. Jawaban: ${e.choices[e.correctIndex]}`:"Soal tidak valid",this._quizFbPos=!1),this.requestUpdate(),setTimeout(()=>this._nextQuiz(),1200)}_nextQuiz(){if(this._quizIdx<this.questions.length-1)this._quizIdx++,this._quizAnswered=!1,this._quizSel=-1,this._quizFb="";else{const t=Math.round(this._quizScore/this.questions.length*100);this._quizScreen="result",this._log("quiz",`Menyelesaikan Kuis (Skor: ${t}%)`),this.dispatchEvent(new CustomEvent("dasbor-kuis-log",{detail:{id_log:this._buatIdLog(),tipe:"quiz",payload:{score:t,jenisKuis:"formatif",metadataKuis:"Dashboard Pembelajaran",timestamp:new Date().toISOString()}},bubbles:!0,composed:!0}))}this.requestUpdate()}_resetQuiz(){this._quizScreen="start",this._quizScore=0,this.requestUpdate()}_tambahSoal(){const t=this._edit;if(!t.q||!t.c0||!t.c1||!t.c2||!t.c3)return this._show("Semua field harus diisi!");this.questions=[...this.questions,{question:t.q,choices:[t.c0,t.c1,t.c2,t.c3],correctIndex:parseInt(t.correct,10)}],this._save(K.QUESTIONS_KEY,this.questions),this._edit={q:"",c0:"",c1:"",c2:"",c3:"",correct:"0"},this._show("Soal ditambahkan!"),this.requestUpdate()}_editMulai(t){const e=this.questions[t];this._editIdx=t,this._edit={q:e.question,c0:e.choices[0],c1:e.choices[1],c2:e.choices[2],c3:e.choices[3],correct:String(e.correctIndex)},this.requestUpdate()}_simpanSoal(){const t=this._edit;if(!t.q)return this._show("Pertanyaan tidak boleh kosong!");this.questions=this.questions.map((e,a)=>a===this._editIdx?{question:t.q,choices:[t.c0,t.c1,t.c2,t.c3],correctIndex:parseInt(t.correct,10)}:e),this._save(K.QUESTIONS_KEY,this.questions),this._editIdx=-1,this._edit={q:"",c0:"",c1:"",c2:"",c3:"",correct:"0"},this._show("Soal diupdate!"),this.requestUpdate()}_hapusSoal(t){if(this.questions.length<=3)return this._show("Minimal 3 soal!");this.questions=this.questions.filter((e,a)=>a!==t),this._save(K.QUESTIONS_KEY,this.questions),this._editIdx===t&&(this._editIdx=-1,this._edit={q:"",c0:"",c1:"",c2:"",c3:"",correct:"0"}),this._show("Soal dihapus!"),this.requestUpdate()}_updThreshold(t,e){this.thresholds={...this.thresholds,[t]:parseInt(e,10)},this._save(K.THRESHOLD_KEY,this.thresholds),this.requestUpdate()}_updGrade(t,e){this.grades={...this.grades,[t]:parseInt(e,10)},this._save(K.GRADES_KEY,this.grades),this.requestUpdate()}static get styles(){return[super.styles,z`
         :host {
           display: block;
-          font-family: var(--ddd-font-navigation, system-ui, sans-serif);
-          color: var(--ddd-theme-default-text);
-          max-width: 960px;
+          font-family: var(--ddd-font-primary);
+          color: var(--ddd-theme-default-coalyGray);
+          --sk-primary: var(--ddd-primary-13);
+          --sk-primary-hover: var(--ddd-primary-10);
+          --sk-success: var(--ddd-theme-default-success);
+          --sk-success-light: var(--ddd-theme-default-successLight);
+          --sk-error: var(--ddd-theme-default-error);
+          --sk-error-light: var(--ddd-theme-default-errorLight);
+          --sk-warning: var(--ddd-primary-10);
+          --sk-info: var(--ddd-theme-default-link);
+          --sk-muted: var(--ddd-theme-default-limestoneGray);
+          --sk-soft-bg: var(--ddd-theme-default-shrineLight);
+          --sk-card-bg: var(--ddd-theme-default-white);
+          --sk-border: var(--ddd-theme-default-shrineLight);
+          max-width: var(--ddd-layout-size-3);
           margin: 0 auto;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         .hd {
-          background: linear-gradient(135deg, #312e81, #6750a4 55%, #9c7cf4);
+          background: linear-gradient(135deg, var(--ddd-primary-13), var(--ddd-primary-8) 55%, var(--ddd-primary-0));
           color: var(--ddd-theme-default-white);
           border-radius: var(--ddd-radius-xl);
           padding: var(--ddd-spacing-5) var(--ddd-spacing-6);
@@ -760,13 +827,13 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
           gap: var(--ddd-spacing-3);
           box-shadow: var(--ddd-boxShadow-lg);
         }
-        .hd h1 { font-size: var(--ddd-font-size-l); font-weight: 800; letter-spacing: -0.02em; }
-        .hd h1 span { font-size: 24px; }
-        .hd p { font-size: 13px; opacity: 0.9; margin-top: 2px; }
+        .hd h1 { font-size: var(--ddd-font-size-l); font-weight: var(--ddd-font-weight-black); letter-spacing: -0.02em; }
+        .hd h1 span { font-size: var(--ddd-font-size-xl); }
+        .hd p { font-size: var(--ddd-font-size-3xs); opacity: 0.9; margin-top: var(--ddd-spacing-1); }
         .hdr { display: flex; gap: var(--ddd-spacing-2); align-items: center; }
-        .b { display: inline-block; padding: 4px 10px; border-radius: 99px; font-size: 11px; font-weight: 700; }
-        .b.g { background: #d1fae5; color: #065f46; }
-        .b.o { background: #fef3c7; color: #92400e; }
+        .b { display: inline-block; padding: var(--ddd-spacing-0) var(--ddd-spacing-2); border-radius: 99px; font-size: var(--ddd-font-size-xxs); font-weight: var(--ddd-font-weight-black); }
+        .b.g { background: var(--ddd-theme-default-successLight); color: var(--ddd-theme-default-success); }
+        .b.o { background: var(--ddd-theme-default-shrineMaxLight); color: var(--ddd-primary-10); }
         .tb {
           display: flex;
           border-bottom: var(--ddd-border-sm);
@@ -781,16 +848,16 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
           background: none;
           border: none;
           border-bottom: var(--ddd-border-md);
-          margin-bottom: -2px;
+          margin-bottom: calc(var(--ddd-spacing-0) * -1);
           cursor: pointer;
-          font-size: var(--ddd-font-size-4xs);
+          font-size: var(--ddd-font-size-3xs);
           font-weight: var(--ddd-font-weight-bold);
-          color: var(--ddd-theme-secondary);
+          color: var(--ddd-theme-default-limestoneGray);
           white-space: nowrap;
           transition: all 0.2s;
         }
-        .tbb:hover { color: #4f46e5; background: #eef2ff; border-radius: 10px 10px 0 0; }
-        .tbb.a { color: #4f46e5; border-bottom-color: #4f46e5; }
+        .tbb:hover { color: var(--ddd-primary-13); background: var(--ddd-theme-default-shrineMaxLight); border-radius: var(--ddd-radius-s) var(--ddd-radius-s) 0 0; }
+        .tbb.a { color: var(--ddd-primary-13); border-bottom-color: var(--ddd-primary-13); }
         .c {
           background: var(--ddd-theme-default-white);
           border-radius: var(--ddd-radius-lg);
@@ -799,128 +866,128 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
           box-shadow: var(--ddd-boxShadow-sm);
           border: var(--ddd-border-xs);
         }
-        .c h2 { color: #312e81; font-size: var(--ddd-font-size-ms); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
-        .c h3 { color: #49454f; font-size: 15px; margin-bottom: 10px; }
-        .bp { display: inline-block; padding: 10px 20px; border: none; border-radius: 10px; font-size: 14px; font-weight: 700; cursor: pointer; transition: all 0.2s; }
-        .bp.p { background: #4f46e5; color: var(--ddd-theme-default-white); box-shadow: 0 4px 10px -2px rgb(79 70 229 / 0.4); }
-        .bp.p:hover { background: #4338ca; transform: translateY(-1px); }
-        .bp.s { background: transparent; color: #4f46e5; border: 1px solid #4f46e5; }
-        .bp.s:hover { background: #eef2ff; }
+        .c h2 { color: var(--ddd-primary-13); font-size: var(--ddd-font-size-ms); margin-bottom: var(--ddd-spacing-3); display: flex; align-items: center; gap: var(--ddd-spacing-2); }
+        .c h3 { color: var(--ddd-theme-default-slateGray); font-size: var(--ddd-font-size-3xs); margin-bottom: var(--ddd-spacing-2); }
+        .bp { display: inline-block; padding: var(--ddd-spacing-3) var(--ddd-spacing-5); border: none; border-radius: var(--ddd-radius-s); font-size: var(--ddd-font-size-s); font-weight: var(--ddd-font-weight-bold); cursor: pointer; transition: all 0.2s; }
+        .bp.p { background: var(--ddd-primary-13); color: var(--ddd-theme-default-white); box-shadow: 0 var(--ddd-spacing-1) var(--ddd-spacing-3) calc(var(--ddd-spacing-0) * -1) rgba(79, 70, 229, 0.4); }
+        .bp.p:hover { background: var(--ddd-primary-8); transform: translateY(-1px); }
+        .bp.s { background: transparent; color: var(--ddd-primary-13); border: var(--ddd-border-xs) solid var(--ddd-primary-13); }
+        .bp.s:hover { background: var(--ddd-theme-default-shrineMaxLight); }
         .bp.fw { width: 100%; text-align: center; }
         .bs {
           padding: var(--ddd-spacing-1) var(--ddd-spacing-3);
           border: var(--ddd-border-xs);
           border-radius: var(--ddd-radius-sm);
           background: var(--ddd-theme-default-white);
-          font-size: var(--ddd-font-size-4xs);
+          font-size: var(--ddd-font-size-3xs);
           cursor: pointer;
           transition: all 0.2s;
         }
-        .bs:hover { background: #eef2ff; }
-        .bs.dg { color: #ba1a1a; border-color: #ffcdd2; }
-        .bs.dg:hover { background: #ffebee; }
-        .qb { max-width: 620px; margin: 0 auto; }
-        .qh { display: flex; justify-content: space-between; font-weight: 700; color: #4f46e5; margin-bottom: 16px; }
-        .qq { font-size: 18px; font-weight: 700; margin-bottom: 20px; line-height: 1.5; color: #0f172a; }
-        .qa { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+        .bs:hover { background: var(--ddd-theme-default-shrineMaxLight); }
+        .bs.dg { color: var(--ddd-theme-default-error); border-color: var(--ddd-theme-default-errorLight); }
+        .bs.dg:hover { background: var(--ddd-theme-default-errorLight); }
+        .qb { max-width: var(--ddd-layout-size-3); margin: 0 auto; }
+        .qh { display: flex; justify-content: space-between; font-weight: var(--ddd-font-weight-bold); color: var(--ddd-primary-13); margin-bottom: var(--ddd-spacing-4); }
+        .qq { font-size: var(--ddd-font-size-ms); font-weight: var(--ddd-font-weight-black); margin-bottom: var(--ddd-spacing-5); line-height: 1.5; color: var(--ddd-theme-default-coalyGray); }
+        .qa { display: grid; grid-template-columns: 1fr 1fr; gap: var(--ddd-spacing-3); margin-bottom: var(--ddd-spacing-5); }
         .qab {
           padding: var(--ddd-spacing-3) var(--ddd-spacing-4);
           background: var(--ddd-theme-default-white);
           border: var(--ddd-border-sm);
           border-radius: var(--ddd-radius-md);
-          font-size: var(--ddd-font-size-4xs);
+          font-size: var(--ddd-font-size-3xs);
           cursor: pointer;
           transition: all 0.2s;
           text-align: left;
           font-family: var(--ddd-font-primary);
         }
-        .qab:hover:not(:disabled) { border-color: #4f46e5; background: #eef2ff; }
+        .qab:hover:not(:disabled) { border-color: var(--ddd-primary-13); background: var(--ddd-theme-default-shrineMaxLight); }
         .qab:disabled { cursor: not-allowed; opacity: 0.7; }
-        .qab.cc { border-color: #22c55e; background: #f0fdf4; color: #166534; font-weight: 700; }
-        .qab.cw { border-color: #ef4444; background: #fef2f2; color: #991b1b; }
-        .qf { padding: 14px; border-radius: 10px; text-align: center; font-weight: 700; }
-        .qf.p { background: #dcfce7; color: #166534; }
-        .qf.n { background: #fee2e2; color: #991b1b; }
+        .qab.cc { border-color: var(--ddd-primary-8); background: var(--ddd-theme-default-successLight); color: var(--ddd-theme-default-success); font-weight: var(--ddd-font-weight-bold); }
+        .qab.cw { border-color: var(--ddd-theme-default-error); background: var(--ddd-theme-default-errorLight); color: var(--ddd-theme-default-error); }
+        .qf { padding: var(--ddd-spacing-3); border-radius: var(--ddd-radius-s); text-align: center; font-weight: var(--ddd-font-weight-bold); }
+        .qf.p { background: var(--ddd-theme-default-successLight); color: var(--ddd-theme-default-success); }
+        .qf.n { background: var(--ddd-theme-default-errorLight); color: var(--ddd-theme-default-error); }
         .rc { text-align: center; }
-        .rc .rp { font-size: 48px; font-weight: 800; color: #4f46e5; margin: 16px 0; }
-        .rc .rm { font-size: 18px; color: #4f46e5; margin-bottom: 20px; }
+        .rc .rp { font-size: var(--ddd-font-size-2xl); font-weight: var(--ddd-font-weight-black); color: var(--ddd-primary-13); margin: var(--ddd-spacing-4) 0; }
+        .rc .rm { font-size: var(--ddd-font-size-ms); color: var(--ddd-primary-13); margin-bottom: var(--ddd-spacing-5); }
         .wa { animation: wa 0.3s ease; }
         @media (prefers-reduced-motion: reduce) { .wa { animation: none; } }
-        @keyframes wa { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        .smb { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
-        .sl { font-size: 12px; color: #64748b; font-weight: 600; }
-        .g2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 20px; margin-bottom: 20px; }
-        .gw { position: relative; width: 150px; height: 150px; margin: 0 auto; }
-        .gv { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 30px; font-weight: 800; color: #0f172a; }
-        .cll { display: flex; flex-direction: column; gap: 10px; }
-        .cri { display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; background: #fcfbfe; border-radius: 10px; border: 1px solid #f1eef8; }
-        .crl { display: flex; align-items: center; gap: 10px; }
-        .cric { font-size: 20px; }
-        .crn { font-weight: 600; font-size: 13px; color: #1e293b; }
-        .crp { font-size: 11px; color: #64748b; }
-        .sm2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
-        .sm { background: #fbf9ff; border-radius: 10px; padding: 12px; text-align: center; border: 1px solid #f1eef8; }
-        .sml { font-size: 11px; color: #64748b; }
-        .smv { font-size: 22px; font-weight: 800; color: #4f46e5; margin-top: 4px; }
-        .hmh { display: flex; justify-content: center; gap: 5px; margin-bottom: 6px; font-size: 10px; color: #64748b; font-weight: 700; }
-        .hmh span { width: 30px; text-align: center; }
-        .hmg { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; max-width: 300px; margin: 0 auto; }
-        .hc { aspect-ratio: 1; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; cursor: default; color: #9c99a6; background: #f3f0fa; transition: transform 0.15s; }
+        @keyframes wa { from { opacity: 0; transform: translateY(var(--ddd-spacing-2)); } to { opacity: 1; transform: translateY(0); } }
+        .smb { display: flex; align-items: center; gap: var(--ddd-spacing-2); margin-bottom: var(--ddd-spacing-3); flex-wrap: wrap; }
+        .sl { font-size: var(--ddd-font-size-xxs); color: var(--ddd-theme-default-limestoneGray); font-weight: var(--ddd-font-weight-bold); }
+        .g2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: var(--ddd-spacing-5); margin-bottom: var(--ddd-spacing-5); }
+        .gw { position: relative; width: var(--ddd-layout-size-s); height: var(--ddd-layout-size-s); margin: 0 auto; }
+        .gv { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: var(--ddd-font-size-xl); font-weight: var(--ddd-font-weight-black); color: var(--ddd-theme-default-coalyGray); }
+        .cll { display: flex; flex-direction: column; gap: var(--ddd-spacing-3); }
+        .cri { display: flex; align-items: center; justify-content: space-between; padding: var(--ddd-spacing-3) var(--ddd-spacing-4); background: var(--ddd-theme-default-shrineMaxLight); border-radius: var(--ddd-radius-s); border: var(--ddd-border-xs) solid var(--ddd-theme-default-shrineLight); }
+        .crl { display: flex; align-items: center; gap: var(--ddd-spacing-3); }
+        .cric { font-size: var(--ddd-font-size-l); }
+        .crn { font-weight: var(--ddd-font-weight-bold); font-size: var(--ddd-font-size-s); color: var(--ddd-theme-default-slateGray); }
+        .crp { font-size: var(--ddd-font-size-xxs); color: var(--ddd-theme-default-limestoneGray); }
+        .sm2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--ddd-spacing-3); margin-bottom: var(--ddd-spacing-4); }
+        .sm { background: var(--ddd-theme-default-shrineMaxLight); border-radius: var(--ddd-radius-s); padding: var(--ddd-spacing-3); text-align: center; border: var(--ddd-border-xs) solid var(--ddd-theme-default-shrineLight); }
+        .sml { font-size: var(--ddd-font-size-xxs); color: var(--ddd-theme-default-limestoneGray); }
+        .smv { font-size: var(--ddd-font-size-l); font-weight: var(--ddd-font-weight-black); color: var(--ddd-primary-13); margin-top: var(--ddd-spacing-1); }
+        .hmh { display: flex; justify-content: center; gap: var(--ddd-spacing-xxs); margin-bottom: var(--ddd-spacing-2); font-size: var(--ddd-font-size-xxs); color: var(--ddd-theme-default-limestoneGray); font-weight: var(--ddd-font-weight-black); }
+        .hmh span { width: var(--ddd-sizing-s-38); text-align: center; }
+        .hmg { display: grid; grid-template-columns: repeat(7, 1fr); gap: var(--ddd-spacing-0); max-width: var(--ddd-layout-size-3); margin: 0 auto; }
+        .hc { aspect-ratio: 1; border-radius: var(--ddd-radius-xs); display: flex; align-items: center; justify-content: center; font-size: var(--ddd-font-size-xxs); font-weight: var(--ddd-font-weight-black); cursor: default; color: var(--ddd-theme-default-slateLight); background: var(--ddd-theme-default-shrineLight); transition: transform 0.15s; }
         .hc:hover { transform: scale(1.2); }
-        .hc.l1 { background: #e3d9fc; color: #4f46e5; }
-        .hc.l2 { background: #c7b3fc; color: var(--ddd-theme-default-white); }
-        .hc.l3 { background: #9d7bfc; color: var(--ddd-theme-default-white); }
-        .hc.l4 { background: #4f46e5; color: var(--ddd-theme-default-white); }
-        .hml { display: flex; justify-content: center; align-items: center; gap: 4px; margin-top: 10px; font-size: 10px; color: #64748b; }
-        .lb { width: 12px; height: 12px; border-radius: 2px; }
-        .li { display: flex; gap: 8px; align-items: flex-start; padding: 6px 8px; border-radius: 6px; font-size: 11px; border-left: 3px solid #94a3b8; margin-bottom: 4px; background: #f8fafc; }
-        .li.reading { border-left-color: #4f46e5; }
-        .li.quiz { border-left-color: #ec4899; }
-        .li.download { border-left-color: #10b981; }
-        .li.discussion { border-left-color: #f59e0b; }
-        .lt { color: #94a3b8; min-width: 122px; }
-        .ld { flex: 1; color: #334155; }
-        .gg { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; margin-bottom: 20px; }
-        .gi { background: #fcfbfe; border: 1px solid #f1eef8; border-radius: 10px; padding: 14px; text-align: center; }
-        .gi.hl { background: #eef2ff; border-color: #c7d2fe; }
-        .gl { font-size: 10px; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
-        .gv { font-size: 22px; font-weight: 800; color: #0f172a; margin-top: 4px; }
-        .gv.br { color: #4f46e5; }
-        .gt { width: 100%; border-collapse: collapse; font-size: 13px; }
-        .gt th { background: #eef2ff; color: #312e81; font-weight: 700; padding: 10px; text-align: left; }
-        .gt td { padding: 10px; border-bottom: 1px solid #f1f5f9; color: #1e293b; }
-        .bld { font-weight: 700; }
-        .ef { background: #fcfbfe; border: 1px solid #f1eef8; border-radius: 10px; padding: 16px; margin-bottom: 16px; }
-        .et { width: 100%; min-height: 70px; padding: 10px; border: var(--ddd-border-xs); border-radius: var(--ddd-radius-sm); font-size: 13px; font-family: inherit; resize: vertical; margin-bottom: 12px; box-sizing: border-box; }
-        .et:focus { outline: none; border-color: #4f46e5; }
-        .ecr { display: flex; gap: 10px; align-items: center; margin-bottom: 8px; }
-        .ecr input { flex: 1; padding: 8px 10px; border: var(--ddd-border-xs); border-radius: var(--ddd-radius-sm); font-size: 13px; font-family: inherit; box-sizing: border-box; }
-        .ecr input:focus { outline: none; border-color: #4f46e5; }
-        .rl { font-size: 12px; color: #64748b; display: flex; align-items: center; gap: 4px; cursor: pointer; }
-        .ea { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
-        .qcrd { display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: #f8fafc; border: 1px solid #eef2f6; border-radius: 8px; margin-bottom: 6px; }
-        .qn { font-weight: 700; color: #4f46e5; min-width: 30px; }
-        .qa2 { display: flex; gap: 4px; }
-        .sg { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
-        .si label { display: block; font-size: 12px; color: #64748b; font-weight: 600; margin-bottom: 4px; }
-        .sin { width: 100%; padding: 8px 10px; border: var(--ddd-border-xs); border-radius: var(--ddd-radius-sm); font-size: 13px; font-family: inherit; box-sizing: border-box; }
-        .sin:focus { outline: none; border-color: #4f46e5; }
-        .ti { padding: 12px 16px; border-radius: var(--ddd-radius-sm); font-size: 13px; margin: 12px 0; background: #e3f2fd; border-left: 4px solid #2196f3; color: #1565c0; }
-        .ti.w { background: #fff3e0; border-left-color: #ff9800; color: #e65100; }
+        .hc.l1 { background: var(--ddd-theme-default-shrineLight); color: var(--ddd-primary-13); }
+        .hc.l2 { background: var(--ddd-primary-13); color: var(--ddd-theme-default-white); }
+        .hc.l3 { background: var(--ddd-primary-8); color: var(--ddd-theme-default-white); }
+        .hc.l4 { background: var(--ddd-primary-0); color: var(--ddd-primary-13); }
+        .hml { display: flex; justify-content: center; align-items: center; gap: var(--ddd-spacing-1); margin-top: var(--ddd-spacing-3); font-size: var(--ddd-font-size-xxs); color: var(--ddd-theme-default-limestoneGray); }
+        .lb { width: var(--ddd-sizing-s-30); height: var(--ddd-sizing-s-30); border-radius: var(--ddd-radius-xs); }
+        .li { display: flex; gap: var(--ddd-spacing-2); align-items: flex-start; padding: var(--ddd-spacing-1) var(--ddd-spacing-2); border-radius: var(--ddd-radius-xs); font-size: var(--ddd-font-size-xxs); border-left: 3px solid var(--ddd-theme-default-slateLight); margin-bottom: var(--ddd-spacing-0); background: var(--ddd-theme-default-shrineLight); }
+        .li.reading { border-left-color: var(--ddd-primary-13); }
+        .li.quiz { border-left-color: var(--ddd-primary-8); }
+        .li.download { border-left-color: var(--ddd-primary-0); }
+        .li.discussion { border-left-color: var(--ddd-primary-10); }
+        .lt { color: var(--ddd-theme-default-limestoneGray); min-width: var(--ddd-layout-size-s); }
+        .ld { flex: 1; color: var(--ddd-theme-default-slateGray); }
+        .gg { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: var(--ddd-spacing-3); margin-bottom: var(--ddd-spacing-5); }
+        .gi { background: var(--ddd-theme-default-shrineMaxLight); border: var(--ddd-border-xs) solid var(--ddd-theme-default-shrineLight); border-radius: var(--ddd-radius-s); padding: var(--ddd-spacing-4); text-align: center; }
+        .gi.hl { background: var(--ddd-theme-default-shrineMaxLight); border-color: var(--ddd-theme-default-shrineLight); }
+        .gl { font-size: var(--ddd-font-size-xxs); color: var(--ddd-theme-default-limestoneGray); text-transform: uppercase; letter-spacing: 0.5px; font-weight: var(--ddd-font-weight-black); }
+        .gv { font-size: var(--ddd-font-size-l); font-weight: var(--ddd-font-weight-black); color: var(--ddd-theme-default-coalyGray); margin-top: var(--ddd-spacing-1); }
+        .gv.br { color: var(--ddd-primary-13); }
+        .gt { width: 100%; border-collapse: collapse; font-size: var(--ddd-font-size-s); }
+        .gt th { background: var(--ddd-theme-default-shrineMaxLight); color: var(--ddd-primary-13); font-weight: var(--ddd-font-weight-black); padding: var(--ddd-spacing-2); text-align: left; }
+        .gt td { padding: var(--ddd-spacing-2); border-bottom: var(--ddd-border-xs) solid var(--ddd-theme-default-shrineLight); color: var(--ddd-theme-default-slateGray); }
+        .bld { font-weight: var(--ddd-font-weight-black); }
+        .ef { background: var(--ddd-theme-default-shrineMaxLight); border: var(--ddd-border-xs) solid var(--ddd-theme-default-shrineLight); border-radius: var(--ddd-radius-s); padding: var(--ddd-spacing-4); margin-bottom: var(--ddd-spacing-4); }
+        .et { width: 100%; min-height: var(--ddd-layout-size-s); padding: var(--ddd-spacing-2); border: var(--ddd-border-xs); border-radius: var(--ddd-radius-sm); font-size: var(--ddd-font-size-s); font-family: inherit; resize: vertical; margin-bottom: var(--ddd-spacing-3); box-sizing: border-box; }
+        .et:focus { outline: none; border-color: var(--ddd-primary-13); }
+        .ecr { display: flex; gap: var(--ddd-spacing-2); align-items: center; margin-bottom: var(--ddd-spacing-2); }
+        .ecr input { flex: 1; padding: var(--ddd-spacing-2) var(--ddd-spacing-3); border: var(--ddd-border-xs); border-radius: var(--ddd-radius-sm); font-size: var(--ddd-font-size-s); font-family: inherit; box-sizing: border-box; }
+        .ecr input:focus { outline: none; border-color: var(--ddd-primary-13); }
+        .rl { font-size: var(--ddd-font-size-xxs); color: var(--ddd-theme-default-limestoneGray); display: flex; align-items: center; gap: var(--ddd-spacing-1); cursor: pointer; }
+        .ea { display: flex; gap: var(--ddd-spacing-2); margin-top: var(--ddd-spacing-3); flex-wrap: wrap; }
+        .qcrd { display: flex; justify-content: space-between; align-items: center; padding: var(--ddd-spacing-3) var(--ddd-spacing-4); background: var(--ddd-theme-default-shrineLight); border: var(--ddd-border-xs) solid var(--ddd-theme-default-shrineLight); border-radius: var(--ddd-radius-xs); margin-bottom: var(--ddd-spacing-1); }
+        .qn { font-weight: var(--ddd-font-weight-black); color: var(--ddd-primary-13); min-width: var(--ddd-sizing-s-38); }
+        .qa2 { display: flex; gap: var(--ddd-spacing-1); }
+        .sg { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: var(--ddd-spacing-3); }
+        .si label { display: block; font-size: var(--ddd-font-size-xxs); color: var(--ddd-theme-default-limestoneGray); font-weight: var(--ddd-font-weight-bold); margin-bottom: var(--ddd-spacing-1); }
+        .sin { width: 100%; padding: var(--ddd-spacing-2) var(--ddd-spacing-3); border: var(--ddd-border-xs); border-radius: var(--ddd-radius-sm); font-size: var(--ddd-font-size-s); font-family: inherit; box-sizing: border-box; }
+        .sin:focus { outline: none; border-color: var(--ddd-primary-13); }
+        .ti { padding: var(--ddd-spacing-3) var(--ddd-spacing-4); border-radius: var(--ddd-radius-sm); font-size: var(--ddd-font-size-s); margin: var(--ddd-spacing-3) 0; background: var(--ddd-theme-default-shrineMaxLight); border-left: 4px solid var(--ddd-primary-8); color: var(--ddd-theme-default-slateGray); }
+        .ti.w { background: var(--ddd-theme-default-shrineMaxLight); border-left-color: var(--ddd-primary-10); color: var(--ddd-theme-default-slateGray); }
         .t {
           position: fixed;
           bottom: var(--ddd-spacing-6);
           right: var(--ddd-spacing-6);
-          background: var(--ddd-theme-default-text);
+          background: var(--ddd-theme-default-coalyGray);
           color: var(--ddd-theme-default-white);
           padding: var(--ddd-spacing-3) var(--ddd-spacing-5);
           border-radius: var(--ddd-radius-md);
-          font-size: var(--ddd-font-size-4xs);
+          font-size: var(--ddd-font-size-3xs);
           z-index: 9999;
           box-shadow: var(--ddd-boxShadow-sm);
         }
-        .srcbtn { background: #f8fafc; color: #334155; }
-        .srcbtn:hover { background: #eef2ff; }
+        .srcbtn { background: var(--ddd-theme-default-shrineLight); color: var(--ddd-theme-default-slateGray); }
+        .srcbtn:hover { background: var(--ddd-theme-default-shrineMaxLight); }
         @media (max-width: 600px) {
           .qa, .hmg { grid-template-columns: 1fr 1fr; }
           .qa { grid-template-columns: 1fr; }
@@ -928,58 +995,56 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
           .gg { grid-template-columns: repeat(3, 1fr); }
           .sg { grid-template-columns: 1fr 1fr; }
         }
-      `,C`
+      `,z`
         /* ===== DARK MODE (gated on body.dark-mode) ===== */
         :host-context(body.dark-mode) :host {
-          --dk-bg: #0b1020;
-          --dk-card: #111827;
-          --dk-soft: #1f2937;
-          --dk-softer: #182032;
-          --dk-border: #2a3245;
-          --dk-text: #e5e7eb;
-          --dk-text-soft: #94a3b8;
-          --dk-text-strong: #f8fafc;
+          --dk-bg: var(--ddd-theme-pughBlue);
+          --dk-card: var(--ddd-theme-default-slateGray);
+          --dk-soft: var(--ddd-theme-default-coalyGray);
+          --dk-softer: var(--ddd-theme-default-slateLight);
+          --dk-border: var(--ddd-theme-default-limestoneGray);
+          --dk-text: var(--ddd-theme-default-white85);
+          --dk-text-soft: var(--ddd-theme-default-limestoneGray);
+          --dk-text-strong: var(--ddd-theme-default-white);
           --ddd-theme-background: var(--dk-bg);
           --ddd-theme-color: var(--dk-text);
           --ddd-theme-surface: var(--dk-card);
           background: var(--dk-bg);
           color: var(--dk-text);
         }
-        :host-context(body.dark-mode) .hd { background: linear-gradient(135deg, #1e1b4b 0%, #312e81 55%, #4c1d95 100%); color: #f8fafc; }
-        :host-context(body.dark-mode) .hd h1 { color: #f8fafc; }
-        :host-context(body.dark-mode) .hd p { color: #c7d2fe; }
+        :host-context(body.dark-mode) .hd { background: linear-gradient(135deg, var(--ddd-primary-13) 0%, var(--ddd-primary-13) 55%, var(--ddd-primary-0) 100%); }
         :host-context(body.dark-mode) .b { background: var(--dk-soft); color: var(--dk-text); }
-        :host-context(body.dark-mode) .b.g { background: #064e3b; color: #6ee7b7; }
-        :host-context(body.dark-mode) .b.o { background: #78350f; color: #fcd34d; }
+        :host-context(body.dark-mode) .b.g { background: var(--ddd-theme-default-success); color: var(--ddd-theme-default-white); }
+        :host-context(body.dark-mode) .b.o { background: var(--ddd-primary-10); color: var(--ddd-theme-default-white); }
         :host-context(body.dark-mode) .tb { background: var(--dk-card); border-bottom-color: var(--dk-border); }
         :host-context(body.dark-mode) .tbb { color: var(--dk-text-soft); }
-        :host-context(body.dark-mode) .tbb:hover { color: #c4b5fd; background: #1e1b4b; }
-        :host-context(body.dark-mode) .tbb.a { color: #c4b5fd; border-bottom-color: #818cf8; }
+        :host-context(body.dark-mode) .tbb:hover { color: var(--dk-text-strong); background: var(--dk-soft); }
+        :host-context(body.dark-mode) .tbb.a { color: var(--dk-text-strong); border-bottom-color: var(--dk-text-strong); }
         :host-context(body.dark-mode) .c { background: var(--dk-card); color: var(--dk-text); border-color: var(--dk-border); }
-        :host-context(body.dark-mode) .c h2 { color: #c4b5fd; }
+        :host-context(body.dark-mode) .c h2 { color: var(--dk-text-strong); }
         :host-context(body.dark-mode) .c h3 { color: var(--dk-text-strong); }
-        :host-context(body.dark-mode) .bp.p { background: #4f46e5; color: #f8fafc; }
-        :host-context(body.dark-mode) .bp.p:hover { background: #6366f1; }
-        :host-context(body.dark-mode) .bp.s { background: transparent; color: #c4b5fd; border-color: #818cf8; }
-        :host-context(body.dark-mode) .bp.s:hover { background: #1e1b4b; }
+        :host-context(body.dark-mode) .bp.p { background: var(--ddd-primary-13); color: var(--dk-text-strong); }
+        :host-context(body.dark-mode) .bp.p:hover { background: var(--ddd-primary-8); }
+        :host-context(body.dark-mode) .bp.s { background: transparent; color: var(--dk-text-strong); border-color: var(--dk-text-strong); }
+        :host-context(body.dark-mode) .bp.s:hover { background: var(--dk-soft); }
         :host-context(body.dark-mode) .bs { background: var(--dk-soft); color: var(--dk-text); border-color: var(--dk-border); }
-        :host-context(body.dark-mode) .bs:hover { background: #1e1b4b; }
-        :host-context(body.dark-mode) .bs.dg { color: #fca5a5; border-color: #7f1d1d; }
-        :host-context(body.dark-mode) .bs.dg:hover { background: #7f1d1d; }
+        :host-context(body.dark-mode) .bs:hover { background: var(--dk-soft); }
+        :host-context(body.dark-mode) .bs.dg { color: var(--ddd-theme-default-error); border-color: var(--ddd-theme-default-errorLight); }
+        :host-context(body.dark-mode) .bs.dg:hover { background: var(--ddd-theme-default-errorLight); }
         :host-context(body.dark-mode) .srcbtn { background: var(--dk-soft); color: var(--dk-text); }
-        :host-context(body.dark-mode) .srcbtn:hover { background: #1e1b4b; }
+        :host-context(body.dark-mode) .srcbtn:hover { background: var(--dk-soft); }
         :host-context(body.dark-mode) .qh,
-        :host-context(body.dark-mode) .rc .rm { color: #c4b5fd; }
+        :host-context(body.dark-mode) .rc .rm { color: var(--dk-text-strong); }
         :host-context(body.dark-mode) .qq,
         :host-context(body.dark-mode) .gv,
         :host-context(body.dark-mode) .smv,
-        :host-context(body.dark-mode) .qn { color: #f8fafc; }
+        :host-context(body.dark-mode) .qn { color: var(--dk-text-strong); }
         :host-context(body.dark-mode) .qab { background: var(--dk-soft); color: var(--dk-text); border-color: var(--dk-border); }
-        :host-context(body.dark-mode) .qab:hover:not(:disabled) { border-color: #818cf8; background: #1e1b4b; }
-        :host-context(body.dark-mode) .qab.cc { border-color: #22c55e; background: #064e3b; color: #6ee7b7; }
-        :host-context(body.dark-mode) .qab.cw { border-color: #ef4444; background: #7f1d1d; color: #fca5a5; }
-        :host-context(body.dark-mode) .qf.p { background: #064e3b; color: #6ee7b7; }
-        :host-context(body.dark-mode) .qf.n { background: #7f1d1d; color: #fca5a5; }
+        :host-context(body.dark-mode) .qab:hover:not(:disabled) { border-color: var(--dk-text-strong); background: var(--dk-soft); }
+        :host-context(body.dark-mode) .qab.cc { border-color: var(--ddd-theme-default-success); background: var(--ddd-theme-default-success); color: var(--ddd-theme-default-white); }
+        :host-context(body.dark-mode) .qab.cw { border-color: var(--ddd-theme-default-error); background: var(--ddd-theme-default-error); color: var(--dk-text-strong); }
+        :host-context(body.dark-mode) .qf.p { background: var(--ddd-theme-default-success); color: var(--ddd-theme-default-white); }
+        :host-context(body.dark-mode) .qf.n { background: var(--ddd-theme-default-error); color: var(--dk-text-strong); }
         :host-context(body.dark-mode) .sl,
         :host-context(body.dark-mode) .crp,
         :host-context(body.dark-mode) .sml,
@@ -988,19 +1053,19 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
         :host-context(body.dark-mode) .cri { background: var(--dk-softer); border-color: var(--dk-border); }
         :host-context(body.dark-mode) .crn { color: var(--dk-text-strong); }
         :host-context(body.dark-mode) .sm { background: var(--dk-softer); border-color: var(--dk-border); }
-        :host-context(body.dark-mode) .hc { background: #1e1b4b; color: #9ca3af; }
-        :host-context(body.dark-mode) .hc.l1 { background: #312e81; color: #c7d2fe; }
-        :host-context(body.dark-mode) .hc.l2 { background: #4338ca; color: #f8fafc; }
-        :host-context(body.dark-mode) .hc.l3 { background: #6366f1; color: #f8fafc; }
-        :host-context(body.dark-mode) .hc.l4 { background: #818cf8; color: #1e1b4b; }
-        :host-context(body.dark-mode) .li { background: var(--dk-soft); border-left-color: #94a3b8; }
-        :host-context(body.dark-mode) .li.reading { border-left-color: #818cf8; }
+        :host-context(body.dark-mode) .hc { background: var(--dk-soft); color: var(--dk-text-soft); }
+        :host-context(body.dark-mode) .hc.l1 { background: var(--ddd-primary-13); color: var(--dk-text-strong); }
+        :host-context(body.dark-mode) .hc.l2 { background: var(--ddd-primary-13); color: var(--dk-text-strong); }
+        :host-context(body.dark-mode) .hc.l3 { background: var(--ddd-primary-0); color: var(--dk-text-strong); }
+        :host-context(body.dark-mode) .hc.l4 { background: var(--ddd-primary-8); color: var(--dk-soft); }
+        :host-context(body.dark-mode) .li { background: var(--dk-soft); border-left-color: var(--dk-border); }
+        :host-context(body.dark-mode) .li.reading { border-left-color: var(--dk-text-strong); }
         :host-context(body.dark-mode) .lt { color: var(--dk-text-soft); }
         :host-context(body.dark-mode) .ld { color: var(--dk-text); }
         :host-context(body.dark-mode) .gi { background: var(--dk-softer); border-color: var(--dk-border); }
-        :host-context(body.dark-mode) .gi.hl { background: #1e1b4b; }
+        :host-context(body.dark-mode) .gi.hl { background: var(--dk-soft); }
         :host-context(body.dark-mode) .gl { color: var(--dk-text-soft); }
-        :host-context(body.dark-mode) .gv.br { color: #c4b5fd; }
+        :host-context(body.dark-mode) .gv.br { color: var(--dk-text-strong); }
         :host-context(body.dark-mode) .gt { background: var(--dk-card); color: var(--dk-text); }
         :host-context(body.dark-mode) .gt th { background: var(--dk-soft); color: var(--dk-text-strong); border-bottom-color: var(--dk-border); }
         :host-context(body.dark-mode) .gt td { border-bottom-color: var(--dk-border); }
@@ -1010,17 +1075,17 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
         :host-context(body.dark-mode) .ecr input,
         :host-context(body.dark-mode) .sin { background: var(--dk-soft); color: var(--dk-text); border-color: var(--dk-border); }
         :host-context(body.dark-mode) .rl { color: var(--dk-text-soft); }
-        :host-context(body.dark-mode) .ti { background: #1e3a8a; border-left-color: #3b82f6; color: #bfdbfe; }
-        :host-context(body.dark-mode) .ti.w { background: #78350f; border-left-color: #f59e0b; color: #fde68a; }
-        :host-context(body.dark-mode) .t { background: #1e1b4b; color: #c7b5fd; border-color: #4338ca; }
-        /* Inline-style override: text colored #64748b in template */
-        :host-context(body.dark-mode) p[style*="color:#64748b"],
-        :host-context(body.dark-mode) div[style*="color:#64748b"] { color: var(--dk-text-soft) !important; }
-      `]}render(){const t=[["kuis","\u{1F4DD} Kuis"],["kehadiran","\u{1F4CA} Kehadiran"],["nilai","\u{1F4D6} Nilai"],["soal","\u2699\uFE0F Soal"],["atur","\u{1F527} Atur"]];return d`
+        :host-context(body.dark-mode) .ti { background: var(--dk-soft); border-left-color: var(--ddd-primary-8); color: var(--dk-text); }
+        :host-context(body.dark-mode) .ti.w { background: var(--dk-soft); border-left-color: var(--ddd-primary-10); color: var(--dk-text); }
+        :host-context(body.dark-mode) .t { background: var(--dk-soft); color: var(--dk-text-strong); border-color: var(--ddd-primary-13); }
+        /* Inline-style override: muted text in template */
+        :host-context(body.dark-mode) p[style*="color:var(--ddd-theme-default-limestoneGray)"],
+        :host-context(body.dark-mode) div[style*="color:var(--ddd-theme-default-limestoneGray)"] { color: var(--dk-text-soft) !important; }
+      `]}render(){const t=[["kuis","\u{1F4DD} Kuis"],["kehadiran","\u{1F4CA} Kehadiran"],["nilai","\u{1F4D6} Nilai"],["soal","\u2699\uFE0F Soal"],["atur","\u{1F527} Atur"]];return o`
       <div class="hd">
         <div>
-          <h1><span>🎯</span> Dashboard Pembelajaran</h1>
-          <p>Kuis + Kehadiran + Nilai</p>
+          <h1><span>📚</span> Ruang Pertemuan — <span style="font-weight:400;">${this.kdMateri||"Pertemuan"}</span></h1>
+          <p>Evaluasi per Pertemuan — Kuis + Kehadiran + Nilai</p>
         </div>
         <div class="hdr">
           <span class="b ${this._connected?"g":"o"}">${this._connected?"Online":"Luring"}</span>
@@ -1031,27 +1096,27 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
         </div>
       </div>
 
-      <div class="tb" role="tablist" aria-label="Bagian dashboard pembelajaran">
-        ${t.map(([e,a])=>d`
+       <div class="tb" role="tablist" aria-label="Bagian ruang pertemuan">
+        ${t.map(([e,a])=>o`
             <button class="tbb ${this._tab===e?"a":""}" role="tab"
               aria-selected=${this._tab===e} @click=${()=>this._tab=e}>${a}</button>
           `)}
       </div>
 
-      ${this._toast?d`<div class="t">${this._toast}</div>`:""}
+      ${this._toast?o`<div class="t">${this._toast}</div>`:""}
 
       ${this._tab==="kuis"?this._renderQuiz():""}
       ${this._tab==="kehadiran"?this._renderKehadiran():""}
       ${this._tab==="nilai"?this._renderNilai():""}
       ${this._tab==="soal"?this._renderSoal():""}
       ${this._tab==="atur"?this._renderAtur():""}
-    `}_renderQuiz(){if(this._quizScreen==="start")return d`
+    `}_renderQuiz(){if(this._quizScreen==="start")return o`
         <div class="c qb">
           <h2>📝 Kuis Interaktif</h2>
-          <p style="color:#64748b; margin-bottom:16px;">Selesaikan kuis secara mandiri. Skor terbaik masuk ke kalkulasi Nilai & sinkron ke antrean database V5.</p>
+          <p style="color:var(--ddd-theme-default-limestoneGray); margin-bottom:var(--ddd-spacing-4);">Selesaikan kuis secara mandiri. Skor terbaik masuk ke kalkulasi Nilai & sinkron ke antrean database V5.</p>
           <button class="bp p fw" @click=${this._mulaiQuiz}>Mulai Kuis (${this.questions.length} soal)</button>
         </div>
-      `;if(this._quizScreen==="question"){const a=this.questions[this._quizIdx];return a?d`
+      `;if(this._quizScreen==="question"){const a=this.questions[this._quizIdx];return a?o`
         <div class="c qb">
           <div class="qh">
             <span>Soal ${this._quizIdx+1}/${this.questions.length}</span>
@@ -1059,21 +1124,21 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
           </div>
           <div class="qq">${a.question}</div>
           <div class="qa">
-            ${a.choices.map((i,s)=>{let r="qab";return this._quizAnswered&&(s===a.correctIndex?r+=" cc":s===this._quizSel&&(r+=" cw")),d`
-                <button class=${r} ?disabled=${this._quizAnswered}
-                  @click=${()=>this._pilihQuiz(s)}>${i}</button>
+            ${a.choices.map((i,r)=>{let s="qab";return this._quizAnswered&&(r===a.correctIndex?s+=" cc":r===this._quizSel&&(s+=" cw")),o`
+                <button class=${s} ?disabled=${this._quizAnswered}
+                  @click=${()=>this._pilihQuiz(r)}>${i}</button>
               `})}
           </div>
-          ${this._quizFb?d`<div class="qf ${this._quizFbPos?"p":"n"}">${this._quizFb}</div>`:""}
+          ${this._quizFb?o`<div class="qf ${this._quizFbPos?"p":"n"}">${this._quizFb}</div>`:""}
         </div>
-      `:d`<div class="c">Soal tidak valid.</div>`}const t=Math.round(this._quizScore/this.questions.length*100);let e="Jangan Menyerah! Coba Lagi!";return t>=80?e="Luar Biasa! \u{1F389}":t>=50&&(e="Bagus! \u{1F4AA}"),d`
+      `:o`<div class="c">Soal tidak valid.</div>`}const t=Math.round(this._quizScore/this.questions.length*100);let e="Jangan Menyerah! Coba Lagi!";return t>=80?e="Luar Biasa! \u{1F389}":t>=50&&(e="Bagus! \u{1F4AA}"),o`
       <div class="c qb rc">
         <h2>🎊 Hasil Kuis</h2>
         <div class="rp">${t}%</div>
         <p class="rm">${e} — ${this._quizScore}/${this.questions.length} benar</p>
         <button class="bp p fw" @click=${this._resetQuiz}>Mulai Ulang</button>
       </div>
-    `}_cri(t,e,a,i,s){return d`
+    `}_cri(t,e,a,i,r){return o`
       <div class="cri">
         <div class="crl">
           <span class="cric">${t}</span>
@@ -1082,12 +1147,12 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
             <div class="crp">${a} dari ${i}</div>
           </div>
         </div>
-        <span aria-label=${s?"Tercapai":"Belum tercapai"}>${s?"\u2705":"\u23F3"}</span>
+        <span aria-label=${r?"Tercapai":"Belum tercapai"}>${r?"\u2705":"\u23F3"}</span>
       </div>
-    `}_renderKehadiran(){const t=this._weekly(),e=this._streak(),a=this._heatmap(),i=this._logs||[],s=this.thresholds,r=64,n=2*Math.PI*r,c=n-t.pct/100*n,h=["Sen","Sel","Rab","Kam","Jum","Sab","Min"];return d`
+    `}_renderKehadiran(){const t=this._weekly(),e=this._streak(),a=this._heatmap(),i=this._logs||[],r=this.thresholds,s=64,d=2*Math.PI*s,l=d-t.pct/100*d,p=["Sen","Sel","Rab","Kam","Jum","Sab","Min"];return o`
       <div class="c">
         <h2>📊 Pelacakan Aktivitas</h2>
-        <p style="font-size:13px; color:#64748b; margin-bottom:4px;">
+        <p style="font-size:var(--ddd-font-size-s); color:var(--ddd-theme-default-limestoneGray); margin-bottom:var(--ddd-spacing-1);">
           Total: <strong>${i.length}</strong> | Streak: <strong>🔥 ${e} hari</strong>
         </p>
         <div class="smb">
@@ -1105,19 +1170,19 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
           <h3>📅 Kehadiran Pekan Ini</h3>
           <div class="gw">
             <svg width="150" height="150" viewBox="0 0 150 150" style="transform:rotate(-90deg)" role="img" aria-label="Kehadiran pekan ini ${t.pct} persen">
-              <circle fill="none" stroke="#f3f0fa" stroke-width="12" cx="75" cy="75" r="${r}" />
-              <circle fill="none" stroke="#4f46e5" stroke-width="12" stroke-linecap="round" cx="75" cy="75" r="${r}" stroke-dasharray="${n}" stroke-dashoffset="${c}" />
+              <circle fill="none" stroke="var(--ddd-theme-default-shrineLight)" stroke-width="12" cx="75" cy="75" r="${s}" />
+              <circle fill="none" stroke="var(--ddd-primary-13)" stroke-width="12" stroke-linecap="round" cx="75" cy="75" r="${s}" stroke-dasharray="${d}" stroke-dashoffset="${l}" />
             </svg>
             <div class="gv">${t.pct}%</div>
           </div>
           <div style="text-align:center;">
             <span class="b ${t.pct>=75?"g":"o"}">${t.status}</span>
           </div>
-          <div class="cll" style="margin-top:16px;">
-            ${this._cri("\u{1F4D6}","Membaca Modul",t.counts.reading,s.minReading,t.goals.reading)}
-            ${this._cri("\u{1F4DD}","Kuis Selesai",t.counts.quiz,s.minQuiz,t.goals.quiz)}
-            ${this._cri("\u{1F4AC}","Forum & Diskusi",t.counts.discussion,s.minDiscussion,t.goals.discussion)}
-            ${this._cri("\u{1F4C8}","Total Aktivitas",t.counts.total,s.minWeeklyActivities,t.goals.total)}
+          <div class="cll" style="margin-top:var(--ddd-spacing-4);">
+            ${this._cri("\u{1F4D6}","Membaca Modul",t.counts.reading,r.minReading,t.goals.reading)}
+            ${this._cri("\u{1F4DD}","Kuis Selesai",t.counts.quiz,r.minQuiz,t.goals.quiz)}
+            ${this._cri("\u{1F4AC}","Forum & Diskusi",t.counts.discussion,r.minDiscussion,t.goals.discussion)}
+            ${this._cri("\u{1F4C8}","Total Aktivitas",t.counts.total,r.minWeeklyActivities,t.goals.total)}
           </div>
         </div>
 
@@ -1127,38 +1192,38 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
             <div class="sm"><div class="sml">Total</div><div class="smv">${i.length}</div></div>
             <div class="sm"><div class="sml">Streak</div><div class="smv">🔥 ${e} hari</div></div>
           </div>
-          <div style="font-size:12px;font-weight:700;color:#64748b;text-align:center;margin:16px 0 8px;">
+          <div style="font-size:var(--ddd-font-size-xxs);font-weight:var(--ddd-font-weight-black);color:var(--ddd-theme-default-limestoneGray);text-align:center;margin:var(--ddd-spacing-4) 0 var(--ddd-spacing-2);">
             Peta Aktivitas 28 Hari
           </div>
           <div class="hmh">
-            ${h.map(p=>d`<span>${p}</span>`)}
+            ${p.map(u=>o`<span>${u}</span>`)}
           </div>
           <div class="hmg">
-            ${a.map(p=>{let f="";return p.count>0&&p.count<=2?f="l1":p.count>2&&p.count<=4?f="l2":p.count>4&&p.count<=7?f="l3":p.count>7&&(f="l4"),d`
-                  <div class="hc ${f}" title="${p.date.toLocaleDateString("id-ID")}: ${p.count}">${p.count||""}</div>
+            ${a.map(u=>{let m="";return u.count>0&&u.count<=2?m="l1":u.count>2&&u.count<=4?m="l2":u.count>4&&u.count<=7?m="l3":u.count>7&&(m="l4"),o`
+                  <div class="hc ${m}" title="${u.date.toLocaleDateString("id-ID")}: ${u.count}">${u.count||""}</div>
                 `})}
           </div>
           <div class="hml">
             <span>Sedikit</span>
-            <div class="lb" style="background:#f3f0fa"></div>
-            <div class="lb" style="background:#e3d9fc"></div>
-            <div class="lb" style="background:#c7b3fc"></div>
-            <div class="lb" style="background:#9d7bfc"></div>
-            <div class="lb" style="background:#4f46e5"></div>
+            <div class="lb" style="background:var(--ddd-theme-default-shrineLight);"></div>
+            <div class="lb" style="background:var(--ddd-theme-default-shrineMaxLight);"></div>
+            <div class="lb" style="background:var(--ddd-primary-13);"></div>
+            <div class="lb" style="background:var(--ddd-primary-8);"></div>
+            <div class="lb" style="background:var(--ddd-primary-0);"></div>
             <span>Banyak</span>
           </div>
-          <div style="margin-top:16px; max-height:210px; overflow-y:auto;">
-            <div style="font-size:12px; font-weight:700; color:#64748b; margin-bottom:8px;">Log Terbaru:</div>
-            ${i.length===0?d`<div class="ti" style="margin:0;">Belum ada aktivitas tercatat. Gunakan tombol simulasi di atas atau kerjakan kuis/materi.</div>`:i.slice(0,5).map(p=>d`
-                    <div class="li ${p.type}">
-                      <span class="lt">${new Date(p.timestamp).toLocaleString("id-ID")}</span>
-                      <span class="ld">${p.description}</span>
+          <div style="margin-top:var(--ddd-spacing-4); max-height:var(--ddd-layout-size-xl); overflow-y:auto;">
+            <div style="font-size:var(--ddd-font-size-xxs); font-weight:var(--ddd-font-weight-black); color:var(--ddd-theme-default-limestoneGray); margin-bottom:var(--ddd-spacing-2);">Log Terbaru:</div>
+            ${i.length===0?o`<div class="ti" style="margin:0;">Belum ada aktivitas tercatat. Gunakan tombol simulasi di atas atau kerjakan kuis/materi.</div>`:i.slice(0,5).map(u=>o`
+                    <div class="li ${u.type}">
+                      <span class="lt">${new Date(u.timestamp).toLocaleString("id-ID")}</span>
+                      <span class="ld">${u.description}</span>
                     </div>
                   `)}
           </div>
         </div>
       </div>
-    `}_renderNilai(){const t=this._grade(),e=this.grades;return e.attendanceWeight+e.quizWeight+e.utsWeight+e.uasWeight,d`
+    `}_renderNilai(){const t=this._grade(),e=this.grades;return e.attendanceWeight+e.quizWeight+e.utsWeight+e.uasWeight,o`
       <div class="c">
         <h2>📖 Transparansi Nilai</h2>
         <div class="gg">
@@ -1185,7 +1250,7 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
         </table>
         <div class="ti">🧮 Bobot & nilai UTS/UAS bisa diubah di tab <strong>Atur</strong> (opsi dosen).</div>
       </div>
-    `}_renderSoal(){const t=this._edit;return d`
+    `}_renderSoal(){const t=this._edit;return o`
       <div class="c">
         <h2>⚙️ Edit Soal (${this.questions.length})</h2>
         <div class="ef">
@@ -1193,7 +1258,7 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
           <textarea class="et" placeholder="Pertanyaan..." .value=${t.q||""}
             @input=${e=>this._edit={...this._edit,q:e.target.value}}></textarea>
           <div>
-            ${[0,1,2,3].map(e=>d`
+            ${[0,1,2,3].map(e=>o`
                 <div class="ecr">
                   <input placeholder="Pilihan ${e+1}" .value=${t["c"+e]||""}
                     @input=${a=>this._edit={...this._edit,["c"+e]:a.target.value}}>
@@ -1205,16 +1270,16 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
                 </div>
               `)}
           </div>
-          ${this._editIdx>=0?d`
+          ${this._editIdx>=0?o`
                 <div class="ea">
                   <button class="bp p" @click=${this._simpanSoal}>Simpan</button>
                   <button class="bp s" @click=${()=>{this._editIdx=-1,this._edit={q:"",c0:"",c1:"",c2:"",c3:"",correct:"0"},this.requestUpdate()}}>Batal</button>
                 </div>
-              `:d`<button class="bp p fw" @click=${this._tambahSoal}>Tambah Soal</button>`}
+              `:o`<button class="bp p fw" @click=${this._tambahSoal}>Tambah Soal</button>`}
         </div>
         <div style="margin-top:20px;">
           <h3>Daftar Soal</h3>
-          ${this.questions.map((e,a)=>d`
+          ${this.questions.map((e,a)=>o`
               <div class="qcrd">
                 <div class="qn">#${a+1}</div>
                 <div style="flex:1;">${e.question}</div>
@@ -1226,32 +1291,32 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
             `)}
         </div>
       </div>
-    `}_renderAtur(){const t=this.thresholds,e=this.grades,a=e.attendanceWeight+e.quizWeight+e.utsWeight+e.uasWeight,i=[{l:"Total Aktivitas",k:"minWeeklyActivities",v:t.minWeeklyActivities},{l:"Membaca",k:"minReading",v:t.minReading},{l:"Kuis",k:"minQuiz",v:t.minQuiz},{l:"Diskusi",k:"minDiscussion",v:t.minDiscussion}],s=[{l:"Nilai UTS",k:"uts",v:e.uts},{l:"Nilai UAS",k:"uas",v:e.uas},{l:"Bobot Kehadiran (%)",k:"attendanceWeight",v:e.attendanceWeight},{l:"Bobot Kuis (%)",k:"quizWeight",v:e.quizWeight},{l:"Bobot UTS (%)",k:"utsWeight",v:e.utsWeight},{l:"Bobot UAS (%)",k:"uasWeight",v:e.uasWeight}];return d`
+    `}_renderAtur(){const t=this.thresholds,e=this.grades,a=e.attendanceWeight+e.quizWeight+e.utsWeight+e.uasWeight,i=[{l:"Total Aktivitas",k:"minWeeklyActivities",v:t.minWeeklyActivities},{l:"Membaca",k:"minReading",v:t.minReading},{l:"Kuis",k:"minQuiz",v:t.minQuiz},{l:"Diskusi",k:"minDiscussion",v:t.minDiscussion}],r=[{l:"Nilai UTS",k:"uts",v:e.uts},{l:"Nilai UAS",k:"uas",v:e.uas},{l:"Bobot Kehadiran (%)",k:"attendanceWeight",v:e.attendanceWeight},{l:"Bobot Kuis (%)",k:"quizWeight",v:e.quizWeight},{l:"Bobot UTS (%)",k:"utsWeight",v:e.utsWeight},{l:"Bobot UAS (%)",k:"uasWeight",v:e.uasWeight}];return o`
       <div class="c">
         <h2>🔧 Pengaturan</h2>
-        <h3 style="margin-top:16px;">Threshold Kehadiran</h3>
+        <h3 style="margin-top:var(--ddd-spacing-4);">Threshold Kehadiran</h3>
         <div class="sg">
-          ${i.map(r=>d`
+          ${i.map(s=>o`
               <div class="si">
-                <label for="th-${r.k}">${r.l}</label>
-                <input id="th-${r.k}" class="sin" type="number" .value=${r.v}
-                  @change=${n=>this._updThreshold(r.k,n.target.value)}>
+                <label for="th-${s.k}">${s.l}</label>
+                <input id="th-${s.k}" class="sin" type="number" .value=${s.v}
+                  @change=${d=>this._updThreshold(s.k,d.target.value)}>
               </div>
             `)}
         </div>
-        <h3 style="margin-top:20px;">Bobot Nilai</h3>
+        <h3 style="margin-top:var(--ddd-spacing-5);">Bobot Nilai</h3>
         <div class="sg">
-          ${s.map(r=>d`
+          ${r.map(s=>o`
               <div class="si">
-                <label for="gr-${r.k}">${r.l}</label>
-                <input id="gr-${r.k}" class="sin" type="number" .value=${r.v}
-                  @change=${n=>this._updGrade(r.k,n.target.value)}>
+                <label for="gr-${s.k}">${s.l}</label>
+                <input id="gr-${s.k}" class="sin" type="number" .value=${s.v}
+                  @change=${d=>this._updGrade(s.k,d.target.value)}>
               </div>
             `)}
         </div>
         <div class="ti w">⚠️ Total bobot: ${a}% (sebaiknya 100%)</div>
       </div>
-    `}};G(B,"LOGS_KEY","a3_attendance_activity_logs"),G(B,"THRESHOLD_KEY","a3_attendance_threshold_config"),G(B,"GRADES_KEY","a3_attendance_grades_config"),G(B,"QUESTIONS_KEY","quiz_custom_questions"),G(B,"DEFAULT_QUESTIONS",[{question:"Apa ibu kota Indonesia?",choices:["Bandung","Surabaya","Jakarta","Medan"],correctIndex:2},{question:"Berapa hasil dari 7 \xD7 8?",choices:["54","56","58","60"],correctIndex:1},{question:"Planet terdekat dengan Matahari?",choices:["Venus","Bumi","Mars","Merkurius"],correctIndex:3},{question:"Siapa presiden pertama Indonesia?",choices:["Soeharto","Soekarno","Habibie","Megawati"],correctIndex:1},{question:"Berapa jumlah provinsi di Indonesia?",choices:["32","34","36","38"],correctIndex:2}]),G(B,"DEFAULT_THRESHOLDS",{minWeeklyActivities:5,minReading:2,minQuiz:1,minDiscussion:1}),G(B,"DEFAULT_GRADES",{uts:85,uas:88,attendanceWeight:50,quizWeight:30,utsWeight:25,uasWeight:25});let te=B;customElements.define(te.tag,te);class et extends R(F(U)){static get tag(){return"ruang-diskusi"}static get properties(){return{...super.properties,appsScriptUrl:{type:String,attribute:"apps-script-url",reflect:!0},forumApiUrl:{type:String,attribute:"forum-api-url",reflect:!0},sheetName:{type:String,attribute:"sheet-name",reflect:!0},studentId:{type:String,attribute:"student-id",reflect:!0},studentName:{type:String,attribute:"student-name",reflect:!0},studentNis:{type:String,attribute:"student-nis",reflect:!0},studentAbsen:{type:String,attribute:"student-absen",reflect:!0},studentKelas:{type:String,attribute:"student-kelas",reflect:!0},forumTopic:{type:String,attribute:"forum-topic",reflect:!0},viewMode:{type:String,attribute:"view-mode",reflect:!0},anchorId:{type:String,attribute:"anchor-id",reflect:!0},hideDelete:{type:Boolean,attribute:"hide-delete",reflect:!0},_comments:{state:!0},_activeReplyId:{state:!0},_sortMode:{state:!0},_submitting:{state:!0},_loadingComments:{state:!0},_toastMsg:{state:!0}}}static get haxProperties(){return{canScale:!1,canPosition:!0,canEditSource:!1,gizmo:{title:"Ruang Diskusi",description:"Halaman ruang diskusi bertingkat terpisah (adaptasi forum-component)",icon:"icons:forum",color:"purple",tags:["Education","Forum"]},settings:{configure:[{property:"appsScriptUrl",title:"Apps Script URL (Activity)",inputMethod:"textfield"},{property:"forumApiUrl",title:"Forum API URL",inputMethod:"textfield"},{property:"sheetName",title:"Nama Sheet / Pertemuan",inputMethod:"textfield",default:"Pertemuan"},{property:"forumTopic",title:"Topik Forum",inputMethod:"textfield",default:"Ruang Diskusi"},{property:"viewMode",title:"Mode Tampilan",inputMethod:"select",options:{student:"Siswa",lecturer:"Dosen"},default:"student"},{property:"hideDelete",title:"Sembunyikan Hapus",inputMethod:"boolean"}],advanced:[],developer:[]},saveOptions:{unsetAttributes:[]}}}constructor(){super(),this.appsScriptUrl="",this.forumApiUrl="",this.sheetName="Pertemuan",this.studentId="",this.studentName="",this.studentNis="",this.studentAbsen="",this.studentKelas="",this.forumTopic="Ruang Diskusi",this.viewMode="student",this.anchorId="ruang-diskusi",this.hideDelete=!1,this._comments=[],this._activeReplyId=null,this._sortMode="best",this._submitting=!1,this._loadingComments=!1,this._toastMsg="",this.t={...this.t,forumTitle:"Ruang Diskusi",postComment:"Kirim Komentar",posting:"Mengirim...",reply:"Balas",deleteBtn:"Hapus",noComments:"Belum ada komentar. Mulai diskusi!",sortBest:"Terbaik",sortNewest:"Terbaru",sortOldest:"Terlama",placeholderComment:"Tulis komentar...",placeholderReply:"Tulis balasan...",confirmDelete:"Hapus komentar ini?",activityForum:"Aktivitas forum tercatat",justNow:"Baru saja",minutesAgo:"menit lalu",hoursAgo:"jam lalu",daysAgo:"hari lalu",loginHint:"Login dulu untuk ikut berdiskusi atas nama Anda."}}get kdMateri(){return this.sheetName||"Pertemuan"}_commentAuthorName(){const t=(this.studentName||"").trim();if(!t)return"Siswa";const e=(this.studentKelas||"").trim();return e?`${t} (${e})`:t}connectedCallback(){if(super.connectedCallback(),globalThis.HaxStore&&typeof globalThis.HaxStore.requestAvailability=="function"){const t=globalThis.HaxStore.requestAvailability();t&&!t.elementList[et.tag]&&(t.elementList[et.tag]=et.haxProperties)}this._authHandler=this._onUserLogin.bind(this),globalThis.addEventListener("quiz-user-login",this._authHandler),globalThis.addEventListener("quiz-user-session-changed",this._handleSessionChanged),this._loadForumComments()}disconnectedCallback(){this._authHandler&&globalThis.removeEventListener("quiz-user-login",this._authHandler),globalThis.removeEventListener("quiz-user-session-changed",this._handleSessionChanged),super.disconnectedCallback()}_onUserLogin(t){t.detail&&(t.detail.studentId&&(this.studentId=t.detail.studentId),t.detail.nama&&(this.studentName=t.detail.nama),t.detail.nis&&(this.studentNis=t.detail.nis),t.detail.absen&&(this.studentAbsen=t.detail.absen),t.detail.kelas&&(this.studentKelas=t.detail.kelas))}_handleSessionChanged(t){const e=t?.detail||this._loadSession();e?.studentId?(this.studentId=e.studentId,this.studentName=e.nama,this.studentNis=e.nis||"",this.studentAbsen=e.absen||"",this.studentKelas=e.kelas||""):(this.studentId="",this.studentName="",this.studentKelas="")}_loadSession(){try{const t=JSON.parse(localStorage.getItem("quiz_user_session"));return t?.expiresAt&&Date.now()>t.expiresAt?(localStorage.removeItem("quiz_user_session"),null):t}catch{return null}}async _loadForumComments(){const t=this.forumApiUrl||this.appsScriptUrl;if(t){this._loadingComments=!0;try{const e=new URLSearchParams({action:"getForumComments",kdMateri:this.kdMateri,sort:this._sortMode}),a=await(await fetch(`${t}?${e.toString()}`,{redirect:"follow"})).json();a.status==="ok"&&a.comments&&(this._comments=this._buildThread(a.comments))}catch(e){console.error("[ruang-diskusi] Gagal memuat forum:",e)}this._loadingComments=!1}}_buildThread(t){const e={},a=[];return t.forEach(i=>{e[i.id]={...i,replies:[]}}),t.forEach(i=>{i.parentId&&e[i.parentId]?e[i.parentId].replies.push(e[i.id]):e[i.id]&&a.push(e[i.id])}),a}_getSorted(){const t=[...this._comments];return this._sortMode==="newest"?t.sort((e,a)=>new Date(a.time)-new Date(e.time)):this._sortMode==="oldest"?t.sort((e,a)=>new Date(e.time)-new Date(a.time)):t.sort((e,a)=>(a.likes||0)-(e.likes||0)),t}_setSort(t){this._sortMode=t,this._comments=[...this._comments],this._loadForumComments()}async _submitMainComment(){if(this._submitting)return;const t=this.shadowRoot.querySelector("#main-input");if(!t)return;const e=t.value.trim();if(!e)return;this._submitting=!0;const a={action:"saveForumComment",id:Date.now(),parentId:null,user:this._commentAuthorName(),studentId:this.studentId||"",text:e,sheet:this.sheetName,kdMateri:this.kdMateri,nis:this.studentNis||"",absen:this.studentAbsen||"",kelas:this.studentKelas||""};try{const i=await this._kirimForum(a);i.status==="ok"&&i.data&&(this._comments=[...this._comments,{...i.data,replies:[]}]),t.value=""}catch(i){console.error("[ruang-diskusi] Kirim gagal:",i)}this._submitting=!1,this._sendActivity("discussion",`Forum: ${e.substring(0,50)}`)}async _submitReply(t){if(this._submitting)return;const e=this.shadowRoot.querySelector(`#reply-${t}`);if(!e)return;const a=e.value.trim();if(!a)return;this._submitting=!0;const i={action:"saveForumComment",id:Date.now(),parentId:t,user:this._commentAuthorName(),studentId:this.studentId||"",text:a,sheet:this.sheetName,kdMateri:this.kdMateri,nis:this.studentNis||"",absen:this.studentAbsen||"",kelas:this.studentKelas||""};try{const s=await this._kirimForum(i);s.status==="ok"&&s.data&&(this._comments=this._comments.map(r=>r.id===t?{...r,replies:[...r.replies||[],{...s.data,replies:[]}]}:r)),this._activeReplyId=null}catch(s){console.error("[ruang-diskusi] Balas gagal:",s)}this._submitting=!1,this._sendActivity("discussion",`Reply: ${a.substring(0,50)}`)}async _kirimForum(t){const e=this.forumApiUrl||this.appsScriptUrl;return e?(await fetch(e,{method:"POST",headers:{"Content-Type":"text/plain"},body:JSON.stringify(t)})).json():{status:"error",message:"URL API tidak diatur"}}async _deleteComment(t){if(!globalThis.confirm(this.t.confirmDelete))return;const e=this.forumApiUrl||this.appsScriptUrl;if(e)try{await fetch(e,{method:"POST",headers:{"Content-Type":"text/plain"},body:JSON.stringify({action:"deleteForumComment",id:t})});const a=new Set([t]);this._comments.forEach(i=>{i.id===t&&i.replies&&i.replies.forEach(s=>a.add(s.id))}),this._comments=this._comments.filter(i=>!a.has(i.id)).map(i=>({...i,replies:(i.replies||[]).filter(s=>!a.has(s.id))}))}catch(a){console.error("[ruang-diskusi] Hapus gagal:",a)}}_findAndUpdateComment(t,e,a){return t.map(i=>i.id===e?a(i):i.replies&&i.replies.length>0?{...i,replies:this._findAndUpdateComment(i.replies,e,a)}:i)}_handleLike(t){this._comments=this._findAndUpdateComment(this._comments,t,e=>{const a=!e.isLiked;return{...e,isLiked:a,likes:a?(e.likes||0)+1:(e.likes||0)-1}}),this._syncLike(t)}_syncLike(t){const e=this.forumApiUrl||this.appsScriptUrl;if(!e)return;const a=this._comments.find(i=>i.id===t);a&&fetch(e,{method:"POST",headers:{"Content-Type":"text/plain"},body:JSON.stringify({action:"saveForumComment",id:t,actionType:"like",isLiked:a.isLiked})}).catch(()=>{})}_toggleReply(t){this._activeReplyId=this._activeReplyId===t?null:t}_sendActivity(t,e){const a=this._buatIdLog();this.dispatchEvent(new CustomEvent("dasbor-kuis-log",{detail:{id_log:a,tipe:t,payload:{deskripsi:e,topik:this.forumTopic,timestamp:new Date().toISOString()}},bubbles:!0,composed:!0}))}_buatIdLog(){try{const t=new Uint8Array(8);globalThis.crypto.getRandomValues(t);let e="";return t.forEach(a=>e+=a.toString(16).padStart(2,"0")),`LOG-${Date.now()}-${e.toUpperCase()}`}catch{return`LOG-${Date.now()}-${Math.random().toString(36).substr(2,10).toUpperCase()}`}}_timeAgo(t){if(!t)return"";const e=Date.now()-new Date(t).getTime(),a=Math.floor(e/6e4);if(a<1)return this.t.justNow;if(a<60)return`${a} ${this.t.minutesAgo}`;const i=Math.floor(a/60);return i<24?`${i} ${this.t.hoursAgo}`:`${Math.floor(i/24)} ${this.t.daysAgo}`}_showToast(t){this._toastMsg=t,setTimeout(()=>{this._toastMsg===t&&(this._toastMsg="")},3e3)}static get styles(){return[super.styles,C`
+    `}};Z(H,"LOGS_KEY","a3_attendance_activity_logs"),Z(H,"THRESHOLD_KEY","a3_attendance_threshold_config"),Z(H,"GRADES_KEY","a3_attendance_grades_config"),Z(H,"QUESTIONS_KEY","quiz_custom_questions"),Z(H,"DEFAULT_QUESTIONS",[{question:"Apa ibu kota Indonesia?",choices:["Bandung","Surabaya","Jakarta","Medan"],correctIndex:2},{question:"Berapa hasil dari 7 \xD7 8?",choices:["54","56","58","60"],correctIndex:1},{question:"Planet terdekat dengan Matahari?",choices:["Venus","Bumi","Mars","Merkurius"],correctIndex:3},{question:"Siapa presiden pertama Indonesia?",choices:["Soeharto","Soekarno","Habibie","Megawati"],correctIndex:1},{question:"Berapa jumlah provinsi di Indonesia?",choices:["32","34","36","38"],correctIndex:2}]),Z(H,"DEFAULT_THRESHOLDS",{minWeeklyActivities:5,minReading:2,minQuiz:1,minDiscussion:1}),Z(H,"DEFAULT_GRADES",{uts:85,uas:88,attendanceWeight:50,quizWeight:30,utsWeight:25,uasWeight:25});let re=H;customElements.define(re.tag,re);class st extends j(B(F)){static get tag(){return"ruang-diskusi"}static get properties(){return{...super.properties,appsScriptUrl:{type:String,attribute:"apps-script-url",reflect:!0},forumApiUrl:{type:String,attribute:"forum-api-url",reflect:!0},sheetName:{type:String,attribute:"sheet-name",reflect:!0},studentId:{type:String,attribute:"student-id",reflect:!0},studentName:{type:String,attribute:"student-name",reflect:!0},studentNis:{type:String,attribute:"student-nis",reflect:!0},studentAbsen:{type:String,attribute:"student-absen",reflect:!0},studentKelas:{type:String,attribute:"student-kelas",reflect:!0},forumTopic:{type:String,attribute:"forum-topic",reflect:!0},viewMode:{type:String,attribute:"view-mode",reflect:!0},anchorId:{type:String,attribute:"anchor-id",reflect:!0},hideDelete:{type:Boolean,attribute:"hide-delete",reflect:!0},_comments:{state:!0},_activeReplyId:{state:!0},_sortMode:{state:!0},_submitting:{state:!0},_loadingComments:{state:!0},_toastMsg:{state:!0}}}static get haxProperties(){return{canScale:!1,canPosition:!0,canEditSource:!1,gizmo:{title:"Ruang Diskusi",description:"Halaman ruang diskusi bertingkat terpisah (adaptasi forum-component)",icon:"icons:forum",color:"purple",tags:["Education","Forum"]},settings:{configure:[{property:"appsScriptUrl",title:"Apps Script URL (Activity)",inputMethod:"textfield"},{property:"forumApiUrl",title:"Forum API URL",inputMethod:"textfield"},{property:"sheetName",title:"Nama Sheet / Pertemuan",inputMethod:"textfield",default:"Pertemuan"},{property:"forumTopic",title:"Topik Forum",inputMethod:"textfield",default:"Ruang Diskusi"},{property:"viewMode",title:"Mode Tampilan",inputMethod:"select",options:{student:"Siswa",lecturer:"Dosen"},default:"student"},{property:"hideDelete",title:"Sembunyikan Hapus",inputMethod:"boolean"}],advanced:[],developer:[]},saveOptions:{unsetAttributes:[]}}}constructor(){super(),this.appsScriptUrl="",this.forumApiUrl="",this.sheetName="Pertemuan",this.studentId="",this.studentName="",this.studentNis="",this.studentAbsen="",this.studentKelas="",this.forumTopic="Ruang Diskusi",this.viewMode="student",this.anchorId="ruang-diskusi",this.hideDelete=!1,this._comments=[],this._activeReplyId=null,this._sortMode="best",this._submitting=!1,this._loadingComments=!1,this._toastMsg="",this.t={...this.t,forumTitle:"Ruang Diskusi",postComment:"Kirim Komentar",posting:"Mengirim...",reply:"Balas",deleteBtn:"Hapus",noComments:"Belum ada komentar. Mulai diskusi!",sortBest:"Terbaik",sortNewest:"Terbaru",sortOldest:"Terlama",placeholderComment:"Tulis komentar...",placeholderReply:"Tulis balasan...",confirmDelete:"Hapus komentar ini?",activityForum:"Aktivitas forum tercatat",justNow:"Baru saja",minutesAgo:"menit lalu",hoursAgo:"jam lalu",daysAgo:"hari lalu",loginHint:"Login dulu untuk ikut berdiskusi atas nama Anda."}}get kdMateri(){return this.sheetName||"Pertemuan"}_commentAuthorName(){const t=(this.studentName||"").trim();if(!t)return"Siswa";const e=(this.studentKelas||"").trim();return e?`${t} (${e})`:t}connectedCallback(){if(super.connectedCallback(),globalThis.HaxStore&&typeof globalThis.HaxStore.requestAvailability=="function"){const t=globalThis.HaxStore.requestAvailability();t&&!t.elementList[st.tag]&&(t.elementList[st.tag]=st.haxProperties)}this._authHandler=this._onUserLogin.bind(this),globalThis.addEventListener("quiz-user-login",this._authHandler),globalThis.addEventListener("quiz-user-session-changed",this._handleSessionChanged),this._loadForumComments()}disconnectedCallback(){this._authHandler&&globalThis.removeEventListener("quiz-user-login",this._authHandler),globalThis.removeEventListener("quiz-user-session-changed",this._handleSessionChanged),super.disconnectedCallback()}_onUserLogin(t){t.detail&&(t.detail.studentId&&(this.studentId=t.detail.studentId),t.detail.nama&&(this.studentName=t.detail.nama),t.detail.nis&&(this.studentNis=t.detail.nis),t.detail.absen&&(this.studentAbsen=t.detail.absen),t.detail.kelas&&(this.studentKelas=t.detail.kelas))}_handleSessionChanged(t){const e=t?.detail||this._loadSession();e?.studentId?(this.studentId=e.studentId,this.studentName=e.nama,this.studentNis=e.nis||"",this.studentAbsen=e.absen||"",this.studentKelas=e.kelas||""):(this.studentId="",this.studentName="",this.studentKelas="")}_loadSession(){try{const t=JSON.parse(localStorage.getItem("quiz_user_session"));return t?.expiresAt&&Date.now()>t.expiresAt?(localStorage.removeItem("quiz_user_session"),null):t}catch{return null}}async _loadForumComments(){const t=this.forumApiUrl||this.appsScriptUrl;if(t){this._loadingComments=!0;try{const e=new URLSearchParams({action:"getForumComments",kdMateri:this.kdMateri,sort:this._sortMode}),a=await(await fetch(`${t}?${e.toString()}`,{redirect:"follow"})).json();a.status==="ok"&&a.comments&&(this._comments=this._buildThread(a.comments))}catch(e){console.error("[ruang-diskusi] Gagal memuat forum:",e)}this._loadingComments=!1}}_buildThread(t){const e={},a=[];return t.forEach(i=>{e[i.id]={...i,replies:[]}}),t.forEach(i=>{i.parentId&&e[i.parentId]?e[i.parentId].replies.push(e[i.id]):e[i.id]&&a.push(e[i.id])}),a}_getSorted(){const t=[...this._comments];return this._sortMode==="newest"?t.sort((e,a)=>new Date(a.time)-new Date(e.time)):this._sortMode==="oldest"?t.sort((e,a)=>new Date(e.time)-new Date(a.time)):t.sort((e,a)=>(a.likes||0)-(e.likes||0)),t}_setSort(t){this._sortMode=t,this._comments=[...this._comments],this._loadForumComments()}async _submitMainComment(){if(this._submitting)return;const t=this.shadowRoot.querySelector("#main-input");if(!t)return;const e=t.value.trim();if(!e)return;this._submitting=!0;const a={action:"saveForumComment",id:Date.now(),parentId:null,user:this._commentAuthorName(),studentId:this.studentId||"",text:e,sheet:this.sheetName,kdMateri:this.kdMateri,nis:this.studentNis||"",absen:this.studentAbsen||"",kelas:this.studentKelas||""};try{const i=await this._kirimForum(a);i.status==="ok"&&i.data&&(this._comments=[...this._comments,{...i.data,replies:[]}]),t.value=""}catch(i){console.error("[ruang-diskusi] Kirim gagal:",i)}this._submitting=!1,this._sendActivity("discussion",`Forum: ${e.substring(0,50)}`)}async _submitReply(t){if(this._submitting)return;const e=this.shadowRoot.querySelector(`#reply-${t}`);if(!e)return;const a=e.value.trim();if(!a)return;this._submitting=!0;const i={action:"saveForumComment",id:Date.now(),parentId:t,user:this._commentAuthorName(),studentId:this.studentId||"",text:a,sheet:this.sheetName,kdMateri:this.kdMateri,nis:this.studentNis||"",absen:this.studentAbsen||"",kelas:this.studentKelas||""};try{const r=await this._kirimForum(i);r.status==="ok"&&r.data&&(this._comments=this._comments.map(s=>s.id===t?{...s,replies:[...s.replies||[],{...r.data,replies:[]}]}:s)),this._activeReplyId=null}catch(r){console.error("[ruang-diskusi] Balas gagal:",r)}this._submitting=!1,this._sendActivity("discussion",`Reply: ${a.substring(0,50)}`)}async _kirimForum(t){const e=this.forumApiUrl||this.appsScriptUrl;return e?(await fetch(e,{method:"POST",headers:{"Content-Type":"text/plain"},body:JSON.stringify(t)})).json():{status:"error",message:"URL API tidak diatur"}}async _deleteComment(t){if(!globalThis.confirm(this.t.confirmDelete))return;const e=this.forumApiUrl||this.appsScriptUrl;if(e)try{await fetch(e,{method:"POST",headers:{"Content-Type":"text/plain"},body:JSON.stringify({action:"deleteForumComment",id:t})});const a=new Set([t]);this._comments.forEach(i=>{i.id===t&&i.replies&&i.replies.forEach(r=>a.add(r.id))}),this._comments=this._comments.filter(i=>!a.has(i.id)).map(i=>({...i,replies:(i.replies||[]).filter(r=>!a.has(r.id))}))}catch(a){console.error("[ruang-diskusi] Hapus gagal:",a)}}_findAndUpdateComment(t,e,a){return t.map(i=>i.id===e?a(i):i.replies&&i.replies.length>0?{...i,replies:this._findAndUpdateComment(i.replies,e,a)}:i)}_handleLike(t){this._comments=this._findAndUpdateComment(this._comments,t,e=>{const a=!e.isLiked;return{...e,isLiked:a,likes:a?(e.likes||0)+1:(e.likes||0)-1}}),this._syncLike(t)}_syncLike(t){const e=this.forumApiUrl||this.appsScriptUrl;if(!e)return;const a=this._comments.find(i=>i.id===t);a&&fetch(e,{method:"POST",headers:{"Content-Type":"text/plain"},body:JSON.stringify({action:"saveForumComment",id:t,actionType:"like",isLiked:a.isLiked})}).catch(()=>{})}_toggleReply(t){this._activeReplyId=this._activeReplyId===t?null:t}_sendActivity(t,e){const a=this._buatIdLog();this.dispatchEvent(new CustomEvent("dasbor-kuis-log",{detail:{id_log:a,tipe:t,payload:{deskripsi:e,topik:this.forumTopic,timestamp:new Date().toISOString()}},bubbles:!0,composed:!0}))}_buatIdLog(){try{const t=new Uint8Array(8);globalThis.crypto.getRandomValues(t);let e="";return t.forEach(a=>e+=a.toString(16).padStart(2,"0")),`LOG-${Date.now()}-${e.toUpperCase()}`}catch{return`LOG-${Date.now()}-${Math.random().toString(36).substr(2,10).toUpperCase()}`}}_timeAgo(t){if(!t)return"";const e=Date.now()-new Date(t).getTime(),a=Math.floor(e/6e4);if(a<1)return this.t.justNow;if(a<60)return`${a} ${this.t.minutesAgo}`;const i=Math.floor(a/60);return i<24?`${i} ${this.t.hoursAgo}`:`${Math.floor(i/24)} ${this.t.daysAgo}`}_showToast(t){this._toastMsg=t,setTimeout(()=>{this._toastMsg===t&&(this._toastMsg="")},3e3)}static get styles(){return[super.styles,z`
         :host {
           display: block;
           font-family: var(--ddd-font-primary);
@@ -1470,7 +1535,7 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
             transform: translateX(-50%) translateY(0);
           }
         }
-      `,C`
+      `,z`
         /* ===== DARK MODE (DDD-token swap, gated on body.dark-mode) ===== */
         :host-context(body.dark-mode) :host {
           --dk-bg: #0b1020;
@@ -1507,7 +1572,7 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
         }
         :host-context(body.dark-mode) .sort-btn:hover,
         :host-context(body.dark-mode) .like-btn:hover { background: var(--dk-soft); }
-      `]}render(){const t=this._getSorted();return d`
+      `]}render(){const t=this._getSorted();return o`
       <section class="card" id="${this.anchorId}" aria-labelledby="forum-heading">
         <h3 id="forum-heading">💬 ${this.forumTopic}</h3>
         <div class="meta">KD Materi: ${this.kdMateri}</div>
@@ -1523,7 +1588,7 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
               placeholder="${this.t.placeholderComment}"
               aria-label="${this.t.placeholderComment}"
             ></textarea>
-            ${this.studentId?"":d`<div class="login-hint">⚠️ ${this.t.loginHint}</div>`}
+            ${this.studentId?"":o`<div class="login-hint">⚠️ ${this.t.loginHint}</div>`}
             <button
               class="btn-submit"
               ?disabled="${this._submitting}"
@@ -1557,16 +1622,16 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
         </div>
 
         <div class="comments-list">
-          ${this._loadingComments?d`<div style="text-align:center;padding:var(--ddd-spacing-6);color:var(--ddd-theme-secondary);">Memuat komentar...</div>`:t.length===0?d`<div style="text-align:center;padding:var(--ddd-spacing-6);color:var(--ddd-theme-secondary);">${this.t.noComments}</div>`:t.map(e=>this._renderComment(e))}
+          ${this._loadingComments?o`<div style="text-align:center;padding:var(--ddd-spacing-6);color:var(--ddd-theme-secondary);">Memuat komentar...</div>`:t.length===0?o`<div style="text-align:center;padding:var(--ddd-spacing-6);color:var(--ddd-theme-secondary);">${this.t.noComments}</div>`:t.map(e=>this._renderComment(e))}
         </div>
       </section>
-      ${this._toastMsg?d`<div class="toast">${this._toastMsg}</div>`:""}
-    `}_renderComment(t){const e=t.isLiked;return d`
+      ${this._toastMsg?o`<div class="toast">${this._toastMsg}</div>`:""}
+    `}_renderComment(t){const e=t.isLiked;return o`
       <div class="comment-card" style="margin-bottom:var(--ddd-spacing-3);">
         <div class="comment-header">
           <div class="comment-avatar">${(t.user||"?")[0].toUpperCase()}</div>
           <div class="comment-meta">
-            <span class="comment-user">${t.user}${t.kelas?d` <small>(${t.kelas})</small>`:""}</span>
+            <span class="comment-user">${t.user}${t.kelas?o` <small>(${t.kelas})</small>`:""}</span>
             <span class="comment-time">${this._timeAgo(t.time)}</span>
           </div>
         </div>
@@ -1580,10 +1645,10 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
             ${e?"\u2764\uFE0F":"\u{1F90D}"} ${t.likes||0}
           </button>
           <button class="action-btn" @click=${()=>this._toggleReply(t.id)}>${this.t.reply}</button>
-          ${!this.hideDelete&&this.viewMode==="lecturer"?d`<button class="action-btn" @click=${()=>this._deleteComment(t.id)} style="color:var(--ddd-theme-error);">${this.t.deleteBtn}</button>`:""}
+          ${!this.hideDelete&&this.viewMode==="lecturer"?o`<button class="action-btn" @click=${()=>this._deleteComment(t.id)} style="color:var(--ddd-theme-error);">${this.t.deleteBtn}</button>`:""}
         </div>
 
-        ${this._activeReplyId===t.id?d`
+        ${this._activeReplyId===t.id?o`
               <div class="reply-form">
                 <textarea
                   id="reply-${t.id}"
@@ -1602,13 +1667,13 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
               </div>
             `:""}
 
-        ${t.replies&&t.replies.length>0?d`
+        ${t.replies&&t.replies.length>0?o`
               <div class="replies-list">
                 ${t.replies.map(a=>this._renderComment(a))}
               </div>
             `:""}
       </div>
-    `}}globalThis.customElements.define(et.tag,et);class at extends R(F(U)){static get tag(){return"kirim-tugas"}static get properties(){return{...super.properties,appsScriptUrl:{type:String,attribute:"apps-script-url",reflect:!0},forumApiUrl:{type:String,attribute:"forum-api-url",reflect:!0},sheetName:{type:String,attribute:"sheet-name",reflect:!0},studentId:{type:String,attribute:"student-id",reflect:!0},studentName:{type:String,attribute:"student-name",reflect:!0},studentNis:{type:String,attribute:"student-nis",reflect:!0},studentAbsen:{type:String,attribute:"student-absen",reflect:!0},studentKelas:{type:String,attribute:"student-kelas",reflect:!0},assignmentTitle:{type:String,attribute:"assignment-title",reflect:!0},assignmentInstruction:{type:String,attribute:"assignment-instruction",reflect:!0},hideDelete:{type:Boolean,attribute:"hide-delete",reflect:!0},_assignmentText:{state:!0},_assignmentLink:{state:!0},_assignmentSubmitted:{state:!0},_submitting:{state:!0},_toastMsg:{state:!0}}}static get haxProperties(){return{canScale:!1,canPosition:!0,canEditSource:!1,gizmo:{title:"Kirim Tugas",description:"Halaman pengumpulan tugas mandiri terpisah (adaptasi assignment-component)",icon:"icons:assignment-turned-in",color:"blue",tags:["Education","Assignment"]},settings:{configure:[{property:"appsScriptUrl",title:"Apps Script URL (Activity)",inputMethod:"textfield"},{property:"forumApiUrl",title:"Forum API URL (Tugas)",inputMethod:"textfield"},{property:"sheetName",title:"Nama Sheet / Pertemuan",inputMethod:"textfield",default:"Pertemuan"},{property:"assignmentTitle",title:"Judul Tugas",inputMethod:"textfield",default:"Tugas Mandiri"},{property:"assignmentInstruction",title:"Instruksi Tugas",inputMethod:"textfield",default:"Tuliskan refleksi atau jawaban tugas Anda."},{property:"hideDelete",title:"Sembunyikan Hapus",inputMethod:"boolean"}],advanced:[],developer:[]},saveOptions:{unsetAttributes:[]}}}constructor(){super(),this.appsScriptUrl="",this.forumApiUrl="",this.sheetName="Pertemuan",this.studentId="",this.studentName="",this.studentNis="",this.studentAbsen="",this.studentKelas="",this.assignmentTitle="Tugas Mandiri",this.assignmentInstruction="Tuliskan refleksi atau jawaban tugas Anda.",this.hideDelete=!1,this._assignmentText="",this._assignmentLink="",this._assignmentSubmitted=!1,this._submitting=!1,this._toastMsg="",this.t={...this.t,submissionTitle:"Pengumpulan Tugas",submitBtn:"Kirim & Kunci Tugas",submitting:"Mengirim...",submitted:"Tugas Diserahkan & Tersimpan ke Google Sheets",pending:"Belum Menyerahkan",resetBtn:"Ubah",placeholderTask:"Tulis jawaban tugas Anda di sini...",placeholderLink:"Link Google Drive / Google Doc (opsional)",invalidLink:"Format link tidak valid. Gunakan URL Google Drive/Doc.",emptyTask:"Isi tugas atau link Google Drive terlebih dahulu!",activityAssignment:"Tugas dikumpulkan",backendError:"Gagal tersimpan ke sheet. Perbarui deployment Apps Script (New version).",loginHint:"Login dulu untuk memastikan tugas tercatat atas nama Anda."}}get kdMateri(){return this.sheetName||"Pertemuan"}connectedCallback(){if(super.connectedCallback(),globalThis.HaxStore&&typeof globalThis.HaxStore.requestAvailability=="function"){const t=globalThis.HaxStore.requestAvailability();t&&!t.elementList[at.tag]&&(t.elementList[at.tag]=at.haxProperties)}this._loadFromStorage(),this._listenSession(),this._onLogoutBound=this._onLogout.bind(this),globalThis.addEventListener("quiz-user-logout",this._onLogoutBound)}disconnectedCallback(){globalThis.removeEventListener("quiz-user-session-changed",this._handleSessionChanged),globalThis.removeEventListener("quiz-user-logout",this._onLogoutBound),super.disconnectedCallback()}_onLogout(){this.studentId="",this.studentName="",this.studentNis="",this.studentAbsen="",this.studentKelas=""}_listenSession(){this._handleSessionChanged=this._handleSessionChanged.bind(this),globalThis.addEventListener("quiz-user-session-changed",this._handleSessionChanged),this._handleSessionChanged({detail:this._loadSession()})}_loadSession(){try{const t=JSON.parse(localStorage.getItem("quiz_user_session"));return t?.expiresAt&&Date.now()>t.expiresAt?(localStorage.removeItem("quiz_user_session"),null):t}catch{return null}}_handleSessionChanged(t){const e=t?.detail||this._loadSession();e?.studentId?(this.studentId=e.studentId,this.studentName=e.nama,this.studentNis=e.nis||"",this.studentAbsen=e.absen||"",this.studentKelas=e.kelas||""):(this.studentId="",this.studentName="",this.studentNis="",this.studentAbsen="",this.studentKelas="")}_storageKey(){return`hax_assignment_${this.kdMateri}`}_loadFromStorage(){try{const t=JSON.parse(localStorage.getItem(this._storageKey()));t&&(this._assignmentSubmitted=t.submitted===!0,this._assignmentText=t.text||"",this._assignmentLink=t.link||"")}catch{}}_saveToStorage(){try{localStorage.setItem(this._storageKey(),JSON.stringify({submitted:this._assignmentSubmitted,text:this._assignmentText,link:this._assignmentLink}))}catch{}}_isValidUrl(t){try{const e=new URL(t);return e.protocol==="http:"||e.protocol==="https:"}catch{return!1}}async _submitAssignment(){if(this._submitting)return;const t=this._assignmentText.trim();if(!t&&!this._assignmentLink){globalThis.alert(this.t.emptyTask);return}if(this._assignmentLink&&!this._isValidUrl(this._assignmentLink)){globalThis.alert(this.t.invalidLink);return}this._submitting=!0;const e=this.forumApiUrl||this.appsScriptUrl;if(e&&this.studentId){const a=new URLSearchParams({action:"saveAssignment",studentId:this.studentId,name:this.studentName,sheet:this.sheetName,title:this.assignmentTitle,content:t,link:this._assignmentLink,kdMateri:this.kdMateri,nis:this.studentNis||"",absen:this.studentAbsen||"",kelas:this.studentKelas||""});try{const i=await(await fetch(`${e}?${a.toString()}`,{redirect:"follow"})).json().catch(()=>null);if(i&&i.status==="error"){console.error("[kirim-tugas] Backend menolak:",i.message),this._submitting=!1,this._showToast(`\u26A0\uFE0F ${this.t.backendError}`);return}i&&i.status!=="ok"&&console.error("[kirim-tugas] Respons tak dikenal:",i)}catch(i){console.error("[kirim-tugas] Gagal mengirim tugas:",i),this._submitting=!1,this._showToast(`\u26A0\uFE0F ${this.t.backendError}`);return}}this._assignmentSubmitted=!0,this._submitting=!1,this._saveToStorage(),this._showToast(`\u2713 ${this.t.activityAssignment}`),this._dispatchActivity("assignment",`Tugas: ${this.assignmentTitle}`)}_resetAssignment(){this._assignmentSubmitted=!1,this._assignmentText="",this._assignmentLink="",this._saveToStorage()}_dispatchActivity(t,e){const a=this._buatIdLog();this.dispatchEvent(new CustomEvent("dasbor-kuis-log",{detail:{id_log:a,tipe:t,payload:{deskripsi:e,judul:this.assignmentTitle,timestamp:new Date().toISOString()}},bubbles:!0,composed:!0}))}_buatIdLog(){try{const t=new Uint8Array(8);globalThis.crypto.getRandomValues(t);let e="";return t.forEach(a=>e+=a.toString(16).padStart(2,"0")),`LOG-${Date.now()}-${e.toUpperCase()}`}catch{return`LOG-${Date.now()}-${Math.random().toString(36).substr(2,10).toUpperCase()}`}}_showToast(t){this._toastMsg=t,setTimeout(()=>{this._toastMsg===t&&(this._toastMsg="")},3e3)}static get styles(){return[super.styles,C`
+    `}}globalThis.customElements.define(st.tag,st);class rt extends j(B(F)){static get tag(){return"kirim-tugas"}static get properties(){return{...super.properties,appsScriptUrl:{type:String,attribute:"apps-script-url",reflect:!0},forumApiUrl:{type:String,attribute:"forum-api-url",reflect:!0},sheetName:{type:String,attribute:"sheet-name",reflect:!0},studentId:{type:String,attribute:"student-id",reflect:!0},studentName:{type:String,attribute:"student-name",reflect:!0},studentNis:{type:String,attribute:"student-nis",reflect:!0},studentAbsen:{type:String,attribute:"student-absen",reflect:!0},studentKelas:{type:String,attribute:"student-kelas",reflect:!0},assignmentTitle:{type:String,attribute:"assignment-title",reflect:!0},assignmentInstruction:{type:String,attribute:"assignment-instruction",reflect:!0},hideDelete:{type:Boolean,attribute:"hide-delete",reflect:!0},_assignmentText:{state:!0},_assignmentLink:{state:!0},_assignmentSubmitted:{state:!0},_submitting:{state:!0},_toastMsg:{state:!0}}}static get haxProperties(){return{canScale:!1,canPosition:!0,canEditSource:!1,gizmo:{title:"Kirim Tugas",description:"Halaman pengumpulan tugas mandiri terpisah (adaptasi assignment-component)",icon:"icons:assignment-turned-in",color:"blue",tags:["Education","Assignment"]},settings:{configure:[{property:"appsScriptUrl",title:"Apps Script URL (Activity)",inputMethod:"textfield"},{property:"forumApiUrl",title:"Forum API URL (Tugas)",inputMethod:"textfield"},{property:"sheetName",title:"Nama Sheet / Pertemuan",inputMethod:"textfield",default:"Pertemuan"},{property:"assignmentTitle",title:"Judul Tugas",inputMethod:"textfield",default:"Tugas Mandiri"},{property:"assignmentInstruction",title:"Instruksi Tugas",inputMethod:"textfield",default:"Tuliskan refleksi atau jawaban tugas Anda."},{property:"hideDelete",title:"Sembunyikan Hapus",inputMethod:"boolean"}],advanced:[],developer:[]},saveOptions:{unsetAttributes:[]}}}constructor(){super(),this.appsScriptUrl="",this.forumApiUrl="",this.sheetName="Pertemuan",this.studentId="",this.studentName="",this.studentNis="",this.studentAbsen="",this.studentKelas="",this.assignmentTitle="Tugas Mandiri",this.assignmentInstruction="Tuliskan refleksi atau jawaban tugas Anda.",this.hideDelete=!1,this._assignmentText="",this._assignmentLink="",this._assignmentSubmitted=!1,this._submitting=!1,this._toastMsg="",this.t={...this.t,submissionTitle:"Pengumpulan Tugas",submitBtn:"Kirim & Kunci Tugas",submitting:"Mengirim...",submitted:"Tugas Diserahkan & Tersimpan ke Google Sheets",pending:"Belum Menyerahkan",resetBtn:"Ubah",placeholderTask:"Tulis jawaban tugas Anda di sini...",placeholderLink:"Link Google Drive / Google Doc (opsional)",invalidLink:"Format link tidak valid. Gunakan URL Google Drive/Doc.",emptyTask:"Isi tugas atau link Google Drive terlebih dahulu!",activityAssignment:"Tugas dikumpulkan",backendError:"Gagal tersimpan ke sheet. Perbarui deployment Apps Script (New version).",loginHint:"Login dulu untuk memastikan tugas tercatat atas nama Anda."}}get kdMateri(){return this.sheetName||"Pertemuan"}connectedCallback(){if(super.connectedCallback(),globalThis.HaxStore&&typeof globalThis.HaxStore.requestAvailability=="function"){const t=globalThis.HaxStore.requestAvailability();t&&!t.elementList[rt.tag]&&(t.elementList[rt.tag]=rt.haxProperties)}this._loadFromStorage(),this._listenSession(),this._onLogoutBound=this._onLogout.bind(this),globalThis.addEventListener("quiz-user-logout",this._onLogoutBound)}disconnectedCallback(){globalThis.removeEventListener("quiz-user-session-changed",this._handleSessionChanged),globalThis.removeEventListener("quiz-user-logout",this._onLogoutBound),super.disconnectedCallback()}_onLogout(){this.studentId="",this.studentName="",this.studentNis="",this.studentAbsen="",this.studentKelas=""}_listenSession(){this._handleSessionChanged=this._handleSessionChanged.bind(this),globalThis.addEventListener("quiz-user-session-changed",this._handleSessionChanged),this._handleSessionChanged({detail:this._loadSession()})}_loadSession(){try{const t=JSON.parse(localStorage.getItem("quiz_user_session"));return t?.expiresAt&&Date.now()>t.expiresAt?(localStorage.removeItem("quiz_user_session"),null):t}catch{return null}}_handleSessionChanged(t){const e=t?.detail||this._loadSession();e?.studentId?(this.studentId=e.studentId,this.studentName=e.nama,this.studentNis=e.nis||"",this.studentAbsen=e.absen||"",this.studentKelas=e.kelas||""):(this.studentId="",this.studentName="",this.studentNis="",this.studentAbsen="",this.studentKelas="")}_storageKey(){return`hax_assignment_${this.kdMateri}`}_loadFromStorage(){try{const t=JSON.parse(localStorage.getItem(this._storageKey()));t&&(this._assignmentSubmitted=t.submitted===!0,this._assignmentText=t.text||"",this._assignmentLink=t.link||"")}catch{}}_saveToStorage(){try{localStorage.setItem(this._storageKey(),JSON.stringify({submitted:this._assignmentSubmitted,text:this._assignmentText,link:this._assignmentLink}))}catch{}}_isValidUrl(t){try{const e=new URL(t);return e.protocol==="http:"||e.protocol==="https:"}catch{return!1}}async _submitAssignment(){if(this._submitting)return;const t=this._assignmentText.trim();if(!t&&!this._assignmentLink){globalThis.alert(this.t.emptyTask);return}if(this._assignmentLink&&!this._isValidUrl(this._assignmentLink)){globalThis.alert(this.t.invalidLink);return}this._submitting=!0;const e=this.forumApiUrl||this.appsScriptUrl;if(e&&this.studentId){const a=new URLSearchParams({action:"saveAssignment",studentId:this.studentId,name:this.studentName,sheet:this.sheetName,title:this.assignmentTitle,content:t,link:this._assignmentLink,kdMateri:this.kdMateri,nis:this.studentNis||"",absen:this.studentAbsen||"",kelas:this.studentKelas||""});try{const i=await(await fetch(`${e}?${a.toString()}`,{redirect:"follow"})).json().catch(()=>null);if(i&&i.status==="error"){console.error("[kirim-tugas] Backend menolak:",i.message),this._submitting=!1,this._showToast(`\u26A0\uFE0F ${this.t.backendError}`);return}i&&i.status!=="ok"&&console.error("[kirim-tugas] Respons tak dikenal:",i)}catch(i){console.error("[kirim-tugas] Gagal mengirim tugas:",i),this._submitting=!1,this._showToast(`\u26A0\uFE0F ${this.t.backendError}`);return}}this._assignmentSubmitted=!0,this._submitting=!1,this._saveToStorage(),this._showToast(`\u2713 ${this.t.activityAssignment}`),this._dispatchActivity("assignment",`Tugas: ${this.assignmentTitle}`)}_resetAssignment(){this._assignmentSubmitted=!1,this._assignmentText="",this._assignmentLink="",this._saveToStorage()}_dispatchActivity(t,e){const a=this._buatIdLog();this.dispatchEvent(new CustomEvent("dasbor-kuis-log",{detail:{id_log:a,tipe:t,payload:{deskripsi:e,judul:this.assignmentTitle,timestamp:new Date().toISOString()}},bubbles:!0,composed:!0}))}_buatIdLog(){try{const t=new Uint8Array(8);globalThis.crypto.getRandomValues(t);let e="";return t.forEach(a=>e+=a.toString(16).padStart(2,"0")),`LOG-${Date.now()}-${e.toUpperCase()}`}catch{return`LOG-${Date.now()}-${Math.random().toString(36).substr(2,10).toUpperCase()}`}}_showToast(t){this._toastMsg=t,setTimeout(()=>{this._toastMsg===t&&(this._toastMsg="")},3e3)}static get styles(){return[super.styles,z`
         :host {
           display: block;
           font-family: var(--ddd-font-primary);
@@ -1764,7 +1829,7 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
             transform: translateX(-50%) translateY(0);
           }
         }
-      `,C`
+      `,z`
         /* ===== DARK MODE (DDD-token swap, gated on body.dark-mode) ===== */
         :host-context(body.dark-mode) :host {
           --dk-bg: #0b1020;
@@ -1809,12 +1874,12 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
         :host-context(body.dark-mode) .btn-submit:hover { background: #6366f1; }
         :host-context(body.dark-mode) .status-banner.success { background: #064e3b; color: #6ee7b7; border-color: #047857; }
         :host-context(body.dark-mode) .status-banner.error { background: #7f1d1d; color: #fecaca; border-color: #991b1b; }
-      `]}render(){return d`
+      `]}render(){return o`
       <section class="card" aria-labelledby="assignment-heading">
         <h3 id="assignment-heading">📤 ${this.assignmentTitle}</h3>
         <div class="meta">Formatif | ${this.t.submissionTitle} | KD: ${this.kdMateri}</div>
         <p class="instruction">${this.assignmentInstruction}</p>
-        ${this.studentId?"":d`<div class="login-hint">⚠️ ${this.t.loginHint}</div>`}
+        ${this.studentId?"":o`<div class="login-hint">⚠️ ${this.t.loginHint}</div>`}
         <label class="sr-only" for="task-link">${this.t.placeholderLink}</label>
         <input
           id="task-link"
@@ -1835,10 +1900,10 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
           aria-label="${this.t.placeholderTask}"
         ></textarea>
         <div class="btn-group">
-          ${this._assignmentSubmitted?d`
+          ${this._assignmentSubmitted?o`
                 <button class="btn btn-success btn-sm" disabled aria-label="${this.t.submitted}">✅ ${this.t.submitted}</button>
-                ${this.hideDelete?"":d`<button class="btn btn-danger btn-sm" @click=${this._resetAssignment} aria-label="${this.t.resetBtn}">🔄 ${this.t.resetBtn}</button>`}
-              `:d`
+                ${this.hideDelete?"":o`<button class="btn btn-danger btn-sm" @click=${this._resetAssignment} aria-label="${this.t.resetBtn}">🔄 ${this.t.resetBtn}</button>`}
+              `:o`
                 <button
                   class="btn btn-success"
                   ?disabled="${this._submitting}"
@@ -1857,20 +1922,20 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
           ${this._assignmentSubmitted?`\u2705 ${this.t.submitted}`:`\u26A0\uFE0F ${this.t.pending}`}
         </div>
       </section>
-      ${this._toastMsg?d`<div class="toast">${this._toastMsg}</div>`:""}
-    `}}globalThis.customElements.define(at.tag,at);class Tt extends R(F(U)){static get tag(){return"timer-materi-kuis"}static get properties(){return{...super.properties,durasiMateri:{type:Number,attribute:"durasi-materi",reflect:!0},durasiKuis:{type:Number,attribute:"durasi-kuis",reflect:!0},autostartMateri:{type:Boolean,attribute:"autostart-materi",reflect:!0},_sisaMateri:{state:!0},_sisaKuis:{state:!0},_jalanMateri:{state:!0},_jalanKuis:{state:!0}}}constructor(){super(),this.durasiMateri=600,this.durasiKuis=300,this.autostartMateri=!1,this._sisaMateri=this.durasiMateri,this._sisaKuis=this.durasiKuis,this._jalanMateri=!1,this._jalanKuis=!1,this._ivMateri=null,this._ivKuis=null,this.t={...this.t,materi:"Waktu Materi",kuis:"Waktu Kuis",start:"Mulai",pause:"Jeda",reset:"Ulang",done:"Waktu habis"}}connectedCallback(){super.connectedCallback(),this._sisaMateri=this.durasiMateri,this._sisaKuis=this.durasiKuis,this.autostartMateri&&this.start("materi")}disconnectedCallback(){this._clearInterval("materi"),this._clearInterval("kuis"),super.disconnectedCallback()}updated(t){t.has("durasiMateri")&&!this._jalanMateri&&(this._sisaMateri=this.durasiMateri),t.has("durasiKuis")&&!this._jalanKuis&&(this._sisaKuis=this.durasiKuis)}_meta(t){return t==="materi"?{dur:this.durasiMateri,sisa:"_sisaMateri",jalan:"_jalanMateri",iv:"_ivMateri",event:"timer-materi-expired",title:this.t.materi}:{dur:this.durasiKuis,sisa:"_sisaKuis",jalan:"_jalanKuis",iv:"_ivKuis",event:"timer-kuis-expired",title:this.t.kuis}}start(t){const e=this._meta(t);this[e.jalan]||(this[e.sisa]<=0&&(this[e.sisa]=e.dur),this[e.jalan]=!0,this._clearInterval(t),this[e.iv]=setInterval(()=>this._tick(t),1e3))}pause(t){const e=this._meta(t);this[e.jalan]=!1,this._clearInterval(t)}reset(t){const e=this._meta(t);this._clearInterval(t),this[e.jalan]=!1,this[e.sisa]=e.dur}_clearInterval(t){const e=t==="materi"?"_ivMateri":"_ivKuis";this[e]&&(clearInterval(this[e]),this[e]=null)}_tick(t){const e=this._meta(t);this[e.sisa]>0&&(this[e.sisa]-=1),this[e.sisa]<=0&&(this[e.sisa]=0,this[e.jalan]=!1,this._clearInterval(t),this.dispatchEvent(new CustomEvent(e.event,{detail:{phase:t},bubbles:!0,composed:!0})))}_format(t){const e=Math.floor(t/60),a=t%60;return`${String(e).padStart(2,"0")}:${String(a).padStart(2,"0")}`}_renderTimer(t){const e=this._meta(t),a=this[e.sisa],i=this[e.jalan],s=a<=10;return d`
-      <div class="timer-card">
+      ${this._toastMsg?o`<div class="toast">${this._toastMsg}</div>`:""}
+    `}}globalThis.customElements.define(rt.tag,rt);class zt extends j(B(F)){static get tag(){return"timer-materi-kuis"}static get properties(){return{...super.properties,durasiMateri:{type:Number,attribute:"durasi-materi",reflect:!0},durasiKuis:{type:Number,attribute:"durasi-kuis",reflect:!0},autostartMateri:{type:Boolean,attribute:"autostart-materi",reflect:!0},kdMateri:{type:String,attribute:"kd-materi"},studentId:{type:String,attribute:"student-id"},_sisaMateri:{state:!0},_sisaKuis:{state:!0},_jalanMateri:{state:!0},_jalanKuis:{state:!0}}}constructor(){super(),this.durasiMateri=600,this.durasiKuis=300,this.autostartMateri=!1,this._sisaMateri=this.durasiMateri,this._sisaKuis=this.durasiKuis,this._jalanMateri=!1,this._jalanKuis=!1,this._ivMateri=null,this._ivKuis=null,this.t={...this.t,materi:"Waktu Materi",kuis:"Waktu Kuis",start:"Mulai",pause:"Jeda",reset:"Ulang",done:"Waktu habis"}}connectedCallback(){super.connectedCallback(),this._sisaMateri=this.durasiMateri,this._sisaKuis=this.durasiKuis,this.autostartMateri&&this.start("materi"),this._onVisChange=this._onVisChange.bind(this),globalThis.addEventListener("visibilitychange",this._onVisChange)}disconnectedCallback(){globalThis.removeEventListener("visibilitychange",this._onVisChange),this._clearInterval("materi"),this._clearInterval("kuis"),super.disconnectedCallback()}_onVisChange(){document.hidden?(this._jalanMateri&&this.pause("materi"),this._jalanKuis&&this.pause("kuis")):(this.autostartMateri&&this._sisaMateri>0&&!this._jalanMateri&&this.start("materi"),this._sisaMateri<=0&&!this._jalanMateri&&this.dispatchEvent(new CustomEvent("timer-materi-expired",{bubbles:!0,composed:!0})),this._sisaKuis<=0&&!this._jalanKuis&&this.dispatchEvent(new CustomEvent("timer-kuis-expired",{bubbles:!0,composed:!0})))}updated(t){t.has("durasiMateri")&&!this._jalanMateri&&(this._sisaMateri=this.durasiMateri),t.has("durasiKuis")&&!this._jalanKuis&&(this._sisaKuis=this.durasiKuis)}_meta(t){return t==="materi"?{dur:this.durasiMateri,sisa:"_sisaMateri",jalan:"_jalanMateri",iv:"_ivMateri",event:"timer-materi-expired",title:this.t.materi}:{dur:this.durasiKuis,sisa:"_sisaKuis",jalan:"_jalanKuis",iv:"_ivKuis",event:"timer-kuis-expired",title:this.t.kuis}}start(t){const e=this._meta(t);this[e.jalan]||(this[e.sisa]<=0&&(this[e.sisa]=e.dur),this[e.jalan]=!0,this._clearInterval(t),this._saveStartTime(t,Date.now()-(e.dur-this[e.sisa])*1e3),this[e.iv]=setInterval(()=>this._tick(t),1e3))}pause(t){const e=this._meta(t);this[e.jalan]=!1,this._clearInterval(t)}reset(t){const e=this._meta(t);this._clearInterval(t),this[e.jalan]=!1,this[e.sisa]=e.dur,this._clearStartTime(t)}_clearInterval(t){const e=t==="materi"?"_ivMateri":"_ivKuis";this[e]&&(clearInterval(this[e]),this[e]=null)}_startKey(t){return`timer_mk_start_${t}_${this.kdMateri||"default"}_${this.studentId||"default"}`}_saveStartTime(t,e){try{globalThis.localStorage.setItem(this._startKey(t),String(e))}catch{}}_loadStartTime(t){try{const e=parseInt(globalThis.localStorage.getItem(this._startKey(t))||"0",10);return isNaN(e)?0:e}catch{return 0}}_clearStartTime(t){try{globalThis.localStorage.removeItem(this._startKey(t))}catch{}}_tick(t){const e=this._meta(t),a=this._loadStartTime(t);if(a>0){const i=Math.floor((Date.now()-a)/1e3);this[e.sisa]=Math.max(0,e.dur-i)}else this[e.sisa]>0&&(this[e.sisa]-=1);this[e.sisa]<=0&&(this[e.sisa]=0,this[e.jalan]=!1,this._clearInterval(t),this._clearStartTime(t),this.dispatchEvent(new CustomEvent(e.event,{detail:{phase:t},bubbles:!0,composed:!0})))}_format(t){const e=Math.floor(t/60),a=t%60;return`${String(e).padStart(2,"0")}:${String(a).padStart(2,"0")}`}_renderTimer(t){const e=this._meta(t),a=this[e.sisa],i=this[e.jalan],r=a<=10,s=`${e.title}: ${this._format(a)} ${r?"hampir habis":""}`;return o`
+      <div class="timer-card" role="timer" aria-live="polite" aria-label="${s}">
         <div class="meta">
           <span class="title">${e.title}</span>
-          <span class="time ${s?"warn":""}">${this._format(a)}</span>
+          <span class="time ${r?"warn":""}">${this._format(a)}</span>
         </div>
         <div class="controls">
-          ${i?d`<button @click="${()=>this.pause(t)}">⏸️ ${this.t.pause}</button>`:d`<button @click="${()=>this.start(t)}" ?disabled="${a<=0}">▶️ ${this.t.start}</button>`}
-          <button @click="${()=>this.reset(t)}">↺ ${this.t.reset}</button>
+          ${i?o`<button @click="${this._onPause.bind(this,t)}" aria-label="Jeda ${e.title.toLowerCase()}">⏸️ ${this.t.pause}</button>`:o`<button @click="${this._onStart.bind(this,t)}" ?disabled="${a<=0}" aria-label="Mulai ${e.title.toLowerCase()}">▶️ ${this.t.start}</button>`}
+          <button @click="${this._onReset.bind(this,t)}" aria-label="Atur ulang ${e.title.toLowerCase()}">↺ ${this.t.reset}</button>
         </div>
       </div>
-      ${a<=0?d`<div class="done" role="alert">⏰ ${this.t.done}</div>`:""}
-    `}static get styles(){return[super.styles,C`
+      ${a<=0?o`<div class="done" role="alert">⏰ ${this.t.done}</div>`:""}
+    `}_onStart(t){this.start(t)}_onPause(t){this.pause(t)}_onReset(t){this.reset(t)}static get styles(){return[super.styles,z`
         :host { display: block; }
         .grid {
           display: grid; gap: var(--ddd-spacing-5);
@@ -1879,8 +1944,8 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
         }
         .timer-card {
           display: inline-flex; align-items: center; gap: var(--ddd-spacing-4);
-          background: var(--ddd-theme-polaris-surface, #fff);
-          border: 1px solid var(--ddd-theme-polaris-border, #e0e0e0);
+          background: var(--ddd-theme-surface);
+          border: 1px solid var(--ddd-border-sm);
           border-radius: var(--ddd-radius-lg);
           padding: var(--ddd-spacing-4) var(--ddd-spacing-5);
         }
@@ -1891,305 +1956,435 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
           color: var(--ddd-theme-primary); font-variant-numeric: tabular-nums;
           min-width: 90px; text-align: center;
         }
-        .time.warn { color: var(--ddd-theme-error, #d32f2f); }
+        .time.warn { color: var(--ddd-theme-error); }
         .controls { display: flex; gap: var(--ddd-spacing-2); }
         button {
           font-family: var(--ddd-font-primary); font-size: var(--ddd-font-size-s);
           padding: var(--ddd-spacing-2) var(--ddd-spacing-4);
-          border-radius: var(--ddd-radius-md); border: 1px solid var(--ddd-theme-polaris-border, #e0e0e0);
-          background: var(--ddd-theme-default-surface, #fff); color: var(--ddd-theme-primary);
+          border-radius: var(--ddd-radius-md); border: 1px solid var(--ddd-border-sm);
+          background: var(--ddd-theme-default-surface); color: var(--ddd-theme-primary);
           cursor: pointer;
         }
         button:hover { background: rgba(103,80,164,0.08); }
         button:disabled { opacity: 0.5; cursor: not-allowed; }
-        .done { margin-top: var(--ddd-spacing-2); color: var(--ddd-theme-error, #d32f2f); font-size: var(--ddd-font-size-s); }
-      `,C`
-        /* ===== DARK MODE (DDD-token swap, gated on body.dark-mode) ===== */
-        :host-context(body.dark-mode) :host {
-          --dk-bg: #0b1020;
-          --dk-card: #111827;
-          --dk-soft: #1f2937;
-          --dk-border: #2a3245;
-          --dk-text: #e5e7eb;
-          --dk-text-soft: #94a3b8;
-          --dk-text-strong: #f8fafc;
-          --ddd-theme-background: var(--dk-bg);
-          --ddd-theme-color: var(--dk-text);
-          --ddd-theme-surface: var(--dk-card);
-          --ddd-theme-default-surface: var(--dk-card);
-          --ddd-theme-on-primary: #f8fafc;
-          --ddd-theme-primary: #c4b5fd;
-          --ddd-theme-secondary: var(--dk-text-soft);
-          --ddd-theme-polaris-surface: var(--dk-card);
-          --ddd-theme-polaris-border: var(--dk-border);
-          --ddd-theme-error: #fca5a5;
-          background: var(--dk-bg);
-          color: var(--dk-text);
+        .done { margin-top: var(--ddd-spacing-2); color: var(--ddd-theme-error); font-size: var(--ddd-font-size-s); }
+      `,z`
+        @media (prefers-color-scheme: dark) {
+          :host {
+            --ddd-theme-background: #0b1020;
+            --ddd-theme-color: #e5e7eb;
+            --ddd-theme-surface: #111827;
+            --ddd-theme-default-surface: #111827;
+            --ddd-theme-primary: #c4b5fd;
+            --ddd-theme-secondary: #94a3b8;
+            --ddd-theme-error: #fca5a5;
+            --ddd-border-color: #2a3245;
+            background: #0b1020;
+            color: #e5e7eb;
+          }
+          .title { color: #94a3b8; }
+          .time { color: #c4b5fd; }
+          .time.warn { color: #fca5a5; }
         }
-        :host-context(body.dark-mode) .card,
-        :host-context(body.dark-mode) button {
-          background: var(--dk-card);
-          color: var(--dk-text);
-          border-color: var(--dk-border);
-        }
-        :host-context(body.dark-mode) .title { color: var(--dk-text-soft); }
-        :host-context(body.dark-mode) .time { color: #c4b5fd; }
-        :host-context(body.dark-mode) .time.warn { color: #fca5a5; }
-      `]}render(){return d`
+      `]}render(){return o`
       <div class="grid">
         ${this._renderTimer("materi")}
         ${this._renderTimer("kuis")}
       </div>
-    `}static get haxProperties(){return{canScale:!0,canPosition:!0,canEditSource:!1,gizmo:{title:"Timer Materi & Kuis",description:"Dua timer terpisah untuk membaca materi dan mengerjakan kuis",icon:"icons:timer",color:"purple",tags:["Education","Timer","Quiz","Materi"]},settings:{configure:[{property:"durasiMateri",title:"Durasi Materi (detik)",inputMethod:"number",description:"Lama waktu membaca materi dalam detik",default:600},{property:"durasiKuis",title:"Durasi Kuis (detik)",inputMethod:"number",description:"Lama waktu mengerjakan kuis dalam detik",default:300},{property:"autostartMateri",title:"Mulai Timer Materi Otomatis",inputMethod:"boolean",default:!1}]},saveOptions:{unsetAttributes:[]}}}}customElements.get(Tt.tag)||globalThis.customElements.define(Tt.tag,Tt);class it extends R(F(U)){static get tag(){return"quiz-user-auth"}static get properties(){return{...super.properties,appsScriptUrl:{type:String,attribute:"apps-script-url",reflect:!0},autoLogin:{type:Boolean,attribute:"auto-login",reflect:!0},_screen:{state:!0},_nama:{state:!0},_email:{state:!0},_nis:{state:!0},_absen:{state:!0},_kelas:{state:!0},_studentId:{state:!0},_errorMsg:{state:!0},_successMsg:{state:!0},_loading:{state:!0},_verifyError:{state:!0},_verifyMsg:{state:!0}}}constructor(){super(),this.appsScriptUrl="",this.autoLogin=!0,this._screen="check",this._nama="",this._email="",this._nis="",this._absen="",this._kelas="",this._studentId="",this._errorMsg="",this._successMsg="",this._loading=!1,this._verifyError=!1,this._verifyMsg="",this._sessionInterval=null}connectedCallback(){if(super.connectedCallback(),globalThis.HaxStore&&typeof globalThis.HaxStore.requestAvailability=="function"){const e=globalThis.HaxStore.requestAvailability();e&&!e.elementList[it.tag]&&(e.elementList[it.tag]=it.haxProperties)}const t=this._load("quiz_user_session");t&&t.studentId?(this._studentId=t.studentId,this._nama=t.nama,this._email=t.email||"",this._nis=t.nis||"",this._absen=t.absen||"",this._kelas=t.kelas||"",this._screen="logged-in",this.autoLogin&&this._dispatchLogin(),this._startSessionWatch()):this._screen="login"}disconnectedCallback(){this._sessionInterval&&(clearInterval(this._sessionInterval),this._sessionInterval=null),super.disconnectedCallback()}_load(t){try{const e=JSON.parse(localStorage.getItem(t));return e&&e.expiresAt&&Date.now()>e.expiresAt?(this._clear(t),null):e}catch{return null}}_save(t,e){try{const a={...e,expiresAt:Date.now()+864e5};localStorage.setItem(t,JSON.stringify(a))}catch{}}_clear(t){try{localStorage.removeItem(t)}catch{}}async _api(t,e){const a=new AbortController,i=setTimeout(()=>a.abort(),1e4),s=new URLSearchParams(e);try{const r=await fetch(`${this.appsScriptUrl}?action=${t}&${s.toString()}`,{redirect:"follow",signal:a.signal});if(!r.ok)throw new Error(`Backend merespons HTTP ${r.status}.`);const n=await r.text();if(!n||n.trim().charAt(0)!=="{")throw new Error("Respon backend bukan JSON. Periksa URL /exec & deployment.");return JSON.parse(n)}catch(r){throw r&&r.name==="AbortError"?new Error("Waktu habis (timeout 10 detik) menghubungi server."):r}finally{clearTimeout(i)}}_ekstrakOk(t){const e=t&&(t.status==="ok"||t.status==="success"),a=t&&t.data||t||{};return{ok:!!e,studentId:a.student_id||a.studentId||"",nis:a.nis||"",nama:a.nama||"",email:a.email||"",absen:a.absen||"",kelas:a.kelas||"",message:t&&t.message||""}}async _verifySession(){if(this.appsScriptUrl){this._loading=!0,this._verifyError=!1,this._verifyMsg="";try{const t=await this._api("verify",{studentId:this._studentId}),e=this._ekstrakOk(t);e.ok?(this._nama=e.nama||this._nama,this._nis=e.nis||this._nis,this._absen=e.absen||this._absen,this._kelas=e.kelas||this._kelas,this._screen="logged-in",this._mutasiProfilKunci(),this._dispatchLogin()):(this._verifyError=!0,this._verifyMsg=e.message||"Sesi belum terverifikasi di server.")}catch{this._verifyError=!0,this._verifyMsg="Tidak dapat memverifikasi sesi (offline?). Sesi lokal tetap aktif."}this._loading=!1}}async _handleLogin(t){if(t.preventDefault(),this._errorMsg="",!this.appsScriptUrl){this._errorMsg="URL Apps Script belum dikonfigurasi.";return}this._loading=!0;try{const e=await this._api("login",{nis:this._nis.trim(),email:this._email.trim().toLowerCase()}),a=this._ekstrakOk(e);a.ok&&a.studentId?(this._studentId=a.studentId,this._nama=a.nama||this._nama,this._nis=a.nis||this._nis,this._absen=a.absen||this._absen,this._kelas=a.kelas||this._kelas,this._save("quiz_user_session",{studentId:this._studentId,nama:this._nama,email:this._email.trim().toLowerCase(),nis:this._nis,absen:this._absen,kelas:this._kelas}),this._mutasiProfilKunci(),this._screen="logged-in",this._dispatchLogin(),this._startSessionWatch()):this._errorMsg=a.message||"Login gagal"}catch(e){this._errorMsg=e.message||"Gagal menghubungi server"}this._loading=!1}async _handleRegister(t){if(t.preventDefault(),this._errorMsg="",this._successMsg="",!this.appsScriptUrl){this._errorMsg="URL Apps Script belum dikonfigurasi.";return}this._loading=!0;try{const e=await this._api("register",{nama:this._nama.trim(),email:this._email.trim().toLowerCase(),nis:this._nis.trim(),absen:this._absen.trim(),kelas:this._kelas.trim()}),a=this._ekstrakOk(e);a.ok?(this._successMsg="Pendaftaran berhasil! Silakan masuk.",this._screen="login"):this._errorMsg=a.message||"Gagal mendaftar"}catch(e){this._errorMsg=e.message||"Gagal menghubungi server."}this._loading=!1}_startSessionWatch(){this._sessionInterval&&clearInterval(this._sessionInterval),this._sessionInterval=setInterval(()=>{const t=this._load("quiz_user_session");(!t||!t.studentId)&&(this._clear("quiz_user_session"),this._studentId="",this._screen="login",globalThis.dispatchEvent(new CustomEvent("quiz-user-logout",{bubbles:!0,composed:!0})),this._dispatchSessionChanged())},6e4)}_handleLogout(){this._sessionInterval&&(clearInterval(this._sessionInterval),this._sessionInterval=null),this._clear("quiz_user_session"),this._clear("a3_v5_student_profile"),this._studentId="",this._nama="",this._email="",this._nis="",this._absen="",this._kelas="",this._screen="login",globalThis.dispatchEvent(new CustomEvent("quiz-user-logout",{bubbles:!0,composed:!0})),this._dispatchSessionChanged()}_mutasiProfilKunci(){try{localStorage.setItem("a3_v5_student_profile",JSON.stringify({student_id:this._studentId,nama:this._nama,kelas:this._kelas,nis:this._nis,absen:this._absen}))}catch{}}_dispatchLogin(){globalThis.dispatchEvent(new CustomEvent("quiz-user-login",{detail:{studentId:this._studentId,nama:this._nama,email:this._email,nis:this._nis,absen:this._absen,kelas:this._kelas},bubbles:!0,composed:!0})),this._dispatchSessionChanged()}_dispatchSessionChanged(){const t=this._load("quiz_user_session");globalThis.dispatchEvent(new CustomEvent("quiz-user-session-changed",{detail:t,bubbles:!0,composed:!0}))}static get styles(){return[super.styles,C`
+    `}static get haxProperties(){return{api:"1",canScale:!0,canPosition:!0,canEditSource:!1,type:"element",designSystem:{accent:!0,primary:!0,card:!0,text:!0,designTreatment:!1},gizmo:{title:"Timer Materi & Kuis",description:"Dua timer terpisah untuk membaca materi dan mengerjakan kuis",icon:"icons:timer",color:"purple",tags:["Education","Timer","Quiz","Materi"]},settings:{configure:[{property:"durasiMateri",title:"Durasi Materi (detik)",inputMethod:"number",description:"Lama waktu membaca materi dalam detik",default:600},{property:"durasiKuis",title:"Durasi Kuis (detik)",inputMethod:"number",description:"Lama waktu mengerjakan kuis dalam detik",default:300},{property:"autostartMateri",title:"Mulai Timer Materi Otomatis",inputMethod:"boolean",default:!1}]},saveOptions:{unsetAttributes:[]},demoSchema:[{tag:"timer-materi-kuis",properties:{durasiMateri:600,durasiKuis:300,autostartMateri:!1},content:""},{tag:"timer-materi-kuis",properties:{durasiMateri:30,durasiKuis:15,autostartMateri:!0},content:""}]}}}customElements.get(zt.tag)||globalThis.customElements.define(zt.tag,zt);class dt extends j(B(F)){static get tag(){return"quiz-user-auth"}static get properties(){return{...super.properties,appsScriptUrl:{type:String,attribute:"apps-script-url",reflect:!0},autoLogin:{type:Boolean,attribute:"auto-login",reflect:!0},_screen:{state:!0},_nama:{state:!0},_email:{state:!0},_nis:{state:!0},_absen:{state:!0},_kelas:{state:!0},_studentId:{state:!0},_errorMsg:{state:!0},_successMsg:{state:!0},_loading:{state:!0},_verifyError:{state:!0},_verifyMsg:{state:!0}}}constructor(){super(),this.basePath=new URL(".",import.meta.url).href,this.appsScriptUrl="",this.autoLogin=!0,this._screen="check",this._nama="",this._email="",this._nis="",this._absen="",this._kelas="",this._studentId="",this._errorMsg="",this._successMsg="",this._loading=!1,this._verifyError=!1,this._verifyMsg="",this._sessionInterval=null}connectedCallback(){if(super.connectedCallback(),globalThis.HaxStore&&typeof globalThis.HaxStore.requestAvailability=="function"){const e=globalThis.HaxStore.requestAvailability();e&&!e.elementList[dt.tag]&&(e.elementList[dt.tag]=dt.haxProperties)}this.registerLocalization({context:this,localesPath:`${this.basePath}locales/`});const t=this._load("quiz_user_session");t&&t.studentId?(this._studentId=t.studentId,this._nama=t.nama,this._email=t.email||"",this._nis=t.nis||"",this._absen=t.absen||"",this._kelas=t.kelas||"",this._screen="logged-in",this.autoLogin&&this._dispatchLogin(),this._startSessionWatch(),!this._absen&&this._nis&&setTimeout(()=>this._verifySession(),300)):this._screen="login"}disconnectedCallback(){this._sessionInterval&&(clearInterval(this._sessionInterval),this._sessionInterval=null),super.disconnectedCallback()}_load(t){try{const e=JSON.parse(localStorage.getItem(t));return e&&e.expiresAt&&Date.now()>e.expiresAt?(this._clear(t),null):e}catch{return null}}_save(t,e){try{const a={...e,expiresAt:Date.now()+864e5};localStorage.setItem(t,JSON.stringify(a))}catch{}}_clear(t){try{localStorage.removeItem(t)}catch{}}async _api(t,e){const a=new AbortController,i=setTimeout(()=>a.abort(),6e4),r=new URLSearchParams(e);try{const s=await fetch(`${this.appsScriptUrl}?action=${t}&${r.toString()}`,{redirect:"follow",signal:a.signal});if(!s.ok)throw new Error(`Backend merespons HTTP ${s.status}.`);const d=await s.text();if(!d||d.trim().charAt(0)!=="{")throw new Error("Respon backend bukan JSON. Periksa URL /exec & deployment.");return JSON.parse(d)}catch(s){throw s&&s.name==="AbortError"?new Error("Waktu habis (timeout 60 detik) menghubungi server."):s}finally{clearTimeout(i)}}_ekstrakOk(t){const e=t&&(t.status==="ok"||t.status==="success"),a=t&&t.data||t||{};return{ok:!!e,studentId:a.student_id||a.studentId||"",nis:a.nis||"",nama:a.nama||"",email:a.email||"",absen:a.absen||"",kelas:a.kelas||"",message:t&&t.message||""}}async _verifySession(){if(this.appsScriptUrl){this._loading=!0,this._verifyError=!1,this._verifyMsg="";try{const t=await this._api("verify",{studentId:this._studentId}),e=this._ekstrakOk(t);e.ok?(this._nama=e.nama||this._nama,this._nis=e.nis||this._nis,this._absen=e.absen||this._absen,this._kelas=e.kelas||this._kelas,this._screen="logged-in",this._mutasiProfilKunci(),this._dispatchLogin()):(this._verifyError=!0,this._verifyMsg=e.message||"Sesi belum terverifikasi di server.")}catch{this._verifyError=!0,this._verifyMsg="Tidak dapat memverifikasi sesi (offline?). Sesi lokal tetap aktif."}this._loading=!1}}async _handleLogin(t){if(t.preventDefault(),this._errorMsg="",!this.appsScriptUrl){this._errorMsg="URL Apps Script belum dikonfigurasi.";return}this._loading=!0;try{const e=await this._api("login",{nis:this._nis.trim(),email:this._email.trim().toLowerCase()}),a=this._ekstrakOk(e);a.ok&&a.studentId?(this._studentId=a.studentId,this._nama=a.nama||this._nama,this._nis=a.nis||this._nis,this._absen=a.absen||this._absen,this._kelas=a.kelas||this._kelas,this._save("quiz_user_session",{studentId:this._studentId,nama:this._nama,email:this._email.trim().toLowerCase(),nis:this._nis,absen:this._absen,kelas:this._kelas}),this._mutasiProfilKunci(),this._screen="logged-in",this._dispatchLogin(),this._startSessionWatch()):this._errorMsg=a.message||"Login gagal"}catch(e){this._errorMsg=e.message||"Gagal menghubungi server"}this._loading=!1}async _handleRegister(t){if(t.preventDefault(),this._errorMsg="",this._successMsg="",!this.appsScriptUrl){this._errorMsg="URL Apps Script belum dikonfigurasi.";return}this._loading=!0;try{const e=await this._api("register",{nama:this._nama.trim(),email:this._email.trim().toLowerCase(),nis:this._nis.trim(),absen:this._absen.trim(),kelas:this._kelas.trim()}),a=this._ekstrakOk(e);a.ok?(this._successMsg="Pendaftaran berhasil! Silakan masuk.",this._screen="login"):this._errorMsg=a.message||"Gagal mendaftar"}catch(e){this._errorMsg=e.message||"Gagal menghubungi server."}this._loading=!1}_startSessionWatch(){this._sessionInterval&&clearInterval(this._sessionInterval),this._sessionInterval=setInterval(()=>{const t=this._load("quiz_user_session");(!t||!t.studentId)&&(this._clear("quiz_user_session"),this._studentId="",this._screen="login",globalThis.dispatchEvent(new CustomEvent("quiz-user-logout",{bubbles:!0,composed:!0})),this._dispatchSessionChanged())},6e4)}_handleLogout(){this._sessionInterval&&(clearInterval(this._sessionInterval),this._sessionInterval=null),this._clear("quiz_user_session"),this._clear("a3_v5_student_profile"),this._studentId="",this._nama="",this._email="",this._nis="",this._absen="",this._kelas="",this._screen="login",globalThis.dispatchEvent(new CustomEvent("quiz-user-logout",{bubbles:!0,composed:!0})),this._dispatchSessionChanged()}_mutasiProfilKunci(){try{localStorage.setItem("a3_v5_student_profile",JSON.stringify({student_id:this._studentId,nama:this._nama,kelas:this._kelas,nis:this._nis,absen:this._absen}))}catch{}}_dispatchLogin(){globalThis.dispatchEvent(new CustomEvent("quiz-user-login",{detail:{studentId:this._studentId,nama:this._nama,email:this._email,nis:this._nis,absen:this._absen,kelas:this._kelas},bubbles:!0,composed:!0})),this._dispatchSessionChanged()}_dispatchSessionChanged(){const t=this._load("quiz_user_session");globalThis.dispatchEvent(new CustomEvent("quiz-user-session-changed",{detail:t,bubbles:!0,composed:!0}))}static get styles(){return[super.styles,z`
         :host {
           display: block;
           margin-bottom: var(--ddd-spacing-4);
+          font-family: var(--ddd-font-primary, 'DM Sans', system-ui, sans-serif);
         }
+
+        /* ===== Chalkboard-inspired design tokens ===== */
         .auth-card {
-          background: var(--ddd-theme-default-white, #ffffff);
-          border: var(--ddd-border-xs, 1px solid #e2e8f0);
-          border-radius: var(--ddd-radius-lg);
-          padding: var(--ddd-spacing-6);
+          background: linear-gradient(155deg, var(--ddd-theme-polaris-surface), var(--ddd-theme-default-surface));
+          border: 1px solid var(--ddd-theme-polaris-border);
+          border-radius: 12px;
+          padding: var(--ddd-spacing-6, 32px);
           max-width: 420px;
           margin: 0 auto;
-          box-shadow: var(--ddd-boxShadow-sm, 0 1px 3px rgba(0,0,0,.12));
+          box-shadow: 0 24px 48px -16px rgba(26, 35, 50, 0.45), inset 0 1px 0 rgba(240, 192, 64, 0.08);
+          position: relative;
+          overflow: hidden;
+          animation: auth-card-in 0.45s ease-out;
+        }
+        .auth-card::before {
+          content: '';
+          position: absolute;
+          top: 0; left: 0; right: 0;
+          height: 2px;
+          background: linear-gradient(90deg, transparent, var(--ddd-theme-warning), transparent);
+          opacity: 0.7;
         }
         h2 {
           color: var(--ddd-theme-default-text);
-          font-size: var(--ddd-font-size-l);
-          margin: 0 0 var(--ddd-spacing-2) 0;
+          font-family: var(--ddd-font-primary);
+          font-size: var(--ddd-font-size-l, 26px);
+          margin: 0 0 var(--ddd-spacing-2, 8px) 0;
           text-align: center;
+          font-weight: 600;
+        }
+        h2 .auth-icon {
+          display: inline-block;
+          margin-right: 8px;
+          color: var(--ddd-theme-warning);
+          font-size: 1.25em;
+          vertical-align: -0.12em;
         }
         .subtitle {
           color: var(--ddd-theme-secondary);
-          font-size: var(--ddd-font-size-4xs);
+          font-size: var(--ddd-font-size-4xs, 14px);
           text-align: center;
-          margin-bottom: var(--ddd-spacing-4);
+          margin-bottom: var(--ddd-spacing-4, 20px);
+          line-height: 1.6;
         }
         .field {
-          margin-bottom: var(--ddd-spacing-3);
+          margin-bottom: var(--ddd-spacing-3, 14px);
         }
         .field-row {
           display: flex;
-          gap: var(--ddd-spacing-3);
+          gap: var(--ddd-spacing-3, 12px);
         }
         .field-row .field {
           flex: 1;
         }
         .field label {
           display: block;
-          font-size: var(--ddd-font-size-4xs);
-          font-weight: var(--ddd-font-weight-bold);
-          color: var(--ddd-theme-secondary);
-          margin-bottom: var(--ddd-spacing-1);
+          font-size: var(--ddd-font-size-4xs, 13px);
+          font-weight: 600;
+          color: var(--ddd-theme-secondary, rgba(255,255,255,0.75));
+          margin-bottom: 6px;
         }
         .field input {
           width: 100%;
-          padding: var(--ddd-spacing-3);
-          border: var(--ddd-border-xs);
-          border-radius: var(--ddd-radius-md);
-          font-size: var(--ddd-font-size-4xs);
+          padding: 12px 14px;
+          border: 1px solid var(--ddd-theme-input-border);
+          border-radius: 6px;
+          font-size: 15px;
           font-family: var(--ddd-font-primary);
           box-sizing: border-box;
+          background: rgba(255,255,255,0.06);
+          color: var(--ddd-theme-default-text);
+          transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+        }
+        .field input::placeholder {
+          color: rgba(255,255,255,0.3);
         }
         .field input:focus {
           outline: none;
-          border-color: var(--ddd-theme-primary);
-          box-shadow: var(--ddd-boxShadow-sm);
+          border-color: var(--ddd-theme-warning);
+          background: rgba(255,255,255,0.09);
+          box-shadow: 0 0 0 3px rgba(240, 192, 64, 0.12);
         }
         .btn {
           width: 100%;
-          padding: var(--ddd-spacing-3);
+          padding: 14px 24px;
           border: none;
-          border-radius: var(--ddd-radius-md);
-          font-size: var(--ddd-font-size-4xs);
-          font-weight: var(--ddd-font-weight-bold);
+          border-radius: 6px;
+          font-size: 15px;
+          font-weight: 600;
           cursor: pointer;
           font-family: var(--ddd-font-primary);
-          margin-top: var(--ddd-spacing-2);
-          background: linear-gradient(120deg, var(--ddd-theme-primary, #4f46e5), var(--ddd-theme-accent, #6d28d9));
-          color: var(--ddd-theme-default-white, #ffffff);
-          box-shadow: var(--ddd-boxShadow-sm);
+          margin-top: var(--ddd-spacing-2, 8px);
+          background: linear-gradient(120deg, var(--ddd-theme-warning), var(--ddd-theme-accent));
+          color: var(--ddd-theme-on-primary);
+          transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
+          box-shadow: 0 8px 20px -6px rgba(240, 192, 64, 0.4);
         }
         .btn:hover {
-          filter: brightness(1.08);
+          filter: brightness(1.06);
+          transform: translateY(-1px);
+          box-shadow: 0 12px 24px -6px rgba(240, 192, 64, 0.5);
+        }
+        .btn:active {
+          transform: translateY(0);
         }
         .btn:disabled {
           opacity: 0.6;
           cursor: not-allowed;
+          transform: none;
         }
         .btn-link {
           background: none;
           border: none;
-          color: var(--ddd-theme-primary, #4f46e5);
-          font-size: var(--ddd-font-size-4xs);
-          text-decoration: underline;
-          margin-top: var(--ddd-spacing-3);
-          font-weight: var(--ddd-font-weight-bold);
+          color: var(--ddd-theme-warning);
+          font-size: var(--ddd-font-size-4xs, 14px);
+          text-decoration: none;
+          margin-top: var(--ddd-spacing-3, 12px);
+          font-weight: 600;
           cursor: pointer;
           width: 100%;
+          transition: color 0.2s;
+        }
+        .btn-link:hover {
+          color: #f5d060;
         }
         .msg {
-          padding: var(--ddd-spacing-3);
-          border-radius: var(--ddd-radius-md);
-          font-size: var(--ddd-font-size-4xs);
-          margin-bottom: var(--ddd-spacing-3);
+          padding: 12px 16px;
+          border-radius: 6px;
+          font-size: 14px;
+          margin-bottom: var(--ddd-spacing-3, 12px);
+          line-height: 1.5;
         }
         .msg-error {
-          background: var(--ddd-theme-error-light);
-          color: var(--ddd-theme-error-text);
-          border: var(--ddd-border-xs);
+          background: rgba(239, 68, 68, 0.12);
+          color: var(--ddd-theme-error);
+          border: 1px solid rgba(239, 68, 68, 0.25);
+          border-left: 3px solid var(--ddd-theme-error);
         }
         .msg-success {
-          background: var(--ddd-theme-success-light);
-          color: var(--ddd-theme-success-text);
-          border: var(--ddd-border-xs);
+          background: rgba(34, 197, 94, 0.12);
+          color: var(--ddd-theme-success);
+          border: 1px solid rgba(34, 197, 94, 0.25);
+          border-left: 3px solid var(--ddd-theme-success);
         }
         .user-bar {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          background: var(--ddd-theme-polaris-surface-hover);
-          border-radius: var(--ddd-radius-lg);
-          padding: var(--ddd-spacing-4);
-          border: var(--ddd-border-xs);
+          gap: var(--ddd-spacing-3, 12px);
+          background: rgba(255,255,255,0.06);
+          border: 1px solid rgba(255,255,255,0.12);
+          border-radius: 10px;
+          padding: var(--ddd-spacing-4, 16px);
           max-width: 420px;
           margin: 0 auto;
+          box-shadow: 0 8px 20px -8px rgba(26, 35, 50, 0.4);
+          animation: auth-card-in 0.45s ease-out;
         }
         .user-info {
           display: flex;
           align-items: center;
-          gap: var(--ddd-spacing-3);
+          gap: var(--ddd-spacing-3, 12px);
+          min-width: 0;
         }
         .avatar {
-          width: 40px;
-          height: 40px;
-          border-radius: var(--ddd-radius-circle);
-          background: linear-gradient(120deg, var(--ddd-theme-primary, #4f46e5), var(--ddd-theme-accent, #6d28d9));
-          color: var(--ddd-theme-default-white, #ffffff);
+          width: 44px;
+          height: 44px;
+          flex-shrink: 0;
+          border-radius: 50%;
+          background: linear-gradient(120deg, var(--ddd-theme-warning), var(--ddd-theme-accent));
+          color: var(--ddd-theme-on-primary);
           display: flex;
           align-items: center;
           justify-content: center;
-          font-weight: var(--ddd-font-weight-black);
-          font-size: var(--ddd-font-size-3xs);
+          font-weight: 700;
+          font-size: 18px;
+          box-shadow: 0 4px 12px -2px rgba(240, 192, 64, 0.4);
         }
         .user-name {
-          font-weight: var(--ddd-font-weight-bold);
-          font-size: var(--ddd-font-size-4xs);
+          font-weight: 600;
+          font-size: var(--ddd-font-size-4xs, 15px);
+          color: var(--ddd-theme-default-text);
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
         }
         .user-email {
-          font-size: var(--ddd-font-size-4xs);
+          font-size: var(--ddd-font-size-4xs, 13px);
           color: var(--ddd-theme-secondary);
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
         }
         .user-meta {
-          font-size: var(--ddd-font-size-4xs);
+          font-size: var(--ddd-font-size-4xs, 12px);
           color: var(--ddd-theme-secondary);
-          margin-top: var(--ddd-spacing-1);
+          margin-top: 4px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
         }
         .logout-btn {
-          padding: var(--ddd-spacing-2) var(--ddd-spacing-3);
-          border: var(--ddd-border-xs);
+          padding: 10px 16px;
+          border: 1px solid rgba(239, 68, 68, 0.4);
           color: var(--ddd-theme-error);
-          background: none;
-          border-radius: var(--ddd-radius-sm);
-          font-size: var(--ddd-font-size-4xs);
+          background: transparent;
+          border-radius: 6px;
+          font-size: 13px;
           cursor: pointer;
           font-family: var(--ddd-font-primary);
+          transition: background 0.2s, color 0.2s;
+          white-space: nowrap;
         }
         .logout-btn:hover {
-          background: var(--ddd-theme-error);
-          color: var(--ddd-theme-default-white);
+          background: rgba(239, 68, 68, 0.12);
+          color: #fca5a5;
         }
         .user-actions {
           display: flex;
           flex-direction: column;
-          gap: var(--ddd-spacing-2);
+          gap: var(--ddd-spacing-2, 8px);
           align-items: flex-end;
         }
         .check-btn {
-          padding: var(--ddd-spacing-2) var(--ddd-spacing-3);
-          border: var(--ddd-border-xs);
-          color: var(--ddd-theme-primary, #4f46e5);
-          background: none;
-          border-radius: var(--ddd-radius-sm);
-          font-size: var(--ddd-font-size-4xs);
+          padding: 10px 16px;
+          border: 1px solid rgba(240, 192, 64, 0.4);
+          color: var(--ddd-theme-warning);
+          background: transparent;
+          border-radius: 6px;
+          font-size: 13px;
           cursor: pointer;
           font-family: var(--ddd-font-primary);
+          transition: background 0.2s, color 0.2s;
+          white-space: nowrap;
         }
         .check-btn:hover {
-          background: var(--ddd-theme-primary, #4f46e5);
-          color: var(--ddd-theme-default-white, #ffffff);
+          background: rgba(240, 192, 64, 0.12);
+          color: #f5d060;
         }
         .verify-note {
-          margin-top: var(--ddd-spacing-1);
-          font-size: var(--ddd-font-size-4xs);
-          color: var(--ddd-theme-warning, #b45309);
+          margin-top: 8px;
+          font-size: var(--ddd-font-size-4xs, 12px);
+          color: var(--ddd-theme-warning);
+          line-height: 1.4;
         }
         .loading {
           text-align: center;
-          padding: var(--ddd-spacing-8);
-          color: var(--ddd-theme-primary);
+          padding: var(--ddd-spacing-8, 32px);
+          color: var(--ddd-theme-warning);
+          font-size: 15px;
         }
-      `,C`
-        /* ===== DARK MODE (DDD-token swap, gated on body.dark-mode) ===== */
+        .loading::before {
+          content: '';
+          display: inline-block;
+          width: 14px;
+          height: 14px;
+          margin-right: 8px;
+          border: 2px solid rgba(240, 192, 64, 0.3);
+          border-top-color: var(--ddd-theme-warning);
+          border-radius: 50%;
+          vertical-align: -2px;
+          animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+          to { transform: rotate(360deg); }
+        }
+        @keyframes auth-card-in {
+          from { opacity: 0; transform: translateY(12px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          *, *::before, *::after {
+            animation-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
+          }
+        }
+      `,z`
+        /* ===== DARK MODE (token swap, gated on body.dark-mode) ===== */
         :host-context(body.dark-mode) :host {
-          --dk-bg: #0b1020;
-          --dk-card: #111827;
-          --dk-soft: #1f2937;
-          --dk-border: #2a3245;
-          --dk-text: #e5e7eb;
-          --dk-text-soft: #94a3b8;
-          --dk-text-strong: #f8fafc;
-          --ddd-theme-background: var(--dk-bg);
-          --ddd-theme-color: var(--dk-text);
-          --ddd-theme-surface: var(--dk-card);
-          --ddd-theme-default-surface: var(--dk-card);
-          --ddd-theme-default-text: var(--dk-text);
-          --ddd-theme-default-white: #1f2937;
-          --ddd-theme-on-primary: #f8fafc;
+          --ddd-theme-card: #111827;
+          --ddd-theme-card-deep: #0b1020;
+          --ddd-theme-card-border: rgba(132, 136, 248, 0.25);
+          --ddd-theme-default-text: #e5e7eb;
+          --ddd-theme-secondary: rgba(229, 231, 235, 0.65);
+          --ddd-theme-on-primary: #0b1020;
+          --ddd-theme-input-border: rgba(229, 231, 235, 0.15);
           --ddd-theme-primary: #c4b5fd;
           --ddd-theme-accent: #818cf8;
-          --ddd-theme-secondary: var(--dk-text-soft);
-          --ddd-theme-polaris-surface: var(--dk-card);
-          --ddd-theme-polaris-border: var(--dk-border);
           --ddd-theme-warning: #fcd34d;
           --ddd-theme-warning-text: #fde68a;
-          background: var(--dk-bg);
-          color: var(--dk-text);
+          background: var(--dk-bg, #0b1020);
+          color: var(--dk-text, #e5e7eb);
         }
         :host-context(body.dark-mode) .auth-card {
-          background: var(--dk-card);
-          color: var(--dk-text);
-          border-color: var(--dk-border);
+          background: linear-gradient(155deg, #1f2937, #111827);
+          border-color: rgba(132, 136, 248, 0.25);
         }
-        :host-context(body.dark-mode) .form-input {
-          background: var(--dk-soft);
-          color: var(--dk-text);
-          border-color: var(--dk-border);
+        :host-context(body.dark-mode) .field input {
+          background: rgba(255,255,255,0.05);
+          border-color: rgba(229, 231, 235, 0.15);
+          color: #e5e7eb;
         }
-        :host-context(body.dark-mode) .btn-primary {
-          background: linear-gradient(120deg, #4f46e5, #6366f1);
-          color: #f8fafc;
+        :host-context(body.dark-mode) .field input::placeholder {
+          color: rgba(229, 231, 235, 0.25);
         }
-        :host-context(body.dark-mode) .error-msg {
-          background: #7f1d1d;
+        :host-context(body.dark-mode) .field input:focus {
+          border-color: #c4b5fd;
+          background: rgba(255,255,255,0.08);
+          box-shadow: 0 0 0 3px rgba(196, 181, 253, 0.15);
+        }
+        :host-context(body.dark-mode) .btn {
+          background: linear-gradient(120deg, #c4b5fd, #818cf8);
+          color: #0b1020;
+          box-shadow: 0 8px 20px -6px rgba(129, 140, 248, 0.4);
+        }
+        :host-context(body.dark-mode) .btn:hover {
+          filter: brightness(1.06);
+          box-shadow: 0 12px 24px -6px rgba(129, 140, 248, 0.5);
+        }
+        :host-context(body.dark-mode) .btn-link {
+          color: #c4b5fd;
+        }
+        :host-context(body.dark-mode) .btn-link:hover {
+          color: #ddd6fe;
+        }
+        :host-context(body.dark-mode) .msg-error {
+          background: rgba(239, 68, 68, 0.12);
+          color: #fca5a5;
+          border-left-color: #ef4444;
+        }
+        :host-context(body.dark-mode) .msg-success {
+          background: rgba(34, 197, 94, 0.12);
+          color: #86efac;
+          border-left-color: #22c55e;
+        }
+        :host-context(body.dark-mode) .user-bar {
+          background: rgba(255,255,255,0.05);
+          border-color: rgba(229, 231, 235, 0.12);
+        }
+        :host-context(body.dark-mode) .user-name {
+          color: #e5e7eb;
+        }
+        :host-context(body.dark-mode) .user-email,
+        :host-context(body.dark-mode) .user-meta {
+          color: rgba(229, 231, 235, 0.55);
+        }
+        :host-context(body.dark-mode) .avatar {
+          background: linear-gradient(120deg, #c4b5fd, #818cf8);
+          color: #0b1020;
+        }
+        :host-context(body.dark-mode) .logout-btn {
+          border-color: rgba(239, 68, 68, 0.4);
+          color: #fca5a5;
+        }
+        :host-context(body.dark-mode) .logout-btn:hover {
+          background: rgba(239, 68, 68, 0.15);
           color: #fecaca;
-          border-color: #991b1b;
         }
-        :host-context(body.dark-mode) .success-msg {
-          background: #064e3b;
-          color: #6ee7b7;
-          border-color: #047857;
+        :host-context(body.dark-mode) .check-btn {
+          border-color: rgba(196, 181, 253, 0.4);
+          color: #c4b5fd;
         }
-      `]}render(){if(this._loading&&this._screen==="check")return d`<div class="loading">⏳ Memverifikasi sesi...</div>`;if(this._screen==="logged-in"){const t=this._nama?this._nama.charAt(0).toUpperCase():"?";return d`
+        :host-context(body.dark-mode) .check-btn:hover {
+          background: rgba(196, 181, 253, 0.12);
+          color: #ddd6fe;
+        }
+        :host-context(body.dark-mode) .verify-note {
+          color: #fcd34d;
+        }
+        :host-context(body.dark-mode) .loading {
+          color: #c4b5fd;
+        }
+      `]}render(){if(this._loading&&this._screen==="check")return o`
+        <div class="loading">
+          <span class="spinner" aria-hidden="true"></span>
+          <span>Memverifikasi sesi...</span>
+        </div>
+      `;if(this._screen==="logged-in"){const e=this._nama?this._nama.charAt(0).toUpperCase():"?";return o`
         <div class="user-bar">
           <div class="user-info">
-            <div class="avatar">${t}</div>
-            <div>
+            <div class="avatar" aria-hidden="true">${e}</div>
+            <div class="user-details">
               <div class="user-name">${this._nama}</div>
               <div class="user-email">${this._email}</div>
               <div class="user-meta">NIS: ${this._nis} | Absen: ${this._absen} | Kelas: ${this._kelas}</div>
-              ${this._verifyError?d`<div class="verify-note">${this._verifyMsg}</div>`:""}
+              ${this._verifyError?o`<div class="verify-note">${this._verifyMsg}</div>`:f}
             </div>
           </div>
           <div class="user-actions">
@@ -2199,38 +2394,40 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
             <button class="logout-btn" @click=${this._handleLogout}>Keluar</button>
           </div>
         </div>
-      `}return d`
+      `}const t=this._screen==="register";return o`
       <div class="auth-card">
-        <h2>🔐 ${this._screen==="register"?"Daftar":"Masuk"}</h2>
-        <p class="subtitle">
-          ${this._screen==="register"?"Buat akun untuk menyimpan hasil kuis & aktivitas":"Masuk dengan identitas yang sudah terdaftar"}
-        </p>
+        <div class="auth-header">
+          <h2>${t?"Daftar":"Masuk"}</h2>
+          <p class="subtitle">
+            ${t?"Buat akun untuk menyimpan hasil kuis & aktivitas":"Masuk dengan identitas yang sudah terdaftar"}
+          </p>
+        </div>
 
-        ${this._errorMsg?d`<div class="msg msg-error">${this._errorMsg}</div>`:""}
-        ${this._successMsg?d`<div class="msg msg-success">${this._successMsg}</div>`:""}
+        ${this._errorMsg?o`<div class="msg msg-error">${this._errorMsg}</div>`:f}
+        ${this._successMsg?o`<div class="msg msg-success">${this._successMsg}</div>`:f}
 
-        ${this._screen==="register"?d`
+        ${t?o`
               <form @submit=${this._handleRegister}>
                 <div class="field">
                   <label>NIS</label>
-                  <input type="text" .value=${this._nis} @input=${t=>this._nis=t.target.value} placeholder="Contoh: 12345" required />
+                  <input type="text" .value=${this._nis} @input=${e=>this._nis=e.target.value} placeholder="Contoh: 12345" required />
                 </div>
                 <div class="field">
                   <label>Nama Lengkap</label>
-                  <input type="text" .value=${this._nama} @input=${t=>this._nama=t.target.value} placeholder="Contoh: Ahmad Wahyudi" required minlength="3" />
+                  <input type="text" .value=${this._nama} @input=${e=>this._nama=e.target.value} placeholder="Contoh: Ahmad Wahyudi" required minlength="3" />
                 </div>
                 <div class="field">
                   <label>Email</label>
-                  <input type="email" .value=${this._email} @input=${t=>this._email=t.target.value} placeholder="contoh@email.com" required />
+                  <input type="email" .value=${this._email} @input=${e=>this._email=e.target.value} placeholder="contoh@email.com" required />
                 </div>
                 <div class="field-row">
                   <div class="field">
                     <label>Nomor Absen</label>
-                    <input type="text" .value=${this._absen} @input=${t=>this._absen=t.target.value} placeholder="1" required />
+                    <input type="text" .value=${this._absen} @input=${e=>this._absen=e.target.value} placeholder="1" required />
                   </div>
                   <div class="field">
                     <label>Kelas</label>
-                    <input type="text" .value=${this._kelas} @input=${t=>this._kelas=t.target.value} placeholder="XI-1" required />
+                    <input type="text" .value=${this._kelas} @input=${e=>this._kelas=e.target.value} placeholder="XI-1" required />
                   </div>
                 </div>
                 <button class="btn" type="submit" ?disabled=${this._loading}>
@@ -2240,15 +2437,15 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
               <button class="btn-link" @click=${()=>{this._screen="login",this._errorMsg="",this._successMsg=""}}>
                 Sudah punya akun? Masuk
               </button>
-            `:d`
+            `:o`
               <form @submit=${this._handleLogin}>
                 <div class="field">
                   <label>NIS</label>
-                  <input type="text" .value=${this._nis} @input=${t=>this._nis=t.target.value} placeholder="Contoh: 12345" required />
+                  <input type="text" .value=${this._nis} @input=${e=>this._nis=e.target.value} placeholder="Contoh: 12345" required />
                 </div>
                 <div class="field">
                   <label>Email</label>
-                  <input type="email" .value=${this._email} @input=${t=>this._email=t.target.value} placeholder="contoh@email.com" required />
+                  <input type="email" .value=${this._email} @input=${e=>this._email=e.target.value} placeholder="contoh@email.com" required />
                 </div>
                 <button class="btn" type="submit" ?disabled=${this._loading}>
                   ${this._loading?"\u23F3 Masuk...":"Masuk"}
@@ -2259,14 +2456,14 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
               </button>
             `}
       </div>
-    `}static get haxProperties(){return{canScale:!1,canPosition:!0,canEditSource:!1,gizmo:{title:"Quiz User Auth",description:"Sistem login/registrasi siswa untuk dasbor-kuis",icon:"icons:account-circle",color:"purple",tags:["Education","Auth"]},settings:{configure:[{property:"appsScriptUrl",title:"Apps Script URL",inputMethod:"textfield",required:!0}],advanced:[],developer:[]},saveOptions:{unsetAttributes:["_screen","_nama","_email","_nis","_absen","_kelas","_studentId","_errorMsg","_successMsg","_loading"]}}}}globalThis.customElements.define(it.tag,it);class st extends R(F(U)){static get tag(){return"latihan-kuis"}static get properties(){return{...super.properties,appsScriptUrl:{type:String,attribute:"apps-script-url",reflect:!0},spreadsheetUrl:{type:String,attribute:"spreadsheet-url",reflect:!0},duration:{type:Number,attribute:"duration",reflect:!0},judulMateri:{type:String,attribute:"judul-materi",reflect:!0},teksMateri:{type:String,attribute:"teks-materi",reflect:!0},materiUrl:{type:String,attribute:"materi-url",reflect:!0},materiFile:{type:String,attribute:"materi-file",reflect:!0},coverImage:{type:String,attribute:"cover-image",reflect:!0},judulKuis:{type:String,attribute:"judul-kuis",reflect:!0},questions:{type:Array,attribute:"questions",reflect:!0},studentId:{type:String,attribute:"student-id",reflect:!0},studentName:{type:String,attribute:"student-name",reflect:!0},studentNis:{type:String,attribute:"student-nis",reflect:!0},studentAbsen:{type:String,attribute:"student-absen",reflect:!0},studentKelas:{type:String,attribute:"student-kelas",reflect:!0},kdMateri:{type:String,attribute:"kd-materi",reflect:!0},pesanWaktuHabis:{type:String,attribute:"pesan-waktu-habis",reflect:!0},pesanNilaiTerkirim:{type:String,attribute:"pesan-nilai-terkirim",reflect:!0},labelMulai:{type:String,attribute:"label-mulai",reflect:!0},showSheetLink:{type:Boolean,attribute:"show-sheet-link",reflect:!0},soalFileUrl:{type:String,attribute:"soal-file-url",reflect:!0},allowRetake:{type:Boolean,attribute:"allow-retake",reflect:!0},maxRetake:{type:Number,attribute:"max-retake",reflect:!0},mode:{type:String,attribute:"mode",reflect:!0},hidePauseRestart:{type:Boolean,attribute:"hide-pause-restart",reflect:!0},shuffleQuestions:{type:Boolean,attribute:"shuffle-questions",reflect:!0},shuffleChoices:{type:Boolean,attribute:"shuffle-choices",reflect:!0},kategori:{type:String,attribute:"kategori",reflect:!0},hideConfetti:{type:Boolean,attribute:"hide-confetti",reflect:!0},hideAnswers:{type:Boolean,attribute:"hide-answers",reflect:!0},hideScore:{type:Boolean,attribute:"hide-score",reflect:!0},showQuestionNav:{type:Boolean,attribute:"show-question-nav",reflect:!0},allowBackwardNav:{type:Boolean,attribute:"allow-backward-nav",reflect:!0},practiceMode:{type:Boolean,attribute:"practice-mode",reflect:!0},questionDelay:{type:Number,attribute:"question-delay",reflect:!0},reviewAnswers:{type:Boolean,attribute:"review-answers",reflect:!0},timerAutostart:{type:Boolean,attribute:"timer-autostart",reflect:!0},_mulai:{state:!0},_selesai:{state:!0},_skor:{state:!0},_habisWaktu:{state:!0},_pesan:{state:!0},_bestSkor:{state:!0},_pernahIkut:{state:!0},_attemptKe:{state:!0},_terkunci:{state:!0},_resumeRemaining:{state:!0},_soalFileUrlCache:{state:!0},_tabSwitchWarning:{state:!0},_userStarted:{state:!0},kkm:{type:Number,attribute:"kkm",reflect:!0},remidiMode:{type:Boolean,attribute:"remidi-mode",reflect:!0},remidiSoalUrl:{type:String,attribute:"remidi-soal-url",reflect:!0},nilaiAkhir:{state:!0},sudahRemidi:{state:!0},_needsRemidi:{state:!0},_skorAwal:{state:!0},_remidiSoal:{state:!0},_tabSwitchCount:{state:!0},_visibilityChangeCount:{state:!0},_waktuMulai:{state:!0}}}constructor(){super(),this.appsScriptUrl="",this.spreadsheetUrl="",this.duration=300,this.judulMateri="Materi Pembelajaran",this.teksMateri="Baca materi di bawah ini dengan saksama sebelum mengerjakan kuis. Waktu pengerjaan kuis dibatasi oleh timer; saat waktu habis, kuis akan dikunci dan nilai otomatis terkirim.",this.materiUrl="",this.materiFile="",this.coverImage="",this.judulKuis="Evaluasi Kuis Interaktif",this.questions=void 0,this.studentId="",this.studentName="",this.studentNis="",this.studentAbsen="",this.studentKelas="",this.kdMateri="",this.pesanWaktuHabis="\u23F0 Waktu habis! Kuis dikunci & dinilai otomatis.",this.pesanNilaiTerkirim="\u{1F389} Selamat! Nilai Anda sudah terkirim ke spreadsheet.",this.labelMulai="\u25B6\uFE0F Mulai",this.showSheetLink=!1,this.soalFileUrl="",this.allowRetake=!1,this.maxRetake=0,this.mode="siswa",this.hidePauseRestart=!0,this.shuffleQuestions=!1,this.shuffleChoices=!1,this.kategori="sumatif_lm",this.hideConfetti=!1,this.hideAnswers=!1,this.hideScore=!1,this.showQuestionNav=!0,this.allowBackwardNav=!1,this.practiceMode=!1,this.questionDelay=1800,this.reviewAnswers=!0,this.timerAutostart=!0,this._mulai=!1,this._selesai=!1,this._skor=null,this._habisWaktu=!1,this._pesan="",this._bestSkor=null,this._pernahIkut=!1,this._attemptKe=0,this._terkunci=!1,this._resumeRemaining=null,this._soalFileUrlCache="",this._tabSwitchWarning=!1,this._userStarted=!1,this.kkm=75,this.remidiMode=!1,this.remidiSoalUrl="",this.nilaiAkhir=null,this.sudahRemidi=!1,this._needsRemidi=!1,this._skorAwal=null,this._remidiSoal=[],this._tabSwitchCount=0,this._visibilityChangeCount=0,this._waktuMulai=null,this._onAuthLogin=this._onAuthLogin.bind(this),this._onAuthLogout=this._onAuthLogout.bind(this),this._onVisibilityChange=this._onVisibilityChange.bind(this),this.t={...this.t,bacaMateri:"\u{1F517} Buka URL Materi",unduhMateri:"\u{1F4CE} Unduh File Materi"}}connectedCallback(){if(super.connectedCallback(),globalThis.HaxStore&&typeof globalThis.HaxStore.requestAvailability=="function"){const t=globalThis.HaxStore.requestAvailability();t&&!t.elementList[st.tag]&&(t.elementList[st.tag]=st.haxProperties)}globalThis.addEventListener("quiz-user-login",this._onAuthLogin),globalThis.addEventListener("quiz-user-logout",this._onAuthLogout),globalThis.addEventListener("visibilitychange",this._onVisibilityChange),this._preventCopy=this._preventCopy.bind(this),this._preventPaste=this._preventPaste.bind(this),this._preventContext=this._preventContext.bind(this),this._preventSelect=this._preventSelect.bind(this),this._loadSession(),this._muatStatusKuis()}disconnectedCallback(){globalThis.removeEventListener("quiz-user-login",this._onAuthLogin),globalThis.removeEventListener("quiz-user-logout",this._onAuthLogout),globalThis.removeEventListener("visibilitychange",this._onVisibilityChange),super.disconnectedCallback()}_onAuthLogin(t){const e=t&&t.detail||{};this._bestSkor=null,this._pernahIkut=!1,this._selesai=!1,this._habisWaktu=!1,this._skor=null,this._mulai=!1,this._terkunci=!1,this._resumeRemaining=null,this.studentId=e.studentId||"",this.studentName=e.nama||"",this.studentNis=e.nis||"",this.studentAbsen=e.absen||"",this.studentKelas=e.kelas||"",this._loadAttemptCounter(),this._muatStatusKuis()}_onAuthLogout(){this._bestSkor=null,this._pernahIkut=!1,this._selesai=!1,this._habisWaktu=!1,this._skor=null,this._mulai=!1,this._terkunci=!1,this._resumeRemaining=null,this._attemptKe=0,this.studentId="",this.studentName="",this.studentNis="",this.studentAbsen="",this.studentKelas=""}_onVisibilityChange(){if(this._visibilityChangeCount=(this._visibilityChangeCount||0)+1,document.visibilityState==="hidden"&&this._mulai&&!this._selesai){const t=this._bacaSisaWaktu();if(t>0)try{const e=`latihan_kuis_remaining_${this.studentId}_${this.kdMateri}`;globalThis.localStorage.setItem(e,String(t))}catch{}this._tabSwitchCount=(this._tabSwitchCount||0)+1,this._tabSwitchWarning=!0,this.requestUpdate()}else if(document.visibilityState==="visible"&&this._mulai&&!this._selesai)try{const t=`latihan_kuis_remaining_${this.studentId}_${this.kdMateri}`,e=globalThis.localStorage.getItem(t);if(e){const a=parseInt(e,10);!isNaN(a)&&a>0&&(this._resumeRemaining=a,globalThis.localStorage.removeItem(t),this.requestUpdate())}}catch{}}_enableAntiCheat(){this.addEventListener("copy",this._preventCopy),this.addEventListener("paste",this._preventPaste),this.addEventListener("contextmenu",this._preventContext),this.addEventListener("selectstart",this._preventSelect)}_disableAntiCheat(){this.removeEventListener("copy",this._preventCopy),this.removeEventListener("paste",this._preventPaste),this.removeEventListener("contextmenu",this._preventContext),this.removeEventListener("selectstart",this._preventSelect)}_preventCopy(t){this._mulai&&!this._selesai&&(t.preventDefault(),t.stopPropagation())}_preventPaste(t){this._mulai&&!this._selesai&&(t.preventDefault(),t.stopPropagation())}_preventContext(t){this._mulai&&!this._selesai&&(t.preventDefault(),t.stopPropagation())}_preventSelect(t){this._mulai&&!this._selesai&&(t.preventDefault(),t.stopPropagation())}_logCurangan(t,e){if(!this.studentId||!this.kdMateri)return;const a=`latihan_kuis_curangan_${this.studentId}_${this.kdMateri}`;try{const i={type:t,detail:e,timestamp:Date.now(),userAgent:typeof navigator<"u"?navigator.userAgent:"unknown",tabSwitchCount:this._tabSwitchCount||0,visibilityChangeCount:this._visibilityChangeCount||0,quizDuration:this.duration,studentId:this.studentId,kdMateri:this.kdMateri};globalThis.localStorage.setItem(a,JSON.stringify(i))}catch{}}_logMulaiKuis(){if(!(!this.studentId||!this.kdMateri))try{const t=`latihan_kuis_mulai_${this.studentId}_${this.kdMateri}`;globalThis.localStorage.setItem(t,String(Date.now()))}catch{}}_logSelesaiKuis(){if(!(!this.studentId||!this.kdMateri))try{const t=`latihan_kuis_selesai_${this.studentId}_${this.kdMateri}`;globalThis.localStorage.setItem(t,String(Date.now()))}catch{}}_loadSession(){try{const t=JSON.parse(globalThis.localStorage.getItem("quiz_user_session"));if(!t||!t.studentId)return;if(t.expiresAt&&Date.now()>t.expiresAt){globalThis.localStorage.removeItem("quiz_user_session");return}this.studentId=t.studentId||"",this.studentName=t.nama||"",this.studentNis=t.nis||"",this.studentAbsen=t.absen||"",this.studentKelas=t.kelas||""}catch{}this._loadAttemptCounter()}_attemptKey(){return`latihan_kuis_attempt_${this.studentId}_${this.kdMateri}`}_loadAttemptCounter(){if(!(!this.maxRetake||!this.studentId||!this.kdMateri))try{const t=globalThis.localStorage.getItem(this._attemptKey());this._attemptKe=parseInt(t,10)||0}catch{this._attemptKe=0}}_saveAttemptCounter(){if(!(!this.maxRetake||!this.studentId||!this.kdMateri))try{globalThis.localStorage.setItem(this._attemptKey(),String(this._attemptKe))}catch{}}_timerKey(){return`latihan_kuis_time_${this.studentId}_${this.kdMateri}`}_simpanWaktuMulai(){if(!(!this.studentId||!this.kdMateri))try{globalThis.localStorage.setItem(this._timerKey(),JSON.stringify({start:Date.now(),duration:this.duration}))}catch{}}_bacaSisaWaktu(){if(!this.studentId||!this.kdMateri)return 0;try{const t=JSON.parse(globalThis.localStorage.getItem(this._timerKey())||"null");if(!t)return 0;const e=t.duration-Math.floor((Date.now()-t.start)/1e3);return e>0?e:0}catch{return 0}}_hapusWaktuMulai(){try{globalThis.localStorage.removeItem(this._timerKey())}catch{}}_cobaResumeTimer(){const t=this._bacaSisaWaktu();(this.maxRetake===0||this._attemptKe<this.maxRetake+1)&&t!=null&&t>0&&(this._mulai=!0,this._resumeRemaining=t)}_muatStatusKuis(){if(!this.appsScriptUrl||!this.studentId||!this.kdMateri){this._cobaResumeTimer();return}const t=`${this.appsScriptUrl}${this.appsScriptUrl.includes("?")?"&":"?"}action=getQuizLock&studentId=${encodeURIComponent(this.studentId)}&kdMateri=${encodeURIComponent(this.kdMateri)}`;return fetch(t,{method:"GET",mode:"cors"}).then(e=>e.json()).then(e=>{e&&(this._terkunci=!!e.locked,this._pernahIkut=typeof e.best=="number"&&e.best!=null,this._bestSkor=typeof e.best=="number"?e.best:null,this._terkunci&&(this._terkunci=!0,this._selesai=!1,this._skor=this._bestSkor,this._hapusWaktuMulai(),this._mulai=!1,this._resumeRemaining=null))}).catch(()=>{}).finally(()=>{!this._userStarted&&!this._terkunci&&!this._selesai&&this._cobaResumeTimer(),this.requestUpdate()})}_ulangiKuis(){this._selesai=!1,this._terkunci=!1,this._kunci=!1,this._resumeRemaining=null,this._hapusWaktuMulai(),this._habisWaktu=!1,this._skor=null,this._muatStatusKuis(),this._mulaiLatihan()}updated(t){super.updated(t),t.has("soalFileUrl")&&this.soalFileUrl&&this.soalFileUrl!==this._soalFileUrlCache&&this._muatSoalDariFile(this.soalFileUrl)}async _muatSoalDariFile(t){this._soalFileUrlCache=t;try{const e=await fetch(t);if(!e.ok)throw new Error("HTTP "+e.status);const a=await e.json();if(!Array.isArray(a)||a.length===0)throw new Error("Bukan array JSON / kosong");this.questions=a,this._pesan=""}catch(e){this._soalFileUrlCache="",(!this.questions||this.questions.length===0)&&(this.questions=[]),this._pesan="Gagal memuat file soal: "+e.message}}_onWaktuHabis(){const t=this._bacaSisaWaktu();t>60&&this._logCurangan("time_manipulation",{sisaWaktu:t,tabSwitchCount:this._tabSwitchCount||0,visibilityChanges:this._visibilityChangeCount||0,message:"Timer expired but client still has significant time remaining (>60s). Possible causes: browser throttling (normal) or time manipulation (cheating).",timestamp:Date.now()}),this._logSelesaiKuis();const e=this.shadowRoot&&this.shadowRoot.querySelector("kuis-ledakan");e&&e._screen!=="result"&&typeof e._selesaiKuis=="function"&&e._selesaiKuis(),this._selesai=!0,this._habisWaktu=!0,this._resumeRemaining=null,this._hapusWaktuMulai(),this._disableAntiCheat(),this._kirimLogSession("waktu_habis")}_onKuisLog(t){if(t.detail&&t.detail.payload&&typeof t.detail.payload.score=="number"){this._logSelesaiKuis(),this._skor=t.detail.payload.score,this._selesai=!0,this._resumeRemaining=null,this._hapusWaktuMulai(),this._disableAntiCheat();try{globalThis.localStorage.removeItem(this._attemptKey()),globalThis.localStorage.removeItem(this._timerKey())}catch{}this.maxRetake&&(this._attemptKe++,this._saveAttemptCounter()),this.remidiMode&&this._skor<this.kkm?(this._needsRemidi=!0,this._skorAwal=this._skor):(this._needsRemidi=!1,this.lockAfterComplete&&!this.remidiMode&&(this._terkunci=!0)),this._muatStatusKuis(),this._kirimLogSession("selesai")}}async _mulaiLatihan(){if(!this.studentId){this.requestUpdate();return}this._userStarted=!0,this._terkunci=!1,this._mulai=!0,this._waktuMulai=Date.now(),this._simpanWaktuMulai(),this._logMulaiKuis(),this._enableAntiCheat(),await this.updateComplete;const t=this.shadowRoot&&this.shadowRoot.querySelector("kuis-ledakan"),e=this.shadowRoot&&this.shadowRoot.querySelector("timer-kuis");t&&typeof t._onStartClick=="function"&&t._onStartClick(),e&&typeof e.start=="function"&&e.start()}async _kirimLogSession(t){if(!this.appsScriptUrl||!this.studentId)return;const e=String(Date.now()),a=this._waktuMulai?Math.floor((Date.now()-this._waktuMulai)/1e3):0,i=this._bacaSisaWaktu(),s={action:"logQuizSession",studentId:this.studentId,nama:this.studentName||"",nis:this.studentNis||"",absen:this.studentAbsen||"",kelas:this.studentKelas||"",kdMateri:this.kdMateri||"",waktuMulai:this._waktuMulai?String(this._waktuMulai):"",waktuSelesai:e,durasiPengerjaan:a,durasiUlangan:this.duration||300,sisaWaktu:i,tabSwitchCount:this._tabSwitchCount||0,skor:this._skor!=null?this._skor:-1};try{const r=new URLSearchParams(s);await fetch(`${this.appsScriptUrl}?${r.toString()}`,{method:"GET",mode:"cors"})}catch{const r=`latihan_kuis_session_${this.studentId}_${this.kdMateri}`;try{localStorage.setItem(r,JSON.stringify(s))}catch{}}}async _mulaiRemidi(){if(!this.remidiSoalUrl){this._pesan="Soal remidi belum disiapkan oleh guru.",this.requestUpdate();return}try{const t=await fetch(this.remidiSoalUrl);if(!t.ok)throw new Error("HTTP "+t.status);if(this._remidiSoal=await t.json(),!Array.isArray(this._remidiSoal)||this._remidiSoal.length===0)throw new Error("Format soal remidi tidak valid");this._selesai=!1,this._skor=null,this._habisWaktu=!1,this._resumeRemaining=null,this._needsRemidi=!1,this.sudahRemidi=!0,this._pesan="",this.questions=this._remidiSoal,this.requestUpdate(),this._mulaiLatihan()}catch(t){this._pesan="Gagal memulai remidi: "+t.message,this.requestUpdate()}}_hitungNilaiAkhir(){return this.nilaiAkhir=Math.round((this._skorAwal+this._skor)/2),this.nilaiAkhir}static get styles(){return[super.styles,C`
+    `}static get haxProperties(){return{canScale:!1,canPosition:!0,canEditSource:!1,gizmo:{title:"Quiz User Auth",description:"Sistem login/registrasi siswa untuk dasbor-kuis",icon:"icons:account-circle",color:"purple",tags:["Education","Auth"]},settings:{configure:[{property:"appsScriptUrl",title:"Apps Script URL",inputMethod:"textfield",required:!0}],advanced:[],developer:[]},saveOptions:{unsetAttributes:["_screen","_nama","_email","_nis","_absen","_kelas","_studentId","_errorMsg","_successMsg","_loading"]}}}}globalThis.customElements.define(dt.tag,dt);class ot extends j(B(F)){static get tag(){return"latihan-kuis"}static get properties(){return{...super.properties,appsScriptUrl:{type:String,attribute:"apps-script-url",reflect:!0},spreadsheetUrl:{type:String,attribute:"spreadsheet-url",reflect:!0},duration:{type:Number,attribute:"duration",reflect:!0},judulMateri:{type:String,attribute:"judul-materi",reflect:!0},teksMateri:{type:String,attribute:"teks-materi",reflect:!0},materiUrl:{type:String,attribute:"materi-url",reflect:!0},materiFile:{type:String,attribute:"materi-file",reflect:!0},coverImage:{type:String,attribute:"cover-image",reflect:!0},judulKuis:{type:String,attribute:"judul-kuis",reflect:!0},questions:{type:Array,attribute:"questions",reflect:!0},studentId:{type:String,attribute:"student-id",reflect:!0},studentName:{type:String,attribute:"student-name",reflect:!0},studentNis:{type:String,attribute:"student-nis",reflect:!0},studentAbsen:{type:String,attribute:"student-absen",reflect:!0},studentKelas:{type:String,attribute:"student-kelas",reflect:!0},kdMateri:{type:String,attribute:"kd-materi",reflect:!0},pesanWaktuHabis:{type:String,attribute:"pesan-waktu-habis",reflect:!0},pesanNilaiTerkirim:{type:String,attribute:"pesan-nilai-terkirim",reflect:!0},labelMulai:{type:String,attribute:"label-mulai",reflect:!0},showSheetLink:{type:Boolean,attribute:"show-sheet-link",reflect:!0},soalFileUrl:{type:String,attribute:"soal-file-url",reflect:!0},allowRetake:{type:Boolean,attribute:"allow-retake",reflect:!0},maxRetake:{type:Number,attribute:"max-retake",reflect:!0},mode:{type:String,attribute:"mode",reflect:!0},hidePauseRestart:{type:Boolean,attribute:"hide-pause-restart",reflect:!0},shuffleQuestions:{type:Boolean,attribute:"shuffle-questions",reflect:!0},shuffleChoices:{type:Boolean,attribute:"shuffle-choices",reflect:!0},kategori:{type:String,attribute:"kategori",reflect:!0},hideConfetti:{type:Boolean,attribute:"hide-confetti",reflect:!0},hideAnswers:{type:Boolean,attribute:"hide-answers",reflect:!0},hideScore:{type:Boolean,attribute:"hide-score",reflect:!0},showQuestionNav:{type:Boolean,attribute:"show-question-nav",reflect:!0},allowBackwardNav:{type:Boolean,attribute:"allow-backward-nav",reflect:!0},practiceMode:{type:Boolean,attribute:"practice-mode",reflect:!0},questionDelay:{type:Number,attribute:"question-delay",reflect:!0},reviewAnswers:{type:Boolean,attribute:"review-answers",reflect:!0},timerAutostart:{type:Boolean,attribute:"timer-autostart",reflect:!0},_mulai:{state:!0},_selesai:{state:!0},_skor:{state:!0},_habisWaktu:{state:!0},_pesan:{state:!0},_bestSkor:{state:!0},_pernahIkut:{state:!0},_attemptKe:{state:!0},_terkunci:{state:!0},_resumeRemaining:{state:!0},_soalFileUrlCache:{state:!0},_tabSwitchWarning:{state:!0},_userStarted:{state:!0},kkm:{type:Number,attribute:"kkm",reflect:!0},remidiMode:{type:Boolean,attribute:"remidi-mode",reflect:!0},remidiSoalUrl:{type:String,attribute:"remidi-soal-url",reflect:!0},nilaiAkhir:{state:!0},sudahRemidi:{state:!0},_needsRemidi:{state:!0},_skorAwal:{state:!0},_remidiSoal:{state:!0},_tabSwitchCount:{state:!0},_visibilityChangeCount:{state:!0},_windowBlurCount:{state:!0},_windowFocusCount:{state:!0},_fullscreenWarning:{state:!0},_waktuMulai:{state:!0},tabSwitchThreshold:{type:Number,attribute:"tab-switch-threshold",reflect:!0},_curangLogged:{state:!0},_warningCount:{state:!0},_forceChoiceDialog:{state:!0},_sessionLogged:{state:!0}}}constructor(){super(),this.appsScriptUrl="",this.spreadsheetUrl="",this.duration=300,this.judulMateri="Materi Pembelajaran",this.teksMateri="Baca materi di bawah ini dengan saksama sebelum mengerjakan kuis. Waktu pengerjaan kuis dibatasi oleh timer; saat waktu habis, kuis akan dikunci dan nilai otomatis terkirim.",this.materiUrl="",this.materiFile="",this.coverImage="",this.judulKuis="Evaluasi Kuis Interaktif",this.questions=void 0,this.studentId="",this.studentName="",this.studentNis="",this.studentAbsen="",this.studentKelas="",this.kdMateri="",this.pesanWaktuHabis="\u23F0 Waktu habis! Kuis dikunci & dinilai otomatis.",this.pesanNilaiTerkirim="\u{1F389} Selamat! Nilai Anda sudah terkirim ke spreadsheet.",this.labelMulai="\u25B6\uFE0F Mulai",this.showSheetLink=!1,this.soalFileUrl="",this.allowRetake=!0,this.maxRetake=0,this.mode="siswa",this.hidePauseRestart=!0,this.shuffleQuestions=!1,this.shuffleChoices=!1,this.kategori="sumatif_lm",this.hideConfetti=!1,this.hideAnswers=!1,this.hideScore=!1,this.showQuestionNav=!0,this.allowBackwardNav=!1,this.practiceMode=!1,this.questionDelay=1800,this.reviewAnswers=!0,this.timerAutostart=!0,this._mulai=!1,this._selesai=!1,this._skor=null,this._habisWaktu=!1,this._pesan="",this._bestSkor=null,this._pernahIkut=!1,this._attemptKe=0,this._terkunci=!1,this._resumeRemaining=null,this._soalFileUrlCache="",this._tabSwitchWarning=!1,this._userStarted=!1,this.kkm=75,this.remidiMode=!1,this.remidiSoalUrl="",this.nilaiAkhir=null,this.sudahRemidi=!1,this._needsRemidi=!1,this._skorAwal=null,this._remidiSoal=[],this._tabSwitchCount=0,this._visibilityChangeCount=0,this._windowBlurCount=0,this._windowFocusCount=0,this._onWindowBlur=this._onWindowBlur.bind(this),this._onWindowFocus=this._onWindowFocus.bind(this),this._waktuMulai=null,this.tabSwitchThreshold=3,this._curangLogged=!1,this._warningCount=0,this._forceChoiceDialog=!1,this._sessionLogged="",this._sessionToken="",this._onAuthLogin=this._onAuthLogin.bind(this),this._onAuthLogout=this._onAuthLogout.bind(this),this._onVisibilityChange=this._onVisibilityChange.bind(this),this.t={...this.t,bacaMateri:"\u{1F517} Buka URL Materi",unduhMateri:"\u{1F4CE} Unduh File Materi"}}_antiCheatKey(){return`latihan_kuis_anticheat_${this.studentId}_${this.kdMateri}`}_saveAntiCheatState(){if(!(!this.studentId||!this.kdMateri))try{const t={windowBlurCount:this._windowBlurCount||0,windowFocusCount:this._windowFocusCount||0,tabSwitchCount:this._tabSwitchCount||0,visibilityChangeCount:this._visibilityChangeCount||0,timestamp:Date.now()};localStorage.setItem(this._antiCheatKey(),JSON.stringify(t))}catch{}}_restoreAntiCheatState(){if(!(!this.studentId||!this.kdMateri))try{const t=JSON.parse(localStorage.getItem(this._antiCheatKey()));t&&(this._windowBlurCount=t.windowBlurCount||0,this._windowFocusCount=t.windowFocusCount||0,this._tabSwitchCount=t.tabSwitchCount||0,this._visibilityChangeCount=t.visibilityChangeCount||0)}catch{}}_clearAntiCheatState(){if(!(!this.studentId||!this.kdMateri))try{localStorage.removeItem(this._antiCheatKey())}catch{}}connectedCallback(){if(super.connectedCallback(),globalThis.HaxStore&&typeof globalThis.HaxStore.requestAvailability=="function"){const t=globalThis.HaxStore.requestAvailability();t&&!t.elementList[ot.tag]&&(t.elementList[ot.tag]=ot.haxProperties)}globalThis.addEventListener("quiz-user-login",this._onAuthLogin),globalThis.addEventListener("quiz-user-logout",this._onAuthLogout),globalThis.addEventListener("visibilitychange",this._onVisibilityChange),globalThis.addEventListener("blur",this._onWindowBlur,!0),globalThis.addEventListener("focus",this._onWindowFocus,!0),globalThis.addEventListener("fullscreenchange",this._onFullscreenChange),globalThis.addEventListener("mozfullscreenchange",this._onFullscreenChange),globalThis.addEventListener("webkitfullscreenchange",this._onFullscreenChange),globalThis.addEventListener("MSFullscreenChange",this._onFullscreenChange),this._preventCopy=this._preventCopy.bind(this),this._preventPaste=this._preventPaste.bind(this),this._preventContext=this._preventContext.bind(this),this._preventSelect=this._preventSelect.bind(this),this._onFullscreenChange=this._onFullscreenChange.bind(this),this._handleWarningKeydown=this._handleWarningKeydown.bind(this),document.addEventListener("keydown",this._handleWarningKeydown),this._loadSession(),this._muatStatusKuis()}disconnectedCallback(){globalThis.removeEventListener("quiz-user-login",this._onAuthLogin),globalThis.removeEventListener("quiz-user-logout",this._onAuthLogout),globalThis.removeEventListener("visibilitychange",this._onVisibilityChange),globalThis.removeEventListener("blur",this._onWindowBlur,!0),globalThis.removeEventListener("focus",this._onWindowFocus,!0),globalThis.removeEventListener("fullscreenchange",this._onFullscreenChange),globalThis.removeEventListener("mozfullscreenchange",this._onFullscreenChange),globalThis.removeEventListener("webkitfullscreenchange",this._onFullscreenChange),globalThis.removeEventListener("MSFullscreenChange",this._onFullscreenChange),document.removeEventListener("keydown",this._handleWarningKeydown),super.disconnectedCallback()}_onAuthLogin(t){const e=t&&t.detail||{};this.studentId=e.studentId||"",this.studentName=e.nama||"",this.studentNis=e.nis||"",this.studentAbsen=e.absen||"",this.studentKelas=e.kelas||"",this.appsScriptUrl&&this.studentId&&this.kdMateri&&(this._bestSkor=null,this._pernahIkut=!1,this._selesai=!1,this._habisWaktu=!1,this._skor=null,this._mulai=!1,this._terkunci=!1,this._resumeRemaining=null,this._loadAttemptCounter(),this._muatStatusKuis())}_onAuthLogout(){this._bestSkor=null,this._pernahIkut=!1,this._selesai=!1,this._habisWaktu=!1,this._skor=null,this._mulai=!1,this._terkunci=!1,this._resumeRemaining=null,this._attemptKe=0;try{localStorage.removeItem(`kuis-ledakan:attempt:${this.studentId}:${this.kdMateri}`),localStorage.removeItem(`kuis-ledakan:session:${this.studentId}:${this.kdMateri}`)}catch{}this.studentId="",this.studentName="",this.studentNis="",this.studentAbsen="",this.studentKelas="",this._clearAntiCheatState(),this._warningCount=0,this._forceChoiceDialog=!1,this._curangLogged=!1,this._sessionLogged="",this._sessionToken="";try{localStorage.removeItem("latihan_kuis_attempt_u1_bab1")}catch{}}_onVisibilityChange(){if(this._visibilityChangeCount=(this._visibilityChangeCount||0)+1,document.visibilityState==="hidden"&&this._mulai&&!this._selesai){const t=this._bacaSisaWaktu();if(t>0)try{const a=`latihan_kuis_remaining_${this.studentId}_${this.kdMateri}`;globalThis.localStorage.setItem(a,String(t))}catch{}this._tabSwitchCount=(this._tabSwitchCount||0)+1,this._windowBlurCount=(this._windowBlurCount||0)+1,this._tabSwitchWarning=!0,this.requestUpdate();const e=this.shadowRoot&&this.shadowRoot.querySelector("kuis-ledakan");if(e&&typeof e._saveAttempt=="function")try{e._saveAttempt()}catch{}this._saveAntiCheatState(),this._warningCount=(this._warningCount||0)+1,this._warningCount>=3&&!this._forceChoiceDialog&&(this._forceChoiceDialog=!0,this._logActivity("force_choice_dialog",{warningCount:this._warningCount,timestamp:new Date().toISOString(),studentId:this.studentId,kdMateri:this.kdMateri}),this.requestUpdate())}else if(document.visibilityState==="visible"&&this._mulai&&!this._selesai){try{const t=`latihan_kuis_remaining_${this.studentId}_${this.kdMateri}`,e=globalThis.localStorage.getItem(t);if(e){const a=parseInt(e,10);!isNaN(a)&&a>0&&(this._resumeRemaining=a,globalThis.localStorage.removeItem(t),this.requestUpdate())}}catch{}this._windowFocusCount=(this._windowFocusCount||0)+1,this._saveAntiCheatState()}}_onWindowBlur(){this._mulai&&!this._selesai&&document.hidden&&(this._tabSwitchWarning=!0,this.requestUpdate())}_onWindowFocus(){this._mulai&&!this._selesai&&this._windowBlurCount>0&&(this._tabSwitchWarning=!1,this.requestUpdate(),this._cekThresholdCurang())}_cekThresholdCurang(){const t=this.tabSwitchThreshold||3,e=this._tabSwitchCount||0;e>=t&&!this._curangLogged&&(this._curangLogged=!0,this._logActivity("curang_tab_switch",{count:e,timestamp:new Date().toISOString(),studentId:this.studentId,kdMateri:this.kdMateri,threshold:t}))}_lanjutkanKuis(){this._forceChoiceDialog=!1,this._warningCount=0,this.requestUpdate()}_kumpulkanSekarang(){this._forceChoiceDialog=!1,this.requestUpdate();const t=this.shadowRoot&&this.shadowRoot.querySelector("kuis-ledakan");t&&typeof t._selesaiKuis=="function"&&t._selesaiKuis()}_laporKeGuru(){this._forceChoiceDialog=!1,this._warningCount=0,this._logActivity("lapor_ke_guru",{warningCount:this._warningCount,timestamp:new Date().toISOString(),studentId:this.studentId,kdMateri:this.kdMateri,tabSwitchCount:this._tabSwitchCount||0}),this.requestUpdate()}_onFullscreenChange(){!document.fullscreenElement&&!document.mozFullScreenElement&&!document.webkitFullscreenElement&&!document.msFullscreenElement&&this._mulai&&!this._selesai&&(this._fullscreenWarning=!0,this.requestUpdate(),this._logActivity("fullscreen_exit",{timestamp:new Date().toISOString(),waktuMulai:this._waktuMulai}))}_handleWarningKeydown(t){t.key==="Escape"&&this._tabSwitchWarning?(this._tabSwitchWarning=!1,this.requestUpdate()):t.key==="Escape"&&this._fullscreenWarning&&(this._fullscreenWarning=!1,this.requestUpdate())}_requestFullscreen(){try{const t=this.shadowRoot||this;t.requestFullscreen?t.requestFullscreen().catch(()=>{}):t.mozRequestFullScreen?t.mozRequestFullScreen().catch(()=>{}):t.webkitRequestFullscreen?t.webkitRequestFullscreen():t.msRequestFullscreen&&t.msRequestFullscreen()}catch{}}_enableAntiCheat(){this.addEventListener("copy",this._preventCopy),this.addEventListener("paste",this._preventPaste),this.addEventListener("contextmenu",this._preventContext),this.addEventListener("selectstart",this._preventSelect)}_disableAntiCheat(){this.removeEventListener("copy",this._preventCopy),this.removeEventListener("paste",this._preventPaste),this.removeEventListener("contextmenu",this._preventContext),this.removeEventListener("selectstart",this._preventSelect)}_preventCopy(t){this._mulai&&!this._selesai&&(t.preventDefault(),t.stopPropagation(),this._logActivity("copy_paste_attempt",{eventType:"copy",timestamp:new Date().toISOString()}))}_preventPaste(t){this._mulai&&!this._selesai&&(t.preventDefault(),t.stopPropagation(),this._logActivity("copy_paste_attempt",{eventType:"paste",timestamp:new Date().toISOString()}))}_preventContext(t){this._mulai&&!this._selesai&&(t.preventDefault(),t.stopPropagation())}_preventSelect(t){this._mulai&&!this._selesai&&(t.preventDefault(),t.stopPropagation())}_logCurangan(t,e){if(!this.studentId||!this.kdMateri)return;const a=`latihan_kuis_curangan_${this.studentId}_${this.kdMateri}`;try{const i={type:t,detail:e,timestamp:Date.now(),userAgent:typeof navigator<"u"?navigator.userAgent:"unknown",tabSwitchCount:this._tabSwitchCount||0,visibilityChangeCount:this._visibilityChangeCount||0,windowBlurCount:this._windowBlurCount||0,windowFocusCount:this._windowFocusCount||0,quizDuration:this.duration,studentId:this.studentId,kdMateri:this.kdMateri};globalThis.localStorage.setItem(a,JSON.stringify(i))}catch{}}_generateSessionToken(){try{const t=new Uint8Array(16);globalThis.crypto.getRandomValues(t);let e="";return t.forEach(a=>e+=a.toString(16).padStart(2,"0")),`${Date.now()}-${e}`}catch{return`sess-${Date.now()}-${Math.random().toString(36).slice(2,10)}`}}_logMulaiKuis(){if(!(!this.studentId||!this.kdMateri))try{const t=`latihan_kuis_mulai_${this.studentId}_${this.kdMateri}`;globalThis.localStorage.setItem(t,String(Date.now()))}catch{}}_logSelesaiKuis(){if(!(!this.studentId||!this.kdMateri))try{const t=`latihan_kuis_selesai_${this.studentId}_${this.kdMateri}`;globalThis.localStorage.setItem(t,String(Date.now()))}catch{}}_logActivity(t,e={}){const a={tipe:t,payload:{...e,studentId:this.studentId,kdMateri:this.kdMateri}};try{this.dispatchEvent(new CustomEvent("dasbor-kuis-log",{detail:a,bubbles:!0,composed:!0}))}catch{}this._sendLogDirect(t,a.payload)}async _sendLogDirect(t,e){if(!(!this.appsScriptUrl||!this.studentId))try{const a={action:"logActivity",studentId:this.studentId,type:t,description:JSON.stringify(e),timestamp:new Date().toISOString(),kdMateri:this.kdMateri||"",kategori:this.kategori||"sumatif_lm",id_log:e.id_log||`LOG-${Date.now()}-${Math.random().toString(36).slice(2,10).toUpperCase()}`},i=new URLSearchParams(a);await fetch(`${this.appsScriptUrl}?${i.toString()}`,{method:"GET",mode:"cors"})}catch{}}_loadSession(){try{const t=JSON.parse(globalThis.localStorage.getItem("quiz_user_session"));if(!t||!t.studentId)return;if(t.expiresAt&&Date.now()>t.expiresAt){globalThis.localStorage.removeItem("quiz_user_session");return}this.studentId=t.studentId||"",this.studentName=t.nama||"",this.studentNis=t.nis||"",this.studentAbsen=t.absen||"",this.studentKelas=t.kelas||""}catch{}this._loadAttemptCounter(),this._restoreRemidiState()}_attemptKey(){return`latihan_kuis_attempt_${this.studentId}_${this.kdMateri}`}_loadAttemptCounter(){if(!(!this.maxRetake||!this.studentId||!this.kdMateri))try{const t=globalThis.localStorage.getItem(this._attemptKey());this._attemptKe=parseInt(t,10)||0}catch{this._attemptKe=0}}_saveAttemptCounter(){if(!(!this.maxRetake||!this.studentId||!this.kdMateri))try{globalThis.localStorage.setItem(this._attemptKey(),String(this._attemptKe))}catch{}}_timerKey(){return`latihan_kuis_time_${this.studentId}_${this.kdMateri}`}_simpanWaktuMulai(){if(!(!this.studentId||!this.kdMateri))try{globalThis.localStorage.setItem(this._timerKey(),JSON.stringify({start:Date.now(),duration:this.duration}))}catch{}}_bacaSisaWaktu(){if(!this.studentId||!this.kdMateri)return 0;try{const t=JSON.parse(globalThis.localStorage.getItem(this._timerKey())||"null");if(!t)return 0;const e=t.duration-Math.floor((Date.now()-t.start)/1e3);return e>0?e:0}catch{return 0}}_hapusWaktuMulai(){try{globalThis.localStorage.removeItem(this._timerKey())}catch{}}_cobaResumeTimer(){const t=this._bacaSisaWaktu();(this.maxRetake===0||this._attemptKe<this.maxRetake+1)&&t!=null&&t>0&&(this._mulai=!0,this._resumeRemaining=t,this._restoreAntiCheatState())}_muatStatusKuis(){if(!this.appsScriptUrl||!this.studentId||!this.kdMateri){this._cobaResumeTimer();return}const t=`${this.appsScriptUrl}${this.appsScriptUrl.includes("?")?"&":"?"}action=getQuizLock&studentId=${encodeURIComponent(this.studentId)}&kdMateri=${encodeURIComponent(this.kdMateri)}`;return fetch(t,{method:"GET",mode:"cors"}).then(e=>e.json()).then(e=>{if(e&&(this._terkunci=!!e.locked,this._pernahIkut=typeof e.best=="number"&&e.best!=null,this._bestSkor=typeof e.best=="number"?e.best:null,this._terkunci)){this._terkunci=!0,this._selesai=!1,this._skor=this._bestSkor,this._hapusWaktuMulai(),this._mulai=!1,this._resumeRemaining=null;try{const a=this.shadowRoot&&this.shadowRoot.querySelector("timer-kuis");a&&typeof a.pause=="function"&&a.pause(),a&&typeof a.reset=="function"&&a.reset()}catch{}this.remidiMode&&typeof this._bestSkor=="number"&&this._bestSkor<this.kkm&&!this.sudahRemidi&&(this._needsRemidi=!0,this._skorAwal=this._bestSkor)}}).catch(()=>{}).finally(()=>{!this._userStarted&&!this._terkunci&&!this._selesai&&this._cobaResumeTimer(),this.requestUpdate()})}_ulangiKuis(){this._selesai=!1,this._terkunci=!1,this._kunci=!1,this._resumeRemaining=null,this._hapusWaktuMulai(),this._habisWaktu=!1,this._skor=null,this._muatStatusKuis(),this._mulaiLatihan()}updated(t){super.updated(t),t.has("soalFileUrl")&&this.soalFileUrl&&this.soalFileUrl!==this._soalFileUrlCache&&this._muatSoalDariFile(this.soalFileUrl)}async _muatSoalDariFile(t){this._soalFileUrlCache=t;try{const e=await fetch(t);if(!e.ok)throw new Error("HTTP "+e.status);const a=await e.json();if(!Array.isArray(a)||a.length===0)throw new Error("Bukan array JSON / kosong");this.questions=a,this._pesan=""}catch(e){this._soalFileUrlCache="",(!this.questions||this.questions.length===0)&&(this.questions=[]),this._pesan="Gagal memuat file soal: "+e.message}}_onWaktuHabis(){const t=this._bacaSisaWaktu();t>60&&this._logCurangan("time_manipulation",{sisaWaktu:t,tabSwitchCount:this._tabSwitchCount||0,visibilityChanges:this._visibilityChangeCount||0,message:"Timer expired but client still has significant time remaining (>60s). Possible causes: browser throttling (normal) or time manipulation (cheating).",timestamp:Date.now()}),this._logSelesaiKuis();const e=this.shadowRoot&&this.shadowRoot.querySelector("kuis-ledakan");e&&e._screen!=="result"&&typeof e._selesaiKuis=="function"&&e._selesaiKuis(),this._selesai=!0,this._habisWaktu=!0,this._resumeRemaining=null,this._hapusWaktuMulai(),this._disableAntiCheat(),this._kirimLogSession("waktu_habis")}_onKuisLog(t){if(t.detail&&t.detail.payload&&typeof t.detail.payload.score=="number"){const e=t.detail.payload.sessionToken,a=e||this._sessionToken;if(a&&this._sessionLogged===a)return;a&&(this._sessionLogged=a,e&&(this._sessionToken=e)),this._logSelesaiKuis(),this._skor=t.detail.payload.score,this._selesai=!0,this._resumeRemaining=null,this._hapusWaktuMulai(),this._disableAntiCheat();try{globalThis.localStorage.removeItem(this._attemptKey()),globalThis.localStorage.removeItem(this._timerKey()),globalThis.localStorage.removeItem(`kuis-ledakan:attempt:${this.studentId}:${this.kdMateri}`),globalThis.localStorage.removeItem(`kuis-ledakan:session:${this.studentId}:${this.kdMateri}`)}catch{}this.maxRetake&&!this._effectiveRemidiMode&&(this._attemptKe++,this._saveAttemptCounter()),!this.remidiMode&&this.remidiSoalUrl&&this._skor<this.kkm&&(this.remidiMode=!0),this._effectiveRemidiMode&&this._skor<this.kkm?(this._needsRemidi=!0,this._skorAwal=this._skor):(this._needsRemidi=!1,this.lockAfterComplete&&!this._effectiveRemidiMode&&(this._terkunci=!0)),this._saveRemidiState(),this._muatStatusKuis(),this._kirimLogSession("selesai");const i=t.detail&&t.detail.id_log?t.detail.id_log:"";this._logActivity("selesai",{id_log:i,score:this._skor,timestamp:new Date().toISOString(),kdMateri:this.kdMateri,studentId:this.studentId,tabSwitchCount:this._tabSwitchCount||0,windowBlurCount:this._windowBlurCount||0,windowFocusCount:this._windowFocusCount||0,durasiPengerjaan:this._waktuMulai?Math.floor((Date.now()-this._waktuMulai)/1e3):0,curang:this._curangLogged||!1,remidi:this.sudahRemidi||!1,percobaanKe:this._attemptKe||1,sessionToken:this._sessionToken||"",waktuSelesai:String(Date.now()),catatan:"selesai"+(this._curangLogged?" (curang)":"")+(this.sudahRemidi?" (sudah-remidi)":"")+(this._effectiveRemidiMode?" (remidi)":""),warningCount:this._warningCount||0,forceChoiceDialogTriggered:this._forceChoiceDialog||!1,curangTabSwitchTriggered:this._curangLogged||!1,tabSwitchThreshold:this.tabSwitchThreshold||3})}}async _mulaiLatihan(){if(!this.studentId){this.requestUpdate();return}await this._muatStatusKuis();const t=this._needsRemidi&&this._effectiveRemidiMode&&!this.sudahRemidi;if(this._terkunci&&!t&&this.mode!=="guru"){this._pesan="Kuis terkunci. Hubungi guru atau gunakan Remidi jika nilai < KKM.",this._mulai=!1,this._hapusWaktuMulai();const i=this.shadowRoot&&this.shadowRoot.querySelector("timer-kuis");if(i&&typeof i.pause=="function")try{i.pause()}catch{}this.requestUpdate();return}if(this._userStarted=!0,t||this.mode==="guru")this._terkunci=!1;else if(this._terkunci)return;this._mulai=!0,this._waktuMulai=Date.now(),this._simpanWaktuMulai(),this._logMulaiKuis(),this._sessionToken=this._generateSessionToken(),this._sessionLogged="",this._windowBlurCount=0,this._windowFocusCount=0,this._tabSwitchCount=0,this._visibilityChangeCount=0,this._clearAntiCheatState(),this._curangLogged=!1,this._warningCount=0,this._forceChoiceDialog=!1,this._enableAntiCheat(),this._latihanOnlyMode||this._logActivity("timer_mulai",{timestamp:new Date().toISOString(),durasiUlangan:this.duration||300,waktuMulai:this._waktuMulai}),this._requestFullscreen(),await this.updateComplete;const e=this.shadowRoot&&this.shadowRoot.querySelector("kuis-ledakan"),a=this.shadowRoot&&this.shadowRoot.querySelector("timer-kuis");e&&typeof e._onStartClick=="function"&&e._onStartClick(),a&&typeof a.start=="function"&&a.start()}async _kirimLogSession(t){if(!this.appsScriptUrl||!this.studentId)return;const e=String(Date.now()),a=this._waktuMulai?Math.floor((Date.now()-this._waktuMulai)/1e3):0,i=this._bacaSisaWaktu();let r=t;this._effectiveRemidiMode&&this._needsRemidi&&(r+=" (remidi)"),this.sudahRemidi&&(r+=" (sudah-remidi)"),this._curangLogged&&(r+=" (curang)"),this._warningCount>=3&&(r+=` (${this._warningCount}x tab switch)`),t==="waktu_habis"&&(r="waktu_habis (auto-submit)");const s={action:"updateQuizSession",studentId:this.studentId,nama:this.studentName||"",nis:this.studentNis||"",absen:this.studentAbsen||"",kelas:this.studentKelas||"",kdMateri:this.kdMateri||"",waktuMulai:this._waktuMulai?String(this._waktuMulai):"",waktuSelesai:e,durasiPengerjaan:a,durasiUlangan:this.duration||300,sisaWaktu:i,tabSwitchCount:this._tabSwitchCount||0,windowBlurCount:this._windowBlurCount||0,windowFocusCount:this._windowFocusCount||0,skor:this._skor!=null?this._skor:-1,catatan:r,sessionToken:this._sessionToken||"",percobaanKe:this._attemptKe||1,warningCount:this._warningCount||0,forceChoiceDialogTriggered:this._forceChoiceDialog||!1,curangTabSwitchTriggered:this._curangLogged||!1,tabSwitchThreshold:this.tabSwitchThreshold||3,id_log:`LOG-${Date.now()}-${Math.random().toString(36).slice(2,10).toUpperCase()}`};try{const d=new URLSearchParams(s);await fetch(`${this.appsScriptUrl}?${d.toString()}`,{method:"GET",mode:"cors"}),this._clearAntiCheatState()}catch{const d=`latihan_kuis_session_${this.studentId}_${this.kdMateri}`;try{localStorage.setItem(d,JSON.stringify(s))}catch{}}}async _mulaiRemidi(){if(!this.remidiSoalUrl){this._pesan="Soal remidi belum disiapkan oleh guru.",this.requestUpdate();return}if(this._terkunci&&this.appsScriptUrl&&this.studentId&&this.kdMateri){try{const t=new URLSearchParams({action:"resetQuizLock",studentId:this.studentId,kdMateri:this.kdMateri});await fetch(`${this.appsScriptUrl}?${t.toString()}`,{method:"GET",mode:"cors"})}catch{}try{localStorage.removeItem(`kuis-ledakan:attempt:${this.studentId}:${this.kdMateri}`),localStorage.removeItem(`latihan_kuis_attempt_${this.studentId}_${this.kdMateri}`),localStorage.removeItem(`latihan_kuis_time_${this.studentId}_${this.kdMateri}`)}catch{}}try{const t=await fetch(this.remidiSoalUrl);if(!t.ok)throw new Error("HTTP "+t.status);if(this._remidiSoal=await t.json(),!Array.isArray(this._remidiSoal)||this._remidiSoal.length===0)throw new Error("Format soal remidi tidak valid");this._terkunci=!1,this._selesai=!1,this._skor=null,this._habisWaktu=!1,this._resumeRemaining=null,this._needsRemidi=!1,this.sudahRemidi=!0,this._pesan="",this.questions=this._remidiSoal,this._saveRemidiState();try{const e=this.shadowRoot&&this.shadowRoot.querySelector("kuis-ledakan");e&&(e._locked=!1,e._lockChecked=!1)}catch{}this.requestUpdate(),this._mulaiLatihan()}catch(t){this._pesan="Gagal memulai remidi: "+t.message,this.requestUpdate()}}async _resetKunciGuru(){if(!this.appsScriptUrl||!this.studentId||!this.kdMateri){this._pesan="Gagal buka kunci: appsScriptUrl/student/kdMateri belum lengkap.",this.requestUpdate();return}try{const t=new URLSearchParams({action:"resetQuizLock",studentId:this.studentId,kdMateri:this.kdMateri}),e=await(await fetch(`${this.appsScriptUrl}?${t.toString()}`,{method:"GET",mode:"cors"})).json();if(e&&e.status==="ok"){this._terkunci=!1,this._selesai=!1,this._skor=null,this._bestSkor=null,this._pernahIkut=!1;try{localStorage.removeItem(`latihan_kuis_attempt_${this.studentId}_${this.kdMateri}`),localStorage.removeItem(`latihan_kuis_time_${this.studentId}_${this.kdMateri}`)}catch{}this._pesan=`\u{1F513} Kunci LM1 dibuka \u2014 ${e.deleted||0} sesi dihapus. Siswa bisa ulang.`,this._muatStatusKuis()}else this._pesan="Gagal buka kunci: "+(e.message||"unknown")}catch(t){this._pesan="Gagal buka kunci: "+t.message}this.requestUpdate()}_hitungNilaiAkhir(){return this.nilaiAkhir=Math.round((this._skorAwal+this._skor)/2),this.nilaiAkhir}_remidiKey(){return`latihan_kuis_remidi_${this.studentId}_${this.kdMateri}`}_saveRemidiState(){if(!(!this.studentId||!this.kdMateri))try{const t={sudahRemidi:this.sudahRemidi,_needsRemidi:this._needsRemidi,_skorAwal:this._skorAwal,_remidiSoal:this._remidiSoal||[],timestamp:Date.now()};localStorage.setItem(this._remidiKey(),JSON.stringify(t))}catch{}}_restoreRemidiState(){if(!(!this.studentId||!this.kdMateri))try{const t=JSON.parse(localStorage.getItem(this._remidiKey()));t&&t.sudahRemidi&&(this.sudahRemidi=t.sudahRemidi,this._needsRemidi=t._needsRemidi,this._skorAwal=t._skorAwal,Array.isArray(t._remidiSoal)&&t._remidiSoal.length>0&&(this._remidiSoal=t._remidiSoal,this.sudahRemidi&&this._effectiveRemidiMode&&(this.questions=this._remidiSoal)))}catch{}}_clearRemidiState(){if(!(!this.studentId||!this.kdMateri))try{localStorage.removeItem(this._remidiKey())}catch{}}static get styles(){return[super.styles,z`
         :host { display: block; font-family: var(--ddd-font-primary, system-ui, sans-serif); }
         .wrap {
           max-width: 920px; margin: 0 auto; padding: var(--ddd-spacing-4);
           display: grid; gap: var(--ddd-spacing-6);
         }
         .materi-card {
-          border: 1px solid var(--ddd-theme-polaris-border, #e0e0e0);
+          border: 1px solid var(--ddd-theme-polaris-border);
           border-radius: var(--ddd-radius-lg);
           padding: var(--ddd-spacing-6);
           background: linear-gradient(180deg, rgba(103,80,164,0.05), transparent);
@@ -2277,17 +2474,26 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
         .materi-links { display: flex; flex-wrap: wrap; gap: var(--ddd-spacing-3); margin-top: var(--ddd-spacing-4); }
         .materi-links a {
           padding: var(--ddd-spacing-3) var(--ddd-spacing-4); border-radius: var(--ddd-radius-md);
-          border: 1px solid var(--ddd-theme-polaris-border, #e0e0e0);
+          border: 1px solid var(--ddd-theme-polaris-border);
           color: var(--ddd-theme-primary); text-decoration: none; font-size: var(--ddd-font-size-m);
         }
         .materi-links a:hover { background: rgba(103,80,164,0.08); }
         .btn-mulai {
           width: 100%; padding: var(--ddd-spacing-4); font-size: var(--ddd-font-size-l);
           font-weight: var(--ddd-font-weight-bold); border: none; border-radius: var(--ddd-radius-md);
-          background: var(--ddd-theme-primary, #6750a4); color: var(--ddd-theme-on-primary); cursor: pointer;
-          font-family: var(--ddd-font-primary, system-ui, sans-serif);
+          background: var(--ddd-theme-primary); color: var(--ddd-theme-on-primary); cursor: pointer;
+          font-family: var(--ddd-font-primary);
         }
-        .btn-mulai:hover { background: var(--ddd-theme-accent, #7a5fc4); }
+        .btn-mulai:hover { background: var(--ddd-theme-accent); }
+        .btn-logout {
+          display: inline-block; margin-top: var(--ddd-spacing-5);
+          padding: var(--ddd-spacing-3) var(--ddd-spacing-6);
+          background: var(--ddd-theme-error); color: var(--ddd-theme-on-primary);
+          border: none; border-radius: var(--ddd-radius-md);
+          font-weight: var(--ddd-font-weight-bold); font-size: var(--ddd-font-size-s);
+          cursor: pointer; font-family: inherit;
+        }
+        .btn-logout:hover { filter: brightness(0.9); }
         .auth-hint { text-align: center; color: var(--ddd-theme-secondary); font-size: var(--ddd-font-size-m); margin: var(--ddd-spacing-3) 0 0; }
         .selesai-card {
           text-align: center; border: 1px solid var(--ddd-theme-success);
@@ -2299,30 +2505,31 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
         .selesai-card .kirim.warn { color: var(--ddd-theme-error); }
         .selesai-card .skor { margin: var(--ddd-spacing-4) 0; font-size: var(--ddd-font-size-l); }
         /* Suspicious warning UI for detected time manipulation */
-        .selesai-card.suspicious { border-color: var(--ddd-theme-warning, #f59e0b); background: linear-gradient(180deg, rgba(245,158,11,0.08), transparent); }
-        .suspicious-warning { background: #fff7ed; border: 1px solid #fed7aa; border-radius: var(--ddd-radius-lg); padding: var(--ddd-spacing-5); margin-bottom: var(--ddd-spacing-4); text-align: left; }
+        .selesai-card.suspicious { border-color: var(--ddd-theme-warning); background: linear-gradient(180deg, rgba(245,158,11,0.08), transparent); }
+        .suspicious-warning { background: var(--ddd-theme-warning-light); border: 1px solid var(--ddd-theme-warning); border-radius: var(--ddd-radius-lg); padding: var(--ddd-spacing-5); margin-bottom: var(--ddd-spacing-4); text-align: left; }
         .suspicious-icon { font-size: 2rem; margin-bottom: var(--ddd-spacing-2); }
-        .suspicious-title { font-size: var(--ddd-font-size-m); font-weight: var(--ddd-font-weight-bold); color: #9a3412; margin-bottom: var(--ddd-spacing-2); }
-        .suspicious-text { font-size: var(--ddd-font-size-s); color: #92400e; line-height: 1.5; margin-bottom: var(--ddd-spacing-2); }
-        .suspicious-note { font-size: var(--ddd-font-size-4xs); color: #a16207; font-style: italic; }
-        .remidi-card { background: #fff7ed; border: 1px solid #fed7aa; border-radius: var(--ddd-radius-lg); padding: var(--ddd-spacing-5); margin-top: var(--ddd-spacing-4); }
-        .remidi-card h3 { margin: 0 0 var(--ddd-spacing-2) 0; color: #9a3412; }
-        .remidi-card p { color: #92400e; margin-bottom: var(--ddd-spacing-3); }
+        .suspicious-title { font-size: var(--ddd-font-size-m); font-weight: var(--ddd-font-weight-bold); color: var(--ddd-theme-warning-text); margin-bottom: var(--ddd-spacing-2); }
+        .suspicious-text { font-size: var(--ddd-font-size-s); color: var(--ddd-theme-warning); line-height: 1.5; margin-bottom: var(--ddd-spacing-2); }
+        .suspicious-note { font-size: var(--ddd-font-size-4xs); color: var(--ddd-theme-warning); font-style: italic; }
+        .remidi-card { background: var(--ddd-theme-warning-light); border: 1px solid var(--ddd-theme-warning); border-radius: var(--ddd-radius-lg); padding: var(--ddd-spacing-5); margin-top: var(--ddd-spacing-4); }
+        .remidi-card h3 { margin: 0 0 var(--ddd-spacing-2) 0; color: var(--ddd-theme-warning-text); }
+        .remidi-card p { color: var(--ddd-theme-warning); margin-bottom: var(--ddd-spacing-3); }
+        .remidi-notif { font-size: var(--ddd-font-size-4xs); color: var(--ddd-theme-accent); margin-top: var(--ddd-spacing-3); font-weight: 600; }
         .selesai-card a {
           display: inline-block; margin-top: var(--ddd-spacing-4); padding: var(--ddd-spacing-3) var(--ddd-spacing-5);
-          background: var(--ddd-theme-primary, #6750a4); color: var(--ddd-theme-on-primary); border-radius: var(--ddd-radius-md);
+          background: var(--ddd-theme-primary); color: var(--ddd-theme-on-primary); border-radius: var(--ddd-radius-md);
           text-decoration: none; font-weight: var(--ddd-font-weight-bold);
         }
         .err-chip {
-          background: var(--ddd-theme-warning-light, #fef3c7); border: 1px solid var(--ddd-theme-warning, #fcd34d); color: var(--ddd-theme-warning-text, #92400e);
+          background: var(--ddd-theme-warning-light); border: 1px solid var(--ddd-theme-warning); color: var(--ddd-theme-warning-text);
           padding: var(--ddd-spacing-3); border-radius: var(--ddd-radius-md);
           margin-bottom: var(--ddd-spacing-4);
         }
         .skor-best {
           margin-top: var(--ddd-spacing-4); padding: var(--ddd-spacing-3) var(--ddd-spacing-4);
           border-radius: var(--ddd-radius-md); font-weight: var(--ddd-font-weight-bold);
-          color: var(--ddd-theme-success, #2e7d32);
-          background: var(--ddd-theme-success-light, #e8f5e9);
+          color: var(--ddd-theme-success);
+          background: var(--ddd-theme-success-light);
           display: inline-block;
         }
         .tab-warning-overlay {
@@ -2348,7 +2555,50 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
           border: none; border-radius: var(--ddd-radius-sm);
           font-weight: 700; cursor: pointer;
         }
-      `,C`
+        .force-choice-overlay {
+          position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+          background: rgba(0,0,0,0.85); z-index: 99999;
+          display: flex; align-items: center; justify-content: center;
+        }
+        .force-choice-card {
+          background: var(--ddd-theme-default-white);
+          border-radius: var(--ddd-radius-lg);
+          padding: var(--ddd-spacing-7);
+          max-width: 480px; text-align: center;
+          border: 3px solid var(--ddd-theme-warning);
+          box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+        .force-choice-icon { font-size: 56px; margin-bottom: var(--ddd-spacing-4); }
+        .force-choice-title {
+          font-size: var(--ddd-font-size-l); font-weight: 800;
+          color: var(--ddd-theme-error); margin-bottom: var(--ddd-spacing-3);
+        }
+        .force-choice-text {
+          font-size: var(--ddd-font-size-4xs); color: var(--ddd-theme-on-surface);
+          line-height: 1.6; margin-bottom: var(--ddd-spacing-5);
+        }
+        .force-choice-actions {
+          display: flex; flex-direction: column; gap: var(--ddd-spacing-3);
+        }
+        .force-choice-btn {
+          padding: var(--ddd-spacing-4) var(--ddd-spacing-5);
+          border: none; border-radius: var(--ddd-radius-md);
+          font-weight: 700; font-size: var(--ddd-font-size-4xs);
+          cursor: pointer; font-family: inherit;
+        }
+        .force-choice-btn.primary {
+          background: var(--ddd-theme-primary); color: var(--ddd-theme-on-primary);
+        }
+        .force-choice-btn.primary:hover { background: var(--ddd-theme-accent); }
+        .force-choice-btn.secondary {
+          background: var(--ddd-theme-warning); color: var(--ddd-theme-on-primary);
+        }
+        .force-choice-btn.secondary:hover { filter: brightness(0.9); }
+        .force-choice-btn.report {
+          background: var(--ddd-theme-error); color: var(--ddd-theme-on-primary);
+        }
+        .force-choice-btn.report:hover { filter: brightness(0.9); }
+      `,z`
         /* ===== DARK MODE (DDD-token swap, gated on body.dark-mode) ===== */
         :host-context(body.dark-mode) :host {
           --dk-bg: #0b1020;
@@ -2412,51 +2662,68 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
         :host-context(body.dark-mode) .remidi-card { background: #431407; border-color: #7c2d12; }
         :host-context(body.dark-mode) .remidi-card h3 { color: #fed7aa; }
         :host-context(body.dark-mode) .remidi-card p { color: #fdba74; }
-      `]}render(){if(this._terkunci&&this.mode!=="guru")return d`
+      `]}get _effectiveRemidiMode(){return!!(this.remidiMode||this.remidiSoalUrl&&typeof this._bestSkor=="number"&&this._bestSkor<this.kkm&&!this.sudahRemidi)}get _latihanOnlyMode(){return!this.lockAfterComplete&&(this.duration===0||!this.duration)}render(){const t=this._effectiveRemidiMode&&!this.sudahRemidi&&typeof this._bestSkor=="number"&&this._bestSkor<this.kkm,e=(this._needsRemidi||t)&&this._effectiveRemidiMode&&!this.sudahRemidi;if(this._terkunci&&this.mode!=="guru")return e?o`
+          <div class="wrap">
+            <div class="selesai-card" role="alert">
+              <div style="font-size:2.5rem">🔓</div>
+              <p class="kirim">Kuis terkunci, tapi Anda bisa <b>remidi</b> karena nilai &lt; KKM.</p>
+              ${this._bestSkor!=null?o`<div class="skor">Nilai terbaik: <strong>${this._bestSkor}%</strong> (KKM ${this.kkm}%)</div>`:f}
+              <div class="remidi-card" style="margin-top:12px;">
+                <h3>📝 Remidi Tersedia</h3>
+                <p>Soal sama diacak via <code>shuffle-choices</code>. Klik untuk mulai remidi LM1.</p>
+                <button class="btn-mulai" @click=${this._mulaiRemidi}>🔄 Mulai Remidi (Soal Sama Shuffle)</button>
+              </div>
+              <p style="font-size:12px; color:#64748B; margin-top:8px;">Atau hubungi guru untuk <b>Buka Kunci</b> penuh.</p>
+            </div>
+          </div>
+        `:o`
         <div class="wrap">
           <div class="selesai-card" role="alert">
             <div style="font-size:2.5rem">🔒</div>
             <p class="kirim warn">Kuis terkunci. Hubungi guru untuk mengulang.</p>
-            ${this._bestSkor!=null?d`<div class="skor">Nilai terbaik Anda: <strong>${this._bestSkor}%</strong></div>`:w}
+            ${this._bestSkor!=null?o`<div class="skor">Nilai terbaik Anda: <strong>${this._bestSkor}%</strong></div>`:f}
+            ${this.mode==="guru"?o`<button class="btn-mulai" @click=${this._resetKunciGuru}>🔓 Buka Kunci (Guru)</button>`:o`<p style="font-size:12px; color:#64748B;">Guru bisa buka via <b>Dasbor Guru → Atur → 🔓 Buka Kunci</b> atau tombol di atas (mode guru).</p>`}
           </div>
         </div>
-      `;if(this._selesai){const t=this._bacaSisaWaktu()>60;return d`
+      `;if(this._selesai){const a=this._bacaSisaWaktu()>60;return o`
         <div class="wrap">
-          <div class="selesai-card ${t?"suspicious":""}" role="status">
-            ${this._habisWaktu?d`<div class="waktu">${this.pesanWaktuHabis}</div>`:w}
-            ${t?d`<div class="suspicious-warning" role="alert">
+          <div class="selesai-card ${a?"suspicious":""}" role="status">
+            ${this._habisWaktu?o`<div class="waktu">${this.pesanWaktuHabis}</div>`:f}
+            ${a?o`<div class="suspicious-warning" role="alert">
                   <div class="suspicious-icon">⚠️</div>
                   <div class="suspicious-title">Perhatian: Terdeteksi Aktivitas Mencurigakan</div>
                   <div class="suspicious-text">Sistem mendeteksi waktu pengerjaan tidak sesuai dengan durasi yang diberikan. Nilai Anda tetap tercatat, namun guru akan mendapat notifikasi untuk verifikasi.</div>
                   <div class="suspicious-note">Jika ini adalah kesalahan (misal: browser di-background), hubungi guru untuk klarifikasi.</div>
-                </div>`:w}
-            ${this.studentId?d`<div class="kirim">${this.pesanNilaiTerkirim}</div>`:d`<div class="kirim warn">⚠️ Nilai belum tersimpan karena belum login</div>`}
-            ${this._skor!=null?d`<div class="skor">Skor Anda: <strong>${this._skor}%</strong></div>`:w}
-            ${this.nilaiAkhir!=null?d`<div class="skor">Nilai Akhir: <strong>${this.nilaiAkhir}%</strong></div>`:w}
-            ${this._needsRemidi&&!this.sudahRemidi&&this.remidiMode?d`<div class="remidi-card">
+                </div>`:f}
+            ${this.studentId?o`<div class="kirim">${this.pesanNilaiTerkirim}</div>`:o`<div class="kirim warn">⚠️ Nilai belum tersimpan karena belum login</div>`}
+            ${this._skor!=null?o`<div class="skor">Skor Anda: <strong>${this._skor}%</strong></div>`:f}
+            ${this.nilaiAkhir!=null?o`<div class="skor">Nilai Akhir: <strong>${this.nilaiAkhir}%</strong></div>`:f}
+            ${this._needsRemidi&&!this.sudahRemidi&&this._effectiveRemidiMode?o`<div class="remidi-card">
                   <h3>📝 Remedi Diperlukan</h3>
                   <p>Nilai Anda belum mencapai KKM (${this.kkm}%). Silakan kerjakan remidi.</p>
                   <button class="btn-mulai" @click=${this._mulaiRemidi}>🔄 Mulai Remidi</button>
-                </div>`:w}
-            ${this.allowRetake&&(this.maxRetake===0||this._attemptKe<this.maxRetake+1)?d`<button class="btn-mulai" @click=${this._ulangiKuis}>🔁 Ulangi Kuis</button>`:w}
-            ${this.showSheetLink&&this.spreadsheetUrl?d`<a href="${this.spreadsheetUrl}" target="_blank" rel="noopener">📊 Buka Spreadsheet Nilai</a>`:w}
+                  ${this._effectiveRemidiMode&&!this.sudahRemidi&&typeof this._bestSkor=="number"&&this._bestSkor<this.kkm?o`<p class="remidi-notif" role="status">🔔 Remidi otomatis aktif — nilai Anda di bawah KKM. Kerjakan soal remidi untuk tingkatkan nilai.</p>`:f}
+                </div>`:f}
+            ${this.allowRetake&&(this.maxRetake===0||this._attemptKe<this.maxRetake+1)?o`<button class="btn-mulai" @click=${this._ulangiKuis}>🔁 Ulangi Kuis</button>`:f}
+            ${this.showSheetLink&&this.spreadsheetUrl?o`<a href="${this.spreadsheetUrl}" target="_blank" rel="noopener">📊 Buka Spreadsheet Nilai</a>`:f}
+            ${this.studentId?o`<button class="btn-logout" @click=${this._onAuthLogout}>🚪 Keluar (Logout)</button>`:f}
           </div>
         </div>
-      `}return d`
+      `}return o`
       <div class="wrap">
         <section class="materi-card">
-          ${this.coverImage?d`<img class="cover" src="${this.coverImage}" alt="Cover materi" />`:w}
+          ${this.coverImage?o`<img class="cover" src="${this.coverImage}" alt="Cover materi" />`:f}
           <h2>📖 ${this.judulMateri}</h2>
           <p>${this.teksMateri}</p>
           <div class="materi-links">
-            ${this.materiUrl?d`<a href="${this.materiUrl}" target="_blank" rel="noopener">${this.t.bacaMateri}</a>`:w}
-            ${this.materiFile?d`<a href="${this.materiFile}" target="_blank" rel="noopener" download>${this.t.unduhMateri}</a>`:w}
+            ${this.materiUrl?o`<a href="${this.materiUrl}" target="_blank" rel="noopener">${this.t.bacaMateri}</a>`:f}
+            ${this.materiFile?o`<a href="${this.materiFile}" target="_blank" rel="noopener" download>${this.t.unduhMateri}</a>`:f}
           </div>
-          ${this._pernahIkut&&this._bestSkor!=null?d`<p class="skor-best">⭐ Nilai terbaik Anda: <strong>${this._bestSkor}%</strong></p>`:w}
+          ${this._pernahIkut&&this._bestSkor!=null?o`<p class="skor-best">⭐ Nilai terbaik Anda: <strong>${this._bestSkor}%</strong></p>`:f}
         </section>
 
-        ${this._mulai?d`
-              ${this._pesan?d`<p class="err-chip">${this._pesan}</p>`:w}
+        ${this._mulai?o`
+              ${this._pesan?o`<p class="err-chip">${this._pesan}</p>`:f}
               <timer-kuis
                 duration="${this.duration}"
                 .remaining="${this._resumeRemaining}"
@@ -2464,14 +2731,44 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
                 ?autostart="${this.timerAutostart}"
                 @timer-kuis-expired="${this._onWaktuHabis}">
               </timer-kuis>
-              ${this._tabSwitchWarning&&this._mulai&&!this._selesai?d`<div class="tab-warning-overlay" role="alert">
+              ${this._tabSwitchWarning&&this._mulai&&!this._selesai&&!this._latihanOnlyMode?o`<div class="tab-warning-overlay" role="alertdialog" aria-labelledby="tab-warning-title" aria-describedby="tab-warning-text">
                     <div class="tab-warning-card">
-                      <div class="tab-warning-icon">⚠️</div>
-                      <div class="tab-warning-title">Fokus pada kuis</div>
-                      <div class="tab-warning-text">Anda membuka tab lain. Gunakan waktu untuk menjawab soal. Timer tetap berjalan.</div>
-                      <button class="tab-warning-close" @click=${()=>{this._tabSwitchWarning=!1,this.requestUpdate()}}>Lanjutkan</button>
+                      <div class="tab-warning-icon" aria-hidden="true">⚠️</div>
+                      <div class="tab-warning-title" id="tab-warning-title">Fokus pada kuis</div>
+                      <div class="tab-warning-text" id="tab-warning-text">Anda membuka tab lain atau aplikasi lain. Gunakan waktu untuk menjawab soal. <strong>Timer tetap berjalan.</strong></div>
+                      <button class="tab-warning-close" id="tab-warning-close-btn" @click=${()=>{this._tabSwitchWarning=!1,this.requestUpdate()}} autofocus>Saya Kembali</button>
                     </div>
-                  </div>`:w}
+                  </div>`:f}
+              ${this._fullscreenWarning&&this._mulai&&!this._selesai?o`<div class="tab-warning-overlay" role="alert">
+                    <div class="tab-warning-card">
+                      <div class="tab-warning-icon">🖥️</div>
+                      <div class="tab-warning-title">Keluar dari Fullscreen</div>
+                      <div class="tab-warning-text">Anda keluar dari mode fullscreen. Mohon kembali ke fullscreen untuk melanjutkan kuis.</div>
+                      <button class="tab-warning-close" @click=${()=>{this._fullscreenWarning=!1,this._requestFullscreen(),this.requestUpdate()}}>Kembali Fullscreen</button>
+                    </div>
+                  </div>`:f}
+              ${this._forceChoiceDialog&&this._mulai&&!this._selesai?o`<div class="force-choice-overlay" role="alertdialog" aria-labelledby="force-choice-title" aria-describedby="force-choice-text">
+                    <div class="force-choice-card">
+                      <div class="force-choice-icon" aria-hidden="true">⚠️</div>
+                      <div class="force-choice-title" id="force-choice-title">Peringatan: ${this._warningCount}x Keluar Tab</div>
+                      <div class="force-choice-text" id="force-choice-text">
+                        Anda telah keluar-masuk tab sebanyak <strong>${this._warningCount} kali</strong>. Ini terdeteksi sebagai pola mencurigakan.
+                        <br><br>
+                        Silakan putuskan: lanjutkan kerjakan kuis atau kumpulkan nilai Anda sekarang.
+                      </div>
+                      <div class="force-choice-actions">
+                        <button class="force-choice-btn secondary" @click=${this._kumpulkanSekarang}>
+                          📤 Kumpulkan Sekarang
+                        </button>
+                        <button class="force-choice-btn primary" @click=${this._lanjutkanKuis} autofocus>
+                          ▶️ Lanjutkan Kerjakan Kuis
+                        </button>
+                        <button class="force-choice-btn report" @click=${this._laporKeGuru}>
+                          🚩 Lapor ke Guru
+                        </button>
+                      </div>
+                    </div>
+                  </div>`:f}
 
               <kuis-ledakan
                 @dasbor-kuis-log="${this._onKuisLog}"
@@ -2499,12 +2796,12 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
                 .questionDelay="${this.questionDelay}"
                 .reviewAnswers="${this.reviewAnswers}">
               </kuis-ledakan>
-            `:this.studentId&&(this.maxRetake===0||this._attemptKe<this.maxRetake+1)?d`<button class="btn-mulai" @click="${this._mulaiLatihan}">${this.labelMulai}</button>`:document.querySelector("quiz-user-auth")?d`<p class="auth-hint">🔐 Silakan login lewat form di atas agar nilai tersimpan ke Spreadsheet.</p>`:d`
+            `:this.studentId&&(this.maxRetake===0||this._attemptKe<this.maxRetake+1)?o`<button class="btn-mulai" @click="${this._mulaiLatihan}">${this.labelMulai}</button>`:document.querySelector("quiz-user-auth")?o`<p class="auth-hint">🔐 Silakan login lewat form di atas agar nilai tersimpan ke Spreadsheet.</p>`:o`
                       <quiz-user-auth .appsScriptUrl="${this.appsScriptUrl}"></quiz-user-auth>
                       <p class="auth-hint">🔐 Silakan login dulu agar nilai tersimpan ke Spreadsheet.</p>
                     `}
       </div>
-    `}static get haxProperties(){return{canScale:!0,canPosition:!0,canEditSource:!1,gizmo:{title:"Latihan Kuis Berwaktu",description:"Materi + kuis ledakan + timer; saat waktu habis, materi & kuis sembunyi dan tampil pesan nilai terkirim",icon:"icons:timer",color:"purple",tags:["Education","Quiz","Timer","Materi"]},settings:{configure:[{property:"appsScriptUrl",title:"URL Apps Script (kirim nilai)",inputMethod:"textfield",description:"Web App Google Apps Script untuk mengirim skor ke Spreadsheet"},{property:"spreadsheetUrl",title:"URL Spreadsheet Nilai (lihat)",inputMethod:"textfield",description:"Link Google Spreadsheet berisi rekap nilai siswa"},{property:"kdMateri",title:"Kode Materi (kd-materi)",inputMethod:"textfield",description:"Kode/topik kuis; diteruskan ke <kuis-ledakan> agar rekap per topik tersimpan."},{property:"allowRetake",title:"Boleh Diulang (retake)",inputMethod:"boolean",description:"false = ulangan (terkunci setelah 1x), true = latihan (boleh ulang). Attribute hadir = true; tidak ada attribute = false (default)."},{property:"maxRetake",title:"Batas Ulang (max-retake)",inputMethod:"number",description:"Total attempt = 1 asli + maxRetake. Counter disimpan di localStorage per siswa+materi."},{property:"mode",title:"Mode Tampilan",inputMethod:"select",description:"siswa (default) vs guru (lihat tombol buka kunci).",options:{siswa:"Siswa - Evaluasi Mandiri",guru:"Guru - Pantauan"}},{property:"hidePauseRestart",title:"Sembunyikan Tombol Timer",inputMethod:"boolean",description:"Menyembunyikan tombol jeda/mulai/ulang di timer dan tombol Ulangi di layar hasil. Default true."},{property:"timerAutostart",title:"Timer Mulai Otomatis",inputMethod:"boolean",description:"true = timer langsung berjalan saat kuis dimulai. Default true."},{property:"shuffleQuestions",title:"Acak Urutan Soal",inputMethod:"boolean",description:"Mengacak urutan soal setiap kali kuis dimulai."},{property:"shuffleChoices",title:"Acak Pilihan Jawaban",inputMethod:"boolean",description:"Mengacak urutan pilihan jawaban setiap kali kuis dimulai."},{property:"kategori",title:"Kategori Kuis",inputMethod:"select",description:"sumatif \u2192 skor masuk rapor (db_asesmen); formatif \u2192 progres saja, tidak masuk rapor (db_aktivitas).",options:{sumatif_lm:"Sumatif (Rapor LM)",formatif:"Formatif (Progres)"},default:"sumatif_lm"},{property:"hideConfetti",title:"Nonaktifkan Konfeti",inputMethod:"boolean",description:"Tidak menampilkan efek konfeti saat jawaban benar."},{property:"hideAnswers",title:"Sembunyikan Jawaban",inputMethod:"boolean",description:"Tidak menampilkan jawaban benar/salah setelah menjawab."},{property:"hideScore",title:"Sembunyikan Nilai",inputMethod:"boolean",description:"Menyembunyikan angka skor berjalan di layar soal dan lingkaran nilai akhir."},{property:"showQuestionNav",title:"Tampilkan Navigasi Nomor Soal",inputMethod:"boolean",description:"Tampilkan tombol navigasi nomor soal di kuis.",default:!0},{property:"allowBackwardNav",title:"Izinkan Navigasi Mundur",inputMethod:"boolean",description:"true = siswa boleh melompat ke soal yang sudah dijawab. Default false (nav maju saja).",default:!1},{property:"practiceMode",title:"Mode Latihan",inputMethod:"boolean",description:"Aktifkan untuk mode latihan: tidak ada auto-advance, tombol Berikutnya/Kembali tersedia.",default:!1},{property:"questionDelay",title:"Jeda Soal (ms)",inputMethod:"number",description:"Jeda auto-advance antar soal (hanya berlaku mode kuis, bukan practice mode).",default:1800},{property:"reviewAnswers",title:"Tinjau Jawaban di Akhir",inputMethod:"boolean",description:"Tampilkan tombol 'Tinjau Jawaban' di layar hasil.",default:!0},{property:"duration",title:"Durasi Kuis (detik)",inputMethod:"number",description:"Lama waktu pengerjaan kuis sebelum dikunci otomatis",default:300},{property:"judulMateri",title:"Judul Materi",inputMethod:"textfield"},{property:"teksMateri",title:"Teks Materi",inputMethod:"textarea"},{property:"materiUrl",title:"URL Materi",inputMethod:"textfield"},{property:"materiFile",title:"File Materi",inputMethod:"haxupload"},{property:"coverImage",title:"Gambar Sampul Materi",inputMethod:"image"},{property:"judulKuis",title:"Judul Kuis",inputMethod:"textfield"},{property:"pesanWaktuHabis",title:"Pesan Waktu Habis",inputMethod:"textfield"},{property:"pesanNilaiTerkirim",title:"Pesan Nilai Terkirim",inputMethod:"textarea"},{property:"labelMulai",title:"Teks Tombol Mulai",inputMethod:"textfield",description:"Teks tombol untuk memulai latihan/kuis (default: '\u25B6\uFE0F Mulai')."},{property:"showSheetLink",title:"Tampilkan Link Spreadsheet",inputMethod:"boolean",description:"Hanya untuk view aman/guru. Default OFF."},{property:"questions",title:"Soal (JSON)",inputMethod:"code-editor",description:"Array soal AKM/PG. Format lama {q,a,b,c,k} didukung. Field opsional: {hint} \u2014 petunjuk muncul sebagai <details>."},{property:"soalFileUrl",title:"Upload File Soal (JSON)",inputMethod:"haxupload",description:"File .json soal; otomatis di-parse & menimpa soal inline."},{property:"kkm",title:"KKM (Kriteria Ketuntasan Minimal)",inputMethod:"number",description:"Nilai minimum untuk lulus. Default 75. Jika nilai < KKM, siswa harus remidi.",default:75},{property:"remidiMode",title:"Aktifkan Mode Remidi",inputMethod:"boolean",description:"Jika aktif, siswa dengan nilai < KKM bisa mengerjakan remidi dengan soal berbeda."},{property:"remidiSoalUrl",title:"Upload File Soal Remidi (JSON)",inputMethod:"haxupload",description:"File .json soal remidi; digunakan jika siswa tidak mencapai KKM."}]},saveOptions:{unsetAttributes:[]}}}}globalThis.customElements.define(st.tag,st);class rt extends R(F(U)){static get tag(){return"dasbor-kuis"}static get properties(){return{...super.properties,appsScriptUrl:{type:String,attribute:"apps-script-url",reflect:!0},forumApiUrl:{type:String,attribute:"forum-api-url",reflect:!0},kdMateri:{type:String,attribute:"kd-materi",reflect:!0},kategori:{type:String,attribute:"kategori",reflect:!0},mode:{type:String,attribute:"mode",reflect:!0},kelas:{type:String,attribute:"kelas",reflect:!0},studentId:{type:String,attribute:"student-id",reflect:!0},namaSiswa:{type:String,attribute:"nama-siswa",reflect:!0},nis:{type:String,attribute:"nis",reflect:!0},absen:{type:String,attribute:"absen",reflect:!0},allowModeSwitch:{type:Boolean,attribute:"allow-mode-switch",reflect:!0},judulKuis:{type:String,attribute:"judul-kuis",reflect:!0},questions:{type:Array,attribute:"questions",reflect:!0,converter:{fromAttribute(t){if(t==null||t==="")return;if(Array.isArray(t)||typeof t=="object")return t;const e=String(t).trim();if(!(!e||e.includes("[object Object]"))&&(e.startsWith("[")||e.startsWith("{")))try{const a=JSON.parse(e);return Array.isArray(a)?a:a&&typeof a=="object"&&Array.isArray(a.questions)?a.questions:void 0}catch{return}},toAttribute(t){if(!Array.isArray(t))return null;try{return JSON.stringify(t)}catch{return null}}}},shuffleChoices:{type:Boolean,attribute:"shuffle-choices",reflect:!0},hideAnswers:{type:Boolean,attribute:"hide-answers",reflect:!0},hideScore:{type:Boolean,attribute:"hide-score",reflect:!0},hideConfetti:{type:Boolean,attribute:"hide-confetti",reflect:!0},_activeTab:{state:!0},_serverData:{state:!0},_isFlushing:{state:!0},_loading:{state:!0},_serverError:{state:!0},_peringkatKelas:{state:!0},_detailSiswa:{state:!0},_editNilai:{state:!0},_note:{state:!0},_draftNilai:{state:!0},_soalText:{state:!0},_copasTSV:{state:!0},_simulabankSoalUrl:{state:!0}}}static get haxProperties(){return{api:"1",canScale:!1,canPosition:!1,canEditSource:!0,type:"element",designSystem:{accent:!0,primary:!0,card:!0,text:!0,designTreatment:!1},gizmo:{title:"Dasbor Evaluasi Terintegrasi V5",description:"Dasbor monitoring Guru, Leaderboard Kelas, dan ruang evaluasi mandiri siswa.",icon:"icons:dashboard",color:"indigo",tags:["Dasbor","Evaluasi","Monitoring"],meta:{author:"andyinformatika23-hash"}},settings:{configure:[{property:"appsScriptUrl",title:"URL Web App Google Apps Script",description:"Tempelkan URL eksekusi (/exec) dari deploy web app Google Apps Script Anda.",inputMethod:"textfield",required:!0},{property:"kdMateri",title:"Kode Topik / Pertemuan",description:"Ganti sesi bimbingan secara dinamis, misal: Pertemuan 1, Pertemuan 2.",inputMethod:"textfield",required:!0},{property:"mode",title:"Mode Tampilan",description:"Mode Guru menampilkan seluruh tab admin (Pantauan, Leaderboard, Peringkat Nilai Bimbingan Kelas, Dashboard Pembelajaran, Input Nilai, Kuis, Diskusi, Edit Soal, Atur); Mode Siswa menampilkan hasil nilai & evaluasi mandiri. Label 'dosen' kini untuk kemunduran dan diperlakukan sebagai Guru.",inputMethod:"select",options:{guru:"Guru - Admin Kelas Lengkap",siswa:"Siswa - Hasil Nilai & Evaluasi Mandiri"}},{property:"allowModeSwitch",title:"Tampilkan Tombol Pindah Mode",description:"Secara default tombol Guru/Siswa disembunyikan agar siswa tidak bisa beralih ke tampilan guru (dan sebaliknya). Aktifkan hanya pada halaman administrasi.",inputMethod:"boolean"},{property:"kelas",title:"Kelas (Filter Guru)",description:"Filter pantauan guru per kelas, misal: XI-1. Kosongkan untuk semua kelas.",inputMethod:"textfield"},{property:"studentId",title:"Student ID (Mode Siswa)",description:"ID siswa untuk memuat hasil nilai (otomatis terisi dari event login autentikasi-kuis).",inputMethod:"textfield"},{property:"namaSiswa",title:"Nama Siswa (Mode Siswa)",description:"Nama siswa yang sedang login untuk identifikasi pada ruang diskusi dan log aktivitas.",inputMethod:"textfield"},{property:"nis",title:"NIS (Mode Siswa)",description:"Nomor Induk Siswa yang terdaftar pada sheet Users.",inputMethod:"textfield"},{property:"absen",title:"Nomor Absen (Mode Siswa)",description:"Nomor absen siswa pada kelas.",inputMethod:"textfield"},{property:"judulKuis",title:"Judul Kuis Evaluasi",description:"Judul kartu kuis pada tab Evaluasi Kuis (dapat diedit oleh guru/dosen).",inputMethod:"textfield"},{property:"questions",title:"Soal Bank (Json) - Edit Guru/Dosen",description:"Array soal AKM: PG {question, choices, correctIndex}, PG kompleks {correctAnswers:[0,2]}, PGK {type:'pgk', statements:[{text,answer}]}, menjodohkan {type:'matching', leftItems, rightItems, correctPairs}, isian {type:'shortAnswer', acceptedAnswers}, gambar soal {image}, pilihan bergambar {text,image}. Kosongkan untuk memuat otomatis dari Bank Soal sheet.",inputMethod:"code-editor"},{property:"shuffleChoices",title:"Acak Pilihan Jawaban",description:"Mengacak urutan pilihan jawaban setiap kali kuis dimulai.",inputMethod:"boolean"},{property:"hideAnswers",title:"Sembunyikan Jawaban",description:"Tidak menampilkan jawaban benar/salah setelah menjawab (mode ujian).",inputMethod:"boolean"},{property:"hideScore",title:"Sembunyikan Nilai",description:"Menyembunyikan angka skor berjalan dan nilai akhir (pesan selesai tetap tampil).",inputMethod:"boolean"},{property:"hideConfetti",title:"Nonaktifkan Konfeti",description:"Tidak menampilkan efek konfeti saat jawaban benar.",inputMethod:"boolean"}]},saveOptions:{wipeSlot:!1,unsetAttributes:[]},demoSchema:[{tag:"dasbor-kuis",properties:{mode:"guru",kelas:"XI-1",kdMateri:"Pertemuan 1"},content:""},{tag:"dasbor-kuis",properties:{mode:"siswa",studentId:"STD-65108053",namaSiswa:"Andy Yulianto",kelas:"XI-1",kdMateri:"Pertemuan 1"},content:""}]}}constructor(){super(),this.appsScriptUrl="",this.forumApiUrl="",this.kdMateri="Pertemuan 1",this.mode="guru",this.kelas="XI-1",this.studentId="STD-65108053",this.namaSiswa="Andy Yulianto",this.nis="",this.absen="",this.allowModeSwitch=!1,this.judulKuis="Evaluasi Kuis Interaktif",this.questions=[],this.shuffleChoices=!1,this.hideAnswers=!1,this.hideScore=!1,this.hideConfetti=!1,this._activeTab="pantauan",this._isFlushing=!1,this._loading=!1,this._serverError="",this._peringkatKelas="",this._detailSiswa=null,this._editNilai=null,this._note="",this._copasTSV=null,this._simulabankSoalUrl="",this._serverData={roster:[],leaderboard:[],siswa:null,history:[]},this._onUserLoginBound=this._onUserLogin.bind(this),this._onUserLogoutBound=this._onUserLogout.bind(this),this._onLogEventBound=this._onLogEvent.bind(this),this._onOnlineBound=()=>this._flushQueue(),this._onFocusBound=()=>this._flushQueue()}connectedCallback(){if(super.connectedCallback(),globalThis.HaxStore&&typeof globalThis.HaxStore.requestAvailability=="function"){const t=globalThis.HaxStore.requestAvailability();t&&!t.elementList[rt.tag]&&(t.elementList[rt.tag]=rt.haxProperties)}this._loadProfile(),this.fetchDataKomplit(),globalThis.addEventListener("quiz-user-login",this._onUserLoginBound),globalThis.addEventListener("quiz-user-logout",this._onUserLogoutBound),globalThis.addEventListener("dasbor-kuis-log",this._onLogEventBound),globalThis.addEventListener("online",this._onOnlineBound),globalThis.addEventListener("focus",this._onFocusBound),this._flushQueue()}disconnectedCallback(){globalThis.removeEventListener("quiz-user-login",this._onUserLoginBound),globalThis.removeEventListener("quiz-user-logout",this._onUserLogoutBound),globalThis.removeEventListener("dasbor-kuis-log",this._onLogEventBound),globalThis.removeEventListener("online",this._onOnlineBound),globalThis.removeEventListener("focus",this._onFocusBound),super.disconnectedCallback()}updated(t){super.updated(t),t.has("mode")&&(this._activeTab=this.mode==="siswa"?"pembelajaran":"pantauan",this.fetchDataKomplit()),(t.has("kelas")||t.has("studentId")||t.has("namaSiswa")||t.has("absen")||t.has("nis"))&&this.fetchDataKomplit()}_loadProfile(){try{const t=JSON.parse(localStorage.getItem("a3_v5_student_profile")||"null");t&&t.student_id&&(this.studentId=this.studentId||t.student_id,this.namaSiswa=this.namaSiswa||t.nama,this.kelas=this.kelas||t.kelas,this.nis=this.nis||t.nis||"",this.absen=this.absen||t.absen||"")}catch{}}_persistProfile(){try{localStorage.setItem("a3_v5_student_profile",JSON.stringify({student_id:this.studentId,nama:this.namaSiswa,kelas:this.kelas,nis:this.nis,absen:this.absen}))}catch{}}_onUserLogin(t){const e=t&&t.detail||{};e.studentId&&(this.studentId=e.studentId),e.nama&&(this.namaSiswa=e.nama),e.kelas&&(this.kelas=e.kelas),e.nis&&(this.nis=e.nis),e.absen&&(this.absen=e.absen),this._persistProfile(),this.fetchDataKomplit()}_onUserLogout(){this._serverData={roster:[],leaderboard:[],siswa:null,history:[]},this.requestUpdate()}_onLogEvent(t){const e=t&&t.detail||{};e.tipe&&(!t.target||!this.shadowRoot||!this.shadowRoot.contains(t.target)||this.studentId&&this.logActivity(e.tipe,e.payload||{},e.id_log))}_generateLogId(){try{const t=new Uint8Array(8);globalThis.crypto.getRandomValues(t);let e="";return t.forEach(a=>e+=a.toString(16).padStart(2,"0")),`LOG-${Date.now()}-${e.toUpperCase()}`}catch{return`LOG-${Date.now()}-${Math.random().toString(36).substr(2,10).toUpperCase()}`}}_ambilIdLogStabil(t,e){const a=[this.studentId,this.kdMateri,t,JSON.stringify(e||{}),e&&e.timestamp||""].join("::");let i=5381;for(let h=0;h<a.length;h++)i=((i<<5)+i^a.charCodeAt(h))>>>0;const s="l"+i.toString(16);let r={};try{r=JSON.parse(localStorage.getItem("a3_v5_id_log_lock")||"{}")}catch{}if(r[s])return r[s];const n=this._generateLogId();r[s]=n;const c=Object.keys(r);c.length>200&&c.slice(0,c.length-150).forEach(h=>delete r[h]);try{localStorage.setItem("a3_v5_id_log_lock",JSON.stringify(r))}catch{}return n}_apiGet(t){const e=new URLSearchParams(t);return fetch(`${this.appsScriptUrl}?${e.toString()}`,{method:"GET",mode:"cors"}).then(a=>a.text()).then(a=>{if(!a||a.trim().charAt(0)!=="{")return{status:"error",message:`Respon backend bukan JSON (${a.slice(0,80)||"kosong"}). Cek URL /exec & akses deployment.`};try{return JSON.parse(a)}catch{return{status:"error",message:"JSON tidak dapat diurai."}}}).catch(a=>({status:"error",message:`Jaringan: ${a.message}`}))}_deteksiErrorBackend(...t){for(const e of t)if(e){if(typeof e.status=="string"&&e.status==="error"&&e.message)return`Error backend: ${e.message}`;if(Array.isArray(e.leaderboard)&&!Array.isArray(e.roster)&&e.riwayatKuis!==void 0)return"Backend lama (V3) terdeteksi: aksi getStudentRoster tidak dikenal. Deploy lib/codev5.gs lalu Deploy > New version."}return""}_bacaCacheLokal(){try{const t=localStorage.getItem("a3_v5_activity_logs_cache");if(!t)return null;const e=JSON.parse(t);if(e&&typeof e=="object")return e}catch{}return null}async fetchDataKomplit(){if(!this.appsScriptUrl){this._serverError="";return}this._loading=!0;try{if(this.mode==="guru"||this.mode==="dosen"){const[t,e]=await Promise.all([this._apiGet({action:"getStudentRoster",kelas:this.kelas}),this._apiGet({action:"getLeaderboard",kelas:this.kelas})]);this._serverError=this._deteksiErrorBackend(t,e);const a=this._bacaCacheLokal(),i=e&&(Array.isArray(e.leaderboard)?e.leaderboard:Array.isArray(e.data)?e.data:null),s=Array.isArray(t.roster)?t.roster.filter(r=>!this.kelas||!r.kelas||String(r.kelas)===String(this.kelas)):null;this._serverError?a&&Array.isArray(a.roster)&&(this._serverData={roster:a.roster,leaderboard:a.leaderboard||[],siswa:a.siswa||null,history:a.history||[]},this._serverError+=" (menampilkan data cache lokal)."):i?(this._serverData={...this._serverData,roster:s||[],leaderboard:i},localStorage.setItem("a3_v5_activity_logs_cache",JSON.stringify(this._serverData))):(this._serverError="getLeaderboard pada backend aktif belum mengembalikan data leaderboard (hanya daftar pertemuan/sheet). Deploy lib/codev5.gs lalu Deploy > New version.",this._serverData={...this._serverData,roster:s||[],leaderboard:a&&Array.isArray(a.leaderboard)?a.leaderboard:[]},localStorage.setItem("a3_v5_activity_logs_cache",JSON.stringify(this._serverData)))}else{const t=this.studentId,[e,a]=await Promise.all([this._apiGet({action:"getScores",studentId:t}),this._apiGet({action:"getActivityHistory",studentId:t,kdMateri:this.kdMateri,days:28})]);if(this._serverError=this._deteksiErrorBackend(e,a),this._serverError){const i=this._bacaCacheLokal();i&&i.siswa&&(this._serverData={roster:i.roster||[],leaderboard:i.leaderboard||[],siswa:i.siswa,history:i.history||[]},this._serverError+=" (menampilkan data cache lokal).")}else this._serverData={...this._serverData,siswa:e&&e.data||null,history:a&&a.history||[]},localStorage.setItem("a3_v5_activity_logs_cache",JSON.stringify(this._serverData))}}catch(t){this._serverError=`Gagal memuat data: ${t.message}`;const e=this._bacaCacheLokal();e&&(Array.isArray(e.roster)||e.siswa)&&(this._serverData={roster:e.roster||[],leaderboard:e.leaderboard||[],siswa:e.siswa||null,history:e.history||[]},this._serverError+=" (menampilkan data cache lokal).")}finally{this._loading=!1,this.requestUpdate()}}logActivity(t,e={},a){const i=a||this._ambilIdLogStabil(t,e),s=e&&e.kdMateri||this.kdMateri||"",r=e&&e.kategori||this.kategori||"sumatif_lm",n={id_log:i,student_id:this.studentId,id_materi:s,kategori:r,tipe_aktivitas:t,payload_data:JSON.stringify(e),timestamp:new Date().toISOString()};let c=[];try{c=JSON.parse(localStorage.getItem("a3_v5_sync_queue")||"[]")}catch{}Array.isArray(c)||(c=[]),c.some(h=>h&&h.id_log===i)||(c.push(n),localStorage.setItem("a3_v5_sync_queue",JSON.stringify(c))),this._flushQueue(),this.dispatchEvent(new CustomEvent("dasbor-kuis-activity",{detail:n,bubbles:!0,composed:!0}))}async _flushQueue(){if(this._isFlushing||!this.appsScriptUrl||!navigator.onLine||globalThis.__a3V5FlushLock)return;let t=[];try{t=JSON.parse(localStorage.getItem("a3_v5_sync_queue")||"[]")}catch{}if(t.length===0)return;const e=t.filter(a=>a&&a.student_id);if(e.length!==t.length&&(t=e,localStorage.setItem("a3_v5_sync_queue",JSON.stringify(t))),t.length!==0){this._isFlushing=!0,globalThis.__a3V5FlushLock=!0;try{const a=await Promise.all(t.map(n=>this._apiGet({action:"logActivity",studentId:n.student_id,nama:this.namaSiswa,nis:this.nis,absen:this.absen,kelas:this.kelas,type:n.tipe_aktivitas,description:n.payload_data,timestamp:n.timestamp,kdMateri:n.id_materi,kategori:n.kategori||"sumatif_lm",id_log:n.id_log}))),i=new Set(t.filter((n,c)=>a[c]&&a[c].status==="ok").map(n=>n.id_log));let s=[];try{s=JSON.parse(localStorage.getItem("a3_v5_sync_queue")||"[]")}catch{}Array.isArray(s)||(s=[]);const r=s.filter(n=>!i.has(n.id_log));localStorage.setItem("a3_v5_sync_queue",JSON.stringify(r)),r.length<s.length&&this.fetchDataKomplit()}catch(a){console.error("Sinkronisasi tertunda",a)}finally{this._isFlushing=!1,globalThis.__a3V5FlushLock=!1,this.requestUpdate()}}}_num(t){const e=parseInt(t);return isNaN(e)?0:e}_rowValue(t,e){if(!t)return"";if(typeof t[e]<"u")return t[e];const a=Object.keys(t).find(i=>String(i).trim().toLowerCase()===String(e).toLowerCase());return a?t[a]:""}static get styles(){return[super.styles,C`
+    `}static get haxProperties(){return{canScale:!0,canPosition:!0,canEditSource:!1,gizmo:{title:"Latihan Kuis Berwaktu",description:"Materi + kuis ledakan + timer; saat waktu habis, materi & kuis sembunyi dan tampil pesan nilai terkirim",icon:"icons:timer",color:"purple",tags:["Education","Quiz","Timer","Materi"]},settings:{configure:[{property:"appsScriptUrl",title:"URL Apps Script (kirim nilai)",inputMethod:"textfield",description:"Web App Google Apps Script untuk mengirim skor ke Spreadsheet"},{property:"spreadsheetUrl",title:"URL Spreadsheet Nilai (lihat)",inputMethod:"textfield",description:"Link Google Spreadsheet berisi rekap nilai siswa"},{property:"kdMateri",title:"Kode Materi (kd-materi)",inputMethod:"textfield",description:"Kode/topik kuis; diteruskan ke <kuis-ledakan> agar rekap per topik tersimpan."},{property:"allowRetake",title:"Boleh Diulang (retake)",inputMethod:"boolean",description:"false = ulangan (terkunci setelah 1x), true = latihan (boleh ulang). Attribute hadir = true; tidak ada attribute = false (default)."},{property:"maxRetake",title:"Batas Ulang (max-retake)",inputMethod:"number",description:"Total attempt = 1 asli + maxRetake. Counter disimpan di localStorage per siswa+materi."},{property:"mode",title:"Mode Tampilan",inputMethod:"select",description:"siswa (default) vs guru (lihat tombol buka kunci).",options:{siswa:"Siswa - Evaluasi Mandiri",guru:"Guru - Pantauan"}},{property:"hidePauseRestart",title:"Sembunyikan Tombol Timer",inputMethod:"boolean",description:"Menyembunyikan tombol jeda/mulai/ulang di timer dan tombol Ulangi di layar hasil. Default true."},{property:"timerAutostart",title:"Timer Mulai Otomatis",inputMethod:"boolean",description:"true = timer langsung berjalan saat kuis dimulai. Default true."},{property:"shuffleQuestions",title:"Acak Urutan Soal",inputMethod:"boolean",description:"Mengacak urutan soal setiap kali kuis dimulai."},{property:"shuffleChoices",title:"Acak Pilihan Jawaban",inputMethod:"boolean",description:"Mengacak urutan pilihan jawaban setiap kali kuis dimulai."},{property:"kategori",title:"Kategori Kuis",inputMethod:"select",description:"sumatif \u2192 skor masuk rapor (db_asesmen); formatif \u2192 progres saja, tidak masuk rapor (db_aktivitas).",options:{sumatif_lm:"Sumatif (Rapor LM)",formatif:"Formatif (Progres)"},default:"sumatif_lm"},{property:"tabSwitchThreshold",title:"Batas Tab Switch Curang",inputMethod:"number",description:"Jumlah tab switch yang dianggap mencurigakan (default: 3). Melewati batas ini akan log 'curang_tab_switch' ke spreadsheet.",default:3},{property:"hideConfetti",title:"Nonaktifkan Konfeti",inputMethod:"boolean",description:"Tidak menampilkan efek konfeti saat jawaban benar."},{property:"hideAnswers",title:"Sembunyikan Jawaban",inputMethod:"boolean",description:"Tidak menampilkan jawaban benar/salah setelah menjawab."},{property:"hideScore",title:"Sembunyikan Nilai",inputMethod:"boolean",description:"Menyembunyikan angka skor berjalan di layar soal dan lingkaran nilai akhir."},{property:"showQuestionNav",title:"Tampilkan Navigasi Nomor Soal",inputMethod:"boolean",description:"Tampilkan tombol navigasi nomor soal di kuis.",default:!0},{property:"allowBackwardNav",title:"Izinkan Navigasi Mundur",inputMethod:"boolean",description:"true = siswa boleh melompat ke soal yang sudah dijawab. Default false (nav maju saja).",default:!1},{property:"practiceMode",title:"Mode Latihan",inputMethod:"boolean",description:"Aktifkan untuk mode latihan: tidak ada auto-advance, tombol Berikutnya/Kembali tersedia.",default:!1},{property:"questionDelay",title:"Jeda Soal (ms)",inputMethod:"number",description:"Jeda auto-advance antar soal (hanya berlaku mode kuis, bukan practice mode).",default:1800},{property:"reviewAnswers",title:"Tinjau Jawaban di Akhir",inputMethod:"boolean",description:"Tampilkan tombol 'Tinjau Jawaban' di layar hasil.",default:!0},{property:"duration",title:"Durasi Kuis (detik)",inputMethod:"number",description:"Lama waktu pengerjaan kuis sebelum dikunci otomatis",default:300},{property:"judulMateri",title:"Judul Materi",inputMethod:"textfield"},{property:"teksMateri",title:"Teks Materi",inputMethod:"textarea"},{property:"materiUrl",title:"URL Materi",inputMethod:"textfield"},{property:"materiFile",title:"File Materi",inputMethod:"haxupload"},{property:"coverImage",title:"Gambar Sampul Materi",inputMethod:"image"},{property:"judulKuis",title:"Judul Kuis",inputMethod:"textfield"},{property:"pesanWaktuHabis",title:"Pesan Waktu Habis",inputMethod:"textfield"},{property:"pesanNilaiTerkirim",title:"Pesan Nilai Terkirim",inputMethod:"textarea"},{property:"labelMulai",title:"Teks Tombol Mulai",inputMethod:"textfield",description:"Teks tombol untuk memulai latihan/kuis (default: '\u25B6\uFE0F Mulai')."},{property:"showSheetLink",title:"Tampilkan Link Spreadsheet",inputMethod:"boolean",description:"Hanya untuk view aman/guru. Default OFF."},{property:"questions",title:"Soal (JSON)",inputMethod:"code-editor",description:"Array soal AKM/PG. Format lama {q,a,b,c,k} didukung. Field opsional: {hint} \u2014 petunjuk muncul sebagai <details>."},{property:"soalFileUrl",title:"Upload File Soal (JSON)",inputMethod:"haxupload",description:"File .json soal; otomatis di-parse & menimpa soal inline."},{property:"kkm",title:"KKM (Kriteria Ketuntasan Minimal)",inputMethod:"number",description:"Nilai minimum untuk lulus. Default 75. Jika nilai < KKM, siswa harus remidi.",default:75},{property:"remidiMode",title:"Aktifkan Mode Remidi",inputMethod:"boolean",description:"Jika aktif, siswa dengan nilai < KKM bisa mengerjakan remidi dengan soal berbeda."},{property:"remidiSoalUrl",title:"Upload File Soal Remidi (JSON)",inputMethod:"haxupload",description:"File .json soal remidi; digunakan jika siswa tidak mencapai KKM."}]},saveOptions:{unsetAttributes:[]}}}}globalThis.customElements.define(ot.tag,ot);class nt extends j(B(F)){static get tag(){return"dasbor-kuis"}static get properties(){return{...super.properties,appsScriptUrl:{type:String,attribute:"apps-script-url",reflect:!0},forumApiUrl:{type:String,attribute:"forum-api-url",reflect:!0},kdMateri:{type:String,attribute:"kd-materi",reflect:!0},kategori:{type:String,attribute:"kategori",reflect:!0},mode:{type:String,attribute:"mode",reflect:!0},kelas:{type:String,attribute:"kelas",reflect:!0},tema:{type:String,attribute:"tema",reflect:!0},studentId:{type:String,attribute:"student-id",reflect:!0},namaSiswa:{type:String,attribute:"nama-siswa",reflect:!0},nis:{type:String,attribute:"nis",reflect:!0},absen:{type:String,attribute:"absen",reflect:!0},allowModeSwitch:{type:Boolean,attribute:"allow-mode-switch",reflect:!0},role:{type:String,attribute:"role",reflect:!0},judulKuis:{type:String,attribute:"judul-kuis",reflect:!0},questions:{type:Array,attribute:"questions",reflect:!0,converter:{fromAttribute(t){if(t==null||t==="")return;if(Array.isArray(t)||typeof t=="object")return t;const e=String(t).trim();if(!(!e||e.includes("[object Object]"))&&(e.startsWith("[")||e.startsWith("{")))try{const a=JSON.parse(e);return Array.isArray(a)?a:a&&typeof a=="object"&&Array.isArray(a.questions)?a.questions:void 0}catch{return}},toAttribute(t){if(!Array.isArray(t))return null;try{return JSON.stringify(t)}catch{return null}}}},shuffleChoices:{type:Boolean,attribute:"shuffle-choices",reflect:!0},hideAnswers:{type:Boolean,attribute:"hide-answers",reflect:!0},hideScore:{type:Boolean,attribute:"hide-score",reflect:!0},hideConfetti:{type:Boolean,attribute:"hide-confetti",reflect:!0},soalFileUrl:{type:String,attribute:"soal-file-url",reflect:!0},remidiMode:{type:Boolean,attribute:"remidi-mode",reflect:!0},remidiSoalUrl:{type:String,attribute:"remidi-soal-url",reflect:!0},kkm:{type:Number,attribute:"kkm",reflect:!0},_activeTab:{state:!0},_serverData:{state:!0},_isFlushing:{state:!0},_networkStatus:{state:!0},_loading:{state:!0},_serverError:{state:!0},_peringkatKelas:{state:!0},_detailSiswa:{state:!0},_editNilai:{state:!0},_note:{state:!0},_draftNilai:{state:!0},_soalText:{state:!0},_copasTSV:{state:!0},_simulabankSoalUrl:{state:!0},_bobotTugas:{state:!0},_bobotLM:{state:!0},_bobotSTS:{state:!0},_bobotSAS:{state:!0},_raporStatus:{state:!0},_soalFileUrlCache:{state:!0},_leaderSortKey:{state:!0},_leaderSortDir:{state:!0},_peringkatSortKey:{state:!0},_peringkatSortDir:{state:!0},_unlockSid:{state:!0},_unlockMateri:{state:!0},_unlockMsg:{state:!0}}}static get haxProperties(){return{api:"1",canScale:!1,canPosition:!1,canEditSource:!0,type:"element",designSystem:{accent:!0,primary:!0,card:!0,text:!0,designTreatment:!1},gizmo:{title:"Dasbor Guru \u2014 Evaluasi & Pantauan Kelas",description:"Dasbor Guru terpadu: Pantauan Kelas, Leaderboard, Peringkat, Ruang Pertemuan (Kuis & Nilai per Pertemuan), Input Nilai, Bank Soal, dan Diskusi. Mode Siswa menampilkan Rapor & Ruang Belajar.",icon:"icons:dashboard",color:"indigo",tags:["Dasbor","Evaluasi","Monitoring","Guru"],meta:{author:"andyinformatika23-hash"}},settings:{configure:[{property:"appsScriptUrl",title:"URL Web App Google Apps Script",description:"Tempelkan URL eksekusi (/exec) dari deploy web app Google Apps Script Anda.",inputMethod:"textfield",required:!0},{property:"kdMateri",title:"Kode Topik / Pertemuan",description:"Ganti sesi bimbingan secara dinamis, misal: Pertemuan 1, Pertemuan 2.",inputMethod:"textfield",required:!0},{property:"mode",title:"Mode Tampilan",description:"Guru: Pantauan Kelas + Leaderboard + Peringkat + Ruang Pertemuan (Kuis & Nilai per Pertemuan) + Input Nilai + Bank Soal + Diskusi + Pengaturan. Siswa: Rapor & Ruang Pertemuan (Evaluasi mandiri).",inputMethod:"select",options:{guru:"Guru - Dasbor Kelas Lengkap",siswa:"Siswa - Rapor & Ruang Belajar"}},{property:"allowModeSwitch",title:"Tampilkan Tombol Pindah Mode",description:"Secara default tombol Guru/Siswa disembunyikan agar siswa tidak bisa beralih ke tampilan guru (dan sebaliknya). Aktifkan hanya pada halaman administrasi.",inputMethod:"boolean"},{property:"kelas",title:"Kelas (Filter Guru)",description:"Filter pantauan guru per kelas, misal: XI-1. Kosongkan untuk semua kelas.",inputMethod:"textfield"},{property:"soalFileUrl",title:"File Soal JSON (per LM)",description:"URL file JSON soal (array). Jika diisi, soal dimuat dari file per kdMateri/LM \u2014 seperti latihan-kuis soal-file-url. Kosongkan untuk pakai questions inline atau Bank Soal sheet.",inputMethod:"haxupload",required:!1},{property:"remidiMode",title:"Aktifkan Mode Remidi",inputMethod:"boolean",description:"Jika aktif, siswa dengan nilai < KKM bisa mengerjakan remidi."},{property:"remidiSoalUrl",title:"URL Soal Remidi (JSON)",inputMethod:"haxupload",description:"File .json soal remidi; digunakan jika siswa tidak mencapai KKM."},{property:"kkm",title:"KKM (Kriteria Ketuntasan Minimal)",inputMethod:"number",description:"Nilai minimum untuk lulus. Default 75. Jika nilai < KKM, siswa harus remidi.",default:75},{property:"tema",title:"Tema Visual",description:"Tema tampilan: default (DDD polos) atau ceria (pastel bermain, kalender & kartu kursus seperti referensi).",inputMethod:"select",options:{"":"Default \u2014 DDD",ceria:"Ceria \u2014 Pastel Bermain (Image 1+2)"}},{property:"studentId",title:"Student ID (Mode Siswa)",description:"ID siswa untuk memuat hasil nilai (otomatis terisi dari event login autentikasi-kuis).",inputMethod:"textfield"},{property:"namaSiswa",title:"Nama Siswa (Mode Siswa)",description:"Nama siswa yang sedang login untuk identifikasi pada ruang diskusi dan log aktivitas.",inputMethod:"textfield"},{property:"nis",title:"NIS (Mode Siswa)",description:"Nomor Induk Siswa yang terdaftar pada sheet Users.",inputMethod:"textfield"},{property:"absen",title:"Nomor Absen (Mode Siswa)",description:"Nomor absen siswa pada kelas.",inputMethod:"textfield"},{property:"judulKuis",title:"Judul Kuis Evaluasi",description:"Judul kartu kuis pada tab Evaluasi (dapat diedit Guru).",inputMethod:"textfield"},{property:"questions",title:"Soal Bank (Json) - Edit Guru",description:"Array soal AKM: PG {question, choices, correctIndex}, PG kompleks {correctAnswers:[0,2]}, PGK {type:'pgk', statements:[{text,answer}]}, menjodohkan {type:'matching', leftItems, rightItems, correctPairs}, isian {type:'shortAnswer', acceptedAnswers}, gambar soal {image}, pilihan bergambar {text,image}. Kosongkan untuk memuat otomatis dari Bank Soal sheet.",inputMethod:"code-editor"},{property:"shuffleChoices",title:"Acak Pilihan Jawaban",description:"Mengacak urutan pilihan jawaban setiap kali kuis dimulai.",inputMethod:"boolean"},{property:"hideAnswers",title:"Sembunyikan Jawaban",description:"Tidak menampilkan jawaban benar/salah setelah menjawab (mode ujian).",inputMethod:"boolean"},{property:"hideScore",title:"Sembunyikan Nilai",description:"Menyembunyikan angka skor berjalan dan nilai akhir (pesan selesai tetap tampil).",inputMethod:"boolean"},{property:"hideConfetti",title:"Nonaktifkan Konfeti",description:"Tidak menampilkan efek konfeti saat jawaban benar.",inputMethod:"boolean"}]},saveOptions:{wipeSlot:!1,unsetAttributes:[]},demoSchema:[{tag:"dasbor-kuis",properties:{mode:"guru",kelas:"XI-1",kdMateri:"Pertemuan 1"},content:""},{tag:"dasbor-kuis",properties:{mode:"siswa",studentId:"STD-65108053",namaSiswa:"Andy Yulianto",kelas:"XI-1",kdMateri:"Pertemuan 1"},content:""}]}}constructor(){super(),this.appsScriptUrl="",this.forumApiUrl="",this.kdMateri="Pertemuan 1",this.mode="guru",this.kelas="",this.tema="",this.studentId="STD-65108053",this.namaSiswa="Andy Yulianto",this.nis="",this.absen="",this.allowModeSwitch=!1,this.judulKuis="Evaluasi Kuis Interaktif",this.questions=[],this.soalFileUrl="",this.remidiMode=!1,this.remidiSoalUrl="",this.kkm=75,this.shuffleChoices=!1,this.hideAnswers=!1,this.hideScore=!1,this.hideConfetti=!1,this._activeTab="pantauan",this._isFlushing=!1,this._syncRetryCount=0,this._networkStatus=globalThis.navigator?.onLine?"online":"offline",this._loading=!1,this._serverError="",this._peringkatKelas="",this._detailSiswa=null,this._editNilai=null,this._note="",this._copasTSV=null,this._simulabankSoalUrl="",this._bobotTugas=1,this._bobotLM=3,this._bobotSTS=2,this._bobotSAS=2,this._raporStatus="",this._soalFileUrlCache="",this._leaderSortKey="nilai",this._leaderSortDir="desc",this._peringkatSortKey="rata",this._peringkatSortDir="desc",this._unlockSid="",this._unlockMateri="LM1",this._unlockMsg="",this._serverData={roster:[],leaderboard:[],siswa:null,history:[],calendar:[]},this._onUserLoginBound=this._onUserLogin.bind(this),this._onUserLogoutBound=this._onUserLogout.bind(this),this._onLogEventBound=this._onLogEvent.bind(this),this._boundHandleOnline=this._handleNetworkChange.bind(this,"online"),this._boundHandleFocus=this._flushQueue.bind(this)}connectedCallback(){if(super.connectedCallback(),globalThis.HaxStore&&typeof globalThis.HaxStore.requestAvailability=="function"){const t=globalThis.HaxStore.requestAvailability();t&&!t.elementList[nt.tag]&&(t.elementList[nt.tag]=nt.haxProperties)}this._loadProfile(),this.fetchDataKomplit(),globalThis.addEventListener("quiz-user-login",this._onUserLoginBound),globalThis.addEventListener("quiz-user-logout",this._onUserLogoutBound),globalThis.addEventListener("dasbor-kuis-log",this._onLogEventBound),globalThis.addEventListener("online",this._boundHandleOnline),globalThis.addEventListener("focus",this._boundHandleFocus),this._flushQueue()}disconnectedCallback(){globalThis.removeEventListener("quiz-user-login",this._onUserLoginBound),globalThis.removeEventListener("quiz-user-logout",this._onUserLogoutBound),globalThis.removeEventListener("dasbor-kuis-log",this._onLogEventBound),globalThis.removeEventListener("online",this._boundHandleOnline),globalThis.removeEventListener("focus",this._boundHandleFocus),super.disconnectedCallback()}_handleNetworkChange(t){this._networkStatus=t,t==="online"&&(this._syncRetryCount=0,this._flushQueue())}updated(t){if(super.updated(t),this.mode==="dosen"){this.mode="guru";return}t.has("mode")&&(this._activeTab=this.mode==="siswa"?"pembelajaran":"pantauan",this.fetchDataKomplit()),(t.has("kelas")||t.has("studentId")||t.has("namaSiswa")||t.has("absen")||t.has("nis")||t.has("appsScriptUrl")||t.has("kdMateri")||t.has("forumApiUrl"))&&this.fetchDataKomplit(),t.has("soalFileUrl")&&this.soalFileUrl&&this.soalFileUrl!==this._soalFileUrlCache&&this._muatSoalDariFile(this.soalFileUrl),t.has("kdMateri")&&this.soalFileUrl&&(this.soalFileUrl.includes("{kdMateri}")||this.soalFileUrl.includes("{lm}"))&&this._muatSoalDariFile(this.soalFileUrl)}_resolveSoalUrl(t){if(!t)return t;const e=String(this.kdMateri||"").trim()||"LM1",a=(e.match(/(\d+)/)||[])[1]||"1";return t.replaceAll("{kdMateri}",e).replaceAll("{lm}",`LM${a}`).replaceAll("{LM}",`LM${a}`)}async _muatSoalDariFile(t){const e=this._resolveSoalUrl(t);this._soalFileUrlCache=t;try{const a=await fetch(e);if(!a.ok)throw new Error("HTTP "+a.status);const i=await a.json();if(!Array.isArray(i)||i.length===0)throw new Error("Bukan array JSON");this.questions=i,this._note=`\u2705 Soal dimuat dari file: ${i.length} soal (${e.split("/").pop()}) \u2014 ${this.kdMateri}`}catch(a){this._soalFileUrlCache="",this._note="\u26A0\uFE0F Gagal muat soal-file-url: "+a.message+` (${this._resolveSoalUrl(t)})`}this.requestUpdate()}_sortLeaderboard(t){this._leaderSortKey===t?this._leaderSortDir=this._leaderSortDir==="asc"?"desc":"asc":(this._leaderSortKey=t,this._leaderSortDir=t==="absen"||t==="nama"?"asc":"desc"),this.requestUpdate()}_sortPeringkat(t){this._peringkatSortKey===t?this._peringkatSortDir=this._peringkatSortDir==="asc"?"desc":"asc":(this._peringkatSortKey=t,this._peringkatSortDir=t==="absen"||t==="nama"?"asc":"desc"),this.requestUpdate()}_getSortedLeaderboardRows(t){const e=this._leaderSortKey||"nilai",a=this._leaderSortDir==="asc"?1:-1;return[...t].sort((i,r)=>{let s,d;if(e==="absen")s=this._num(i._absen),d=this._num(r._absen);else{if(e==="nama")return s=String(i._nama).toLowerCase(),d=String(r._nama).toLowerCase(),s.localeCompare(d)*a;if(e==="kelas")return s=String(i._kelas).toLowerCase(),d=String(r._kelas).toLowerCase(),s.localeCompare(d)*a;e==="nilai"?(s=this._num(i._nilai),d=this._num(r._nilai)):(s=this._num(i._nilai),d=this._num(r._nilai))}return s<d?-1*a:s>d?1*a:this._num(i._absen)-this._num(r._absen)}).map((i,r)=>({...i,_rank:r+1}))}_getSortedPeringkatRows(t){const e=this._peringkatSortKey||"rata",a=this._peringkatSortDir==="asc"?1:-1;return[...t].sort((i,r)=>{let s,d;if(e==="absen")s=this._num(i._absen),d=this._num(r._absen);else{if(e==="nama")return s=String(i._nama).toLowerCase(),d=String(r._nama).toLowerCase(),s.localeCompare(d)*a;if(e==="kelas")return s=String(i._kelas).toLowerCase(),d=String(r._kelas).toLowerCase(),s.localeCompare(d)*a;e==="rata"?(s=this._num(i._rata),d=this._num(r._rata)):e==="nilaiAkhir"?(s=this._num(i._nilaiAkhir),d=this._num(r._nilaiAkhir)):(s=this._num(i._rata),d=this._num(r._rata))}return s<d?-1*a:s>d?1*a:this._num(i._absen)-this._num(r._absen)})}_loadProfile(){try{const t=JSON.parse(localStorage.getItem("a3_v5_student_profile")||"null");t&&t.student_id&&(this.studentId=this.studentId||t.student_id,this.namaSiswa=this.namaSiswa||t.nama,this.kelas=this.kelas||t.kelas,this.nis=this.nis||t.nis||"",this.absen=this.absen||t.absen||"")}catch{}}_persistProfile(){try{localStorage.setItem("a3_v5_student_profile",JSON.stringify({student_id:this.studentId,nama:this.namaSiswa,kelas:this.kelas,nis:this.nis,absen:this.absen}))}catch{}}_onUserLogin(t){const e=t&&t.detail||{};e.studentId&&(this.studentId=e.studentId),e.nama&&(this.namaSiswa=e.nama),e.kelas&&(this.kelas=e.kelas),e.nis&&(this.nis=e.nis),e.absen&&(this.absen=e.absen),this._persistProfile(),this.fetchDataKomplit()}_onUserLogout(){this._serverData={roster:[],leaderboard:[],siswa:null,history:[]},this.studentId="",this.namaSiswa="",this.nis="",this.absen="",this.kelas="";try{localStorage.clear()}catch{}this.requestUpdate()}_onLogEvent(t){const e=t&&t.detail||{};e.tipe&&(!t.target||!this.shadowRoot||!this.shadowRoot.contains(t.target)||this.studentId&&this.logActivity(e.tipe,e.payload||{},e.id_log))}_generateLogId(){try{const t=new Uint8Array(8);globalThis.crypto.getRandomValues(t);let e="";return t.forEach(a=>e+=a.toString(16).padStart(2,"0")),`LOG-${Date.now()}-${e.toUpperCase()}`}catch{return`LOG-${Date.now()}-${Math.random().toString(36).substr(2,10).toUpperCase()}`}}_ambilIdLogStabil(t,e){const a=[this.studentId,this.kdMateri,t,JSON.stringify(e||{}),e&&e.timestamp||""].join("::");let i=5381;for(let p=0;p<a.length;p++)i=((i<<5)+i^a.charCodeAt(p))>>>0;const r="l"+i.toString(16);let s={};try{s=JSON.parse(localStorage.getItem("a3_v5_id_log_lock")||"{}")}catch{}if(s[r])return s[r];const d=this._generateLogId();s[r]=d;const l=Object.keys(s);l.length>200&&l.slice(0,l.length-150).forEach(p=>delete s[p]);try{localStorage.setItem("a3_v5_id_log_lock",JSON.stringify(s))}catch{}return d}_apiGet(t){const e=new URLSearchParams(t);return fetch(`${this.appsScriptUrl}?${e.toString()}`,{method:"GET",mode:"cors"}).then(a=>a.text()).then(a=>{if(!a||a.trim().charAt(0)!=="{")return{status:"error",message:`Respon backend bukan JSON (${a.slice(0,80)||"kosong"}). Cek URL /exec & akses deployment.`};try{return JSON.parse(a)}catch{return{status:"error",message:"JSON tidak dapat diurai."}}}).catch(a=>({status:"error",message:`Jaringan: ${a.message}`}))}_resolveRole(){return this.role?this.role:this.mode==="guru"||this.mode==="dosen"||this.mode==="lecturer"?"guru":"siswa"}_isGuru(){return this._resolveRole()==="guru"}_isSiswa(){return this._resolveRole()==="siswa"}_deteksiErrorBackend(...t){for(const e of t)if(e){if(typeof e.status=="string"&&e.status==="error"&&e.message)return`Error backend: ${e.message}`;if(Array.isArray(e.leaderboard)&&!Array.isArray(e.roster)&&e.riwayatKuis!==void 0)return"Backend lama (V3) terdeteksi: aksi getStudentRoster tidak dikenal. Deploy lib/codev5.gs lalu Deploy > New version."}return""}_bacaCacheLokal(){try{const t=localStorage.getItem("a3_v5_activity_logs_cache");if(!t)return null;const e=JSON.parse(t);if(e&&typeof e=="object")return e}catch{}return null}async fetchDataKomplit(){if(!this.appsScriptUrl){this._serverError="";return}this._loading=!0;try{if(this.mode==="guru"){const[t,e,a]=await Promise.all([this._apiGet({action:"getStudentRoster",kelas:""}),this._apiGet({action:"getLeaderboard",kelas:""}),this._apiGet({action:"getCalendar",kelas:this.kelas||"",kdMateri:this.kdMateri||""}).catch(()=>null)]),i=a&&(a.calendar||a.history)?a.calendar||a.history:[];this._serverError=this._deteksiErrorBackend(t,e);const r=this._bacaCacheLokal(),s=e&&(Array.isArray(e.leaderboard)?e.leaderboard:Array.isArray(e.data)?e.data:null),d=Array.isArray(t.roster)?t.roster:null,l=d?d.map(u=>this._normalizeRosterRow(u)).filter(u=>!this._canonKelas(this.kelas)||!this._canonKelas(u.kelas)||this._canonKelas(u.kelas)===this._canonKelas(this.kelas)):null,p=s&&s.map(u=>this._normalizeLeaderboardRow(u));this._serverError?r&&Array.isArray(r.roster)&&(this._serverData={roster:r.roster,leaderboard:r.leaderboard||[],siswa:r.siswa||null,history:r.history||[]},this._serverError+=" (menampilkan data cache lokal)."):p?(this._serverData={...this._serverData,roster:l||[],leaderboard:p},i&&i.length&&(this._serverData.calendar=i),localStorage.setItem("a3_v5_activity_logs_cache",JSON.stringify(this._serverData))):(this._serverError="getLeaderboard pada backend aktif belum mengembalikan data leaderboard (hanya daftar pertemuan/sheet). Deploy lib/codev5.gs lalu Deploy > New version.",this._serverData={...this._serverData,roster:l||[],leaderboard:r&&Array.isArray(r.leaderboard)?r.leaderboard:[]})}else{const t=this.studentId,[e,a,i]=await Promise.all([this._apiGet({action:"getScores",studentId:t}),this._apiGet({action:"getActivityHistory",studentId:t,kdMateri:this.kdMateri,days:28}),this._apiGet({action:"getCalendar",studentId:t,kelas:this.kelas||"",kdMateri:this.kdMateri||""}).catch(()=>null)]),r=i&&(i.calendar||i.history)?i.calendar||i.history:[];if(this._serverError=this._deteksiErrorBackend(e,a),this._serverError){const s=this._bacaCacheLokal();s&&s.siswa&&(this._serverData={roster:s.roster||[],leaderboard:s.leaderboard||[],siswa:s.siswa,history:s.history||[]},this._serverError+=" (menampilkan data cache lokal).")}else{const s=e&&e.data||null,d=s?this._normalizeSiswaData(s):null;this._serverData={...this._serverData,siswa:d,history:a&&a.history||[],calendar:r||[]},localStorage.setItem("a3_v5_activity_logs_cache",JSON.stringify(this._serverData))}}}catch(t){this._serverError=`Gagal memuat data: ${t.message}`;const e=this._bacaCacheLokal();e&&(Array.isArray(e.roster)||e.siswa)&&(this._serverData={roster:e.roster||[],leaderboard:e.leaderboard||[],siswa:e.siswa||null,history:e.history||[]},this._serverError+=" (menampilkan data cache lokal).")}finally{this._loading=!1,this.requestUpdate()}}logActivity(t,e={},a){const i=a||this._ambilIdLogStabil(t,e),r=e&&e.kdMateri||this.kdMateri||"",s=e&&e.kategori||this.kategori||"sumatif_lm",d={id_log:i,student_id:this.studentId,id_materi:r,kategori:s,tipe_aktivitas:t,payload_data:JSON.stringify(e),timestamp:new Date().toISOString()};let l=[];try{l=JSON.parse(localStorage.getItem("a3_v5_sync_queue")||"[]")}catch{}Array.isArray(l)||(l=[]),l.some(p=>p&&p.id_log===i)||(l.push(d),localStorage.setItem("a3_v5_sync_queue",JSON.stringify(l))),this._flushQueue(),this.dispatchEvent(new CustomEvent("dasbor-kuis-activity",{detail:d,bubbles:!0,composed:!0}))}async _flushQueue(){if(this._isFlushing||!this.appsScriptUrl||!navigator.onLine||globalThis.__a3V5FlushLock)return;let t=[];try{t=JSON.parse(localStorage.getItem("a3_v5_sync_queue")||"[]")}catch{}if(t.length===0)return;const e=t.filter(a=>a&&a.student_id);if(e.length!==t.length&&(t=e,localStorage.setItem("a3_v5_sync_queue",JSON.stringify(t))),t.length!==0){if(this._syncRetryCount>=5){console.warn("[Dashboard] Sinkronisasi dibekukan sementara akibat 5x eror beruntun.");return}this._isFlushing=!0,globalThis.__a3V5FlushLock=!0;try{const a=await Promise.all(t.map(d=>this._apiGet({action:"logActivity",studentId:d.student_id,nama:this.namaSiswa,nis:this.nis,absen:this.absen,kelas:this.kelas,type:d.tipe_aktivitas,description:d.payload_data,timestamp:d.timestamp,kdMateri:d.id_materi,kategori:d.kategori||"sumatif_lm",id_log:d.id_log}))),i=new Set(t.filter((d,l)=>a[l]&&a[l].status==="ok").map(d=>d.id_log));this._syncRetryCount=0;let r=[];try{r=JSON.parse(localStorage.getItem("a3_v5_sync_queue")||"[]")}catch{}Array.isArray(r)||(r=[]);const s=r.filter(d=>!i.has(d.id_log));localStorage.setItem("a3_v5_sync_queue",JSON.stringify(s)),s.length<r.length&&this.fetchDataKomplit()}catch(a){this._syncRetryCount++,console.error("[Dashboard] Gagal terhubung ke GAS backend (Jaringan Terputus):",a)}finally{if(this._isFlushing=!1,globalThis.__a3V5FlushLock=!1,this.requestUpdate(),JSON.parse(globalThis.localStorage.getItem("a3_v5_sync_queue")||"[]").length>0&&this._networkStatus==="online"){const a=this._syncRetryCount>0?Math.pow(2,this._syncRetryCount)*1e3:1e3;console.log(`[Dashboard] Mencoba sinkronisasi berikutnya dalam ${a/1e3} detik. (Gagal: ${this._syncRetryCount}x)`),setTimeout(()=>this._flushQueue(),a)}}}}_num(t){const e=parseInt(t);return isNaN(e)?0:e}_canonKelas(t){return String(t||"").trim().toLowerCase().replace(/[^a-z0-9]/g,"")}_rowValue(t,e){if(!t)return"";if(typeof t[e]<"u")return t[e];const a=Object.keys(t).find(i=>String(i).trim().toLowerCase()===String(e).toLowerCase());return a?t[a]:""}_normalizeRosterRow(t){if(!t||typeof t!="object")return t;const e={...t};return e.nilaiRapor!==void 0&&e.nilaiAkhir===void 0&&(e.nilaiAkhir=e.nilaiRapor),e.intervalCapaian!==void 0&&e.grade===void 0&&(e.grade=e.intervalCapaian),e.rerataLM!==void 0&&e.uh===void 0&&(e.uh=e.rerataLM),e.rerataLM!==void 0&&e.Rerata_LM===void 0&&(e.Rerata_LM=e.rerataLM),e.sas!==void 0&&e.uas===void 0&&(e.uas=e.sas),e.sts!==void 0&&e.uts===void 0&&(e.uts=e.sts),e}_normalizeLeaderboardRow(t){if(!t||typeof t!="object")return t;const e={...t},a=(i,r)=>{e[i]!==void 0&&e[r]===void 0&&(e[r]=e[i]),e[i.toLowerCase()]!==void 0&&e[r]===void 0&&(e[r]=e[i.toLowerCase()])};return a("Nilai_Rapor","Rata-rata Skor"),a("Nilai_Rapor","Nilai Akhir"),a("Interval_Capaian","Status Kuis Terakhir"),a("Interval_Capaian","Grade"),a("Rerata_LM","Rata-rata LM"),a("Rerata_LM","Rerata LM"),a("STS","Skor UTS"),a("STS","UTS"),a("SAS","Skor UAS"),a("SAS","UAS"),a("STS","Skor STS"),a("SAS","Skor SAS"),e.StudentID!==void 0&&e["Student ID"]===void 0&&(e["Student ID"]=e.StudentID),e}_normalizeSiswaData(t){if(!t||typeof t!="object")return t;const e={...t};return e.nilaiRapor!==void 0&&e.nilaiAkhir===void 0&&(e.nilaiAkhir=e.nilaiRapor),e.intervalCapaian!==void 0&&e.grade===void 0&&(e.grade=e.intervalCapaian),e.rerataLM!==void 0&&e.uh===void 0&&(e.uh=e.rerataLM),e.rerataLM!==void 0&&e.rerata_lm!==void 0&&e.uh===void 0&&(e.uh=e.rerata_lm),e.sts!==void 0&&(e.uts||(e.uts={highest:e.sts,average:e.sts}),e.uts&&typeof e.uts=="object"&&e.uts.highest===void 0&&(e.uts.highest=e.sts)),e.sas!==void 0&&(e.uas||(e.uas={highest:e.sas,average:e.sas}),e.uas&&typeof e.uas=="object"&&e.uas.highest===void 0&&(e.uas.highest=e.sas)),e.deskripsiCapaian&&!e.deskripsi_capaian&&(e.deskripsi_capaian=e.deskripsiCapaian),!e.ulanganHarian&&e.rerataLM!==void 0&&(e.ulanganHarian={average:e.rerataLM,highest:e.rerataLM}),e}static get styles(){return[super.styles,z`
         :host {
           display: block;
           background: linear-gradient(180deg, #eef2ff 0%, #f8fafc 40%, #f1f5f9 100%);
@@ -2525,7 +2822,7 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
 
         /* Navbar */
         .navbar {
-          background: linear-gradient(120deg, #312e81 0%, #4f46e5 55%, #6d28d9 100%);
+          background: var(--ddd-primary-13);
           color: #ffffff;
           padding: var(--ddd-spacing-5) var(--ddd-spacing-6);
           display: flex;
@@ -2624,7 +2921,7 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
           color: #4338ca;
         }
         .tab-btn.active {
-          background: linear-gradient(120deg, #4f46e5, #6d28d9);
+          background: var(--ddd-primary-13);
           color: #ffffff;
           box-shadow: var(--ddd-boxShadow-sm);
         }
@@ -3001,7 +3298,7 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
           gap: var(--ddd-spacing-2);
           margin-top: var(--ddd-spacing-4);
           padding: 10px 18px;
-          background: linear-gradient(120deg, #4f46e5, #6d28d9);
+          background: var(--ddd-primary-13);
           color: #ffffff;
           border: none;
           border-radius: var(--ddd-radius-md);
@@ -3293,7 +3590,7 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
           animation: spin 0.8s linear infinite;
         }
         @keyframes spin { to { transform: rotate(360deg); } }
-      `,C`
+      `,z`
         /* ============================================================
            DARK MODE OVERRIDES (additive, gated on body.dark-mode)
            Host-context reaches outside shadow DOM to read the class
@@ -3332,7 +3629,7 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
           border-color: var(--dk-border);
         }
         :host-context(body.dark-mode) .navbar {
-          background: linear-gradient(120deg, #1e1b4b 0%, #312e81 55%, #4c1d95 100%);
+          background: var(--ddd-primary-13);
           color: #f8fafc;
         }
         :host-context(body.dark-mode) .stat-icon.i-indigo { background: #312e81; color: #c7d2fe; }
@@ -3413,10 +3710,10 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
         :host-context(body.dark-mode) .log-area li { border-bottom-color: var(--dk-border); }
         :host-context(body.dark-mode) .metric-mini { background: var(--dk-bg-soft); color: var(--dk-text); }
         :host-context(body.dark-mode) .metric-mini div { color: var(--dk-text-soft); }
-        :host-context(body.dark-mode) .btn-primary { background: #4f46e5; color: #f8fafc; }
-        :host-context(body.dark-mode) .btn-primary:hover { background: #6366f1; }
-        :host-context(body.dark-mode) .retry-btn { background: #4f46e5; color: #f8fafc; }
-        :host-context(body.dark-mode) .retry-btn:hover { background: #6366f1; }
+        :host-context(body.dark-mode) .btn-primary { background: var(--ddd-primary-13); color: #f8fafc; }
+        :host-context(body.dark-mode) .btn-primary:hover { background: var(--ddd-primary-14); }
+        :host-context(body.dark-mode) .retry-btn { background: var(--ddd-primary-13); color: #f8fafc; }
+        :host-context(body.dark-mode) .retry-btn:hover { background: var(--ddd-primary-14); }
         :host-context(body.dark-mode) .err-chip { background: #7f1d1d; color: #fecaca; border-color: #991b1b; }
         :host-context(body.dark-mode) .error-banner { background: #7f1d1d; color: #fecaca; border-color: #991b1b; }
         :host-context(body.dark-mode) .loading-banner { background: #1e1b4b; border-color: #4338ca; color: #c7d2fe; }
@@ -3430,10 +3727,115 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
         :host-context(body.dark-mode) .retry-btn[style*="background:#475569"] { background: var(--dk-bg-soft) !important; color: var(--dk-text) !important; }
         :host-context(body.dark-mode) .retry-btn[style*="background:#4f46e5"] { background: #6366f1 !important; }
         :host-context(body.dark-mode) .retry-btn[style*="background:#059669"] { background: #047857 !important; }
-      `]}render(){let t=0;try{t=JSON.parse(localStorage.getItem("a3_v5_sync_queue")||"[]").length}catch{t=0}const e=this.mode==="guru"||this.mode==="dosen"?[{id:"pantauan",label:"\u{1F4CA} Pantauan Guru"},{id:"leaderboard",label:"\u{1F3C6} Leaderboard Kelas"},{id:"peringkat",label:"\u{1F3C6} Peringkat Nilai Bimbingan Kelas"},{id:"kehadiran",label:"\u{1F3AF} Dashboard Pembelajaran"},{id:"nilai",label:"\u270F\uFE0F Input Nilai"},{id:"kuis",label:"\u{1F4DD} Evaluasi Kuis"},{id:"forum",label:"\u{1F4AC} Ruang Diskusi"},{id:"soal",label:"\u{1F5C2}\uFE0F Edit Soal"},{id:"atur",label:"\u2699\uFE0F Atur"}]:[{id:"pembelajaran",label:"\u{1F3AF} Dashboard Pembelajaran"},{id:"hasil",label:"\u{1F4C8} Hasil & Nilai"},{id:"kuis",label:"\u{1F4DD} Evaluasi Kuis"},{id:"forum",label:"\u{1F4AC} Ruang Diskusi"}],a=this.mode==="siswa"?this.namaSiswa||"Siswa":"Guru / Wali Kelas";return d`
+      `,z`
+        /* ============================================================
+           TEMA CERIA — Pastel Bermain (Image 1+2) gated on [tema="ceria"]
+           Palette: periwinkle #E6E9FF, peach #FFEDD5, lavender #EDE9FE,
+           pills: anatomyBlue #3B82F6, green #10B981, pink #EC4899
+           Radius 20-24px, shadow soft, card putih, tab pill
+           ============================================================ */
+        :host([tema="ceria"]) {
+          background: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 50%, #F5EFFF 100%);
+          padding: var(--ddd-spacing-4);
+        }
+        :host([tema="ceria"]) .app-container {
+          background: #ffffff;
+          border-radius: 24px;
+          box-shadow: 0 8px 32px rgba(79,70,229,0.12), 0 2px 8px rgba(79,70,229,0.06);
+          border: 1px solid #E0E7FF;
+          overflow: hidden;
+        }
+        :host([tema="ceria"]) .navbar {
+          background: #ffffff;
+          color: #1e293b;
+          border-bottom: 1px solid #E0E7FF;
+          padding: var(--ddd-spacing-4) var(--ddd-spacing-6);
+        }
+        :host([tema="ceria"]) .navbar h1 { color: #312e81; font-size: 18px; }
+        :host([tema="ceria"]) .logo-badge {
+          background: linear-gradient(135deg, #818CF8, #C084FC);
+          color: #fff; border: none; width: 36px; height: 36px; border-radius: 12px;
+        }
+        :host([tema="ceria"]) .user-pill {
+          background: #EEF2FF; color: #4338ca; border: 1px solid #C7D2FE;
+          backdrop-filter: none;
+        }
+        :host([tema="ceria"]) .mode-switch { background: #F1F5F9; border: 1px solid #E2E8F0; }
+        :host([tema="ceria"]) .mode-btn { color: #64748b; }
+        :host([tema="ceria"]) .mode-btn.active { background: #312E81; color: #fff; }
+        :host([tema="ceria"]) .tabs {
+          background: #F8FAFF; border-bottom: 1px solid #E0E7FF;
+          padding: var(--ddd-spacing-3); gap: var(--ddd-spacing-2);
+        }
+        :host([tema="ceria"]) .tab-btn {
+          background: #fff; border: 1px solid #E0E7FF; color: #64748b;
+          border-radius: 999px; padding: 8px 16px; font-size: 12px;
+          box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+        }
+        :host([tema="ceria"]) .tab-btn:hover { background: #EEF2FF; color: #4338ca; border-color: #C7D2FE; }
+        :host([tema="ceria"]) .tab-btn.active {
+          background: #312E81; color: #fff; border-color: #312E81;
+          box-shadow: 0 4px 12px rgba(49,46,129,0.25);
+        }
+        :host([tema="ceria"]) .main-content { background: #F8FAFF; padding: var(--ddd-spacing-5); }
+        :host([tema="ceria"]) .stats-grid { gap: var(--ddd-spacing-4); }
+        :host([tema="ceria"]) .stat-card {
+          background: #fff; border: 1px solid #E0E7FF; border-radius: 20px;
+          box-shadow: 0 4px 16px rgba(79,70,229,0.06); padding: var(--ddd-spacing-5);
+        }
+        :host([tema="ceria"]) .stat-card:nth-child(1) .stat-icon { background: #DBEAFE; }
+        :host([tema="ceria"]) .stat-card:nth-child(2) .stat-icon { background: #EDE9FE; }
+        :host([tema="ceria"]) .stat-card:nth-child(3) .stat-icon { background: #FFEDD5; }
+        :host([tema="ceria"]) .stat-card:nth-child(4) .stat-icon { background: #FCE7F3; }
+        :host([tema="ceria"]) .card-siswa {
+          background: #fff; border: 1px solid #E0E7FF; border-radius: 20px;
+          box-shadow: 0 4px 16px rgba(79,70,229,0.05);
+        }
+        :host([tema="ceria"]) .card-siswa.lvl-high { border-top: 4px solid #10B981; }
+        :host([tema="ceria"]) .card-siswa.lvl-mid { border-top: 4px solid #F59E0B; }
+        :host([tema="ceria"]) .card-siswa.lvl-low { border-top: 4px solid #EF4444; }
+        :host([tema="ceria"]) .podium-box { border-radius: 20px; border: 1px solid #E0E7FF; }
+        :host([tema="ceria"]) .podium-box.rank-1 { background: linear-gradient(180deg, #FEF3C7, #fff); border-color: #FCD34D; }
+        :host([tema="ceria"]) .table-wrap, :host([tema="ceria"]) .nilai-table-wrap { border-radius: 16px; border: 1px solid #E0E7FF; }
+        :host([tema="ceria"]) .kpi-card {
+          background: #fff; border: 1px solid #E0E7FF; border-radius: 16px;
+          box-shadow: 0 2px 8px rgba(79,70,229,0.04);
+        }
+        :host([tema="ceria"]) .filter-select {
+          background: #fff; border: 1px solid #C7D2FE; border-radius: 999px;
+          padding: 6px 14px; font-size: 12px; color: #4338ca; font-weight: 600;
+        }
+        :host([tema="ceria"]) .retry-btn {
+          border-radius: 999px; padding: 8px 16px; font-size: 12px;
+        }
+        :host([tema="ceria"]) .grade-ring-card {
+          background: linear-gradient(135deg, #312E81, #7C3AED); border-radius: 20px;
+        }
+        :host([tema="ceria"]) .card-panel {
+          background: #fff; border: 1px solid #E0E7FF; border-radius: 20px;
+          box-shadow: 0 4px 16px rgba(79,70,229,0.05);
+        }
+        :host([tema="ceria"]) .detail-panel {
+          background: #F5F3FF; border: 1px solid #DDD6FE; border-radius: 20px;
+        }
+        :host([tema="ceria"]) .empty-state {
+          background: #fff; border: 2px dashed #C7D2FE; border-radius: 20px;
+        }
+        :host([tema="ceria"]) .status-footer {
+          background: #EEF2FF; border-top: 1px solid #E0E7FF; color: #64748b;
+        }
+        /* Pills productivity ala Image 1 bottom */
+        :host([tema="ceria"]) .badge-good { background: #D1FAE5; color: #065F46; border-radius: 999px; }
+        :host([tema="ceria"]) .badge-warn { background: #FEF3C7; color: #92400E; border-radius: 999px; }
+        :host([tema="ceria"]) .badge-bad { background: #FEE2E2; color: #991B1B; border-radius: 999px; }
+        :host([tema="ceria"]) .grade-chip { border-radius: 999px; }
+        :host([tema="ceria"]) .grade-A { background: #DBEAFE; color: #1E40AF; }
+        :host([tema="ceria"]) .grade-B { background: #EDE9FE; color: #6D28D9; }
+        :host([tema="ceria"]) .grade-C { background: #FFEDD5; color: #9A3412; }
+      `]}render(){let t=0;try{t=JSON.parse(localStorage.getItem("a3_v5_sync_queue")||"[]").length}catch{t=0}const e=this._isGuru()?[{id:"pantauan",label:"\u{1F4CA} Pantauan Kelas"},{id:"leaderboard",label:"\u{1F3C6} Leaderboard"},{id:"peringkat",label:"\u{1F3C6} Peringkat Kelas"},{id:"kehadiran",label:"\u{1F4DA} Ruang Pertemuan"},{id:"nilai",label:"\u270F\uFE0F Input Nilai"},{id:"kuis",label:"\u{1F4DD} Evaluasi"},{id:"forum",label:"\u{1F4AC} Diskusi"},{id:"soal",label:"\u{1F5C2}\uFE0F Bank Soal"},{id:"atur",label:"\u2699\uFE0F Pengaturan"}]:[{id:"pembelajaran",label:"\u{1F4DA} Ruang Pertemuan"},{id:"hasil",label:"\u{1F4C8} Rapor Saya"},{id:"kuis",label:"\u{1F4DD} Evaluasi"},{id:"forum",label:"\u{1F4AC} Diskusi"}],a=this._isSiswa()?this.namaSiswa||"Siswa":"Guru / Wali Kelas";return o`
       <div class="app-container">
         <div class="navbar">
-          <h1><span class="logo-badge">🎓</span> ${this.mode==="siswa"?"Dasbor Evaluasi Siswa V5":"Dasbor Evaluasi Guru V5"}</h1>
+          <h1><span class="logo-badge">🎓</span> ${this._isSiswa()?"Dasbor Siswa \u2014 Ruang Belajar":"Dasbor Guru \u2014 Evaluasi & Pantauan Kelas"}</h1>
           <div class="navbar-right">
             <div
               class="mode-switch"
@@ -3442,7 +3844,7 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
               ?hidden=${!this.allowModeSwitch}
             >
               <button
-                class="mode-btn ${this.mode==="guru"||this.mode==="dosen"?"active":""}"
+                class="mode-btn ${this.mode==="guru"?"active":""}"
                 @click=${()=>this.mode="guru"}
               >👨‍🏫 Guru</button>
               <button
@@ -3455,7 +3857,7 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
         </div>
 
         <div class="tabs" role="tablist">
-          ${e.map(i=>d`
+          ${e.map(i=>o`
               <button
                 class="tab-btn ${this._activeTab===i.id?"active":""}"
                 role="tab"
@@ -3466,7 +3868,7 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
         </div>
 
         <div class="main-content">
-          ${this._loading&&(this.mode==="guru"||this.mode==="dosen"?this._activeTab==="pantauan"||this._activeTab==="peringkat":this._activeTab==="pembelajaran"||this._activeTab==="hasil")?d`
+          ${this._loading&&(this.mode==="guru"?this._activeTab==="pantauan"||this._activeTab==="peringkat":this._activeTab==="pembelajaran"||this._activeTab==="hasil")?o`
                 <div class="loading-banner">
                   <span class="spinner"></span>
                   Memuat data dari Google Apps Script…
@@ -3483,7 +3885,7 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
           <div>Antrean Transaksi Tertunda: ${t} data</div>
         </div>
       </div>
-    `}_renderContent(){if(this.mode==="guru"||this.mode==="dosen"){if(this._activeTab==="pantauan")return this._renderPantauanGuru();if(this._activeTab==="leaderboard")return this._renderLeaderboard();if(this._activeTab==="peringkat")return this._renderPeringkatBimbingan();if(this._activeTab==="kehadiran")return this._renderDashboardPembelajaran();if(this._activeTab==="nilai")return this._renderInputNilai();if(this._activeTab==="kuis")return this._renderKuisWadah();if(this._activeTab==="soal")return this._renderEditSoal();if(this._activeTab==="atur")return this._renderPengaturan();if(this._activeTab==="forum")return d`
+    `}_renderContent(){if(this.mode==="guru"){if(this._activeTab==="pantauan")return this._renderPantauanGuru();if(this._activeTab==="leaderboard")return this._renderLeaderboard();if(this._activeTab==="peringkat")return this._renderPeringkatBimbingan();if(this._activeTab==="kehadiran")return this._renderDashboardPembelajaran();if(this._activeTab==="nilai")return this._renderInputNilai();if(this._activeTab==="kuis")return this._renderKuisWadah();if(this._activeTab==="soal")return this._renderEditSoal();if(this._activeTab==="atur")return this._renderPengaturan();if(this._activeTab==="forum"){const t=this._isGuru();return o`
           <ruang-diskusi
             .forumApiUrl=${this.forumApiUrl||this.appsScriptUrl}
             .appsScriptUrl=${this.appsScriptUrl}
@@ -3491,7 +3893,7 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
             .studentId=${this.studentId}
             .studentName=${this.namaSiswa||"Guru"}
             .studentKelas=${this.kelas}
-            .viewMode=${this.mode==="guru"?"lecturer":"student"}
+            .viewMode=${t?"lecturer":"student"}
             forum-topic="Diskusi Materi ${this.kdMateri}"
           ></ruang-diskusi>
           <kirim-tugas
@@ -3505,7 +3907,7 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
             .studentKelas=${this.kelas}
             assignment-title="Tugas Mandiri ${this.kdMateri}"
           ></kirim-tugas>
-        `}else{if(this._activeTab==="pembelajaran")return this._renderDashboardPembelajaran();if(this._activeTab==="hasil")return this._renderHasilSiswa();if(this._activeTab==="kuis")return this._renderKuisWadah();if(this._activeTab==="forum")return d`
+        `}}else{if(this._activeTab==="pembelajaran")return this._renderDashboardPembelajaran();if(this._activeTab==="hasil")return this._renderHasilSiswa();if(this._activeTab==="kuis")return this._renderKuisWadah();if(this._activeTab==="forum")return o`
           <ruang-diskusi
             .forumApiUrl=${this.forumApiUrl||this.appsScriptUrl}
             .appsScriptUrl=${this.appsScriptUrl}
@@ -3527,7 +3929,7 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
             .studentKelas=${this.kelas}
             assignment-title="Tugas Mandiri ${this.kdMateri}"
           ></kirim-tugas>
-        `}return""}_renderKuisWadah(){return d`
+        `}return""}_renderKuisWadah(){return o`
       <kuis-ledakan
         .mode=${this.mode}
         .appsScriptUrl=${this.appsScriptUrl}
@@ -3538,13 +3940,13 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
         .studentAbsen=${this.absen}
         .studentKelas=${this.kelas}
         .judul=${this.judulKuis}
-        .questions=${this.questions}
+        .questions=${this.questions&&this.questions.length>0?this.questions:void 0}
         .shuffleChoices=${this.shuffleChoices}
         .hideAnswers=${this.hideAnswers}
         .hideScore=${this.hideScore}
         .hideConfetti=${this.hideConfetti}
       ></kuis-ledakan>
-    `}_renderDashboardPembelajaran(){return d`
+    `}_renderDashboardPembelajaran(){const t=this.mode==="siswa"||this.allowModeSwitch;return o`
       <sistem-kehadiran
         .appsScriptUrl=${this.appsScriptUrl}
         .kdMateri=${this.kdMateri}
@@ -3552,17 +3954,38 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
         .namaSiswa=${this.namaSiswa||"Siswa"}
         .mode=${this.mode}
       ></sistem-kehadiran>
-    `}_renderInputNilai(){const t=this._serverData.roster||[];if(t.length===0)return d`
+      ${t?o`
+        <div style="margin-top: var(--ddd-spacing-5);">
+          <latihan-kuis
+            .appsScriptUrl=${this.appsScriptUrl}
+            .kdMateri=${this.kdMateri}
+            .studentId=${this.studentId}
+            .studentName=${this.namaSiswa}
+            .studentNis=${this.nis}
+            .studentAbsen=${this.absen}
+            .studentKelas=${this.kelas}
+            .questions=${this.questions&&this.questions.length>0?this.questions:void 0}
+            .judulKuis=${this.judulKuis}
+            .mode=${this.mode}
+            .remidiMode=${this.remidiMode}
+            .remidiSoalUrl=${this.remidiSoalUrl}
+            .kkm=${this.kkm}
+            kategori="sumatif_lm"
+          ></latihan-kuis>
+        </div>
+      `:""}
+    `}_renderInputNilai(){const t=this._serverData.roster||[];if(t.length===0)return o`
         <h2 style="margin-top:0; color:#1e293b;">✏️ Input Nilai Manual</h2>
         <div class="empty-state">
           Belum ada data siswa untuk diisi nilainya. Muat data melalui tab
           Pantauan Guru terlebih dahulu.
         </div>
-      `;const e=this._draftNilai||{};return d`
+      `;const e=this._draftNilai||{};return o`
       <h2 style="margin-top:0; color:#1e293b;">✏️ Input Nilai Manual</h2>
       <p style="color:#64748b; font-size:13px;">
-        Isi Nilai Akhir, UTS, dan/atau UAS per siswa lalu klik
-        <strong>☁️ Kirim</strong> untuk mencatatnya ke sheet Nilai Manual.
+        Isi Nilai Akhir, UTS, UAS, dan/atau <strong>Tugas/Formatit</strong> per siswa lalu klik
+        <strong>☁️ Kirim</strong> untuk mencatatnya ke sheet <code>Nilai Manual</code>.
+        Nilai Tugas/Formatit akan masuk kategori <code>formatif</code> di sheet <code>db_asesmen</code>.
       </p>
       <div class="nilai-table-wrap">
         <table class="nilai-table">
@@ -3574,11 +3997,12 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
               <th>Nilai Akhir</th>
               <th>UTS</th>
               <th>UAS</th>
+              <th>Tugas/Formatit</th>
               <th>Aksi</th>
             </tr>
           </thead>
           <tbody>
-            ${t.map((a,i)=>{const s=e[i]||{},r=s.nilaiAkhir!=null||s.uts!=null||s.uas!=null,n=a.studentId||a._sid;return d`
+            ${t.map((a,i)=>{const r=e[i]||{},s=r.nilaiAkhir!=null||r.uts!=null||r.uas!=null||r.tugas!=null,d=a.studentId||a._sid;return o`
                 <tr>
                   <td>${a.absen||i+1}</td>
                   <td>
@@ -3587,27 +4011,31 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
                   </td>
                   <td>${a.kelas||"-"}</td>
                   <td>
-                    <input class="nilai-input" type="number" min="0" max="100" placeholder="-" .value=${s.nilaiAkhir??""}
-                      @input=${c=>this._ubahNilai(i,"nilaiAkhir",c.target.value)} />
+                    <input class="nilai-input" type="number" min="0" max="100" placeholder="-" .value=${r.nilaiAkhir??""}
+                      @input=${l=>this._ubahNilai(i,"nilaiAkhir",l.target.value)} />
                   </td>
                   <td>
-                    <input class="nilai-input" type="number" min="0" max="100" placeholder="-" .value=${s.uts??""}
-                      @input=${c=>this._ubahNilai(i,"uts",c.target.value)} />
+                    <input class="nilai-input" type="number" min="0" max="100" placeholder="-" .value=${r.uts??""}
+                      @input=${l=>this._ubahNilai(i,"uts",l.target.value)} />
                   </td>
                   <td>
-                    <input class="nilai-input" type="number" min="0" max="100" placeholder="-" .value=${s.uas??""}
-                      @input=${c=>this._ubahNilai(i,"uas",c.target.value)} />
+                    <input class="nilai-input" type="number" min="0" max="100" placeholder="-" .value=${r.uas??""}
+                      @input=${l=>this._ubahNilai(i,"uas",l.target.value)} />
                   </td>
                   <td>
-                    <button class="retry-btn" ?disabled=${!r||!n} @click=${()=>this._kirimNilaiSiswa(i)}>☁️ Kirim</button>
+                    <input class="nilai-input" type="number" min="0" max="100" placeholder="-" .value=${r.tugas??""}
+                      @input=${l=>this._ubahNilai(i,"tugas",l.target.value)} />
+                  </td>
+                  <td>
+                    <button class="retry-btn" ?disabled=${!s||!d} @click=${()=>this._kirimNilaiSiswa(i)}>☁️ Kirim</button>
                   </td>
                 </tr>
               `})}
           </tbody>
         </table>
       </div>
-      ${this._note?d`<div class="note-chip">${this._note}</div>`:""}
-    `}_ubahNilai(t,e,a){this._draftNilai||(this._draftNilai={}),this._draftNilai[t]={...this._draftNilai[t]||{},[e]:a},this.requestUpdate()}async _kirimNilaiSiswa(t){const e=(this._serverData.roster||[])[t],a=(this._draftNilai||{})[t]||{};if(!e)return;const i=e.studentId||e._sid;if(!i){this._note="\u26A0\uFE0F Student ID tidak ditemukan untuk siswa ini.",this.requestUpdate();return}const s=[["nilaiAkhir","nilaiAkhir"],["uts","uts"],["uas","uas"]].filter(([n])=>a[n]!=null&&String(a[n]).trim()!=="").map(([n])=>({kategori:n,skor:Math.max(0,Math.min(100,this._num(a[n])))}));if(!s.length){this._note="Isi minimal satu nilai (Nilai Akhir/UTS/UAS) terlebih dahulu.",this.requestUpdate();return}if(!this.appsScriptUrl){this._note="\u26A0\uFE0F URL Apps Script belum diatur (tab Atur).",this.requestUpdate();return}this._note="\u2601\uFE0F Mengirim nilai ke backend\u2026",this.requestUpdate();const r=(await Promise.all(s.map(n=>this._apiGet({action:"setManualScore",studentId:i,kategori:n.kategori,skor:n.skor})))).filter(n=>n&&n.status&&n.status!=="ok");r.length?this._note="\u26A0\uFE0F Sebagian gagal: "+String(r[0]&&r[0].message||"cek konsol."):(this._simpanEditNilai(i,{nilaiAkhir:this._num(a.nilaiAkhir),uts:this._num(a.uts),uas:this._num(a.uas)}),this._note=`\u2705 ${s.map(n=>n.kategori).join(", ")} untuk ${e.nama||i} tercatat di sheet Nilai Manual.`),this.requestUpdate()}_renderEditSoal(){const t=Array.isArray(this.questions)?this.questions.length:0,e=this._soalText!=null?this._soalText:t?JSON.stringify(this.questions,null,2):"";return d`
+      ${this._note?o`<div class="note-chip">${this._note}</div>`:""}
+    `}_ubahNilai(t,e,a){this._draftNilai||(this._draftNilai={}),this._draftNilai[t]={...this._draftNilai[t]||{},[e]:a},this.requestUpdate()}async _kirimNilaiSiswa(t){const e=(this._serverData.roster||[])[t],a=(this._draftNilai||{})[t]||{};if(!e)return;const i=e.studentId||e._sid;if(!i){this._note="\u26A0\uFE0F Student ID tidak ditemukan untuk siswa ini.",this.requestUpdate();return}const r=[["nilaiAkhir","nilaiAkhir"],["uts","uts"],["uas","uas"],["tugas","formatif"]].filter(([d])=>a[d]!=null&&String(a[d]).trim()!=="").map(([d,l])=>({kategori:l,skor:Math.max(0,Math.min(100,this._num(a[d])))}));if(!r.length){this._note="Isi minimal satu nilai (Nilai Akhir/UTS/UAS/Tugas) terlebih dahulu.",this.requestUpdate();return}if(!this.appsScriptUrl){this._note="\u26A0\uFE0F URL Apps Script belum diatur (tab Atur).",this.requestUpdate();return}this._note="\u2601\uFE0F Mengirim nilai ke backend\u2026",this.requestUpdate();const s=(await Promise.all(r.map(d=>this._apiGet({action:"setManualScore",studentId:i,kategori:d.kategori,skor:d.skor})))).filter(d=>d&&d.status&&d.status!=="ok");s.length?this._note="\u26A0\uFE0F Sebagian gagal: "+String(s[0]&&s[0].message||"cek konsol."):(this._simpanEditNilai(i,{nilaiAkhir:this._num(a.nilaiAkhir),uts:this._num(a.uts),uas:this._num(a.uas),tugas:this._num(a.tugas)}),this._note=`\u2705 ${r.map(d=>d.kategori).join(", ")} untuk ${e.nama||i} tercatat di sheet Nilai Manual.`),this.requestUpdate()}_renderEditSoal(){const t=Array.isArray(this.questions)?this.questions.length:0,e=this._soalText!=null?this._soalText:t?JSON.stringify(this.questions,null,2):"";return o`
       <h2 style="margin-top:0; color:#1e293b;">🗂️ Edit Soal & Bank Soal</h2>
       <div class="note-chip" style="margin-bottom:12px;">
         ${t?`${t} soal aktif di properti <code>questions</code> (terlihat di HAX editor).`:"Belum ada soal di properti <code>questions</code> \u2014 muat dari bank soal atau tempel JSON."}
@@ -3622,8 +4050,8 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
           <button class="retry-btn" @click=${()=>this._terapkanSoal()}>✅ Gunakan Soal Ini</button>
         </div>
       </div>
-      ${this._note?d`<div class="note-chip">${this._note}</div>`:""}
-    `}_muatBankSoal(){if(!this.appsScriptUrl){this._note="\u26A0\uFE0F URL Apps Script belum diatur (tab Atur).",this.requestUpdate();return}this._note="\u{1F4E5} Mengambil bank soal dari backend\u2026",this.requestUpdate(),this._apiGet({action:"getBankSoal"}).then(t=>{const e=t&&Array.isArray(t.questions)?t.questions:t&&Array.isArray(t.soal)?t.soal:t&&Array.isArray(t.data)?t.data:null;e&&e.length?(this._soalText=JSON.stringify(e,null,2),this._note=`\u2705 ${e.length} soal dari sheet Bank Soal dimuat ke editor.`):this._note="\u2139\uFE0F Bank soal kosong \u2014 belum ada data di sheet Bank Soal.",this.requestUpdate()}).catch(()=>{this._note="\u26A0\uFE0F Gagal memuat bank soal dari backend.",this.requestUpdate()})}_terapkanSoal(){const t=(this._soalText||"").trim();if(!t){this._note="\u26A0\uFE0F Form kosong. Tempel JSON soal terlebih dahulu.",this.requestUpdate();return}try{let e=JSON.parse(t);if(e&&typeof e=="object"&&!Array.isArray(e))if(Array.isArray(e.questions))e=e.questions;else throw new Error("bukan array");if(!Array.isArray(e))throw new Error("bukan array");this.questions=e,this._note=`\u2705 ${e.length} soal diterapkan ke properti questions & tab Evaluasi Kuis.`}catch{this._note="\u26A0\uFE0F JSON tidak valid. Format: array soal (lihat deskripsi properti questions di HAX editor)."}this.requestUpdate()}_renderPengaturan(){return d`
+      ${this._note?o`<div class="note-chip">${this._note}</div>`:""}
+    `}_muatBankSoal(){if(!this.appsScriptUrl){this._note="\u26A0\uFE0F URL Apps Script belum diatur (tab Atur).",this.requestUpdate();return}this._note="\u{1F4E5} Mengambil bank soal dari backend\u2026",this.requestUpdate(),this._apiGet({action:"getBankSoal"}).then(t=>{const e=t&&Array.isArray(t.questions)?t.questions:t&&Array.isArray(t.soal)?t.soal:t&&Array.isArray(t.data)?t.data:null;e&&e.length?(this._soalText=JSON.stringify(e,null,2),this._note=`\u2705 ${e.length} soal dari sheet Bank Soal dimuat ke editor.`):this._note="\u2139\uFE0F Bank soal kosong \u2014 belum ada data di sheet Bank Soal.",this.requestUpdate()}).catch(()=>{this._note="\u26A0\uFE0F Gagal memuat bank soal dari backend.",this.requestUpdate()})}_terapkanSoal(){const t=(this._soalText||"").trim();if(!t){this._note="\u26A0\uFE0F Form kosong. Tempel JSON soal terlebih dahulu.",this.requestUpdate();return}try{let e=JSON.parse(t);if(e&&typeof e=="object"&&!Array.isArray(e))if(Array.isArray(e.questions))e=e.questions;else throw new Error("bukan array");if(!Array.isArray(e))throw new Error("bukan array");this.questions=e,this._note=`\u2705 ${e.length} soal diterapkan ke properti questions & tab Evaluasi Kuis.`}catch{this._note="\u26A0\uFE0F JSON tidak valid. Format: array soal (lihat deskripsi properti questions di HAX editor)."}this.requestUpdate()}_renderPengaturan(){return o`
       <h2 style="margin-top:0; color:#1e293b;">⚙️ Atur & Konfigurasi</h2>
       <div class="card-panel">
         <div class="set-row">
@@ -3678,26 +4106,122 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
           </label>
         </div>
       </div>
+
+      <!-- Generate Rapor Section -->
+      <div class="card-panel" style="margin-top: var(--ddd-spacing-4);">
+        <h3 style="margin-top:0; color:#1e293b;">📊 Generate Rapor</h3>
+        <p style="color:#64748b; font-size:13px;">
+          Generate laporan akumulasi nilai dari data di sheet <code>db_asesmen</code>.
+          Data akan tertulis di sheet <code>Akumulasi_Nilai_Rapor</code>.
+        </p>
+        <div class="set-row">
+          <button class="retry-btn" @click=${this._generateRapor} ?disabled=${!this.appsScriptUrl}>
+            🔄 Generate Rapor Sekarang
+          </button>
+          ${this._raporStatus?o`<span style="margin-left:var(--ddd-spacing-3); color:#16a34a;">${this._raporStatus}</span>`:f}
+        </div>
+      </div>
+
+      <!-- Bobot Nilai Section -->
+      <div class="card-panel" style="margin-top: var(--ddd-spacing-4);">
+        <h3 style="margin-top:0; color:#1e293b;">⚖️ Pengaturan Bobot Nilai</h3>
+        <p style="color:#64748b; font-size:13px;">
+          Keterampilan melekat di dalam Tujuan Pembelajaran (TP) — tidak dipisah.
+          Nilai akhir LM sudah termasuk skor tulis + skor performa.
+        </p>
+        <p style="color:#64748b; font-size:13px;">
+          <strong>Rumus:</strong> Nilai Rapor = (Σ LM × bobot_LM + STS × bobot_STS + SAS × bobot_SAS) / Σ bobot
+        </p>
+        <div class="set-row">
+          <div>
+            <div class="set-title">Bobot LM per TP (Sumatif)</div>
+            <div class="set-sub">Bobot untuk setiap LM/UH (default: 3)</div>
+          </div>
+          <input class="nilai-input" type="number" min="0" max="10" .value=${this._bobotLM??3}
+            @change=${t=>this._bobotLM=parseInt(t.target.value)||3} />
+        </div>
+        <div class="set-row">
+          <div>
+            <div class="set-title">Bobot Tugas/Formatif</div>
+            <div class="set-sub">Bobot untuk nilai tugas dan formatif (default: 1)</div>
+          </div>
+          <input class="nilai-input" type="number" min="0" max="10" .value=${this._bobotTugas??1}
+            @change=${t=>this._bobotTugas=parseInt(t.target.value)||1} />
+        </div>
+        <div class="set-row">
+          <div>
+            <div class="set-title">Bobot STS (UTS)</div>
+            <div class="set-sub">Bobot untuk Sumatif Tengah Semester (default: 2). 0 = tidak masuk rapor.</div>
+          </div>
+          <input class="nilai-input" type="number" min="0" max="10" .value=${this._bobotSTS??2}
+            @change=${t=>this._bobotSTS=parseInt(t.target.value)||0} />
+        </div>
+        <div class="set-row">
+          <div>
+            <div class="set-title">Bobot UAS (SAS)</div>
+            <div class="set-sub">Bobot untuk Sumatif Akhir Semester (default: 2). 0 = tidak masuk rapor.</div>
+          </div>
+          <input class="nilai-input" type="number" min="0" max="10" .value=${this._bobotSAS??2}
+            @change=${t=>this._bobotSAS=parseInt(t.target.value)||0} />
+        </div>
+        <div class="set-row" style="margin-top: var(--ddd-spacing-4);">
+          <button class="retry-btn" @click=${this._simpanBobot} ?disabled=${!this.appsScriptUrl}>
+            💾 Simpan Pengaturan Bobot
+          </button>
+          <button class="retry-btn" style="background:#475569;" @click=${this._muatBobot}>
+            🔄 Muat Bobot Tersimpan
+          </button>
+        </div>
+      </div>
+
+      <!-- Buka Kunci Kuis (Guru) -->
+      <div class="card-panel" style="margin-top: var(--ddd-spacing-4); border-left: 4px solid #f59e0b;">
+        <h3 style="margin-top:0; color:#1e293b;">🔓 Buka Kunci Soal Terkunci (Guru)</h3>
+        <p style="color:#64748b; font-size:13px;">Jika siswa terkunci di <code>LM1</code> dan tidak bisa remidi, buka via tombol di bawah atau via <code>latihan-kuis</code> (mode guru). Kuis remidi <b>tidak terkunci</b> otomatis jika <code>remidi-mode</code> aktif.</p>
+        <div class="set-row">
+          <div>
+            <div class="set-title">Student ID</div>
+            <div class="set-sub">Kosongkan = pakai Student ID aktif (${this.studentId||"-"})</div>
+          </div>
+          <input class="set-input" .value=${this._unlockSid||""} placeholder="STD-..."
+            @input=${t=>this._unlockSid=t.target.value.trim()} />
+        </div>
+        <div class="set-row">
+          <div>
+            <div class="set-title">Kode Materi / LM</div>
+            <div class="set-sub">Mis. LM1, LM2 — sama dengan <code>kd-materi</code></div>
+          </div>
+          <input class="set-input" .value=${this._unlockMateri||""} placeholder="LM1"
+            @input=${t=>this._unlockMateri=t.target.value.trim()} />
+        </div>
+        <div class="set-row" style="margin-top: var(--ddd-spacing-3);">
+          <button class="retry-btn" style="background:#f59e0b;" @click=${this._bukaKunciKuisGuru} ?disabled=${!this.appsScriptUrl}>🔓 Buka Kunci</button>
+          ${this._unlockMsg?o`<span style="margin-left:12px; font-size:13px; color:${this._unlockMsg.startsWith("\u2705")?"#16a34a":"#dc2626"};">${this._unlockMsg}</span>`:f}
+        </div>
+        <p style="font-size:11px; color:#94a3b8; margin:8px 0 0;">Properties remidi: <code>remidi-mode</code> + <code>remidi-soal-url</code> (sama file + <code>shuffle-choices</code>) → saat <code>score &lt; kkm</code> tombol <code>Mulai Remidi</code> muncul dan <b>lewati kunci</b>.</p>
+      </div>
+
       <div class="note-chip">
         Perubahan diterapkan langsung pada properti komponen — tersimpan bila halaman
         disimpan melalui editor HAX.
       </div>
-    `}_renderPantauanGuru(){const t=this._serverData.roster||[];if(t.length===0)return d`
+    `}async _bukaKunciKuisGuru(){const t=(this._unlockSid||this.studentId||"").trim(),e=(this._unlockMateri||this.kdMateri||"LM1").trim();if(!t){this._unlockMsg="\u26A0\uFE0F Isi Student ID dulu.",this.requestUpdate();return}if(!this.appsScriptUrl){this._unlockMsg="\u26A0\uFE0F URL Apps Script belum diatur.",this.requestUpdate();return}this._unlockMsg="\u23F3 Membuka...",this.requestUpdate();try{const a=new URLSearchParams({action:"resetQuizLock",studentId:t,kdMateri:e}),i=await(await fetch(`${this.appsScriptUrl}?${a.toString()}`,{method:"GET",mode:"cors"})).json();if(i&&i.status==="ok"){this._unlockMsg=`\u2705 Kunci ${e} dibuka \u2014 ${i.deleted||0} sesi dihapus. Siswa bisa ulang/remidi.`;try{localStorage.removeItem(`latihan_kuis_attempt_${t}_${e}`),localStorage.removeItem(`latihan_kuis_time_${t}_${e}`)}catch{}}else this._unlockMsg="\u26A0\uFE0F Gagal: "+(i.message||"unknown")}catch(a){this._unlockMsg="\u26A0\uFE0F Error: "+a.message}this.requestUpdate()}async _generateRapor(){if(!this.appsScriptUrl){this._note="\u26A0\uFE0F URL Apps Script belum diatur (tab Atur).",this.requestUpdate();return}this._raporStatus="\u23F3 Membuat laporan...",this._note="",this.requestUpdate();try{const t=await this._apiGet({action:"generateReport"});t&&t.status==="ok"?(this._raporStatus=`\u2705 Rapor berhasil dibuat. ${t.students||0} siswa diproses.`,this._note="\u2705 Rapor berhasil di-generate. Lihat sheet Akumulasi_Nilai_Rapor."):(this._raporStatus="",this._note="\u26A0\uFE0F Gagal: "+(t&&t.message?t.message:"cek konsol."))}catch(t){this._raporStatus="",this._note="\u26A0\uFE0F Error: "+t.message}this.requestUpdate()}async _simpanBobot(){if(!this.appsScriptUrl){this._note="\u26A0\uFE0F URL Apps Script belum diatur (tab Atur).",this.requestUpdate();return}const t={tugas:this._bobotTugas??1,lm:this._bobotLM??3,sts:this._bobotSTS??2,sas:this._bobotSAS??2};this._note="\u23F3 Menyimpan bobot...",this.requestUpdate();try{const e=await this._apiGet({action:"saveBobot",...t});e&&e.status==="ok"?this._note="\u2705 Bobot tersimpan. Generate rapor untuk melihat hasil.":this._note="\u26A0\uFE0F Gagal: "+(e&&e.message?e.message:"cek konsol.")}catch(e){this._note="\u26A0\uFE0F Error: "+e.message}this.requestUpdate()}async _muatBobot(){if(!this.appsScriptUrl){this._note="\u26A0\uFE0F URL Apps Script belum diatur (tab Atur).",this.requestUpdate();return}this._note="\u23F3 Memuat bobot...",this.requestUpdate();try{const t=await this._apiGet({action:"getBobot"});t&&t.status==="ok"&&t.bobot?(this._bobotTugas=t.bobot.tugas??1,this._bobotLM=t.bobot.lm??3,this._bobotSTS=t.bobot.sts??2,this._bobotSAS=t.bobot.sas??2,this._note="\u2705 Bobot dimuat."):this._note="\u2139\uFE0F Belum ada bobot tersimpan, menggunakan default."}catch(t){this._note="\u26A0\uFE0F Error: "+t.message}this.requestUpdate()}_renderPantauanGuru(){const t=this._serverData.roster||[];if(t.length===0)return o`
         <h2 style="margin-top: 0; color: #1e293b;">Peta Pantauan & Rekapitulasi Kelas</h2>
         <div class="empty-state">
-          ${this._loading?"Memuat data siswa\u2026":this.appsScriptUrl?d`
+          ${this._loading?"Memuat data siswa\u2026":this.appsScriptUrl?o`
                   Belum ada data pantauan dari backend.<br />
                   URL aktif: <code>${this.appsScriptUrl}</code>
-                  ${this._serverError?d`<span class="err-chip">⚠️ ${this._serverError}</span>`:d`<span class="err-chip">ℹ️ Pastikan sheet Users & Akumulasi Nilai Rapor terisi, dan backend sudah deploy lib/codev5.gs (Deploy > New version).</span>`}
+                  ${this._serverError?o`<span class="err-chip">⚠️ ${this._serverError}</span>`:o`<span class="err-chip">ℹ️ Pastikan sheet Users & Akumulasi Nilai Rapor terisi, dan backend sudah deploy lib/codev5.gs (Deploy > New version).</span>`}
                   <button class="retry-btn" @click=${()=>this.fetchDataKomplit()} ?disabled=${this._loading}>
                     🔄 Muat Ulang Data
                   </button>
-                `:d`
+                `:o`
                   URL Apps Script belum diatur. Isi properti <code>apps-script-url</code> (via HAX editor atau atribut HTML).
                 `}
         </div>
-      `;const e=t.filter(s=>this._num(s.kehadiran)>=60).length,a=t.filter(s=>this._num(s.nilaiAkhir)<75).length,i=t.length?Math.round(t.reduce((s,r)=>s+this._num(r.nilaiAkhir),0)/t.length):0;return d`
+      `;const e=t.filter(s=>this._num(s.kehadiran)>=60).length,a=t.filter(s=>this._num(s.nilaiAkhir)<75).length,i=t.length?Math.round(t.reduce((s,d)=>s+this._num(d.nilaiAkhir),0)/t.length):0,r=String(this.kelas||"").trim()?`Filter: ${this.kelas}`:"Semua kelas";return o`
       <h2 style="margin-top: 0; color: #1e293b;">Peta Pantauan & Rekapitulasi Kelas</h2>
+      <div class="note-chip" style="margin-bottom:12px;">Menampilkan ${t.length} siswa — ${r}. Kosongkan filter Kelas di tab Atur untuk melihat semua.</div>
 
       <div class="stats-grid">
         <div class="stat-card">
@@ -3731,10 +4255,10 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
       </div>
 
       <div class="grid-heatmap">
-        ${t.map(s=>{const r=this._num(s.nilaiAkhir),n=r>=75?"lvl-high":r>=60?"lvl-mid":"lvl-low",c=r>=75?{cls:"badge-good",txt:`${s.emoji||"\u2705"} LULUS`}:r>=60?{cls:"badge-warn",txt:`${s.emoji||"\u26A0\uFE0F"} PROSES`}:{cls:"badge-bad",txt:`${s.emoji||"\u{1F4ED}"} REMEDI`},h=(s.nama||"?").trim().charAt(0).toUpperCase(),p=["#4f46e5","#0891b2","#059669","#d97706","#db2777","#7c3aed"][(s.absen||"0").toString().length%6];return d`
-            <div class="card-siswa ${n}">
+        ${t.map(s=>{const d=this._num(s.nilaiAkhir),l=d>=75?"lvl-high":d>=60?"lvl-mid":"lvl-low",p=d>=75?{cls:"badge-good",txt:`${s.emoji||"\u2705"} LULUS`}:d>=60?{cls:"badge-warn",txt:`${s.emoji||"\u26A0\uFE0F"} PROSES`}:{cls:"badge-bad",txt:`${s.emoji||"\u{1F4ED}"} REMEDI`},u=(s.nama||"?").trim().charAt(0).toUpperCase(),m=["#4f46e5","#0891b2","#059669","#d97706","#db2777","#7c3aed"][(s.absen||"0").toString().length%6];return o`
+            <div class="card-siswa ${l}">
               <div class="student-head">
-                <div class="avatar-circle" style="background:${p};">${h}</div>
+                <div class="avatar-circle" style="background:${m};">${u}</div>
                 <div>
                   <div class="student-name">${s.absen?s.absen+". ":""}${s.nama||"-"}</div>
                   <div class="student-sub">${s.kelas||"-"} • ${s.nis||""}</div>
@@ -3746,44 +4270,44 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
                 <div>🎯 ${this._num(s.kehadiran)}% hadir</div>
               </div>
               <div class="progress-track">
-                <div class="progress-bar" style="width:${Math.min(r,100)}%;"></div>
+                <div class="progress-bar" style="width:${Math.min(d,100)}%;"></div>
               </div>
               <div class="score-row">
                 <span>Nilai Akhir</span>
-                <span>${r}</span>
+                <span>${d}</span>
               </div>
-              <span class="badge-status ${c.cls}">${c.txt}</span>
+              <span class="badge-status ${p.cls}">${p.txt}</span>
             </div>
           `})}
       </div>
-    `}_renderLeaderboard(){const t=this._serverData.leaderboard||[];if(t.length===0)return d`
+    `}_materiCol(){const t=String(this.kdMateri||"").trim(),e=t.match(/^LM\s*0?(\d+)$/i);if(e)return`LM${e[1]}`;const a=t.match(/^Pertemuan\s*0?(\d+)$/i);return a?`LM${a[1]}`:/^STS$/i.test(t)?"STS":/^SAS$/i.test(t)?"SAS":""}_renderLeaderboard(){let t=this._serverData.leaderboard||[];if(t.length===0)return o`
         <h2 style="color:#1e293b;">🏆 Peringkat Nilai Bimbingan Kelas</h2>
         <div class="empty-state">
           Belum ada data leaderboard (sheet <strong>Rangkuman</strong> kosong).
-          ${this._serverError?d`<span class="err-chip">⚠️ ${this._serverError}</span>`:""}
-          ${this._serverError?d`<div>URL aktif: <code>${this.appsScriptUrl}</code></div>`:""}
+          ${this._serverError?o`<span class="err-chip">⚠️ ${this._serverError}</span>`:""}
+          ${this._serverError?o`<div>URL aktif: <code>${this.appsScriptUrl}</code></div>`:""}
           <div><button class="retry-btn" @click=${()=>this.fetchDataKomplit()} ?disabled=${this._loading}>🔄 Muat Ulang Data</button></div>
         </div>
-      `;const e=t.map((r,n)=>{const c=this._num(this._rowValue(r,"Rata-rata Skor"));return{...r,_rank:n+1,_nilai:c,_nama:String(this._rowValue(r,"Nama")||"-"),_absen:String(this._rowValue(r,"Absen")||""),_kelas:String(this._rowValue(r,"Kelas")||""),_totalKuis:this._num(this._rowValue(r,"Total Kuis")),_totalAktivitas:this._num(this._rowValue(r,"Total Aktivitas")),_reading:this._num(this._rowValue(r,"Reading")),_quizAct:this._num(this._rowValue(r,"Quiz Activity")),_forum:this._num(this._rowValue(r,"Discussion")),_status:String(this._rowValue(r,"Status Kuis Terakhir")||"N/A"),_pertemuan:this._num(this._rowValue(r,"Jumlah Pertemuan"))}}),a=e[0]||{_nama:"-",_nilai:0},i=e[1]||{_nama:"-",_nilai:0},s=e[2]||{_nama:"-",_nilai:0};return d`
-      <h2 style="color:#1e293b;">🏆 Peringkat Nilai Bimbingan Kelas</h2>
+      `;const e=this._canonKelas(this._peringkatKelas||this.kelas||"");e&&(t=t.filter(u=>this._canonKelas(this._rowValue(u,"Kelas"))===e));const a=this._materiCol(),i=new Map((this._serverData.roster||[]).map(u=>[String(u.studentId),u])),r=t.map((u,m)=>{const A=a?this._num(this._rowValue(u,a)):null,$=A!=null&&A>0?A:this._num(this._rowValue(u,"Nilai_Rapor")||this._rowValue(u,"Rata-rata Skor")),M=String(this._rowValue(u,"StudentID")||this._rowValue(u,"Student ID")||""),U=i.get(M)||(this._serverData.roster||[]).find(O=>String(O.nis)===String(this._rowValue(u,"NIS")))||null,y=String(this._rowValue(u,"Absen")||U?.absen||"").trim();return{...u,_rank:m+1,_nilai:$,_lmNilai:A,_nama:String(this._rowValue(u,"Nama")||U?.nama||"-"),_absen:y,_kelas:String(this._rowValue(u,"Kelas")||U?.kelas||""),_totalKuis:this._num(this._rowValue(u,"Total Kuis")||U?.totalKuis||0),_totalAktivitas:this._num(this._rowValue(u,"Total Aktivitas")||U?.totalActivities||0),_reading:this._num(this._rowValue(u,"Reading")),_quizAct:this._num(this._rowValue(u,"Quiz Activity")),_forum:this._num(this._rowValue(u,"Discussion")),_status:String(this._rowValue(u,"Status Kuis Terakhir")||U?.grade||"N/A"),_pertemuan:this._num(this._rowValue(u,"Jumlah Pertemuan"))}}).map((u,m)=>({...u,_rank:m+1})),s=this._leaderSortKey&&this._leaderSortKey!=="nilai"?this._getSortedLeaderboardRows(r):[...r].sort((u,m)=>(m._nilai||0)-(u._nilai||0)).map((u,m)=>({...u,_rank:m+1})),d=s[0]||{_nama:"-",_nilai:0},l=s[1]||{_nama:"-",_nilai:0},p=s[2]||{_nama:"-",_nilai:0};return o`
+      <h2 style="color:#1e293b;">🏆 Peringkat Nilai Bimbingan Kelas ${a?o`<span style="background:#EEF2FF; color:#4338CA; border:1px solid #C7D2FE; border-radius:999px; padding:4px 10px; font-size:11px; margin-left:8px;">Filter: ${a}${e?` \u2022 Kelas ${this._peringkatKelas||this.kelas}`:""}</span>`:e?o`<span style="background:#EEF2FF; color:#4338CA; border:1px solid #C7D2FE; border-radius:999px; padding:4px 10px; font-size:11px; margin-left:8px;">Kelas ${this._peringkatKelas||this.kelas}</span>`:""}</h2>
       <div class="podium-section">
         <div class="podium-box rank-2">
           <div class="podium-medal">🥈</div>
-          <div class="podium-name">${i._nama}</div>
-          <div class="podium-score">${i._nilai}%</div>
-          <div style="font-size:11px;color:#94a3b8;">${this._num(i._totalKuis)} kuis • ${this._num(i._totalAktivitas)} aktivitas</div>
+          <div class="podium-name">${l._nama}</div>
+          <div class="podium-score">${l._nilai}%</div>
+          <div style="font-size:11px;color:#94a3b8;">${this._num(l._totalKuis)} kuis • ${this._num(l._totalAktivitas)} aktivitas</div>
         </div>
         <div class="podium-box rank-1">
           <div class="podium-medal">🥇</div>
-          <div class="podium-name">${a._nama}</div>
-          <div class="podium-score">${a._nilai}%</div>
-          <div style="font-size:11px;color:#94a3b8;">${this._num(a._totalKuis)} kuis • ${this._num(a._totalAktivitas)} aktivitas</div>
+          <div class="podium-name">${d._nama}</div>
+          <div class="podium-score">${d._nilai}%</div>
+          <div style="font-size:11px;color:#94a3b8;">${this._num(d._totalKuis)} kuis • ${this._num(d._totalAktivitas)} aktivitas</div>
         </div>
         <div class="podium-box rank-3">
           <div class="podium-medal">🥉</div>
-          <div class="podium-name">${s._nama}</div>
-          <div class="podium-score">${s._nilai}%</div>
-          <div style="font-size:11px;color:#94a3b8;">${this._num(s._totalKuis)} kuis • ${this._num(s._totalAktivitas)} aktivitas</div>
+          <div class="podium-name">${p._nama}</div>
+          <div class="podium-score">${p._nilai}%</div>
+          <div style="font-size:11px;color:#94a3b8;">${this._num(p._totalKuis)} kuis • ${this._num(p._totalAktivitas)} aktivitas</div>
         </div>
       </div>
 
@@ -3792,10 +4316,11 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
           <thead>
             <tr>
               <th>#</th>
-              <th>Nama</th>
-              <th>Kelas</th>
+              <th @click=${()=>this._sortLeaderboard("nama")} style="cursor:pointer; user-select:none;">Nama ${this._leaderSortKey==="nama"?this._leaderSortDir==="asc"?"\u25B2":"\u25BC":"\u2195"}</th>
+              <th @click=${()=>this._sortLeaderboard("kelas")} style="cursor:pointer; user-select:none;">Kelas ${this._leaderSortKey==="kelas"?this._leaderSortDir==="asc"?"\u25B2":"\u25BC":"\u2195"}</th>
+              <th @click=${()=>this._sortLeaderboard("absen")} style="cursor:pointer; user-select:none; background:${this._leaderSortKey==="absen"?"#EEF2FF":"transparent"};">Absen ${this._leaderSortKey==="absen"?this._leaderSortDir==="asc"?"\u25B2":"\u25BC":"\u2195"}</th>
               <th>Kuis</th>
-              <th>Rata-rata Skor</th>
+              <th @click=${()=>this._sortLeaderboard("nilai")} style="cursor:pointer; user-select:none;">${a||"Rata-rata Skor"} ${this._leaderSortKey==="nilai"?this._leaderSortDir==="asc"?"\u25B2":"\u25BC":"\u2195"}</th>
               <th>Aktivitas</th>
               <th>📖</th>
               <th>📝</th>
@@ -3805,36 +4330,37 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
             </tr>
           </thead>
           <tbody>
-            ${e.map(r=>d`
-                <tr class="${r._rank<=3?"highlight-row":""}">
-                  <td><span class="rank-chip ${r._rank===1?"top":""}">${r._rank}</span></td>
-                  <td><strong>${r._absen?r._absen+". ":""}${r._nama}</strong></td>
-                  <td>${r._kelas}</td>
-                  <td>${r._totalKuis}</td>
-                  <td><strong>${r._nilai}%</strong></td>
-                  <td>${r._totalAktivitas}</td>
-                  <td>${r._reading}</td>
-                  <td>${r._quizAct}</td>
-                  <td>${r._forum}</td>
-                  <td>${r._pertemuan}</td>
+            ${s.map(u=>o`
+                <tr class="${u._rank<=3?"highlight-row":""}">
+                  <td><span class="rank-chip ${u._rank===1?"top":""}">${u._rank}</span></td>
+                  <td><strong>${u._nama}</strong></td>
+                  <td>${u._kelas}</td>
+                  <td style="text-align:center; font-weight:700;">${u._absen||"-"}</td>
+                  <td>${u._totalKuis}</td>
+                  <td><strong>${u._nilai}%</strong></td>
+                  <td>${u._totalAktivitas}</td>
+                  <td>${u._reading}</td>
+                  <td>${u._quizAct}</td>
+                  <td>${u._forum}</td>
+                  <td>${u._pertemuan}</td>
                   <td>
-                    <span class="badge-status ${r._status==="LULUS"?"badge-good":r._status==="TIDAK LULUS"?"badge-bad":"badge-warn"}">${r._status}</span>
+                    <span class="badge-status ${u._status==="LULUS"?"badge-good":u._status==="TIDAK LULUS"?"badge-bad":"badge-warn"}">${u._status}</span>
                   </td>
                 </tr>
               `)}
           </tbody>
         </table>
       </div>
-    `}_opsiKelas(){const t=new Set;return(this._serverData.roster||[]).forEach(e=>{e.kelas&&t.add(String(e.kelas))}),(this._serverData.leaderboard||[]).forEach(e=>{const a=this._rowValue(e,"Kelas");a&&t.add(String(a))}),this.kelas&&t.add(String(this.kelas)),[...t].sort()}_bacaEditNilai(t){try{const e=JSON.parse(localStorage.getItem("a3_v5_peringkat_edit")||"{}");return e&&e[t]?e[t]:null}catch{return null}}_simpanEditNilai(t,e){try{const a=JSON.parse(localStorage.getItem("a3_v5_peringkat_edit")||"{}");a[t]={...e},localStorage.setItem("a3_v5_peringkat_edit",JSON.stringify(a))}catch{}}_hapusEditNilai(t){try{const e=JSON.parse(localStorage.getItem("a3_v5_peringkat_edit")||"{}");delete e[t],localStorage.setItem("a3_v5_peringkat_edit",JSON.stringify(e))}catch{}}_buildPeringkat(){const t=this._serverData.leaderboard||[],e=this._serverData.roster||[],a={};return e.forEach(i=>{i.studentId&&(a[i.studentId]=i)}),t.map(i=>{const s=String(this._rowValue(i,"Student ID")||""),r=a[s]||e.find(h=>String(h.nis)===String(this._rowValue(i,"NIS")))||null,n=this._bacaEditNilai(s),c=(h,p)=>n&&n[h]!==""&&n[h]!==void 0?this._num(n[h]):this._num(p);return{_sid:s,_nama:String(this._rowValue(i,"Nama")||r&&r.nama||"-"),_kelas:String(this._rowValue(i,"Kelas")||r&&r.kelas||""),_absen:String(this._rowValue(i,"Absen")||r&&r.absen||""),_nis:String(this._rowValue(i,"NIS")||r&&r.nis||""),_totalKuis:this._num(this._rowValue(i,"Total Kuis")),_rata:this._num(this._rowValue(i,"Rata-rata Skor")),_tinggi:this._num(this._rowValue(i,"Skor Tertinggi")),_rendah:this._num(this._rowValue(i,"Skor Terendah")),_aktivitas:this._num(this._rowValue(i,"Total Aktivitas")),_reading:this._num(this._rowValue(i,"Reading")),_quizAct:this._num(this._rowValue(i,"Quiz Activity")),_assignment:this._num(this._rowValue(i,"Assignment")),_discussion:this._num(this._rowValue(i,"Discussion")),_download:this._num(this._rowValue(i,"Download")),_uts:c("uts",this._rowValue(i,"Skor UTS")),_uas:c("uas",this._rowValue(i,"Skor UAS")),_pertemuan:this._num(this._rowValue(i,"Jumlah Pertemuan")),_status:String(this._rowValue(i,"Status Kuis Terakhir")||"N/A"),_kehadiran:c("kehadiran",r&&r.kehadiran),_uh:c("uh",r&&r.uh),_sikap:c("sikap",r&&r.sikap),_keterampilan:c("keterampilan",r&&r.keterampilan),_nilaiAkhir:c("nilaiAkhir",r&&r.nilaiAkhir),_grade:(n&&n.grade&&String(n.grade)!==""||r&&r.grade)&&(n&&n.grade||r.grade)||"N/A"}}).sort((i,s)=>this._num(i._rata)<this._num(s._rata)?1:-1)}_filterPeringkat(t){const e=this._peringkatKelas||this.kelas||"";return e?t.filter(a=>String(a._kelas).toLowerCase()===String(e).toLowerCase()):t}_ubahFilterKelas(t){this._peringkatKelas=t,this.kelas=t,this.requestUpdate()}_renderPeringkatBimbingan(){const t=this._filterPeringkat(this._buildPeringkat()),e=this._opsiKelas(),a=this._peringkatKelas||this.kelas||"",i=(this._serverData.leaderboard||[]).length>0;return d`
+    `}_opsiKelas(){const t=new Map,e=new Set,a=(i,r)=>{const s=String(i||"").trim();if(!s)return;const d=this._canonKelas(s);if(d&&(r&&e.add(d),!t.has(d))){let l=s.toUpperCase().replace(/\s+/g," ").replace(/\s*-\s*/g,"-").trim();l.includes(" ")&&!l.includes("-")&&(l=l.replace(/\s+/g,"-")),/^X\d+$/i.test(l)&&(l=l.replace(/^X/i,"X-")),t.set(d,l)}};return(this._serverData.roster||[]).forEach(i=>a(i.kelas,!0)),(this._serverData.leaderboard||[]).forEach(i=>{const r=this._rowValue(i,"Kelas"),s=this._canonKelas(r);s&&(e.size>0&&!e.has(s)||a(r,!1))}),this.kelas&&a(this.kelas,!0),this._peringkatKelas&&a(this._peringkatKelas,!0),[...t.values()].sort()}_bacaEditNilai(t){try{const e=JSON.parse(localStorage.getItem("a3_v5_peringkat_edit")||"{}");return e&&e[t]?e[t]:null}catch{return null}}_simpanEditNilai(t,e){try{const a=JSON.parse(localStorage.getItem("a3_v5_peringkat_edit")||"{}");a[t]={...e},localStorage.setItem("a3_v5_peringkat_edit",JSON.stringify(a))}catch{}}_hapusEditNilai(t){try{const e=JSON.parse(localStorage.getItem("a3_v5_peringkat_edit")||"{}");delete e[t],localStorage.setItem("a3_v5_peringkat_edit",JSON.stringify(e))}catch{}}_buildPeringkat(){let t=this._serverData.leaderboard||[];const e=this._serverData.roster||[];(!t||t.length===0)&&e.length>0&&(t=e.map(i=>({"Student ID":i.studentId||i._sid||"",Nama:i.nama||"",Kelas:i.kelas||"",Absen:i.absen||"",NIS:i.nis||"","Rata-rata Skor":i.nilaiAkhir??i.nilaiRapor??i.uh??0,Nilai_Rapor:i.nilaiAkhir??i.nilaiRapor??0,"Status Kuis Terakhir":i.grade||i.intervalCapaian||"N/A",Interval_Capaian:i.grade||i.intervalCapaian||"N/A","Skor UTS":i.uts??i.sts??0,"Skor UAS":i.uas??i.sas??0,"Total Kuis":i.totalKuis??0,"Total Aktivitas":i.totalActivities??0,"Jumlah Pertemuan":i.pertemuan??0})));const a={};return e.forEach(i=>{i.studentId&&(a[i.studentId]=i)}),t.map(i=>{const r=String(this._rowValue(i,"Student ID")||""),s=a[r]||e.find(p=>String(p.nis)===String(this._rowValue(i,"NIS")))||null,d=this._bacaEditNilai(r),l=(p,u)=>d&&d[p]!==""&&d[p]!==void 0?this._num(d[p]):this._num(u);return{_sid:r,_nama:String(this._rowValue(i,"Nama")||s&&s.nama||"-"),_kelas:String(this._rowValue(i,"Kelas")||s&&s.kelas||""),_absen:String(this._rowValue(i,"Absen")||s&&s.absen||""),_nis:String(this._rowValue(i,"NIS")||s&&s.nis||""),_totalKuis:this._num(this._rowValue(i,"Total Kuis")),_rata:this._num(this._rowValue(i,"Rata-rata Skor")),_tinggi:this._num(this._rowValue(i,"Skor Tertinggi")),_rendah:this._num(this._rowValue(i,"Skor Terendah")),_aktivitas:this._num(this._rowValue(i,"Total Aktivitas")),_reading:this._num(this._rowValue(i,"Reading")),_quizAct:this._num(this._rowValue(i,"Quiz Activity")),_assignment:this._num(this._rowValue(i,"Assignment")),_discussion:this._num(this._rowValue(i,"Discussion")),_download:this._num(this._rowValue(i,"Download")),_uts:l("uts",this._rowValue(i,"Skor UTS")),_uas:l("uas",this._rowValue(i,"Skor UAS")),_pertemuan:this._num(this._rowValue(i,"Jumlah Pertemuan")),_status:String(this._rowValue(i,"Status Kuis Terakhir")||"N/A"),_kehadiran:l("kehadiran",s&&s.kehadiran),_uh:l("uh",s&&s.uh),_sikap:l("sikap",s&&s.sikap),_keterampilan:l("keterampilan",s&&s.keterampilan),_nilaiAkhir:l("nilaiAkhir",s&&s.nilaiAkhir),_grade:(d&&d.grade&&String(d.grade)!==""||s&&s.grade)&&(d&&d.grade||s.grade)||"N/A"}}).sort((i,r)=>this._num(i._rata)<this._num(r._rata)?1:-1)}_filterPeringkat(t){const e=this._canonKelas(this._peringkatKelas||this.kelas||"");return e?t.filter(a=>this._canonKelas(a._kelas)===e):t}_ubahFilterKelas(t){this._peringkatKelas=t,this.requestUpdate()}_renderPeringkatBimbingan(){const t=this._filterPeringkat(this._buildPeringkat()),e=this._getSortedPeringkatRows(t),a=this._opsiKelas(),i=this._peringkatKelas||this.kelas||"",r=(this._serverData.leaderboard||[]).length>0;return o`
       <h2 style="margin-top:0; color:#1e293b;">🏆 Peringkat Nilai Bimbingan Kelas</h2>
 
       <div class="toolbar">
         <div class="tb-filter">
           <label for="filter-kelas">Filter Kelas</label>
-          <select id="filter-kelas" class="filter-select" .value=${a}
+          <select id="filter-kelas" class="filter-select" .value=${i}
             @change=${s=>this._ubahFilterKelas(s.target.value)}>
             <option value="">Semua Kelas</option>
-            ${e.map(s=>d`<option value=${s}>${s}</option>`)}
+            ${a.map(s=>o`<option value=${s}>${s}</option>`)}
           </select>
         </div>
         <div class="tb-action">
@@ -3842,40 +4368,40 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
           <button class="retry-btn" @click=${()=>this._eksporNilai("csv")}>⬇️ CSV</button>
           <button class="retry-btn" @click=${()=>this._eksporNilai("copas")}>📋 Siap Copas</button>
         </div>
-        ${this._note?d`<div class="note-chip">${this._note}</div>`:""}
+        ${this._note?o`<div class="note-chip">${this._note}</div>`:""}
       </div>
 
       ${this._copasTSV!==null?this._renderCopas():""}
 
       ${this._detailSiswa?this._renderDetailSiswa():""}
 
-      ${this.appsScriptUrl?i?t.length===0?d`
+      ${this.appsScriptUrl?r?e.length===0?o`
                 <div class="empty-state">
-                  Tidak ada siswa pada kelas <strong>${a||"semua kelas"}</strong>.
+                  Tidak ada siswa pada kelas <strong>${i||"semua kelas"}</strong>.
                 </div>
-              `:d`
+              `:o`
                 <div class="table-wrap">
                   <table>
                     <thead>
                       <tr>
                         <th>#</th>
-                        <th>Nama (klik)</th>
-                        <th>Kelas</th>
-                        <th>Absen</th>
+                        <th @click=${()=>this._sortPeringkat("nama")} style="cursor:pointer;">Nama ${this._peringkatSortKey==="nama"?this._peringkatSortDir==="asc"?"\u25B2":"\u25BC":"\u2195"}</th>
+                        <th @click=${()=>this._sortPeringkat("kelas")} style="cursor:pointer;">Kelas ${this._peringkatSortKey==="kelas"?this._peringkatSortDir==="asc"?"\u25B2":"\u25BC":"\u2195"}</th>
+                        <th @click=${()=>this._sortPeringkat("absen")} style="cursor:pointer; background:${this._peringkatSortKey==="absen"?"#EEF2FF":"transparent"};">Absen ${this._peringkatSortKey==="absen"?this._peringkatSortDir==="asc"?"\u25B2":"\u25BC":"\u2195"}</th>
                         <th>Kuis</th>
-                        <th>Rata-rata</th>
+                        <th @click=${()=>this._sortPeringkat("rata")} style="cursor:pointer;">Rata-rata ${this._peringkatSortKey==="rata"?this._peringkatSortDir==="asc"?"\u25B2":"\u25BC":"\u2195"}</th>
                         <th>Aktivitas</th>
                         <th>UTS</th>
                         <th>UAS</th>
-                        <th>Nilai Akhir</th>
+                        <th @click=${()=>this._sortPeringkat("nilaiAkhir")} style="cursor:pointer;">Nilai Akhir ${this._peringkatSortKey==="nilaiAkhir"?this._peringkatSortDir==="asc"?"\u25B2":"\u25BC":"\u2195"}</th>
                         <th>Grade</th>
                         <th>Status</th>
                       </tr>
                     </thead>
                     <tbody>
-                      ${t.map((s,r)=>d`
+                      ${e.map((s,d)=>o`
                           <tr>
-                            <td><span class="rank-chip ${r===0?"top":""}">${r+1}</span></td>
+                            <td><span class="rank-chip ${d===0?"top":""}">${d+1}</span></td>
                             <td>
                               <button class="nama-btn" @click=${()=>this._bukaDetail(s)}>
                                 ${s._absen?s._absen+". ":""}${s._nama}
@@ -3904,25 +4430,25 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
                   💡 Klik nama siswa untuk lihat rincian & edit nilai. UTS/UAS dikirim ke
                   sheet <strong>Nilai Manual</strong> via <code>action=setManualScore</code>.
                 </p>
-              `:d`
+              `:o`
               <div class="empty-state">
                 Belum ada data Rangkuman dari backend untuk peringkat bimbingan.
                 Pastikan sheet <strong>Rangkuman</strong> terisi atau jalankan
                 <code>action=generateReport</code> pada backend.
-                ${this._serverError?d`<span class="err-chip">⚠️ ${this._serverError}</span>`:""}
+                ${this._serverError?o`<span class="err-chip">⚠️ ${this._serverError}</span>`:""}
                 <div>
                   <button class="retry-btn" @click=${()=>this.fetchDataKomplit()} ?disabled=${this._loading}>
                     🔄 Muat Ulang Data
                   </button>
                 </div>
               </div>
-            `:d`
+            `:o`
             <div class="empty-state">
               URL Apps Script belum diatur. Isi properti <code>apps-script-url</code>
               (via HAX editor atau atribut HTML).
             </div>
           `}
-    `}_renderCopas(){return d`
+    `}_renderCopas(){return o`
       <div class="copas-panel">
         <h4 style="margin:0 0 8px; color:#1e293b;">📋 Nilai siap copas (TSV — paste langsung ke Google Sheets / Excel)</h4>
         <textarea class="copas-area" readonly rows="10" .value=${this._copasTSV||""}></textarea>
@@ -3931,11 +4457,11 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
           <button class="retry-btn" style="background:#475569;" @click=${()=>this._copasTSV=null}>✖ Tutup</button>
         </div>
       </div>
-    `}async _salinKopas(){try{await navigator.clipboard.writeText(this._copasTSV||""),this._note="\u2705 Nilai tersalin ke clipboard \u2014 siap paste ke Google Sheets/Excel."}catch{this._note="\u26A0\uFE0F Salin manual: pilih teks di kotak lalu tekan Ctrl+C."}this.requestUpdate()}_bukaDetail(t){this._detailSiswa=t,this._editNilai={kehadiran:t._kehadiran,uh:t._uh,uts:t._uts,uas:t._uas,sikap:t._sikap,keterampilan:t._keterampilan,nilaiAkhir:t._nilaiAkhir,grade:t._grade},this._note="",this.requestUpdate()}_renderDetailSiswa(){const t=this._detailSiswa;if(!t||!this._editNilai)return"";const e=this._editNilai,a=(i,s)=>d`
-      <label class="dEdit-label" for="d-${i}">${s}</label>
+    `}async _salinKopas(){try{await navigator.clipboard.writeText(this._copasTSV||""),this._note="\u2705 Nilai tersalin ke clipboard \u2014 siap paste ke Google Sheets/Excel."}catch{this._note="\u26A0\uFE0F Salin manual: pilih teks di kotak lalu tekan Ctrl+C."}this.requestUpdate()}_bukaDetail(t){this._detailSiswa=t,this._editNilai={kehadiran:t._kehadiran,uh:t._uh,uts:t._uts,uas:t._uas,sikap:t._sikap,keterampilan:t._keterampilan,nilaiAkhir:t._nilaiAkhir,grade:t._grade},this._note="",this.requestUpdate()}_renderDetailSiswa(){const t=this._detailSiswa;if(!t||!this._editNilai)return"";const e=this._editNilai,a=(i,r)=>o`
+      <label class="dEdit-label" for="d-${i}">${r}</label>
       <input id="d-${i}" class="dEdit-input" type="number" .value=${e[i]??""}
-        @input=${r=>this._editNilai={...this._editNilai,[i]:r.target.value}} />
-    `;return d`
+        @input=${s=>this._editNilai={...this._editNilai,[i]:s.target.value}} />
+    `;return o`
       <div class="detail-panel">
         <div class="student-head">
           <div class="avatar-circle" style="background:#4f46e5;">${(t._nama||"?").charAt(0).toUpperCase()}</div>
@@ -3973,49 +4499,66 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
           </button>
         </div>
       </div>
-    `}_simpanNilaiLokal(){const t=this._detailSiswa;if(!t)return;const e=this._editNilai||{};this._simpanEditNilai(t._sid,{kehadiran:e.kehadiran,uh:e.uh,uts:e.uts,uas:e.uas,sikap:e.sikap,keterampilan:e.keterampilan,nilaiAkhir:e.nilaiAkhir,grade:e.grade}),this._note=`\u{1F4BE} Edit tersimpan lokal untuk ${t._nama}. Klik "\u2601\uFE0F Kirim Semua Nilai" untuk sinkronisasi ke sheet Nilai Manual.`,this.requestUpdate()}async _kirimSemuaNilai(){const t=this._detailSiswa,e=this._editNilai||{};if(!t||!t._sid){this._note="\u26A0\uFE0F Student ID tidak ditemukan.",this.requestUpdate();return}if(!this.appsScriptUrl){this._note="\u26A0\uFE0F URL Apps Script belum diatur.",this.requestUpdate();return}const a=[["kehadiran",e.kehadiran,"Kehadiran"],["uh",e.uh,"Rata-rata UH"],["uts",e.uts,"Skor UTS"],["uas",e.uas,"Skor UAS"],["sikap",e.sikap,"Sikap"],["keterampilan",e.keterampilan,"Keterampilan"],["nilaiAkhir",e.nilaiAkhir,"Nilai Akhir"]].filter(([,s])=>s!=null&&String(s).trim()!=="").map(([s,r,n])=>({kategori:s,label:n,skor:Math.max(0,Math.min(100,this._num(r)))}));if(!a.length){this._note="Isi minimal satu kolom nilai terlebih dahulu.",this.requestUpdate();return}this._note="\u2601\uFE0F Mengirim semua nilai ke backend\u2026",this.requestUpdate();const i=(await Promise.all(a.map(s=>this._apiGet({action:"setManualScore",studentId:t._sid,kategori:s.kategori,skor:s.skor})))).filter(s=>s&&s.status&&s.status!=="ok");i.length?this._note="\u26A0\uFE0F Sebagian gagal: "+String(i[0]&&i[0].message||"cek konsol."):(this._simpanEditNilai(t._sid,{kehadiran:e.kehadiran,uh:e.uh,uts:e.uts,uas:e.uas,sikap:e.sikap,keterampilan:e.keterampilan,nilaiAkhir:e.nilaiAkhir,grade:e.grade}),this._note=`\u2705 ${a.length} nilai (${a.map(s=>s.kategori).join(", ")}) untuk ${t._nama} tercatat di sheet Nilai Manual.`),this.requestUpdate()}async _kirimManualSkor(){const t=this._detailSiswa,e=this._editNilai||{};if(!t||!t._sid){this._note="\u26A0\uFE0F Student ID tidak ditemukan.",this.requestUpdate();return}if(!this.appsScriptUrl){this._note="\u26A0\uFE0F URL Apps Script belum diatur.",this.requestUpdate();return}const a=[];if(String(e.uts).trim()!==""&&a.push({kategori:"uts",skor:Math.max(0,Math.min(100,this._num(e.uts)))}),String(e.uas).trim()!==""&&a.push({kategori:"uas",skor:Math.max(0,Math.min(100,this._num(e.uas)))}),!a.length){this._note="Isi Skor UTS dan/atau UAS terlebih dahulu.",this.requestUpdate();return}this._note="\u2601\uFE0F Mengirim nilai manual ke backend\u2026",this.requestUpdate();const i=(await Promise.all(a.map(s=>this._apiGet({action:"setManualScore",studentId:t._sid,kategori:s.kategori,skor:s.skor})))).filter(s=>s&&s.status&&s.status!=="ok");this._note=i.length?"\u26A0\uFE0F Sebagian gagal: "+String(i[0]&&i[0].message||"cek konsol."):`\u2705 UTS ${this._num(e.uts)} & UAS ${this._num(e.uas)} untuk ${t._nama} tercatat di sheet Nilai Manual.`,i.length||this._simpanEditNilai(t._sid,{kehadiran:e.kehadiran,uh:e.uh,uts:e.uts,uas:e.uas,sikap:e.sikap,keterampilan:e.keterampilan,nilaiAkhir:e.nilaiAkhir,grade:e.grade}),this.requestUpdate()}_rowPeringkatKeCSV(t){const e=["#","Nama","Kelas","Absen","NIS","Student ID","Total Kuis","Rata-rata Skor (%)","Skor Tertinggi","Skor Terendah","Total Aktivitas","Reading","Quiz Activity","Discussion","Download","UTS","UAS","Nilai Akhir","Grade","Jumlah Pertemuan","Status Kuis Terakhir"],a=t.map((i,s)=>[String(s+1),i._nama,i._kelas,i._absen,i._nis,i._sid,i._totalKuis,i._rata,i._tinggi,i._rendah,i._aktivitas,i._reading,i._quizAct,i._discussion,i._download,i._uts,i._uas,i._nilaiAkhir,i._grade,i._pertemuan,i._status]);return{headers:e,grid:a}}_csvKerangka(t,e="	"){const{headers:a,grid:i}=this._rowPeringkatKeCSV(t),s=r=>{const n=String(r??"");return e==="	"?n.replace(/[\t\n\r]+/g," "):/[";\n\r]/.test(n)?'"'+n.replace(/"/g,'""')+'"':n};return[a,...i].map(r=>r.map(s).join(e)).join(`\r
-`)}_eksporNilai(t){const e=this._filterPeringkat(this._buildPeringkat());if(!e.length){this._note="Belum ada baris untuk diekspor.",this.requestUpdate();return}const a="peringkat-bimbingan-"+String(this._peringkatKelas||this.kelas||"semua").replace(/[^a-zA-Z0-9-_]/g,"");if(t==="copas"){this._copasTSV=this._csvKerangka(e,"	"),this._note="Kotak TSV siap disalin \u2014 paste langsung ke Google Sheets / Excel.",this.requestUpdate();return}if(t==="csv"){const i="\uFEFF"+this._csvKerangka(e,",");this._downloadBlob(`${a}.csv`,i,"text/csv;charset=utf-8;")}else{const{headers:i,grid:s}=this._rowPeringkatKeCSV(e),r=i.map(h=>`<th>${this._hs(h)}</th>`).join(""),n=s.map(h=>`<tr>${h.map(p=>`<td>${this._hs(p)}</td>`).join("")}</tr>`).join(""),c=`<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel"><head><meta charset="utf-8"><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>Peringkat</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body><table><thead><tr>${r}</tr></thead><tbody>${n}</tbody></table></body></html>`;this._downloadBlob(`${a}.xls`,c,"application/vnd.ms-excel;charset=utf-8;")}this._note=`\u2705 Ekspor ${t.toUpperCase()} selesai (${e.length} siswa).`,this.requestUpdate()}_downloadBlob(t,e,a){const i=new Blob([e],{type:a}),s=URL.createObjectURL(i),r=document.createElement("a");r.href=s,r.download=t,document.body.appendChild(r),r.click(),document.body.removeChild(r),setTimeout(()=>URL.revokeObjectURL(s),1500)}_hs(t){return String(t??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}_renderHasilSiswa(){const t=this._serverData.siswa;if(!t)return d`
+    `}_simpanNilaiLokal(){const t=this._detailSiswa;if(!t)return;const e=this._editNilai||{};this._simpanEditNilai(t._sid,{kehadiran:e.kehadiran,uh:e.uh,uts:e.uts,uas:e.uas,sikap:e.sikap,keterampilan:e.keterampilan,nilaiAkhir:e.nilaiAkhir,grade:e.grade}),this._note=`\u{1F4BE} Edit tersimpan lokal untuk ${t._nama}. Klik "\u2601\uFE0F Kirim Semua Nilai" untuk sinkronisasi ke sheet Nilai Manual.`,this.requestUpdate()}async _kirimSemuaNilai(){const t=this._detailSiswa,e=this._editNilai||{};if(!t||!t._sid){this._note="\u26A0\uFE0F Student ID tidak ditemukan.",this.requestUpdate();return}if(!this.appsScriptUrl){this._note="\u26A0\uFE0F URL Apps Script belum diatur.",this.requestUpdate();return}const a=[["kehadiran",e.kehadiran,"Kehadiran"],["uh",e.uh,"Rata-rata UH"],["uts",e.uts,"Skor UTS"],["uas",e.uas,"Skor UAS"],["sikap",e.sikap,"Sikap"],["keterampilan",e.keterampilan,"Keterampilan"],["nilaiAkhir",e.nilaiAkhir,"Nilai Akhir"]].filter(([,r])=>r!=null&&String(r).trim()!=="").map(([r,s,d])=>({kategori:r,label:d,skor:Math.max(0,Math.min(100,this._num(s)))}));if(!a.length){this._note="Isi minimal satu kolom nilai terlebih dahulu.",this.requestUpdate();return}this._note="\u2601\uFE0F Mengirim semua nilai ke backend\u2026",this.requestUpdate();const i=(await Promise.all(a.map(r=>this._apiGet({action:"setManualScore",studentId:t._sid,kategori:r.kategori,skor:r.skor})))).filter(r=>r&&r.status&&r.status!=="ok");i.length?this._note="\u26A0\uFE0F Sebagian gagal: "+String(i[0]&&i[0].message||"cek konsol."):(this._simpanEditNilai(t._sid,{kehadiran:e.kehadiran,uh:e.uh,uts:e.uts,uas:e.uas,sikap:e.sikap,keterampilan:e.keterampilan,nilaiAkhir:e.nilaiAkhir,grade:e.grade}),this._note=`\u2705 ${a.length} nilai (${a.map(r=>r.kategori).join(", ")}) untuk ${t._nama} tercatat di sheet Nilai Manual.`),this.requestUpdate()}async _kirimManualSkor(){const t=this._detailSiswa,e=this._editNilai||{};if(!t||!t._sid){this._note="\u26A0\uFE0F Student ID tidak ditemukan.",this.requestUpdate();return}if(!this.appsScriptUrl){this._note="\u26A0\uFE0F URL Apps Script belum diatur.",this.requestUpdate();return}const a=[];if(String(e.uts).trim()!==""&&a.push({kategori:"uts",skor:Math.max(0,Math.min(100,this._num(e.uts)))}),String(e.uas).trim()!==""&&a.push({kategori:"uas",skor:Math.max(0,Math.min(100,this._num(e.uas)))}),!a.length){this._note="Isi Skor UTS dan/atau UAS terlebih dahulu.",this.requestUpdate();return}this._note="\u2601\uFE0F Mengirim nilai manual ke backend\u2026",this.requestUpdate();const i=(await Promise.all(a.map(r=>this._apiGet({action:"setManualScore",studentId:t._sid,kategori:r.kategori,skor:r.skor})))).filter(r=>r&&r.status&&r.status!=="ok");this._note=i.length?"\u26A0\uFE0F Sebagian gagal: "+String(i[0]&&i[0].message||"cek konsol."):`\u2705 UTS ${this._num(e.uts)} & UAS ${this._num(e.uas)} untuk ${t._nama} tercatat di sheet Nilai Manual.`,i.length||this._simpanEditNilai(t._sid,{kehadiran:e.kehadiran,uh:e.uh,uts:e.uts,uas:e.uas,sikap:e.sikap,keterampilan:e.keterampilan,nilaiAkhir:e.nilaiAkhir,grade:e.grade}),this.requestUpdate()}_rowPeringkatKeCSV(t){const e=["#","Nama","Kelas","Absen","NIS","Student ID","Total Kuis","Rata-rata Skor (%)","Skor Tertinggi","Skor Terendah","Total Aktivitas","Reading","Quiz Activity","Discussion","Download","UTS","UAS","Nilai Akhir","Grade","Jumlah Pertemuan","Status Kuis Terakhir"],a=t.map((i,r)=>[String(r+1),i._nama,i._kelas,i._absen,i._nis,i._sid,i._totalKuis,i._rata,i._tinggi,i._rendah,i._aktivitas,i._reading,i._quizAct,i._discussion,i._download,i._uts,i._uas,i._nilaiAkhir,i._grade,i._pertemuan,i._status]);return{headers:e,grid:a}}_csvKerangka(t,e="	"){const{headers:a,grid:i}=this._rowPeringkatKeCSV(t),r=s=>{const d=String(s??"");return e==="	"?d.replace(/[\t\n\r]+/g," "):/[";\n\r]/.test(d)?'"'+d.replace(/"/g,'""')+'"':d};return[a,...i].map(s=>s.map(r).join(e)).join(`\r
+`)}_eksporNilai(t){const e=this._filterPeringkat(this._buildPeringkat());if(!e.length){this._note="Belum ada baris untuk diekspor.",this.requestUpdate();return}const a="peringkat-bimbingan-"+String(this._peringkatKelas||this.kelas||"semua").replace(/[^a-zA-Z0-9-_]/g,"");if(t==="copas"){this._copasTSV=this._csvKerangka(e,"	"),this._note="Kotak TSV siap disalin \u2014 paste langsung ke Google Sheets / Excel.",this.requestUpdate();return}if(t==="csv"){const i="\uFEFF"+this._csvKerangka(e,",");this._downloadBlob(`${a}.csv`,i,"text/csv;charset=utf-8;")}else{const{headers:i,grid:r}=this._rowPeringkatKeCSV(e),s=i.map(p=>`<th>${this._hs(p)}</th>`).join(""),d=r.map(p=>`<tr>${p.map(u=>`<td>${this._hs(u)}</td>`).join("")}</tr>`).join(""),l=`<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel"><head><meta charset="utf-8"><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>Peringkat</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body><table><thead><tr>${s}</tr></thead><tbody>${d}</tbody></table></body></html>`;this._downloadBlob(`${a}.xls`,l,"application/vnd.ms-excel;charset=utf-8;")}this._note=`\u2705 Ekspor ${t.toUpperCase()} selesai (${e.length} siswa).`,this.requestUpdate()}_downloadBlob(t,e,a){const i=new Blob([e],{type:a}),r=URL.createObjectURL(i),s=document.createElement("a");s.href=r,s.download=t,document.body.appendChild(s),s.click(),document.body.removeChild(s),setTimeout(()=>URL.revokeObjectURL(r),1500)}_hs(t){return String(t??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}_renderHasilSiswa(){const t=this._serverData.siswa;if(!t)return o`
         <h2 style="margin-top: 0; color: #1e293b;">🎯 Hasil & Nilai Evaluasi Anda</h2>
         <div class="empty-state">
-          ${this._loading?"Memuat hasil nilai Anda\u2026":this.appsScriptUrl?d`
+          ${this._loading?"Memuat hasil nilai Anda\u2026":this.appsScriptUrl?o`
                   Belum ada hasil nilai untuk <strong>${this.namaSiswa||this.studentId||"siswa ini"}</strong>.
                   Kerjakan kuis, membaca modul, dan berpartisipasi di forum agar data muncul di Rangkuman kelas.
                   Pastikan <code>student-id</code> benar atau login melalui komponen autentikasi.<br />
                   URL aktif: <code>${this.appsScriptUrl}</code>
-                  ${this._serverError?d`<span class="err-chip">⚠️ ${this._serverError}</span>`:""}
+                  ${this._serverError?o`<span class="err-chip">⚠️ ${this._serverError}</span>`:""}
                   <button class="retry-btn" @click=${()=>this.fetchDataKomplit()} ?disabled=${this._loading}>
                     🔄 Muat Ulang Data
                   </button>
-                `:d`
+                `:o`
                   URL Apps Script belum diatur. Isi properti <code>apps-script-url</code> (via HAX editor atau atribut HTML).
                 `}
         </div>
-      `;const e=this._num(t.kehadiran),a=this._num(t.ulanganHarian&&(t.ulanganHarian.average||t.ulanganHarian.highest)||0),i=this._num(t.uts&&t.uts.highest||0),s=this._num(t.uas&&t.uas.highest||0),r=this._num(t.sikap),n=this._num(t.keterampilan),c=Math.round(parseFloat(t.nilaiAkhir)||0),h=String(t.grade||"-"),p=Math.max(0,Math.min(100,c))*3.6,f=[{label:"Kehadiran",value:e,unit:"%"},{label:"Rata-rata UH",value:a,unit:""},{label:"Skor UTS",value:i,unit:""},{label:"Skor UAS",value:s,unit:""},{label:"Sikap",value:r,unit:""},{label:"Keterampilan",value:n,unit:""}];return d`
+      `;const e=this._num(t.kehadiran),a=this._num(t.ulanganHarian&&(t.ulanganHarian.average||t.ulanganHarian.highest)||0),i=this._num(t.uts&&t.uts.highest||0),r=this._num(t.uas&&t.uas.highest||0),s=this._num(t.sikap),d=this._num(t.keterampilan),l=Math.round(parseFloat(t.nilaiAkhir)||0),p=String(t.grade||"-"),u=Math.max(0,Math.min(100,l))*3.6,m=Array.isArray(t.lm)?t.lm:Array.isArray(t.LM)?t.LM:[],A=m.length>0&&m.some(M=>this._num(M)>0),$=[{label:"Kehadiran",value:e,unit:"%"},{label:"Rata-rata UH",value:a,unit:""},{label:"Skor UTS",value:i,unit:""},{label:"Skor UAS",value:r,unit:""},{label:"Sikap",value:s,unit:""},{label:"Keterampilan",value:d,unit:""}];return o`
       <h2 style="margin-top: 0; color: #1e293b;">🎯 Hasil & Nilai Evaluasi Anda</h2>
 
       <div class="hasil-hero">
         <div class="grade-ring-card">
-          <div class="grade-ring" style="background: conic-gradient(#fbbf24 ${p}deg, rgb(255 255 255 / 0.15) ${p}deg);">
+          <div class="grade-ring" style="background: conic-gradient(#fbbf24 ${u}deg, rgb(255 255 255 / 0.15) ${u}deg);">
             <div class="grade-ring-inner">
-              <div class="ring-nilai">${c}</div>
+              <div class="ring-nilai">${l}</div>
               <div class="ring-label">Nilai Akhir</div>
             </div>
           </div>
           <div style="font-weight:700; margin-bottom:8px;">${t.nama||this.namaSiswa||"Siswa"}</div>
-          <div class="grade-big">${h}</div>
+          <div class="grade-big">${p}</div>
           <div style="font-size:11px; opacity:0.8; margin-top:10px;">${this.studentId||""} • ${this.kelas||""}</div>
         </div>
 
         <div>
           <div class="kpi-grid">
-            ${f.map(A=>d`
+            ${$.map(M=>o`
                 <div class="kpi-card">
-                  <div class="kpi-value ${A.value>=75?"ok":A.value>=60?"warn":""}">${A.value}${A.unit}</div>
-                  <div class="kpi-label">${A.label}</div>
-                  <div class="kpi-bar"><div style="width:${Math.min(A.value,100)}%;"></div></div>
+                  <div class="kpi-value ${M.value>=75?"ok":M.value>=60?"warn":""}">${M.value}${M.unit}</div>
+                  <div class="kpi-label">${M.label}</div>
+                  <div class="kpi-bar"><div style="width:${Math.min(M.value,100)}%;"></div></div>
                 </div>
               `)}
           </div>
+          ${A?o`
+            <div class="card-siswa" style="padding: var(--ddd-spacing-4); margin-top: var(--ddd-spacing-4);">
+              <h4 style="margin:0 0 8px; color:#1e293b;">📚 Nilai per LM (Tujuan Pembelajaran)</h4>
+              <p style="margin:0 0 12px; font-size:11px; color:#94a3b8;">Tap LM untuk filter pertemuan • Data dari <code>Akumulasi_Nilai_Rapor</code> kolom LM1..LMn</p>
+              <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(86px,1fr)); gap: var(--ddd-spacing-2);">
+                ${m.map((M,U)=>{const y=this._num(M),O=String(this.kdMateri||"").trim().toLowerCase()===`lm${U+1}`.toLowerCase()||String(this.kdMateri||"").trim()===`Pertemuan ${U+1}`;return o`
+                    <button @click=${()=>{this.kdMateri=`LM${U+1}`,this.requestUpdate()}}
+                      style="border:1px solid ${O?"#4F46E5":"#E2E8F0"}; background:${y>=75?"#ECFDF5":y>=60?"#FFFBEB":y>0?"#FEF2F2":"#F8FAFC"}; border-radius:12px; padding:10px 6px; text-align:center; cursor:pointer;">
+                      <div style="font-size:11px; font-weight:700; color:#475569;">LM${U+1}</div>
+                      <div style="font-size:18px; font-weight:800; color:${y>=75?"#065F46":y>=60?"#92400E":y>0?"#991B1B":"#94A3B8"};">${y||"-"}</div>
+                      <div style="font-size:10px; color:#94a3b8;">${y>=75?"Mencapai TP":y>=60?"Pengayaan":y>0?"Remedial":"Belum ada"}</div>
+                    </button>
+                  `})}
+              </div>
+              ${t.deskripsiCapaian?o`<div style="margin-top:12px; background:#F8FAFF; border:1px solid #E0E7FF; border-radius:12px; padding:12px; font-size:12px; color:#334155;">💬 ${t.deskripsiCapaian}</div>`:""}
+            </div>
+          `:""}
         </div>
       </div>
 
@@ -4023,23 +4566,23 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
         <h4 style="margin:0 0 4px; color:#1e293b;">📈 Konsistensi Aktivitas (28 Hari Terakhir)</h4>
         <p style="margin:0; font-size:12px; color:#94a3b8;">Data dari sheet aktivitas (<strong>${this.kdMateri||"semua pertemuan"}</strong>) + log lokal.</p>
         <div class="heatmap-head">
-          ${["Sen","Sel","Rab","Kam","Jum","Sab","Min"].map(A=>d`<span>${A}</span>`)}
+          ${["Sen","Sel","Rab","Kam","Jum","Sab","Min"].map(M=>o`<span>${M}</span>`)}
         </div>
         <div class="heatmap-grid">
           ${this._renderHeatmapSiswa()}
         </div>
         <div class="heatmap-legend">
           <span>Sedikit</span>
-          ${["lvl-0","lvl-1","lvl-2","lvl-3","lvl-4"].map(A=>d`<span class="legend-box ${A}"></span>`)}
+          ${["lvl-0","lvl-1","lvl-2","lvl-3","lvl-4"].map(M=>o`<span class="legend-box ${M}"></span>`)}
           <span>Banyak</span>
         </div>
         ${this._renderLogAktivitasTerbaru()}
       </div>
-    `}_gabungRiwayat(){const t={};(this._serverData.history||[]).forEach(e=>{e&&e.date&&(t[String(e.date).slice(0,10)]=this._num(e.count))});try{const e=JSON.parse(localStorage.getItem("a3_v5_activity_logs")||"[]");Array.isArray(e)&&e.forEach(a=>{if(a&&a.timestamp){const i=String(a.timestamp).slice(0,10);t[i]=(t[i]||0)+1}})}catch{}return t}_renderLogAktivitasTerbaru(){const t=[];(this._serverData.history||[]).forEach(a=>{const i=a&&a.date?String(a.date).slice(0,10):"";(a.items||[]).forEach(s=>{s&&s.deskripsi&&t.push({tanggal:i,tipe:s.tipe||"",deskripsi:s.deskripsi})})});try{const a=JSON.parse(localStorage.getItem("a3_v5_activity_logs")||"[]");Array.isArray(a)&&a.forEach(i=>{i&&i.timestamp&&t.push({tanggal:String(i.timestamp).slice(0,10),tipe:i.tipe_aktivitas||"",deskripsi:typeof i.description=="string"?i.description:""})})}catch{}const e=t.sort((a,i)=>a.tanggal<i.tanggal?1:-1).slice(0,5);return e.length?d`
+    `}_gabungRiwayat(){const t={},e=this._serverData.calendar||[];Array.isArray(e)&&e.length>0?e.forEach(a=>{a&&a.date&&(t[String(a.date).slice(0,10)]=this._num(a.count||(a.kuis||0)+(a.hadir||0)+(a.tugas||0)))}):(this._serverData.history||[]).forEach(a=>{a&&a.date&&(t[String(a.date).slice(0,10)]=this._num(a.count))});try{const a=JSON.parse(localStorage.getItem("a3_v5_activity_logs")||"[]");Array.isArray(a)&&a.forEach(i=>{if(i&&i.timestamp){const r=String(i.timestamp).slice(0,10);t[r]=(t[r]||0)+1}})}catch{}return t}_renderLogAktivitasTerbaru(){const t=[];(this._serverData.history||[]).forEach(a=>{const i=a&&a.date?String(a.date).slice(0,10):"";(a.items||[]).forEach(r=>{r&&r.deskripsi&&t.push({tanggal:i,tipe:r.tipe||"",deskripsi:r.deskripsi})})});try{const a=JSON.parse(localStorage.getItem("a3_v5_activity_logs")||"[]");Array.isArray(a)&&a.forEach(i=>{i&&i.timestamp&&t.push({tanggal:String(i.timestamp).slice(0,10),tipe:i.tipe_aktivitas||"",deskripsi:typeof i.description=="string"?i.description:""})})}catch{}const e=t.sort((a,i)=>a.tanggal<i.tanggal?1:-1).slice(0,5);return e.length?o`
       <div style="margin-top:14px;">
         <div style="font-size:12px; font-weight:700; color:#64748b; margin-bottom:6px;">Log Terbaru:</div>
         <div style="display:flex; flex-direction:column; gap:4px; max-height:150px; overflow-y:auto;">
-          ${e.map(a=>d`
+          ${e.map(a=>o`
               <div class="li-log">
                 <span class="lt-log">${a.tanggal}</span>
                 <span class="ld-log">${a.tipe?"["+a.tipe+"] ":""}${a.deskripsi||"-"}</span>
@@ -4047,9 +4590,9 @@ var $e=(u,t)=>()=>{try{return t||u((t={exports:{}}).exports,t),t.exports}catch(e
             `)}
         </div>
       </div>
-    `:d`
+    `:o`
         <div class="empty-state" style="margin-top:12px;">
           Belum ada catatan aktivitas. Tandai selesai membaca, kerjakan kuis, dan kirim
           diskusi untuk mengisi matriks ini.
         </div>
-      `}_renderHeatmapSiswa(){const t=this._gabungRiwayat(),e=new Date,a=[];for(let i=27;i>=0;i--){const s=new Date(e);s.setDate(e.getDate()-i);const r=s.toISOString().split("T")[0],n=t[r]||0,c=n===0?"lvl-0":n<=2?"lvl-1":n<=4?"lvl-2":n<=6?"lvl-3":"lvl-4";a.push(d`<div class="box-heatmap ${c}" title="${r}: ${n} aktivitas">${n||""}</div>`)}return a}}globalThis.customElements.define(rt.tag,rt)});export default Ze();
+      `}_renderHeatmapSiswa(){const t=this._gabungRiwayat(),e=new Date,a=[];for(let i=27;i>=0;i--){const r=new Date(e);r.setDate(e.getDate()-i);const s=r.toISOString().split("T")[0],d=t[s]||0,l=d===0?"lvl-0":d<=2?"lvl-1":d<=4?"lvl-2":d<=6?"lvl-3":"lvl-4";a.push(o`<div class="box-heatmap ${l}" title="${s}: ${d} aktivitas">${d||""}</div>`)}return a}}globalThis.customElements.define(nt.tag,nt);

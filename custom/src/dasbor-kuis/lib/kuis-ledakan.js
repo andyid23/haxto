@@ -3,6 +3,9 @@ import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
 import { I18NMixin } from "@haxtheweb/i18n-manager/lib/I18NMixin.js";
 import confetti from "canvas-confetti";
 import "./timer-kuis.js";
+import { QuizEngine } from "./quiz-engine.js";
+import { QuestionRenderer } from "./question-renderer.js";
+import { ScoreCalculator } from "./score-calculator.js";
 
 const DEFAULT_QUESTIONS = [
   { q: "Apa kegunaan utama metode connectedCallback pada LitElement?", a: "Menginisialisasi nilai variabel dasar", b: "Mendeteksi elemen saat berhasil diinjeksikan ke struktur DOM", c: "Menghapus event listener global", k: "b" },
@@ -197,6 +200,8 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
           "_reviewMode",
           "_userAnswers",
           "_answeredSet",
+          "_sessionToken",
+          "_sessionExpired",
         ],
       },
       demoSchema: [
@@ -307,6 +312,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
         reflect: true,
       },
       _locked: { state: true },
+      _questionStartTime: { state: true },
       _lockChecked: { state: true },
       studentId: { type: String, attribute: "student-id", reflect: true },
       studentName: { type: String, attribute: "student-name", reflect: true },
@@ -319,6 +325,8 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
       timerAutostart: { type: Boolean, attribute: "timer-autostart", reflect: true },
       hidePauseRestart: { type: Boolean, attribute: "hide-pause-restart", reflect: true },
       _attemptStart: { state: true },
+      _sessionToken: { state: true },
+      _sessionExpired: { state: true },
       _resumeRemaining: { state: true },
       _screen: { state: true },
       _currentIdx: { state: true },
@@ -337,6 +345,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
       _megaConfettiFrameId: { state: true },
       _bankStatus: { state: true },
       _shuffledQuestions: { state: true },
+      _autoSaveInterval: { state: true },
       _editing: { state: true },
       _tempQuestions: { state: true },
       _editingIndex: { state: true },
@@ -413,6 +422,10 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     this._screen = "start"; // start, question, result
     this._currentIdx = 0;
     this._selected = -1;
+    // Initialize extracted modules for better cohesion
+    this._quizEngine = new QuizEngine(this);
+    this._questionRenderer = new QuestionRenderer();
+    this._scoreCalculator = new ScoreCalculator();
     this._selectedAnswers = new Set();
     this._matchAnswers = {};
     this._shortAnswerText = "";
@@ -432,6 +445,8 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     this._locked = false;
     this._lockChecked = false;
     this._attemptStart = 0;
+    this._sessionToken = null;
+    this._sessionExpired = false;
     this._resumeRemaining = 0;
     this._editing = false;
     this._tempQuestions = [];
@@ -441,6 +456,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     this._importStatus = "";
     this._reviewMode = false;
     this._resetEditorForm();
+    this._autoSaveInterval = null;
     this._authHandler = this._authHandler.bind(this);
   }
 
@@ -460,16 +476,16 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
         }
         .locked-box {
           text-align: center;
-          border: 2px dashed var(--ddd-theme-primary, #4f46e5);
+          border: 2px dashed var(--ddd-theme-primary);
         }
         .lock-icon { font-size: 40px; }
         .lock-msg { color: var(--ddd-theme-secondary); font-weight: 600; }
         .quiz-title { color: var(--ddd-theme-primary); font-size: var(--ddd-font-size-l); font-weight: 800; margin-top: 0; text-align: center; }
         .btn-start {
-          display: block; width: 100%; padding: var(--ddd-spacing-4); background-color: var(--ddd-theme-polaris-primary, #4f46e5); color: var(--ddd-theme-on-primary, #ffffff);
+          display: block; width: 100%; padding: var(--ddd-spacing-4); background-color: var(--ddd-theme-polaris-primary); color: var(--ddd-theme-on-primary);
           border: none; border-radius: var(--ddd-radius-sm); font-size: var(--ddd-font-size-4xs); font-weight: 700; cursor: pointer; transition: background 0.2s;
         }
-        .btn-start:hover { background-color: var(--ddd-theme-accent, #6d28d9); }
+        .btn-start:hover { background-color: var(--ddd-theme-accent); }
         .question-text { font-size: var(--ddd-font-size-4xs); font-weight: 700; color: var(--ddd-theme-on-surface); margin-bottom: var(--ddd-spacing-4); }
         .hint-box { margin-bottom: var(--ddd-spacing-3); border: var(--ddd-border-xs); border-radius: var(--ddd-radius-sm); padding: var(--ddd-spacing-3); background: var(--ddd-theme-polaris-surface-hover); }
         .hint-box summary { cursor: pointer; font-weight: 700; font-size: var(--ddd-font-size-4xs); color: var(--ddd-theme-primary); list-style: none; }
@@ -493,13 +509,13 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
           }
           .question-nav .q-dot:hover:not(.disabled) { border-color: var(--ddd-theme-primary); }
           .question-nav .q-dot.current {
-            background: var(--ddd-theme-primary, #4f46e5);
-            color: var(--ddd-theme-on-primary, #fff);
-            border-color: var(--ddd-theme-primary, #4f46e5);
+            background: var(--ddd-theme-primary);
+            color: var(--ddd-theme-on-primary);
+            border-color: var(--ddd-theme-primary);
           }
           .question-nav .q-dot.answered:not(.current) {
-            border-color: var(--ddd-theme-success, #2e7d32);
-            color: var(--ddd-theme-success, #2e7d32);
+            border-color: var(--ddd-theme-success);
+            color: var(--ddd-theme-success);
           }
           .question-nav .q-dot.disabled {
             background: var(--ddd-theme-polaris-surface-hover);
@@ -508,9 +524,9 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
             border-color: var(--ddd-theme-polaris-border);
           }
           .question-nav .q-dot.unanswered {
-            background: var(--ddd-theme-warning-light, #fff3cd);
-            border-color: var(--ddd-theme-warning, #ffc107);
-            color: var(--ddd-theme-warning-text, #856404);
+            background: var(--ddd-theme-warning-light);
+            border-color: var(--ddd-theme-warning);
+            color: var(--ddd-theme-warning-text);
           }
         .question-image img { max-width: 100%; max-height: 260px; border-radius: 10px; margin-bottom: var(--ddd-spacing-4); border: var(--ddd-border-xs); }
         .choices-stack { display: flex; flex-direction: column; gap: 10px; }
@@ -741,6 +757,9 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     globalThis.addEventListener("quiz-user-session-changed", this._authHandler);
     this._loadSession();
     this._resumeAttemptIfAny();
+    // Keyboard navigation support
+    this._handleKeyboard = this._handleKeyboard.bind(this);
+    globalThis.addEventListener("keydown", this._handleKeyboard);
     // I2: getQuizLock & getBankSoal DITUNDA ke _onStartClick (saat siswa benar-benar
     // mulai), bukan saat mount, agar tak membanjiri eksekusi GAS tiap render.
   }
@@ -752,6 +771,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     }
     globalThis.removeEventListener("quiz-user-login", this._authHandler);
     globalThis.removeEventListener("quiz-user-session-changed", this._authHandler);
+    globalThis.removeEventListener("keydown", this._handleKeyboard);
     this._cancelMegaConfetti();
     super.disconnectedCallback();
   }
@@ -763,6 +783,80 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     if (d.nis) this.studentNis = d.nis;
     if (d.absen) this.studentAbsen = d.absen;
     if (d.kelas) this.studentKelas = d.kelas;
+  }
+
+  /**
+   * Keyboard navigation handler for accessibility.
+   * Supports:
+   * - Arrow Left/Right: Navigate between questions
+   * - Enter: Submit answer (for short answer, PGK, matching)
+   * - Number keys 1-9: Jump to question number
+   */
+  _handleKeyboard(e) {
+    // Only handle keyboard events when quiz is in question screen
+    if (this._screen !== "question") return;
+
+    const active = this._getActiveQuestions();
+    if (!active || active.length === 0) return;
+
+    // Ignore if user is typing in an input field
+    const tagName = e.target && e.target.tagName;
+    if (tagName === "INPUT" || tagName === "TEXTAREA" || tagName === "SELECT") return;
+
+    switch (e.key) {
+      case "ArrowLeft":
+        e.preventDefault();
+        this._goToPrevQuestion();
+        break;
+      case "ArrowRight":
+        e.preventDefault();
+        this._goToNextQuestion();
+        break;
+      case "Enter":
+        // Submit answer for question types that have submit button
+        if (!this._answered && (this._screen === "question")) {
+          e.preventDefault();
+          this._submitCurrentAnswer();
+        }
+        break;
+      default:
+        // Number keys 1-9 to jump to question
+        const num = parseInt(e.key, 10);
+        if (!isNaN(num) && num >= 1 && num <= active.length) {
+          e.preventDefault();
+          this._goToQuestion(num - 1);
+        }
+        break;
+    }
+  }
+
+  /**
+   * Submit answer based on current question type.
+   */
+  _submitCurrentAnswer() {
+    if (this._answered) return;
+    const active = this._getActiveQuestions();
+    const soal = active[this._currentIdx];
+    if (!soal) return;
+    const s = this._siapkanSoal(soal);
+    const qType = s.type || "mc";
+
+    switch (qType) {
+      case "shortAnswer":
+        this._submitShortAnswer();
+        break;
+      case "pgk":
+        this._submitPGK();
+        break;
+      case "matching":
+        this._submitMatching();
+        break;
+      case "mc":
+        if (s.isMulti) {
+          this._submitMultiAnswers();
+        }
+        break;
+    }
   }
 
   _loadSession() {
@@ -834,6 +928,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
   }
 
   _normalisasiSoal(q) {
+    if (!q) return null;
     // Format lama {q,a,b,c,k} → {question, choices, correctIndex}
     if (q && Array.isArray(q.choices) && q.choices.length) return q;
     const pilihan = [q.a, q.b, q.c, q.d, q.e, q.f].filter(
@@ -1008,6 +1103,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     this._answeredSet = new Set();
     this._userAnswers = new Map();
     this._reviewMode = false;
+    this._questionStartTime = Date.now(); // Anti-cheating: track question timing
     // Jika ada _shuffledQuestions yang sudah di-restore dari localStorage
     // (oleh _resumeAttemptIfAny), JANGAN acak ulang — gunakan urutan yang sama.
     const hasResumed = Array.isArray(this._shuffledQuestions) && this._shuffledQuestions.length > 0;
@@ -1021,6 +1117,9 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     this._maxPoints =
       (this.questions || []).reduce((sum, q) => sum + this._maxPoinSoal(q), 0) || 1;
     if (!hasResumed) {
+      // Anti-cheat: generate session token for new attempt (anti-multi-login)
+      this._buatSessionToken();
+      this._saveSessionToken();
       if (this.shuffleChoices) {
         this._shuffledQuestions = base.map((q, origIdx) => {
           if (!Array.isArray(q.choices) || q.type === "pgk" || q.type === "matching") return { ...q, _originalIndex: origIdx };
@@ -1041,13 +1140,19 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     }
     if (!Array.isArray(this._shuffledQuestions)) this._shuffledQuestions = [];
     this._resetState();
+    // Periodic auto-save every 15s to persist quiz state against refresh
+    this._autoSaveInterval = setInterval(() => {
+      if (this._screen === "question" && this.lockAfterComplete && this.studentId && this.kdMateri) {
+        this._saveAttempt();
+      }
+    }, 15000);
     if (this.lockAfterComplete && this.studentId && this.kdMateri) {
       this._attemptStart = Date.now();
       this._saveAttempt();
     }
   }
 
-  /** Simpan state attempt (soal, jawaban, waktu) ke localStorage. */
+    /** Simpan state attempt (soal, jawaban, waktu) ke localStorage. */
   _saveAttempt() {
     if (!this.lockAfterComplete || !this.studentId || !this.kdMateri) return;
     try {
@@ -1058,8 +1163,83 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
         questions: this._shuffledQuestions,
         userAnswers,
         currentIdx: this._currentIdx,
+        sessionToken: this._sessionToken,
       }));
     } catch (_) {}
+  }
+
+  // ==========================================
+  // ANTI-CHEAT: Session Token (anti-multi-login)
+  // ==========================================
+  _sessionTokenKey() {
+    return `kuis-ledakan:session:${this.studentId}:${this.kdMateri}`;
+  }
+
+  /** Buat token sesi unik menggunakan crypto.getRandomValues.
+      Token disimpan di localStorage dan dikirim ke backend untuk validasi. */
+  _buatSessionToken() {
+    try {
+      const buf = new Uint8Array(16);
+      globalThis.crypto.getRandomValues(buf);
+      let hex = "";
+      buf.forEach((b) => (hex += b.toString(16).padStart(2, "0")));
+      this._sessionToken = `${Date.now()}-${hex}`;
+      return this._sessionToken;
+    } catch (e) {
+      this._sessionToken = `sess-${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
+      return this._sessionToken;
+    }
+  }
+
+  _saveSessionToken() {
+    if (!this.studentId || !this.kdMateri || !this._sessionToken) return;
+    try {
+      localStorage.setItem(this._sessionTokenKey(), JSON.stringify({
+        token: this._sessionToken,
+        start: Date.now(),
+        duration: this.timerDuration || this.duration || 300,
+      }));
+    } catch (_) {}
+  }
+
+  _loadSessionToken() {
+    if (!this.studentId || !this.kdMateri) return null;
+    try {
+      const data = JSON.parse(localStorage.getItem(this._sessionTokenKey()) || "null");
+      if (!data || !data.token) return null;
+      // Cek apakah token masih berlaku (masih dalam sesi kuis)
+      const elapsed = Date.now() - data.start;
+      if (elapsed > (data.duration * 1000 + 60000)) {
+        // Token sudah kedaluwarsa (lebih dari durasi kuis + 60s buffer)
+        localStorage.removeItem(this._sessionTokenKey());
+        return null;
+      }
+      this._sessionToken = data.token;
+      return data.token;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  _clearSessionToken() {
+    this._sessionToken = null;
+    if (this.studentId && this.kdMateri) {
+      try {
+        localStorage.removeItem(this._sessionTokenKey());
+      } catch (_) {}
+    }
+  }
+
+  /** Validasi sesi: jika ada token aktif yang belum kedaluwarsa,
+      hambat pembukaan sesi baru (anti-multi-login). */
+  _cekSesiAktif() {
+    const existing = this._loadSessionToken();
+    if (existing) {
+      this._sessionExpired = false;
+      return { active: true, token: existing };
+    }
+    this._sessionExpired = true;
+    return { active: false, token: null };
   }
 
   _getActiveQuestions() {
@@ -1077,7 +1257,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
   }
 
   _pilihJawaban(indexKey, opsi) {
-    if (this._answered) return;
+    if (this._answered || this._userAnswers.has(this._currentIdx)) return;
     const active = this._getActiveQuestions();
     const soal = this._normalisasiSoal(active[this._currentIdx]);
     const s = this._siapkanSoal(soal);
@@ -1113,10 +1293,25 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
       this._feedbackPositive = false;
     }
     this._answeredSet.add(this._currentIdx);
+    // Anti-cheating: track answer timing using QuizEngine
+    const answerTime = this._quizEngine.getAnswerTime();
+    // Anti-cheating: check for suspicious timing (too fast)
+    if (this._quizEngine.isSuspiciousTiming(answerTime)) {
+      this._logActivity('suspicious_timing', {
+        questionIndex: this._currentIdx,
+        answerTimeMs: answerTime,
+        minThresholdMs: 3000,
+      });
+    }
+    // Use ScoreCalculator for score computation
+    const questionPoints = this._scoreCalculator.calculateScore(benar, soal.points || 1);
     this._userAnswers.set(this._currentIdx, {
       selected: indexKey,
       isCorrect: benar,
       points: benar ? (soal.points || 1) : 0,
+      score: questionPoints,
+      answerTime: answerTime,
+      timestamp: new Date().toISOString(),
     });
     this._saveAttempt();
     this._autoAdvance();
@@ -1132,7 +1327,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
   }
 
   _submitMultiAnswers() {
-    if (this._answered || this._selectedAnswers.size === 0) return;
+    if (this._answered || this._selectedAnswers.size === 0 || this._userAnswers.has(this._currentIdx)) return;
     const active = this._getActiveQuestions();
     const soal = this._normalisasiSoal(active[this._currentIdx]);
     const s = this._siapkanSoal(soal);
@@ -1176,7 +1371,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
   }
 
   _submitPGK() {
-    if (this._answered) return;
+    if (this._answered || this._userAnswers.has(this._currentIdx)) return;
     const active = this._getActiveQuestions();
     const soal = active[this._currentIdx];
     const s = this._siapkanSoal(soal);
@@ -1223,7 +1418,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
   }
 
   _submitMatching() {
-    if (this._answered) return;
+    if (this._answered || this._userAnswers.has(this._currentIdx)) return;
     const active = this._getActiveQuestions();
     const soal = active[this._currentIdx];
     const s = this._siapkanSoal(soal);
@@ -1270,7 +1465,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
   }
 
   _submitShortAnswer() {
-    if (this._answered) return;
+    if (this._answered || this._userAnswers.has(this._currentIdx)) return;
     const text = this._shortAnswerText.trim().toLowerCase();
     if (!text) {
       this._feedbackText = "Ketik jawaban terlebih dahulu.";
@@ -1326,9 +1521,33 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     }
     if (this._answered) {
       this._answeredSet.add(index);
+      // Restore feedback for answered questions when answers are visible
+      if (!this.hideAnswers) {
+        const active = this._getActiveQuestions();
+        const raw = active[index];
+        const s = raw ? this._siapkanSoal(this._normalisasiSoal(raw)) : null;
+        if (ua.isCorrect) {
+          this._feedbackText = s && s.type === "pgk" ? "Mantap, semua pernyataan benar!" : s && s.type === "matching" ? "Mantap, Benar!" : "Mantap, Benar!";
+          this._feedbackPositive = true;
+        } else if (ua.isCorrect === false) {
+          if (s && s.type === "shortAnswer") {
+            const k = (s.acceptedAnswers || []).join(" / ");
+            this._feedbackText = k ? "Yah, Salah. Jawaban benar: " + k : "Yah, Salah.";
+          } else if (s && s.type === "pgk") {
+            this._feedbackText = "Jawaban belum tepat. Periksa kembali pernyataan Anda.";
+          } else if (s && s.type === "matching") {
+            this._feedbackText = "Yah, Salah. Periksa kembali pasangan Anda.";
+          } else {
+            const corr = s ? s.correctAnswers.map(function(i) { return s.pilihan[i]; }).join(", ") : "";
+            this._feedbackText = corr ? "Yah, Salah. Jawaban benar: " + corr : "Yah, Salah.";
+          }
+          this._feedbackPositive = false;
+        }
+      }
     }
   }
 
+  // Deprecated: kept for backward compat, now a no-op. Use _resetState + _restoreAnswerState instead.
   _resetForNavigation() {
     this._answered = false;
     this._feedbackText = "";
@@ -1372,8 +1591,10 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
       this._advanceTimer = null;
     }
     this._currentIdx = index;
+    this._questionStartTime = Date.now(); // Anti-cheating: reset timer for new question
+    this._resetState();
     this._restoreAnswerState(index);
-    this._resetForNavigation();
+    this.requestUpdate();
   }
 
   _goToPrevQuestion() {
@@ -1393,6 +1614,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
       }
       this._currentIdx++;
       this._resetState();
+      this._restoreAnswerState(this._currentIdx);
       this.requestUpdate();
     } else if (this._currentIdx === active.length - 1) {
       this._selesaiKuis();
@@ -1407,6 +1629,8 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
       if (this._currentIdx < active.length - 1) {
         this._currentIdx++;
         this._resetState();
+        this._restoreAnswerState(this._currentIdx);
+        this.requestUpdate();
       }
       // Jangan auto-submit di soal terakhir; tombol "Selesai" yang menangani submit.
     }, this.questionDelay || 1800);
@@ -1431,9 +1655,11 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
       clearTimeout(this._advanceTimer);
       this._advanceTimer = null;
     }
+    if (this._autoSaveInterval) { clearInterval(this._autoSaveInterval); this._autoSaveInterval = null; }
     this._screen = "result";
     this._maxPoints = (this.questions || []).reduce((sum, q) => sum + this._maxPoinSoal(q), 0) || 1;
-    const rawSkor = Math.round((this._score / this._maxPoints) * 100);
+    // Use ScoreCalculator for score percentage
+    const rawSkor = ScoreCalculator.calculatePercentage(this._score, this._maxPoints);
     const totalSkor = Math.max(0, Math.min(100, rawSkor));
 
     if (!this._confettiFired && !this.hideConfetti) {
@@ -1447,6 +1673,12 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
 
     // Satu jalur tulis: event dasbor-kuis-log → antrean idempoten dasbor-kuis (id_log)
     const idLog = this._buatIdLog();
+    // Anti-cheating: kumpulkan answer timing & session token dari semua soal
+    const answerTimings = Array.from(this._userAnswers.entries()).map(([idx, val]) => ({
+      questionIndex: idx,
+      answerTime: val.answerTime || 0,
+      timestamp: val.timestamp,
+    }));
     this.dispatchEvent(
       new CustomEvent("dasbor-kuis-log", {
         detail: {
@@ -1459,17 +1691,46 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
             kategori: this.kategori,
             metadataKuis: this.judul,
             timestamp: new Date().toISOString(),
+            answerTimings: answerTimings,
+            sessionToken: this._sessionToken,
           },
         },
         bubbles: true,
         composed: true,
       }),
     );
-    // Cadangan langsung: bila kuis dipakai STANDALONE (tanpa <dasbor-kuis>),
-    // event tidak tertangkap host mana pun — kirim sendiri ke backend.
-    this._kirimHasilLangsung(idLog, totalSkor);
+    // JANGAN _kirimHasilLangsung lagi saat ada parent dasbor-kuis —
+    // parent via event dasbor-kuis-log → logActivity() sudah tulis ke db_asesmen.
+    // Jalur ini (direct fetch) buat standalone-only, tapi kalau ada dasbor-kuis
+    // di DOM, event pasti tertangkap. Cek sederhana: ada dasbor-kuis ancestor?
+    const _hasDasbor = !!this.closest("dasbor-kuis");
+    if (!_hasDasbor) {
+      this._kirimHasilLangsung(idLog, totalSkor);
+    }
     if (this.lockAfterComplete) this._locked = true;
+    // Anti-cheat: clear session token setelah quiz selesai
+    this._clearSessionToken();
     try { localStorage.removeItem(this._attemptKey()); } catch (_) {}
+  }
+
+// Anti-cheating: Log activity to parent component
+  _logActivity(tipe, payload = {}) {
+    try {
+      this.dispatchEvent(
+        new CustomEvent("dasbor-kuis-log", {
+          detail: {
+            tipe,
+            payload: {
+              ...payload,
+              studentId: this.studentId,
+              kdMateri: this.kdMateri,
+            },
+          },
+          bubbles: true,
+          composed: true,
+        })
+      );
+    } catch (_) {}
   }
 
   /** Kirim hasil kuis langsung ke action=logActivity bila berdiri sendiri. */
@@ -1495,6 +1756,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
       kdMateri: this.kdMateri || "",
       kategori: this.kategori || "sumatif_lm",
       id_log: idLog,
+      sessionToken: this._sessionToken || "",
     };
     try {
       const res = await fetch(`${this.appsScriptUrl}?${new URLSearchParams(params).toString()}`, {
@@ -1548,6 +1810,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
       await fetch(u, { method: "GET", mode: "cors" });
     } catch (_) {}
     this._locked = false;
+    if (this._autoSaveInterval) { clearInterval(this._autoSaveInterval); this._autoSaveInterval = null; }
     this._screen = "start";
     try { localStorage.removeItem(this._attemptKey()); } catch (_) {}
     this.requestUpdate();
@@ -1564,6 +1827,13 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     if (this._locked) {
       this.requestUpdate();
       return;
+    }
+    // Anti-cheat: cek sesi aktif (anti-multi-login)
+    const sesi = this._cekSesiAktif();
+    if (sesi.active && !this._locked) {
+      // Ada sesi yang masih berlaku — beri tahu pengguna
+      this._bankStatus = "⚠️ Sesi kuis masih aktif. Jika Anda me-refresh, sesi sebelumnya akan dilanjutkan.";
+      this.requestUpdate();
     }
     await this._muatBankSoal();
     this._startQuiz();
@@ -1605,6 +1875,8 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     this._shuffledQuestions = data.questions;
     this._attemptStart = data.start;
     this._resumeRemaining = remaining;
+    // Restore session token (anti-multi-login)
+    this._sessionToken = data.sessionToken || this._loadSessionToken();
     // Restore current index (soal terakhir yang dikerjakan)
     if (typeof data.currentIdx === "number") {
       this._currentIdx = data.currentIdx;
@@ -1662,7 +1934,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
       return html`
         <div class="quiz-card result-box">
           <h3 class="quiz-title">🎊 Hasil Evaluasi Anda</h3>
-          ${this.hideScore ? "" : html`<div class="score-circle">${persentase}%</div>`}
+          ${this.hideScore ? "" : html`<div class="score-circle" aria-label="Skor: ${persentase}%">${persentase}%</div>`}
           <p style="font-weight:700; color:var(--ddd-theme-default-text); margin-bottom:4px;">Kuis Selesai Dikerjakan!</p>
           <p style="color:var(--ddd-theme-secondary); font-size:14px; margin-top:0; margin-bottom: var(--ddd-spacing-4);">Skor Anda telah dikunci dan dikirim masuk ke antrean database tunggal V5.</p>
           ${this._bankStatus
@@ -1707,8 +1979,8 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     return html`
       <div class="quiz-card result-box review-screen">
         <h3 class="quiz-title">🎊 Hasil Evaluasi Anda</h3>
-        ${this.hideScore ? "" : html`<div class="score-circle">${persentase}%</div>`}
-        <div class="review-summary">
+        ${this.hideScore ? "" : html`<div class="score-circle" aria-label="Skor: ${persentase}%">${persentase}%</div>`}
+        <div class="review-summary" role="region" aria-label="Ringkasan hasil evaluasi">
           <div class="review-stat"><span class="review-stat-label">Benar</span><span class="review-stat-value positive">${benarCount}</span></div>
           <div class="review-stat"><span class="review-stat-label">Salah</span><span class="review-stat-value negative">${salahCount}</span></div>
           <div class="review-stat"><span class="review-stat-label">Dilewati</span><span class="review-stat-value">${dilewati}</span></div>
@@ -1742,18 +2014,20 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
         ${qType === "mc"
           ? html`<ul class="review-mc">${s.pilihan.map((pil, i) => {
               let cls = "";
-              if (korrectPositions.includes(i)) cls = "review-correct";
-              else if (!s.isMulti && ua.selected === i) cls = "review-selected-wrong";
-              else if (s.isMulti && ua.selectedAnswers && ua.selectedAnswers.has(i)) cls = "review-selected-wrong";
+              if (!this.hideAnswers) {
+                if (korrectPositions.includes(i)) cls = "review-correct";
+                else if (!s.isMulti && ua.selected === i) cls = "review-selected-wrong";
+                else if (s.isMulti && ua.selectedAnswers && ua.selectedAnswers.has(i)) cls = "review-selected-wrong";
+              }
               return html`<li class="${cls}">${huruf[i] || i + 1}. ${pil}</li>`;
             })}</ul>`
           : ""}
         ${qType === "shortAnswer"
           ? html`<div class="review-short"><span class="review-label">Jawaban Anda:</span> <span class="review-value">${ua.text || "(tidak menjawab)"}</span></div>`
           : ""}
-        ${ua.isCorrect
+        ${this.hideAnswers ? "" : (ua.isCorrect
           ? html`<span class="review-badge positive">✓ Benar (+${ua.points || 0})</span>`
-          : html`<span class="review-badge negative">✗ Salah</span>`}
+          : html`<span class="review-badge negative">✗ Salah</span>`)}
       </div>
     `;
   }
@@ -1840,39 +2114,21 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
   }
 
   _renderMC(s, soal) {
-    const huruf = ["A", "B", "C", "D", "E", "F"];
-    const correctPositions = soal._correctMap
-      ? s.correctAnswers.map((i) => soal._correctMap.indexOf(i))
-      : s.correctAnswers;
-    return html`
-      <div class="choices-stack">
-        ${s.pilihan.map((pil, i) => {
-          let cls = "";
-          if (this._answered && !this.hideAnswers) {
-            if (correctPositions.includes(i)) cls = "correct";
-            else if (s.isMulti ? this._selectedAnswers.has(i) : this._selected === i) cls = "wrong";
-          } else if (s.isMulti ? this._selectedAnswers.has(i) : this._selected === i) {
-            cls = "selected";
-          }
-          const disabled = this._answered;
-          const pilImg = s.pilihanImages && s.pilihanImages[i];
-          return html`
-            <button
-              class="choice-row ${cls} ${disabled ? "disabled" : ""}"
-              ?disabled=${disabled}
-              @click=${() => (s.isMulti ? this._toggleMultiAnswer(i) : this._pilihJawaban(i))}
-              aria-label="Pilihan ${huruf[i] || i + 1}: ${pil}"
-            >${(s.isMulti ? this._selectedAnswers.has(i) : this._selected === i) ? "✓ " : ""}${huruf[i] || i + 1}. ${pil}
-            ${pilImg
-              ? html`<br /><img class="choice-image" src="${pilImg}" alt="Gambar pilihan ${huruf[i] || i + 1}" loading="lazy" />`
-              : ""}</button>
-          `;
-        })}
-      </div>
-      ${s.isMulti && !this._answered
-        ? html`<button class="btn-submit" @click=${this._submitMultiAnswers}>Kirim Jawaban (${this._selectedAnswers.size} dipilih)</button>`
-        : ""}
-    `;
+    return QuestionRenderer.renderMC(soal, {
+      selected: this._selected,
+      selectedAnswers: this._selectedAnswers,
+      answered: this._answered,
+      correctAnswers: soal._correctMap
+        ? s.correctAnswers.map((i) => soal._correctMap.indexOf(i))
+        : s.correctAnswers,
+      isMulti: s.isMulti,
+      pilihan: s.pilihan,
+      pilihanImages: s.pilihanImages,
+      onSelect: (i) => (s.isMulti ? this._toggleMultiAnswer(i) : this._pilihJawaban(i)),
+      onToggle: (i) => this._toggleMultiAnswer(i),
+      onSubmit: () => this._submitMultiAnswers(),
+      hideAnswers: this.hideAnswers,
+    });
   }
 
   _renderPGK(s) {
@@ -1903,7 +2159,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
         </tbody>
       </table>
       ${!this._answered
-        ? html`<button class="btn-submit" @click=${this._submitPGK}>Kirim Jawaban</button>`
+        ? html`<button class="btn-submit" ?disabled=${this._answered} @click=${this._submitPGK}>Kirim Jawaban</button>`
         : ""}
     `;
   }
@@ -1936,7 +2192,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
         )}
       </div>
       ${!this._answered
-        ? html`<button class="btn-submit" @click=${this._submitMatching}>Kirim Jawaban</button>`
+        ? html`<button class="btn-submit" ?disabled=${this._answered} @click=${this._submitMatching}>Kirim Jawaban</button>`
         : ""}
     `;
   }
@@ -1950,7 +2206,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
           aria-label="Ketik jawaban singkat" />
       </div>
       ${!this._answered
-        ? html`<button class="btn-submit" @click=${this._submitShortAnswer}>Kirim Jawaban</button>`
+        ? html`<button class="btn-submit" ?disabled=${this._answered} @click=${this._submitShortAnswer}>Kirim Jawaban</button>`
         : ""}
     `;
   }

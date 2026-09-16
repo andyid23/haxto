@@ -23,6 +23,8 @@ export class TimerKuis extends I18NMixin(DDDSuper(LitElement)) {
       duration: { type: Number, attribute: "duration", reflect: true },
       remaining: { type: Number, attribute: "remaining", reflect: true },
       autostart: { type: Boolean, attribute: "autostart", reflect: true },
+      kdMateri: { type: String, attribute: "kd-materi" },
+      studentId: { type: String, attribute: "student-id" },
       _remaining: { state: true },
       _running: { state: true },
       hideControls: { type: Boolean, attribute: "hide-controls", reflect: true },
@@ -57,6 +59,20 @@ export class TimerKuis extends I18NMixin(DDDSuper(LitElement)) {
       this._remaining = this.duration;
     }
 
+    // Restore dari saved start time agar konsisten dengan parent (latihan-kuis)
+    const savedStart = this._loadStartTime();
+    if (savedStart > 0) {
+      const elapsed = Math.floor((Date.now() - savedStart) / 1000);
+      const sisa = Math.max(0, this.duration - elapsed);
+      if (sisa > 0 && sisa < this._remaining) {
+        this._remaining = sisa;
+      }
+    }
+
+    // Pause/resume saat tab hidden (cegah browser throttle)
+    this._onVisChange = this._onVisChange.bind(this);
+    globalThis.addEventListener("visibilitychange", this._onVisChange);
+
     // Only autostart if timer should actually run
     if (this.autostart && this._remaining > 0) {
       this.start();
@@ -64,8 +80,61 @@ export class TimerKuis extends I18NMixin(DDDSuper(LitElement)) {
   }
 
   disconnectedCallback() {
+    globalThis.removeEventListener("visibilitychange", this._onVisChange);
     this._clearInterval();
     super.disconnectedCallback();
+  }
+
+  _onVisChange() {
+    if (document.hidden) {
+      // Tab disembunyikan: pause dan simpan start time
+      if (this._running) {
+        this.pause();
+      }
+    } else {
+      // Tab kelihatan: hitung sisa real-time dan resume jika masih jalan
+      const savedStart = this._loadStartTime();
+      if (savedStart > 0) {
+        const elapsed = Math.floor((Date.now() - savedStart) / 1000);
+        this._remaining = Math.max(0, this.duration - elapsed);
+      }
+      // Resume hanya jika timer sebelumnya running (autostart === true) dan masih sisa
+      if (this.autostart && this._remaining > 0 && !this._running) {
+        this.start();
+      }
+      if (this._remaining <= 0 && !this._running) {
+        this._remaining = 0;
+        this._running = false;
+        this._clearInterval();
+        this._clearStartTime();
+        this._onExpire();
+      }
+    }
+  }
+
+  _startKey() {
+    return `timer_kuis_start_${(this.kdMateri || "default")}_${(this.studentId || "default")}`;
+  }
+
+  _saveStartTime(timestamp) {
+    try {
+      globalThis.localStorage.setItem(this._startKey(), String(timestamp));
+    } catch (_) {}
+  }
+
+  _loadStartTime() {
+    try {
+      const v = parseInt(globalThis.localStorage.getItem(this._startKey()) || "0", 10);
+      return isNaN(v) ? 0 : v;
+    } catch (_) {
+      return 0;
+    }
+  }
+
+  _clearStartTime() {
+    try {
+      globalThis.localStorage.removeItem(this._startKey());
+    } catch (_) {}
   }
 
   updated(changed) {
@@ -91,18 +160,27 @@ export class TimerKuis extends I18NMixin(DDDSuper(LitElement)) {
     if (this._remaining <= 0) this._remaining = this.duration;
     this._running = true;
     this._clearInterval();
+    // Simpan start time untuk hitung sisa berbasis Date.now() (anti-throttle)
+    this._saveStartTime(Date.now() - (this.duration - this._remaining) * 1000);
     this._intervalId = setInterval(() => this._tick(), 1000);
   }
 
   pause() {
     this._running = false;
     this._clearInterval();
+    // Hitung sisa terakhir saat pause agar konsisten
+    const savedStart = this._loadStartTime();
+    if (savedStart > 0) {
+      const elapsed = Math.floor((Date.now() - savedStart) / 1000);
+      this._remaining = Math.max(0, this.duration - elapsed);
+    }
   }
 
   reset() {
     this._clearInterval();
     this._running = false;
     this._remaining = this.duration;
+    this._clearStartTime();
   }
 
   _clearInterval() {
@@ -113,13 +191,20 @@ export class TimerKuis extends I18NMixin(DDDSuper(LitElement)) {
   }
 
   _tick() {
-    if (this._remaining > 0) {
-      this._remaining -= 1;
+    // Hitung sisa berdasarkan Date.now() — akurat walau browser throttle tab hidden
+    const savedStart = this._loadStartTime();
+    if (savedStart > 0) {
+      const elapsed = Math.floor((Date.now() - savedStart) / 1000);
+      this._remaining = Math.max(0, this.duration - elapsed);
+    } else {
+      // Fallback: decrement counter (sebelumnya)
+      if (this._remaining > 0) this._remaining -= 1;
     }
     if (this._remaining <= 0) {
       this._remaining = 0;
       this._running = false;
       this._clearInterval();
+      this._clearStartTime();
       this._onExpire();
     }
   }
@@ -147,8 +232,8 @@ export class TimerKuis extends I18NMixin(DDDSuper(LitElement)) {
         :host { display: block; }
         .timer-card {
           display: inline-flex; align-items: center; gap: var(--ddd-spacing-4);
-          background: var(--ddd-theme-polaris-surface, #fff);
-          border: 1px solid var(--ddd-theme-polaris-border, #e0e0e0);
+          background: var(--ddd-theme-surface);
+          border: 1px solid var(--ddd-border-sm);
           border-radius: var(--ddd-radius-lg);
           padding: var(--ddd-spacing-4) var(--ddd-spacing-5);
           font-family: var(--ddd-font-primary);
@@ -160,59 +245,47 @@ export class TimerKuis extends I18NMixin(DDDSuper(LitElement)) {
           color: var(--ddd-theme-primary); font-variant-numeric: tabular-nums;
           min-width: 90px; text-align: center;
         }
-        .time.warn { color: var(--ddd-theme-error, #d32f2f); }
+        .time.warn { color: var(--ddd-theme-error); }
         .controls { display: flex; gap: var(--ddd-spacing-2); }
         button {
           font-family: var(--ddd-font-primary); font-size: var(--ddd-font-size-s);
           padding: var(--ddd-spacing-2) var(--ddd-spacing-4);
-          border-radius: var(--ddd-radius-md); border: 1px solid var(--ddd-theme-polaris-border, #e0e0e0);
-          background: var(--ddd-theme-default-surface, #fff); color: var(--ddd-theme-primary);
+          border-radius: var(--ddd-radius-md); border: 1px solid var(--ddd-border-sm);
+          background: var(--ddd-theme-default-surface); color: var(--ddd-theme-primary);
           cursor: pointer;
         }
         button:hover { background: rgba(103,80,164,0.08); }
         button:disabled { opacity: 0.5; cursor: not-allowed; }
-        .done { margin-top: var(--ddd-spacing-2); color: var(--ddd-theme-error, #d32f2f); font-size: var(--ddd-font-size-s); }
+        .done { margin-top: var(--ddd-spacing-2); color: var(--ddd-theme-error); font-size: var(--ddd-font-size-s); }
       `,
       css`
-        /* ===== DARK MODE (DDD-token swap, gated on body.dark-mode) ===== */
-        :host-context(body.dark-mode) :host {
-          --dk-bg: #0b1020;
-          --dk-card: #111827;
-          --dk-soft: #1f2937;
-          --dk-border: #2a3245;
-          --dk-text: #e5e7eb;
-          --dk-text-soft: #94a3b8;
-          --dk-text-strong: #f8fafc;
-          --ddd-theme-background: var(--dk-bg);
-          --ddd-theme-color: var(--dk-text);
-          --ddd-theme-surface: var(--dk-card);
-          --ddd-theme-default-surface: var(--dk-card);
-          --ddd-theme-on-primary: #f8fafc;
-          --ddd-theme-primary: #c4b5fd;
-          --ddd-theme-secondary: var(--dk-text-soft);
-          --ddd-theme-polaris-surface: var(--dk-card);
-          --ddd-theme-polaris-border: var(--dk-border);
-          --ddd-theme-error: #fca5a5;
-          background: var(--dk-bg);
-          color: var(--dk-text);
+        @media (prefers-color-scheme: dark) {
+          :host {
+            --ddd-theme-background: #0b1020;
+            --ddd-theme-color: #e5e7eb;
+            --ddd-theme-surface: #111827;
+            --ddd-theme-default-surface: #111827;
+            --ddd-theme-primary: #c4b5fd;
+            --ddd-theme-secondary: #94a3b8;
+            --ddd-theme-error: #fca5a5;
+            --ddd-border-color: #2a3245;
+            --ddd-border-sm: 1px solid #2a3245;
+            background: #0b1020;
+            color: #e5e7eb;
+          }
+          .title { color: #94a3b8; }
+          .time { color: #c4b5fd; }
+          .time.warn { color: #fca5a5; }
         }
-        :host-context(body.dark-mode) .card,
-        :host-context(body.dark-mode) button {
-          background: var(--dk-card);
-          color: var(--dk-text);
-          border-color: var(--dk-border);
-        }
-        :host-context(body.dark-mode) .title { color: var(--dk-text-soft); }
-        :host-context(body.dark-mode) .time { color: #c4b5fd; }
-        :host-context(body.dark-mode) .time.warn { color: #fca5a5; }
       `,
     ];
   }
 
   render() {
     const low = this._remaining <= 10;
+    const timeAriaLabel = low ? `${this.t.title}: ${this._format(this._remaining)} hampir habis` : this.t.title;
     return html`
-      <div class="timer-card">
+      <div class="timer-card" role="timer" aria-live="polite" aria-label="${timeAriaLabel}">
         <div class="meta">
           <span class="title">${this.t.title}</span>
           <span class="time ${low ? "warn" : ""}">${this._format(this._remaining)}</span>
@@ -221,9 +294,9 @@ export class TimerKuis extends I18NMixin(DDDSuper(LitElement)) {
           ${this.hideControls
             ? ""
             : html`${this._running
-                ? html`<button @click="${this.pause}">⏸️ ${this.t.pause}</button>`
-                : html`<button @click="${this.start}" ?disabled="${this._remaining <= 0}">▶️ ${this.t.start}</button>`}
-              <button @click="${this.reset}">↺ ${this.t.reset}</button>`}
+                ? html`<button @click="${this.pause}" aria-pressed="true" aria-label="Jeda timer">⏸️ ${this.t.pause}</button>`
+                : html`<button @click="${this.start}" aria-pressed="false" aria-label="Mulai timer" ?disabled="${this._remaining <= 0}">▶️ ${this.t.start}</button>`}
+              <button @click="${this.reset}" aria-label="Atur ulang timer">↺ ${this.t.reset}</button>`}
         </div>
       </div>
       ${this._remaining <= 0 ? html`<div class="done" role="alert">⏰ ${this.t.done}</div>` : ""}
@@ -232,9 +305,18 @@ export class TimerKuis extends I18NMixin(DDDSuper(LitElement)) {
 
   static get haxProperties() {
     return {
+      api: "1",
       canScale: true,
       canPosition: true,
       canEditSource: false,
+      type: "element",
+      designSystem: {
+        accent: true,
+        primary: true,
+        card: true,
+        text: true,
+        designTreatment: false,
+      },
       gizmo: {
         title: "Timer Kuis",
         description: "Timer hitung mundur untuk kuis dengan auto-submit via event timer-kuis-expired",
@@ -260,6 +342,18 @@ export class TimerKuis extends I18NMixin(DDDSuper(LitElement)) {
         ],
       },
       saveOptions: { unsetAttributes: [] },
+      demoSchema: [
+        {
+          tag: "timer-kuis",
+          properties: { duration: 300, autostart: false },
+          content: "",
+        },
+        {
+          tag: "timer-kuis",
+          properties: { duration: 60, autostart: true },
+          content: "",
+        },
+      ],
     };
   }
 }

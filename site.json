@@ -25,7 +25,7 @@
       "name": "haxto",
       "domain": "",
       "created": 1787457359,
-      "updated": 1789172848,
+      "updated": 1789517727,
       "logo": "",
       "version": "26.0.1"
     },
@@ -51,7 +51,7 @@
       "description": "Welcome to your new HAX site! Click edit on the top bar to get started\nWhat can I do?\nWe've got a ton of blocks that are easy to use and get a lot done with little effort, so much in fact we made a l",
       "metadata": {
         "created": 1787457359,
-        "updated": 1789136791,
+        "updated": 1789517727,
         "theme": {
           "element": "haxma-theme",
           "path": "@haxtheweb/haxma-theme/haxma-theme.js",
@@ -86,7 +86,7 @@
       "description": "Halaman ulangan harian terintegrasi dengan timer, anti-confetti, dan jawaban tersembunyi.",
       "metadata": {
         "created": 1787466936,
-        "updated": 1789136790,
+        "updated": 1789517726,
         "published": true,
         "hideInMenu": true,
         "locked": false,
@@ -121,7 +121,7 @@
       "description": "soal latihan ",
       "metadata": {
         "created": 1787721767,
-        "updated": 1789136790,
+        "updated": 1789517726,
         "images": [],
         "videos": [],
         "published": true,
@@ -157,7 +157,7 @@
       "description": "\n\n",
       "metadata": {
         "created": 1787854344,
-        "updated": 1789136790,
+        "updated": 1789517726,
         "images": [],
         "videos": [],
         "published": true,
@@ -187,7 +187,7 @@
       "indent": 0,
       "location": "pages/item-21768d19-1305-46c3-90af-ad2d1542d1b6/index.html",
       "slug": "ulangan-harian-1-fase-e-lm1-e",
-      "order": 4,
+      "order": 3,
       "parent": null,
       "title": "Ulangan Harian 1 Fase E LM1-E",
       "description": "📝 Kuis Ekosistem Periksa Fakta &#38; CRAAP, PENCARIAN LANJUTAN (LM1) Kelas X\n\nKerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban\n  benar/salah ditampilkan. Setelah logi",
@@ -196,7 +196,7 @@
         "created": 1788163319,
         "images": [],
         "videos": [],
-        "updated": 1789136790,
+        "updated": 1789517726,
         "theme": {
           "element": "polaris-flex-theme",
           "path": "@haxtheweb/polaris-theme/lib/polaris-flex-theme.js",
@@ -222,7 +222,7 @@
       "indent": 0,
       "location": "pages/item-792b811f-d307-4765-93cb-f20ed47c8097/index.html",
       "slug": "latihan-simulasi-kuis-fase-e-lm1",
-      "order": 3,
+      "order": 2,
       "parent": null,
       "title": "LATIHAN SIMULASI KUIS FASE-E-LM1",
       "description": "📝 Latihan Kuis Kelas X\nKerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban\n  benar/salah ditampilkan. Setelah login reload untuk menampilkan tombol mulai latihan ulangan",
@@ -231,7 +231,7 @@
         "created": 1788165602,
         "images": [],
         "videos": [],
-        "updated": 1789136790,
+        "updated": 1789517725,
         "theme": {
           "element": "polaris-flex-theme",
           "path": "@haxtheweb/polaris-theme/lib/polaris-flex-theme.js",
@@ -258,7 +258,7 @@
       "indent": 0,
       "location": "pages/item-426de1b9-5806-4751-8610-0c7e9478b242/index.html",
       "slug": "lm1-ekosistem-periksa-fakta-metode-craap",
-      "order": 2,
+      "order": 1,
       "parent": null,
       "title": "LM1. EKOSISTEM PERIKSA FAKTA & METODE CRAAP",
       "description": "📘 Cara Mengerjakan Latihan Simak materi dan pahami, lanjutkan soal latihan di bawah dengan login terlebih dahulu,   harap refresh bila tombol mulai latihan soal tidak muncul setelah login. 1. P",
@@ -267,7 +267,7 @@
         "created": 1788169908,
         "images": [],
         "videos": [],
-        "updated": 1789136790,
+        "updated": 1789517725,
         "theme": {
           "element": "terrible-resume-themes",
           "path": "@haxtheweb/terrible-themes/lib/terrible-resume-themes.js",
@@ -301,7 +301,7 @@
       "description": "\n",
       "metadata": {
         "created": 1788236145,
-        "updated": 1789136791,
+        "updated": 1789517726,
         "images": [],
         "videos": [],
         "published": true,
@@ -358,7 +358,7 @@
         "created": 1788478965,
         "images": [],
         "videos": [],
-        "updated": 1789136791,
+        "updated": 1789517726,
         "theme": {
           "element": "terrible-resume-themes",
           "path": "@haxtheweb/terrible-themes/lib/terrible-resume-themes.js",
@@ -401,7 +401,7 @@
           "files/belajar.jpg"
         ],
         "videos": [],
-        "updated": 1789172848,
+        "updated": 1789517725,
         "published": true,
         "status": "",
         "files": [
@@ -523,7 +523,7 @@
         "created": 1788628387,
         "images": [],
         "videos": [],
-        "updated": 1789136791,
+        "updated": 1789517726,
         "theme": {
           "element": "polaris-flex-theme",
           "path": "@haxtheweb/polaris-theme/lib/polaris-flex-theme.js",
@@ -542,6 +542,23 @@
         "hideInMenu": true,
         "readtime": 1,
         "status": ""
+      }
+    },
+    {
+      "id": "item-d395c5d6-8e01-4cd2-9fd2-d1ab76cdb62f",
+      "indent": 0,
+      "location": "pages/item-d395c5d6-8e01-4cd2-9fd2-d1ab76cdb62f/index.html",
+      "slug": "new-item",
+      "order": 4,
+      "parent": null,
+      "title": "New item",
+      "description": "",
+      "metadata": {
+        "locked": false,
+        "created": 1789517726,
+        "images": [],
+        "videos": [],
+        "updated": 1789517726
       }
     }
   ]

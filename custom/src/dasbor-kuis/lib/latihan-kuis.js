@@ -87,7 +87,15 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
       _remidiSoal: { state: true },
       _tabSwitchCount: { state: true },
       _visibilityChangeCount: { state: true },
+      _windowBlurCount: { state: true },
+      _windowFocusCount: { state: true },
+      _fullscreenWarning: { state: true },
       _waktuMulai: { state: true },
+      tabSwitchThreshold: { type: Number, attribute: "tab-switch-threshold", reflect: true },
+      _curangLogged: { state: true },
+      _warningCount: { state: true },
+      _forceChoiceDialog: { state: true },
+      _sessionLogged: { state: true },
     };
   }
 
@@ -115,7 +123,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     this.labelMulai = "▶️ Mulai";
     this.showSheetLink = false;
     this.soalFileUrl = "";
-    this.allowRetake = false;
+    this.allowRetake = true;
     this.maxRetake = 0;
     this.mode = "siswa";
     this.hidePauseRestart = true;
@@ -154,7 +162,17 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     this._remidiSoal = [];
     this._tabSwitchCount = 0;
     this._visibilityChangeCount = 0;
+    this._windowBlurCount = 0;
+    this._windowFocusCount = 0;
+    this._onWindowBlur = this._onWindowBlur.bind(this);
+    this._onWindowFocus = this._onWindowFocus.bind(this);
     this._waktuMulai = null;
+    this.tabSwitchThreshold = 3;
+    this._curangLogged = false;
+    this._warningCount = 0;
+    this._forceChoiceDialog = false;
+    this._sessionLogged = "";
+    this._sessionToken = "";
     this._onAuthLogin = this._onAuthLogin.bind(this);
     this._onAuthLogout = this._onAuthLogout.bind(this);
     this._onVisibilityChange = this._onVisibilityChange.bind(this);
@@ -163,6 +181,48 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
       bacaMateri: "🔗 Buka URL Materi",
       unduhMateri: "📎 Unduh File Materi",
     };
+  }
+
+  // Anti-cheat: key untuk localStorage persistence
+  _antiCheatKey() {
+    return `latihan_kuis_anticheat_${this.studentId}_${this.kdMateri}`;
+  }
+
+  // Simpan blur/focus count ke localStorage
+  _saveAntiCheatState() {
+    if (!this.studentId || !this.kdMateri) return;
+    try {
+      const data = {
+        windowBlurCount: this._windowBlurCount || 0,
+        windowFocusCount: this._windowFocusCount || 0,
+        tabSwitchCount: this._tabSwitchCount || 0,
+        visibilityChangeCount: this._visibilityChangeCount || 0,
+        timestamp: Date.now(),
+      };
+      localStorage.setItem(this._antiCheatKey(), JSON.stringify(data));
+    } catch (_) {}
+  }
+
+  // Restore blur/focus count dari localStorage
+  _restoreAntiCheatState() {
+    if (!this.studentId || !this.kdMateri) return;
+    try {
+      const data = JSON.parse(localStorage.getItem(this._antiCheatKey()));
+      if (data) {
+        this._windowBlurCount = data.windowBlurCount || 0;
+        this._windowFocusCount = data.windowFocusCount || 0;
+        this._tabSwitchCount = data.tabSwitchCount || 0;
+        this._visibilityChangeCount = data.visibilityChangeCount || 0;
+      }
+    } catch (_) {}
+  }
+
+  // Hapus anti-cheat state (dipanggil saat kuis selesai)
+  _clearAntiCheatState() {
+    if (!this.studentId || !this.kdMateri) return;
+    try {
+      localStorage.removeItem(this._antiCheatKey());
+    } catch (_) {}
   }
 
   connectedCallback() {
@@ -182,11 +242,23 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     globalThis.addEventListener("quiz-user-login", this._onAuthLogin);
     globalThis.addEventListener("quiz-user-logout", this._onAuthLogout);
     globalThis.addEventListener("visibilitychange", this._onVisibilityChange);
+    // Anti-cheat: Window blur/focus detection
+    globalThis.addEventListener("blur", this._onWindowBlur, true);
+    globalThis.addEventListener("focus", this._onWindowFocus, true);
+    // Anti-cheating: Full-screen enforcement
+    globalThis.addEventListener("fullscreenchange", this._onFullscreenChange);
+    globalThis.addEventListener("mozfullscreenchange", this._onFullscreenChange);
+    globalThis.addEventListener("webkitfullscreenchange", this._onFullscreenChange);
+    globalThis.addEventListener("MSFullscreenChange", this._onFullscreenChange);
     // Bind anti-cheat handlers
     this._preventCopy = this._preventCopy.bind(this);
     this._preventPaste = this._preventPaste.bind(this);
     this._preventContext = this._preventContext.bind(this);
     this._preventSelect = this._preventSelect.bind(this);
+    this._onFullscreenChange = this._onFullscreenChange.bind(this);
+    this._handleWarningKeydown = this._handleWarningKeydown.bind(this);
+    // Keyboard handler untuk dismiss popup (accessibility)
+    document.addEventListener("keydown", this._handleWarningKeydown);
     // T (persistent lock / best score): baca sesi lokal lalu muat status kuis.
     this._loadSession();
     this._muatStatusKuis();
@@ -196,27 +268,38 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     globalThis.removeEventListener("quiz-user-login", this._onAuthLogin);
     globalThis.removeEventListener("quiz-user-logout", this._onAuthLogout);
     globalThis.removeEventListener("visibilitychange", this._onVisibilityChange);
+    // Anti-cheat: Window blur/focus detection
+    globalThis.removeEventListener("blur", this._onWindowBlur, true);
+    globalThis.removeEventListener("focus", this._onWindowFocus, true);
+    // Anti-cheating: Full-screen enforcement
+    globalThis.removeEventListener("fullscreenchange", this._onFullscreenChange);
+    globalThis.removeEventListener("mozfullscreenchange", this._onFullscreenChange);
+    globalThis.removeEventListener("webkitfullscreenchange", this._onFullscreenChange);
+    globalThis.removeEventListener("MSFullscreenChange", this._onFullscreenChange);
+    document.removeEventListener("keydown", this._handleWarningKeydown);
     super.disconnectedCallback();
   }
 
   _onAuthLogin(e) {
     const d = (e && e.detail) || {};
-    // T: reset dulu agar siswa BERBEDA (re-login di perangkat bersama) tak mewarisi state.
-    this._bestSkor = null;
-    this._pernahIkut = false;
-    this._selesai = false;
-    this._habisWaktu = false;
-    this._skor = null;
-    this._mulai = false;
-    this._terkunci = false;
-    this._resumeRemaining = null;
     this.studentId = d.studentId || "";
     this.studentName = d.nama || "";
     this.studentNis = d.nis || "";
     this.studentAbsen = d.absen || "";
     this.studentKelas = d.kelas || "";
-    this._loadAttemptCounter();
-    this._muatStatusKuis();
+    if (this.appsScriptUrl && this.studentId && this.kdMateri) {
+      // Semua properti tersedia — reset dan muat ulang status.
+      this._bestSkor = null;
+      this._pernahIkut = false;
+      this._selesai = false;
+      this._habisWaktu = false;
+      this._skor = null;
+      this._mulai = false;
+      this._terkunci = false;
+      this._resumeRemaining = null;
+      this._loadAttemptCounter();
+      this._muatStatusKuis();
+    }
   }
 
   _onAuthLogout() {
@@ -229,12 +312,20 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     this._terkunci = false;
     this._resumeRemaining = null;
     this._attemptKe = 0;
+    try { localStorage.removeItem(`kuis-ledakan:attempt:${this.studentId}:${this.kdMateri}`); localStorage.removeItem(`kuis-ledakan:session:${this.studentId}:${this.kdMateri}`); } catch (_) {}
     this.studentId = "";
     this.studentName = "";
     this.studentNis = "";
     this.studentAbsen = "";
     this.studentKelas = "";
-}
+    this._clearAntiCheatState();
+    this._warningCount = 0;
+    this._forceChoiceDialog = false;
+    this._curangLogged = false;
+    this._sessionLogged = "";
+    this._sessionToken = "";
+    try { localStorage.removeItem("latihan_kuis_attempt_u1_bab1"); } catch (_) {}
+  }
 
   _onVisibilityChange() {
     // Count all visibility changes for audit
@@ -250,8 +341,26 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
       }
       // Count tab switches for cheat detection context
       this._tabSwitchCount = (this._tabSwitchCount || 0) + 1;
+      this._windowBlurCount = (this._windowBlurCount || 0) + 1;
       this._tabSwitchWarning = true;
       this.requestUpdate();
+      // Simpan count ke localStorage (bukan log per-event)
+      // Fallback: save kuis-ledakan child quiz state when tab hidden
+      const _kk = this.shadowRoot && this.shadowRoot.querySelector("kuis-ledakan");
+      if (_kk && typeof _kk._saveAttempt === "function") { try { _kk._saveAttempt(); } catch (_) {} }
+      this._saveAntiCheatState();
+      // Increment warning counter dan trigger dialog jika sudah 3x
+      this._warningCount = (this._warningCount || 0) + 1;
+      if (this._warningCount >= 3 && !this._forceChoiceDialog) {
+        this._forceChoiceDialog = true;
+        this._logActivity("force_choice_dialog", {
+          warningCount: this._warningCount,
+          timestamp: new Date().toISOString(),
+          studentId: this.studentId,
+          kdMateri: this.kdMateri,
+        });
+        this.requestUpdate();
+      }
     } else if (document.visibilityState === "visible" && this._mulai && !this._selesai) {
       // Restore timer state when tab visible (only if quiz in progress)
       try {
@@ -267,7 +376,125 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
           }
         }
       } catch (_) {}
+      // Count focus event
+      this._windowFocusCount = (this._windowFocusCount || 0) + 1;
+      // Simpan count ke localStorage (bukan log per-event)
+      this._saveAntiCheatState();
     }
+  }
+
+  // Anti-cheat: Window blur/focus detection (fallback for older browsers)
+  _onWindowBlur() {
+    // Hanya tampilkan warning jika tab benar-benar hidden (visibilitychange)
+    // Jangan tampilkan jika hanya blur biasa (klik toolbar, dev tools, dll)
+    if (this._mulai && !this._selesai && document.hidden) {
+      // Count sudah dihandle oleh _onVisibilityChange
+      this._tabSwitchWarning = true;
+      this.requestUpdate();
+    }
+  }
+
+  _onWindowFocus() {
+    if (this._mulai && !this._selesai && this._windowBlurCount > 0) {
+      // Count sudah dihandle oleh _onVisibilityChange — jangan double increment
+      // Popup warning tetap muncul (diatur oleh _onVisibilityChange saat tab hidden)
+      // dan di-dismiss di sini saat user kembali
+      this._tabSwitchWarning = false;
+      this.requestUpdate();
+      // Cek threshold curang
+      this._cekThresholdCurang();
+    }
+  }
+
+  /** Cek apakah tab switch count sudah melewati threshold curang. */
+  _cekThresholdCurang() {
+    const threshold = this.tabSwitchThreshold || 3;
+    const count = this._tabSwitchCount || 0;
+    if (count >= threshold && !this._curangLogged) {
+      this._curangLogged = true;
+      this._logActivity("curang_tab_switch", {
+        count: count,
+        timestamp: new Date().toISOString(),
+        studentId: this.studentId,
+        kdMateri: this.kdMateri,
+        threshold: threshold,
+      });
+    }
+  }
+
+  /** Dialog 3x: siswa memilih untuk lanjut kerjakan kuis. */
+  _lanjutkanKuis() {
+    this._forceChoiceDialog = false;
+    this._warningCount = 0; // reset counter, dapat 3x kesempatan lagi
+    this.requestUpdate();
+  }
+
+  /** Dialog 3x: siswa memilih untuk kumpulkan nilai sekarang. */
+  _kumpulkanSekarang() {
+    this._forceChoiceDialog = false;
+    this.requestUpdate();
+    const kuis = this.shadowRoot && this.shadowRoot.querySelector("kuis-ledakan");
+    if (kuis && typeof kuis._selesaiKuis === "function") {
+      kuis._selesaiKuis();
+    }
+  }
+
+  /** Dialog 3x: siswa laporkan ke guru, lanjutkan kuis tapi catat (reset counter). */
+  _laporKeGuru() {
+    this._forceChoiceDialog = false;
+    this._warningCount = 0; // reset counter, dapat 3x kesempatan lagi
+    this._logActivity("lapor_ke_guru", {
+      warningCount: this._warningCount,
+      timestamp: new Date().toISOString(),
+      studentId: this.studentId,
+      kdMateri: this.kdMateri,
+      tabSwitchCount: this._tabSwitchCount || 0,
+    });
+    this.requestUpdate();
+  }
+
+  // Anti-cheating: Full-screen enforcement
+  _onFullscreenChange() {
+    if (!document.fullscreenElement && !document.mozFullScreenElement && 
+        !document.webkitFullscreenElement && !document.msFullscreenElement) {
+      // User exited fullscreen while quiz is in progress
+      if (this._mulai && !this._selesai) {
+        this._fullscreenWarning = true;
+        this.requestUpdate();
+        // Log fullscreen exit for anti-cheating
+        this._logActivity('fullscreen_exit', { 
+          timestamp: new Date().toISOString(),
+          waktuMulai: this._waktuMulai 
+        });
+      }
+    }
+  }
+
+  // Keyboard handler untuk dismiss warning popup (accessibility)
+  _handleWarningKeydown(e) {
+    if (e.key === "Escape" && this._tabSwitchWarning) {
+      this._tabSwitchWarning = false;
+      this.requestUpdate();
+    } else if (e.key === "Escape" && this._fullscreenWarning) {
+      this._fullscreenWarning = false;
+      this.requestUpdate();
+    }
+  }
+
+  // Anti-cheating: Request fullscreen when quiz starts
+  _requestFullscreen() {
+    try {
+      const el = this.shadowRoot || this;
+      if (el.requestFullscreen) {
+        el.requestFullscreen().catch(() => {});
+      } else if (el.mozRequestFullScreen) {
+        el.mozRequestFullScreen().catch(() => {});
+      } else if (el.webkitRequestFullscreen) {
+        el.webkitRequestFullscreen();
+      } else if (el.msRequestFullscreen) {
+        el.msRequestFullscreen();
+      }
+    } catch (_) {}
   }
 
   // ==========================================
@@ -291,6 +518,11 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     if (this._mulai && !this._selesai) {
       e.preventDefault();
       e.stopPropagation();
+      // Log copy attempt for anti-cheating
+      this._logActivity('copy_paste_attempt', { 
+        eventType: 'copy',
+        timestamp: new Date().toISOString() 
+      });
     }
   }
 
@@ -298,6 +530,11 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     if (this._mulai && !this._selesai) {
       e.preventDefault();
       e.stopPropagation();
+      // Log paste attempt for anti-cheating
+      this._logActivity('copy_paste_attempt', { 
+        eventType: 'paste',
+        timestamp: new Date().toISOString() 
+      });
     }
   }
 
@@ -330,12 +567,27 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
         userAgent: typeof navigator !== "undefined" ? navigator.userAgent : "unknown",
         tabSwitchCount: this._tabSwitchCount || 0,
         visibilityChangeCount: this._visibilityChangeCount || 0,
+        windowBlurCount: this._windowBlurCount || 0,
+        windowFocusCount: this._windowFocusCount || 0,
         quizDuration: this.duration,
         studentId: this.studentId,
         kdMateri: this.kdMateri,
       };
       globalThis.localStorage.setItem(key, JSON.stringify(log));
     } catch (_) {}
+  }
+
+  /** Generate session token unik untuk identifikasi attempt ini. */
+  _generateSessionToken() {
+    try {
+      const buf = new Uint8Array(16);
+      globalThis.crypto.getRandomValues(buf);
+      let hex = "";
+      buf.forEach((b) => (hex += b.toString(16).padStart(2, "0")));
+      return `${Date.now()}-${hex}`;
+    } catch (e) {
+      return `sess-${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
+    }
   }
 
   /** Log kuis dimulai - buat verifikasi di spreadsheet. */
@@ -356,6 +608,56 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     } catch (_) {}
   }
 
+  // Anti-cheating: Log activity — dispatch event + direct API call
+  _logActivity(tipe_aktivitas, payload_data = {}) {
+    const detail = {
+      tipe: tipe_aktivitas,
+      payload: {
+        ...payload_data,
+        studentId: this.studentId,
+        kdMateri: this.kdMateri,
+      },
+    };
+
+    // 1. Dispatch event untuk parent component (dasbor-kuis)
+    try {
+      this.dispatchEvent(
+        new CustomEvent("dasbor-kuis-log", {
+          detail,
+          bubbles: true,
+          composed: true,
+        })
+      );
+    } catch (_) {}
+
+    // 2. Direct API call ke backend (fallback jika tidak ada parent)
+    this._sendLogDirect(tipe_aktivitas, detail.payload);
+  }
+
+  /** Kirim log langsung ke backend via fetch (tidak bergantung event bubbling) */
+  async _sendLogDirect(tipe_aktivitas, payload) {
+    if (!this.appsScriptUrl || !this.studentId) return;
+    try {
+      const params = {
+        action: "logActivity",
+        studentId: this.studentId,
+        type: tipe_aktivitas,
+        description: JSON.stringify(payload),
+        timestamp: new Date().toISOString(),
+        kdMateri: this.kdMateri || "",
+        kategori: this.kategori || "sumatif_lm",
+        id_log: payload.id_log || `LOG-${Date.now()}-${Math.random().toString(36).slice(2, 10).toUpperCase()}`,
+      };
+      const qs = new URLSearchParams(params);
+      await fetch(`${this.appsScriptUrl}?${qs.toString()}`, {
+        method: "GET",
+        mode: "cors",
+      });
+    } catch (_) {
+      // Silent fail — log sudah tersimpan di localStorage via _logCurangan
+    }
+  }
+
   /** Baca sesi siswa dari localStorage (TTL 24j) — agar cek status jalan saat reload. */
   _loadSession() {
     try {
@@ -374,6 +676,8 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
       // abaikan
     }
     this._loadAttemptCounter();
+    // Restore remidi state (persist saat refresh)
+    this._restoreRemidiState();
     // Jangan langsung resume timer di sini — biarkan _muatStatusKuis() yang
     // mengatur _mulai setelah lock-state pasti (hindari race condition).
   }
@@ -442,6 +746,8 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     if (kuota && sisa != null && sisa > 0) {
       this._mulai = true;
       this._resumeRemaining = sisa;
+      // Restore anti-cheat state on resume
+      this._restoreAntiCheatState();
     }
   }
 
@@ -467,6 +773,12 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
           this._hapusWaktuMulai();
           this._mulai = false;
           this._resumeRemaining = null;
+          // hentikan timer yang mungkin sudah jalan sebelum lock diketahui
+          try{ const tt = this.shadowRoot && this.shadowRoot.querySelector("timer-kuis"); if(tt && typeof tt.pause==="function") tt.pause(); if(tt && typeof tt.reset==="function") tt.reset(); }catch(_){}
+          if (this.remidiMode && typeof this._bestSkor === "number" && this._bestSkor < this.kkm && !this.sudahRemidi) {
+            this._needsRemidi = true;
+            this._skorAwal = this._bestSkor;
+          }
         }
       })
       .catch(() => {
@@ -548,10 +860,22 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     this._disableAntiCheat();
     // Log session to Google Sheet for teacher review
     this._kirimLogSession("waktu_habis");
+    // Log "selesai" hanya di _onKuisLog (cukup 1x untuk mencegah duplikat)
+    // _onWaktuHabis tidak log "selesai" ke logActivity lagi
   }
 
   _onKuisLog(e) {
     if (e.detail && e.detail.payload && typeof e.detail.payload.score === "number") {
+      // Cegah duplikat log: hanya proses sekali per sessionToken
+      const payloadToken = e.detail.payload.sessionToken;
+      const token = payloadToken || this._sessionToken;
+      if (token && this._sessionLogged === token) return;
+      if (token) {
+        this._sessionLogged = token;
+        // Sync token dengan yang dikirim kuis-ledakan
+        if (payloadToken) this._sessionToken = payloadToken;
+      }
+
       this._logSelesaiKuis();
       this._skor = e.detail.payload.score;
       this._selesai = true;
@@ -562,45 +886,109 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
       try {
         globalThis.localStorage.removeItem(this._attemptKey());
         globalThis.localStorage.removeItem(this._timerKey());
+        globalThis.localStorage.removeItem(`kuis-ledakan:attempt:${this.studentId}:${this.kdMateri}`);
+        globalThis.localStorage.removeItem(`kuis-ledakan:session:${this.studentId}:${this.kdMateri}`);
       } catch (_) {}
       // L: hitung attempt ter-submit (bukan klik Ulangi) agar reload-trick tak bobol batas.
-      if (this.maxRetake) {
+      if (this.maxRetake && !this._effectiveRemidiMode) {
         this._attemptKe++;
         this._saveAttemptCounter();
       }
       // Remedial: check if score below KKM
-      if (this.remidiMode && this._skor < this.kkm) {
+      // Auto-aktifkan mode remidi jika skor < KKM dan ada remidi-soal-url
+      if (!this.remidiMode && this.remidiSoalUrl && this._skor < this.kkm) {
+        this.remidiMode = true;
+      }
+      if (this._effectiveRemidiMode && this._skor < this.kkm) {
         this._needsRemidi = true;
         this._skorAwal = this._skor;
       } else {
         this._needsRemidi = false;
-        if (this.lockAfterComplete && !this.remidiMode) {
+        if (this.lockAfterComplete && !this._effectiveRemidiMode) {
           this._terkunci = true;
         }
       }
+      // Simpan state remidi ke localStorage (agar persist saat refresh)
+      this._saveRemidiState();
       this._muatStatusKuis(); // T: refresh nilai terbaik dari sheet (menangkap attempt baru)
       // Log session to Google Sheet for teacher review
       this._kirimLogSession("selesai");
+      // Log "selesai" ke sheet aktivitas (action=logActivity)
+      const _idLog = e.detail && e.detail.id_log ? e.detail.id_log : '';
+      this._logActivity("selesai", {
+        id_log: _idLog,
+        score: this._skor,
+        timestamp: new Date().toISOString(),
+        kdMateri: this.kdMateri,
+        studentId: this.studentId,
+        tabSwitchCount: this._tabSwitchCount || 0,
+        windowBlurCount: this._windowBlurCount || 0,
+        windowFocusCount: this._windowFocusCount || 0,
+        durasiPengerjaan: this._waktuMulai ? Math.floor((Date.now() - this._waktuMulai) / 1000) : 0,
+        curang: this._curangLogged || false,
+        remidi: this.sudahRemidi || false,
+        percobaanKe: this._attemptKe || 1,
+        sessionToken: this._sessionToken || "",
+        waktuSelesai: String(Date.now()),
+        catatan: `selesai` + (this._curangLogged ? " (curang)" : "") + (this.sudahRemidi ? " (sudah-remidi)" : "") + (this._effectiveRemidiMode ? " (remidi)" : ""),
+        warningCount: this._warningCount || 0,
+        forceChoiceDialogTriggered: this._forceChoiceDialog || false,
+        curangTabSwitchTriggered: this._curangLogged || false,
+        tabSwitchThreshold: this.tabSwitchThreshold || 3,
+      });
     }
   }
 
   async _mulaiLatihan() {
     if (!this.studentId) {
-      // H1: kunci Mulai bila belum login — jangan buka kuis tanpa identitas.
+      this.requestUpdate();
+      return;
+    }
+    // pastikan status kunci terbaru sebelum mulai — cegah timer jalan saat terkunci (race)
+    await this._muatStatusKuis();
+    const remidiBypass = this._needsRemidi && this._effectiveRemidiMode && !this.sudahRemidi;
+    if (this._terkunci && !remidiBypass && this.mode !== "guru") {
+      this._pesan = "Kuis terkunci. Hubungi guru atau gunakan Remidi jika nilai < KKM.";
+      this._mulai = false;
+      this._hapusWaktuMulai();
+      const t = this.shadowRoot && this.shadowRoot.querySelector("timer-kuis");
+      if (t && typeof t.pause === "function") try{ t.pause(); }catch(_){}
       this.requestUpdate();
       return;
     }
     this._userStarted = true;
-    this._terkunci = false;
+    if (remidiBypass || this.mode === "guru") this._terkunci = false;
+    else if (this._terkunci) return;
     this._mulai = true;
     this._waktuMulai = Date.now();
     this._simpanWaktuMulai();
     this._logMulaiKuis();
+    // Generate session token untuk identifikasi attempt ini (anti-double log)
+    this._sessionToken = this._generateSessionToken();
+    this._sessionLogged = "";
+    // Reset anti-cheat counters untuk attempt baru
+    this._windowBlurCount = 0;
+    this._windowFocusCount = 0;
+    this._tabSwitchCount = 0;
+    this._visibilityChangeCount = 0;
+    this._clearAntiCheatState();
+    this._curangLogged = false;
+    this._warningCount = 0;
+    this._forceChoiceDialog = false;
     this._enableAntiCheat();
+    // Log timer mulai ke backend (skip jika mode latihan tanpa timer)
+    if (!this._latihanOnlyMode) {
+      this._logActivity("timer_mulai", {
+        timestamp: new Date().toISOString(),
+        durasiUlangan: this.duration || 300,
+        waktuMulai: this._waktuMulai,
+      });
+    }
+    // Anti-cheating: Request fullscreen when quiz starts
+    this._requestFullscreen();
     await this.updateComplete;
     const kuis = this.shadowRoot && this.shadowRoot.querySelector("kuis-ledakan");
     const timer = this.shadowRoot && this.shadowRoot.querySelector("timer-kuis");
-    // H1: pakai _onStartClick (cek login di kuis-ledakan) bukan _startQuiz langsung.
     if (kuis && typeof kuis._onStartClick === "function") kuis._onStartClick();
     if (timer && typeof timer.start === "function") timer.start();
   }
@@ -613,8 +1001,15 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     const waktuSelesai = String(Date.now());
     const durasiPengerjaan = this._waktuMulai ? Math.floor((Date.now() - this._waktuMulai) / 1000) : 0;
     const sisaWaktu = this._bacaSisaWaktu();
+    // Bangun catatan sesuai status — info remidi, curang, warning count
+    let catatan = status;
+    if (this._effectiveRemidiMode && this._needsRemidi) catatan += " (remidi)";
+    if (this.sudahRemidi) catatan += " (sudah-remidi)";
+    if (this._curangLogged) catatan += " (curang)";
+    if (this._warningCount >= 3) catatan += ` (${this._warningCount}x tab switch)`;
+    if (status === "waktu_habis") catatan = "waktu_habis (auto-submit)";
     const params = {
-      action: "logQuizSession",
+      action: "updateQuizSession",
       studentId: this.studentId,
       nama: this.studentName || "",
       nis: this.studentNis || "",
@@ -627,7 +1022,17 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
       durasiUlangan: this.duration || 300,
       sisaWaktu: sisaWaktu,
       tabSwitchCount: this._tabSwitchCount || 0,
+      windowBlurCount: this._windowBlurCount || 0,
+      windowFocusCount: this._windowFocusCount || 0,
       skor: this._skor != null ? this._skor : -1,
+      catatan: catatan,
+      sessionToken: this._sessionToken || "",
+      percobaanKe: this._attemptKe || 1,
+      warningCount: this._warningCount || 0,
+      forceChoiceDialogTriggered: this._forceChoiceDialog || false,
+      curangTabSwitchTriggered: this._curangLogged || false,
+      tabSwitchThreshold: this.tabSwitchThreshold || 3,
+      id_log: `LOG-${Date.now()}-${Math.random().toString(36).slice(2, 10).toUpperCase()}`,
     };
     try {
       const qs = new URLSearchParams(params);
@@ -635,6 +1040,8 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
         method: "GET",
         mode: "cors",
       });
+      // Bersihkan anti-cheat state setelah berhasil dikirim
+      this._clearAntiCheatState();
     } catch (e) {
       // Silent fail - log to localStorage as fallback
       const key = `latihan_kuis_session_${this.studentId}_${this.kdMateri}`;
@@ -649,6 +1056,14 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
       this.requestUpdate();
       return;
     }
+    // buka kunci backend dulu agar kuis-ledakan tidak terkunci lagi (soal sama LM1)
+    if (this._terkunci && this.appsScriptUrl && this.studentId && this.kdMateri) {
+      try {
+        const qs = new URLSearchParams({ action: "resetQuizLock", studentId: this.studentId, kdMateri: this.kdMateri });
+        await fetch(`${this.appsScriptUrl}?${qs.toString()}`, { method: "GET", mode: "cors" });
+      } catch(_){}
+      try{ localStorage.removeItem(`kuis-ledakan:attempt:${this.studentId}:${this.kdMateri}`); localStorage.removeItem(`latihan_kuis_attempt_${this.studentId}_${this.kdMateri}`); localStorage.removeItem(`latihan_kuis_time_${this.studentId}_${this.kdMateri}`);}catch(_){}
+    }
     try {
       const r = await fetch(this.remidiSoalUrl);
       if (!r.ok) throw new Error("HTTP " + r.status);
@@ -656,7 +1071,8 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
       if (!Array.isArray(this._remidiSoal) || this._remidiSoal.length === 0) {
         throw new Error("Format soal remidi tidak valid");
       }
-      // Reset state for remedial
+      // Reset state for remedial — buka kunci jika sebelumnya terkunci
+      this._terkunci = false;
       this._selesai = false;
       this._skor = null;
       this._habisWaktu = false;
@@ -664,8 +1080,12 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
       this._needsRemidi = false;
       this.sudahRemidi = true;
       this._pesan = "";
-      // Use remedial questions
+      // Use remedial questions (soal sama shuffle: file sama LM1, acak via shuffle-choices)
       this.questions = this._remidiSoal;
+      // Simpan state remidi ke localStorage (agar persist saat refresh)
+      this._saveRemidiState();
+      // juga buka kunci kuis-ledakan internal jika ada
+      try{ const k=this.shadowRoot&&this.shadowRoot.querySelector("kuis-ledakan"); if(k){ k._locked=false; k._lockChecked=false; } }catch(_){}
       this.requestUpdate();
       // Start quiz with remedial questions
       this._mulaiLatihan();
@@ -673,6 +1093,28 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
       this._pesan = "Gagal memulai remidi: " + e.message;
       this.requestUpdate();
     }
+  }
+
+  async _resetKunciGuru() {
+    if (!this.appsScriptUrl || !this.studentId || !this.kdMateri) {
+      this._pesan = "Gagal buka kunci: appsScriptUrl/student/kdMateri belum lengkap.";
+      this.requestUpdate();
+      return;
+    }
+    try {
+      const qs = new URLSearchParams({ action: "resetQuizLock", studentId: this.studentId, kdMateri: this.kdMateri });
+      const r = await fetch(`${this.appsScriptUrl}?${qs.toString()}`, { method: "GET", mode: "cors" });
+      const j = await r.json();
+      if (j && j.status === "ok") {
+        this._terkunci = false; this._selesai = false; this._skor = null; this._bestSkor = null; this._pernahIkut = false;
+        try { localStorage.removeItem(`latihan_kuis_attempt_${this.studentId}_${this.kdMateri}`); localStorage.removeItem(`latihan_kuis_time_${this.studentId}_${this.kdMateri}`); } catch(_){}
+        this._pesan = `🔓 Kunci LM1 dibuka — ${j.deleted || 0} sesi dihapus. Siswa bisa ulang.`;
+        this._muatStatusKuis();
+      } else {
+        this._pesan = "Gagal buka kunci: " + (j.message || "unknown");
+      }
+    } catch(e){ this._pesan = "Gagal buka kunci: " + e.message; }
+    this.requestUpdate();
   }
 
   _hitungNilaiAkhir() {
@@ -685,6 +1127,57 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     return this.nilaiAkhir;
   }
 
+  // ==========================================
+  // REMIDI STATE PERSISTENCE
+  // ==========================================
+  _remidiKey() {
+    return `latihan_kuis_remidi_${this.studentId}_${this.kdMateri}`;
+  }
+
+  // Simpan state remidi ke localStorage
+  _saveRemidiState() {
+    if (!this.studentId || !this.kdMateri) return;
+    try {
+      const data = {
+        sudahRemidi: this.sudahRemidi,
+        _needsRemidi: this._needsRemidi,
+        _skorAwal: this._skorAwal,
+        _remidiSoal: this._remidiSoal || [],
+        timestamp: Date.now(),
+      };
+      localStorage.setItem(this._remidiKey(), JSON.stringify(data));
+    } catch (_) {}
+  }
+
+  // Restore state remidi dari localStorage
+  _restoreRemidiState() {
+    if (!this.studentId || !this.kdMateri) return;
+    try {
+      const data = JSON.parse(localStorage.getItem(this._remidiKey()));
+      if (data && data.sudahRemidi) {
+        this.sudahRemidi = data.sudahRemidi;
+        this._needsRemidi = data._needsRemidi;
+        this._skorAwal = data._skorAwal;
+        // Restore soal remidi jika ada
+        if (Array.isArray(data._remidiSoal) && data._remidiSoal.length > 0) {
+          this._remidiSoal = data._remidiSoal;
+          // Set questions ke soal remidi jika sedang dalam mode remidi
+          if (this.sudahRemidi && this._effectiveRemidiMode) {
+            this.questions = this._remidiSoal;
+          }
+        }
+      }
+    } catch (_) {}
+  }
+
+  // Hapus state remidi (dipanggil saat kuis selesai atau reset)
+  _clearRemidiState() {
+    if (!this.studentId || !this.kdMateri) return;
+    try {
+      localStorage.removeItem(this._remidiKey());
+    } catch (_) {}
+  }
+
   static get styles() {
     return [
       super.styles,
@@ -695,7 +1188,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
           display: grid; gap: var(--ddd-spacing-6);
         }
         .materi-card {
-          border: 1px solid var(--ddd-theme-polaris-border, #e0e0e0);
+          border: 1px solid var(--ddd-theme-polaris-border);
           border-radius: var(--ddd-radius-lg);
           padding: var(--ddd-spacing-6);
           background: linear-gradient(180deg, rgba(103,80,164,0.05), transparent);
@@ -706,17 +1199,26 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
         .materi-links { display: flex; flex-wrap: wrap; gap: var(--ddd-spacing-3); margin-top: var(--ddd-spacing-4); }
         .materi-links a {
           padding: var(--ddd-spacing-3) var(--ddd-spacing-4); border-radius: var(--ddd-radius-md);
-          border: 1px solid var(--ddd-theme-polaris-border, #e0e0e0);
+          border: 1px solid var(--ddd-theme-polaris-border);
           color: var(--ddd-theme-primary); text-decoration: none; font-size: var(--ddd-font-size-m);
         }
         .materi-links a:hover { background: rgba(103,80,164,0.08); }
         .btn-mulai {
           width: 100%; padding: var(--ddd-spacing-4); font-size: var(--ddd-font-size-l);
           font-weight: var(--ddd-font-weight-bold); border: none; border-radius: var(--ddd-radius-md);
-          background: var(--ddd-theme-primary, #6750a4); color: var(--ddd-theme-on-primary); cursor: pointer;
-          font-family: var(--ddd-font-primary, system-ui, sans-serif);
+          background: var(--ddd-theme-primary); color: var(--ddd-theme-on-primary); cursor: pointer;
+          font-family: var(--ddd-font-primary);
         }
-        .btn-mulai:hover { background: var(--ddd-theme-accent, #7a5fc4); }
+        .btn-mulai:hover { background: var(--ddd-theme-accent); }
+        .btn-logout {
+          display: inline-block; margin-top: var(--ddd-spacing-5);
+          padding: var(--ddd-spacing-3) var(--ddd-spacing-6);
+          background: var(--ddd-theme-error); color: var(--ddd-theme-on-primary);
+          border: none; border-radius: var(--ddd-radius-md);
+          font-weight: var(--ddd-font-weight-bold); font-size: var(--ddd-font-size-s);
+          cursor: pointer; font-family: inherit;
+        }
+        .btn-logout:hover { filter: brightness(0.9); }
         .auth-hint { text-align: center; color: var(--ddd-theme-secondary); font-size: var(--ddd-font-size-m); margin: var(--ddd-spacing-3) 0 0; }
         .selesai-card {
           text-align: center; border: 1px solid var(--ddd-theme-success);
@@ -728,30 +1230,31 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
         .selesai-card .kirim.warn { color: var(--ddd-theme-error); }
         .selesai-card .skor { margin: var(--ddd-spacing-4) 0; font-size: var(--ddd-font-size-l); }
         /* Suspicious warning UI for detected time manipulation */
-        .selesai-card.suspicious { border-color: var(--ddd-theme-warning, #f59e0b); background: linear-gradient(180deg, rgba(245,158,11,0.08), transparent); }
-        .suspicious-warning { background: #fff7ed; border: 1px solid #fed7aa; border-radius: var(--ddd-radius-lg); padding: var(--ddd-spacing-5); margin-bottom: var(--ddd-spacing-4); text-align: left; }
+        .selesai-card.suspicious { border-color: var(--ddd-theme-warning); background: linear-gradient(180deg, rgba(245,158,11,0.08), transparent); }
+        .suspicious-warning { background: var(--ddd-theme-warning-light); border: 1px solid var(--ddd-theme-warning); border-radius: var(--ddd-radius-lg); padding: var(--ddd-spacing-5); margin-bottom: var(--ddd-spacing-4); text-align: left; }
         .suspicious-icon { font-size: 2rem; margin-bottom: var(--ddd-spacing-2); }
-        .suspicious-title { font-size: var(--ddd-font-size-m); font-weight: var(--ddd-font-weight-bold); color: #9a3412; margin-bottom: var(--ddd-spacing-2); }
-        .suspicious-text { font-size: var(--ddd-font-size-s); color: #92400e; line-height: 1.5; margin-bottom: var(--ddd-spacing-2); }
-        .suspicious-note { font-size: var(--ddd-font-size-4xs); color: #a16207; font-style: italic; }
-        .remidi-card { background: #fff7ed; border: 1px solid #fed7aa; border-radius: var(--ddd-radius-lg); padding: var(--ddd-spacing-5); margin-top: var(--ddd-spacing-4); }
-        .remidi-card h3 { margin: 0 0 var(--ddd-spacing-2) 0; color: #9a3412; }
-        .remidi-card p { color: #92400e; margin-bottom: var(--ddd-spacing-3); }
+        .suspicious-title { font-size: var(--ddd-font-size-m); font-weight: var(--ddd-font-weight-bold); color: var(--ddd-theme-warning-text); margin-bottom: var(--ddd-spacing-2); }
+        .suspicious-text { font-size: var(--ddd-font-size-s); color: var(--ddd-theme-warning); line-height: 1.5; margin-bottom: var(--ddd-spacing-2); }
+        .suspicious-note { font-size: var(--ddd-font-size-4xs); color: var(--ddd-theme-warning); font-style: italic; }
+        .remidi-card { background: var(--ddd-theme-warning-light); border: 1px solid var(--ddd-theme-warning); border-radius: var(--ddd-radius-lg); padding: var(--ddd-spacing-5); margin-top: var(--ddd-spacing-4); }
+        .remidi-card h3 { margin: 0 0 var(--ddd-spacing-2) 0; color: var(--ddd-theme-warning-text); }
+        .remidi-card p { color: var(--ddd-theme-warning); margin-bottom: var(--ddd-spacing-3); }
+        .remidi-notif { font-size: var(--ddd-font-size-4xs); color: var(--ddd-theme-accent); margin-top: var(--ddd-spacing-3); font-weight: 600; }
         .selesai-card a {
           display: inline-block; margin-top: var(--ddd-spacing-4); padding: var(--ddd-spacing-3) var(--ddd-spacing-5);
-          background: var(--ddd-theme-primary, #6750a4); color: var(--ddd-theme-on-primary); border-radius: var(--ddd-radius-md);
+          background: var(--ddd-theme-primary); color: var(--ddd-theme-on-primary); border-radius: var(--ddd-radius-md);
           text-decoration: none; font-weight: var(--ddd-font-weight-bold);
         }
         .err-chip {
-          background: var(--ddd-theme-warning-light, #fef3c7); border: 1px solid var(--ddd-theme-warning, #fcd34d); color: var(--ddd-theme-warning-text, #92400e);
+          background: var(--ddd-theme-warning-light); border: 1px solid var(--ddd-theme-warning); color: var(--ddd-theme-warning-text);
           padding: var(--ddd-spacing-3); border-radius: var(--ddd-radius-md);
           margin-bottom: var(--ddd-spacing-4);
         }
         .skor-best {
           margin-top: var(--ddd-spacing-4); padding: var(--ddd-spacing-3) var(--ddd-spacing-4);
           border-radius: var(--ddd-radius-md); font-weight: var(--ddd-font-weight-bold);
-          color: var(--ddd-theme-success, #2e7d32);
-          background: var(--ddd-theme-success-light, #e8f5e9);
+          color: var(--ddd-theme-success);
+          background: var(--ddd-theme-success-light);
           display: inline-block;
         }
         .tab-warning-overlay {
@@ -777,6 +1280,49 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
           border: none; border-radius: var(--ddd-radius-sm);
           font-weight: 700; cursor: pointer;
         }
+        .force-choice-overlay {
+          position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+          background: rgba(0,0,0,0.85); z-index: 99999;
+          display: flex; align-items: center; justify-content: center;
+        }
+        .force-choice-card {
+          background: var(--ddd-theme-default-white);
+          border-radius: var(--ddd-radius-lg);
+          padding: var(--ddd-spacing-7);
+          max-width: 480px; text-align: center;
+          border: 3px solid var(--ddd-theme-warning);
+          box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+        .force-choice-icon { font-size: 56px; margin-bottom: var(--ddd-spacing-4); }
+        .force-choice-title {
+          font-size: var(--ddd-font-size-l); font-weight: 800;
+          color: var(--ddd-theme-error); margin-bottom: var(--ddd-spacing-3);
+        }
+        .force-choice-text {
+          font-size: var(--ddd-font-size-4xs); color: var(--ddd-theme-on-surface);
+          line-height: 1.6; margin-bottom: var(--ddd-spacing-5);
+        }
+        .force-choice-actions {
+          display: flex; flex-direction: column; gap: var(--ddd-spacing-3);
+        }
+        .force-choice-btn {
+          padding: var(--ddd-spacing-4) var(--ddd-spacing-5);
+          border: none; border-radius: var(--ddd-radius-md);
+          font-weight: 700; font-size: var(--ddd-font-size-4xs);
+          cursor: pointer; font-family: inherit;
+        }
+        .force-choice-btn.primary {
+          background: var(--ddd-theme-primary); color: var(--ddd-theme-on-primary);
+        }
+        .force-choice-btn.primary:hover { background: var(--ddd-theme-accent); }
+        .force-choice-btn.secondary {
+          background: var(--ddd-theme-warning); color: var(--ddd-theme-on-primary);
+        }
+        .force-choice-btn.secondary:hover { filter: brightness(0.9); }
+        .force-choice-btn.report {
+          background: var(--ddd-theme-error); color: var(--ddd-theme-on-primary);
+        }
+        .force-choice-btn.report:hover { filter: brightness(0.9); }
       `,
       css`
         /* ===== DARK MODE (DDD-token swap, gated on body.dark-mode) ===== */
@@ -846,8 +1392,41 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     ];
   }
 
+  /** Mode remidi efektif: true jika HAX attribute di-set ATAU (auto) ada remidiSoalUrl + skor<KKM. */
+  get _effectiveRemidiMode() {
+    if (this.remidiMode) return true;
+    if (this.remidiSoalUrl && typeof this._bestSkor === "number" && this._bestSkor < this.kkm && !this.sudahRemidi) {
+      return true;
+    }
+    return false;
+  }
+
+  /** Mode latihan saja (tanpa timer & tanpa lock) — popup warning tidak agresif. */
+  get _latihanOnlyMode() {
+    return !this.lockAfterComplete && (this.duration === 0 || !this.duration);
+  }
+
   render() {
+    const _canRemidiNow = this._effectiveRemidiMode && !this.sudahRemidi && typeof this._bestSkor === "number" && this._bestSkor < this.kkm;
+    const _remidiBypass = (this._needsRemidi || _canRemidiNow) && this._effectiveRemidiMode && !this.sudahRemidi;
     if (this._terkunci && this.mode !== "guru") {
+      if (_remidiBypass) {
+        return html`
+          <div class="wrap">
+            <div class="selesai-card" role="alert">
+              <div style="font-size:2.5rem">🔓</div>
+              <p class="kirim">Kuis terkunci, tapi Anda bisa <b>remidi</b> karena nilai &lt; KKM.</p>
+              ${this._bestSkor != null ? html`<div class="skor">Nilai terbaik: <strong>${this._bestSkor}%</strong> (KKM ${this.kkm}%)</div>` : nothing}
+              <div class="remidi-card" style="margin-top:12px;">
+                <h3>📝 Remidi Tersedia</h3>
+                <p>Soal sama diacak via <code>shuffle-choices</code>. Klik untuk mulai remidi LM1.</p>
+                <button class="btn-mulai" @click=${this._mulaiRemidi}>🔄 Mulai Remidi (Soal Sama Shuffle)</button>
+              </div>
+              <p style="font-size:12px; color:#64748B; margin-top:8px;">Atau hubungi guru untuk <b>Buka Kunci</b> penuh.</p>
+            </div>
+          </div>
+        `;
+      }
       return html`
         <div class="wrap">
           <div class="selesai-card" role="alert">
@@ -856,6 +1435,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
             ${this._bestSkor != null
               ? html`<div class="skor">Nilai terbaik Anda: <strong>${this._bestSkor}%</strong></div>`
               : nothing}
+            ${this.mode === "guru" ? html`<button class="btn-mulai" @click=${this._resetKunciGuru}>🔓 Buka Kunci (Guru)</button>` : html`<p style="font-size:12px; color:#64748B;">Guru bisa buka via <b>Dasbor Guru → Atur → 🔓 Buka Kunci</b> atau tombol di atas (mode guru).</p>`}
           </div>
         </div>
       `;
@@ -882,11 +1462,14 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
               : html`<div class="kirim warn">⚠️ Nilai belum tersimpan karena belum login</div>`}
             ${this._skor != null ? html`<div class="skor">Skor Anda: <strong>${this._skor}%</strong></div>` : nothing}
             ${this.nilaiAkhir != null ? html`<div class="skor">Nilai Akhir: <strong>${this.nilaiAkhir}%</strong></div>` : nothing}
-            ${this._needsRemidi && !this.sudahRemidi && this.remidiMode
+            ${this._needsRemidi && !this.sudahRemidi && this._effectiveRemidiMode
               ? html`<div class="remidi-card">
                   <h3>📝 Remedi Diperlukan</h3>
                   <p>Nilai Anda belum mencapai KKM (${this.kkm}%). Silakan kerjakan remidi.</p>
                   <button class="btn-mulai" @click=${this._mulaiRemidi}>🔄 Mulai Remidi</button>
+                  ${this._effectiveRemidiMode && !this.sudahRemidi && typeof this._bestSkor === "number" && this._bestSkor < this.kkm
+                    ? html`<p class="remidi-notif" role="status">🔔 Remidi otomatis aktif — nilai Anda di bawah KKM. Kerjakan soal remidi untuk tingkatkan nilai.</p>`
+                    : nothing}
                 </div>`
               : nothing}
             ${this.allowRetake && (this.maxRetake === 0 || this._attemptKe < this.maxRetake + 1)
@@ -895,6 +1478,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
             ${this.showSheetLink && this.spreadsheetUrl
               ? html`<a href="${this.spreadsheetUrl}" target="_blank" rel="noopener">📊 Buka Spreadsheet Nilai</a>`
               : nothing}
+            ${this.studentId ? html`<button class="btn-logout" @click=${this._onAuthLogout}>🚪 Keluar (Logout)</button>` : nothing}
           </div>
         </div>
       `;
@@ -933,13 +1517,51 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
                 ?autostart="${this.timerAutostart}"
                 @timer-kuis-expired="${this._onWaktuHabis}">
               </timer-kuis>
-              ${this._tabSwitchWarning && this._mulai && !this._selesai
+              ${this._tabSwitchWarning && this._mulai && !this._selesai && !this._latihanOnlyMode
+                ? html`<div class="tab-warning-overlay" role="alertdialog" aria-labelledby="tab-warning-title" aria-describedby="tab-warning-text">
+                    <div class="tab-warning-card">
+                      <div class="tab-warning-icon" aria-hidden="true">⚠️</div>
+                      <div class="tab-warning-title" id="tab-warning-title">Fokus pada kuis</div>
+                      <div class="tab-warning-text" id="tab-warning-text">Anda membuka tab lain atau aplikasi lain. Gunakan waktu untuk menjawab soal. <strong>Timer tetap berjalan.</strong></div>
+                      <button class="tab-warning-close" id="tab-warning-close-btn" @click=${() => { this._tabSwitchWarning = false; this.requestUpdate(); }} autofocus>Saya Kembali</button>
+                    </div>
+                  </div>`
+                : nothing}
+              ${this._fullscreenWarning && this._mulai && !this._selesai
                 ? html`<div class="tab-warning-overlay" role="alert">
                     <div class="tab-warning-card">
-                      <div class="tab-warning-icon">⚠️</div>
-                      <div class="tab-warning-title">Fokus pada kuis</div>
-                      <div class="tab-warning-text">Anda membuka tab lain. Gunakan waktu untuk menjawab soal. Timer tetap berjalan.</div>
-                      <button class="tab-warning-close" @click=${() => { this._tabSwitchWarning = false; this.requestUpdate(); }}>Lanjutkan</button>
+                      <div class="tab-warning-icon">🖥️</div>
+                      <div class="tab-warning-title">Keluar dari Fullscreen</div>
+                      <div class="tab-warning-text">Anda keluar dari mode fullscreen. Mohon kembali ke fullscreen untuk melanjutkan kuis.</div>
+                      <button class="tab-warning-close" @click=${() => { 
+                        this._fullscreenWarning = false; 
+                        this._requestFullscreen();
+                        this.requestUpdate(); 
+                      }}>Kembali Fullscreen</button>
+                    </div>
+                  </div>`
+                : nothing}
+              ${this._forceChoiceDialog && this._mulai && !this._selesai
+                ? html`<div class="force-choice-overlay" role="alertdialog" aria-labelledby="force-choice-title" aria-describedby="force-choice-text">
+                    <div class="force-choice-card">
+                      <div class="force-choice-icon" aria-hidden="true">⚠️</div>
+                      <div class="force-choice-title" id="force-choice-title">Peringatan: ${this._warningCount}x Keluar Tab</div>
+                      <div class="force-choice-text" id="force-choice-text">
+                        Anda telah keluar-masuk tab sebanyak <strong>${this._warningCount} kali</strong>. Ini terdeteksi sebagai pola mencurigakan.
+                        <br><br>
+                        Silakan putuskan: lanjutkan kerjakan kuis atau kumpulkan nilai Anda sekarang.
+                      </div>
+                      <div class="force-choice-actions">
+                        <button class="force-choice-btn secondary" @click=${this._kumpulkanSekarang}>
+                          📤 Kumpulkan Sekarang
+                        </button>
+                        <button class="force-choice-btn primary" @click=${this._lanjutkanKuis} autofocus>
+                          ▶️ Lanjutkan Kerjakan Kuis
+                        </button>
+                        <button class="force-choice-btn report" @click=${this._laporKeGuru}>
+                          🚩 Lapor ke Guru
+                        </button>
+                      </div>
                     </div>
                   </div>`
                 : nothing}
@@ -1063,6 +1685,13 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
               formatif: "Formatif (Progres)",
             },
             default: "sumatif_lm",
+          },
+          {
+            property: "tabSwitchThreshold",
+            title: "Batas Tab Switch Curang",
+            inputMethod: "number",
+            description: "Jumlah tab switch yang dianggap mencurigakan (default: 3). Melewati batas ini akan log 'curang_tab_switch' ke spreadsheet.",
+            default: 3,
           },
           {
             property: "hideConfetti",
