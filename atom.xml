@@ -3,7 +3,7 @@
   <title>Media Pembelajaran dan Kuis Kelas X - XI Informatika SMA</title>
   <link href="https://localhost:3000/sites/haxto/" rel="self" />
   <subtitle>belajar dan melatih pemahaman informatika SMA kelas 10 dan 11 X XI</subtitle>
-  <updated>2026-09-16T06:29:13.000Z</updated>
+  <updated>2026-09-16T23:27:01.000Z</updated>
   <author>
       <name>Andy Yulianto</name>
   </author>
@@ -12,7 +12,7 @@
   <entry>
     <title>Selamat Datang Dashbor</title>
     <id>item-e25c1b60-c8b7-4360-b3e8-3533c93c3a92</id>
-    <updated>2026-09-16T06:27:57.000Z</updated>
+    <updated>2026-09-16T23:27:01.000Z</updated>
     <published>2026-08-23T03:55:59.000Z</published>
     <summary>Welcome to your new HAX site! Click edit on the top bar to get started
 What can I do?
@@ -74,7 +74,7 @@ We&apos;ve got a ton of blocks that are easy to use and get a lot done with litt
   <entry>
     <title>LATIHAN SIMULASI KUIS LM1</title>
     <id>item-641ef0af-6ba1-4523-bedd-5c0d0f85828b</id>
-    <updated>2026-09-16T06:27:56.000Z</updated>
+    <updated>2026-09-16T23:27:00.000Z</updated>
     <published>2026-08-23T06:35:36.000Z</published>
     <summary>Halaman ulangan harian terintegrasi dengan timer, anti-confetti, dan jawaban tersembunyi.</summary>
     <link href="https://localhost:3000/sites/haxto/latihan-simulasi-kuis-lm1"/>
@@ -100,7 +100,7 @@ We&apos;ve got a ton of blocks that are easy to use and get a lot done with litt
   judul-materi="Latihan Ulangan - Bab 1"
   teks-materi="Ini adalah sesi latihan ulangan. Kerjakan berulang, lihat petunjuk, dan tinjau jawaban. Baca materi di bawah, lalu kerjakan kuis. Kamu bisa mengulang sampai 4 kali."
   judul-kuis="Latihan Ulangan - Bab 1"
-  apps-script-url="https://script.google.com/macros/s/AKfycbzUtnG3jkbt5yarQr5K8zTeZDf3cceBovBe5pmz6taoCGf3gT4tU7AwzpeNc35Gt0p1/exec"
+  apps-script-url="https://script.google.com/macros/s/AKfycbyA8V1DRWpTarcg2dc-hb50-Oze6OS8jA85hb-gyVMM_5uOTl68CKhn_RnzVNEVIrL2/exec"
   kd-materi="LM1 Latihan"
   materi-url="./lm1-materi-kuis-fase-f"
   kategori="formatif"
@@ -115,13 +115,14 @@ We&apos;ve got a ton of blocks that are easy to use and get a lot done with litt
   question-delay="0"
   review-answers
   timer-autostart="false">
-</latihan-kuis> ]]>
+</latihan-kuis>
+ ]]>
     </content>
   </entry>
   <entry>
     <title>LM1 Materi Kuis Fase F</title>
     <id>item-ba9170fc-d0c5-49c4-bb1b-327ff46aa871</id>
-    <updated>2026-09-16T06:27:56.000Z</updated>
+    <updated>2026-09-16T23:27:00.000Z</updated>
     <published>2026-08-26T05:22:47.000Z</published>
     <summary>soal latihan </summary>
     <link href="https://localhost:3000/sites/haxto/lm1-materi-kuis-fase-f"/>
@@ -131,15 +132,15 @@ We&apos;ve got a ton of blocks that are easy to use and get a lot done with litt
 <h2 id="h2-17200480">📘 Cara Mengerjakan Latihan Kuis</h2>
 <p>Simak materi dan pahami, lanjutkan soal latihan di bawah dengan login terlebih dahulu,
   harap refresh bila tombol mulai latihan soal tidak muncul setelah login.</p>
-<quiz-user-auth id="auth" apps-script-url="https://script.google.com/macros/s/AKfycbzUtnG3jkbt5yarQr5K8zTeZDf3cceBovBe5pmz6taoCGf3gT4tU7AwzpeNc35Gt0p1/exec" auto-login></quiz-user-auth>
+<quiz-user-auth id="auth" apps-script-url="https://script.google.com/macros/s/AKfycbyA8V1DRWpTarcg2dc-hb50-Oze6OS8jA85hb-gyVMM_5uOTl68CKhn_RnzVNEVIrL2/exec" auto-login></quiz-user-auth>
 <h4 id="h4--664910474"><strong>TOPIK: OPTIMALISASI PENCARIAN LANJUTAN UNTUK RISET</strong></h4>
 <hr/><h3 id="h3-39465782"><strong>1. Pendahuluan</strong></h3>
-<p><span>Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep inti serta implementasi dari sistem komputer, jaringan, dan kecakapan digital. Di tengah arus transformasi digital yang mengalir deras, literasi digital dan kemampuan berpikir kritis menjadi prasyarat mutlak agar peserta didik memiliki bekal untuk menjadi warga digital yang berbudaya, beradab, dan produktif.</span> 
+<p><span>Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep inti serta implementasi dari sistem komputer, jaringan, dan kecakapan digital. Di tengah arus transformasi digital yang mengalir deras, literasi digital dan kemampuan berpikir kritis menjadi prasyarat mutlak agar peserta didik memiliki bekal untuk menjadi warga digital yang berbudaya, beradab, dan produktif.</span>
   </p>
-<p><span>Literasi digital mencakup kemampuan teknis dan kognitif untuk mengakses, mengatur, memahami, mengintegrasikan, mengevaluasi, dan mengkreasi informasi secara aman melalui teknologi digital. Salah satu keterampilan mendasar dalam literasi digital adalah kemampuan menjelajahi informasi secara cerdas dan memanfaatkan mesin pencari (search engine) untuk kepentingan riset akademik secara efektif dan efisien.</span> 
+<p><span>Literasi digital mencakup kemampuan teknis dan kognitif untuk mengakses, mengatur, memahami, mengintegrasikan, mengevaluasi, dan mengkreasi informasi secara aman melalui teknologi digital. Salah satu keterampilan mendasar dalam literasi digital adalah kemampuan menjelajahi informasi secara cerdas dan memanfaatkan mesin pencari (search engine) untuk kepentingan riset akademik secara efektif dan efisien.</span>
   </p>
 <hr/><h3 id="h3-468844443"><strong>2. Tujuan Pembelajaran</strong></h3>
-<p><span>Berdasarkan Capaian Pembelajaran (CP) dan Alur Tujuan Pembelajaran (ATP) Informatika Fase F, tujuan pembelajaran khusus pada topik ini adalah:</span> 
+<p><span>Berdasarkan Capaian Pembelajaran (CP) dan Alur Tujuan Pembelajaran (ATP) Informatika Fase F, tujuan pembelajaran khusus pada topik ini adalah:</span>
   </p>
 <ul>
     <li aria-level="1">Mampu memahami penggunaan mesin pencari secara optimal untuk melakukan riset akademik.</li>
@@ -150,10 +151,10 @@ We&apos;ve got a ton of blocks that are easy to use and get a lot done with litt
   </ul>
 <hr/><h3 id="h3-272661673"><strong>3. Materi dan Konsep Dasar</strong></h3>
 <h4 id="h4--549341882"><strong>A. Kebutuhan Riset Ilmiah Daring</strong></h4>
-<p><span>Riset adalah penyelidikan suatu masalah secara sistematis, kritis, dan ilmiah untuk mendapatkan fakta baru atau penafsiran yang lebih baik. Dalam melakukan riset, pencarian informasi daring menggunakan kata kunci sederhana sering kali tidak efektif karena menghasilkan jutaan data tidak relevan. Oleh karena itu, pemrogram dan peneliti harus menguasai strategi pencarian lanjutan untuk menyaring data secara presisi.</span> 
+<p><span>Riset adalah penyelidikan suatu masalah secara sistematis, kritis, dan ilmiah untuk mendapatkan fakta baru atau penafsiran yang lebih baik. Dalam melakukan riset, pencarian informasi daring menggunakan kata kunci sederhana sering kali tidak efektif karena menghasilkan jutaan data tidak relevan. Oleh karena itu, pemrogram dan peneliti harus menguasai strategi pencarian lanjutan untuk menyaring data secara presisi.</span>
   </p>
 <h4 id="h4--1885554261"><strong>B. Operator Logika Boolean</strong></h4>
-<p><strong>Operator logika Boolean berperan penting dalam mengaitkan, membatasi, atau mengecualikan konsep penelusuran di mesin pencari:</strong> 
+<p><strong>Operator logika Boolean berperan penting dalam mengaitkan, membatasi, atau mengecualikan konsep penelusuran di mesin pencari:</strong>
   </p>
 <ul>
     <li aria-level="1">AND: Digunakan untuk menggabungkan kata kunci guna mempersempit hasil pencarian
@@ -188,7 +189,7 @@ We&apos;ve got a ton of blocks that are easy to use and get a lot done with litt
 <h4 id="h4--2045198086"><strong>D. Teknologi Pencarian Modern</strong></h4>
 <ul>
     <li aria-level="1">
-      <p><strong>Pencarian Visual (Google Lens): Teknologi penelusuran informasi non-teks yang didasarkan pada pencocokan data gambar/visual yang diunggah pengguna dengan sumber visual serupa di internet.</strong> 
+      <p><strong>Pencarian Visual (Google Lens): Teknologi penelusuran informasi non-teks yang didasarkan pada pencocokan data gambar/visual yang diunggah pengguna dengan sumber visual serupa di internet.</strong>
       </p>
 
 
@@ -292,11 +293,11 @@ We&apos;ve got a ton of blocks that are easy to use and get a lot done with litt
   judul-materi="Latihan Ulangan - Bab 1 Sub Topik OPTIMALISASI PENCARIAN LANJUTAN UNTUK RISET"
   teks-materi="Ini adalah sesi latihan ulangan. Kerjakan berulang, lihat petunjuk, dan tinjau jawaban. Baca materi di bawah, lalu kerjakan kuis. Kamu bisa mengulang sampai 4 kali."
   judul-kuis="Latihan Ulangan - Bab 1"
-  apps-script-url="https://script.google.com/macros/s/AKfycbzUtnG3jkbt5yarQr5K8zTeZDf3cceBovBe5pmz6taoCGf3gT4tU7AwzpeNc35Gt0p1/exec"
+  apps-script-url="https://script.google.com/macros/s/AKfycbyA8V1DRWpTarcg2dc-hb50-Oze6OS8jA85hb-gyVMM_5uOTl68CKhn_RnzVNEVIrL2/exec"
   kd-materi="LM1 Latihan"
   materi-url="./lm1-materi-kuis-fase-f"
   kategori="formatif"
-materi-file="./files/Fase-F-LM2.docx" 
+materi-file="./files/Fase-F-LM2.docx"
 cover-image="./files/belajar.jpg"
   student-kelas=""
   soal-file-url="./files/2026-stimulus1-faseF.json"
@@ -306,13 +307,14 @@ cover-image="./files/belajar.jpg"
   question-delay="0"
   review-answers
   timer-autostart="false">
-</latihan-kuis> ]]>
+</latihan-kuis>
+ ]]>
     </content>
   </entry>
   <entry>
     <title>Ulangan Harian 1 FASE F LM1-F</title>
     <id>item-43d63e69-4564-4ae3-80df-ffa7a6677b2b</id>
-    <updated>2026-09-16T06:27:56.000Z</updated>
+    <updated>2026-09-16T23:27:00.000Z</updated>
     <published>2026-08-27T18:12:24.000Z</published>
     <summary>
 
@@ -344,7 +346,7 @@ Ulangan
   hide-score="true"
   shuffle-questions="true"
   shuffle-choices="true"
-  kategori="sumatif_lm"  apps-script-url="https://script.google.com/macros/s/AKfycbzUtnG3jkbt5yarQr5K8zTeZDf3cceBovBe5pmz6taoCGf3gT4tU7AwzpeNc35Gt0p1/exec"
+  kategori="sumatif_lm"  apps-script-url="https://script.google.com/macros/s/AKfycbyA8V1DRWpTarcg2dc-hb50-Oze6OS8jA85hb-gyVMM_5uOTl68CKhn_RnzVNEVIrL2/exec"
   kd-materi="LM1"
   materi-url="./lm1-materi-kuis-fase-f"
   student-id=""
@@ -355,14 +357,13 @@ Ulangan
   soal-file-url="./files/2026-stimulus1-faseF.json"
 >
 </latihan-kuis>
-
  ]]>
     </content>
   </entry>
   <entry>
     <title>Ulangan Harian 1 Fase E LM1-E</title>
     <id>item-21768d19-1305-46c3-90af-ad2d1542d1b6</id>
-    <updated>2026-09-16T06:27:55.000Z</updated>
+    <updated>2026-09-16T23:27:00.000Z</updated>
     <published>2026-08-31T08:01:59.000Z</published>
     <summary>📝 Kuis Ekosistem Periksa Fakta &amp;#38; CRAAP, PENCARIAN LANJUTAN (LM1) Kelas X
 
@@ -377,7 +378,7 @@ Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban
 <p>Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban
   benar/salah ditampilkan. Setelah login <mark>reload</mark>untuk menampilkan <mark>tombol mulai</mark>&#160;ulangan. Nilai akhir akan diambil dari nilai terakhir yang dikumpulkan setelah waktu habis atau semua soal terjawab dan klik selesai. Waktu Pengerjaan Soal 13 Menit&#160;🤐</p>
 <p>Kalau <b><u>mode gelap</u></b> tidak bisa gunakan <mark>mode terang</mark> di smartphonemu&#160;😄</p>
-<quiz-user-auth apps-script-url="https://script.google.com/macros/s/AKfycbzUtnG3jkbt5yarQr5K8zTeZDf3cceBovBe5pmz6taoCGf3gT4tU7AwzpeNc35Gt0p1/exec" auto-login _student-id=""></quiz-user-auth>
+<quiz-user-auth apps-script-url="https://script.google.com/macros/s/AKfycbyA8V1DRWpTarcg2dc-hb50-Oze6OS8jA85hb-gyVMM_5uOTl68CKhn_RnzVNEVIrL2/exec" auto-login _student-id=""></quiz-user-auth>
 
 
 
@@ -392,7 +393,7 @@ Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban
   hide-score="true"
   shuffle-questions="true"
   shuffle-choices="true"
-  kategori="sumatif_lm"  apps-script-url="https://script.google.com/macros/s/AKfycbzUtnG3jkbt5yarQr5K8zTeZDf3cceBovBe5pmz6taoCGf3gT4tU7AwzpeNc35Gt0p1/exec"
+  kategori="sumatif_lm"  apps-script-url="https://script.google.com/macros/s/AKfycbyA8V1DRWpTarcg2dc-hb50-Oze6OS8jA85hb-gyVMM_5uOTl68CKhn_RnzVNEVIrL2/exec"
   kd-materi="LM1"
   student-id=""
   judul-kuis="Ulangan Harian"
@@ -408,7 +409,7 @@ Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban
   <entry>
     <title>LATIHAN SIMULASI KUIS FASE-E-LM1</title>
     <id>item-792b811f-d307-4765-93cb-f20ed47c8097</id>
-    <updated>2026-09-16T06:27:55.000Z</updated>
+    <updated>2026-09-16T23:26:59.000Z</updated>
     <published>2026-08-31T08:40:02.000Z</published>
     <summary>📝 Latihan Kuis Kelas X
 Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban
@@ -424,7 +425,7 @@ Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban
 <p>Kalau <b><u>mode gelap</u></b>
  tidak bisa gunakan <mark>mode terang</mark> di smartphonemu&#160;😄</p>
 
-<quiz-user-auth apps-script-url="https://script.google.com/macros/s/AKfycbzUtnG3jkbt5yarQr5K8zTeZDf3cceBovBe5pmz6taoCGf3gT4tU7AwzpeNc35Gt0p1/exec" auto-login _student-id=""></quiz-user-auth>
+<quiz-user-auth apps-script-url="https://script.google.com/macros/s/AKfycbyA8V1DRWpTarcg2dc-hb50-Oze6OS8jA85hb-gyVMM_5uOTl68CKhn_RnzVNEVIrL2/exec" auto-login _student-id=""></quiz-user-auth>
 <br/><p></p>
 
 
@@ -436,7 +437,7 @@ Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban
   judul-materi="Latihan Ulangan - Bab 1"
   teks-materi="Ini adalah sesi latihan ulangan. Kerjakan berulang, lihat petunjuk, dan tinjau jawaban. Baca materi di bawah, lalu kerjakan kuis. Kamu bisa mengulang sampai 4 kali."
   judul-kuis="Latihan Ulangan - Bab 1"
-  apps-script-url="https://script.google.com/macros/s/AKfycbzUtnG3jkbt5yarQr5K8zTeZDf3cceBovBe5pmz6taoCGf3gT4tU7AwzpeNc35Gt0p1/exec"
+  apps-script-url="https://script.google.com/macros/s/AKfycbyA8V1DRWpTarcg2dc-hb50-Oze6OS8jA85hb-gyVMM_5uOTl68CKhn_RnzVNEVIrL2/exec"
   kd-materi="LM1 Latihan"
   materi-url="./lm1-ekosistem-periksa-fakta-metode-craap"
   kategori="formatif"
@@ -452,14 +453,13 @@ Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban
   review-answers
   timer-autostart="false">
 </latihan-kuis>
-
  ]]>
     </content>
   </entry>
   <entry>
     <title>LM1. EKOSISTEM PERIKSA FAKTA &amp; METODE CRAAP</title>
     <id>item-426de1b9-5806-4751-8610-0c7e9478b242</id>
-    <updated>2026-09-16T06:27:55.000Z</updated>
+    <updated>2026-09-16T23:26:59.000Z</updated>
     <published>2026-08-31T09:51:48.000Z</published>
     <summary>📘 Cara Mengerjakan Latihan Simak materi dan pahami, lanjutkan soal latihan di bawah dengan login terlebih dahulu,   harap refresh bila tombol mulai latihan soal tidak muncul setelah login. 1. P</summary>
     <link href="https://localhost:3000/sites/haxto/lm1-ekosistem-periksa-fakta-metode-craap"/>
@@ -605,7 +605,7 @@ Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban
 <p></p>
 <h3><strong>📝 Kuis Penilaian LM1</strong></h3>
 <p><strong>kerjakan kuis berikut untuk menguji pemahaman kamu tentang ekosistem periksa fakta dan metode CRAAP</strong></p>
-<quiz-user-auth apps-script-url="https://script.google.com/macros/s/AKfycbzUtnG3jkbt5yarQr5K8zTeZDf3cceBovBe5pmz6taoCGf3gT4tU7AwzpeNc35Gt0p1/exec" auto-login></quiz-user-auth>
+<quiz-user-auth apps-script-url="https://script.google.com/macros/s/AKfycbyA8V1DRWpTarcg2dc-hb50-Oze6OS8jA85hb-gyVMM_5uOTl68CKhn_RnzVNEVIrL2/exec" auto-login></quiz-user-auth>
 
 <latihan-kuis
   mode="siswa"
@@ -615,7 +615,7 @@ Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban
   judul-materi="Latihan Ulangan - Bab 1"
   teks-materi="Ini adalah sesi latihan ulangan. Kerjakan berulang, lihat petunjuk, dan tinjau jawaban. Baca materi di bawah, lalu kerjakan kuis. Kamu bisa mengulang sampai 4 kali."
   judul-kuis="Latihan Ulangan - Bab 1"
-  apps-script-url="https://script.google.com/macros/s/AKfycbzUtnG3jkbt5yarQr5K8zTeZDf3cceBovBe5pmz6taoCGf3gT4tU7AwzpeNc35Gt0p1/exec"
+  apps-script-url="https://script.google.com/macros/s/AKfycbyA8V1DRWpTarcg2dc-hb50-Oze6OS8jA85hb-gyVMM_5uOTl68CKhn_RnzVNEVIrL2/exec"
   kd-materi="LM1 Latihan"
   materi-url="./lm1-ekosistem-periksa-fakta-metode-craap"
   kategori="formatif"
@@ -630,13 +630,14 @@ Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban
   question-delay="0"
   review-answers
   timer-autostart="false">
-</latihan-kuis> ]]>
+</latihan-kuis>
+ ]]>
     </content>
   </entry>
   <entry>
     <title>halaman-dark tes bug</title>
     <id>item-9bc01ccd-190b-45e4-ac15-8d4938403c5f</id>
-    <updated>2026-09-16T06:27:57.000Z</updated>
+    <updated>2026-09-16T23:27:01.000Z</updated>
     <published>2026-09-01T04:15:45.000Z</published>
     <summary>
 </summary>
@@ -649,7 +650,7 @@ Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban
 <p></p>
 <p>Mohon kerjakan Tes Latihan</p>
 <p></p>
-<quiz-user-auth apps-script-url="https://script.google.com/macros/s/AKfycbzUtnG3jkbt5yarQr5K8zTeZDf3cceBovBe5pmz6taoCGf3gT4tU7AwzpeNc35Gt0p1/exec" auto-login _student-id=""></quiz-user-auth>
+<quiz-user-auth apps-script-url="https://script.google.com/macros/s/AKfycbyA8V1DRWpTarcg2dc-hb50-Oze6OS8jA85hb-gyVMM_5uOTl68CKhn_RnzVNEVIrL2/exec" auto-login _student-id=""></quiz-user-auth>
 
 <latihan-kuis
   mode="siswa"
@@ -659,11 +660,11 @@ Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban
   judul-materi="Latihan Ulangan - Bab 1 Sub Topik OPTIMALISASI PENCARIAN LANJUTAN UNTUK RISET"
   teks-materi="Ini adalah sesi latihan ulangan. Kerjakan berulang, lihat petunjuk, dan tinjau jawaban. Baca materi di bawah, lalu kerjakan kuis. Kamu bisa mengulang sampai 4 kali."
   judul-kuis="Latihan Ulangan - Bab 1"
-  apps-script-url="https://script.google.com/macros/s/AKfycbzUtnG3jkbt5yarQr5K8zTeZDf3cceBovBe5pmz6taoCGf3gT4tU7AwzpeNc35Gt0p1/exec"
+  apps-script-url="https://script.google.com/macros/s/AKfycbyA8V1DRWpTarcg2dc-hb50-Oze6OS8jA85hb-gyVMM_5uOTl68CKhn_RnzVNEVIrL2/exec"
   kd-materi="LM1 Latihan"
   materi-url="./lm1-materi-kuis-fase-f"
   kategori="formatif"
-materi-file="./files/Fase-F-LM2.docx" 
+materi-file="./files/Fase-F-LM2.docx"
 cover-image="./files/tangis-sedih.jpg"
   student-kelas=""
   soal-file-url="./files/2026-stimulus1-faseF.json"
@@ -680,7 +681,7 @@ cover-image="./files/tangis-sedih.jpg"
   <entry>
     <title>LM2 Fase F Verifikasi</title>
     <id>item-fd7a0828-3867-49ac-8957-6d8f99585c6e</id>
-    <updated>2026-09-16T06:27:56.000Z</updated>
+    <updated>2026-09-16T23:27:00.000Z</updated>
     <published>2026-09-03T23:42:45.000Z</published>
     <summary>
 MODUL AJAR INFORMATIKA FASE F (KELAS XI)
@@ -970,11 +971,11 @@ Informatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in</s
   judul-materi="Latihan Ulangan - Bab 1 Sub Topik VERIFIKASI INFORMASI DAN PERIKSA FAKTA (LITERASI DIGITAL) Fase F"
   teks-materi="Ini adalah sesi latihan ulangan. Kerjakan berulang, lihat petunjuk, dan tinjau jawaban. Baca materi di bawah, lalu kerjakan kuis. Kamu bisa mengulang sampai 4 kali."
   judul-kuis="Latihan Ulangan - Bab 1"
-  apps-script-url="https://script.google.com/macros/s/AKfycbzUtnG3jkbt5yarQr5K8zTeZDf3cceBovBe5pmz6taoCGf3gT4tU7AwzpeNc35Gt0p1/exec"
+  apps-script-url="https://script.google.com/macros/s/AKfycbyA8V1DRWpTarcg2dc-hb50-Oze6OS8jA85hb-gyVMM_5uOTl68CKhn_RnzVNEVIrL2/exec"
   kd-materi="LM2 Latihan"
   materi-url="./lm2-fase-f-verifikasi"
   kategori="formatif"
-materi-file="./files/Fase-F-LM2.docx" 
+materi-file="./files/Fase-F-LM2.docx"
 cover-image="./files/belajar.jpg"
   student-kelas=""
   soal-file-url="./files/2026-stimulus2-faseF.json"
@@ -984,13 +985,14 @@ cover-image="./files/belajar.jpg"
   question-delay="0"
   review-answers
   timer-autostart="false">
-</latihan-kuis> ]]>
+</latihan-kuis>
+ ]]>
     </content>
   </entry>
   <entry>
     <title>Selamat Datang</title>
     <id>item-2a96eefc-f4ee-4153-95e7-e33a7782d977</id>
-    <updated>2026-09-16T06:27:55.000Z</updated>
+    <updated>2026-09-16T23:26:59.000Z</updated>
     <published>2026-09-04T22:06:44.000Z</published>
     <summary>ULANGAN INFORMATIKA KELAS X-XI
 
@@ -1034,7 +1036,7 @@ Semboyan
 
 
 </stop-note>
-<quiz-user-auth apps-script-url="https://script.google.com/macros/s/AKfycbzUtnG3jkbt5yarQr5K8zTeZDf3cceBovBe5pmz6taoCGf3gT4tU7AwzpeNc35Gt0p1/exec" auto-login _student-id="STD-65108053"></quiz-user-auth>
+<quiz-user-auth apps-script-url="https://script.google.com/macros/s/AKfycbyA8V1DRWpTarcg2dc-hb50-Oze6OS8jA85hb-gyVMM_5uOTl68CKhn_RnzVNEVIrL2/exec" auto-login _student-id="STD-65108053"></quiz-user-auth>
 <p></p>
 <ul><li><a href="./lm1-ekosistem-periksa-fakta-metode-craap">Link Menuju Materi Kelas X</a></li>
 
@@ -1097,7 +1099,7 @@ Semboyan
   <entry>
     <title>Ulangan Harian 2 FASE F LM2</title>
     <id>item-cc3c0230-cd78-4c49-996b-e5f77752a46a</id>
-    <updated>2026-09-16T06:27:56.000Z</updated>
+    <updated>2026-09-16T23:27:01.000Z</updated>
     <published>2026-09-05T17:13:07.000Z</published>
     <summary>📝 Kuis Verifikasi Informasi &amp;#38; Periksa Fakta (LM2)
 
@@ -1112,7 +1114,7 @@ Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban
 <p>Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban
   benar/salah tidak ditampilkan. Nilai akhir akan diambil dari nilai terakhir yang dikumpulkan setelah waktu habis atau semua soal terjawab. Waktu Pengerjaan Soal 10 Menit&#160;🤐</p>
 <p>Kalau <b><u>mode gelap</u></b> tidak bisa gunakan <mark>mode terang</mark> di smartphonemu&#160;😄</p>
-<!--<quiz-user-auth apps-script-url="https://script.google.com/macros/s/AKfycbzUtnG3jkbt5yarQr5K8zTeZDf3cceBovBe5pmz6taoCGf3gT4tU7AwzpeNc35Gt0p1/exec" auto-login _student-id=""></quiz-user-auth>-->
+<!--<quiz-user-auth apps-script-url="https://script.google.com/macros/s/AKfycbyA8V1DRWpTarcg2dc-hb50-Oze6OS8jA85hb-gyVMM_5uOTl68CKhn_RnzVNEVIrL2/exec" auto-login _student-id=""></quiz-user-auth>-->
 
 <latihan-kuis
   mode="siswa"
@@ -1144,7 +1146,7 @@ cover-image="./files/ilya-pavlov-OqtafYT5kTw-unsplash.jpg"
   <entry>
     <title>Google Collabs</title>
     <id>item-d395c5d6-8e01-4cd2-9fd2-d1ab76cdb62f</id>
-    <updated>2026-09-16T06:27:56.000Z</updated>
+    <updated>2026-09-16T23:27:00.000Z</updated>
     <published>2026-09-16T00:15:26.000Z</published>
     <summary>Materi Pengenalan Google Collabs
 
@@ -1229,15 +1231,15 @@ Pernyataan yang benar mengenai eksekusi kode tersebut adalah...
     </content>
   </entry>
   <entry>
-    <title>Copy coba Ulangan 2 FASE F LM2</title>
+    <title>Remidi Ulangan 2 FASE F LM2</title>
     <id>item-6d97fd59-ff85-4cb5-b919-e62def7dad34</id>
-    <updated>2026-09-16T07:04:35.000Z</updated>
+    <updated>2026-09-16T23:27:01.000Z</updated>
     <published>2026-09-16T06:27:57.000Z</published>
     <summary>📝 Kuis Verifikasi Informasi &amp;#38; Periksa Fakta (LM2)
 
 Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban
   benar/salah tidak ditampilkan. Nilai akhir akan diambil dari</summary>
-    <link href="https://localhost:3000/sites/haxto/copy-of-ulangan-harian-2-fase-f-lm2"/>
+    <link href="https://localhost:3000/sites/haxto/remidi-ulangan-2-fase-f-lm2"/>
     
     <content type="html">
       <![CDATA[ 
@@ -1248,7 +1250,29 @@ Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban
 <p>Kalau <b><u>mode gelap</u></b>
 
  tidak bisa gunakan <mark>mode terang</mark> di smartphonemu&#160;😄</p>
-<latihan-kuis mode="siswa" duration="600" timer-autostart hide-pause-restart hide-confetti hide-answers hide-score shuffle-questions shuffle-choices kategori="sumatif_lm" apps-script-url="https://script.google.com/macros/s/AKfycbzrdnwwjnmnVPYaNMdglqVe5gSWVQlEi46d9eCd9vjgPgGJ6jPi_X2P1OIEtpcXj0CU/exec" kd-materi="LM2" materi-url="./lm2-materi-kuis-fase-f" student-id="" judul-kuis="Ulangan Harian 2 Verifikasi Informasi &amp; Periksa Fakta" allow-backward-nav show-question-nav show-sheet-link soal-file-url="./files/2026-stimulus2-faseF.json" materi-file="./files/Fase-F-LM2.docx" cover-image="./files/ilya-pavlov-OqtafYT5kTw-unsplash.jpg" judul-materi="Materi Pembelajaran" teks-materi="Baca materi di bawah ini dengan saksama sebelum mengerjakan kuis. Waktu pengerjaan kuis dibatasi oleh timer; saat waktu habis, kuis akan dikunci dan nilai otomatis terkirim." student-name="" student-nis="" student-absen="" student-kelas="" pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai" allow-retake max-retake="0" question-delay="1800" review-answers kkm="75" tab-switch-threshold="3" questions="[{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Apa kekurangan utama dari metode Membaca Vertikal dalam mengevaluasi informasi digital?&quot;,&quot;hint&quot;:&quot;Fokus pada risiko keterpukauan pada tampilan internal situs.&quot;,&quot;choices&quot;:[&quot;Membutuhkan waktu yang terlalu lama untuk membaca&quot;,&quot;Hanya dapat digunakan untuk situs berbahasa Indonesia&quot;,&quot;Mengandalkan elemen visual internal yang mudah dipalsukan&quot;,&quot;Tidak dapat digunakan pada situs dengan protokol HTTPS&quot;,&quot;Membawa risiko kerusakan sistem komputasi lokal secara otomatis&quot;],&quot;correctIndex&quot;:2},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Seorang siswa menemukan artikel kontroversial mengenai 'bahaya radiasi ponsel' di sebuah situs tidak dikenal. Berdasarkan konsep membaca lateral pada Stimulus A, tindakan pertama manakah yang paling tepat dan taktis untuk dilakukan?&quot;,&quot;hint&quot;:&quot;Ciri utama membaca lateral adalah keluar dari halaman asal untuk memverifikasi ke luar.&quot;,&quot;choices&quot;:[&quot;Membaca artikel tersebut secara saksama dari paragraf pertama hingga terakhir tanpa terputus&quot;,&quot;Membagikan artikel tersebut langsung ke media sosial agar mendapat tanggapan dari orang lain&quot;,&quot;Keluar dari situs tersebut, membuka tab baru di peramban, dan mencari verifikasi dari situs resmi seperti WHO atau Kementerian Kesehatan&quot;,&quot;Memeriksa apakah situs web tersebut menggunakan hiasan gambar yang estetik dan tata bahasa yang rumit&quot;,&quot;Menyalin teks artikel tersebut ke dalam Google Docs untuk dianalisis struktur kalimatnya&quot;],&quot;correctIndex&quot;:2},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Protokol HTTPS menjamin hal berikut, KECUALI...&quot;,&quot;hint&quot;:&quot;HTTPS mengamankan jalur transmisi, namun tidak menyaring kebenaran isi konten.&quot;,&quot;choices&quot;:[&quot;Keamanan transmisi data dari penyadapan pihak ketiga&quot;,&quot;Penggunaan enkripsi SSL/TLS untuk melindungi data&quot;,&quot;Kebenaran dan validitas informasi di dalam situs&quot;,&quot;Perlindungan data antara klien dan server&quot;,&quot;Enkripsi persandian asimetris jalur transmisi&quot;],&quot;correctIndex&quot;:2},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Metode triangulasi dalam verifikasi informasi bertujuan untuk...&quot;,&quot;hint&quot;:&quot;Pikirkan manfaat penggabungan beberapa sumber untuk memvalidasi data.&quot;,&quot;choices&quot;:[&quot;Mempercepat proses pencarian informasi di internet&quot;,&quot;Memperkuat validitas data dengan membandingkan beberapa sumber&quot;,&quot;Menghindari penggunaan situs dengan protokol HTTPS&quot;,&quot;Membuat konten menjadi lebih menarik secara visual&quot;,&quot;Menghapus data cache lama dari server secara otomatis&quot;],&quot;correctIndex&quot;:1},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Dalam metode triangulasi, bias konfirmasi merupakan salah satu ancaman utama yang harus dihindari. Mengapa bias konfirmasi dianggap berbahaya bagi seorang warga digital dalam menerima informasi politik di internet?&quot;,&quot;hint&quot;:&quot;Bias ini membuat orang hanya mencari pembenaran atas opini pribadinya.&quot;,&quot;choices&quot;:[&quot;Karena membuat server database internet mengalami kelebihan beban pemrosesan&quot;,&quot;Karena secara tidak sadar mendorong seseorang hanya mencari bukti yang mendukung opini pribadinya dan mengabaikan fakta sebaliknya&quot;,&quot;Karena memicu peretasan akun media sosial melalui infeksi virus secara massal&quot;,&quot;Karena memaksa peramban menghapus riwayat pencarian secara otomatis&quot;,&quot;Karena melanggar hukum hak cipta UU ITE secara langsung&quot;],&quot;correctIndex&quot;:1},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Ketika melakukan riset kesehatan secara daring, misalnya tentang efek samping vaksin, kita sering menemukan artikel dari situs berita terkenal yang mapan dan tulisan dari blog pribadi yang tidak dikenal. Berdasarkan konsep perbaikan kredibilitas informasi, mengapa riwayat publikasi (publication history) dari suatu sumber daring sangat penting untuk dievaluasi sebelum kita mempercayai informasinya?&quot;,&quot;hint&quot;:&quot;Riwayat publikasi berfungsi seperti rekam jejak atau portofolio reputasi.&quot;,&quot;choices&quot;:[&quot;Karena riwayat publikasi menentukan kecepatan loading halaman web saat diakses melalui peramban&quot;,&quot;Karena sumber yang telah membangun reputasi baik dalam menghasilkan konten berkualitas sebelumnya memberikan dasar yang lebih solid untuk mempercayai keakuratan informasi mereka&quot;,&quot;Karena riwayat publikasi secara otomatis mengenkripsi data sensitif pengguna menggunakan SSL/TLS&quot;,&quot;Karena hanya situs dengan riwayat publikasi panjang yang dapat menampilkan file berformat dokumen PDF&quot;,&quot;Karena riwayat publikasi menjamin bahwa situs tersebut bebas dari iklan komersial yang mengganggu&quot;],&quot;correctIndex&quot;:1},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Seorang jurnalis menemukan foto kerusakan infrastruktur yang diklaim terjadi akibat bencana gempa bumi hari ini. Setelah melakukan Reverse Image Search, ia menemukan bahwa foto tersebut sebenarnya sudah pernah diunggah di sebuah portal berita luar negeri pada tahun 2018. Kesimpulan manakah yang dapat ditarik jurnalis tersebut?&quot;,&quot;hint&quot;:&quot;Memakai foto lama untuk narasi baru adalah bentuk manipulasi konteks.&quot;,&quot;choices&quot;:[&quot;Foto tersebut 100% asli dan relevan dengan gempa bumi hari ini&quot;,&quot;Foto tersebut kredibel karena disajikan dalam resolusi tinggi dan tajam&quot;,&quot;Foto tersebut merupakan hoaks konteks karena diposting kembali di luar konteks waktu aslinya&quot;,&quot;Metadata EXIF dari foto tersebut telah dienkripsi secara otomatis oleh satelit&quot;,&quot;Situs web pengunggah pertama foto tersebut terindikasi tidak memiliki sertifikat HTTPS&quot;],&quot;correctIndex&quot;:2},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Mengapa metadata EXIF pada gambar tidak boleh dipercaya secara mutlak?&quot;,&quot;hint&quot;:&quot;Pertimbangkan kemudahan penyuntingan file metadata oleh perangkat lunak.&quot;,&quot;choices&quot;:[&quot;Karena metadata EXIF tidak pernah tersedia di file gambar digital&quot;,&quot;Karena metadata EXIF sangat rentan dihapus atau dimanipulasi&quot;,&quot;Karena metadata EXIF hanya tersedia pada foto yang diambil dengan kamera profesional&quot;,&quot;Karena metadata EXIF tidak mengandung informasi yang berguna&quot;,&quot;Karena pembacaan data EXIF dapat menyebabkan kerusakan enkripsi file gambar secara permanen&quot;],&quot;correctIndex&quot;:1},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Aspek 'Kebenaran Visual' dalam mengevaluasi kualitas gambar digital dilakukan dengan cara...&quot;,&quot;hint&quot;:&quot;Periksa apakah ada rekayasa atau suntingan digital yang memalsukan gambar.&quot;,&quot;choices&quot;:[&quot;Menghitung jumlah total bit warna dari file gambar biner&quot;,&quot;Memastikan gambar yang diunggah tidak memiliki ukuran file yang melebihi 64 KiB&quot;,&quot;Mendeteksi tanda-tanda manipulasi, rekayasa digital, atau penyuntingan yang tidak jujur pada objek gambar&quot;,&quot;Mengubah format file gambar dari PNG menjadi format presentasi PPT&quot;,&quot;Menggunakan mesin pencari Google Docs untuk membuat daftar rujukan gambar&quot;],&quot;correctIndex&quot;:2},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Seorang siswa menemukan dua artikel yang membahas topik perubahan iklim. Artikel pertama ditulis secara profesional, jelas, terstruktur rapi, dan bebas dari kesalahan tata bahasa maupun ejaan. Artikel kedua penuh dengan salah ketik (typo), tata bahasa yang kacau, dan didominasi opini subjektif tanpa data pendukung. Berdasarkan kriteria evaluasi konten siber, apa esensi dari melakukan analisis gaya penulisan (writing style) dan kebiasaan penyajian informasi?&quot;,&quot;hint&quot;:&quot;Sumber yang dapat dipercaya umumnya menyajikan informasi secara profesional dan bebas kesalahan ketik.&quot;,&quot;choices&quot;:[&quot;Menghitung jumlah kata per menit untuk menguji efisiensi loading halaman di peramban&quot;,&quot;Memastikan bahwa penulis artikel tersebut menggunakan komputer dengan spesifikasi tinggi&quot;,&quot;Mengidentifikasi keandalan sumber, karena sumber yang dapat dipercaya cenderung mengadopsi gaya penulisan yang profesional, jelas, dan bebas kesalahan tata bahasa/ejaan&quot;,&quot;Mengubah tipe format berkas tulisan secara otomatis menjadi slide presentasi PPT&quot;,&quot;Membantu sistem menghapus data cache peramban secara berkala demi keamanan privasi&quot;],&quot;correctIndex&quot;:2},{&quot;type&quot;:&quot;pgk&quot;,&quot;question&quot;:&quot;Tentukan apakah setiap pernyataan berikut Benar atau Salah berdasarkan wacana stimulus dan materi pendukung mengenai teknik verifikasi informasi!&quot;,&quot;statements&quot;:[{&quot;text&quot;:&quot;Metode membaca vertikal lebih andal daripada membaca lateral dalam mendeteksi hoaks karena berfokus menganalisis keindahan logo dan menu internal situs asli.&quot;,&quot;answer&quot;:false},{&quot;text&quot;:&quot;Metode triangulasi mewajibkan kita mencari dan membandingkan minimal tiga sumber data atau metode independen berbeda untuk mencegah bias konfirmasi.&quot;,&quot;answer&quot;:true},{&quot;text&quot;:&quot;Teknologi Reverse Image Search bekerja dengan membandingkan file gambar yang diunggah dengan basis data gambar di internet untuk melacak asal-usulnya.&quot;,&quot;answer&quot;:true},{&quot;text&quot;:&quot;Sumber informasi siber yang kredibel akan bersikap transparan dengan memberikan informasi yang jelas tentang bagaimana mereka mendapatkan data serta menyertakan referensi atau tautan ke sumber asli.&quot;,&quot;answer&quot;:true},{&quot;text&quot;:&quot;Situs web komersial yang menyajikan klaim kesehatan sepihak demi mempromosikan produk jualan mereka tanpa menyertakan risiko secara berimbang menunjukkan tingkat objektivitas yang tinggi dan bebas dari bias potensial.&quot;,&quot;answer&quot;:false},{&quot;text&quot;:&quot;Protokol HTTPS menjamin kebenaran, keakuratan, dan validitas isi atau informasi dari konten yang ditulis di dalam sebuah website.&quot;,&quot;answer&quot;:false}]},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Seorang mahasiswa sedang menyelidiki kredibilitas artikel kesehatan tentang 'khasiat teh hijau' yang diposting di sebuah blog tidak dikenal. Manakah dua tindakan berikut yang mencerminkan penerapan taktis metode membaca lateral (lateral reading)? (Pilih dua opsi)&quot;,&quot;hint&quot;:&quot;Membaca lateral berfokus pada verifikasi reputasi dan klaim melalui tab/sumber luar.&quot;,&quot;choices&quot;:[&quot;Membaca artikel blog tersebut secara berulang-ulang dari atas ke bawah untuk memahami maknanya&quot;,&quot;Membuka tab baru di peramban untuk melacak rekam jejak, kredibilitas, dan reputasi penulis atau blog tersebut di situs web independen&quot;,&quot;Menilai tingkat kebenaran artikel berdasarkan keindahan desain visual, warna latar belakang, dan hiasan blog tersebut&quot;,&quot;Mencari klaim kesehatan yang sama di peramban luar untuk membandingkan informasi dengan situs terpercaya seperti WHO atau jurnal ilmiah&quot;,&quot;Melaporkan situs web tersebut langsung ke penyedia hosting agar situsnya diblokir secara permanen&quot;],&quot;correctAnswers&quot;:[1,3]},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Dalam menghadapi ancaman infodemi dan hoaks siber di internet, kita harus mampu mengevaluasi kredibilitas video secara kritis serta memanfaatkan ekosistem periksa fakta daring yang tersedia. Manakah dua tindakan berikut yang merupakan langkah valid dan ilmiah dalam memverifikasi keaslian konten video atau melacak kebenaran klaim di Indonesia? (Pilih dua opsi)&quot;,&quot;hint&quot;:&quot;Manfaatkan ekosistem periksa fakta lokal dan periksa tanda manipulasi/pemotongan video.&quot;,&quot;choices&quot;:[&quot;Menggunakan portal periksa fakta daring independen seperti turnbackhoax.id atau cekfakta.com untuk memverifikasi kebenaran klaim yang viral&quot;,&quot;Menganalisis konten video secara mendalam untuk mendeteksi tanda-tanda penyuntingan, manipulasi konteks, atau pemotongan (cutting) yang tidak alami&quot;,&quot;Mengandalkan durasi video yang sangat panjang sebagai jaminan mutlak bahwa isi video tersebut pasti orisinal dan bebas manipulasi&quot;,&quot;Mengunduh video tersebut secara berulang kali menggunakan jaringan internet nirkabel berkecepatan tinggi agar resolusinya meningkat secara otomatis&quot;,&quot;Melaporkan langsung pengunggah video ke penyedia hosting asing agar server website mereka diblokir tanpa verifikasi awal&quot;],&quot;correctAnswers&quot;:[0,1]},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Ketika kita mengambil foto menggunakan kamera ponsel pintar, file gambar digital yang dihasilkan akan menyimpan metadata EXIF secara otomatis. Manakah dua jenis informasi tersembunyi berikut yang dapat dibaca saat kita memeriksa metadata EXIF dari file gambar asli tersebut? (Pilih dua opsi)&quot;,&quot;hint&quot;:&quot;EXIF mencatat koordinat fisik dan keterangan waktu pengambilan gambar.&quot;,&quot;choices&quot;:[&quot;Nama lengkap dari orang-orang yang wajahnya tertangkap di dalam foto tersebut&quot;,&quot;Koordinat lokasi geografis GPS tempat foto tersebut diambil&quot;,&quot;Tanggal pembuatan dan keterangan waktu (timestamp) pemotretan&quot;,&quot;Riwayat manipulasi piksel yang dilakukan di aplikasi pihak ketiga&quot;,&quot;Sertifikat enkripsi kunci publik dari jaringan Wi-Fi pengirim&quot;],&quot;correctAnswers&quot;:[1,2]},{&quot;type&quot;:&quot;matching&quot;,&quot;question&quot;:&quot;Pasangkanlah jenis metode membaca di lajur kiri dengan karakteristik perilaku evaluasinya yang tepat di lajur kanan berdasarkan wacana Stimulus A!&quot;,&quot;leftItems&quot;:[&quot;Membaca Vertikal&quot;,&quot;Membaca Lateral&quot;],&quot;rightItems&quot;:[&quot;Melompat antar-tab peramban untuk mencari konsensus independen di luar situs web asal.&quot;,&quot;Bertahan pada satu halaman web, menilai kredibilitas dari menu About Us, logo, dan visual internal.&quot;,&quot;Menghapus data cache dan kuki peramban secara terjadwal.&quot;],&quot;correctPairs&quot;:{&quot;0&quot;:1,&quot;1&quot;:0}}]" _attempt-ke="0" _soal-file-url-cache="./files/2026-stimulus2-faseF.json" _remidi-soal="[]" _tab-switch-count="0" _visibility-change-count="0" _window-blur-count="0" _window-focus-count="0" _warning-count="0"  >
+
+<latihan-kuis
+  mode="siswa"
+  kd-materi="LM2"
+  duration="900"
+  kategori="sumatif_lm"
+  judul-kuis="Uji Remidi — Latihan LM2"
+  soal-file-url="./files/2026-stimulus2-faseF.json"
+  remidi-soal-url="./files/2026-stimulus2-faseF.json"
+  remidi-mode
+  shuffle-choices
+  shuffle-questions
+  kkm="75"
+  practice-mode="true"
+hide-confetti=true
+  hide-answers=true
+  hide-score="true"
+  student-id=""
+  allow-retake="true"
+  max-retake="5"
+  hide-pause-restart
+  tab-switch-threshold="3"
+  apps-script-url="https://script.google.com/macros/s/AKfycbyA8V1DRWpTarcg2dc-hb50-Oze6OS8jA85hb-gyVMM_5uOTl68CKhn_RnzVNEVIrL2">
 </latihan-kuis>
  ]]>
     </content>

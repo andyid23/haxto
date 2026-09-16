@@ -4980,6 +4980,17 @@
             },
             {
               "kind": "field",
+              "name": "ulanganMode",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "ulangan-mode",
+              "reflects": true
+            },
+            {
+              "kind": "field",
               "name": "questionDelay",
               "privacy": "public",
               "type": {
@@ -5628,6 +5639,14 @@
               },
               "default": "false",
               "fieldName": "practiceMode"
+            },
+            {
+              "name": "ulangan-mode",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "ulanganMode"
             },
             {
               "name": "question-delay",
