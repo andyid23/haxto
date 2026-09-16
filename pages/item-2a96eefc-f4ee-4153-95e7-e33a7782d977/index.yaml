@@ -32,7 +32,7 @@ metadata:
     - files/habits.jpg
     - files/belajar.jpg
   videos: []
-  updated: 1789172848
+  updated: 1789539225
   published: true
   status: ''
   files:
@@ -138,7 +138,7 @@ metadata:
   icon: courseicons:strategy
 content: >
 
-  <p>Belajar dan berlatih setiap saat!</p>
+  <p>Belajar dan berlatih setiap saat! Agar semakin mahir.</p>
 
   <h3 data-primary="0" data-border="md" data-design-treatment="bg"
   data-padding="m" id="h3-1838830575" data-text-align="center">ULANGAN
@@ -166,16 +166,18 @@ content: >
 
 
 
+
   </stop-note>
 
   <quiz-user-auth
   apps-script-url="https://script.google.com/macros/s/AKfycbzUtnG3jkbt5yarQr5K8zTeZDf3cceBovBe5pmz6taoCGf3gT4tU7AwzpeNc35Gt0p1/exec"
-  auto-login _student-id=""></quiz-user-auth>
+  auto-login _student-id="STD-65108053"></quiz-user-auth>
 
   <p></p>
 
   <ul><li><a href="./lm1-ekosistem-periksa-fakta-metode-craap">Link Menuju
   Materi Kelas X</a></li>
+
 
 
 
@@ -198,8 +200,10 @@ content: >
 
 
 
+
   <li><a href="./lm2-fase-f-verifikasi">Link Menuju Materi Kelas XI
   LM2</a>&#160;</li>
+
 
 
 
@@ -289,7 +293,7 @@ content: >
   accent-color="grey" size="wide" offset="none" link="files/sholat.jpg"
   figure-label-description="Pinterest sumber" caption="Apa gunanya hidup 1000
   tahun kalau tak sholat" box modal-title="Apa gunanya hidup 1000 tahun kalau
-  tak sholat - Pinterest sumber" _has-caption></media-image>
+  tak sholat - Pinterest sumber" _has-caption disable-zoom></media-image>
 
   <p></p>
 

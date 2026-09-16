@@ -1,4 +1,4 @@
-Belajar dan berlatih setiap saat!
+Belajar dan berlatih setiap saat! Agar semakin mahir.
 
 ### ULANGAN INFORMATIKA KELAS X-XI
 
