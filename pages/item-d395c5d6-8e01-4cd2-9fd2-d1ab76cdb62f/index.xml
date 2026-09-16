@@ -17,20 +17,20 @@
 </images>
 <videos>
 </videos>
-<updated>1789518221</updated>
+<updated>1789518252</updated>
 <theme>
-<element>polaris-invent-theme</element>
-<path>@haxtheweb/polaris-theme/lib/polaris-invent-theme.js</path>
-<name>Polaris Invent</name>
-<thumbnail>@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-polaris-invent-theme-thumb.jpg</thumbnail>
-<description>Start with a blank site using the Polaris Invent</description>
+<element>polaris-theme</element>
+<path>@haxtheweb/polaris-theme/polaris-theme.js</path>
+<name>Polaris</name>
+<thumbnail>@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-polaris-theme-thumb.jpg</thumbnail>
+<description>Start with a blank site using the Polaris</description>
 <category>
 <item>Website</item>
 </category>
 <hidden>false</hidden>
-<priority>0</priority>
+<priority>10</priority>
 <terrible>false</terrible>
-<key>polaris-invent-theme</key>
+<key>polaris-theme</key>
 </theme>
 <published>true</published>
 <hideInMenu>false</hideInMenu>

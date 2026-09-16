@@ -12,20 +12,20 @@
     "created": 1789517726,
     "images": [],
     "videos": [],
-    "updated": 1789518221,
+    "updated": 1789518252,
     "theme": {
-      "element": "polaris-invent-theme",
-      "path": "@haxtheweb/polaris-theme/lib/polaris-invent-theme.js",
-      "name": "Polaris Invent",
-      "thumbnail": "@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-polaris-invent-theme-thumb.jpg",
-      "description": "Start with a blank site using the Polaris Invent",
+      "element": "polaris-theme",
+      "path": "@haxtheweb/polaris-theme/polaris-theme.js",
+      "name": "Polaris",
+      "thumbnail": "@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-polaris-theme-thumb.jpg",
+      "description": "Start with a blank site using the Polaris",
       "category": [
         "Website"
       ],
       "hidden": false,
-      "priority": 0,
+      "priority": 10,
       "terrible": false,
-      "key": "polaris-invent-theme"
+      "key": "polaris-theme"
     },
     "published": true,
     "hideInMenu": false,
