@@ -17,7 +17,7 @@
 </images>
 <videos>
 </videos>
-<updated>1789521485</updated>
+<updated>1789521754</updated>
 <theme>
 <element>polaris-flex-theme</element>
 <path>@haxtheweb/polaris-theme/lib/polaris-flex-theme.js</path>
@@ -52,9 +52,9 @@
 <content><![CDATA[
 <p>Materi Pengenalan Google Collabs</p>
 <p>Langkah-langkah</p>
-<ol><li>Buka Google Colab Buka aplikasi melalui link <a href="https://colab.research.google.com/" target="_blank">https://colab.research.google.com/</a>. Jika diminta untuk sign-in, silakan masuk menggunakan akun Google/Gmail kamu.</li>
-
-
+<ol>
+  <li>Buka Google Colab Buka aplikasi melalui link <a href="https://colab.research.google.com/" target="_blank">https://colab.research.google.com/</a>. Jika diminta untuk sign-in,
+    silakan masuk menggunakan akun Google/Gmail kamu.</li>
 
 </ol>
 <p></p>
@@ -62,9 +62,13 @@
 <p></p>
 <p>2. Cek Lingkungan IDE</p>
 <p>pilih New Notebook untuk membuat catatan baru</p>
-<p>3.&#160;Ketikan perintah print (&#8220;Hello World&#8221;) di area kerja editor Google Colab, kemudian jalankan program dengan menekan tombol segitiga di kiri kode program</p>
+<p>3.&#160;Ketikan perintah print (&#8220;Hello World&#8221;) di area kerja editor
+  Google Colab, kemudian jalankan program dengan menekan tombol segitiga di kiri kode
+  program</p>
 <p></p>
-<p><latihan-kuis   duration="300" judul-materi="Materi Pembelajaran" teks-materi="Baca materi di bawah ini dengan saksama sebelum mengerjakan kuis. Waktu pengerjaan kuis dibatasi oleh timer; saat waktu habis, kuis akan dikunci dan nilai otomatis terkirim."  materi-file="" cover-image="" judul-kuis="Evaluasi Kuis Interaktif" student-id="STD-65108053" student-name="Andy" student-nis="234" student-absen="" student-kelas="XI-1" kd-materi="" pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai"  allow-retake max-retake="0" mode="siswa" hide-pause-restart kategori="sumatif_lm" show-question-nav question-delay="1800" review-answers timer-autostart kkm="75"  tab-switch-threshold="3" _attempt-ke="0" _remidi-soal="[]" _tab-switch-count="0" _visibility-change-count="0" _window-blur-count="0" _window-focus-count="0" _warning-count="0"></latihan-kuis>
+<p>
+  <latihan-kuis duration="300" judul-materi="Materi Pembelajaran" teks-materi="Baca materi di bawah ini dengan saksama sebelum mengerjakan kuis. Waktu pengerjaan kuis dibatasi oleh timer; saat waktu habis, kuis akan dikunci dan nilai otomatis terkirim." materi-file="" cover-image="" judul-kuis="Latihan Kuis Interaktif" student-id="STD-65108053" student-name="Andy" student-nis="234" student-absen="" student-kelas="XI-1" kd-materi="" pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai Latihan" allow-retake max-retake="0" mode="siswa" hide-pause-restart kategori="sumatif_lm" show-question-nav question-delay="1800" review-answers timer-autostart kkm="75" tab-switch-threshold="3" _attempt-ke="0" _remidi-soal="[]" _tab-switch-count="0" _visibility-change-count="0" _window-blur-count="0" _window-focus-count="0" _warning-count="0"     ></latihan-kuis>
+
 </p>
 <p></p>
 <p></p>
