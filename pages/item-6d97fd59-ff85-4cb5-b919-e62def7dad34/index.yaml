@@ -17,7 +17,7 @@ metadata:
   created: 1789540077
   images: []
   videos: []
-  updated: 1789540153
+  updated: 1789542275
   theme:
     element: polaris-flex-theme
     path: '@haxtheweb/polaris-theme/lib/polaris-flex-theme.js'
@@ -36,8 +36,8 @@ metadata:
   readtime: 1
 content: >
 
-  <h2 id="h2--2080334786">📝 Kuis Verifikasi Informasi &#38; Periksa Fakta
-  (LM2)</h2>
+  <h2 id="h2--2080334786">📝 Remidi Kuis Verifikasi Informasi &#38; Periksa
+  Fakta (LM2)</h2>
 
   <p></p>
 
@@ -45,6 +45,7 @@ content: >
   Jawaban
     benar/salah tidak ditampilkan. Nilai akhir akan diambil dari nilai terakhir yang dikumpulkan setelah waktu habis atau semua soal terjawab. Waktu Pengerjaan Soal 10 Menit&#160;🤐</p>
   <p>Kalau <b><u>mode gelap</u></b>
+
    tidak bisa gunakan <mark>mode terang</mark> di smartphonemu&#160;😄</p>
   <latihan-kuis mode="siswa" duration="600" timer-autostart hide-pause-restart
   hide-confetti hide-answers hide-score shuffle-questions shuffle-choices
@@ -55,7 +56,7 @@ content: >
   allow-backward-nav show-question-nav show-sheet-link
   soal-file-url="./files/2026-stimulus2-faseF.json"
   materi-file="./files/Fase-F-LM2.docx"
-  cover-image="./files/ilya-pavlov-OqtafYT5kTw-unsplash.jpg" 
+  cover-image="./files/ilya-pavlov-OqtafYT5kTw-unsplash.jpg"
   judul-materi="Materi Pembelajaran" teks-materi="Baca materi di bawah ini
   dengan saksama sebelum mengerjakan kuis. Waktu pengerjaan kuis dibatasi oleh
   timer; saat waktu habis, kuis akan dikunci dan nilai otomatis terkirim."
@@ -63,7 +64,7 @@ content: >
   pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai otomatis."
   pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet."
   label-mulai="▶️ Mulai" allow-retake max-retake="0" question-delay="1800"
-  review-answers kkm="75"  tab-switch-threshold="3"
+  review-answers kkm="75" tab-switch-threshold="3"
   questions="[{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Apa
   kekurangan utama dari metode Membaca Vertikal dalam mengevaluasi informasi
   digital?&quot;,&quot;hint&quot;:&quot;Fokus pada risiko keterpukauan pada
@@ -263,6 +264,6 @@ content: >
   terjadwal.&quot;],&quot;correctPairs&quot;:{&quot;0&quot;:1,&quot;1&quot;:0}}]"
   _attempt-ke="0" _soal-file-url-cache="./files/2026-stimulus2-faseF.json"
   _remidi-soal="[]" _tab-switch-count="0" _visibility-change-count="0"
-  _window-blur-count="0" _window-focus-count="0" _warning-count="0">
+  _window-blur-count="0" _window-focus-count="0" _warning-count="0"  >
 
   </latihan-kuis>
