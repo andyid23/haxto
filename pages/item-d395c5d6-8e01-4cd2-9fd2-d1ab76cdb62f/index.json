@@ -12,7 +12,7 @@
     "created": 1789517726,
     "images": [],
     "videos": [],
-    "updated": 1789519002,
+    "updated": 1789519393,
     "theme": {
       "element": "terrible-themes",
       "path": "@haxtheweb/terrible-themes/terrible-themes.js",
@@ -32,7 +32,18 @@
     "hideInMenu": false,
     "readtime": 1,
     "accentColor": "purple",
-    "icon": "av:album"
+    "icon": "av:album",
+    "files": [
+      {
+        "path": "C:\\Users\\Dragon\\Documents\\github\\andyid23\\haxtheweb-kuis\\haxto\\files\\collabs.jpg",
+        "fullUrl": "/C:\\Users\\Dragon\\Documents\\github\\andyid23\\haxtheweb-kuis\\haxto/files/collabs.jpg",
+        "url": "files/collabs.jpg",
+        "type": "image/jpeg",
+        "name": "collabs.jpg",
+        "size": 42030
+      }
+    ],
+    "image": "files/belajar.jpg"
   },
-  "content": "\n<p>Materi Pengenalan Google Collabs</p>\n<p>Langkah-langkah</p>\n<ol><li>Buka Google Colab Buka aplikasi melalui link <a href=\"https://colab.research.google.com/\" target=\"_blank\">https://colab.research.google.com/</a>. Jika diminta untuk sign-in, silakan masuk menggunakan akun Google/Gmail kamu.</li>\n<li>Cek&#160;Lingkungan IDE<br></li>\n<li><br></li>\n</ol>\n<p></p>\n<p></p>\n"
+  "content": "\n<p>Materi Pengenalan Google Collabs</p>\n<p>Langkah-langkah</p>\n<ol><li>Buka Google Colab Buka aplikasi melalui link <a href=\"https://colab.research.google.com/\" target=\"_blank\">https://colab.research.google.com/</a>. Jika diminta untuk sign-in, silakan masuk menggunakan akun Google/Gmail kamu.</li>\n</ol>\n<p></p>\n<media-image source=\"files/collabs.jpg\" card accent-color=\"grey\" size=\"wide\" offset=\"none\" caption=\"Tampilan baru google Collabs\" citation=\"Informatika Kelas X\" modal-title=\"Tampilan baru google Collabs\" _has-caption></media-image>\n<p></p>\n<p>2. Cek Lingkungan IDE</p>\n<p><fake-hax-list-break></fake-hax-list-break></p>\n<p></p>\n<p></p>\n"
 }

@@ -1142,7 +1142,7 @@ cover-image="./files/ilya-pavlov-OqtafYT5kTw-unsplash.jpg"
   <entry>
     <title>Google Collabs</title>
     <id>item-d395c5d6-8e01-4cd2-9fd2-d1ab76cdb62f</id>
-    <updated>2026-09-16T00:36:42.000Z</updated>
+    <updated>2026-09-16T00:43:13.000Z</updated>
     <published>2026-09-16T00:15:26.000Z</published>
     <summary>Materi Pengenalan Google Collabs
 
@@ -1154,9 +1154,12 @@ cover-image="./files/ilya-pavlov-OqtafYT5kTw-unsplash.jpg"
 <p>Materi Pengenalan Google Collabs</p>
 <p>Langkah-langkah</p>
 <ol><li>Buka Google Colab Buka aplikasi melalui link <a href="https://colab.research.google.com/" target="_blank">https://colab.research.google.com/</a>. Jika diminta untuk sign-in, silakan masuk menggunakan akun Google/Gmail kamu.</li>
-<li>Cek&#160;Lingkungan IDE<br></li>
-<li><br></li>
 </ol>
+<p></p>
+<media-image source="files/collabs.jpg" card accent-color="grey" size="wide" offset="none" caption="Tampilan baru google Collabs" citation="Informatika Kelas X" modal-title="Tampilan baru google Collabs" _has-caption></media-image>
+<p></p>
+<p>2. Cek Lingkungan IDE</p>
+<p><fake-hax-list-break></fake-hax-list-break></p>
 <p></p>
 <p></p>
  ]]>

@@ -13,7 +13,7 @@ metadata:
   created: 1789517726
   images: []
   videos: []
-  updated: 1789519002
+  updated: 1789519393
   theme:
     element: terrible-themes
     path: '@haxtheweb/terrible-themes/terrible-themes.js'
@@ -33,6 +33,16 @@ metadata:
   readtime: 1
   accentColor: purple
   icon: av:album
+  files:
+    - path: >-
+        C:\Users\Dragon\Documents\github\andyid23\haxtheweb-kuis\haxto\files\collabs.jpg
+      fullUrl: >-
+        /C:\Users\Dragon\Documents\github\andyid23\haxtheweb-kuis\haxto/files/collabs.jpg
+      url: files/collabs.jpg
+      type: image/jpeg
+      name: collabs.jpg
+      size: 42030
+  image: files/belajar.jpg
 content: >
 
   <p>Materi Pengenalan Google Collabs</p>
@@ -44,11 +54,20 @@ content: >
   target="_blank">https://colab.research.google.com/</a>. Jika diminta untuk
   sign-in, silakan masuk menggunakan akun Google/Gmail kamu.</li>
 
-  <li>Cek&#160;Lingkungan IDE<br></li>
-
-  <li><br></li>
-
   </ol>
+
+  <p></p>
+
+  <media-image source="files/collabs.jpg" card accent-color="grey" size="wide"
+  offset="none" caption="Tampilan baru google Collabs" citation="Informatika
+  Kelas X" modal-title="Tampilan baru google Collabs"
+  _has-caption></media-image>
+
+  <p></p>
+
+  <p>2. Cek Lingkungan IDE</p>
+
+  <p><fake-hax-list-break></fake-hax-list-break></p>
 
   <p></p>
 
