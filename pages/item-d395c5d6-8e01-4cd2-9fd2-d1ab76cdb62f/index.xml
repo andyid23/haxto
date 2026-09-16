@@ -17,21 +17,20 @@
 </images>
 <videos>
 </videos>
-<updated>1789519393</updated>
+<updated>1789519486</updated>
 <theme>
-<element>terrible-themes</element>
-<path>@haxtheweb/terrible-themes/terrible-themes.js</path>
-<name>Terrible 407</name>
-<thumbnail>@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-terrible-themes-thumb.jpg</thumbnail>
-<description>Start with a blank site using the Terrible 407</description>
+<element>spacebook-theme</element>
+<path>@haxtheweb/spacebook-theme/spacebook-theme.js</path>
+<name>Space Book</name>
+<thumbnail>@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-spacebook-theme-thumb.jpg</thumbnail>
+<description>Start with a blank site using the Space Book</description>
 <category>
-<item>Fun</item>
 <item>Website</item>
 </category>
 <hidden>false</hidden>
 <priority>0</priority>
-<terrible>true</terrible>
-<key>terrible-themes</key>
+<terrible>false</terrible>
+<key>spacebook-theme</key>
 </theme>
 <published>true</published>
 <hideInMenu>false</hideInMenu>
@@ -54,12 +53,15 @@
 <p>Materi Pengenalan Google Collabs</p>
 <p>Langkah-langkah</p>
 <ol><li>Buka Google Colab Buka aplikasi melalui link <a href="https://colab.research.google.com/" target="_blank">https://colab.research.google.com/</a>. Jika diminta untuk sign-in, silakan masuk menggunakan akun Google/Gmail kamu.</li>
+
 </ol>
 <p></p>
 <media-image source="files/collabs.jpg" card accent-color="grey" size="wide" offset="none" caption="Tampilan baru google Collabs" citation="Informatika Kelas X" modal-title="Tampilan baru google Collabs" _has-caption></media-image>
 <p></p>
 <p>2. Cek Lingkungan IDE</p>
-<p><fake-hax-list-break></fake-hax-list-break></p>
+<p>pilih New Notebook untuk membuat catatan baru</p>
+<p></p>
+<p></p>
 <p></p>
 <p></p>
 ]]></content>

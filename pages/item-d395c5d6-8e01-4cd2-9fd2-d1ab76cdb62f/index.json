@@ -12,21 +12,20 @@
     "created": 1789517726,
     "images": [],
     "videos": [],
-    "updated": 1789519393,
+    "updated": 1789519486,
     "theme": {
-      "element": "terrible-themes",
-      "path": "@haxtheweb/terrible-themes/terrible-themes.js",
-      "name": "Terrible 407",
-      "thumbnail": "@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-terrible-themes-thumb.jpg",
-      "description": "Start with a blank site using the Terrible 407",
+      "element": "spacebook-theme",
+      "path": "@haxtheweb/spacebook-theme/spacebook-theme.js",
+      "name": "Space Book",
+      "thumbnail": "@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-spacebook-theme-thumb.jpg",
+      "description": "Start with a blank site using the Space Book",
       "category": [
-        "Fun",
         "Website"
       ],
       "hidden": false,
       "priority": 0,
-      "terrible": true,
-      "key": "terrible-themes"
+      "terrible": false,
+      "key": "spacebook-theme"
     },
     "published": true,
     "hideInMenu": false,
@@ -45,5 +44,5 @@
     ],
     "image": "files/belajar.jpg"
   },
-  "content": "\n<p>Materi Pengenalan Google Collabs</p>\n<p>Langkah-langkah</p>\n<ol><li>Buka Google Colab Buka aplikasi melalui link <a href=\"https://colab.research.google.com/\" target=\"_blank\">https://colab.research.google.com/</a>. Jika diminta untuk sign-in, silakan masuk menggunakan akun Google/Gmail kamu.</li>\n</ol>\n<p></p>\n<media-image source=\"files/collabs.jpg\" card accent-color=\"grey\" size=\"wide\" offset=\"none\" caption=\"Tampilan baru google Collabs\" citation=\"Informatika Kelas X\" modal-title=\"Tampilan baru google Collabs\" _has-caption></media-image>\n<p></p>\n<p>2. Cek Lingkungan IDE</p>\n<p><fake-hax-list-break></fake-hax-list-break></p>\n<p></p>\n<p></p>\n"
+  "content": "\n<p>Materi Pengenalan Google Collabs</p>\n<p>Langkah-langkah</p>\n<ol><li>Buka Google Colab Buka aplikasi melalui link <a href=\"https://colab.research.google.com/\" target=\"_blank\">https://colab.research.google.com/</a>. Jika diminta untuk sign-in, silakan masuk menggunakan akun Google/Gmail kamu.</li>\n\n</ol>\n<p></p>\n<media-image source=\"files/collabs.jpg\" card accent-color=\"grey\" size=\"wide\" offset=\"none\" caption=\"Tampilan baru google Collabs\" citation=\"Informatika Kelas X\" modal-title=\"Tampilan baru google Collabs\" _has-caption></media-image>\n<p></p>\n<p>2. Cek Lingkungan IDE</p>\n<p>pilih New Notebook untuk membuat catatan baru</p>\n<p></p>\n<p></p>\n<p></p>\n<p></p>\n"
 }

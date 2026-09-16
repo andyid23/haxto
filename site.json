@@ -25,7 +25,7 @@
       "name": "haxto",
       "domain": "",
       "created": 1787457359,
-      "updated": 1789519393,
+      "updated": 1789519486,
       "logo": "",
       "version": "26.0.1"
     },
@@ -558,21 +558,20 @@
         "created": 1789517726,
         "images": [],
         "videos": [],
-        "updated": 1789519393,
+        "updated": 1789519486,
         "theme": {
-          "element": "terrible-themes",
-          "path": "@haxtheweb/terrible-themes/terrible-themes.js",
-          "name": "Terrible 407",
-          "thumbnail": "@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-terrible-themes-thumb.jpg",
-          "description": "Start with a blank site using the Terrible 407",
+          "element": "spacebook-theme",
+          "path": "@haxtheweb/spacebook-theme/spacebook-theme.js",
+          "name": "Space Book",
+          "thumbnail": "@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-spacebook-theme-thumb.jpg",
+          "description": "Start with a blank site using the Space Book",
           "category": [
-            "Fun",
             "Website"
           ],
           "hidden": false,
           "priority": 0,
-          "terrible": true,
-          "key": "terrible-themes"
+          "terrible": false,
+          "key": "spacebook-theme"
         },
         "published": true,
         "hideInMenu": false,
