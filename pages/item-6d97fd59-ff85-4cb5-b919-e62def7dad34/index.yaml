@@ -1,10 +1,10 @@
 id: item-6d97fd59-ff85-4cb5-b919-e62def7dad34
 indent: 0
 location: pages/item-6d97fd59-ff85-4cb5-b919-e62def7dad34/index.yaml
-slug: copy-of-ulangan-harian-2-fase-f-lm2
+slug: remidi-ulangan-2-fase-f-lm2
 order: 10
 parent: null
-title: Copy coba Ulangan 2 FASE F LM2
+title: Remidi Ulangan 2 FASE F LM2
 description: >-
   📝 Kuis Verifikasi Informasi &#38; Periksa Fakta (LM2)
 
@@ -17,7 +17,7 @@ metadata:
   created: 1789540077
   images: []
   videos: []
-  updated: 1789542275
+  updated: 1789613760
   theme:
     element: polaris-flex-theme
     path: '@haxtheweb/polaris-theme/lib/polaris-flex-theme.js'
@@ -34,37 +34,39 @@ metadata:
   published: true
   hideInMenu: true
   readtime: 1
+  status: ''
 content: >
 
   <h2 id="h2--2080334786">📝 Remidi Kuis Verifikasi Informasi &#38; Periksa
   Fakta (LM2)</h2>
 
+  <p>Ujian ulang</p>
+
   <p></p>
 
-  <p>Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan.
-  Jawaban
+  <p>Kerjakan soal di bawah ini dengan jujur&#160; dan dalam waktu yang
+  ditentukan. Jawaban
     benar/salah tidak ditampilkan. Nilai akhir akan diambil dari nilai terakhir yang dikumpulkan setelah waktu habis atau semua soal terjawab. Waktu Pengerjaan Soal 10 Menit&#160;🤐</p>
   <p>Kalau <b><u>mode gelap</u></b>
 
+
    tidak bisa gunakan <mark>mode terang</mark> di smartphonemu&#160;😄</p>
-  <latihan-kuis mode="siswa" duration="600" timer-autostart hide-pause-restart
-  hide-confetti hide-answers hide-score shuffle-questions shuffle-choices
-  kategori="sumatif_lm"
-  apps-script-url="https://script.google.com/macros/s/AKfycbzrdnwwjnmnVPYaNMdglqVe5gSWVQlEi46d9eCd9vjgPgGJ6jPi_X2P1OIEtpcXj0CU/exec"
-  kd-materi="LM2" materi-url="./lm2-materi-kuis-fase-f" student-id=""
-  judul-kuis="Ulangan Harian 2 Verifikasi Informasi &amp; Periksa Fakta"
-  allow-backward-nav show-question-nav show-sheet-link
+  <latihan-kuis mode="siswa" kd-materi="LM2" duration="900"
+  kategori="sumatif_lm" judul-kuis="Uji Remidi — Latihan LM2"
   soal-file-url="./files/2026-stimulus2-faseF.json"
-  materi-file="./files/Fase-F-LM2.docx"
-  cover-image="./files/ilya-pavlov-OqtafYT5kTw-unsplash.jpg"
+  remidi-soal-url="./files/2026-stimulus2-faseF.json" remidi-mode
+  shuffle-choices shuffle-questions kkm="75" practice-mode hide-confetti
+  hide-answers hide-score student-id="" allow-retake max-retake="5"
+  hide-pause-restart tab-switch-threshold="3"
+  apps-script-url="https://script.google.com/macros/s/AKfycby_0nt2rOZBYfhVgX0aHEEGtfKYIOZlVVQDlPbUUmt-mRFtuyfxo9uZOyvmCgznDnmw/exec" 
   judul-materi="Materi Pembelajaran" teks-materi="Baca materi di bawah ini
   dengan saksama sebelum mengerjakan kuis. Waktu pengerjaan kuis dibatasi oleh
-  timer; saat waktu habis, kuis akan dikunci dan nilai otomatis terkirim."
-  student-name="" student-nis="" student-absen="" student-kelas=""
-  pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai otomatis."
-  pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet."
-  label-mulai="▶️ Mulai" allow-retake max-retake="0" question-delay="1800"
-  review-answers kkm="75" tab-switch-threshold="3"
+  timer; saat waktu habis, kuis akan dikunci dan nilai otomatis terkirim." 
+  materi-file="" cover-image="" student-name="" student-nis="" student-absen=""
+  student-kelas="" pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai
+  otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke
+  spreadsheet." label-mulai="▶️ Mulai" show-question-nav question-delay="1800"
+  review-answers timer-autostart
   questions="[{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Apa
   kekurangan utama dari metode Membaca Vertikal dalam mengevaluasi informasi
   digital?&quot;,&quot;hint&quot;:&quot;Fokus pada risiko keterpukauan pada
@@ -264,6 +266,6 @@ content: >
   terjadwal.&quot;],&quot;correctPairs&quot;:{&quot;0&quot;:1,&quot;1&quot;:0}}]"
   _attempt-ke="0" _soal-file-url-cache="./files/2026-stimulus2-faseF.json"
   _remidi-soal="[]" _tab-switch-count="0" _visibility-change-count="0"
-  _window-blur-count="0" _window-focus-count="0" _warning-count="0"  >
+  _window-blur-count="0" _window-focus-count="0" _warning-count="0">
 
   </latihan-kuis>
