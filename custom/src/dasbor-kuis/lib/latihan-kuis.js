@@ -345,6 +345,8 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
       this._tabSwitchCount = (this._tabSwitchCount || 0) + 1;
       this._windowBlurCount = (this._windowBlurCount || 0) + 1;
       this._tabSwitchWarning = true;
+      // Fase A: buffer tab_switch ke antrean lokal (bukan POST per-event)
+      this._enqueueTabSwitch();
       this.requestUpdate();
       // Simpan count ke localStorage (bukan log per-event)
       // Fallback: save kuis-ledakan child quiz state when tab hidden
@@ -610,18 +612,141 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     } catch (_) {}
   }
 
-  // Anti-cheating: Log activity — dispatch event + direct API call
+  // ==========================================
+  // SINCRONISASI LOKAL BERTINGKAT (DEBOUNCE & FLUSH)
+  // ==========================================
+  // Fase A: event telemetri/anti-cheat dibuffer ke localStorage (bukan POST
+  // per-event). Satu-persatu dibundel, lalu dikirim SEKALI ke Google Apps
+  // Script pada akhir sesi (selesai / waktu_habis / force submit) sebagai
+  // objek agregat `audit_singkat`.
+
+  _auditQueueKey() {
+    return `kuisAuditQueue_${this.studentId}_${this.kdMateri}`;
+  }
+
+  _bacaAuditQueue() {
+    try {
+      const d = JSON.parse(globalThis.localStorage.getItem(this._auditQueueKey()) || "null");
+      return d && d.versi === 1 ? d : null;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  _simpanAuditQueue(d) {
+    try {
+      globalThis.localStorage.setItem(this._auditQueueKey(), JSON.stringify(d));
+    } catch (_) {}
+  }
+
+  /** Tambah event ke antrean audit lokal (setiap event PERSISTEN di browser). */
+  _enqueueAudit(tipe_aktivitas, payload_data = {}) {
+    if (!this.studentId || !this.kdMateri) return null;
+    const sekarang = Date.now();
+    let q = this._bacaAuditQueue();
+    if (!q || q.state === "done") {
+      q = {
+        id_log: this._buatIdLogAudit(),
+        studentId: this.studentId,
+        kdMateri: this.kdMateri,
+        snapshot: {
+          mulai_detik: this._waktuMulai || sekarang,
+          durasi_detik: 0,
+          total_restart: 0,
+          tab_switch: 0,
+        },
+        events: [],
+        state: "draft",
+        versi: 1,
+      };
+    }
+    q.events = q.events || [];
+    q.events.push({ t: tipe_aktivitas, ts: sekarang, d: payload_data });
+    if (q.events.length > 200) q.events.splice(0, q.events.length - 200);
+    if (tipe_aktivitas === "tab_switch") {
+      q.snapshot.tab_switch = (q.snapshot.tab_switch || 0) + 1;
+    }
+    if (tipe_aktivitas === "restart") {
+      q.snapshot.total_restart = (q.snapshot.total_restart || 0) + 1;
+      q.snapshot.mulai_detik = sekarang;
+    }
+    this._simpanAuditQueue(q);
+    return q;
+  }
+
+  /** Catat tab_switch ke antrean lokal (dari _onVisibilityChange/_onWindowBlur). */
+  _enqueueTabSwitch() {
+    this._enqueueAudit("tab_switch", { timestamp: new Date().toISOString() });
+  }
+
+  _buatIdLogAudit() {
+    try {
+      const buf = new Uint8Array(8);
+      globalThis.crypto.getRandomValues(buf);
+      let hex = "";
+      buf.forEach((b) => (hex += b.toString(16).padStart(2, "0")));
+      return `LOG-${Date.now()}-${hex.toUpperCase()}`;
+    } catch (e) {
+      return `LOG-${Date.now()}-${Math.random().toString(36).substr(2, 10).toUpperCase()}`;
+    }
+  }
+
+  /** Ambil ringkasan audit dari antrean lokal (dikirim sekali di akhir sesi). */
+  _bacaAuditSingkat() {
+    const q = this._bacaAuditQueue();
+    if (!q) {
+      return { total_restart: 0, tab_switch: 0, durasi_detik: 0 };
+    }
+    const durasi =
+      q.snapshot.durasi_detik ||
+      (q.snapshot.mulai_detik ? Math.max(0, Math.floor((Date.now() - q.snapshot.mulai_detik) / 1000)) : 0);
+    return {
+      total_restart: q.snapshot.total_restart || 0,
+      tab_switch: q.snapshot.tab_switch || 0,
+      durasi_detik: durasi,
+    };
+  }
+
+  /** Finalisasi antrean: hitung durasi & tandai ready utk sekali flush. */
+  _finalisasiAudit() {
+    const q = this._bacaAuditQueue();
+    if (!q) return;
+    if (q.snapshot.mulai_detik) {
+      q.snapshot.durasi_detik = Math.max(0, Math.floor((Date.now() - q.snapshot.mulai_detik) / 1000));
+    }
+    q.state = "ready";
+    this._simpanAuditQueue(q);
+  }
+
+  /** Tandai antrean selesai dikirim (state=done) utk sesi berikutnya. */
+  _selesaiAudit() {
+    const q = this._bacaAuditQueue();
+    if (q) {
+      q.state = "done";
+      this._simpanAuditQueue(q);
+    }
+  }
+
+  // Telemetri/anti-cheat: event per-peristiwa → enqueue lokal SAJA (tanpa HTTP).
   _logActivity(tipe_aktivitas, payload_data = {}) {
+    const telemetri = [
+      "timer_mulai", "tab_switch", "curang_tab_switch", "force_choice_dialog",
+      "fullscreen_exit", "copy_paste_attempt", "lapor_ke_guru", "suspicious_timing",
+    ];
+    if (telemetri.includes(tipe_aktivitas)) {
+      this._enqueueAudit(tipe_aktivitas, payload_data);
+      return;
+    }
+    // Event akhir sesi ("selesai"): agregat + flush SEKALI via parent / direct.
     const detail = {
       tipe: tipe_aktivitas,
       payload: {
         ...payload_data,
         studentId: this.studentId,
         kdMateri: this.kdMateri,
+        audit_singkat: this._bacaAuditSingkat(),
       },
     };
-
-    // 1. Dispatch event untuk parent component (dasbor-kuis)
     try {
       this.dispatchEvent(
         new CustomEvent("dasbor-kuis-log", {
@@ -631,9 +756,11 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
         })
       );
     } catch (_) {}
-
-    // 2. Direct API call ke backend (fallback jika tidak ada parent)
-    this._sendLogDirect(tipe_aktivitas, detail.payload);
+    const _hasDasbor = !!this.closest("dasbor-kuis");
+    if (!_hasDasbor) {
+      this._sendLogDirect(tipe_aktivitas, detail.payload);
+    }
+    this._selesaiAudit();
   }
 
   /** Kirim log langsung ke backend via fetch (tidak bergantung event bubbling) */
@@ -796,6 +923,8 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
   }
 
   _ulangiKuis() {
+    // Fase A: tantai restart (total_restart) ke antrean lokal sebelum retry
+    this._enqueueAudit("restart", { timestamp: new Date().toISOString() });
     this._selesai = false;
     this._terkunci = false;
     this._kunci = false;
@@ -915,6 +1044,8 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
       this._muatStatusKuis(); // T: refresh nilai terbaik dari sheet (menangkap attempt baru)
       // Log session to Google Sheet for teacher review
       this._kirimLogSession("selesai");
+      // Fase A: finalisasi antrean audit lokal → audit_singkat throttle sabar di event selesai
+      this._finalisasiAudit();
       // Log "selesai" ke sheet aktivitas (action=logActivity)
       const _idLog = e.detail && e.detail.id_log ? e.detail.id_log : '';
       this._logActivity("selesai", {
@@ -1041,6 +1172,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
       curangTabSwitchTriggered: this._curangLogged || false,
       tabSwitchThreshold: this.tabSwitchThreshold || 3,
       id_log: `LOG-${Date.now()}-${Math.random().toString(36).slice(2, 10).toUpperCase()}`,
+      audit_singkat: JSON.stringify(this._bacaAuditSingkat()),
     };
     try {
       const qs = new URLSearchParams(params);

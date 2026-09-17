@@ -1707,6 +1707,9 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
       answerTime: val.answerTime || 0,
       timestamp: val.timestamp,
     }));
+    // Hapus token_id dari payload — anti-cheat state sudah dipertanggungkan via
+    // antrean lokal; aggregat audit dikirim SEKALI di sini.
+    const _auditSingkatSaldo = this._bacaAuditSingkat();
     this.dispatchEvent(
       new CustomEvent("dasbor-kuis-log", {
         detail: {
@@ -1721,6 +1724,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
             timestamp: new Date().toISOString(),
             answerTimings: answerTimings,
             sessionToken: this._sessionToken,
+            audit_singkat: _auditSingkatSaldo,
           },
         },
         bubbles: true,
@@ -1741,9 +1745,14 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     try { localStorage.removeItem(this._attemptKey()); } catch (_) {}
   }
 
-// Anti-cheating: Log activity to parent component
+// Anti-cheating: Log activity — telemetry buffered ke localStorage (Fase A/B),
+// hanya "selesai_kuis" yang diteruskan ke parent/saldo akhir.
   _logActivity(tipe, payload = {}) {
     try {
+      if (["timer_mulai", "suspicious_timing", "tab_switch", "window_blur", "window_focus"].includes(tipe)) {
+        this._enqueueAudit(tipe, payload);
+        return;
+      }
       this.dispatchEvent(
         new CustomEvent("dasbor-kuis-log", {
           detail: {
@@ -1759,6 +1768,113 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
         })
       );
     } catch (_) {}
+  }
+
+  // ==========================================
+  // AUDIT QUEUE LOKAL (localStorage) — Fase A/B
+  // Antrean telemetry yang diflush SEKALI saat selesai.
+  // ==========================================
+  _auditQueueKey() {
+    return `kuisAuditQueue_${this.studentId}_${this.kdMateri}`;
+  }
+
+  _bacaAuditQueue() {
+    try {
+      const raw = localStorage.getItem(this._auditQueueKey());
+      return raw ? JSON.parse(raw) : null;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  _simpanAuditQueue(q) {
+    try {
+      localStorage.setItem(this._auditQueueKey(), JSON.stringify(q));
+    } catch (_) {}
+  }
+
+  /** Tambah event telemetry ke antrean lokal; snapshot counter di-update per tipe. */
+  _enqueueAudit(tipe_aktivitas, payload_data = {}) {
+    if (!this.studentId || !this.kdMateri) return null;
+    const sekarang = Date.now();
+    let q = this._bacaAuditQueue();
+    if (!q || q.state === "done") {
+      q = {
+        id_log: this._buatIdLogAudit(),
+        studentId: this.studentId,
+        kdMateri: this.kdMateri,
+        snapshot: {
+          mulai_detik: this._attemptStart || sekarang,
+          durasi_detik: 0,
+          total_restart: 0,
+          tab_switch: 0,
+        },
+        events: [],
+        state: "draft",
+        versi: 1,
+      };
+    }
+    q.events = q.events || [];
+    q.events.push({ t: tipe_aktivitas, ts: sekarang, d: payload_data });
+    if (q.events.length > 200) q.events.splice(0, q.events.length - 200);
+    if (tipe_aktivitas === "tab_switch" || tipe_aktivitas === "window_blur") {
+      q.snapshot.tab_switch = (q.snapshot.tab_switch || 0) + 1;
+    }
+    this._simpanAuditQueue(q);
+    return q;
+  }
+
+  _buatIdLogAudit() {
+    try {
+      const buf = new Uint8Array(8);
+      globalThis.crypto.getRandomValues(buf);
+      let hex = "";
+      buf.forEach((b) => (hex += b.toString(16).padStart(2, "0")));
+      return `LOG-${Date.now()}-${hex.toUpperCase()}`;
+    } catch (e) {
+      return `LOG-${Date.now()}-${Math.random().toString(36).substr(2, 10).toUpperCase()}`;
+    }
+  }
+
+  /** Ringkas status audit untuk payload agregat akhir. */
+  _bacaAuditSingkat() {
+    const q = this._bacaAuditQueue();
+    if (!q) {
+      return {
+        total_restart: 0,
+        tab_switch: 0,
+        durasi_detik: this._attemptStart
+          ? Math.floor((Date.now() - this._attemptStart) / 1000)
+          : 0,
+      };
+    }
+    const mulai = q.snapshot && q.snapshot.mulai_detik ? q.snapshot.mulai_detik : this._attemptStart || Date.now();
+    const durasi = Math.max(0, Math.floor((Date.now() - mulai) / 1000));
+    return {
+      total_restart: (q.snapshot && q.snapshot.total_restart) || 0,
+      tab_switch: (q.snapshot && q.snapshot.tab_switch) || 0,
+      durasi_detik: durasi,
+    };
+  }
+
+  /** Finalisasi antrean sebelum flush (tandai state=ready). */
+  _finalisasiAudit() {
+    const q = this._bacaAuditQueue();
+    if (q) {
+      q.snapshot = q.snapshot || {};
+      q.snapshot.durasi_detik = this._bacaAuditSingkat().durasi_detik;
+      q.state = "ready";
+      this._simpanAuditQueue(q);
+    }
+  }
+
+  /** Tandai antrean selesai diflush. */
+  _selesaiAudit() {
+    const q = this._bacaAuditQueue();
+    if (q) {
+      q.state = "done";
+      this._simpanAuditQueue(q);
+    }
   }
 
   /** Kirim hasil kuis langsung ke action=logActivity bila berdiri sendiri. */
@@ -1779,12 +1895,14 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
         kdMateri: this.kdMateri || "",
         metadataKuis: this.judul,
         timestamp,
+        audit_singkat: this._bacaAuditSingkat(),
       }),
       timestamp,
       kdMateri: this.kdMateri || "",
       kategori: this.kategori || "sumatif_lm",
       id_log: idLog,
       sessionToken: this._sessionToken || "",
+      audit_singkat: JSON.stringify(this._bacaAuditSingkat() || {}),
     };
     try {
       const res = await fetch(`${this.appsScriptUrl}?${new URLSearchParams(params).toString()}`, {

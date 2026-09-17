@@ -62,7 +62,7 @@
     <item>
       <title>halaman-dark tes bug</title>
       <link>https://localhost:3000/sites/haxto/halaman-dark-tes-bug</link>
-      <description>tes browser tidak bisa pindah navigasi Mohon kerjakan Tes Latihan</description>
+      <description>🎯 Elemen Latihan Kuis (Mode Latihan) Konfigurasi: duration=&quot;0&quot; + hide-pause-restart + remidi-mode + remidi-soal-url + kkm=&quot;75&quot; 🔍 Cek di Spreadsheet Di sheet [SHEET_KUIS_SESSION] , cek kolom: Catatan : &quot;selesai&quot; , &quot;selesai (remidi)&quot; , &quot;selesai (sudah-remidi)&quot; Session Token : UUID unik per attempt Percobaan Ke : 1 (awal), 2 (setelah remidi) Skor : nilai terbaru (replace, bukan nambah) Di sheet logActivity , cek tipe log: selesai : ada field remidi: true/false + percobaanKe curang_tab_switch :...</description>
       <guid>https://localhost:3000/sites/haxto/halaman-dark-tes-bug</guid>
       <pubDate>Tue, 01 Sep 2026 04:15:45 GMT</pubDate>
     </item>

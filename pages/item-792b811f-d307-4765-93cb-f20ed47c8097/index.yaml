@@ -53,7 +53,7 @@ content: >
 
   <latihan-kuis mode="siswa" allow-retake max-retake="5" duration="900"
   timer-autostart shuffle-questions shuffle-choices kategori="formatif"
-  apps-script-url="https://script.google.com/macros/s/AKfycbyA8V1DRWpTarcg2dc-hb50-Oze6OS8jA85hb-gyVMM_5uOTl68CKhn_RnzVNEVIrL2/exec"
+  apps-script-url="https://script.google.com/macros/s/AKfycby_0nt2rOZBYfhVgX0aHEEGtfKYIOZlVVQDlPbUUmt-mRFtuyfxo9uZOyvmCgznDnmw/exec"
   kd-materi="LD-1 Latihan" student-id="" judul-materi="Materi: Pencarian"
   teks-materi="Baca contoh di bawah, lalu kerjakan kuis. Kamu bisa mengulang
   sampai 4 kali." materi-url="./halaman-tugas" show-sheet-link

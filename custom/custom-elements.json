@@ -2638,6 +2638,56 @@
             },
             {
               "kind": "method",
+              "name": "_auditQueueKey"
+            },
+            {
+              "kind": "method",
+              "name": "_bacaAuditQueue"
+            },
+            {
+              "kind": "method",
+              "name": "_simpanAuditQueue",
+              "parameters": [
+                {
+                  "name": "q"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_enqueueAudit",
+              "parameters": [
+                {
+                  "name": "tipe_aktivitas"
+                },
+                {
+                  "name": "payload_data",
+                  "default": "{}"
+                }
+              ],
+              "description": "Tambah event telemetry ke antrean lokal; snapshot counter di-update per tipe."
+            },
+            {
+              "kind": "method",
+              "name": "_buatIdLogAudit"
+            },
+            {
+              "kind": "method",
+              "name": "_bacaAuditSingkat",
+              "description": "Ringkas status audit untuk payload agregat akhir."
+            },
+            {
+              "kind": "method",
+              "name": "_finalisasiAudit",
+              "description": "Finalisasi antrean sebelum flush (tandai state=ready)."
+            },
+            {
+              "kind": "method",
+              "name": "_selesaiAudit",
+              "description": "Tandai antrean selesai diflush."
+            },
+            {
+              "kind": "method",
               "name": "_kirimHasilLangsung",
               "parameters": [
                 {
@@ -4449,6 +4499,61 @@
               "kind": "method",
               "name": "_logSelesaiKuis",
               "description": "Log kuis selesai - buat verifikasi di spreadsheet."
+            },
+            {
+              "kind": "method",
+              "name": "_auditQueueKey"
+            },
+            {
+              "kind": "method",
+              "name": "_bacaAuditQueue"
+            },
+            {
+              "kind": "method",
+              "name": "_simpanAuditQueue",
+              "parameters": [
+                {
+                  "name": "d"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_enqueueAudit",
+              "parameters": [
+                {
+                  "name": "tipe_aktivitas"
+                },
+                {
+                  "name": "payload_data",
+                  "default": "{}"
+                }
+              ],
+              "description": "Tambah event ke antrean audit lokal (setiap event PERSISTEN di browser)."
+            },
+            {
+              "kind": "method",
+              "name": "_enqueueTabSwitch",
+              "description": "Catat tab_switch ke antrean lokal (dari _onVisibilityChange/_onWindowBlur)."
+            },
+            {
+              "kind": "method",
+              "name": "_buatIdLogAudit"
+            },
+            {
+              "kind": "method",
+              "name": "_bacaAuditSingkat",
+              "description": "Ambil ringkasan audit dari antrean lokal (dikirim sekali di akhir sesi)."
+            },
+            {
+              "kind": "method",
+              "name": "_finalisasiAudit",
+              "description": "Finalisasi antrean: hitung durasi & tandai ready utk sekali flush."
+            },
+            {
+              "kind": "method",
+              "name": "_selesaiAudit",
+              "description": "Tandai antrean selesai dikirim (state=done) utk sesi berikutnya."
             },
             {
               "kind": "method",
