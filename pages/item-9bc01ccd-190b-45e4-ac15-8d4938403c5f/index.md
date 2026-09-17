@@ -1,8 +1,6 @@
 🎯 Elemen Latihan Kuis (Mode Latihan)
 -------------------------------------
 
-Konfigurasi: `duration="0"` + `hide-pause-restart` + `remidi-mode` + `remidi-soal-url` + `kkm="75"`
-
 🔍 Cek di Spreadsheet
 ---------------------
 

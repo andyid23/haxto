@@ -9,7 +9,7 @@ description: |+
 
 metadata:
   created: 1788236145
-  updated: 1789610092
+  updated: 1789610169
   images: []
   videos: []
   published: true
@@ -51,41 +51,22 @@ metadata:
 content: >
 
   <div class="card">
-      <h2>🎯 Elemen Latihan Kuis (Mode Latihan)</h2>
-      <p><small>Konfigurasi: <code>duration="0"</code> + <code>hide-pause-restart</code> + <code>remidi-mode</code> + <code>remidi-soal-url</code> + <code>kkm="75"</code></small>
+     <h2>🎯 Elemen Latihan Kuis (Mode Latihan)</h2>
 
-  </p>
+    <latihan-kuis mode="siswa" kd-materi="LM1" kategori="sumatif_lm" judul-kuis="Uji Remidi — Latihan LM2" soal-file-url="./soal-LM1.json" remidi-soal-url="./soal-LM2.json" remidi-mode shuffle-choices shuffle-questions kkm="75" practice-mode hide-confetti hide-answers hide-score student-id="" allow-retake max-retake="20" hide-pause-restart tab-switch-threshold="3" apps-script-url="https://script.google.com/macros/s/AKfycbyA8V1DRWpTarcg2dc-hb50-Oze6OS8jA85hb-gyVMM_5uOTl68CKhn_RnzVNEVIrL2/exec" duration="300" judul-materi="Materi Pembelajaran" teks-materi="Baca materi di bawah ini dengan saksama sebelum mengerjakan kuis. Waktu pengerjaan kuis dibatasi oleh timer; saat waktu habis, kuis akan dikunci dan nilai otomatis terkirim." materi-file="" cover-image="" student-name="" student-nis="" student-absen="" student-kelas="" pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai" show-question-nav question-delay="1800" review-answers timer-autostart questions="[]" _pesan="Gagal memuat file soal: HTTP 404" _attempt-ke="0" _remidi-soal="[]" _tab-switch-count="0" _visibility-change-count="0" _window-blur-count="0" _window-focus-count="0" _warning-count="0"  ></latihan-kuis>
 
+  </div>
 
-
-      <latihan-kuis mode="siswa" kd-materi="LM1" kategori="sumatif_lm" judul-kuis="Uji Remidi — Latihan LM2" soal-file-url="./soal-LM1.json" remidi-soal-url="./soal-LM2.json" remidi-mode shuffle-choices shuffle-questions kkm="75" practice-mode hide-confetti hide-answers hide-score student-id="" allow-retake max-retake="20" hide-pause-restart tab-switch-threshold="3" apps-script-url="https://script.google.com/macros/s/AKfycbyA8V1DRWpTarcg2dc-hb50-Oze6OS8jA85hb-gyVMM_5uOTl68CKhn_RnzVNEVIrL2/exec" duration="300" judul-materi="Materi Pembelajaran" teks-materi="Baca materi di bawah ini dengan saksama sebelum mengerjakan kuis. Waktu pengerjaan kuis dibatasi oleh timer; saat waktu habis, kuis akan dikunci dan nilai otomatis terkirim." materi-file="" cover-image="" student-name="" student-nis="" student-absen="" student-kelas="" pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai" show-question-nav question-delay="1800" review-answers timer-autostart questions="[]" _pesan="Gagal memuat file soal: HTTP 404" _attempt-ke="0" _remidi-soal="[]" _tab-switch-count="0" _visibility-change-count="0" _window-blur-count="0" _window-focus-count="0" _warning-count="0"  >
-      </latihan-kuis>
-
-
-    </div>
   <div class="card">
-      <h2>🔍 Cek di Spreadsheet</h2>
-      <p>Di sheet <code>[SHEET_KUIS_SESSION]</code>, cek kolom:</p>
+     <h2>🔍 Cek di Spreadsheet</h2>
 
+    <p>Di sheet <code>[SHEET_KUIS_SESSION]</code>, cek kolom:</p>
 
-      
+  </div>
 
-      
-
-      
-
-    </div>
   <div class="card" style="background: #fef3c7; border-left: 4px solid
-  #f59e0b;">
-      
-      
+  #f59e0b;"></div>
 
-      
-
-      
-      
-
-    </div>
   <p></p>
 
   <p></p>
