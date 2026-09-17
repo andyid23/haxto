@@ -9,7 +9,7 @@ description: |+
 
 metadata:
   created: 1788236145
-  updated: 1789610022
+  updated: 1789610092
   images: []
   videos: []
   published: true
@@ -53,64 +53,37 @@ content: >
   <div class="card">
       <h2>🎯 Elemen Latihan Kuis (Mode Latihan)</h2>
       <p><small>Konfigurasi: <code>duration="0"</code> + <code>hide-pause-restart</code> + <code>remidi-mode</code> + <code>remidi-soal-url</code> + <code>kkm="75"</code></small>
+
   </p>
 
 
-      <latihan-kuis mode="siswa" kd-materi="LM1" kategori="sumatif_lm" judul-kuis="Uji Remidi — Latihan LM2" soal-file-url="./soal-LM1.json" remidi-soal-url="./soal-LM2.json" remidi-mode shuffle-choices shuffle-questions kkm="75" practice-mode hide-confetti hide-answers hide-score student-id="" allow-retake max-retake="20" hide-pause-restart tab-switch-threshold="3" apps-script-url="https://script.google.com/macros/s/AKfycbyA8V1DRWpTarcg2dc-hb50-Oze6OS8jA85hb-gyVMM_5uOTl68CKhn_RnzVNEVIrL2/exec"  duration="300" judul-materi="Materi Pembelajaran" teks-materi="Baca materi di bawah ini dengan saksama sebelum mengerjakan kuis. Waktu pengerjaan kuis dibatasi oleh timer; saat waktu habis, kuis akan dikunci dan nilai otomatis terkirim."  materi-file="" cover-image="" student-name="" student-nis="" student-absen="" student-kelas="" pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai" show-question-nav question-delay="1800" review-answers timer-autostart questions="[]" _pesan="Gagal memuat file soal: HTTP 404" _attempt-ke="0" _remidi-soal="[]" _tab-switch-count="0" _visibility-change-count="0" _window-blur-count="0" _window-focus-count="0" _warning-count="0">
+
+      <latihan-kuis mode="siswa" kd-materi="LM1" kategori="sumatif_lm" judul-kuis="Uji Remidi — Latihan LM2" soal-file-url="./soal-LM1.json" remidi-soal-url="./soal-LM2.json" remidi-mode shuffle-choices shuffle-questions kkm="75" practice-mode hide-confetti hide-answers hide-score student-id="" allow-retake max-retake="20" hide-pause-restart tab-switch-threshold="3" apps-script-url="https://script.google.com/macros/s/AKfycbyA8V1DRWpTarcg2dc-hb50-Oze6OS8jA85hb-gyVMM_5uOTl68CKhn_RnzVNEVIrL2/exec" duration="300" judul-materi="Materi Pembelajaran" teks-materi="Baca materi di bawah ini dengan saksama sebelum mengerjakan kuis. Waktu pengerjaan kuis dibatasi oleh timer; saat waktu habis, kuis akan dikunci dan nilai otomatis terkirim." materi-file="" cover-image="" student-name="" student-nis="" student-absen="" student-kelas="" pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai" show-question-nav question-delay="1800" review-answers timer-autostart questions="[]" _pesan="Gagal memuat file soal: HTTP 404" _attempt-ke="0" _remidi-soal="[]" _tab-switch-count="0" _visibility-change-count="0" _window-blur-count="0" _window-focus-count="0" _warning-count="0"  >
       </latihan-kuis>
+
 
     </div>
   <div class="card">
       <h2>🔍 Cek di Spreadsheet</h2>
       <p>Di sheet <code>[SHEET_KUIS_SESSION]</code>, cek kolom:</p>
 
-      <ul>
-        <li><b>Catatan</b>: <code>"selesai"</code>, <code>"selesai (remidi)"</code>, <code>"selesai (sudah-remidi)"</code></li>
 
-        <li><b>Session Token</b>: UUID unik per attempt</li>
+      
 
-        <li><b>Percobaan Ke</b>: 1 (awal), 2 (setelah remidi)</li>
+      
 
-        <li><b>Skor</b>: nilai terbaru (replace, bukan nambah)</li>
-
-      </ul>
-
-      <p>Di sheet <code>logActivity</code>, cek tipe log:</p>
-
-      <ul>
-        <li><b>selesai</b>: ada field <code>remidi: true/false</code> + <code>percobaanKe</code></li>
-
-        <li><b>curang_tab_switch</b>: muncul setelah 3x tab switch</li>
-
-        <li><b>force_choice_dialog</b>: log saat dialog 3x muncul</li>
-
-      </ul>
+      
 
     </div>
   <div class="card" style="background: #fef3c7; border-left: 4px solid
   #f59e0b;">
-      <h2>⚠️ Catatan untuk Backend (codev6.gs)</h2>
-      <p>Frontend mengirim kolom baru di <code>logQuizSession</code>:</p>
+      
+      
 
-      <ul>
-        <li><code>catatan</code> &#8212; string info (selesai/curang/remidi/dll)</li>
+      
 
-        <li><code>sessionToken</code> &#8212; UUID identifikasi attempt</li>
-
-        <li><code>percobaanKe</code> &#8212; attempt number (1, 2, 3, ...)</li>
-
-        <li><code>id_log</code> &#8212; UUID untuk idempotensi</li>
-
-      </ul>
-
-      <p>Backend perlu:</p>
-      <ol>
-        <li>Tambah kolom <b>Catatan</b> di sheet (sudah ada di schema)</li>
-
-        <li>Tambah action <code>updateQuizSession</code> yang UPDATE row by sessionToken (bukan insert)</li>
-
-        <li>Update schema sheet untuk support semua kolom baru</li>
-      </ol>
+      
+      
 
     </div>
   <p></p>
@@ -139,10 +112,10 @@ content: >
   cover-image="./files/tangis-sedih.jpg" student-kelas=""
   soal-file-url="./files/2026-stimulus1-faseF.json" practice-mode
   show-question-nav allow-backward-nav question-delay="0" review-answers
-  timer-autostart  student-id="" student-name="" student-nis="" student-absen=""
+  timer-autostart student-id="" student-name="" student-nis="" student-absen=""
   pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai otomatis."
   pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet."
-  label-mulai="▶️ Mulai" hide-pause-restart kkm="75"  tab-switch-threshold="3"
+  label-mulai="▶️ Mulai" hide-pause-restart kkm="75" tab-switch-threshold="3"
   questions="[{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Pencarian
   informasi ilmiah secara daring menggunakan kata kunci sederhana sering kali
   tidak efektif karena menghasilkan jutaan data tidak relevan. Guna menyaring
@@ -315,5 +288,5 @@ content: >
   otomatis.&quot;],&quot;correctPairs&quot;:{&quot;0&quot;:1,&quot;1&quot;:2,&quot;2&quot;:0,&quot;3&quot;:3}}]"
   _attempt-ke="0" _soal-file-url-cache="./files/2026-stimulus1-faseF.json"
   _remidi-soal="[]" _tab-switch-count="0" _visibility-change-count="0"
-  _window-blur-count="0" _window-focus-count="0"
-  _warning-count="0"></latihan-kuis>
+  _window-blur-count="0" _window-focus-count="0" _warning-count="0" 
+  ></latihan-kuis>
