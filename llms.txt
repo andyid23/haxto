@@ -25,7 +25,7 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Ulangan Harian 2 FASE F LM2](https://localhost:3000/sites/haxto/pages/item-cc3c0230-cd78-4c49-996b-e5f77752a46a/index.md): 📝 Kuis Verifikasi Informasi &#38; Periksa Fakta (LM2) Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban benar/salah tidak ditampilkan. Setelah login reloaduntuk men
 - [Google Collabs](https://localhost:3000/sites/haxto/pages/item-d395c5d6-8e01-4cd2-9fd2-d1ab76cdb62f/index.md): Materi Pengenalan Google Collabs
 - [Remidi Ulangan 2 FASE F LM2](https://localhost:3000/sites/haxto/pages/item-6d97fd59-ff85-4cb5-b919-e62def7dad34/index.md): 📝 Kuis Verifikasi Informasi &#38; Periksa Fakta (LM2) Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban benar/salah tidak ditampilkan. Nilai akhir akan diambil dari
-- [Sumber Data](https://localhost:3000/sites/haxto/pages/item-6389b65b-7abc-4ab4-9fa2-1d7374d117fb/index.md)
+- [Sumber Data](https://localhost:3000/sites/haxto/pages/item-6389b65b-7abc-4ab4-9fa2-1d7374d117fb/index.md): TOPIK: KARAKTERISTIK SUMBER DATA & SIKLUS PENGOLAHAN DATA 1. Pendahuluan Informatika pada era Masyarakat 5.0 menempatkan data sebagai salah satu aset paling berharga (data as a strategic asset). Di d
 
 ## Optional
 - [Search index](https://localhost:3000/sites/haxto/lunrSearchIndex.json): Lunr corpus for quick full-text retrieval.
