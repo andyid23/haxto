@@ -484,6 +484,14 @@
             "type": "image/jpeg",
             "name": "sholat_1.jpg",
             "size": 124745
+          },
+          {
+            "path": "C:\\Users\\Dragon\\Documents\\github\\andyid23\\haxtheweb-kuis\\haxto\\files\\mapeltik-web.jpg",
+            "fullUrl": "/C:\\Users\\Dragon\\Documents\\github\\andyid23\\haxtheweb-kuis\\haxto/files/mapeltik-web.jpg",
+            "url": "files/mapeltik-web.jpg",
+            "type": "image/jpeg",
+            "name": "mapeltik-web.jpg",
+            "size": 63784
           }
         ],
         "hideInMenu": false,

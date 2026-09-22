@@ -3,7 +3,7 @@
   <title>Media Pembelajaran dan Kuis Kelas X - XI Informatika SMA</title>
   <link href="https://localhost:3000/sites/haxto/" rel="self" />
   <subtitle>belajar dan melatih pemahaman informatika SMA kelas 10 dan 11 X XI</subtitle>
-  <updated>2026-09-22T07:42:45.000Z</updated>
+  <updated>2026-09-22T07:43:22.000Z</updated>
   <author>
       <name>Andy Yulianto</name>
   </author>
@@ -648,7 +648,8 @@ Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban
 <div class="card">
    <h2>🎯 Ulangan 2 </h2><p></p>
 
-  
+
+<quiz-user-auth apps-script-url="https://script.google.com/macros/s/AKfycby_0nt2rOZBYfhVgX0aHEEGtfKYIOZlVVQDlPbUUmt-mRFtuyfxo9uZOyvmCgznDnmw/exec" auto-login="" _student-id="STD-65108053"></quiz-user-auth>
 
 </div>
 <p></p>
