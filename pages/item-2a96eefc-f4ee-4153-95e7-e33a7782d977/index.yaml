@@ -32,7 +32,7 @@ metadata:
     - files/habits.jpg
     - files/belajar.jpg
   videos: []
-  updated: 1790063374
+  updated: 1790131048
   published: true
   status: ''
   files:
@@ -124,6 +124,14 @@ metadata:
       type: image/jpeg
       name: mapeltik-web.jpg
       size: 63784
+    - path: >-
+        C:\Users\Dragon\Documents\github\andyid23\haxtheweb-kuis\haxto\files\praktek-web.jpg
+      fullUrl: >-
+        /C:\Users\Dragon\Documents\github\andyid23\haxtheweb-kuis\haxto/files/praktek-web.jpg
+      url: files/praktek-web.jpg
+      type: image/jpeg
+      name: praktek-web.jpg
+      size: 65090
   hideInMenu: false
   readtime: 1
   theme:
@@ -176,6 +184,7 @@ content: >
 
 
 
+
   </stop-note>
 
   <quiz-user-auth
@@ -186,6 +195,7 @@ content: >
 
   <ul><li><a href="./lm1-ekosistem-periksa-fakta-metode-craap">Link Menuju
   Materi Kelas X</a></li>
+
 
 
 
@@ -212,8 +222,10 @@ content: >
 
 
 
+
   <li><a href="./lm2-fase-f-verifikasi">Link Menuju Materi Kelas XI
   LM2</a>&#160;</li>
+
 
 
 
@@ -240,6 +252,10 @@ content: >
   <p></p>
 
   <p></p>
+
+  <media-image source="files/praktek-web.jpg" card citation="praktek web scrap"
+  accent-color="grey" size="wide" offset="none"
+  link="https://www.youtube.com/watch?v=csAEyGO3DVo"></media-image>
 
   <media-image source="files/mapeltik-web.jpg" card citation="mapeltik.web.id"
   accent-color="grey" size="wide" offset="none" link="https://mapeltik.web.id"

@@ -978,7 +978,7 @@ cover-image="./files/belajar.jpg"
   <entry>
     <title>Selamat Datang</title>
     <id>item-2a96eefc-f4ee-4153-95e7-e33a7782d977</id>
-    <updated>2026-09-23T01:52:29.000Z</updated>
+    <updated>2026-09-23T02:37:28.000Z</updated>
     <published>2026-09-04T22:06:44.000Z</published>
     <summary>ULANGAN INFORMATIKA KELAS X-XI
 
@@ -1022,10 +1022,12 @@ Semboyan
 
 
 
+
 </stop-note>
 <quiz-user-auth apps-script-url="https://script.google.com/macros/s/AKfycbwDq12BtYxeokfbeCuDnDo-50z0ZL-XAMlXu4fMyZbbV_el4-B-lMbMWznocusKk63D/exec" auto-login _student-id="STD-65108053"></quiz-user-auth>
 <p></p>
 <ul><li><a href="./lm1-ekosistem-periksa-fakta-metode-craap">Link Menuju Materi Kelas X</a></li>
+
 
 
 
@@ -1048,7 +1050,9 @@ Semboyan
 
 
 
+
 <li><a href="./lm2-fase-f-verifikasi">Link Menuju Materi Kelas XI LM2</a>&#160;</li>
+
 
 
 
@@ -1065,6 +1069,7 @@ Semboyan
 <h2 data-style-guide="headline" data-design-treatment="vert" data-primary="8" data-padding="xs" data-border-radius="xs" id="h2-1282437022">Semboyan</h2>
 <p></p>
 <p></p>
+<media-image source="files/praktek-web.jpg" card citation="praktek web scrap" accent-color="grey" size="wide" offset="none" link="https://www.youtube.com/watch?v=csAEyGO3DVo"></media-image>
 <media-image source="files/mapeltik-web.jpg" card citation="mapeltik.web.id" accent-color="grey" size="wide" offset="none" link="https://mapeltik.web.id" disable-zoom></media-image>
 <media-image source="files/nasihat-kebaikan_1.jpg" citation="Kutipan Felix Siauw" accent-color="grey" size="wide" offset="none" caption="Yang bijak mencari kebenaran dari nasihat, yang bebal mencari kesalahan dari penasihat. - Felix Siauw" box link="files/nasihat-kebaikan.jpg" modal-title="Yang bijak mencari kebenaran dari nasihat, yang bebal mencari kesalahan dari penasihat. - Felix Siauw" _has-caption disable-zoom></media-image>
 <p></p>
