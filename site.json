@@ -492,6 +492,14 @@
             "type": "image/jpeg",
             "name": "mapeltik-web.jpg",
             "size": 63784
+          },
+          {
+            "path": "C:\\Users\\Dragon\\Documents\\github\\andyid23\\haxtheweb-kuis\\haxto\\files\\praktek-web.jpg",
+            "fullUrl": "/C:\\Users\\Dragon\\Documents\\github\\andyid23\\haxtheweb-kuis\\haxto/files/praktek-web.jpg",
+            "url": "files/praktek-web.jpg",
+            "type": "image/jpeg",
+            "name": "praktek-web.jpg",
+            "size": 65090
           }
         ],
         "hideInMenu": false,
@@ -694,14 +702,14 @@
       "id": "item-0a256163-9462-4572-9be7-e902dfa6bfe3",
       "indent": 0,
       "location": "pages/item-0a256163-9462-4572-9be7-e902dfa6bfe3/index.html",
-      "slug": "new-page",
-      "order": 8,
+      "slug": "ulangan1-khusus-x",
+      "order": 9,
       "parent": null,
       "title": "ulangan",
       "description": "Ulangan 1 Kelas X\n\n",
       "metadata": {
         "created": 1790130497,
-        "updated": 1790130556,
+        "updated": 1790130816,
         "images": [],
         "videos": [],
         "theme": {

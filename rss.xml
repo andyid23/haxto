@@ -6,7 +6,7 @@
     <description>belajar dan melatih pemahaman informatika SMA kelas 10 dan 11 X XI</description>
     <copyright>Copyright (C) 2026 https://localhost:3000/sites/haxto</copyright>
     <language>en-us</language>
-    <lastBuildDate>Wed, 23 Sep 2026 02:06:19 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 23 Sep 2026 02:29:16 GMT</lastBuildDate>
     <generator>HAXcms NodeJS</generator>
     <atom:link href="https://localhost:3000/sites/haxto/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
@@ -117,9 +117,9 @@
     </item>
     <item>
       <title>ulangan</title>
-      <link>https://localhost:3000/sites/haxto/new-page</link>
-      <description>Ulangan 1 Kelas X</description>
-      <guid>https://localhost:3000/sites/haxto/new-page</guid>
+      <link>https://localhost:3000/sites/haxto/ulangan1-khusus-x</link>
+      <description>Ulangan 1 Kelas X ▶️ Mulai Kuis &amp;#60;script&amp;#62; // Memaksa pemulian bila timer tidak otomatis document.getElementById(&apos;btn-mulai&apos;).addEventListener(&apos;click&apos;, () =&amp;#62; { const kuis = document.querySelector(&apos;latihan-kuis&apos;); if (kuis &amp;#38;&amp;#38; kuis._onStartClick) kuis._onStartClick(); }); &amp;#60;/script&amp;#62;</description>
+      <guid>https://localhost:3000/sites/haxto/ulangan1-khusus-x</guid>
       <pubDate>Wed, 23 Sep 2026 02:28:17 GMT</pubDate>
     </item>
   </channel>
