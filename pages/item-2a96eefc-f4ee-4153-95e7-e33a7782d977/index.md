@@ -15,6 +15,8 @@ Belajar dan berlatih setiap saat! Agar semakin mahir.
 Semboyan
 --------
 
+..
+
 ![Bila seseorang banyak melatih dan mengulang, terpaksa ataupun sukarela, dia pasti akan menguasai keahlian tertentu. Inilah namanya pembentukan kebiasaan alias habits.](files/habits.jpg)
 
 > Bila seseorang banyak melatih dan mengulang, terpaksa ataupun sukarela, dia pasti akan menguasai keahlian tertentu. Inilah namanya pembentukan kebiasaan alias habits.  

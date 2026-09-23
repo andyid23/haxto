@@ -32,7 +32,7 @@ metadata:
     - files/habits.jpg
     - files/belajar.jpg
   videos: []
-  updated: 1790131048
+  updated: 1790134662
   published: true
   status: ''
   files:
@@ -185,6 +185,7 @@ content: >
 
 
 
+
   </stop-note>
 
   <quiz-user-auth
@@ -195,6 +196,7 @@ content: >
 
   <ul><li><a href="./lm1-ekosistem-periksa-fakta-metode-craap">Link Menuju
   Materi Kelas X</a></li>
+
 
 
 
@@ -223,8 +225,10 @@ content: >
 
 
 
+
   <li><a href="./lm2-fase-f-verifikasi">Link Menuju Materi Kelas XI
   LM2</a>&#160;</li>
+
 
 
 
@@ -241,8 +245,8 @@ content: >
 
   <img src="files/ilya-pavlov-OqtafYT5kTw-unsplash.jpg" loading="lazy"
   data-width="75" data-padding="m" data-margin="s"/><polaris-cta text="Explore
-  Web" link="https://www.andyux.my.id" type="primary" outlined filled edit-mode
-  data-padding="m" data-text-align="center"></polaris-cta>
+  Web" link="https://www.andyux.my.id" type="primary" outlined filled
+  edit-mode="" data-padding="m" data-text-align="center"></polaris-cta>
 
   <p></p>
 
@@ -253,9 +257,12 @@ content: >
 
   <p></p>
 
-  <media-image source="files/praktek-web.jpg" card citation="praktek web scrap"
-  accent-color="grey" size="wide" offset="none"
-  link="https://www.youtube.com/watch?v=csAEyGO3DVo"></media-image>
+  <media-image source="files/praktek-web.jpg" card citation="praktek web scrap
+  untuk mengumpulkan data cuaca" accent-color="grey" size="wide" offset="none"
+  link="https://www.youtube.com/watch?v=csAEyGO3DVo" disable-zoom
+  alt="praktek"></media-image>
+
+  <p>..</p>
 
   <media-image source="files/mapeltik-web.jpg" card citation="mapeltik.web.id"
   accent-color="grey" size="wide" offset="none" link="https://mapeltik.web.id"
