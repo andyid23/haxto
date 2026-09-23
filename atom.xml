@@ -3,7 +3,7 @@
   <title>Media Pembelajaran dan Kuis Kelas X - XI Informatika SMA</title>
   <link href="https://localhost:3000/sites/haxto/" rel="self" />
   <subtitle>belajar dan melatih pemahaman informatika SMA kelas 10 dan 11 X XI</subtitle>
-  <updated>2026-09-23T02:01:24.000Z</updated>
+  <updated>2026-09-23T02:06:19.000Z</updated>
   <author>
       <name>Andy Yulianto</name>
   </author>
@@ -1486,7 +1486,7 @@ Berikut adalah materi teknis lengkap berisi kode, langkah-langkah, dan rekomenda
 <p>Sebelum menjalankan kode, pastikan Python sudah terinstal. Buka terminal atau Command Prompt, lalu instal pustaka (library) yang diperlukan menggunakan perintah berikut:</p>
 <p></p>
 <p></p>
-<code-sample type="javascript" copy-clipboard-button><template preserve-content="preserve-content">pip install requests beautifulsoup4 pandas 
+<code-sample type="javascript" copy-clipboard-button><template preserve-content="preserve-content">pip install requests beautifulsoup4 pandas
 </template></code-sample>
 <p></p>
 <ul><li><strong>requests</strong>: Untuk mengunduh halaman web.</li>
@@ -1665,12 +1665,44 @@ print(weather_df.head())
 <p></p>
 <p></p>
 <p></p>
-<latihan-kuis apps-script-url="https://script.google.com/macros/s/XXXXXX/exec" duration="60" timerautostart="" mode="siswa" allowretake="false" questions="[{&quot;question&quot;:&quot;2+2=?&quot;,&quot;choices&quot;:[&quot;3&quot;,&quot;4&quot;,&quot;5&quot;],&quot;correctIndex&quot;:1,&quot;type&quot;:&quot;mc&quot;},{&quot;question&quot;:&quot;Bukti matahari adalah?&quot;,&quot;choices&quot;:[&quot;Bulan&quot;,&quot;Matahari&quot;,&quot;Bintang&quot;],&quot;correctIndex&quot;:1,&quot;type&quot;:&quot;mc&quot;}]" judul-materi="Materi Pembelajaran" teks-materi="Baca materi di bawah ini dengan saksama sebelum mengerjakan kuis. Waktu pengerjaan kuis dibatasi oleh timer; saat waktu habis, kuis akan dikunci dan nilai otomatis terkirim." materi-file="" cover-image="" judul-kuis="Evaluasi Kuis Interaktif" student-id="STD-65108010" student-name="Abi Andy" student-nis="123" student-absen="" student-kelas="XI-1" kd-materi="" pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai" allow-retake max-retake="0" hide-pause-restart kategori="sumatif_lm" show-question-nav question-delay="1800" review-answers timer-autostart kkm="75" tab-switch-threshold="3" _attempt-ke="0" _remidi-soal="[]" _tab-switch-count="0" _visibility-change-count="2" _window-blur-count="0" _window-focus-count="0" _warning-count="0"    >
-    <!--   Tombol pemula (opsional, bila timerAutostart=false)   -->
-    <button id="btn-mulai" class="btn-mulai">▶️ Mulai Kuis</button>
+<latihan-kuis
+     apps-script-url="https://script.google.com/macros/s/AKfycbwDq12BtYxeokfbeCuDnDo-50z0ZL-XAMlXu4fMyZbbV_el4-B-lMbMWznocusKk63D/exec"
+     duration="600"
+     timerAutostart="true"
+     mode="siswa"
+     allowRetake="false"
+     soal-file-url="./files/2026-stimulus2b-faseE.json"
+kategori="formatif"
+ kd-materi="Latihan LM3"
+     >
+   <!-- Tombol pemula (opsional, bila timerAutostart=false) -->
+   <button id="btn-mulai" class="btn-mulai">▶️ Mulai Kuis</button>
 
+   <script>
+     // Memaksa pemulian bila timer tidak otomatis
+     document.getElementById('btn-mulai').addEventListener('click', () => {
+       const kuis = document.querySelector('latihan-kuis');
+       if (kuis && kuis._onStartClick) kuis._onStartClick();
+     });
+   </script>
+ </latihan-kuis>
+ ]]>
+    </content>
+  </entry>
+  <entry>
+    <title>ulangan</title>
+    <id>item-0a256163-9462-4572-9be7-e902dfa6bfe3</id>
+    <updated>2026-09-23T02:29:16.000Z</updated>
+    <published>2026-09-23T02:28:17.000Z</published>
+    <summary>Ulangan 1 Kelas X
+
+</summary>
+    <link href="https://localhost:3000/sites/haxto/new-page"/>
     
-  </latihan-kuis>
+    <content type="html">
+      <![CDATA[ 
+<p>Ulangan 1 Kelas X</p>
+<p></p>
  ]]>
     </content>
   </entry>

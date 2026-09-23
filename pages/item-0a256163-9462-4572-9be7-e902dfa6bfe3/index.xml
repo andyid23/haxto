@@ -4,17 +4,40 @@
 <indent>0</indent>
 <location>pages/item-0a256163-9462-4572-9be7-e902dfa6bfe3/index.xml</location>
 <slug>new-page</slug>
-<order>7</order>
+<order>8</order>
 <parent></parent>
-<title>New Page</title>
-<description></description>
+<title>ulangan</title>
+<description>Ulangan 1 Kelas X
+
+</description>
 <metadata>
 <created>1790130497</created>
-<updated>1790130497</updated>
+<updated>1790130556</updated>
 <images>
 </images>
 <videos>
 </videos>
+<theme>
+<element>polaris-flex-theme</element>
+<path>@haxtheweb/polaris-theme/lib/polaris-flex-theme.js</path>
+<name>Polaris Flex</name>
+<thumbnail>@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-polaris-flex-theme-thumb.jpg</thumbnail>
+<description>Start with a blank site using the Polaris Flex</description>
+<category>
+<item>Website</item>
+</category>
+<hidden>false</hidden>
+<priority>-1</priority>
+<terrible>false</terrible>
+<key>polaris-flex-theme</key>
+</theme>
+<published>true</published>
+<hideInMenu>true</hideInMenu>
+<locked>false</locked>
+<readtime>1</readtime>
 </metadata>
-<content><![CDATA[<p></p>]]></content>
+<content><![CDATA[
+<p>Ulangan 1 Kelas X</p>
+<p></p>
+]]></content>
 </item>
