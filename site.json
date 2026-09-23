@@ -25,7 +25,7 @@
       "name": "haxto",
       "domain": "",
       "created": 1787457359,
-      "updated": 1790134662,
+      "updated": 1790136290,
       "logo": "",
       "version": "26.0.1"
     },
@@ -692,10 +692,24 @@
         "created": 1790128351,
         "images": [],
         "videos": [],
-        "updated": 1790129178,
+        "updated": 1790136290,
         "published": true,
         "hideInMenu": false,
-        "readtime": 4
+        "readtime": 5,
+        "theme": {
+          "element": "polaris-flex-theme",
+          "path": "@haxtheweb/polaris-theme/lib/polaris-flex-theme.js",
+          "name": "Polaris Flex",
+          "thumbnail": "@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-polaris-flex-theme-thumb.jpg",
+          "description": "Start with a blank site using the Polaris Flex",
+          "category": [
+            "Website"
+          ],
+          "hidden": false,
+          "priority": -1,
+          "terrible": false,
+          "key": "polaris-flex-theme"
+        }
       }
     },
     {
