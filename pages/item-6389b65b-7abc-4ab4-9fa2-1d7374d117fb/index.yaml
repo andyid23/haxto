@@ -17,7 +17,7 @@ metadata:
   created: 1790060941
   images: []
   videos: []
-  updated: 1790061299
+  updated: 1790125557
   theme:
     element: polaris-flex-theme
     path: '@haxtheweb/polaris-theme/lib/polaris-flex-theme.js'
@@ -36,10 +36,10 @@ metadata:
   readtime: 6
 content: >
 
-  <h3><strong>TOPIK: KARAKTERISTIK SUMBER DATA &amp; SIKLUS PENGOLAHAN
-  DATA</strong></h3>
+  <h3 id="h3-1986251232"><strong>TOPIK: KARAKTERISTIK SUMBER DATA &amp; SIKLUS
+  PENGOLAHAN DATA</strong></h3>
 
-  <hr/><h3><strong>1. Pendahuluan</strong></h3>
+  <hr/><h3 id="h3-39465782"><strong>1. Pendahuluan</strong></h3>
 
   <p>Informatika pada era Masyarakat 5.0 menempatkan data sebagai salah satu
   aset paling berharga (<strong>data as a strategic asset</strong>). Di dunia
@@ -57,7 +57,7 @@ content: >
   didik mampu mengubah data mentah menjadi wawasan (<strong>insight</strong>)
   berharga yang mendasari pengambilan keputusan dan prediksi ilmiah.</p>
 
-  <hr/><h3><strong>2. Tujuan Pembelajaran</strong></h3>
+  <hr/><h3 id="h3-468844443"><strong>2. Tujuan Pembelajaran</strong></h3>
 
   <p>Berdasarkan Alur Tujuan Pembelajaran (ATP) Informatika Fase F (Kelas XI)
   untuk Elemen Analisis Data (AD):</p>
@@ -66,71 +66,98 @@ content: >
   data yang <strong>Terbuka (<em>Open Data</em>)</strong>
 
 
+
   , <strong>Terpercaya (<em>Reliable Data</em>)</strong>
+
 
 
   , dan <strong>Legal (<em>Legal Data</em>)</strong>
 
+
    dalam kehidupan nyata maupun dunia siber.</li>
+
 
    <li><strong>Menerapkan 6 tahapan siklus pengolahan data</strong> (Definisi Masalah, Pengumpulan Data, Pembersihan Data, Analisis Data, Visualisasi Data, dan Presentasi Data) secara sistematis menggunakan komputer (<em>plugged</em>) maupun tanpa komputer (<em>unplugged</em>).</li>
 
+
    <li><strong>Mengevaluasi dan membersihkan data (<em>Data Cleaning</em>)</strong>
+
 
    dari duplikasi, kesalahan eja, data yang hilang (<em>missing values</em>), serta potensi <strong>bias data</strong> untuk menjaga integritas hasil analisis.</li>
 
+
   </ol>
 
-  <hr/><h3><strong>3. Materi dan Konsep Dasar</strong></h3>
+  <hr/><h3 id="h3-272661673"><strong>3. Materi dan Konsep Dasar</strong></h3>
 
-  <h4><strong>A. Tahap 1: Karakteristik Sumber Data (Terbuka, Terpercaya, dan
-  Legal)</strong></h4>
+  <h4 id="h4-688201186"><strong>A. Tahap 1: Karakteristik Sumber Data (Terbuka,
+  Terpercaya, dan Legal)</strong></h4>
 
   <p>Untuk memastikan data yang dianalisis dapat dipertanggungjawabkan, sumber
   data harus memenuhi tiga pilar kriteria:</p>
 
   <ol><li><strong>Data Terbuka (<em>Open Data</em>):</strong>
 
+
    Data publik yang dapat diakses, digunakan, diolah kembali, dan didistribusikan secara bebas oleh siapa saja tanpa hambatan lisensi yang memberatkan. Syarat utama pemanfaatan <em>open data</em> adalah <strong>kewajiban mencantumkan institusi penyedia data sebagai sumber resmi</strong>. Contoh: Data Prakiraan Cuaca dan Data Bencana Gempa Bumi dari Badan Meteorologi, Klimatologi, dan Geofisika (BMKG), serta data statistik kependudukan BPS.</li>
+
 
    <li><strong>Data Terpercaya (<em>Reliable Data</em>):</strong>
 
+
    Data yang dikeluarkan oleh individu atau lembaga resmi yang memiliki otoritas (<em>Authority</em>), reputasi akademis, dan kredibilitas profesional yang teruji. Data terpercaya dicirikan oleh <strong>6 indikator kualitas</strong>:<ul> <li><strong>Akurasi (<em>Accuracy</em>):</strong>
+
 
    Sejauh mana data menggambarkan fakta dunia nyata secara benar.</li>
 
+
    <li><strong>Kelengkapan (<em>Completeness</em>):</strong>
+
 
    Proporsi data yang terkumpul dibandingkan dengan kebutuhan data utuh (100%).</li>
 
+
    <li><strong>Konsistensi (<em>Consistency</em>):</strong>
+
 
    Ketiadaan pertentangan data saat membandingkan beberapa variabel dari objek yang sama.</li>
 
+
    <li><strong>Ketepatan Waktu (<em>Timeliness</em>):</strong>
+
 
    Keaktualan data sesuai dengan periode waktu analisis.</li>
 
+
    <li><strong>Keunikan (<em>Uniqueness</em>):</strong>
+
 
    Ketiadaan rekaman ganda (duplikasi) untuk objek yang sama.</li>
 
+
    <li><strong>Validitas/Kesesuaian (<em>Validity</em>):</strong>
+
 
    Kesesuaian tipe, format, dan rentang data sesuai definisi variabel.</li>
 
+
    </ul>
+
 
    </li>
 
+
    <li><strong>Data Legal (<em>Legal Data</em>):</strong>
+
 
    Data yang perolehan dan penggunaannya sesuai dengan koridor hukum yang berlaku di suatu yurisdiksi, disahkan oleh ketetapan resmi pemerintah (seperti Undang-Undang, Peraturan Pemerintah, UU Perlindungan Data Pribadi/UU PDP, atau Peraturan Daerah), serta <strong>menghargai Hak Kekayaan Intelektual (HAKI)</strong> dan kerahasiaan data pribadi non-publik.</li>
 
+
   </ol>
 
-  <h4><strong>B. Tahap 2: Siklus Pengolahan Data (<em>Data Processing
-  Cycle</em>)</strong>
+  <h4 id="h4--309176400"><strong>B. Tahap 2: Siklus Pengolahan Data (<em>Data
+  Processing Cycle</em>)</strong>
+
 
 
   </h4>
@@ -140,35 +167,48 @@ content: >
 
   <ol><li><strong>Mendefinisikan Masalah (<em>Problem Definition</em>):</strong>
 
+
    Merumuskan pertanyaan utama, tujuan riset, serta ekspektasi solusi yang ingin dicapai melalui pengolahan data.</li>
+
 
    <li><strong>Pengumpulan Data (<em>Data Collection</em>):</strong>
 
+
    Mengumpulkan data dari berbagai sumber internal (organisasi sendiri) atau eksternal (pihak luar/open data) menggunakan kuesioner, observasi, atau <em>web scraping</em>.</li>
+
 
    <li><strong>Pembersihan Data (<em>Data Cleaning</em>):</strong>
 
+
    Tahap paling krusial untuk menghapus data duplikat, memperbaiki kesalahan ketik (<em>typo</em>), menangani nilai kosong (<em>missing values</em>), serta <strong>menghilangkan bias data</strong> (kecenderungan memihak kelompok tertentu yang dapat merusak objektivitas analisis).</li>
+
 
    <li><strong>Analisis Data (<em>Data Analysis</em>):</strong>
 
+
    Mengolah data yang telah bersih menggunakan perhitungan statistik, perumusan tren, atau pembuatan tabel pivot pada aplikasi pengolah angka (<em>Spreadsheet</em> seperti Microsoft Excel/Google Sheets) maupun bahasa pemrograman data (<em>Python/R</em>).</li>
+
 
    <li><strong>Visualisasi Data (<em>Data Visualization</em>):</strong>
 
+
    Menyajikan hasil analisis dalam bentuk grafik, bagan, diagram, atau infografis agar pola dan tren data dapat dibaca secara intuitif.</li>
+
 
    <li><strong>Presentasi Data (<em>Data Presentation</em>):</strong>
 
+
    Menyampaikan wawasan (<em>insight</em>) hasil analisis data kepada pemangku kepentingan (<em>stakeholders</em>) dalam bentuk laporan atau paparan yang jelas dan informatif.</li>
+
 
   </ol>
 
-  <hr/><h3><strong>4. Miskonsepsi Umum</strong></h3>
+  <hr/><h3 id="h3--2136781867"><strong>4. Miskonsepsi Umum</strong></h3>
 
   <ul><li><strong>Miskonsepsi 1: Semua data yang dapat diunduh gratis di
   internet otomatis merupakan Data Terbuka (<em>Open Data</em>) yang bebas
   digunakan untuk tujuan komersial tanpa aturan.</strong>
+
 
 
   <em>Faktanya:</em> Data yang dapat diunduh gratis belum tentu <em>open
@@ -177,13 +217,17 @@ content: >
   mewajibkan pengguna untuk mencantumkan nama institusi penyedia data sebagai
   sumber resmi pada aplikasi atau laporan.</li>
 
+
    <li><strong>Miskonsepsi 2: Semakin banyak kuantitas data yang dikumpulkan, maka hasil analisis pasti semakin akurat, meskipun data tersebut kotor atau bermasalah.</strong><em>Faktanya:</em> <strong>Kualitas dan kebersihan data (<em>data quality</em>) jauh lebih penting daripada kuantitas data</strong>
+
 
   . Data dalam jumlah masif namun penuh duplikasi, kesalahan ketik, dan bias
   (<em>garbage in</em>) justru akan menghasilkan kesimpulan yang salah dan
   berbahaya (<em>garbage out</em>).</li>
 
+
    <li><strong>Miskonsepsi 3: Proses Pembersihan Data (<em>Data Cleaning</em>) hanya bertujuan memperbaiki ejaan dan tidak berpengaruh pada kesimpulan akhir.</strong>
+
 
   <em>Faktanya:</em> Pembersihan data juga mendeteksi <strong>bias sampel
   data</strong>. Jika data yang dikumpulkan memihak atau mengabaikan kelompok
@@ -191,9 +235,10 @@ content: >
   memihak sepihak.</li>
 
 
+
   </ul>
 
-  <hr/><h3><strong>5. Ringkasan Materi</strong></h3>
+  <hr/><h3 id="h3-1891844905"><strong>5. Ringkasan Materi</strong></h3>
 
   <ol><li><strong>Sumber data yang berkualitas</strong> wajib memenuhi tiga
   pilar kriteria: <strong>Terbuka</strong> (bebas diakses dengan mencantumkan
@@ -201,21 +246,26 @@ content: >
   unik, valid), dan <strong>Legal</strong> (sesuai hukum/UU PDP dan menghargai
   HAKI).</li>
 
+
    <li><strong>Siklus Pengolahan Data</strong> terdiri dari 6 langkah berurutan: <strong>Definisi Masalah → Pengumpulan Data → Pembersihan Data → Analisis Data → Visualisasi Data → Presentasi Data</strong>.</li>
+
 
    <li><strong>Pembersihan Data (<em>Data Cleaning</em>)</strong>
 
+
    merupakan langkah paling vital untuk menjamin integritas data, menghapus duplikasi, dan mencegah bias analisis.</li>
+
 
    <li><strong>Pengolahan data</strong> dapat dilakukan secara digital menggunakan aplikasi pengolah angka (<em>Spreadsheet</em>) atau koding Python, maupun secara manual (<em>unplugged</em>) menggunakan kertas dan alat tulis.</li>
 
+
   </ol>
 
-  <hr/><h3><strong>6. Materi Pembelajaran (Skenario Stimulus Bab
-  2)</strong></h3>
+  <hr/><h3 id="h3--1790749074"><strong>6. Materi Pembelajaran (Skenario Stimulus
+  Bab 2)</strong></h3>
 
-  <h4><strong>Wacana Stimulus Bab 2: Pengolahan Data Profil Kelas &amp;
-  Terbuka</strong></h4>
+  <h4 id="h4--588801857"><strong>Wacana Stimulus Bab 2: Pengolahan Data Profil
+  Kelas &amp; Terbuka</strong></h4>
 
   <blockquote><p>"Suatu kelompok siswa kelas XI ingin menganalisis profil fisik
   dan kebiasaan belajar teman-temannya di sekolah. Untuk mendukung analisis
@@ -227,9 +277,11 @@ content: >
   ketik pada kolom jenis kelamin."</p>
 
 
+
   </blockquote>
 
-  <h4><strong>Studi Kasus Penerapan Pembelajaran:</strong></h4>
+  <h4 id="h4--1960062792"><strong>Studi Kasus Penerapan
+  Pembelajaran:</strong></h4>
 
   <p>Dalam skenario pembelajaran di atas, siswa dibimbing untuk membedah
   langkah-langkah praktis pengolahan data:</p>
@@ -240,24 +292,53 @@ content: >
   <strong>Data Terpercaya</strong> (diterbitkan oleh lembaga pemerintah
   bereputasi), dan <strong>Data Legal</strong> (sah secara hukum nasional).</li>
 
+
    <li><strong>Penerapan Pembersihan Data (Tahap 2):</strong> Siswa menjalankan <em>data cleaning</em> sebelum melakukan kalkulasi:<ol> <li>Menghapus baris nama siswa yang terinput ganda (<strong>Uniqueness</strong>).</li>
+
 
    <li>Mengisi atau mengeliminasi baris dengan nilai tinggi badan yang kosong (<strong>Completeness</strong>).</li>
 
+
    <li>Memperbaiki kesalahan eja pada jenis kelamin agar seragam, seperti mengonversi "Laki", "L", dan "pria" menjadi format standar "Laki-laki" (<strong>Validity/Consistency</strong>).</li>
+
 
    </ol>
 
+
    </li>
 
+
    <li><strong>Analisis &amp; Visualisasi:</strong> Data yang telah bersih diolah menggunakan fungsi rata-rata dan distribusi frekuensi pada <em>Spreadsheet</em>, lalu disajikan dalam bentuk grafik batang (visualisasi) dan dipresentasikan di depan kelas.</li>
+
 
   </ul>
 
   <p></p>
 
-  <p><kuis-ledakan
-  questions="[{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Badan
+  <quiz-user-auth
+  apps-script-url="https://script.google.com/macros/s/AKfycbwDq12BtYxeokfbeCuDnDo-50z0ZL-XAMlXu4fMyZbbV_el4-B-lMbMWznocusKk63D/exec"
+  auto-login _student-id=""></quiz-user-auth>
+
+  <kuis-ledakan questions="[{&quot;q&quot;:&quot;Apa kegunaan utama metode
+  connectedCallback pada LitElement?&quot;,&quot;a&quot;:&quot;Menginisialisasi
+  nilai variabel dasar&quot;,&quot;b&quot;:&quot;Mendeteksi elemen saat berhasil
+  diinjeksikan ke struktur DOM&quot;,&quot;c&quot;:&quot;Menghapus event
+  listener
+  global&quot;,&quot;k&quot;:&quot;b&quot;},{&quot;q&quot;:&quot;Bagaimana cara
+  mencegah timeout 6 menit pada Google Apps
+  Script?&quot;,&quot;a&quot;:&quot;Menggunakan penulisan masal berbasis batch
+  I/O&quot;,&quot;b&quot;:&quot;Menulis ke banyak sheet
+  terpisah&quot;,&quot;c&quot;:&quot;Memperbanyak rumus formula
+  cell&quot;,&quot;k&quot;:&quot;a&quot;}]" judul="Evaluasi Kuis Interaktif"
+  apps-script-url="https://script.google.com/macros/s/AKfycbwDq12BtYxeokfbeCuDnDo-50z0ZL-XAMlXu4fMyZbbV_el4-B-lMbMWznocusKk63D/exec"
+  kategori="sumatif_lm" mode="siswa" show-question-nav question-delay="1500"
+  review-answers student-id="" student-name="" student-nis="" student-absen=""
+  student-kelas="" timer-duration="600" timer-autostart timer-minutes="10"
+  timer-seconds="0" hide-pause-restart kd-materi="LM3" allow-backward-nav
+  practice-mode _attempt-start="0" _resume-remaining="0" _current-idx="0"
+  _selected-answers="{}" _match-answers="{}" _answered-set="{}"
+  _user-answers="{}" _max-points="0" _shuffled-questions="[]"
+  _temp-questions="[{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Badan
   Meteorologi, Klimatologi, dan Geofisika (BMKG) menyediakan data prakiraan
   cuaca harian dan data bencana gempa bumi yang dapat diakses dan dimanfaatkan
   oleh pengembang aplikasi publik. Namun, BMKG menetapkan syarat wajib bahwa
@@ -419,20 +500,45 @@ content: >
   disimpan dibandingkan dengan target data utuh 100%.&quot;,&quot;Bahasa
   pemrograman yang digunakan untuk koding web
   scraping.&quot;],&quot;correctPairs&quot;:{&quot;0&quot;:1,&quot;1&quot;:3,&quot;2&quot;:0,&quot;3&quot;:2}}]"
-  judul="Evaluasi Kuis Interaktif"
-  apps-script-url="https://script.google.com/macros/s/AKfycbwDq12BtYxeokfbeCuDnDo-50z0ZL-XAMlXu4fMyZbbV_el4-B-lMbMWznocusKk63D/exec"
-  kategori="formatif" mode="siswa" lock-after-complete show-question-nav
-  question-delay="1800" review-answers student-id="" student-name=""
-  student-nis="" student-absen="" student-kelas="" timer-duration="1500"
-  timer-autostart timer-minutes="25" timer-seconds="0" hide-pause-restart
-  kd-materi="LM3" allow-backward-nav practice-mode _attempt-start="0"
-  _resume-remaining="0" _current-idx="0" _selected-answers="{}"
-  _match-answers="{}" _answered-set="{}" _user-answers="{}" _max-points="0"
-  _shuffled-questions="[]" _temp-questions="[]" _editing-index="-1"
-  _temp-question-type="mc" _temp-question-points="1" _temp-correct-index="0"
-  _temp-correct-answers="[]" _temp-left-items="[&quot;&quot;,&quot;&quot;]"
+  _editing-index="-1" _temp-question-type="mc" _temp-question-points="1"
+  _temp-correct-index="0" _temp-correct-answers="[]"
+  _temp-left-items="[&quot;&quot;,&quot;&quot;]"
+  _temp-right-items="[&quot;&quot;,&quot;&quot;]" _temp-correct-pairs="{}"
+  _temp-accepted-statements="[]" _temp-statements="[]" _editor-origin="start"
+  lock-after-complete></kuis-ledakan>
+
+  <p></p>
+
+  <p><kuis-leldakan></kuis-leldakan>
+
+  </p>
+
+  <p><kuis-ledakan questions="[{&quot;q&quot;:&quot;Apa kegunaan utama metode
+  connectedCallback pada LitElement?&quot;,&quot;a&quot;:&quot;Menginisialisasi
+  nilai variabel dasar&quot;,&quot;b&quot;:&quot;Mendeteksi elemen saat berhasil
+  diinjeksikan ke struktur DOM&quot;,&quot;c&quot;:&quot;Menghapus event
+  listener
+  global&quot;,&quot;k&quot;:&quot;b&quot;},{&quot;q&quot;:&quot;Bagaimana cara
+  mencegah timeout 6 menit pada Google Apps
+  Script?&quot;,&quot;a&quot;:&quot;Menggunakan penulisan masal berbasis batch
+  I/O&quot;,&quot;b&quot;:&quot;Menulis ke banyak sheet
+  terpisah&quot;,&quot;c&quot;:&quot;Memperbanyak rumus formula
+  cell&quot;,&quot;k&quot;:&quot;a&quot;}]" judul="Evaluasi Kuis Interaktif" 
+  kd-materi="Pertemuan  Tes" kategori="formatif" mode="siswa"
+  lock-after-complete question-delay="1800" student-id="" student-name=""
+  student-nis="" student-absen="" student-kelas="" timer-duration="100"
+  timer-autostart timer-minutes="1" timer-seconds="40" hide-pause-restart
+  allow-backward-nav show-question-nav practice-mode shuffle-choices
+  _attempt-start="0" _resume-remaining="0" _current-idx="0"
+  _selected-answers="{}" _match-answers="{}" _answered-set="{}"
+  _user-answers="{}" _max-points="0" _shuffled-questions="[]"
+  _temp-questions="[]" _editing-index="-1" _temp-question-type="mc"
+  _temp-question-points="1" _temp-correct-index="0" _temp-correct-answers="[]"
+  _temp-left-items="[&quot;&quot;,&quot;&quot;]"
   _temp-right-items="[&quot;&quot;,&quot;&quot;]" _temp-correct-pairs="{}"
   _temp-accepted-statements="[]" _temp-statements="[]"
   _editor-origin="result"></kuis-ledakan>
 
   </p>
+
+  <p></p>

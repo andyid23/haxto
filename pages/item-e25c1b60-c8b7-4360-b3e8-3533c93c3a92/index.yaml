@@ -67,7 +67,7 @@ content: >
 
   <p></p>
 
-  <latihan-kuis mode="guru" ...="" student-id="STD-xxx" kd-materi="LM1"  
+  <latihan-kuis mode="guru" ...="" student-id="STD-xxx" kd-materi="LM1"
   duration="300" judul-materi="Materi Pembelajaran" teks-materi="Baca materi di
   bawah ini dengan saksama sebelum mengerjakan kuis. Waktu pengerjaan kuis
   dibatasi oleh timer; saat waktu habis, kuis akan dikunci dan nilai otomatis
@@ -81,17 +81,16 @@ content: >
   <p></p>
 
   <quiz-user-auth
-  apps-script-url="https://script.google.com/macros/s/AKfycbzZtRJ8dDEj6y3VyQgbYRap1-BBkOrOb-5vapHI7ck2ki751kqwudADvm8YSfEkzkRB/exec"
-  auto-login _student-id="STD-65108053"></quiz-user-auth>
+  apps-script-url="https://script.google.com/macros/s/AKfycbwDq12BtYxeokfbeCuDnDo-50z0ZL-XAMlXu4fMyZbbV_el4-B-lMbMWznocusKk63D/exec"
+  auto-login _student-id=""></quiz-user-auth>
 
 
   <dasbor-kuis mode="guru"
-  apps-script-url="https://script.google.com/macros/s/AKfycby2DIuM6ZN8FfkID9TjIVLICAmRa9ogfsuD4BDoCvEItZ2YG6-_gNr-f_mKroUCnalZ/exec"
+  apps-script-url="https://script.google.com/macros/s/AKfycbwDq12BtYxeokfbeCuDnDo-50z0ZL-XAMlXu4fMyZbbV_el4-B-lMbMWznocusKk63D/exec"
   kd-materi="Pertemuan 1" kelas="XI-1" student-id="STD-65108053"
   nama-siswa="Andy Yulianto" nis="65108053" absen="1" judul-kuis="Evaluasi Kuis
   Interaktif" questions="[]" _active-tab="pantauan"
-  _server-data="{&quot;roster&quot;:[],&quot;leaderboard&quot;:[],&quot;siswa&quot;:null,&quot;history&quot;:[]}" 
+  _server-data="{&quot;roster&quot;:[],&quot;leaderboard&quot;:[],&quot;siswa&quot;:null,&quot;history&quot;:[]}"
   _loading></dasbor-kuis>
 
   </latihan-kuis>
-

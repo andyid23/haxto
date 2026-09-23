@@ -55,7 +55,7 @@ content: >
   <latihan-kuis mode="siswa" max-retake="0" duration="900" timer-autostart
   hide-pause-restart hide-confetti hide-answers hide-score shuffle-questions
   shuffle-choices kategori="sumatif_lm"
-  apps-script-url="https://script.google.com/macros/s/AKfycby_0nt2rOZBYfhVgX0aHEEGtfKYIOZlVVQDlPbUUmt-mRFtuyfxo9uZOyvmCgznDnmw/exec"
+  apps-script-url="https://script.google.com/macros/s/AKfycbwDq12BtYxeokfbeCuDnDo-50z0ZL-XAMlXu4fMyZbbV_el4-B-lMbMWznocusKk63D/exec"
   kd-materi="LM1" student-id="" judul-kuis="Ulangan Harian" show-sheet-link
   soal-file-url="./files/soal-contoh.json" judul-materi="Materi Pembelajaran"
   teks-materi="Baca materi di bawah ini dengan saksama sebelum mengerjakan kuis.
