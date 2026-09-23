@@ -1,0 +1,105 @@
+[
+  {
+    "type": "mc",
+    "question": "Apa keunggulan utama menggunakan Google Colab dibandingkan menginstal Python secara lokal di komputer?",
+    "hint": "Colab berjalan di cloud sehingga tidak memerlukan penyetelan awal di perangkat lokal.",
+    "choices": [
+      "Memerlukan koneksi internet yang sangat cepat untuk setiap baris kode",
+      "Tidak memerlukan proses instalasi perangkat lunak dan konfigurasi lingkungan yang rumit",
+      "Hanya dapat digunakan untuk menjalankan satu jenis bahasa pemrograman selain Python",
+      "Menyimpan data secara permanen hanya di hard disk komputer lokal",
+      "Tidak mendukung penggunaan pustaka (library) tambahan"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "type": "mc",
+    "question": "Perintah Python yang benar untuk menampilkan teks \"Selamat Belajar\" di layar output adalah...",
+    "hint": "Gunakan fungsi bawaan Python untuk mencetak/menampilkan teks.",
+    "choices": [
+      "echo(\"Selamat Belajar\")",
+      "console.log(\"Selamat Belajar\")",
+      "print(\"Selamat Belajar\")",
+      "output(\"Selamat Belajar\")",
+      "write(\"Selamat Belajar\")"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "type": "mc",
+    "question": "Di dalam antarmuka Google Colab, kombinasi tombol keyboard (shortcut) yang berfungsi untuk menjalankan kode pada sel aktif dan langsung berpindah ke sel di bawahnya adalah...",
+    "hint": "Pahami perbedaan fungsi tombol eksekusi: kombinasi tombol ini mengeksekusi sel sekaligus memindahkan kursor ke sel berikutnya.",
+    "choices": [
+      "Ctrl + C",
+      "Shift + Enter",
+      "Alt + F4",
+      "Ctrl + S",
+      "Tab + Enter"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "type": "mc",
+    "question": "Seorang siswa baru saja membuka Google Colab untuk pertama kalinya. Langkah-langkah valid yang dapat ia lakukan untuk mulai bekerja adalah...\n(1) Mengklik tombol \"Notebook Baru\" di halaman utama.\n(2) Langsung mengetik kode di mesin pencari Google.\n(3) Menambahkan sel kode baru dengan mengklik tombol \"+ Kode\".\n(4) Menginstal ulang sistem operasi Windows agar Python bisa berjalan.",
+    "hint": "Pahami alur kerja dasar pembuatan berkas dan penambahan area penulisan program di dalam antarmuka Google Colab.",
+    "choices": [
+      "(1) dan (2)",
+      "(1) dan (3)",
+      "(2) dan (4)",
+      "(1), (2), dan (3)",
+      "(2), (3), dan (4)"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "type": "mc",
+    "question": "Perhatikan kode Python berikut yang dijalankan di dua sel berbeda:\nSel 1: x = 10\nSel 2: print(x + 5)\nPernyataan yang benar mengenai eksekusi kode tersebut adalah...\n(1) Output yang dihasilkan adalah 15.\n(2) Variabel x harus didefinisikan di sel yang sama dengan perintah print agar berhasil.\n(3) Google Colab mempertahankan nilai variabel x di memori selama sesi notebook aktif.\n(4) Kode akan menghasilkan error karena x tidak dikenali di Sel 2.",
+    "hint": "Variabel dalam memori sesi yang sama tetap tersimpan dan dapat diakses antar-sel.",
+    "choices": [
+      "(1) dan (2)",
+      "(1) dan (3)",
+      "(2) dan (4)",
+      "(1), (2), dan (3)",
+      "(3) dan (4)"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "type": "pgk",
+    "question": "Tentukan keabsahan dari pernyataan berikut!",
+    "hint": "Pahami perbedaan fungsi sel teks (Markdown) untuk dokumentasi dan integrasi Google Colab dengan ekosistem Google Cloud Storage.",
+    "statements": [
+      {
+        "text": "File notebook Google Colab secara default tersimpan otomatis di akun Google Drive pengguna yang sedang login.",
+        "answer": true
+      },
+      {
+        "text": "Sel teks (Text Cell) di Google Colab hanya bisa digunakan untuk menulis kode Python, tidak bisa untuk menulis penjelasan atau dokumentasi.",
+        "answer": false
+      }
+    ]
+  },
+  {
+    "type": "matching",
+    "question": "Pasangkan istilah atau fitur di lajur kiri dengan deskripsi fungsinya yang tepat di lajur kanan!",
+    "hint": "Cermati format ektensi berkas, nama fungsi cetak dasar Python, media penyimpanan cloud Google, serta format penulisan dokumentasi teks.",
+    "leftItems": [
+      ".ipynb",
+      "print()",
+      "Google Drive",
+      "Markdown"
+    ],
+    "rightItems": [
+      "Fungsi dasar Python untuk menampilkan output ke layar.",
+      "Format file asli notebook yang menyimpan kode, output, dan teks penjelasan.",
+      "Platform cloud tempat penyimpanan otomatis file notebook Colab.",
+      "Bahasa markup yang digunakan di sel teks untuk memformat penjelasan (seperti membuat tebal atau judul)."
+    ],
+    "correctPairs": {
+      "0": 1,
+      "1": 0,
+      "2": 2,
+      "3": 3
+    }
+  }
+]
