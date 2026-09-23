@@ -6,7 +6,7 @@
     <description>belajar dan melatih pemahaman informatika SMA kelas 10 dan 11 X XI</description>
     <copyright>Copyright (C) 2026 https://localhost:3000/sites/haxto</copyright>
     <language>en-us</language>
-    <lastBuildDate>Wed, 23 Sep 2026 03:37:42 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 23 Sep 2026 04:04:50 GMT</lastBuildDate>
     <generator>HAXcms NodeJS</generator>
     <atom:link href="https://localhost:3000/sites/haxto/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
@@ -102,10 +102,10 @@
       <pubDate>Wed, 16 Sep 2026 06:27:57 GMT</pubDate>
     </item>
     <item>
-      <title>Sumber Data</title>
-      <link>https://localhost:3000/sites/haxto/sumber-data</link>
+      <title>LM3 Fase F Sumber Data</title>
+      <link>https://localhost:3000/sites/haxto/lm3-fase-f-sumber-data</link>
       <description>TOPIK: KARAKTERISTIK SUMBER DATA &amp;amp; SIKLUS PENGOLAHAN DATA 1. Pendahuluan Informatika pada era Masyarakat 5.0 menempatkan data sebagai salah satu aset paling berharga ( data as a strategic asset ). Di dunia digital, data tercipta dan mengalir dalam volume yang sangat besar, berkecepatan tinggi, dan bervariasi ( Big Data ). Namun, ketersediaan data yang melimpah ini tidak secara otomatis memberikan manfaat jika tidak diolah dan dianalisis secara tepat. Di tengah banjir data ( data deluge ),...</description>
-      <guid>https://localhost:3000/sites/haxto/sumber-data</guid>
+      <guid>https://localhost:3000/sites/haxto/lm3-fase-f-sumber-data</guid>
       <pubDate>Tue, 22 Sep 2026 07:09:01 GMT</pubDate>
     </item>
     <item>
@@ -117,9 +117,9 @@
     </item>
     <item>
       <title>ulangan</title>
-      <link>https://localhost:3000/sites/haxto/ulangan1-khusus-x</link>
+      <link>https://localhost:3000/sites/haxto/ulangan</link>
       <description>Ulangan 1 Kelas X ▶️ Mulai Kuis // Memaksa pemulian bila timer tidak otomatis document.getElementById(&apos;btn-mulai&apos;).addEventListener(&apos;click&apos;, () =&gt; { const kuis = document.querySelector(&apos;latihan-kuis&apos;); if (kuis &amp;&amp; kuis._onStartClick) kuis._onStartClick(); });</description>
-      <guid>https://localhost:3000/sites/haxto/ulangan1-khusus-x</guid>
+      <guid>https://localhost:3000/sites/haxto/ulangan</guid>
       <pubDate>Wed, 23 Sep 2026 02:28:17 GMT</pubDate>
     </item>
   </channel>
