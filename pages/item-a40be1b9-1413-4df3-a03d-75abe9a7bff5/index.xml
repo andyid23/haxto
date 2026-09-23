@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-a40be1b9-1413-4df3-a03d-75abe9a7bff5</id>
+<indent>0</indent>
+<location>pages/item-a40be1b9-1413-4df3-a03d-75abe9a7bff5/index.xml</location>
+<slug>web-scrap-python</slug>
+<order>6</order>
+<parent></parent>
+<title>Web Scrap Python</title>
+<description></description>
+<metadata>
+<locked>false</locked>
+<created>1790128351</created>
+<images>
+</images>
+<videos>
+</videos>
+<updated>1790128351</updated>
+</metadata>
+<content><![CDATA[<p></p>]]></content>
+</item>

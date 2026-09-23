@@ -6,7 +6,7 @@
     <description>belajar dan melatih pemahaman informatika SMA kelas 10 dan 11 X XI</description>
     <copyright>Copyright (C) 2026 https://localhost:3000/sites/haxto</copyright>
     <language>en-us</language>
-    <lastBuildDate>Tue, 22 Sep 2026 07:49:35 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 23 Sep 2026 01:52:32 GMT</lastBuildDate>
     <generator>HAXcms NodeJS</generator>
     <atom:link href="https://localhost:3000/sites/haxto/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
@@ -107,6 +107,13 @@
       <description>TOPIK: KARAKTERISTIK SUMBER DATA &amp;amp; SIKLUS PENGOLAHAN DATA 1. Pendahuluan Informatika pada era Masyarakat 5.0 menempatkan data sebagai salah satu aset paling berharga ( data as a strategic asset ). Di dunia digital, data tercipta dan mengalir dalam volume yang sangat besar, berkecepatan tinggi, dan bervariasi ( Big Data ). Namun, ketersediaan data yang melimpah ini tidak secara otomatis memberikan manfaat jika tidak diolah dan dianalisis secara tepat. Di tengah banjir data ( data deluge ),...</description>
       <guid>https://localhost:3000/sites/haxto/sumber-data</guid>
       <pubDate>Tue, 22 Sep 2026 07:09:01 GMT</pubDate>
+    </item>
+    <item>
+      <title>Web Scrap Python</title>
+      <link>https://localhost:3000/sites/haxto/web-scrap-python</link>
+      <description></description>
+      <guid>https://localhost:3000/sites/haxto/web-scrap-python</guid>
+      <pubDate>Wed, 23 Sep 2026 01:52:31 GMT</pubDate>
     </item>
   </channel>
 </rss>
