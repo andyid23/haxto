@@ -1471,13 +1471,141 @@ Informatika pada era Masyarakat 5.0 menempatkan data sebagai salah satu aset pal
   <entry>
     <title>Web Scrap Python</title>
     <id>item-a40be1b9-1413-4df3-a03d-75abe9a7bff5</id>
-    <updated>2026-09-23T01:52:31.000Z</updated>
+    <updated>2026-09-23T02:01:24.000Z</updated>
     <published>2026-09-23T01:52:31.000Z</published>
-    <summary></summary>
+    <summary>Panduan Lengkap &amp;#38; Kode Web Scraping Python (Berdasarkan Tutorial Dataquest)
+Berikut adalah materi teknis lengkap berisi kode, langkah-langkah, dan rekomendasi praktik terbaik untuk melakukan web </summary>
     <link href="https://localhost:3000/sites/haxto/web-scrap-python"/>
     
     <content type="html">
-      <![CDATA[ <p></p> ]]>
+      <![CDATA[ 
+<h2>Panduan Lengkap &#38; Kode Web Scraping Python (Berdasarkan Tutorial Dataquest)</h2>
+<p>Berikut adalah materi teknis lengkap berisi kode, langkah-langkah, dan rekomendasi praktik terbaik untuk melakukan web scraping menggunakan Python, yang diadaptasi dari tutorial resmi Dataquest untuk tingkat SMA Kelas X.</p>
+<h2>Persiapan Lingkungan (Langkah 0)</h2>
+<p>Sebelum menjalankan kode, pastikan Python sudah terinstal. Buka terminal atau Command Prompt, lalu instal pustaka (library) yang diperlukan menggunakan perintah berikut:</p>
+<pre><code>pip install requests beautifulsoup4 pandas </code></pre>
+<ul><li><strong>requests</strong>: Untuk mengunduh halaman web.</li>
+
+ <li><strong>beautifulsoup4</strong>: Untuk mengurai (parse) dan mengekstrak data dari HTML.</li>
+
+ <li><strong>pandas</strong>: Untuk menyusun data hasil scraping ke dalam bentuk tabel yang rapi.</li>
+
+</ul>
+<hr/><h2>Langkah 1: Mengunduh Halaman Web</h2>
+<p>Langkah pertama adalah mengirimkan permintaan (request) ke server untuk mendapatkan kode sumber HTML dari halaman target.</p>
+<p></p>
+<code-sample type="javascript" copy-clipboard-button><template preserve-content="preserve-content">import requests
+
+# URL halaman contoh sederhana dari Dataquest
+url = "https://dataquestio.github.io/web-scraping-pages/simple.html"
+
+# Mengirim permintaan GET ke server
+response = requests.get(url)
+
+# Memeriksa status kode (200 berarti berhasil, 404 berarti tidak ditemukan)
+print("Status Code:", response.status_code)
+
+# Menampilkan konten HTML mentah (opsional, untuk pengecekan)
+# print(response.content)
+</template></code-sample>
+<p></p>
+<hr/><h2>Langkah 2: Mengurai HTML dengan BeautifulSoup</h2>
+<p>Setelah HTML diunduh, kita perlu mengubahnya menjadi struktur yang bisa dibaca dan dicari oleh Python.</p>
+<p></p>
+<p></p>
+<code-sample type="javascript" copy-clipboard-button><template preserve-content="preserve-content">from bs4 import BeautifulSoup
+
+# Membuat objek BeautifulSoup dari konten HTML
+# 'html.parser' adalah parser bawaan Python yang stabil
+soup = BeautifulSoup(response.content, 'html.parser')
+
+# Menampilkan HTML dengan format yang rapi (indentasi)
+print(soup.prettify())</template></code-sample>
+<p></p>
+<hr/><h2>Langkah 3: Mengekstrak Data Spesifik</h2>
+<p>Kita dapat mencari elemen berdasarkan tag, kelas (class), ID, atau menggunakan CSS Selector.</p>
+<p></p>
+<code-sample type="javascript" copy-clipboard-button><template preserve-content="preserve-content"># 1. Mencari semua tag <p> (paragraf)
+semua_paragraf = soup.find_all('p')
+print("Teks paragraf pertama:", semua_paragraf[0].get_text())
+
+# 2. Studi kasus halaman dengan Class dan ID
+url_kelas = "https://dataquestio.github.io/web-scraping-pages/ids_and_classes.html"
+response_kelas = requests.get(url_kelas)
+soup_kelas = BeautifulSoup(response_kelas.content, 'html.parser')
+
+# Mencari berdasarkan Class (perhatikan underscore di class_)
+elemen_outer = soup_kelas.find_all('p', class_='outer-text')
+print("\nElemen dengan class outer-text:", elemen_outer)
+
+# Mencari berdasarkan ID (ID bersifat unik)
+elemen_id = soup_kelas.find(id='first')
+print("Elemen dengan id 'first':", elemen_id.get_text())
+
+# 3. Menggunakan CSS Selector (lebih fleksibel dan ringkas)
+# Mencari semua tag </p><p> yang berada di dalam tag </p><div>
+div_p_elements = soup_kelas.select("div p")
+print("\nHasil CSS Selector 'div p':", div_p_elements)
+</div></template></code-sample>
+<p></p>
+<p></p>
+<p></p>
+<hr/><h2>Langkah 4: Studi Kasus Lengkap (Mengumpulkan Data Cuaca)</h2>
+<p>Berikut adalah kode lengkap untuk mengekstrak data prakiraan cuaca dari situs National Weather Service (NWS), menggabungkan teknik <code>find</code>, <code>select</code>, dan list comprehension.</p>
+<pre><code>import requests from bs4 import BeautifulSoup import pandas as pd # URL target (Prakiraan cuaca San Francisco) url_cuaca = "https://forecast.weather.gov/MapClick.php?lat=37.7772&amp;lon=-122.4168" # Rekomendasi: Selalu tambahkan User-Agent agar tidak diblokir oleh server headers = {     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36" } # 1. Unduh halaman page = requests.get(url_cuaca, headers=headers) soup = BeautifulSoup(page.content, 'html.parser') # 2. Temukan elemen pembungkus utama (div dengan id seven-day-forecast) seven_day = soup.find(id="seven-day-forecast") # 3. Ekstrak data menggunakan CSS Selector dan List Comprehension # Mengambil nama periode (misal: Tonight, Thursday) periods = [pt.get_text() for pt in seven_day.select(".tombstone-container .period-name")] # Mengambil deskripsi singkat kondisi cuaca short_descs = [sd.get_text() for sd in seven_day.select(".tombstone-container .short-desc")] # Mengambil data suhu temps = [t.get_text() for t in seven_day.select(".tombstone-container .temp")] # Mengambil atribut 'title' dari tag &lt;img&gt; untuk deskripsi lengkap descs = [d["title"] for d in seven_day.select(".tombstone-container img")] </code></pre>
+<hr/><h2>Langkah 5: Menyusun Data ke dalam Tabel (Pandas DataFrame)</h2>
+<p>Data yang sudah diekstrak dalam bentuk list (daftar) akan jauh lebih berguna jika diubah menjadi tabel.</p>
+<pre><code># Membuat DataFrame dari dictionary weather_df = pd.DataFrame({     "Periode": periods,     "Deskripsi_Singkat": short_descs,     "Suhu": temps,     "Deskripsi_Lengkap": descs }) # Menampilkan 5 baris pertama tabel print(weather_df.head()) # Opsional: Menyimpan hasil ke file CSV agar bisa dibuka di Excel # weather_df.to_csv("hasil_cuaca.csv", index=False, encoding="utf-8") </code></pre>
+<hr/><h2>Rekomendasi &#38; Etika Web Scraping (Wajib Dibaca)</h2>
+<p>Sebagai pelajar informatika, melakukan web scraping harus disertai dengan tanggung jawab dan etika digital yang baik. Ikuti rekomendasi berikut:</p>
+<ol><li><strong>Periksa file <code>robots.txt</code></strong>
+
+: Selalu cek <code>https://namadomain.com/robots.txt</code> sebelum melakukan scraping. File ini memberi tahu bagian situs mana yang boleh atau tidak boleh diakses oleh bot.</li>
+
+ <li><strong>Gunakan Jeda Waktu (Delay)</strong>: Jangan mengirimkan ratusan permintaan per detik. Gunakan <code>import time</code> dan <code>time.sleep(2)</code> di antara permintaan untuk menghindari pembebanan berlebih pada server target.</li>
+
+ <li><strong>Sertakan User-Agent yang Jelas</strong>: Server sering memblokir permintaan yang tidak memiliki identitas browser. Menggunakan header <code>User-Agent</code> yang standar adalah praktik baik, dan lebih baik lagi jika Anda menyertakan informasi kontak di header jika melakukan scraping skala besar.</li>
+
+ <li><strong>Hormati Data Pribadi</strong>: Jangan pernah melakukan scraping untuk mengambil data pribadi (Nama, NIK, Nomor Telepon, Alamat) tanpa izin eksplisit. Ini melanggar privasi dan hukum (seperti UU PDP di Indonesia).</li>
+
+ <li><strong>Siapkan Penanganan Error</strong>: Situs web bisa berubah struktur HTML-nya atau sedang down. Gunakan blok <code>try...except</code> dalam kode Python Anda agar program tidak langsung crash saat terjadi kesalahan.</li>
+
+ <li><strong>Gunakan untuk Tujuan Edukasi atau Riset</strong>: Pastikan penggunaan data hasil scraping sesuai dengan ketentuan layanan (Terms of Service) situs web tersebut dan tidak untuk dikomersialkan secara ilegal.</li>
+
+</ol>
+<hr/><h2>Tips Troubleshooting untuk Pemula</h2>
+<ul><li><strong>Error <code>403 Forbidden</code></strong>
+
+: Server memblokir Anda. Solusi: Tambahkan header <code>User-Agent</code> seperti pada Langkah 4.</li>
+
+ <li><strong>Error <code>404 Not Found</code></strong>
+
+: URL yang Anda masukkan salah atau halaman telah dipindahkan. Periksa kembali URL di browser.</li>
+
+ <li><strong>Hasil scraping kosong (<code>[]</code>)</strong>
+
+: Struktur HTML situs target mungkin telah berubah, atau data dimuat secara dinamis menggunakan JavaScript (untuk kasus ini, BeautifulSoup saja tidak cukup, Anda mungkin perlu mempelajari <code>Selenium</code> atau <code>Playwright</code>).</li>
+
+ <li><strong>Masalah Encoding</strong>: Jika muncul karakter aneh, tambahkan <code>encoding="utf-8"</code> saat menyimpan ke CSV atau dekode response dengan <code>response.encoding = 'utf-8'</code>.</li>
+
+</ul>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<latihan-kuis apps-script-url="https://script.google.com/macros/s/XXXXXX/exec" duration="60" timerautostart mode="siswa" allowretake="false" questions="[{&quot;question&quot;:&quot;2+2=?&quot;,&quot;choices&quot;:[&quot;3&quot;,&quot;4&quot;,&quot;5&quot;],&quot;correctIndex&quot;:1,&quot;type&quot;:&quot;mc&quot;},{&quot;question&quot;:&quot;Bukti matahari adalah?&quot;,&quot;choices&quot;:[&quot;Bulan&quot;,&quot;Matahari&quot;,&quot;Bintang&quot;],&quot;correctIndex&quot;:1,&quot;type&quot;:&quot;mc&quot;}]"  judul-materi="Materi Pembelajaran" teks-materi="Baca materi di bawah ini dengan saksama sebelum mengerjakan kuis. Waktu pengerjaan kuis dibatasi oleh timer; saat waktu habis, kuis akan dikunci dan nilai otomatis terkirim."  materi-file="" cover-image="" judul-kuis="Evaluasi Kuis Interaktif" student-id="STD-65108010" student-name="Abi Andy" student-nis="123" student-absen="" student-kelas="XI-1" kd-materi="" pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai"  allow-retake max-retake="0" hide-pause-restart kategori="sumatif_lm" show-question-nav question-delay="1800" review-answers timer-autostart kkm="75"  tab-switch-threshold="3" _attempt-ke="0" _remidi-soal="[]" _tab-switch-count="0" _visibility-change-count="4" _window-blur-count="0" _window-focus-count="0" _warning-count="0">
+    <!--  Tombol pemula (opsional, bila timerAutostart=false)  -->
+    <button id="btn-mulai" class="btn-mulai">▶️ Mulai Kuis</button>
+
+    &#60;script&#62;
+      // Memaksa pemulian bila timer tidak otomatis
+      document.getElementById('btn-mulai').addEventListener('click', () =&#62; {
+        const kuis = document.querySelector('latihan-kuis');
+        if (kuis &#38;&#38; kuis._onStartClick) kuis._onStartClick();
+      });
+    &#60;/script&#62;
+  </latihan-kuis>
+ ]]>
     </content>
   </entry>
 </feed>

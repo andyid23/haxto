@@ -111,7 +111,7 @@
     <item>
       <title>Web Scrap Python</title>
       <link>https://localhost:3000/sites/haxto/web-scrap-python</link>
-      <description></description>
+      <description>Panduan Lengkap &amp;#38; Kode Web Scraping Python (Berdasarkan Tutorial Dataquest) Berikut adalah materi teknis lengkap berisi kode, langkah-langkah, dan rekomendasi praktik terbaik untuk melakukan web scraping menggunakan Python, yang diadaptasi dari tutorial resmi Dataquest untuk tingkat SMA Kelas X. Persiapan Lingkungan (Langkah 0) Sebelum menjalankan kode, pastikan Python sudah terinstal. Buka terminal atau Command Prompt, lalu instal pustaka (library) yang diperlukan menggunakan perintah be...</description>
       <guid>https://localhost:3000/sites/haxto/web-scrap-python</guid>
       <pubDate>Wed, 23 Sep 2026 01:52:31 GMT</pubDate>
     </item>
