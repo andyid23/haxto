@@ -211,6 +211,32 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
             judul: "Evaluasi Kuis Interaktif",
             mode: "siswa",
             kdMateri: "Pertemuan 1",
+            questions: [
+              { q: "Apa kepanjangan AKM?", a: "Asesmen Kompetensi Minimum", b: "Akademik Kurikulum Merdeka", c: "Analisis Kebutuhan Materi", k: "a" },
+              { q: "Apa benefit utama AKM?", a: "Mengukur literasi & numerasi siswa", b: "Menentukan ranking kelas", c: "Menghapus ujian nasional", k: "a" },
+              { q: "Format soal AKM meliputi?", a: "PG, PGK, Isian, Menjolong", b: "Hanya pilihan ganda", c: "Essai saja", k: "a" },
+            ],
+          },
+          content: "",
+        },
+        {
+          tag: "kuis-ledakan",
+          properties: {
+            judul: "Kuis PG Kompleks",
+            mode: "siswa",
+            kdMateri: "PGK-Demo",
+            questions: [
+              {
+                q: "Pilih semua pernyataan yang benar tentang Asesmen Nasional:",
+                type: "pgk",
+                statements: [
+                  { text: " Terdiri dari AKM, Survei Karakter, dan Survei Lingkungan Belajar", answer: true },
+                  { text: "Hasilnya langsung menentukan nilai rapor siswa", answer: false },
+                  { text: "Dirancang untuk mengukur kualitas pembelajaran", answer: true },
+                  { text: "Dilaksanakan setiap semester", answer: false },
+                ],
+              },
+            ],
           },
           content: "",
         },
@@ -391,7 +417,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
       fn = fn.default;
     }
     this._confettiFn = fn;
-    this.questions = DEFAULT_QUESTIONS;
+    this.questions = undefined;
     this.judul = "Evaluasi Kuis Interaktif";
     this.appsScriptUrl = "";
     this.kdMateri = "Pertemuan 1";
@@ -465,6 +491,8 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
       super.styles,
       css`
         :host { display: block; font-family: var(--ddd-font-navigation, system-ui, sans-serif); }
+        /* custom polaris token — tidak ada di d-d-d.js; perlu definisi eksplisit di light mode */
+        --ddd-theme-polaris-focus-ring: rgba(79, 70, 229, 0.3);
         .quiz-card {
           background: var(--ddd-theme-default-white);
           border: var(--ddd-border-xs);
@@ -492,22 +520,30 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
         .hint-box summary::before { content: "💡 "; }
         .hint-box div { margin-top: var(--ddd-spacing-2); font-size: var(--ddd-font-size-4xs); color: var(--ddd-theme-default-text); }
         .question-nav {
-            display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--ddd-spacing-4);
-            padding: var(--ddd-spacing-3);
+            display: flex; flex-direction: column; gap: var(--ddd-spacing-3); margin-bottom: var(--ddd-spacing-4);
+            padding: var(--ddd-spacing-4);
             background: var(--ddd-theme-polaris-surface-hover);
             border: var(--ddd-border-xs);
-            border-radius: var(--ddd-radius-sm);
+            border-radius: var(--ddd-radius-md);
+          }
+          .question-nav .nav-label {
+            font-size: var(--ddd-font-size-3xs); font-weight: 700; color: var(--ddd-theme-on-surface);
+            text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: var(--ddd-spacing-1);
+            padding-bottom: var(--ddd-spacing-2); border-bottom: 1px solid var(--ddd-theme-polaris-border);
+          }
+          .question-nav .nav-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--ddd-spacing-2);
           }
           .question-nav .q-dot {
-            min-width: 36px; min-height: 36px; padding: 0 8px;
+            min-width: 44px; min-height: 44px; padding: 0;
             border: var(--ddd-border-sm); background: var(--ddd-theme-default-white);
             color: var(--ddd-theme-on-surface);
-            border-radius: var(--ddd-radius-sm);
-            font-weight: 700; font-size: var(--ddd-font-size-4xs);
+            border-radius: var(--ddd-radius-md);
+            font-weight: 700; font-size: var(--ddd-font-size-3xs);
             cursor: pointer; transition: background 0.15s, color 0.15s, border-color 0.15s;
-            font-family: inherit;
+            font-family: inherit; display: flex; align-items: center; justify-content: center;
           }
-          .question-nav .q-dot:hover:not(.disabled) { border-color: var(--ddd-theme-primary); }
+          .question-nav .q-dot:hover:not(.disabled) { border-color: var(--ddd-theme-primary); background: var(--ddd-theme-polaris-surface-hover); }
           .question-nav .q-dot.current {
             background: var(--ddd-theme-primary);
             color: var(--ddd-theme-on-primary);
@@ -553,9 +589,10 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
         }
 
         .pgk-table { width: 100%; border-collapse: collapse; margin: var(--ddd-spacing-3) 0; }
-        .pgk-table th { text-align: left; padding: var(--ddd-spacing-3) var(--ddd-spacing-3); background: var(--ddd-theme-polaris-surface-hover); border-bottom: var(--ddd-border-sm); font-size: var(--ddd-font-size-4xs); color: var(--ddd-theme-secondary); }
-        .pgk-table td { padding: var(--ddd-spacing-3) var(--ddd-spacing-3); border-bottom: 1px solid var(--ddd-theme-polaris-border); font-size: var(--ddd-font-size-4xs); }
-        .pgk-table .pgk-cell { text-align: center; }
+        .pgk-table th { text-align: left; padding: var(--ddd-spacing-3) var(--ddd-spacing-4); background: var(--ddd-theme-polaris-surface-hover); border-bottom: var(--ddd-border-sm); font-size: var(--ddd-font-size-3xs); color: var(--ddd-theme-secondary); }
+        .pgk-table td { padding: var(--ddd-spacing-3) var(--ddd-spacing-4); border-bottom: 1px solid var(--ddd-theme-polaris-border); font-size: var(--ddd-font-size-3xs); transition: background 0.15s; cursor: default; }
+        .pgk-table td:hover { background: var(--ddd-theme-polaris-surface-hover); }
+        .pgk-table .pgk-cell { text-align: center; cursor: pointer; }
         .matching-container, .short-answer-container { display: flex; flex-direction: column; gap: var(--ddd-spacing-3); margin: var(--ddd-spacing-3) 0; }
         .matching-row { display: flex; align-items: center; gap: var(--ddd-spacing-3); flex-wrap: wrap; }
         .matching-item { font-weight: 600; font-size: var(--ddd-font-size-4xs); min-width: 180px; }
@@ -659,6 +696,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
           --ddd-theme-polaris-border: var(--dk-border);
           --ddd-theme-polaris-surface-hover: var(--dk-soft);
           --ddd-theme-polaris-primary: #4f46e5;
+          --ddd-theme-polaris-focus-ring: rgba(79, 70, 229, 0.3);
           --ddd-theme-success: #6ee7b7;
           --ddd-theme-success-light: #064e3b;
           --ddd-theme-success-text: #6ee7b7;
@@ -667,6 +705,11 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
           --ddd-theme-warning-light: #78350f;
           --ddd-theme-warning-text: #fde68a;
           --ddd-theme-error: #fca5a5;
+          --ddd-theme-error-light: #7f1d1d;
+          --ddd-theme-error-text: #fecaca;
+          --ddd-theme-error-dark: #991b1b;
+          --ddd-theme-selected-bg: #1e1b4b;
+          --ddd-theme-selected-border: #818cf8;
           background: var(--dk-bg);
           color: var(--dk-text);
         }
@@ -686,12 +729,12 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
         :host-context(body.dark-mode) .question-text,
         :host-context(body.dark-mode) .import-box h4 { color: var(--dk-text-strong); }
         :host-context(body.dark-mode) .lock-msg { color: var(--dk-text-soft); }
-        :host-context(body.dark-mode) .btn-start { background-color: #4f46e5; color: #f8fafc; }
-        :host-context(body.dark-mode) .btn-start:hover { background-color: #6366f1; }
+        :host-context(body.dark-mode) .btn-start { background-color: var(--ddd-theme-polaris-primary); color: var(--ddd-theme-on-primary); }
+        :host-context(body.dark-mode) .btn-start:hover { background-color: var(--ddd-theme-accent); }
         :host-context(body.dark-mode) .choice-row { background: var(--dk-soft); color: var(--dk-text); border-color: var(--dk-border); }
-        :host-context(body.dark-mode) .choice-row.correct { border-color: #22c55e; background: #064e3b; color: #6ee7b7; }
-        :host-context(body.dark-mode) .choice-row.wrong { border-color: #f87171; background: #7f1d1d; color: #fecaca; }
-        :host-context(body.dark-mode) .choice-row.selected { border-color: #818cf8; background: #1e1b4b; color: #e0e7ff; }
+        :host-context(body.dark-mode) .choice-row.correct { border-color: var(--ddd-theme-success); background: var(--ddd-theme-success-light); color: var(--ddd-theme-success-text); }
+        :host-context(body.dark-mode) .choice-row.wrong { border-color: var(--ddd-theme-error); background: var(--ddd-theme-error-light); color: var(--ddd-theme-error-text); }
+        :host-context(body.dark-mode) .choice-row.selected { border-color: var(--ddd-theme-selected-border); background: var(--ddd-theme-selected-bg); color: var(--ddd-theme-on-primary); }
         :host-context(body.dark-mode) .editor-select,
         :host-context(body.dark-mode) .editor-input,
         :host-context(body.dark-mode) .editor-textarea,
@@ -700,24 +743,27 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
         :host-context(body.dark-mode) .pgk-table { color: var(--dk-text); }
         :host-context(body.dark-mode) .pgk-table th { background: var(--dk-soft); color: var(--dk-text-strong); }
         :host-context(body.dark-mode) .pgk-table td { border-bottom-color: var(--dk-border); }
-        :host-context(body.dark-mode) .err-chip { background: #7f1d1d; color: #fecaca; border-color: #991b1b; }
-        :host-context(body.dark-mode) .btn-submit { background: #4f46e5; color: #f8fafc; }
-        :host-context(body.dark-mode) .btn-submit:hover { background: #6366f1; }
+        :host-context(body.dark-mode) .err-chip { background: var(--ddd-theme-error-light); color: var(--ddd-theme-error-text); border-color: var(--ddd-theme-error-dark); }
+        :host-context(body.dark-mode) .btn-submit { background: var(--ddd-theme-polaris-primary); color: var(--ddd-theme-on-primary); }
+        :host-context(body.dark-mode) .btn-submit:hover { background: var(--ddd-theme-accent); }
         :host-context(body.dark-mode) .btn-edit-soal { background: var(--dk-soft); color: var(--dk-text); border-color: var(--dk-border); }
         :host-context(body.dark-mode) .feedback-area { background: var(--dk-soft); color: var(--dk-text); }
-        :host-context(body.dark-mode) .score-circle { background: linear-gradient(135deg, #312e81, #4338ca); color: #f8fafc; }
+        :host-context(body.dark-mode) .score-circle { background: linear-gradient(135deg, #312e81, var(--ddd-theme-polaris-primary, #4f46e5)); color: var(--ddd-theme-on-primary); }
         :host-context(body.dark-mode) .hint-box { background: var(--dk-soft); border-color: var(--dk-border); }
         :host-context(body.dark-mode) .question-nav { background: var(--dk-soft); border-color: var(--dk-border); }
+        :host-context(body.dark-mode) .question-nav .nav-label { color: var(--dk-text-strong); border-bottom-color: var(--dk-border); }
         :host-context(body.dark-mode) .question-nav .q-dot { background: var(--dk-card); color: var(--dk-text); border-color: var(--dk-border); }
+        :host-context(body.dark-mode) .question-nav .q-dot:hover:not(.disabled) { background: var(--dk-soft); border-color: var(--ddd-theme-selected-border); }
         :host-context(body.dark-mode) .question-nav .q-dot.unanswered {
-          background: #78350f;
-          border-color: #fcd34d;
-          color: #fde68a;
+          background: var(--ddd-theme-warning-light);
+          border-color: var(--ddd-theme-warning);
+          color: var(--ddd-theme-warning-text);
         }
+        :host-context(body.dark-mode) .pgk-table td:hover { background: var(--dk-soft); }
         :host-context(body.dark-mode) .review-question { background: var(--dk-soft); border-color: var(--dk-border); }
         :host-context(body.dark-mode) .review-qtext { color: var(--dk-text-strong); }
         :host-context(body.dark-mode) .practice-nav .btn-back { background: var(--dk-soft); color: var(--dk-text); border-color: var(--dk-border); }
-        :host-context(body.dark-mode) .practice-nav .btn-next { background: #4f46e5; color: #f8fafc; }
+        :host-context(body.dark-mode) .practice-nav .btn-next { background: var(--ddd-theme-polaris-primary); color: var(--ddd-theme-on-primary); }
       `,
     ];
   }
@@ -725,7 +771,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
   updated(changed) {
     super.updated(changed);
     if (changed.has("questions") && !Array.isArray(this.questions)) {
-      this.questions = DEFAULT_QUESTIONS;
+      this.questions = undefined;
     }
     if (changed.has("timerMinutes") || changed.has("timerSeconds")) {
       const total = (this.timerMinutes || 0) * 60 + (this.timerSeconds || 0);
@@ -1135,7 +1181,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
       } else {
         // SELALU isi _shuffledQuestions (urutan mungkin sudah diacak) agar
         // _getActiveQuestions memakai urutan soal yang baru.
-        this._shuffledQuestions = base.map((q, i) => ({ ...q, _originalIndex: i }));
+        this._shuffledQuestions = base.map((q, i) => ({ ...q, _originalIndex: q._originalIndex ?? i }));
       }
     }
     if (!Array.isArray(this._shuffledQuestions)) this._shuffledQuestions = [];
@@ -1964,6 +2010,11 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
 
   /** Klik Mulai: bila belum login, arahkan ke login (kuis tak terbuka). Bila sudah, langsung mulai. */
   async _onStartClick() {
+    // Cegah double-click → double _startQuiz() → double acak
+    if (this._starting) return;
+    this._starting = true;
+    this.requestUpdate();
+    try {
     if (!this.studentId) {
       this._redirectToLogin();
       return;
@@ -1983,6 +2034,10 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     }
     await this._muatBankSoal();
     this._startQuiz();
+    } finally {
+      this._starting = false;
+      this.requestUpdate();
+    }
   }
 
   /** Arahkan pengguna ke <quiz-user-auth> di halaman + emit event agar host bisa menangani login. */
@@ -2194,6 +2249,8 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
         </div>
         ${this.showQuestionNav && active.length > 1
           ? html`<nav class="question-nav" aria-label="Navigasi nomor soal">
+              <div class="nav-label">Nomor Soal</div>
+              <div class="nav-grid">
               ${active.map((_q, i) => {
                 const isCurrent = i === this._currentIdx;
                 const isAnswered = this._answeredSet.has(i);
@@ -2210,7 +2267,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
                   @click=${() => this._goToQuestion(i)}
                 >${i + 1}</button>`;
               })}
-            </nav>`
+            </div></nav>`
           : ""}
         ${this.timerDuration > 0
           ? html`<div class="quiz-timer">

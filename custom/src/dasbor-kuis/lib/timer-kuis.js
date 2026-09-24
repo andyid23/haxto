@@ -59,16 +59,6 @@ export class TimerKuis extends I18NMixin(DDDSuper(LitElement)) {
       this._remaining = this.duration;
     }
 
-    // Restore dari saved start time agar konsisten dengan parent (latihan-kuis)
-    const savedStart = this._loadStartTime();
-    if (savedStart > 0) {
-      const elapsed = Math.floor((Date.now() - savedStart) / 1000);
-      const sisa = Math.max(0, this.duration - elapsed);
-      if (sisa > 0 && sisa < this._remaining) {
-        this._remaining = sisa;
-      }
-    }
-
     // Pause/resume saat tab hidden (cegah browser throttle)
     this._onVisChange = this._onVisChange.bind(this);
     globalThis.addEventListener("visibilitychange", this._onVisChange);
@@ -87,20 +77,14 @@ export class TimerKuis extends I18NMixin(DDDSuper(LitElement)) {
 
   _onVisChange() {
     if (document.hidden) {
-      // Tab disembunyikan: pause dan simpan start time
       if (this._running) {
         this.pause();
       }
     } else {
-      // Tab kelihatan: hitung sisa real-time dan resume jika masih jalan
-      const savedStart = this._loadStartTime();
-      if (savedStart > 0) {
-        const elapsed = Math.floor((Date.now() - savedStart) / 1000);
-        this._remaining = Math.max(0, this.duration - elapsed);
-      }
-      // Resume hanya jika timer sebelumnya running (autostart === true) dan masih sisa
-      if (this.autostart && this._remaining > 0 && !this._running) {
-        this.start();
+      // Tab kelihatan: pause() menyimpan start time yang sudah dikoreksi.
+      // start() membaca _loadStartTime() dan hitung ulang elapsed secara akurat.
+      if (this._remaining > 0 && !this._running) {
+        if (this.autostart) this.start();
       }
       if (this._remaining <= 0 && !this._running) {
         this._remaining = 0;
@@ -173,6 +157,8 @@ export class TimerKuis extends I18NMixin(DDDSuper(LitElement)) {
     if (savedStart > 0) {
       const elapsed = Math.floor((Date.now() - savedStart) / 1000);
       this._remaining = Math.max(0, this.duration - elapsed);
+      // Simpan nilai pause agar _onVisChange tidak recalculate dari savedStart yang lama
+      this._saveStartTime(Date.now() - (this.duration - this._remaining) * 1000);
     }
   }
 
@@ -259,24 +245,22 @@ export class TimerKuis extends I18NMixin(DDDSuper(LitElement)) {
         .done { margin-top: var(--ddd-spacing-2); color: var(--ddd-theme-error); font-size: var(--ddd-font-size-s); }
       `,
       css`
-        @media (prefers-color-scheme: dark) {
-          :host {
-            --ddd-theme-background: #0b1020;
-            --ddd-theme-color: #e5e7eb;
-            --ddd-theme-surface: #111827;
-            --ddd-theme-default-surface: #111827;
-            --ddd-theme-primary: #c4b5fd;
-            --ddd-theme-secondary: #94a3b8;
-            --ddd-theme-error: #fca5a5;
-            --ddd-border-color: #2a3245;
-            --ddd-border-sm: 1px solid #2a3245;
-            background: #0b1020;
-            color: #e5e7eb;
-          }
-          .title { color: #94a3b8; }
-          .time { color: #c4b5fd; }
-          .time.warn { color: #fca5a5; }
+        :host-context(body.dark-mode) {
+          --ddd-theme-background: var(--dk-bg, #0b1020);
+          --ddd-theme-color: var(--dk-text, #e5e7eb);
+          --ddd-theme-surface: var(--dk-surface, #111827);
+          --ddd-theme-default-surface: var(--dk-surface, #111827);
+          --ddd-theme-primary: var(--dk-primary, #c4b5fd);
+          --ddd-theme-secondary: var(--dk-secondary, #94a3b8);
+          --ddd-theme-error: var(--dk-error, #fca5a5);
+          --ddd-border-color: var(--dk-border, #2a3245);
+          --ddd-border-sm: 1px solid var(--dk-border, #2a3245);
+          background: var(--dk-bg, #0b1020);
+          color: var(--dk-text, #e5e7eb);
         }
+        :host-context(body.dark-mode) .title { color: var(--dk-secondary, #94a3b8); }
+        :host-context(body.dark-mode) .time { color: var(--dk-primary, #c4b5fd); }
+        :host-context(body.dark-mode) .time.warn { color: var(--dk-error, #fca5a5); }
       `,
     ];
   }

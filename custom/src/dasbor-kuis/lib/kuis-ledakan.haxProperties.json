@@ -9,6 +9,7 @@
         "primary": true,
         "card": true,
         "text": true,
+        "background": true,
         "designTreatment": false
     },
     "gizmo": {

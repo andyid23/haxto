@@ -33,6 +33,7 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
       _nis: { state: true },
       _absen: { state: true },
       _kelas: { state: true },
+      _role: { state: true },
       _studentId: { state: true },
       _errorMsg: { state: true },
       _successMsg: { state: true },
@@ -53,6 +54,7 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
     this._nis = "";
     this._absen = "";
     this._kelas = "";
+    this._role = "";
     this._studentId = "";
     this._errorMsg = "";
     this._successMsg = "";
@@ -85,6 +87,10 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
       this._nis = saved.nis || "";
       this._absen = saved.absen || "";
       this._kelas = saved.kelas || "";
+      this._role = saved.role || "";
+      if (this._role) {
+        try { sessionStorage.setItem("hax_role", this._role); } catch (_) {}
+      }
       this._screen = "logged-in";
       // I1: percayai sesi lokal, tapi jika absen kosong (kasus NIS 234 No 1) refresh dari backend
       if (this.autoLogin) this._dispatchLogin();
@@ -166,7 +172,7 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
   }
 
   _ekstrakOk(payload) {
-    // Terima kontrak codev5.gs {status:"ok", data:{...}} maupun legacy {status:"success", ...}.
+    // Terima kontrak codev6.gs {status:"ok", data:{..., role}} maupun legacy.
     const ok = payload && (payload.status === "ok" || payload.status === "success");
     const d = (payload && payload.data) || payload || {};
     return {
@@ -177,6 +183,7 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
       email: d.email || "",
       absen: d.absen || "",
       kelas: d.kelas || "",
+      role: d.role || "siswa",
       message: (payload && payload.message) || "",
     };
   }
@@ -233,6 +240,7 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
         this._nis = r.nis || this._nis;
         this._absen = r.absen || this._absen;
         this._kelas = r.kelas || this._kelas;
+        this._role = r.role || "siswa";
         this._save("quiz_user_session", {
           studentId: this._studentId,
           nama: this._nama,
@@ -240,7 +248,9 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
           nis: this._nis,
           absen: this._absen,
           kelas: this._kelas,
+          role: this._role,
         });
+        try { sessionStorage.setItem("hax_role", this._role); } catch (_) {}
         this._mutasiProfilKunci();
         this._screen = "logged-in";
         this._dispatchLogin();
@@ -270,6 +280,7 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
         nis: this._nis.trim(),
         absen: this._absen.trim(),
         kelas: this._kelas.trim(),
+        role: this._role || "siswa",
       });
       const r = this._ekstrakOk(payload);
       if (r.ok) {
@@ -307,6 +318,7 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
     }
     this._clear("quiz_user_session");
     this._clear("a3_v5_student_profile");
+    try { sessionStorage.removeItem("hax_role"); } catch (_) {}
     this._studentId = "";
     this._nama = "";
     this._email = "";
@@ -348,6 +360,7 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
           nis: this._nis,
           absen: this._absen,
           kelas: this._kelas,
+          role: this._role,
         },
         bubbles: true,
         composed: true,
@@ -434,7 +447,7 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
           display: block;
           font-size: var(--ddd-font-size-4xs, 13px);
           font-weight: 600;
-          color: var(--ddd-theme-secondary, rgba(255,255,255,0.75));
+          color: var(--ddd-theme-secondary, rgba(0,0,0,0.75));
           margin-bottom: 6px;
         }
         .field input {
@@ -669,6 +682,10 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
           --ddd-theme-accent: #818cf8;
           --ddd-theme-warning: #fcd34d;
           --ddd-theme-warning-text: #fde68a;
+          --ddd-theme-error: #fca5a5;
+          --ddd-theme-error-text: #fca5a5;
+          --ddd-theme-success: #86efac;
+          --ddd-theme-success-text: #86efac;
           background: var(--dk-bg, #0b1020);
           color: var(--dk-text, #e5e7eb);
         }
@@ -679,19 +696,24 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
         :host-context(body.dark-mode) .field input {
           background: rgba(255,255,255,0.05);
           border-color: rgba(229, 231, 235, 0.15);
+          color: var(--ddd-theme-default-text);
+        }
+        :host-context(body.dark-mode) select {
+          background: rgba(255,255,255,0.05);
+          border-color: rgba(229, 231, 235, 0.15);
           color: #e5e7eb;
         }
         :host-context(body.dark-mode) .field input::placeholder {
           color: rgba(229, 231, 235, 0.25);
         }
         :host-context(body.dark-mode) .field input:focus {
-          border-color: #c4b5fd;
+          border-color: var(--ddd-theme-primary);
           background: rgba(255,255,255,0.08);
           box-shadow: 0 0 0 3px rgba(196, 181, 253, 0.15);
         }
         :host-context(body.dark-mode) .btn {
-          background: linear-gradient(120deg, #c4b5fd, #818cf8);
-          color: #0b1020;
+          background: linear-gradient(120deg, var(--ddd-theme-primary), var(--ddd-theme-accent));
+          color: var(--ddd-theme-on-primary);
           box-shadow: 0 8px 20px -6px rgba(129, 140, 248, 0.4);
         }
         :host-context(body.dark-mode) .btn:hover {
@@ -699,54 +721,54 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
           box-shadow: 0 12px 24px -6px rgba(129, 140, 248, 0.5);
         }
         :host-context(body.dark-mode) .btn-link {
-          color: #c4b5fd;
+          color: var(--ddd-theme-primary);
         }
         :host-context(body.dark-mode) .btn-link:hover {
-          color: #ddd6fe;
+          color: var(--ddd-theme-accent);
         }
         :host-context(body.dark-mode) .msg-error {
           background: rgba(239, 68, 68, 0.12);
-          color: #fca5a5;
-          border-left-color: #ef4444;
+          color: var(--ddd-theme-error-text);
+          border-left-color: var(--ddd-theme-error);
         }
         :host-context(body.dark-mode) .msg-success {
           background: rgba(34, 197, 94, 0.12);
-          color: #86efac;
-          border-left-color: #22c55e;
+          color: var(--ddd-theme-success-text);
+          border-left-color: var(--ddd-theme-success);
         }
         :host-context(body.dark-mode) .user-bar {
           background: rgba(255,255,255,0.05);
           border-color: rgba(229, 231, 235, 0.12);
         }
         :host-context(body.dark-mode) .user-name {
-          color: #e5e7eb;
+          color: var(--ddd-theme-default-text);
         }
         :host-context(body.dark-mode) .user-email,
         :host-context(body.dark-mode) .user-meta {
-          color: rgba(229, 231, 235, 0.55);
+          color: var(--ddd-theme-secondary);
         }
         :host-context(body.dark-mode) .avatar {
-          background: linear-gradient(120deg, #c4b5fd, #818cf8);
-          color: #0b1020;
+          background: linear-gradient(120deg, var(--ddd-theme-primary), var(--ddd-theme-accent));
+          color: var(--ddd-theme-on-primary);
         }
         :host-context(body.dark-mode) .logout-btn {
           border-color: rgba(239, 68, 68, 0.4);
-          color: #fca5a5;
+          color: var(--ddd-theme-error);
         }
         :host-context(body.dark-mode) .logout-btn:hover {
           background: rgba(239, 68, 68, 0.15);
-          color: #fecaca;
+          color: var(--ddd-theme-error);
         }
         :host-context(body.dark-mode) .check-btn {
           border-color: rgba(196, 181, 253, 0.4);
-          color: #c4b5fd;
+          color: var(--ddd-theme-primary);
         }
         :host-context(body.dark-mode) .check-btn:hover {
           background: rgba(196, 181, 253, 0.12);
-          color: #ddd6fe;
+          color: var(--ddd-theme-accent);
         }
         :host-context(body.dark-mode) .verify-note {
-          color: #fcd34d;
+          color: var(--ddd-theme-warning);
         }
         :host-context(body.dark-mode) .loading {
           color: #c4b5fd;
@@ -774,7 +796,7 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
             <div class="user-details">
               <div class="user-name">${this._nama}</div>
               <div class="user-email">${this._email}</div>
-              <div class="user-meta">NIS: ${this._nis} | Absen: ${this._absen} | Kelas: ${this._kelas}</div>
+              <div class="user-meta">NIS: ${this._nis} | Absen: ${this._absen} | Kelas: ${this._kelas}${this._role ? html` | <strong>${this._role === "guru" ? "👨‍🏫 Guru" : "🎓 Siswa"}</strong>` : nothing}</div>
               ${this._verifyError
                 ? html`<div class="verify-note">${this._verifyMsg}</div>`
                 : nothing}
@@ -829,6 +851,13 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
                     <label>Kelas</label>
                     <input type="text" .value=${this._kelas} @input=${(e) => (this._kelas = e.target.value)} placeholder="XI-1" required />
                   </div>
+                </div>
+                <div class="field">
+                  <label>Peran</label>
+                  <select .value=${this._role} @change=${(e) => (this._role = e.target.value)} style="width:100%;padding:12px 14px;border:1px solid var(--ddd-theme-input-border);border-radius:6px;font-size:15px;font-family:var(--ddd-font-primary);box-sizing:border-box;background:rgba(255,255,255,0.06);color:var(--ddd-theme-default-text);cursor:pointer;">
+                    <option value="siswa" ?selected=${this._role !== "guru"}>Siswa</option>
+                    <option value="guru" ?selected=${this._role === "guru"}>Guru</option>
+                  </select>
                 </div>
                 <button class="btn" type="submit" ?disabled=${this._loading}>
                   ${this._loading ? "⏳ Mendaftar..." : "Daftar"}
@@ -892,6 +921,7 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
           "_nis",
           "_absen",
           "_kelas",
+          "_role",
           "_studentId",
           "_errorMsg",
           "_successMsg",

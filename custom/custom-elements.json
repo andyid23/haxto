@@ -1095,6 +1095,16 @@
             },
             {
               "kind": "field",
+              "name": "shuffleQuestions",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "attribute": "shuffle-questions",
+              "reflects": true
+            },
+            {
+              "kind": "field",
               "name": "_draftNilai",
               "privacy": "public",
               "attribute": "_draftNilai"
@@ -1240,6 +1250,13 @@
               },
               "default": "false",
               "fieldName": "shuffleChoices"
+            },
+            {
+              "name": "shuffle-questions",
+              "type": {
+                "text": "boolean"
+              },
+              "fieldName": "shuffleQuestions"
             },
             {
               "name": "hide-answers",
@@ -1540,203 +1557,339 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/dasbor-kuis/lib/backend-api.js",
+      "path": "src/dasbor-kuis/lib/anti-cheat.js",
       "declarations": [
         {
           "kind": "class",
-          "description": "BackendApi - Centralized API service for Google Apps Script backend\nExtracted from dasbor-kuis.js for better maintainability\n\nHandles: API calls, queue management, data fetching",
-          "name": "BackendApi",
+          "description": "`anti-cheat-quiz` — modul deteksi & persistence anti-cheat untuk kuis.\r\n\r\nBertanggung jawab penuh pada:\r\n - Deteksi visibilitychange, blur/focus, keluar fullscreen, copy/paste, select, contextmenu.\r\n - Counter tab-switch, visibility-change, window blur/focus.\r\n - Persistensi counter ke localStorage (key antiCheatKey).\r\n - Antrean audit lokal (debounced telemetri, flush sekali di akhir sesi).\r\n - Threshold tab-switch → event 'cheat'.\r\n - Generate session token.\r\n\r\nMODUL INI TIDAK MENGE-RENAM UI ATAU LOG SESSION KE BACKEND — itu urusan\r\nhost (latihan-kuis.js). Modul hanya mengekstrak *deteksi + state*.\r\nModul ini tidak mengandalkan Lit; dapat dipakai oleh elemen web apa saja.",
+          "name": "AntiCheatQuiz",
           "members": [
             {
-              "kind": "method",
-              "name": "setUrl",
-              "parameters": [
-                {
-                  "name": "url",
-                  "description": "Apps Script web app URL",
-                  "type": {
-                    "text": "string"
-                  }
-                }
-              ],
-              "description": "Set the Apps Script URL"
+              "kind": "field",
+              "name": "studentId",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "kdMateri",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "appsScriptUrl",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "kategori",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "duration",
+              "readonly": true
             },
             {
               "kind": "method",
-              "name": "apiGet",
-              "parameters": [
-                {
-                  "name": "params",
-                  "description": "Request parameters",
-                  "type": {
-                    "text": "Object"
-                  }
-                }
-              ],
-              "description": "Make API request to Apps Script",
-              "return": {
-                "type": {
-                  "text": "Promise<Object>"
-                }
-              }
+              "name": "_antiCheatKey"
             },
             {
               "kind": "method",
-              "name": "logActivity",
-              "parameters": [
-                {
-                  "name": "logData",
-                  "description": "Activity log data",
-                  "type": {
-                    "text": "Object"
-                  }
-                }
-              ],
-              "description": "Log activity to backend",
-              "return": {
-                "type": {
-                  "text": "Promise<void>"
-                }
-              }
+              "name": "_timerKey"
             },
             {
               "kind": "method",
-              "name": "_addToQueue",
-              "parameters": [
-                {
-                  "name": "logData",
-                  "description": "Log data to queue",
-                  "type": {
-                    "text": "Object"
-                  }
-                }
-              ],
-              "description": "Add log to sync queue"
+              "name": "_auditQueueKey"
             },
             {
               "kind": "method",
-              "name": "flushQueue",
-              "description": "Flush sync queue to backend",
-              "return": {
-                "type": {
-                  "text": "Promise<void>"
-                }
-              }
+              "name": "saveState"
             },
             {
               "kind": "method",
-              "name": "getStudentRoster",
-              "parameters": [
-                {
-                  "name": "kdMateri",
-                  "description": "Topic code",
-                  "type": {
-                    "text": "string"
-                  }
-                }
-              ],
-              "description": "Get student roster",
-              "return": {
-                "type": {
-                  "text": "Promise<Array>"
-                }
-              }
+              "name": "restoreState"
             },
             {
               "kind": "method",
-              "name": "getLeaderboard",
-              "parameters": [
-                {
-                  "name": "kdMateri",
-                  "description": "Topic code",
-                  "type": {
-                    "text": "string"
-                  }
-                }
-              ],
-              "description": "Get leaderboard",
-              "return": {
-                "type": {
-                  "text": "Promise<Array>"
-                }
-              }
+              "name": "clearState"
             },
             {
               "kind": "method",
-              "name": "getScores",
+              "name": "simpanWaktuMulai",
               "parameters": [
                 {
-                  "name": "kdMateri",
-                  "description": "Topic code",
-                  "type": {
-                    "text": "string"
-                  }
+                  "name": "waktuMulai"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "bacaSisaWaktu"
+            },
+            {
+              "kind": "method",
+              "name": "hapusWaktuMulai"
+            },
+            {
+              "kind": "method",
+              "name": "cekWaktuSerakah"
+            },
+            {
+              "kind": "method",
+              "name": "_bacaAuditQueue"
+            },
+            {
+              "kind": "method",
+              "name": "_simpanAuditQueue",
+              "parameters": [
+                {
+                  "name": "d"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "enqueueAudit",
+              "parameters": [
+                {
+                  "name": "tipe"
                 },
                 {
-                  "name": "studentId",
-                  "description": "Student ID",
-                  "type": {
-                    "text": "string"
-                  }
+                  "name": "payload",
+                  "default": "{}"
                 }
-              ],
-              "description": "Get scores",
-              "return": {
-                "type": {
-                  "text": "Promise<Object>"
-                }
-              }
+              ]
             },
             {
               "kind": "method",
-              "name": "getActivityHistory",
-              "parameters": [
-                {
-                  "name": "kdMateri",
-                  "description": "Topic code",
-                  "type": {
-                    "text": "string"
-                  }
-                }
-              ],
-              "description": "Get activity history",
-              "return": {
-                "type": {
-                  "text": "Promise<Array>"
-                }
-              }
+              "name": "enqueueTabSwitch"
             },
             {
               "kind": "method",
-              "name": "getBankSoal",
+              "name": "_buatIdLog"
+            },
+            {
+              "kind": "method",
+              "name": "bacaAuditSingkat"
+            },
+            {
+              "kind": "method",
+              "name": "finalisasiAudit"
+            },
+            {
+              "kind": "method",
+              "name": "selesaiAudit"
+            },
+            {
+              "kind": "method",
+              "name": "generateSessionToken"
+            },
+            {
+              "kind": "method",
+              "name": "requestFullscreen"
+            },
+            {
+              "kind": "method",
+              "name": "_dispatchSelf",
               "parameters": [
                 {
-                  "name": "kdMateri",
-                  "description": "Topic code",
-                  "type": {
-                    "text": "string"
-                  }
+                  "name": "type"
+                },
+                {
+                  "name": "detail"
                 }
-              ],
-              "description": "Get bank soal (question bank)",
-              "return": {
-                "type": {
-                  "text": "Promise<Array>"
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "attach"
+            },
+            {
+              "kind": "method",
+              "name": "detach"
+            },
+            {
+              "kind": "method",
+              "name": "_onVisibilityChange"
+            },
+            {
+              "kind": "method",
+              "name": "_onWindowBlur"
+            },
+            {
+              "kind": "method",
+              "name": "_onWindowFocus"
+            },
+            {
+              "kind": "method",
+              "name": "_cekThresholdCurang"
+            },
+            {
+              "kind": "method",
+              "name": "_onFullscreenChange"
+            },
+            {
+              "kind": "method",
+              "name": "_handleWarningKeydown",
+              "parameters": [
+                {
+                  "name": "e"
                 }
-              }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_preventCopy",
+              "parameters": [
+                {
+                  "name": "e"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_preventPaste",
+              "parameters": [
+                {
+                  "name": "e"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_preventContext",
+              "parameters": [
+                {
+                  "name": "e"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_preventSelect",
+              "parameters": [
+                {
+                  "name": "e"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_guardAndPrevent",
+              "parameters": [
+                {
+                  "name": "eventType"
+                },
+                {
+                  "name": "e"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "resetCounters"
             },
             {
               "kind": "field",
-              "name": "_appsScriptUrl",
-              "default": "appsScriptUrl"
+              "name": "isActive",
+              "readonly": true
             },
             {
               "kind": "field",
-              "name": "_isFlushing",
+              "name": "host",
+              "default": "host"
+            },
+            {
+              "kind": "field",
+              "name": "tabSwitchThreshold"
+            },
+            {
+              "kind": "field",
+              "name": "tabSwitchCount",
+              "type": {
+                "text": "number"
+              },
+              "default": "0"
+            },
+            {
+              "kind": "field",
+              "name": "visibilityChangeCount",
+              "type": {
+                "text": "number"
+              },
+              "default": "0"
+            },
+            {
+              "kind": "field",
+              "name": "windowBlurCount",
+              "type": {
+                "text": "number"
+              },
+              "default": "0"
+            },
+            {
+              "kind": "field",
+              "name": "windowFocusCount",
+              "type": {
+                "text": "number"
+              },
+              "default": "0"
+            },
+            {
+              "kind": "field",
+              "name": "warningCount",
+              "type": {
+                "text": "number"
+              },
+              "default": "0"
+            },
+            {
+              "kind": "field",
+              "name": "cheatLogged",
               "type": {
                 "text": "boolean"
               },
               "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "forceChoiceDialog",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "tabSwitchWarning",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "fullscreenWarning",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "sessionToken",
+              "type": {
+                "text": "string"
+              },
+              "default": "''"
+            },
+            {
+              "kind": "field",
+              "name": "waktuMulai",
+              "type": {
+                "text": "null"
+              },
+              "default": "null"
             }
           ]
         }
@@ -1744,10 +1897,10 @@
       "exports": [
         {
           "kind": "js",
-          "name": "BackendApi",
+          "name": "AntiCheatQuiz",
           "declaration": {
-            "name": "BackendApi",
-            "module": "src/dasbor-kuis/lib/backend-api.js"
+            "name": "AntiCheatQuiz",
+            "module": "src/dasbor-kuis/lib/anti-cheat.js"
           }
         }
       ]
@@ -2944,7 +3097,7 @@
               "type": {
                 "text": "array"
               },
-              "default": "[ { q: \"Apa kegunaan utama metode connectedCallback pada LitElement?\", a: \"Menginisialisasi nilai variabel dasar\", b: \"Mendeteksi elemen saat berhasil diinjeksikan ke struktur DOM\", c: \"Menghapus event listener global\", k: \"b\" }, { q: \"Bagaimana cara mencegah timeout 6 menit pada Google Apps Script?\", a: \"Menggunakan penulisan masal berbasis batch I/O\", b: \"Menulis ke banyak sheet terpisah\", c: \"Memperbanyak rumus formula cell\", k: \"a\" } ]",
+              "default": "undefined",
               "attribute": "questions",
               "reflects": true
             },
@@ -3742,7 +3895,7 @@
               "type": {
                 "text": "array"
               },
-              "default": "DEFAULT_QUESTIONS",
+              "default": "undefined",
               "fieldName": "questions"
             },
             {
@@ -4342,7 +4495,7 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "`latihan-kuis`\n\nHalaman contoh latihan terpandu: materi → kuis berwaktu → pesan \"nilai\nterkirim\". Menyatukan <kuis-ledakan> (kuis yang ada) dan <timer-kuis>\n(hitung mundur). Saat waktu habis (event `timer-kuis-expired`), kuis\ndikunci otomatis (`_selesaiKuis`) lalu materi & kuis disembunyikan dan\nditampilkan pesan \"Selamat! Nilai sudah terkirim\".\n\nNilai dikirim ke Google Apps Script (`apps-script-url`) oleh <kuis-ledakan>\nlewat action=logActivity, sehingga tercatat di Google Spreadsheet.",
+          "description": "`latihan-kuis`\r\n\r\nHalaman contoh latihan terpandu: materi → kuis berwaktu → pesan \"nilai\r\nterkirim\". Menyatukan <kuis-ledakan> (kuis yang ada) dan <timer-kuis>\r\n(hitung mundur). Saat waktu habis (event `timer-kuis-expired`), kuis\r\ndikunci otomatis (`_selesaiKuis`) lalu materi & kuis disembunyikan dan\r\nditampilkan pesan \"Selamat! Nilai sudah terkirim\".\r\n\r\nNilai dikirim ke Google Apps Script (`apps-script-url`) oleh <kuis-ledakan>\r\nlewat action=logActivity, sehingga tercatat di Google Spreadsheet.",
           "name": "LatihanKuis",
           "members": [
             {
@@ -4353,19 +4506,13 @@
             },
             {
               "kind": "method",
-              "name": "_antiCheatKey"
-            },
-            {
-              "kind": "method",
-              "name": "_saveAntiCheatState"
-            },
-            {
-              "kind": "method",
-              "name": "_restoreAntiCheatState"
-            },
-            {
-              "kind": "method",
-              "name": "_clearAntiCheatState"
+              "name": "_onAntiCheatEvent",
+              "parameters": [
+                {
+                  "name": "detail"
+                }
+              ],
+              "description": "Route anti-cheat events from the module to host state + side effects."
             },
             {
               "kind": "method",
@@ -4382,23 +4529,6 @@
             },
             {
               "kind": "method",
-              "name": "_onVisibilityChange"
-            },
-            {
-              "kind": "method",
-              "name": "_onWindowBlur"
-            },
-            {
-              "kind": "method",
-              "name": "_onWindowFocus"
-            },
-            {
-              "kind": "method",
-              "name": "_cekThresholdCurang",
-              "description": "Cek apakah tab switch count sudah melewati threshold curang."
-            },
-            {
-              "kind": "method",
               "name": "_lanjutkanKuis",
               "description": "Dialog 3x: siswa memilih untuk lanjut kerjakan kuis."
             },
@@ -4411,149 +4541,6 @@
               "kind": "method",
               "name": "_laporKeGuru",
               "description": "Dialog 3x: siswa laporkan ke guru, lanjutkan kuis tapi catat (reset counter)."
-            },
-            {
-              "kind": "method",
-              "name": "_onFullscreenChange"
-            },
-            {
-              "kind": "method",
-              "name": "_handleWarningKeydown",
-              "parameters": [
-                {
-                  "name": "e"
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "_requestFullscreen"
-            },
-            {
-              "kind": "method",
-              "name": "_enableAntiCheat"
-            },
-            {
-              "kind": "method",
-              "name": "_disableAntiCheat"
-            },
-            {
-              "kind": "method",
-              "name": "_preventCopy",
-              "parameters": [
-                {
-                  "name": "e"
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "_preventPaste",
-              "parameters": [
-                {
-                  "name": "e"
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "_preventContext",
-              "parameters": [
-                {
-                  "name": "e"
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "_preventSelect",
-              "parameters": [
-                {
-                  "name": "e"
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "_logCurangan",
-              "parameters": [
-                {
-                  "name": "type"
-                },
-                {
-                  "name": "detail"
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "_generateSessionToken",
-              "description": "Generate session token unik untuk identifikasi attempt ini."
-            },
-            {
-              "kind": "method",
-              "name": "_logMulaiKuis",
-              "description": "Log kuis dimulai - buat verifikasi di spreadsheet."
-            },
-            {
-              "kind": "method",
-              "name": "_logSelesaiKuis",
-              "description": "Log kuis selesai - buat verifikasi di spreadsheet."
-            },
-            {
-              "kind": "method",
-              "name": "_auditQueueKey"
-            },
-            {
-              "kind": "method",
-              "name": "_bacaAuditQueue"
-            },
-            {
-              "kind": "method",
-              "name": "_simpanAuditQueue",
-              "parameters": [
-                {
-                  "name": "d"
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "_enqueueAudit",
-              "parameters": [
-                {
-                  "name": "tipe_aktivitas"
-                },
-                {
-                  "name": "payload_data",
-                  "default": "{}"
-                }
-              ],
-              "description": "Tambah event ke antrean audit lokal (setiap event PERSISTEN di browser)."
-            },
-            {
-              "kind": "method",
-              "name": "_enqueueTabSwitch",
-              "description": "Catat tab_switch ke antrean lokal (dari _onVisibilityChange/_onWindowBlur)."
-            },
-            {
-              "kind": "method",
-              "name": "_buatIdLogAudit"
-            },
-            {
-              "kind": "method",
-              "name": "_bacaAuditSingkat",
-              "description": "Ambil ringkasan audit dari antrean lokal (dikirim sekali di akhir sesi)."
-            },
-            {
-              "kind": "method",
-              "name": "_finalisasiAudit",
-              "description": "Finalisasi antrean: hitung durasi & tandai ready utk sekali flush."
-            },
-            {
-              "kind": "method",
-              "name": "_selesaiAudit",
-              "description": "Tandai antrean selesai dikirim (state=done) utk sesi berikutnya."
             },
             {
               "kind": "method",
@@ -4578,8 +4565,7 @@
                 {
                   "name": "payload"
                 }
-              ],
-              "description": "Kirim log langsung ke backend via fetch (tidak bergantung event bubbling)"
+              ]
             },
             {
               "kind": "method",
@@ -5451,6 +5437,11 @@
             },
             {
               "kind": "field",
+              "name": "_antiCheat",
+              "default": "new AntiCheatQuiz(this, { tabSwitchThreshold: this.tabSwitchThreshold })"
+            },
+            {
+              "kind": "field",
               "name": "t",
               "type": {
                 "text": "object"
@@ -6068,170 +6059,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/dasbor-kuis/lib/mode-handler.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "ModeHandler - Role-based mode switching logic\nExtracted from dasbor-kuis.js for better maintainability\n\nHandles: guru/siswa/admin mode switching based on user role",
-          "name": "ModeHandler",
-          "members": [
-            {
-              "kind": "method",
-              "name": "getModeForRole",
-              "static": true,
-              "parameters": [
-                {
-                  "name": "userRole",
-                  "description": "User's role (guru/siswa/admin)",
-                  "type": {
-                    "text": "string"
-                  }
-                },
-                {
-                  "name": "requestedMode",
-                  "description": "Requested mode (guru/siswa)",
-                  "type": {
-                    "text": "string"
-                  }
-                }
-              ],
-              "description": "Determine mode based on user role and requested mode",
-              "return": {
-                "type": {
-                  "text": "string"
-                }
-              }
-            },
-            {
-              "kind": "method",
-              "name": "hasAccess",
-              "static": true,
-              "parameters": [
-                {
-                  "name": "userRole",
-                  "description": "User's role",
-                  "type": {
-                    "text": "string"
-                  }
-                },
-                {
-                  "name": "feature",
-                  "description": "Feature name",
-                  "type": {
-                    "text": "string"
-                  }
-                }
-              ],
-              "description": "Check if user has access to a specific feature",
-              "return": {
-                "type": {
-                  "text": "boolean"
-                }
-              }
-            },
-            {
-              "kind": "method",
-              "name": "getRoleDisplayName",
-              "static": true,
-              "parameters": [
-                {
-                  "name": "role",
-                  "description": "Role code",
-                  "type": {
-                    "text": "string"
-                  }
-                }
-              ],
-              "description": "Get role display name",
-              "return": {
-                "type": {
-                  "text": "string"
-                }
-              }
-            },
-            {
-              "kind": "method",
-              "name": "getAllowedModes",
-              "static": true,
-              "parameters": [
-                {
-                  "name": "role",
-                  "description": "User's role",
-                  "type": {
-                    "text": "string"
-                  }
-                }
-              ],
-              "description": "Get allowed modes for a role",
-              "return": {
-                "type": {
-                  "text": "Array<string>"
-                }
-              }
-            },
-            {
-              "kind": "method",
-              "name": "canChangeRole",
-              "static": true,
-              "parameters": [
-                {
-                  "name": "currentRole",
-                  "description": "Current user role",
-                  "type": {
-                    "text": "string"
-                  }
-                },
-                {
-                  "name": "newRole",
-                  "description": "Requested new role",
-                  "type": {
-                    "text": "string"
-                  }
-                }
-              ],
-              "description": "Validate role change",
-              "return": {
-                "type": {
-                  "text": "boolean"
-                }
-              }
-            },
-            {
-              "kind": "method",
-              "name": "getUIConfig",
-              "static": true,
-              "parameters": [
-                {
-                  "name": "role",
-                  "description": "User's role",
-                  "type": {
-                    "text": "string"
-                  }
-                }
-              ],
-              "description": "Get role-based UI configuration",
-              "return": {
-                "type": {
-                  "text": "Object"
-                }
-              }
-            }
-          ]
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "ModeHandler",
-          "declaration": {
-            "name": "ModeHandler",
-            "module": "src/dasbor-kuis/lib/mode-handler.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/dasbor-kuis/lib/question-renderer.js",
       "declarations": [
         {
@@ -6399,48 +6226,6 @@
           "members": [
             {
               "kind": "method",
-              "name": "getAnswerTime",
-              "description": "Calculate answer timing using host's question start time",
-              "return": {
-                "type": {
-                  "text": "number"
-                }
-              }
-            },
-            {
-              "kind": "method",
-              "name": "resetQuestionTimer",
-              "description": "Reset question timer when navigating to new question"
-            },
-            {
-              "kind": "method",
-              "name": "isSuspiciousTiming",
-              "parameters": [
-                {
-                  "name": "answerTime",
-                  "description": "Time in ms to answer",
-                  "type": {
-                    "text": "number"
-                  }
-                },
-                {
-                  "name": "minTime",
-                  "default": "3000",
-                  "description": "Minimum expected time (default 3 seconds)",
-                  "type": {
-                    "text": "number"
-                  }
-                }
-              ],
-              "description": "Validate answer timing for anti-cheating",
-              "return": {
-                "type": {
-                  "text": "boolean"
-                }
-              }
-            },
-            {
-              "kind": "method",
               "name": "calculateScore",
               "parameters": [
                 {
@@ -6467,27 +6252,9 @@
               }
             },
             {
-              "kind": "method",
-              "name": "getTimingData",
-              "description": "Get answer timing data for logging",
-              "return": {
-                "type": {
-                  "text": "Object"
-                }
-              }
-            },
-            {
               "kind": "field",
               "name": "_host",
               "default": "host"
-            },
-            {
-              "kind": "field",
-              "name": "_questionStartTime",
-              "type": {
-                "text": "null"
-              },
-              "default": "null"
             }
           ]
         }
@@ -6705,6 +6472,16 @@
             },
             {
               "kind": "field",
+              "name": "_role",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "_role"
+            },
+            {
+              "kind": "field",
               "name": "_studentId",
               "privacy": "public",
               "type": {
@@ -6836,6 +6613,14 @@
               },
               "default": "\"\"",
               "fieldName": "_kelas"
+            },
+            {
+              "name": "_role",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "_role"
             },
             {
               "name": "_studentId",

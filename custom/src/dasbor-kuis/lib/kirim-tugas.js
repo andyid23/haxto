@@ -509,8 +509,10 @@ export class KirimTugas extends I18NMixin(DDDSuper(LitElement)) {
           --ddd-theme-success-light: #064e3b;
           --ddd-theme-success-text: #6ee7b7;
           --ddd-theme-success-dark: #047857;
+          --ddd-theme-accent: #818cf8;
           --ddd-theme-error: #fca5a5;
           --ddd-theme-error-dark: #7f1d1d;
+          --ddd-theme-error-text: var(--ddd-theme-error);
           --ddd-theme-warning: #fcd34d;
           --ddd-theme-warning-light: #78350f;
           --ddd-theme-warning-text: #fde68a;
@@ -525,10 +527,10 @@ export class KirimTugas extends I18NMixin(DDDSuper(LitElement)) {
           border-color: var(--dk-border);
         }
         :host-context(body.dark-mode) .file-input { background: var(--dk-soft); }
-        :host-context(body.dark-mode) .btn-submit { background: #4f46e5; color: #f8fafc; }
-        :host-context(body.dark-mode) .btn-submit:hover { background: #6366f1; }
-        :host-context(body.dark-mode) .status-banner.success { background: #064e3b; color: #6ee7b7; border-color: #047857; }
-        :host-context(body.dark-mode) .status-banner.error { background: #7f1d1d; color: #fecaca; border-color: #991b1b; }
+        :host-context(body.dark-mode) .btn-submit { background: var(--ddd-theme-accent); color: var(--ddd-theme-on-primary); }
+        :host-context(body.dark-mode) .btn-submit:hover { background: var(--ddd-theme-primary); }
+        :host-context(body.dark-mode) .status-banner.success { background: var(--ddd-theme-success-light); color: var(--ddd-theme-success-text); border-color: var(--ddd-theme-success-dark); }
+        :host-context(body.dark-mode) .status-banner.error { background: var(--ddd-theme-error-dark); color: var(--ddd-theme-error-text); border-color: var(--ddd-theme-error-dark); }
       `,
     ];
   }

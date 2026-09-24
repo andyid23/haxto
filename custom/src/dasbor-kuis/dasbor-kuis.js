@@ -99,6 +99,11 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
         attribute: "shuffle-choices",
         reflect: true,
       },
+      shuffleQuestions: {
+        type: Boolean,
+        attribute: "shuffle-questions",
+        reflect: true,
+      },
       hideAnswers: {
         type: Boolean,
         attribute: "hide-answers",
@@ -285,6 +290,12 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
             property: "shuffleChoices",
             title: "Acak Pilihan Jawaban",
             description: "Mengacak urutan pilihan jawaban setiap kali kuis dimulai.",
+            inputMethod: "boolean",
+          },
+          {
+            property: "shuffleQuestions",
+            title: "Acak Soal",
+            description: "Mengacak urutan soal setiap kali kuis dimulai.",
             inputMethod: "boolean",
           },
           {
@@ -563,6 +574,13 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
     } catch (e) {
       // abaikan
     }
+    // baca hax_role dari sessionStorage untuk auto-switch mode
+    try {
+      const role = sessionStorage.getItem("hax_role");
+      if (role === "guru" || role === "siswa") {
+        this.mode = role;
+      }
+    } catch (_) {}
   }
 
   _persistProfile() {
@@ -589,6 +607,12 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
     if (d.kelas) this.kelas = d.kelas;
     if (d.nis) this.nis = d.nis;
     if (d.absen) this.absen = d.absen;
+    // role dari event (login/register) atau sessionStorage: atur mode dasbor
+    const role = d.role || (typeof sessionStorage !== "undefined" ? sessionStorage.getItem("hax_role") : null);
+    if (role === "guru" || role === "siswa") {
+      this.mode = role;
+      try { sessionStorage.setItem("hax_role", role); } catch (_) {}
+    }
     this._persistProfile();
     this.fetchDataKomplit();
   }
@@ -601,6 +625,7 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
     this.absen = "";
     this.kelas = "";
     try { localStorage.clear(); } catch (_) {}
+    try { sessionStorage.removeItem("hax_role"); } catch (_) {}
     this.requestUpdate();
   }
 
@@ -2304,6 +2329,7 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
         .judul=${this.judulKuis}
         .questions=${this.questions && this.questions.length > 0 ? this.questions : undefined}
         .shuffleChoices=${this.shuffleChoices}
+        .shuffleQuestions=${this.shuffleQuestions}
         .hideAnswers=${this.hideAnswers}
         .hideScore=${this.hideScore}
         .hideConfetti=${this.hideConfetti}
@@ -2720,7 +2746,7 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
           <button class="retry-btn" style="background:#f59e0b;" @click=${this._bukaKunciKuisGuru} ?disabled=${!this.appsScriptUrl}>🔓 Buka Kunci</button>
           ${this._unlockMsg ? html`<span style="margin-left:12px; font-size:13px; color:${this._unlockMsg.startsWith('✅')?'#16a34a':'#dc2626'};">${this._unlockMsg}</span>` : nothing}
         </div>
-        <p style="font-size:11px; color:#94a3b8; margin:8px 0 0;">Properties remidi: <code>remidi-mode</code> + <code>remidi-soal-url</code> (sama file + <code>shuffle-choices</code>) → saat <code>score &lt; kkm</code> tombol <code>Mulai Remidi</code> muncul dan <b>lewati kunci</b>.</p>
+        <p style="font-size:11px; color:#94a3b8; margin:8px 0 0;">Properties remidi: <code>remidi-mode</code> + <code>remidi-soal-url</code> (sama file + <code>shuffle-questions</code> + <code>shuffle-choices</code>) → saat <code>score &lt; kkm</code> tombol <code>Mulai Remidi</code> muncul dan <b>lewati kunci</b>.</p>
       </div>
 
       <div class="note-chip">
