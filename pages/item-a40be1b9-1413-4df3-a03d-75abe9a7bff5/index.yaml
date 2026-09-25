@@ -10,7 +10,7 @@ description: >-
   Dataquest)
 
   Berikut adalah materi teknis lengkap berisi kode, langkah-langkah, dan
-  rekomendasi praktik terbaik untuk melakukan web 
+  rekomendasi praktik terbaik untuk melakukan web
 metadata:
   locked: false
   created: 1790128351
@@ -451,7 +451,7 @@ content: >
   <p></p>
 
   <latihan-kuis
-  apps-script-url="https://script.google.com/macros/s/AKfycbwDq12BtYxeokfbeCuDnDo-50z0ZL-XAMlXu4fMyZbbV_el4-B-lMbMWznocusKk63D/exec"
+  apps-script-url="https://script.google.com/macros/s/AKfycbzwvYAevUuTDozJBM8LnTJxwPfKMCCNuoCKNfZFH-Nj3HiKhfQMXxY1J4uusXlzaNFt/exec"
   duration="700" timerautostart="" mode="siswa" allowretake=""
   soal-file-url="./files/2026-stimulus2b-faseE.json" kategori="formatif"
   kd-materi="Latihan LM2" hide-answers allow-backward-nav show-question-nav

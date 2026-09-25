@@ -375,7 +375,7 @@ content: >
   <p></p>
 
   <quiz-user-auth
-  apps-script-url="https://script.google.com/macros/s/AKfycbwDq12BtYxeokfbeCuDnDo-50z0ZL-XAMlXu4fMyZbbV_el4-B-lMbMWznocusKk63D/exec"
+  apps-script-url="https://script.google.com/macros/s/AKfycbzwvYAevUuTDozJBM8LnTJxwPfKMCCNuoCKNfZFH-Nj3HiKhfQMXxY1J4uusXlzaNFt/exec"
   auto-login _student-id=""></quiz-user-auth>
 
   <kuis-ledakan
@@ -542,7 +542,7 @@ content: >
   pemrograman yang digunakan untuk koding web
   scraping.&quot;],&quot;correctPairs&quot;:{&quot;0&quot;:1,&quot;1&quot;:3,&quot;2&quot;:0,&quot;3&quot;:2}}]"
   judul="Evaluasi Kuis Interaktif"
-  apps-script-url="https://script.google.com/macros/s/AKfycbwDq12BtYxeokfbeCuDnDo-50z0ZL-XAMlXu4fMyZbbV_el4-B-lMbMWznocusKk63D/exec"
+  apps-script-url="https://script.google.com/macros/s/AKfycbzwvYAevUuTDozJBM8LnTJxwPfKMCCNuoCKNfZFH-Nj3HiKhfQMXxY1J4uusXlzaNFt/exec"
   kategori="formatif" mode="siswa" show-question-nav question-delay="100"
   review-answers student-id="" student-name="" student-nis="" student-absen=""
   student-kelas="" timer-duration="600" timer-autostart timer-minutes="10"

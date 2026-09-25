@@ -43,14 +43,14 @@ content: >
 
    tidak bisa gunakan <mark>mode terang</mark> di smartphonemu&#160;😄</p>
   <quiz-user-auth
-  apps-script-url="https://script.google.com/macros/s/AKfycbwDq12BtYxeokfbeCuDnDo-50z0ZL-XAMlXu4fMyZbbV_el4-B-lMbMWznocusKk63D/exec"
+  apps-script-url="https://script.google.com/macros/s/AKfycbzwvYAevUuTDozJBM8LnTJxwPfKMCCNuoCKNfZFH-Nj3HiKhfQMXxY1J4uusXlzaNFt/exec"
   auto-login _student-id="STD-65108053"></quiz-user-auth>
 
   <br/><p></p>
 
   <latihan-kuis mode="siswa" allow-retake max-retake="4" duration="900"
   timer-autostart shuffle-questions shuffle-choices kategori="formatif"
-  apps-script-url="https://script.google.com/macros/s/AKfycbwDq12BtYxeokfbeCuDnDo-50z0ZL-XAMlXu4fMyZbbV_el4-B-lMbMWznocusKk63D/exec"
+  apps-script-url="https://script.google.com/macros/s/AKfycbzwvYAevUuTDozJBM8LnTJxwPfKMCCNuoCKNfZFH-Nj3HiKhfQMXxY1J4uusXlzaNFt/exec"
   kd-materi="LD-1 Latihan" student-id="" judul-materi="Materi: Pencarian"
   teks-materi="Baca contoh di bawah, lalu kerjakan kuis. Kamu bisa mengulang
   sampai 4 kali." materi-url="./materi-simulasi-ulangan-/-kuis" show-sheet-link

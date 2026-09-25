@@ -400,12 +400,12 @@ content: >
   ekosistem periksa fakta dan metode CRAAP</strong></p>
 
   <quiz-user-auth
-  apps-script-url="https://script.google.com/macros/s/AKfycbwDq12BtYxeokfbeCuDnDo-50z0ZL-XAMlXu4fMyZbbV_el4-B-lMbMWznocusKk63D/exec"
+  apps-script-url="https://script.google.com/macros/s/AKfycbzwvYAevUuTDozJBM8LnTJxwPfKMCCNuoCKNfZFH-Nj3HiKhfQMXxY1J4uusXlzaNFt/exec"
   auto-login></quiz-user-auth>
 
   <latihan-kuis mode="siswa" allow-retake max-retake="5" duration="900"
   timer-autostart shuffle-questions shuffle-choices kategori="formatif"
-  apps-script-url="https://script.google.com/macros/s/AKfycbwDq12BtYxeokfbeCuDnDo-50z0ZL-XAMlXu4fMyZbbV_el4-B-lMbMWznocusKk63D/exec"
+  apps-script-url="https://script.google.com/macros/s/AKfycbzwvYAevUuTDozJBM8LnTJxwPfKMCCNuoCKNfZFH-Nj3HiKhfQMXxY1J4uusXlzaNFt/exec"
   kd-materi="LD-1 Latihan" student-id="" judul-materi="Materi: Pencarian"
   teks-materi="Baca materi di atas, lalu kerjakan kuis. Kamu bisa mengulang
   sampai 4 kali." show-sheet-link soal-file-url="./files/soal-contoh.json"

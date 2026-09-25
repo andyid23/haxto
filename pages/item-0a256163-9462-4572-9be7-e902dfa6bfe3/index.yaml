@@ -37,7 +37,7 @@ content: >
   <p></p>
 
   <latihan-kuis
-  apps-script-url="https://script.google.com/macros/s/AKfycbwDq12BtYxeokfbeCuDnDo-50z0ZL-XAMlXu4fMyZbbV_el4-B-lMbMWznocusKk63D/exec"
+  apps-script-url="https://script.google.com/macros/s/AKfycbzwvYAevUuTDozJBM8LnTJxwPfKMCCNuoCKNfZFH-Nj3HiKhfQMXxY1J4uusXlzaNFt/exec"
   duration="600" timerautostart mode="siswa" allowretake="false"
   soal-file-url="./files/2026-stimulus1-faseE.json" kategori="sumatif_lm"
   kd-materi="LM1"  judul-materi="Materi Pembelajaran" teks-materi="Baca materi
@@ -49,7 +49,7 @@ content: >
   Waktu habis! Kuis dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉
   Selamat! Nilai Anda sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai"
   allow-retake max-retake="0" hide-pause-restart show-question-nav
-  question-delay="1800" review-answers timer-autostart kkm="75" 
+  question-delay="1800" review-answers timer-autostart kkm="75"
   tab-switch-threshold="3" questions="[]" _skor="75" _pesan="Gagal memuat file
   soal: Failed to fetch" _best-skor="75" _pernah-ikut _attempt-ke="0" _terkunci
   sudah-remidi _skor-awal="0"
