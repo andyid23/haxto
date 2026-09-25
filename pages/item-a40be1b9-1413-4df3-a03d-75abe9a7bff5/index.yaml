@@ -16,7 +16,7 @@ metadata:
   created: 1790128351
   images: []
   videos: []
-  updated: 1790297534
+  updated: 1790298494
   published: true
   hideInMenu: false
   readtime: 5
@@ -69,13 +69,16 @@ content: >
 
 
 
+
    <li><strong>beautifulsoup4</strong>: Untuk mengurai (parse) dan mengekstrak data dari HTML.</li>
 
 
 
 
 
+
    <li><strong>pandas</strong>: Untuk menyusun data hasil scraping ke dalam bentuk tabel yang rapi.</li>
+
 
 
 
@@ -313,9 +316,11 @@ content: >
 
 
 
+
   : Selalu cek <code>https://namadomain.com/robots.txt</code> sebelum melakukan
   scraping. File ini memberi tahu bagian situs mana yang boleh atau tidak boleh
   diakses oleh bot.</li>
+
 
 
 
@@ -327,7 +332,9 @@ content: >
 
 
 
+
    <li><strong>Sertakan User-Agent yang Jelas</strong>: Server sering memblokir permintaan yang tidak memiliki identitas browser. Menggunakan header <code>User-Agent</code> yang standar adalah praktik baik, dan lebih baik lagi jika Anda menyertakan informasi kontak di header jika melakukan scraping skala besar.</li>
+
 
 
 
@@ -339,13 +346,16 @@ content: >
 
 
 
+
    <li><strong>Siapkan Penanganan Error</strong>: Situs web bisa berubah struktur HTML-nya atau sedang down. Gunakan blok <code>try...except</code> dalam kode Python Anda agar program tidak langsung crash saat terjadi kesalahan.</li>
 
 
 
 
 
+
    <li><strong>Gunakan untuk Tujuan Edukasi atau Riset</strong>: Pastikan penggunaan data hasil scraping sesuai dengan ketentuan layanan (Terms of Service) situs web tersebut dan tidak untuk dikomersialkan secara ilegal.</li>
+
 
 
 
@@ -362,6 +372,7 @@ content: >
 
 
 
+
   : Server memblokir Anda. Solusi: Tambahkan header <code>User-Agent</code>
   seperti pada Langkah 4.</li>
 
@@ -369,7 +380,9 @@ content: >
 
 
 
+
    <li><strong>Error <code>404 Not Found</code></strong>
+
 
 
 
@@ -382,7 +395,9 @@ content: >
 
 
 
+
    <li><strong>Hasil scraping kosong (<code>[]</code>)</strong>
+
 
 
 
@@ -397,7 +412,9 @@ content: >
 
 
 
+
    <li><strong>Masalah Encoding</strong>: Jika muncul karakter aneh, tambahkan <code>encoding="utf-8"</code> saat menyimpan ke CSV atau dekode response dengan <code>response.encoding = 'utf-8'</code>.</li>
+
 
 
 
@@ -493,7 +510,7 @@ content: >
   _attempt-ke="0" _soal-file-url-cache="./files/2026-stimulus2b-faseE.json"
   _remidi-soal="[]" _tab-switch-count="0" _visibility-change-count="0"
   _window-blur-count="0" _window-focus-count="0" _warning-count="0"   >
-      <!--   Tombol pemula (opsional, bila timerAutostart=false)   -->
+      <!--    Tombol pemula (opsional, bila timerAutostart=false)    -->
       <button id="btn-mulai" class="btn-mulai">▶️ Mulai Kuis</button>
 
       
