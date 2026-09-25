@@ -32,7 +32,7 @@ metadata:
     - files/habits.jpg
     - files/belajar.jpg
   videos: []
-  updated: 1790300978
+  updated: 1790309423
   published: true
   status: ''
   files:
@@ -157,10 +157,20 @@ content: >
   <p>Belajar dan berlatih setiap saat! Agar semakin mahir.</p>
 
   <h3 data-primary="0" data-border="md" data-design-treatment="bg"
-  data-padding="m" id="h3-1838830575" data-text-align="center">ULANGAN
+  data-padding="m" id="h3-1838830575" data-text-align="center">BELAJAR
   INFORMATIKA KELAS X-XI</h3>
 
-  <p></p>
+  <p><type-writer></type-writer>
+
+  </p>
+
+  <p><type-writer>Bila seseorang banyak melatih dan mengulang, terpaksa ataupun
+  sukarela, dia pasti akan menguasai keahlian tertentu. Inilah namanya
+  pembentukan kebiasaan alias habits.
+
+  </type-writer>
+
+  </p>
 
   <stop-note title="KUIS UJI PEMAHAMAN" accent-color="grey"
   icon="stopnoteicons:stop-icon" status="stop" message="&#60;strong&#62;Read
@@ -187,16 +197,18 @@ content: >
 
 
 
+
   </stop-note>
 
   <quiz-user-auth
-  apps-script-url="https://script.google.com/macros/s/AKfycbzwvYAevUuTDozJBM8LnTJxwPfKMCCNuoCKNfZFH-Nj3HiKhfQMXxY1J4uusXlzaNFt/exec"
+  apps-script-url="https://script.google.com/macros/s/AKfycbzpAX7z4JYzMICrYeDlgRDVhzceaitcwi-bXMMDl41C283C-HZ_0DmwxU9KKmnY1zk2/exec"
   auto-login _student-id="STD-65108053"></quiz-user-auth>
 
   <p></p>
 
   <ul><li><a href="./lm1-ekosistem-periksa-fakta-metode-craap">Link Menuju
   Materi Kelas X</a></li>
+
 
 
 
@@ -229,8 +241,10 @@ content: >
 
 
 
+
   <li><a href="./lm2-fase-f-verifikasi">Link Menuju Materi Kelas XI
   LM2</a>&#160;</li>
+
 
 
 

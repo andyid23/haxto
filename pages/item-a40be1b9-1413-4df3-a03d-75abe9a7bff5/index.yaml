@@ -451,7 +451,7 @@ content: >
   <p></p>
 
   <latihan-kuis
-  apps-script-url="https://script.google.com/macros/s/AKfycbzwvYAevUuTDozJBM8LnTJxwPfKMCCNuoCKNfZFH-Nj3HiKhfQMXxY1J4uusXlzaNFt/exec"
+  apps-script-url="https://script.google.com/macros/s/AKfycbzpAX7z4JYzMICrYeDlgRDVhzceaitcwi-bXMMDl41C283C-HZ_0DmwxU9KKmnY1zk2/exec"
   duration="700" timerautostart="" mode="siswa" allowretake=""
   soal-file-url="./files/2026-stimulus2b-faseE.json" kategori="formatif"
   kd-materi="Latihan LM2" hide-answers allow-backward-nav show-question-nav

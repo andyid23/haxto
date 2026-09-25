@@ -1,6 +1,8 @@
 Belajar dan berlatih setiap saat! Agar semakin mahir.
 
-### ULANGAN INFORMATIKA KELAS X-XI
+### BELAJAR INFORMATIKA KELAS X-XI
+
+<type-writer>Bila seseorang banyak melatih dan mengulang, terpaksa ataupun sukarela, dia pasti akan menguasai keahlian tertentu. Inilah namanya pembentukan kebiasaan alias habits.</type-writer>
 
 <stop-note title="KUIS UJI PEMAHAMAN" accent-color="grey" icon="stopnoteicons:stop-icon" status="stop" message="<strong>Read these important things!</strong>
 "><p slot="message"><strong>Baca dengan seksama materi dan jawablah soal di bawahnya. Materi lengkap ada di buku Informatika SMA kelas X dan XI.</strong></p></stop-note>

@@ -36,7 +36,7 @@ Semboyan
 </images>
 <videos>
 </videos>
-<updated>1790300978</updated>
+<updated>1790309423</updated>
 <published>true</published>
 <status></status>
 <files>
@@ -161,8 +161,12 @@ Semboyan
 </metadata>
 <content><![CDATA[
 <p>Belajar dan berlatih setiap saat! Agar semakin mahir.</p>
-<h3 data-primary="0" data-border="md" data-design-treatment="bg" data-padding="m" id="h3-1838830575" data-text-align="center">ULANGAN INFORMATIKA KELAS X-XI</h3>
-<p></p>
+<h3 data-primary="0" data-border="md" data-design-treatment="bg" data-padding="m" id="h3-1838830575" data-text-align="center">BELAJAR INFORMATIKA KELAS X-XI</h3>
+<p><type-writer></type-writer>
+</p>
+<p><type-writer>Bila seseorang banyak melatih dan mengulang, terpaksa ataupun sukarela, dia pasti akan menguasai keahlian tertentu. Inilah namanya pembentukan kebiasaan alias habits.
+</type-writer>
+</p>
 <stop-note title="KUIS UJI PEMAHAMAN" accent-color="grey" icon="stopnoteicons:stop-icon" status="stop" message="&#60;strong&#62;Read these important things!&#60;/strong&#62;
 "><p slot="message"><strong>Baca dengan seksama materi dan jawablah soal di bawahnya. Materi lengkap ada di buku Informatika SMA kelas X dan XI.</strong></p>
 
@@ -182,10 +186,12 @@ Semboyan
 
 
 
+
 </stop-note>
-<quiz-user-auth apps-script-url="https://script.google.com/macros/s/AKfycbzwvYAevUuTDozJBM8LnTJxwPfKMCCNuoCKNfZFH-Nj3HiKhfQMXxY1J4uusXlzaNFt/exec" auto-login _student-id="STD-65108053"></quiz-user-auth>
+<quiz-user-auth apps-script-url="https://script.google.com/macros/s/AKfycbzpAX7z4JYzMICrYeDlgRDVhzceaitcwi-bXMMDl41C283C-HZ_0DmwxU9KKmnY1zk2/exec" auto-login _student-id="STD-65108053"></quiz-user-auth>
 <p></p>
 <ul><li><a href="./lm1-ekosistem-periksa-fakta-metode-craap">Link Menuju Materi Kelas X</a></li>
+
 
 
 
@@ -214,7 +220,9 @@ Semboyan
 
 
 
+
 <li><a href="./lm2-fase-f-verifikasi">Link Menuju Materi Kelas XI LM2</a>&#160;</li>
+
 
 
 

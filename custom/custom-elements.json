@@ -6427,6 +6427,10 @@
             },
             {
               "kind": "method",
+              "name": "_normalizeAppsScriptUrl"
+            },
+            {
+              "kind": "method",
               "name": "_api",
               "parameters": [
                 {

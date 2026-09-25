@@ -52,7 +52,7 @@ content: >
   <latihan-kuis mode="siswa" duration="800" timer-autostart hide-pause-restart
   hide-confetti hide-answers hide-score shuffle-questions shuffle-choices
   kategori="sumatif_lm"
-  apps-script-url="https://script.google.com/macros/s/AKfycbzwvYAevUuTDozJBM8LnTJxwPfKMCCNuoCKNfZFH-Nj3HiKhfQMXxY1J4uusXlzaNFt/exec"
+  apps-script-url="https://script.google.com/macros/s/AKfycbzpAX7z4JYzMICrYeDlgRDVhzceaitcwi-bXMMDl41C283C-HZ_0DmwxU9KKmnY1zk2/exec"
   kd-materi="LM1" student-id="" judul-kuis="Ulangan Harian" allow-backward-nav
   show-question-nav show-sheet-link
   soal-file-url="./files/2026-stimulus1-faseF.json"  judul-materi="Materi

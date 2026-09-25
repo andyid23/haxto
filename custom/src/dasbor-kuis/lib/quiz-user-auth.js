@@ -143,9 +143,30 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
     }
   }
 
+  _normalizeAppsScriptUrl() {
+    const rawUrl = String(this.appsScriptUrl || "").trim();
+    if (!rawUrl) {
+      throw new Error("URL Apps Script belum dikonfigurasi.");
+    }
+
+    let url;
+    try {
+      url = new URL(rawUrl);
+    } catch (_) {
+      throw new Error("URL Apps Script tidak valid. Gunakan URL /exec dari deployment Web App.");
+    }
+
+    if (url.protocol !== "https:" || !/\/exec\/?$/.test(url.pathname)) {
+      throw new Error("URL Apps Script harus berupa URL HTTPS /exec dari deployment Web App.");
+    }
+
+    return url.toString().replace(/\/$/, "");
+  }
+
   // ---------- API (retry + exponential backoff) ----------
   async _api(action, params, { maxAttempts = 3 } = {}) {
     const backoffs = [200, 400, 800];
+    const endpoint = this._normalizeAppsScriptUrl();
     let attempt = 0;
     let lastError = null;
     while (attempt < maxAttempts) {
@@ -158,7 +179,8 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
           console.log("retry", attempt);
         }
         this._loading = true;
-        const res = await fetch(`${this.appsScriptUrl}?action=${action}&${qs.toString()}`, {
+        const res = await fetch(`${endpoint}?action=${action}&${qs.toString()}`, {
+          mode: "cors",
           redirect: "follow",
           signal: controller.signal,
         });
@@ -172,12 +194,24 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
         this._loading = false;
         return JSON.parse(teks);
       } catch (e) {
+        const isTransportFailure = e instanceof TypeError;
         if (e && e.name === "AbortError") {
           lastError = new Error("Waktu habis (timeout 60 detik) menghubungi server.");
+        } else if (isTransportFailure) {
+          let endpointHost = "endpoint tidak valid";
+          try {
+            endpointHost = new URL(endpoint).host;
+          } catch (_) {}
+          lastError = new Error(
+            `Backend tidak dapat diakses dari ${globalThis.location?.origin || "origin tidak dikenal"} (action=${action}). Periksa URL /exec, redeploy Apps Script, dan set akses Web App ke Anyone. Host: ${endpointHost}.`,
+          );
         } else {
           lastError = e;
         }
         console.log(`retry ${attempt} gagal (${lastError.message || lastError})`);
+        if (isTransportFailure) {
+          break;
+        }
         if (attempt < maxAttempts) {
           const delay = backoffs[Math.min(attempt - 1, backoffs.length - 1)];
           await new Promise((r) => setTimeout(r, delay));
