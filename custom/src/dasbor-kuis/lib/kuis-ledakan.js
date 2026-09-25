@@ -417,7 +417,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
       fn = fn.default;
     }
     this._confettiFn = fn;
-    this.questions = undefined;
+    this.questions = DEFAULT_QUESTIONS;
     this.judul = "Evaluasi Kuis Interaktif";
     this.appsScriptUrl = "";
     this.kdMateri = "Pertemuan 1";
@@ -490,11 +490,13 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     return [
       super.styles,
       css`
-        :host { display: block; font-family: var(--ddd-font-navigation, system-ui, sans-serif); }
-        /* custom polaris token — tidak ada di d-d-d.js; perlu definisi eksplisit di light mode */
-        --ddd-theme-polaris-focus-ring: rgba(79, 70, 229, 0.3);
+        :host {
+          display: block;
+          font-family: var(--ddd-font-navigation, system-ui, sans-serif);
+          --ddd-theme-polaris-focus-ring: rgba(79, 70, 229, 0.3);
+        }
         .quiz-card {
-          background: var(--ddd-theme-default-white);
+          background: var(--ddd-theme-default-white, var(--ddd-theme-default-background, #ffffff));
           border: var(--ddd-border-xs);
           border-radius: var(--ddd-radius-md);
           padding: var(--ddd-spacing-6);
@@ -504,146 +506,190 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
         }
         .locked-box {
           text-align: center;
-          border: 2px dashed var(--ddd-theme-primary);
+          border: 2px dashed var(--ddd-theme-primary, var(--ddd-primary-1, #1e407c));
         }
         .lock-icon { font-size: 40px; }
-        .lock-msg { color: var(--ddd-theme-secondary); font-weight: 600; }
-        .quiz-title { color: var(--ddd-theme-primary); font-size: var(--ddd-font-size-l); font-weight: 800; margin-top: 0; text-align: center; }
+        .lock-msg { color: var(--ddd-theme-secondary, rgba(0, 0, 0, 0.75)); font-weight: 600; }
+        .quiz-title { color: var(--ddd-theme-primary, var(--ddd-primary-1, #1e407c)); font-size: var(--ddd-font-size-l); font-weight: 800; margin-top: 0; text-align: center; }
         .btn-start {
-          display: block; width: 100%; padding: var(--ddd-spacing-4); background-color: var(--ddd-theme-polaris-primary); color: var(--ddd-theme-on-primary);
+          display: block; width: 100%; padding: var(--ddd-spacing-4); background-color: var(--ddd-theme-polaris-primary, var(--ddd-primary-1, #1e407c)); color: var(--ddd-theme-on-primary, var(--ddd-theme-bgContrast, var(--lowContrast-override, #ffffff)));
           border: none; border-radius: var(--ddd-radius-sm); font-size: var(--ddd-font-size-4xs); font-weight: 700; cursor: pointer; transition: background 0.2s;
         }
-        .btn-start:hover { background-color: var(--ddd-theme-accent); }
-        .question-text { font-size: var(--ddd-font-size-4xs); font-weight: 700; color: var(--ddd-theme-on-surface); margin-bottom: var(--ddd-spacing-4); }
-        .hint-box { margin-bottom: var(--ddd-spacing-3); border: var(--ddd-border-xs); border-radius: var(--ddd-radius-sm); padding: var(--ddd-spacing-3); background: var(--ddd-theme-polaris-surface-hover); }
-        .hint-box summary { cursor: pointer; font-weight: 700; font-size: var(--ddd-font-size-4xs); color: var(--ddd-theme-primary); list-style: none; }
+        .btn-start:hover { background-color: var(--ddd-theme-accent, var(--ddd-accent-0, #96bee6)); }
+        .question-text { font-size: var(--ddd-font-size-s); font-weight: 700; color: var(--ddd-theme-on-surface, var(--ddd-theme-default-text, var(--ddd-theme-default-coalyGray, #1e293b))); margin-bottom: var(--ddd-spacing-4); }
+        .hint-box { margin-bottom: var(--ddd-spacing-7); border: var(--ddd-border-xs); border-radius: var(--ddd-radius-sm); padding: var(--ddd-spacing-3); background: var(--ddd-theme-polaris-surface-hover, var(--ddd-theme-default-white, #ffffff)); }
+        .hint-box summary { cursor: pointer; font-weight: 700; font-size: var(--ddd-font-size-s); color: var(--ddd-theme-primary, var(--ddd-primary-1, #1e407c)); list-style: none; }
         .hint-box summary::before { content: "💡 "; }
-        .hint-box div { margin-top: var(--ddd-spacing-2); font-size: var(--ddd-font-size-4xs); color: var(--ddd-theme-default-text); }
+        .hint-box div { margin-top: var(--ddd-spacing-2); font-size: var(--ddd-font-size-4xs); color: var(--ddd-theme-default-text, var(--ddd-theme-default-coalyGray, #1e293b)); }
+        .hint-box div {
+            margin-top: var(--ddd-spacing-5);
+            font-size: var(--ddd-font-size-s);
+
+            /*
+              FIX PRAW COMPLIANT:
+              1. Memprioritaskan token teks dinamis luar jika ada.
+              2. Jika mati, lari ke token primer resmi HAX PRAW (--ddd-theme-primary).
+              3. Jika seluruh token HAX mati, light-dark() native langsung aktif:
+                 Terang = Abu gelap pekat (#1e293b) | Gelap = Abu terang redup (#94a3b8)
+            */
+            color: var(--ddd-theme-on-surface, var(--ddd-theme-primary, light-dark(#1e293b, #94a3b8)));
+        }
+
         .question-nav {
             display: flex; flex-direction: column; gap: var(--ddd-spacing-3); margin-bottom: var(--ddd-spacing-4);
             padding: var(--ddd-spacing-4);
-            background: var(--ddd-theme-polaris-surface-hover);
+            background: var(--ddd-theme-polaris-surface-hover, var(--ddd-theme-default-white, #ffffff));
             border: var(--ddd-border-xs);
             border-radius: var(--ddd-radius-md);
           }
           .question-nav .nav-label {
-            font-size: var(--ddd-font-size-3xs); font-weight: 700; color: var(--ddd-theme-on-surface);
+            font-size: var(--ddd-font-size-3xs); font-weight: 700; color: var(--ddd-theme-on-surface, var(--ddd-theme-default-text, var(--ddd-theme-default-coalyGray, #1e293b)));
             text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: var(--ddd-spacing-1);
-            padding-bottom: var(--ddd-spacing-2); border-bottom: 1px solid var(--ddd-theme-polaris-border);
+            padding-bottom: var(--ddd-spacing-2); border-bottom: 1px solid var(--ddd-theme-polaris-border, var(--ddd-theme-default-limestoneLight, #e4e5e7));
           }
           .question-nav .nav-grid {
             display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--ddd-spacing-2);
           }
           .question-nav .q-dot {
             min-width: 44px; min-height: 44px; padding: 0;
-            border: var(--ddd-border-sm); background: var(--ddd-theme-default-white);
-            color: var(--ddd-theme-on-surface);
+            border: var(--ddd-border-sm); background: var(--ddd-theme-default-white, var(--ddd-theme-default-background, #ffffff));
+            color: var(--ddd-theme-on-surface, var(--ddd-theme-default-text, var(--ddd-theme-default-coalyGray, #1e293b)));
             border-radius: var(--ddd-radius-md);
             font-weight: 700; font-size: var(--ddd-font-size-3xs);
             cursor: pointer; transition: background 0.15s, color 0.15s, border-color 0.15s;
             font-family: inherit; display: flex; align-items: center; justify-content: center;
           }
-          .question-nav .q-dot:hover:not(.disabled) { border-color: var(--ddd-theme-primary); background: var(--ddd-theme-polaris-surface-hover); }
+          .question-nav .q-dot:hover:not(.disabled) { border-color: var(--ddd-theme-primary, var(--ddd-primary-1, #1e407c)); background: var(--ddd-theme-polaris-surface-hover, var(--ddd-theme-default-white, #ffffff)); }
           .question-nav .q-dot.current {
-            background: var(--ddd-theme-primary);
-            color: var(--ddd-theme-on-primary);
-            border-color: var(--ddd-theme-primary);
+            background: var(--ddd-theme-primary, var(--ddd-primary-1, #1e407c));
+            color: var(--ddd-theme-on-primary, var(--ddd-theme-bgContrast, var(--lowContrast-override, #ffffff)));
+            border-color: var(--ddd-theme-primary, var(--ddd-primary-1, #1e407c));
           }
           .question-nav .q-dot.answered:not(.current) {
-            border-color: var(--ddd-theme-success);
-            color: var(--ddd-theme-success);
+            border-color: var(--ddd-theme-success, var(--ddd-theme-default-success, #1e4620));
+            color: var(--ddd-theme-success, var(--ddd-theme-default-success, #1e4620));
           }
           .question-nav .q-dot.disabled {
-            background: var(--ddd-theme-polaris-surface-hover);
-            color: var(--ddd-theme-secondary);
+            background: var(--ddd-theme-polaris-surface-hover, var(--ddd-theme-default-white, #ffffff));
+            color: var(--ddd-theme-secondary, rgba(0, 0, 0, 0.75));
             cursor: not-allowed; opacity: 0.55;
-            border-color: var(--ddd-theme-polaris-border);
+            border-color: var(--ddd-theme-polaris-border, var(--ddd-theme-default-limestoneLight, #e4e5e7));
           }
           .question-nav .q-dot.unanswered {
-            background: var(--ddd-theme-warning-light);
-            border-color: var(--ddd-theme-warning);
-            color: var(--ddd-theme-warning-text);
+            background: var(--ddd-theme-warning-light, var(--ddd-theme-default-warningLight, #fff4e5));
+            border-color: var(--ddd-theme-warning, var(--ddd-theme-default-warning, #663c00));
+            color: var(--ddd-theme-warning-text, var(--ddd-theme-default-warning, #663c00));
           }
         .question-image img { max-width: 100%; max-height: 260px; border-radius: 10px; margin-bottom: var(--ddd-spacing-4); border: var(--ddd-border-xs); }
         .choices-stack { display: flex; flex-direction: column; gap: 10px; }
         .choice-row {
-          padding: var(--ddd-spacing-4); background: var(--ddd-theme-polaris-surface-hover); border: var(--ddd-border-sm);
-          border-radius: var(--ddd-radius-sm); cursor: pointer; font-size: var(--ddd-font-size-4xs); font-weight: 500;
-          transition: all 0.2s; text-align: left;
+          padding: var(--ddd-spacing-4);
+          border: var(--ddd-border-sm);
+          border-radius: var(--ddd-radius-sm);
+          cursor: pointer;
+          font-size: var(--ddd-font-size-4xs);
+          font-weight: 500;
+          transition: all 0.2s;
+          text-align: left;
+
+          /*
+            FIX BACKGROUND TEMA ADAPTIF:
+            1. Cek token hover polaris eksternal bawaan HAX.
+            2. Jika mati (not defined), jalankan fungsi core light-dark() secara native:
+               - Mode Terang: warna putih bersih (#ffffff)
+               - Mode Gelap: warna permukaan gelap resmi PRAW (#111827)
+          */
+          background: var(--ddd-theme-polaris-surface-hover, light-dark(#ffffff, var(--ddd-theme-surface, #111827)));
+
+          /*
+            TAMBAHKAN PERBAIKAN TEKS (COLOR):
+            Agar warna teks otomatis kontras (Hitam di background putih, Putih di background gelap)
+          */
+          color: light-dark(#1e293b, #ffffff);
         }
-        .choice-row:hover:not(.disabled) { border-color: var(--ddd-theme-primary); background: var(--ddd-theme-polaris-surface-hover); }
-        .choice-row.selected { border-color: var(--ddd-theme-primary); background: var(--ddd-theme-polaris-surface-hover); }
-        .choice-row.correct { border-color: var(--ddd-theme-success); background: var(--ddd-theme-success-light); color: var(--ddd-theme-success-text); font-weight: 700; }
-        .choice-row.wrong { border-color: var(--ddd-theme-error); background: var(--ddd-theme-error-light); color: var(--ddd-theme-error-text); }
+
+
+
+        .choice-row:hover:not(.disabled) { border-color: var(--ddd-theme-primary, var(--ddd-primary-1, #1e407c)); background: var(--ddd-theme-polaris-surface-hover, var(--ddd-theme-default-white, #ffffff)); }
+
+
+        .choice-row.selected {
+          border-color: var(--ddd-theme-primary, var(--ddd-primary-1, #1e407c));
+          background: var(--ddd-theme-default-skyLight, var(--ddd-theme-default-roarMaxlight), light-dark(var(--ddd-theme-default-roarMaxlight), var(--ddd-theme-default-creekTeal, #111827)));
+        }
+
+
+        .choice-row.correct { border-color: var(--ddd-theme-success, var(--ddd-theme-default-success, #1e4620)); background: var(--ddd-theme-success-light, var(--ddd-theme-default-successLight, #edf7ed)); color: var(--ddd-theme-success-text, var(--ddd-theme-default-success, #1e4620)); font-weight: 700; }
+        .choice-row.wrong { border-color: var(--ddd-theme-error, var(--ddd-theme-default-error, #5f2120)); background: var(--ddd-theme-error-light, var(--ddd-theme-default-errorLight, #fdeded)); color: var(--ddd-theme-error-text, var(--ddd-theme-default-error, #5f2120)); }
         .choice-image { max-height: 64px; vertical-align: middle; margin-top: 6px; border-radius: var(--ddd-radius-xs); }
 
         .result-box { text-align: center; padding: var(--ddd-spacing-4) 0; }
         .score-circle {
-          width: 100px; height: 100px; border-radius: var(--ddd-radius-circle); background: var(--ddd-theme-polaris-surface-hover); color: var(--ddd-theme-primary);
+          width: 100px; height: 100px; border-radius: var(--ddd-radius-circle); background: var(--ddd-theme-polaris-surface-hover, var(--ddd-theme-default-white, #ffffff)); color: var(--ddd-theme-primary, var(--ddd-primary-1, #1e407c));
           display: flex; align-items: center; justify-content: center; font-size: var(--ddd-font-size-xl); font-weight: 800; margin: 0 auto var(--ddd-spacing-4);
           border: var(--ddd-border-lg);
         }
         .err-chip {
-          display: block; margin: var(--ddd-spacing-3) auto 0; max-width: 640px; background: var(--ddd-theme-error-light); border: var(--ddd-border-xs);
-          color: var(--ddd-theme-error-text); border-radius: var(--ddd-radius-md); padding: var(--ddd-spacing-2) var(--ddd-spacing-3); font-size: var(--ddd-font-size-4xs); font-weight: 600;
+          display: block; margin: var(--ddd-spacing-3) auto 0; max-width: 640px; background: var(--ddd-theme-error-light, var(--ddd-theme-default-errorLight, #fdeded)); border: var(--ddd-border-xs);
+          color: var(--ddd-theme-error-text, var(--ddd-theme-default-error, #5f2120)); border-radius: var(--ddd-radius-md); padding: var(--ddd-spacing-2) var(--ddd-spacing-3); font-size: var(--ddd-font-size-4xs); font-weight: 600;
         }
 
         .pgk-table { width: 100%; border-collapse: collapse; margin: var(--ddd-spacing-3) 0; }
-        .pgk-table th { text-align: left; padding: var(--ddd-spacing-3) var(--ddd-spacing-4); background: var(--ddd-theme-polaris-surface-hover); border-bottom: var(--ddd-border-sm); font-size: var(--ddd-font-size-3xs); color: var(--ddd-theme-secondary); }
-        .pgk-table td { padding: var(--ddd-spacing-3) var(--ddd-spacing-4); border-bottom: 1px solid var(--ddd-theme-polaris-border); font-size: var(--ddd-font-size-3xs); transition: background 0.15s; cursor: default; }
-        .pgk-table td:hover { background: var(--ddd-theme-polaris-surface-hover); }
+        .pgk-table th { text-align: left; padding: var(--ddd-spacing-3) var(--ddd-spacing-4); background: var(--ddd-theme-polaris-surface-hover, var(--ddd-theme-default-white, #ffffff)); border-bottom: var(--ddd-border-sm); font-size: var(--ddd-font-size-3xs); color: var(--ddd-theme-secondary, rgba(0, 0, 0, 0.75)); }
+        .pgk-table td { padding: var(--ddd-spacing-3) var(--ddd-spacing-4); border-bottom: 1px solid var(--ddd-theme-polaris-border, var(--ddd-theme-default-limestoneLight, #e4e5e7)); font-size: var(--ddd-font-size-3xs); transition: background 0.15s; cursor: default; }
+        .pgk-table td:hover { background: var(--ddd-theme-polaris-surface-hover, var(--ddd-theme-default-white, #ffffff)); }
         .pgk-table .pgk-cell { text-align: center; cursor: pointer; }
         .matching-container, .short-answer-container { display: flex; flex-direction: column; gap: var(--ddd-spacing-3); margin: var(--ddd-spacing-3) 0; }
         .matching-row { display: flex; align-items: center; gap: var(--ddd-spacing-3); flex-wrap: wrap; }
         .matching-item { font-weight: 600; font-size: var(--ddd-font-size-4xs); min-width: 180px; }
         .matching-select {
           flex: 1; min-width: 180px; padding: var(--ddd-spacing-3); border: var(--ddd-border-xs); border-radius: var(--ddd-radius-md);
-          font-size: var(--ddd-font-size-4xs); font-family: inherit; background: var(--ddd-theme-default-white);
+          font-size: var(--ddd-font-size-4xs); font-family: inherit; background: var(--ddd-theme-default-white, var(--ddd-theme-default-background, #ffffff));
         }
         .short-answer-input {
           width: 100%; padding: var(--ddd-spacing-3); border: var(--ddd-border-xs); border-radius: var(--ddd-radius-md);
           font-size: var(--ddd-font-size-4xs); font-family: inherit; box-sizing: border-box;
         }
-        .short-answer-input:focus { outline: none; border-color: var(--ddd-theme-primary); box-shadow: 0 0 0 2px var(--ddd-theme-polaris-focus-ring); }
+        .short-answer-input:focus { outline: none; border-color: var(--ddd-theme-primary, var(--ddd-primary-1, #1e407c)); box-shadow: 0 0 0 2px var(--ddd-theme-polaris-focus-ring, rgba(79, 70, 229, 0.3)); }
         .btn-submit {
-          display: block; padding: var(--ddd-spacing-3) var(--ddd-spacing-5); background-color: var(--ddd-theme-polaris-primary); color: var(--ddd-theme-on-primary);
+          display: block; padding: var(--ddd-spacing-3) var(--ddd-spacing-5); background-color: var(--ddd-theme-polaris-primary, var(--ddd-primary-1, #1e407c)); color: var(--ddd-theme-on-primary, var(--ddd-theme-bgContrast, var(--lowContrast-override, #ffffff)));
           border: none; border-radius: var(--ddd-radius-sm); font-size: var(--ddd-font-size-4xs); font-weight: 700; cursor: pointer; margin-top: var(--ddd-spacing-3);
         }
-        .btn-submit:hover { background-color: var(--ddd-theme-accent); }
-        .practice-nav .btn-back { flex: 1; padding: var(--ddd-spacing-3); background: var(--ddd-theme-polaris-surface); color: var(--ddd-theme-on-surface); border: var(--ddd-border-xs); border-radius: var(--ddd-radius-sm); font-size: var(--ddd-font-size-4xs); font-weight: 700; cursor: pointer; }
+        .btn-submit:hover { background-color: var(--ddd-theme-accent, var(--ddd-accent-0, #96bee6)); }
+        .practice-nav .btn-back { flex: 1; padding: var(--ddd-spacing-3); background: var(--ddd-theme-polaris-surface, var(--ddd-theme-default-white, #ffffff)); color: var(--ddd-theme-on-surface, var(--ddd-theme-default-text, var(--ddd-theme-default-coalyGray, #1e293b))); border: var(--ddd-border-xs); border-radius: var(--ddd-radius-sm); font-size: var(--ddd-font-size-4xs); font-weight: 700; cursor: pointer; }
         .practice-nav .btn-back:disabled { opacity: 0.4; cursor: not-allowed; }
-        .practice-nav .btn-next { flex: 2; padding: var(--ddd-spacing-3); background: var(--ddd-theme-polaris-primary); color: var(--ddd-theme-on-primary); border: none; border-radius: var(--ddd-radius-sm); font-size: var(--ddd-font-size-4xs); font-weight: 700; cursor: pointer; }
+        .practice-nav .btn-next { flex: 2; padding: var(--ddd-spacing-3); background: var(--ddd-theme-polaris-primary, var(--ddd-primary-1, #1e407c)); color: var(--ddd-theme-on-primary, var(--ddd-theme-bgContrast, var(--lowContrast-override, #ffffff))); border: none; border-radius: var(--ddd-radius-sm); font-size: var(--ddd-font-size-4xs); font-weight: 700; cursor: pointer; }
         .practice-nav .btn-next:disabled { opacity: 0.4; cursor: not-allowed; }
         .feedback-area {
           margin-top: var(--ddd-spacing-4); padding: var(--ddd-spacing-3) var(--ddd-spacing-3); border-radius: var(--ddd-radius-md); font-size: var(--ddd-font-size-4xs); font-weight: 600;
         }
-        .feedback-area.positive { background: var(--ddd-theme-success-light); color: var(--ddd-theme-success-text); border: var(--ddd-border-xs); }
-        .feedback-area.negative { background: var(--ddd-theme-error-light); color: var(--ddd-theme-error-text); border: var(--ddd-border-xs); }
+        .feedback-area.positive { background: var(--ddd-theme-success-light, var(--ddd-theme-default-successLight, #edf7ed)); color: var(--ddd-theme-success-text, var(--ddd-theme-default-success, #1e4620)); border: var(--ddd-border-xs); }
+        .feedback-area.negative { background: var(--ddd-theme-error-light, var(--ddd-theme-default-errorLight, #fdeded)); color: var(--ddd-theme-error-text, var(--ddd-theme-default-error, #5f2120)); border: var(--ddd-border-xs); }
 
         .review-summary { display: flex; justify-content: center; gap: var(--ddd-spacing-5); margin: var(--ddd-spacing-4) 0; }
         .review-stat { text-align: center; }
-        .review-stat-label { display: block; font-size: var(--ddd-font-size-4xs); color: var(--ddd-theme-secondary); font-weight: 600; }
+        .review-stat-label { display: block; font-size: var(--ddd-font-size-4xs); color: var(--ddd-theme-secondary, rgba(0, 0, 0, 0.75)); font-weight: 600; }
         .review-stat-value { display: block; font-size: var(--ddd-font-size-3xs); font-weight: 800; }
-        .review-stat-value.positive { color: var(--ddd-theme-success-text); }
-        .review-stat-value.negative { color: var(--ddd-theme-error-text); }
+        .review-stat-value.positive { color: var(--ddd-theme-success-text, var(--ddd-theme-default-success, #1e4620)); }
+        .review-stat-value.negative { color: var(--ddd-theme-error-text, var(--ddd-theme-default-error, #5f2120)); }
         .review-questions { display: flex; flex-direction: column; gap: var(--ddd-spacing-3); margin: var(--ddd-spacing-4) 0; }
-        .review-question { border: var(--ddd-border-xs); border-radius: var(--ddd-radius-md); padding: var(--ddd-spacing-3); background: var(--ddd-theme-polaris-surface-hover); }
-        .review-qnum { font-size: var(--ddd-font-size-4xs); font-weight: 800; color: var(--ddd-theme-primary); margin-bottom: var(--ddd-spacing-2); }
-        .review-qtext { font-size: var(--ddd-font-size-4xs); font-weight: 700; color: var(--ddd-theme-on-surface); margin-bottom: var(--ddd-spacing-3); }
+        .review-question { border: var(--ddd-border-xs); border-radius: var(--ddd-radius-md); padding: var(--ddd-spacing-3); background: var(--ddd-theme-polaris-surface-hover, var(--ddd-theme-default-white, #ffffff)); }
+        .review-qnum { font-size: var(--ddd-font-size-4xs); font-weight: 800; color: var(--ddd-theme-primary, var(--ddd-primary-1, #1e407c)); margin-bottom: var(--ddd-spacing-2); }
+        .review-qtext { font-size: var(--ddd-font-size-4xs); font-weight: 700; color: var(--ddd-theme-on-surface, var(--ddd-theme-default-text, var(--ddd-theme-default-coalyGray, #1e293b))); margin-bottom: var(--ddd-spacing-3); }
         .review-mc { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px; }
         .review-mc li { padding: 4px 8px; border-radius: var(--ddd-radius-xs); font-size: var(--ddd-font-size-4xs); }
-        .review-mc li.review-correct { background: var(--ddd-theme-success-light); color: var(--ddd-theme-success-text); font-weight: 700; }
-        .review-mc li.review-selected-wrong { background: var(--ddd-theme-error-light); color: var(--ddd-theme-error-text); font-weight: 700; }
+        .review-mc li.review-correct { background: var(--ddd-theme-success-light, var(--ddd-theme-default-successLight, #edf7ed)); color: var(--ddd-theme-success-text, var(--ddd-theme-default-success, #1e4620)); font-weight: 700; }
+        .review-mc li.review-selected-wrong { background: var(--ddd-theme-error-light, var(--ddd-theme-default-errorLight, #fdeded)); color: var(--ddd-theme-error-text, var(--ddd-theme-default-error, #5f2120)); font-weight: 700; }
         .review-short { margin: var(--ddd-spacing-2) 0; font-size: var(--ddd-font-size-4xs); }
-        .review-label { font-weight: 700; color: var(--ddd-theme-secondary); }
-        .review-value { color: var(--ddd-theme-on-surface); }
+        .review-label { font-weight: 700; color: var(--ddd-theme-secondary, rgba(0, 0, 0, 0.75)); }
+        .review-value { color: var(--ddd-theme-on-surface, var(--ddd-theme-default-text, var(--ddd-theme-default-coalyGray, #1e293b))); }
         .review-badge { display: inline-block; padding: 2px 10px; border-radius: var(--ddd-radius-xs); font-size: var(--ddd-font-size-4xs); font-weight: 700; margin-top: var(--ddd-spacing-2); }
-        .review-badge.positive { background: var(--ddd-theme-success-light); color: var(--ddd-theme-success-text); }
-        .review-badge.negative { background: var(--ddd-theme-error-light); color: var(--ddd-theme-error-text); }
+        .review-badge.positive { background: var(--ddd-theme-success-light, var(--ddd-theme-default-successLight, #edf7ed)); color: var(--ddd-theme-success-text, var(--ddd-theme-default-success, #1e4620)); }
+        .review-badge.negative { background: var(--ddd-theme-error-light, var(--ddd-theme-default-errorLight, #fdeded)); color: var(--ddd-theme-error-text, var(--ddd-theme-default-error, #5f2120)); }
 
         .btn-edit-soal {
-          display: block; width: 100%; padding: var(--ddd-spacing-3); margin-top: var(--ddd-spacing-3); background-color: var(--ddd-theme-secondary);
-          color: var(--ddd-theme-on-primary); border: none; border-radius: var(--ddd-radius-sm); font-size: var(--ddd-font-size-4xs); font-weight: 700; cursor: pointer; transition: background 0.2s;
+          display: block; width: 100%; padding: var(--ddd-spacing-3); margin-top: var(--ddd-spacing-3); background-color: var(--ddd-theme-secondary, rgba(0, 0, 0, 0.75));
+          color: var(--ddd-theme-on-primary, var(--ddd-theme-bgContrast, var(--lowContrast-override, #ffffff))); border: none; border-radius: var(--ddd-radius-sm); font-size: var(--ddd-font-size-4xs); font-weight: 700; cursor: pointer; transition: background 0.2s;
         }
         .btn-edit-soal:hover { filter: brightness(0.9); }
         .editor-screen { max-width: 760px; }
@@ -652,11 +698,11 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
         .editor-content { display: flex; flex-direction: column; gap: var(--ddd-spacing-4); }
         .add-question-form {
           border: var(--ddd-border-sm); border-radius: var(--ddd-radius-md); padding: var(--ddd-spacing-4);
-          background: var(--ddd-theme-polaris-surface-hover);
+          background: var(--ddd-theme-polaris-surface-hover, var(--ddd-theme-default-white, #ffffff));
         }
-        .editor-select { padding: 6px 10px; border-radius: 6px; border: 1px solid var(--ddd-theme-polaris-border); font-size: 13px; font-family: inherit; }
-        .editor-input { padding: 6px 10px; border-radius: 6px; border: 1px solid var(--ddd-theme-polaris-border); font-size: 13px; font-family: inherit; box-sizing: border-box; }
-        .editor-textarea { width: 100%; padding: 8px; border-radius: 6px; border: 1px solid var(--ddd-theme-polaris-border); font-size: 12px; font-family: monospace; box-sizing: border-box; }
+        .editor-select { padding: 6px 10px; border-radius: 6px; border: 1px solid var(--ddd-theme-polaris-border, var(--ddd-theme-default-limestoneLight, #e4e5e7)); font-size: 13px; font-family: inherit; }
+        .editor-input { padding: 6px 10px; border-radius: 6px; border: 1px solid var(--ddd-theme-polaris-border, var(--ddd-theme-default-limestoneLight, #e4e5e7)); font-size: 13px; font-family: inherit; box-sizing: border-box; }
+        .editor-textarea { width: 100%; padding: 8px; border-radius: 6px; border: 1px solid var(--ddd-theme-polaris-border, var(--ddd-theme-default-limestoneLight, #e4e5e7)); font-size: 12px; font-family: monospace; box-sizing: border-box; }
         .question-text-input, .edit-question-text-input {
           width: 100%; min-height: 70px; padding: var(--ddd-spacing-3); border: var(--ddd-border-xs); border-radius: var(--ddd-radius-md);
           font-size: var(--ddd-font-size-4xs); font-family: inherit; box-sizing: border-box; margin: 4px 0;
@@ -664,12 +710,12 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
         .questions-list { display: flex; flex-direction: column; gap: 10px; }
         .question-card {
           border: var(--ddd-border-xs); border-radius: var(--ddd-radius-md); padding: var(--ddd-spacing-3);
-          background: var(--ddd-theme-default-white);
+          background: var(--ddd-theme-default-white, var(--ddd-theme-default-background, #ffffff));
         }
         .question-card .btn-edit-soal { width: auto; padding: 6px 12px; font-size: 12px; }
         .quiz-timer { display: flex; justify-content: center; margin-bottom: var(--ddd-spacing-4); }
-        .import-box { border: var(--ddd-border-sm); border-radius: var(--ddd-radius-md); padding: var(--ddd-spacing-4); background: var(--ddd-theme-polaris-surface-hover); margin-top: var(--ddd-spacing-4); }
-        .import-box h4 { margin: 0 0 var(--ddd-spacing-3) 0; color: var(--ddd-theme-primary); font-size: var(--ddd-font-size-4xs); }
+        .import-box { border: var(--ddd-border-sm); border-radius: var(--ddd-radius-md); padding: var(--ddd-spacing-4); background: var(--ddd-theme-polaris-surface-hover, var(--ddd-theme-default-white, #ffffff)); margin-top: var(--ddd-spacing-4); }
+        .import-box h4 { margin: 0 0 var(--ddd-spacing-3) 0; color: var(--ddd-theme-primary, var(--ddd-primary-1, #1e407c)); font-size: var(--ddd-font-size-4xs); }
       `,
       css`
         /* ===== DARK MODE (DDD-token swap, gated on body.dark-mode) ===== */
@@ -729,12 +775,12 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
         :host-context(body.dark-mode) .question-text,
         :host-context(body.dark-mode) .import-box h4 { color: var(--dk-text-strong); }
         :host-context(body.dark-mode) .lock-msg { color: var(--dk-text-soft); }
-        :host-context(body.dark-mode) .btn-start { background-color: var(--ddd-theme-polaris-primary); color: var(--ddd-theme-on-primary); }
-        :host-context(body.dark-mode) .btn-start:hover { background-color: var(--ddd-theme-accent); }
+        :host-context(body.dark-mode) .btn-start { background-color: var(--ddd-theme-polaris-primary, var(--ddd-primary-1, #1e407c)); color: var(--ddd-theme-on-primary, var(--ddd-theme-bgContrast, var(--lowContrast-override, #ffffff))); }
+        :host-context(body.dark-mode) .btn-start:hover { background-color: var(--ddd-theme-accent, var(--ddd-accent-0, #96bee6)); }
         :host-context(body.dark-mode) .choice-row { background: var(--dk-soft); color: var(--dk-text); border-color: var(--dk-border); }
-        :host-context(body.dark-mode) .choice-row.correct { border-color: var(--ddd-theme-success); background: var(--ddd-theme-success-light); color: var(--ddd-theme-success-text); }
-        :host-context(body.dark-mode) .choice-row.wrong { border-color: var(--ddd-theme-error); background: var(--ddd-theme-error-light); color: var(--ddd-theme-error-text); }
-        :host-context(body.dark-mode) .choice-row.selected { border-color: var(--ddd-theme-selected-border); background: var(--ddd-theme-selected-bg); color: var(--ddd-theme-on-primary); }
+        :host-context(body.dark-mode) .choice-row.correct { border-color: var(--ddd-theme-success, var(--ddd-theme-default-success, #1e4620)); background: var(--ddd-theme-success-light, var(--ddd-theme-default-successLight, #edf7ed)); color: var(--ddd-theme-success-text, var(--ddd-theme-default-success, #1e4620)); }
+        :host-context(body.dark-mode) .choice-row.wrong { border-color: var(--ddd-theme-error, var(--ddd-theme-default-error, #5f2120)); background: var(--ddd-theme-error-light, var(--ddd-theme-default-errorLight, #fdeded)); color: var(--ddd-theme-error-text, var(--ddd-theme-default-error, #5f2120)); }
+        :host-context(body.dark-mode) .choice-row.selected { border-color: var(--ddd-theme-selected-border, var(--ddd-theme-default-link, #005fa9)); background: var(--ddd-theme-selected-bg, var(--ddd-theme-default-info, #e5f6fd)); color: var(--ddd-theme-on-primary, var(--ddd-theme-bgContrast, var(--lowContrast-override, #ffffff))); }
         :host-context(body.dark-mode) .editor-select,
         :host-context(body.dark-mode) .editor-input,
         :host-context(body.dark-mode) .editor-textarea,
@@ -743,27 +789,27 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
         :host-context(body.dark-mode) .pgk-table { color: var(--dk-text); }
         :host-context(body.dark-mode) .pgk-table th { background: var(--dk-soft); color: var(--dk-text-strong); }
         :host-context(body.dark-mode) .pgk-table td { border-bottom-color: var(--dk-border); }
-        :host-context(body.dark-mode) .err-chip { background: var(--ddd-theme-error-light); color: var(--ddd-theme-error-text); border-color: var(--ddd-theme-error-dark); }
-        :host-context(body.dark-mode) .btn-submit { background: var(--ddd-theme-polaris-primary); color: var(--ddd-theme-on-primary); }
-        :host-context(body.dark-mode) .btn-submit:hover { background: var(--ddd-theme-accent); }
+        :host-context(body.dark-mode) .err-chip { background: var(--ddd-theme-error-light, var(--ddd-theme-default-errorLight, #fdeded)); color: var(--ddd-theme-error-text, var(--ddd-theme-default-error, #5f2120)); border-color: var(--ddd-theme-error-dark, var(--ddd-theme-default-error, #5f2120)); }
+        :host-context(body.dark-mode) .btn-submit { background: var(--ddd-theme-polaris-primary, var(--ddd-primary-1, #1e407c)); color: var(--ddd-theme-on-primary, var(--ddd-theme-bgContrast, var(--lowContrast-override, #ffffff))); }
+        :host-context(body.dark-mode) .btn-submit:hover { background: var(--ddd-theme-accent, var(--ddd-accent-0, #96bee6)); }
         :host-context(body.dark-mode) .btn-edit-soal { background: var(--dk-soft); color: var(--dk-text); border-color: var(--dk-border); }
         :host-context(body.dark-mode) .feedback-area { background: var(--dk-soft); color: var(--dk-text); }
-        :host-context(body.dark-mode) .score-circle { background: linear-gradient(135deg, #312e81, var(--ddd-theme-polaris-primary, #4f46e5)); color: var(--ddd-theme-on-primary); }
+        :host-context(body.dark-mode) .score-circle { background: linear-gradient(135deg, #312e81, var(--ddd-theme-polaris-primary, #4f46e5)); color: var(--ddd-theme-on-primary, var(--ddd-theme-bgContrast, var(--lowContrast-override, #ffffff))); }
         :host-context(body.dark-mode) .hint-box { background: var(--dk-soft); border-color: var(--dk-border); }
         :host-context(body.dark-mode) .question-nav { background: var(--dk-soft); border-color: var(--dk-border); }
         :host-context(body.dark-mode) .question-nav .nav-label { color: var(--dk-text-strong); border-bottom-color: var(--dk-border); }
         :host-context(body.dark-mode) .question-nav .q-dot { background: var(--dk-card); color: var(--dk-text); border-color: var(--dk-border); }
-        :host-context(body.dark-mode) .question-nav .q-dot:hover:not(.disabled) { background: var(--dk-soft); border-color: var(--ddd-theme-selected-border); }
+        :host-context(body.dark-mode) .question-nav .q-dot:hover:not(.disabled) { background: var(--dk-soft); border-color: var(--ddd-theme-selected-border, var(--ddd-theme-default-link, #005fa9)); }
         :host-context(body.dark-mode) .question-nav .q-dot.unanswered {
-          background: var(--ddd-theme-warning-light);
-          border-color: var(--ddd-theme-warning);
-          color: var(--ddd-theme-warning-text);
+          background: var(--ddd-theme-warning-light, var(--ddd-theme-default-warningLight, #fff4e5));
+          border-color: var(--ddd-theme-warning, var(--ddd-theme-default-warning, #663c00));
+          color: var(--ddd-theme-warning-text, var(--ddd-theme-default-warning, #663c00));
         }
         :host-context(body.dark-mode) .pgk-table td:hover { background: var(--dk-soft); }
         :host-context(body.dark-mode) .review-question { background: var(--dk-soft); border-color: var(--dk-border); }
         :host-context(body.dark-mode) .review-qtext { color: var(--dk-text-strong); }
         :host-context(body.dark-mode) .practice-nav .btn-back { background: var(--dk-soft); color: var(--dk-text); border-color: var(--dk-border); }
-        :host-context(body.dark-mode) .practice-nav .btn-next { background: var(--ddd-theme-polaris-primary); color: var(--ddd-theme-on-primary); }
+        :host-context(body.dark-mode) .practice-nav .btn-next { background: var(--ddd-theme-polaris-primary, var(--ddd-primary-1, #1e407c)); color: var(--ddd-theme-on-primary, var(--ddd-theme-bgContrast, var(--lowContrast-override, #ffffff))); }
       `,
     ];
   }
@@ -1632,15 +1678,15 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     // Validate timer state before allowing navigation
     const active = this._getActiveQuestions();
     if (index < 0 || index >= active.length) return false;
-     
+
     // Prevent navigation if timer has expired and quiz is finished
     if (this._screen === "result") return false;
-     
+
     // Prevent navigation to unanswered questions when timer is stuck (remaining <= 0)
     if (this.timerDuration > 0 && this._resumeRemaining !== undefined && this._resumeRemaining <= 0) {
       if (index !== this._currentIdx) return false;
     }
-     
+
     // Existing validation logic
     if (this.practiceMode) {
       // practice mode: allow full backward/forward navigation
@@ -1651,7 +1697,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     ) {
       return false;
     }
-     
+
     return true;
   }
 
@@ -2106,7 +2152,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
       return html`
         <div class="quiz-card">
           <h3 class="quiz-title">📝 ${this.judul}</h3>
-          <p style="color: var(--ddd-theme-secondary); text-align: center; margin-bottom: var(--ddd-spacing-5);">Selesaikan seluruh pertanyaan kuis di bawah ini secara mandiri untuk mengunci status kelulusan nilai pada lembar kendali dasbor.</p>
+          <p style="color: var(--ddd-theme-secondary, rgba(0, 0, 0, 0.75)); text-align: center; margin-bottom: var(--ddd-spacing-5);">Selesaikan seluruh pertanyaan kuis di bawah ini secara mandiri untuk mengunci status kelulusan nilai pada lembar kendali dasbor.</p>
           <button class="btn-start" @click=${this._onStartClick} aria-label="Mulai mengerjakan kuis">Mulai Pengerjaan Kuis</button>
           ${!this.studentId
             ? html`<p class="err-chip" style="background:var(--ddd-theme-warning-light,#fef3c7);border-color:var(--ddd-theme-warning,#fcd34d);color:var(--ddd-theme-warning-text,#92400e);margin-top:10px;">ℹ️ Harap login untuk mengerjakan kuis.</p>`
@@ -2136,14 +2182,14 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
         <div class="quiz-card result-box">
           <h3 class="quiz-title">🎊 Hasil Evaluasi Anda</h3>
           ${this.hideScore ? "" : html`<div class="score-circle" aria-label="Skor: ${persentase}%">${persentase}%</div>`}
-          <p style="font-weight:700; color:var(--ddd-theme-default-text); margin-bottom:4px;">Kuis Selesai Dikerjakan!</p>
-          <p style="color:var(--ddd-theme-secondary); font-size:14px; margin-top:0; margin-bottom: var(--ddd-spacing-4);">Skor Anda telah dikunci dan dikirim masuk ke antrean database tunggal V5.</p>
+          <p style="font-weight:700; color:var(--ddd-theme-default-text, var(--ddd-theme-default-coalyGray, #1e293b)); margin-bottom:4px;">Kuis Selesai Dikerjakan!</p>
+          <p style="color:var(--ddd-theme-secondary, rgba(0, 0, 0, 0.75)); font-size:14px; margin-top:0; margin-bottom: var(--ddd-spacing-4);">Skor Anda telah dikunci dan dikirim masuk ke antrean database tunggal V5.</p>
           ${this._bankStatus
             ? html`<p class="err-chip">ℹ️ ${this._bankStatus}</p>`
             : ""}
-          <p class="err-chip" style="background:var(--ddd-theme-polaris-surface-hover);border-color:var(--ddd-theme-primary);color:var(--ddd-theme-primary);">ℹ️ Siswa: ${this.studentName || "-"} (NIS ${this.studentNis || "-"}, Kelas ${this.studentKelas || "-"})</p>
+          <p class="err-chip" style="background:var(--ddd-theme-polaris-surface-hover, var(--ddd-theme-default-white, #ffffff));border-color:var(--ddd-theme-primary, var(--ddd-primary-1, #1e407c));color:var(--ddd-theme-primary, var(--ddd-primary-1, #1e407c));">ℹ️ Siswa: ${this.studentName || "-"} (NIS ${this.studentNis || "-"}, Kelas ${this.studentKelas || "-"})</p>
           ${this.mode === "guru" && !this.hidePauseRestart
-            ? html`<button class="btn-start" style="background-color:var(--ddd-theme-secondary);" @click=${() => {
+            ? html`<button class="btn-start" style="background-color:var(--ddd-theme-secondary, rgba(0, 0, 0, 0.75));" @click=${() => {
                 this._screen = "start";
                 this.requestUpdate();
               }}>Ulangi Kuis</button>`
@@ -2243,7 +2289,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     const qType = s.type || "mc";
     return html`
       <div class="quiz-card">
-        <div style="display:flex; justify-content:space-between; font-size:12px; font-weight:bold; color:var(--ddd-theme-secondary); margin-bottom:10px;">
+        <div style="display:flex; justify-content:space-between; font-size:12px; font-weight:bold; color:var(--ddd-theme-secondary, rgba(0, 0, 0, 0.75)); margin-bottom:10px;">
           <span>Soal ${this._currentIdx + 1} dari ${active.length}</span>
           ${this.hideScore ? "" : html`<span>Skor Berjalan: ${this._score}</span>`}
         </div>
@@ -2627,7 +2673,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
           <h3 class="quiz-title" style="margin-bottom:8px;">✏️ Edit Soal</h3>
           <div style="display:flex;gap:8px;">
             <button class="btn-edit-soal" style="margin:0;" @click=${this._cancelAll}>Batal</button>
-            <button class="btn-edit-soal" style="margin:0;background-color:var(--ddd-theme-success);" @click=${this._saveAll}>💾 Simpan</button>
+            <button class="btn-edit-soal" style="margin:0;background-color:var(--ddd-theme-success, var(--ddd-theme-default-success, #1e4620));" @click=${this._saveAll}>💾 Simpan</button>
           </div>
         </header>
 
@@ -2643,12 +2689,12 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
               <input type="text" class="editor-input" style="flex:1;min-width:160px;"
                 placeholder="URL gambar soal (opsional)" .value=${this._tempQuestionImage}
                 @input=${(e) => { this._tempQuestionImage = e.target.value; }}>
-              <label style="font-size:12px;color:var(--ddd-theme-secondary);white-space:nowrap;">Poin:</label>
+              <label style="font-size:12px;color:var(--ddd-theme-secondary, rgba(0, 0, 0, 0.75));white-space:nowrap;">Poin:</label>
               <input type="number" min="1" class="editor-input" style="width:60px;text-align:center;"
                 .value=${this._tempQuestionPoints} @input=${(e) => { this._tempQuestionPoints = parseInt(e.target.value, 10) || 1; }}>
             </div>
             ${this._tempQuestionImage
-              ? html`<div style="text-align:center;margin:8px 0;"><img src=${this._tempQuestionImage} style="max-width:200px;border-radius:6px;border:1px solid var(--ddd-theme-polaris-border);" alt="Pratinjau gambar soal" /></div>`
+              ? html`<div style="text-align:center;margin:8px 0;"><img src=${this._tempQuestionImage} style="max-width:200px;border-radius:6px;border:1px solid var(--ddd-theme-polaris-border, var(--ddd-theme-default-limestoneLight, #e4e5e7));" alt="Pratinjau gambar soal" /></div>`
               : ""}
 
             <textarea class="question-text-input" .value=${this._tempQuestionText}
@@ -2678,7 +2724,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
                       <input type="text" class="editor-input" style="flex:1;min-width:160px;"
                         placeholder="URL gambar soal" .value=${this._tempQuestionImage}
                         @input=${(e) => { this._tempQuestionImage = e.target.value; }}>
-                      <label style="font-size:12px;color:var(--ddd-theme-secondary);white-space:nowrap;">Poin:</label>
+                      <label style="font-size:12px;color:var(--ddd-theme-secondary, rgba(0, 0, 0, 0.75));white-space:nowrap;">Poin:</label>
                       <input type="number" min="1" class="editor-input" style="width:60px;text-align:center;"
                         .value=${this._tempQuestionPoints} @input=${(e) => { this._tempQuestionPoints = parseInt(e.target.value, 10) || 1; }}>
                     </div>
@@ -2691,19 +2737,19 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
                     ${this._tempQuestionType === "shortAnswer" ? this._renderEditorShortAnswer() : ""}
                     <div style="display:flex;gap:8px;margin-top:8px;">
                       <button type="button" class="btn-submit" @click=${this._saveEditQuestion}>💾 Simpan Perubahan</button>
-                      <button type="button" class="btn-submit" style="background:var(--ddd-theme-secondary);" @click=${this._cancelEditQuestion}>Batal</button>
+                      <button type="button" class="btn-submit" style="background:var(--ddd-theme-secondary, rgba(0, 0, 0, 0.75));" @click=${this._cancelEditQuestion}>Batal</button>
                     </div>
                   </div>
                 ` : html`
                   <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;">
                     <div>
-                      <strong style="color:var(--ddd-theme-primary);">[${(question.type || "mc").toUpperCase()}]</strong> ${question.question}
-                      ${question.image ? html`<span style="font-size:11px;color:var(--ddd-theme-secondary);">[gambar]</span>` : ""}
-                      <span style="font-size:11px;color:var(--ddd-theme-success);font-weight:bold;">[${question.points || 1} poin]</span>
+                      <strong style="color:var(--ddd-theme-primary, var(--ddd-primary-1, #1e407c));">[${(question.type || "mc").toUpperCase()}]</strong> ${question.question}
+                      ${question.image ? html`<span style="font-size:11px;color:var(--ddd-theme-secondary, rgba(0, 0, 0, 0.75));">[gambar]</span>` : ""}
+                      <span style="font-size:11px;color:var(--ddd-theme-success, var(--ddd-theme-default-success, #1e4620));font-weight:bold;">[${question.points || 1} poin]</span>
                     </div>
                     <div style="display:flex;gap:6px;">
                       <button class="btn-edit-soal" style="margin:0;padding:4px 10px;" @click=${() => this._startEditQuestion(index)}>✏️ Edit</button>
-                      <button class="btn-edit-soal" style="margin:0;padding:4px 10px;background-color:var(--ddd-theme-error);" @click=${() => this._deleteQuestion(index)}>🗑️</button>
+                      <button class="btn-edit-soal" style="margin:0;padding:4px 10px;background-color:var(--ddd-theme-error, var(--ddd-theme-default-error, #5f2120));" @click=${() => this._deleteQuestion(index)}>🗑️</button>
                     </div>
                   </div>
                 `}
@@ -2756,8 +2802,8 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
         `)}
       </div>
       ${this._tempCorrectAnswers.length <= 1
-        ? html`<div style="font-size:11px;color:var(--ddd-theme-secondary);margin-top:4px;">Centang 1 jawaban benar. Centang lebih dari 1 untuk mode PG Kompleks.</div>`
-        : html`<div style="font-size:11px;color:var(--ddd-theme-primary);margin-top:4px;font-weight:bold;">Mode PG Kompleks: ${this._tempCorrectAnswers.length} jawaban benar dipilih</div>`}
+        ? html`<div style="font-size:11px;color:var(--ddd-theme-secondary, rgba(0, 0, 0, 0.75));margin-top:4px;">Centang 1 jawaban benar. Centang lebih dari 1 untuk mode PG Kompleks.</div>`
+        : html`<div style="font-size:11px;color:var(--ddd-theme-primary, var(--ddd-primary-1, #1e407c));margin-top:4px;font-weight:bold;">Mode PG Kompleks: ${this._tempCorrectAnswers.length} jawaban benar dipilih</div>`}
     `;
   }
 
@@ -2793,13 +2839,13 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
               }} />
             Salah
           </label>
-          <button type="button" style="font-size:11px;padding:2px 8px;border-radius:4px;border:1px solid var(--ddd-theme-polaris-border);cursor:pointer;background:var(--ddd-theme-error-light);color:var(--ddd-theme-error);"
+          <button type="button" style="font-size:11px;padding:2px 8px;border-radius:4px;border:1px solid var(--ddd-theme-polaris-border, var(--ddd-theme-default-limestoneLight, #e4e5e7));cursor:pointer;background:var(--ddd-theme-error-light, var(--ddd-theme-default-errorLight, #fdeded));color:var(--ddd-theme-error, var(--ddd-theme-default-error, #5f2120));"
             @click=${() => {
               this._tempStatements = this._tempStatements.filter((_, j) => j !== i);
             }}>🗑️</button>
         </div>
       `)}
-      <button type="button" style="font-size:11px;margin-top:4px;padding:2px 8px;border-radius:4px;border:1px solid var(--ddd-theme-polaris-border);cursor:pointer;"
+      <button type="button" style="font-size:11px;margin-top:4px;padding:2px 8px;border-radius:4px;border:1px solid var(--ddd-theme-polaris-border, var(--ddd-theme-default-limestoneLight, #e4e5e7));cursor:pointer;"
         @click=${() => { this._tempStatements = [...this._tempStatements, { text: "", answer: true }]; }}>➕ Tambah Pernyataan</button>
     </div>`;
   }
@@ -2816,7 +2862,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
               .value=${item} @input=${(e) => { const a = [...this._tempLeftItems]; a[i] = e.target.value; this._tempLeftItems = a; }}
               placeholder="Item ${i + 1}">
           `)}
-          <button type="button" style="font-size:11px;margin-top:4px;padding:2px 8px;border-radius:4px;border:1px solid var(--ddd-theme-polaris-border);cursor:pointer;"
+          <button type="button" style="font-size:11px;margin-top:4px;padding:2px 8px;border-radius:4px;border:1px solid var(--ddd-theme-polaris-border, var(--ddd-theme-default-limestoneLight, #e4e5e7));cursor:pointer;"
             @click=${() => { this._tempLeftItems = [...this._tempLeftItems, ""]; }}>+ Tambah</button>
         </div>
         <div style="flex:1;min-width:200px;">
@@ -2826,7 +2872,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
               .value=${item} @input=${(e) => { const a = [...this._tempRightItems]; a[i] = e.target.value; this._tempRightItems = a; }}
               placeholder="Item ${String.fromCharCode(65 + i)}">
           `)}
-          <button type="button" style="font-size:11px;margin-top:4px;padding:2px 8px;border-radius:4px;border:1px solid var(--ddd-theme-polaris-border);cursor:pointer;"
+          <button type="button" style="font-size:11px;margin-top:4px;padding:2px 8px;border-radius:4px;border:1px solid var(--ddd-theme-polaris-border, var(--ddd-theme-default-limestoneLight, #e4e5e7));cursor:pointer;"
             @click=${() => {
               const a = [...this._tempRightItems, ""];
               this._tempRightItems = a;
@@ -2854,7 +2900,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
             </div>
           `;
         })}
-        <button type="button" style="font-size:11px;margin-top:4px;padding:2px 8px;border-radius:4px;border:1px solid var(--ddd-theme-polaris-border);cursor:pointer;"
+        <button type="button" style="font-size:11px;margin-top:4px;padding:2px 8px;border-radius:4px;border:1px solid var(--ddd-theme-polaris-border, var(--ddd-theme-default-limestoneLight, #e4e5e7));cursor:pointer;"
           @click=${() => {
             const pairs = {};
             leftItems.forEach((_, i) => { pairs[i] = i < rightItems.length ? i : 0; });

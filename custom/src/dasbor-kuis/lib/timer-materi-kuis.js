@@ -279,7 +279,7 @@ export class TimerMateriKuis extends I18NMixin(DDDSuper(LitElement)) {
         .done { margin-top: var(--ddd-spacing-2); color: var(--ddd-theme-error); font-size: var(--ddd-font-size-s); }
       `,
       css`
-        @media (prefers-color-scheme: dark) {
+  a      @media (prefers-color-scheme: dark) {
           :host {
             --ddd-theme-background: #0b1020;
             --ddd-theme-color: #e5e7eb;

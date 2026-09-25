@@ -2535,7 +2535,7 @@
                   "name": "e"
                 }
               ],
-              "description": "Keyboard navigation handler for accessibility.\r\nSupports:\r\n- Arrow Left/Right: Navigate between questions\r\n- Enter: Submit answer (for short answer, PGK, matching)\r\n- Number keys 1-9: Jump to question number"
+              "description": "Keyboard navigation handler for accessibility.\nSupports:\n- Arrow Left/Right: Navigate between questions\n- Enter: Submit answer (for short answer, PGK, matching)\n- Number keys 1-9: Jump to question number"
             },
             {
               "kind": "method",
@@ -2649,7 +2649,7 @@
             {
               "kind": "method",
               "name": "_buatSessionToken",
-              "description": "Buat token sesi unik menggunakan crypto.getRandomValues.\r\nToken disimpan di localStorage dan dikirim ke backend untuk validasi."
+              "description": "Buat token sesi unik menggunakan crypto.getRandomValues.\nToken disimpan di localStorage dan dikirim ke backend untuk validasi."
             },
             {
               "kind": "method",
@@ -2666,7 +2666,7 @@
             {
               "kind": "method",
               "name": "_cekSesiAktif",
-              "description": "Validasi sesi: jika ada token aktif yang belum kedaluwarsa,\r\nhambat pembukaan sesi baru (anti-multi-login)."
+              "description": "Validasi sesi: jika ada token aktif yang belum kedaluwarsa,\nhambat pembukaan sesi baru (anti-multi-login)."
             },
             {
               "kind": "method",
@@ -3097,7 +3097,7 @@
               "type": {
                 "text": "array"
               },
-              "default": "undefined",
+              "default": "[ { q: \"Apa kegunaan utama metode connectedCallback pada LitElement?\", a: \"Menginisialisasi nilai variabel dasar\", b: \"Mendeteksi elemen saat berhasil diinjeksikan ke struktur DOM\", c: \"Menghapus event listener global\", k: \"b\" }, { q: \"Bagaimana cara mencegah timeout 6 menit pada Google Apps Script?\", a: \"Menggunakan penulisan masal berbasis batch I/O\", b: \"Menulis ke banyak sheet terpisah\", c: \"Memperbanyak rumus formula cell\", k: \"a\" } ]",
               "attribute": "questions",
               "reflects": true
             },
@@ -3895,7 +3895,7 @@
               "type": {
                 "text": "array"
               },
-              "default": "undefined",
+              "default": "DEFAULT_QUESTIONS",
               "fieldName": "questions"
             },
             {
@@ -4495,7 +4495,7 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "`latihan-kuis`\r\n\r\nHalaman contoh latihan terpandu: materi → kuis berwaktu → pesan \"nilai\r\nterkirim\". Menyatukan <kuis-ledakan> (kuis yang ada) dan <timer-kuis>\r\n(hitung mundur). Saat waktu habis (event `timer-kuis-expired`), kuis\r\ndikunci otomatis (`_selesaiKuis`) lalu materi & kuis disembunyikan dan\r\nditampilkan pesan \"Selamat! Nilai sudah terkirim\".\r\n\r\nNilai dikirim ke Google Apps Script (`apps-script-url`) oleh <kuis-ledakan>\r\nlewat action=logActivity, sehingga tercatat di Google Spreadsheet.",
+          "description": "`latihan-kuis`\n\nHalaman contoh latihan terpandu: materi → kuis berwaktu → pesan \"nilai\nterkirim\". Menyatukan <kuis-ledakan> (kuis yang ada) dan <timer-kuis>\n(hitung mundur). Saat waktu habis (event `timer-kuis-expired`), kuis\ndikunci otomatis (`_selesaiKuis`) lalu materi & kuis disembunyikan dan\nditampilkan pesan \"Selamat! Nilai sudah terkirim\".\n\nNilai dikirim ke Google Apps Script (`apps-script-url`) oleh <kuis-ledakan>\nlewat action=logActivity, sehingga tercatat di Google Spreadsheet.",
           "name": "LatihanKuis",
           "members": [
             {
@@ -4513,6 +4513,18 @@
                 }
               ],
               "description": "Route anti-cheat events from the module to host state + side effects."
+            },
+            {
+              "kind": "method",
+              "name": "_onVisibilityChange"
+            },
+            {
+              "kind": "method",
+              "name": "_cekThresholdCurang"
+            },
+            {
+              "kind": "method",
+              "name": "_logSelesaiKuis"
             },
             {
               "kind": "method",
@@ -4609,6 +4621,35 @@
               "kind": "method",
               "name": "_muatStatusKuis",
               "description": "T: muat status kuis dari sheet (pernah ikut + nilai terbaik) via getQuizLock."
+            },
+            {
+              "kind": "method",
+              "name": "_reviewSnapshotFromChild",
+              "parameters": [
+                {
+                  "name": "kuis"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_restoreReview"
+            },
+            {
+              "kind": "method",
+              "name": "_fireConfetti"
+            },
+            {
+              "kind": "method",
+              "name": "_startReviewMode"
+            },
+            {
+              "kind": "method",
+              "name": "_closeReviewMode"
+            },
+            {
+              "kind": "method",
+              "name": "_ulangiKuisDenganKonfeti"
             },
             {
               "kind": "method",
@@ -5437,6 +5478,26 @@
             },
             {
               "kind": "field",
+              "name": "_showReview",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "_showReview"
+            },
+            {
+              "kind": "field",
+              "name": "_reviewSnapshot",
+              "privacy": "public",
+              "type": {
+                "text": "null"
+              },
+              "default": "null",
+              "attribute": "_reviewSnapshot"
+            },
+            {
+              "kind": "field",
               "name": "_antiCheat",
               "default": "new AntiCheatQuiz(this, { tabSwitchThreshold: this.tabSwitchThreshold })"
             },
@@ -6019,6 +6080,22 @@
               },
               "default": "\"\"",
               "fieldName": "_sessionLogged"
+            },
+            {
+              "name": "_showReview",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "_showReview"
+            },
+            {
+              "name": "_reviewSnapshot",
+              "type": {
+                "text": "null"
+              },
+              "default": "null",
+              "fieldName": "_reviewSnapshot"
             }
           ],
           "mixins": [
@@ -6226,6 +6303,31 @@
           "members": [
             {
               "kind": "method",
+              "name": "getAnswerTime"
+            },
+            {
+              "kind": "method",
+              "name": "resetQuestionTimer"
+            },
+            {
+              "kind": "method",
+              "name": "isSuspiciousTiming",
+              "parameters": [
+                {
+                  "name": "answerTime"
+                },
+                {
+                  "name": "minTime",
+                  "default": "3000"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "getTimingData"
+            },
+            {
+              "kind": "method",
               "name": "calculateScore",
               "parameters": [
                 {
@@ -6255,6 +6357,14 @@
               "kind": "field",
               "name": "_host",
               "default": "host"
+            },
+            {
+              "kind": "field",
+              "name": "_questionStartTime",
+              "type": {
+                "text": "null"
+              },
+              "default": "null"
             }
           ]
         }
@@ -6324,6 +6434,10 @@
                 },
                 {
                   "name": "params"
+                },
+                {
+                  "name": "{ maxAttempts = 3 }",
+                  "default": "{}"
                 }
               ]
             },

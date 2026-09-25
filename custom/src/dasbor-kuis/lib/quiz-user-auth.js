@@ -143,32 +143,51 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
     }
   }
 
-  // ---------- API ----------
-  async _api(action, params) {
-    const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), 60000);
-    const qs = new URLSearchParams(params);
-    try {
-      const res = await fetch(`${this.appsScriptUrl}?action=${action}&${qs.toString()}`, {
-        redirect: "follow",
-        signal: controller.signal,
-      });
-      if (!res.ok) {
-        throw new Error(`Backend merespons HTTP ${res.status}.`);
+  // ---------- API (retry + exponential backoff) ----------
+  async _api(action, params, { maxAttempts = 3 } = {}) {
+    const backoffs = [200, 400, 800];
+    let attempt = 0;
+    let lastError = null;
+    while (attempt < maxAttempts) {
+      attempt++;
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), 60000);
+      const qs = new URLSearchParams(params);
+      try {
+        if (attempt > 1) {
+          console.log("retry", attempt);
+        }
+        this._loading = true;
+        const res = await fetch(`${this.appsScriptUrl}?action=${action}&${qs.toString()}`, {
+          redirect: "follow",
+          signal: controller.signal,
+        });
+        if (!res.ok) {
+          throw new Error(`Backend merespons HTTP ${res.status}.`);
+        }
+        const teks = await res.text();
+        if (!teks || teks.trim().charAt(0) !== "{") {
+          throw new Error("Respon backend bukan JSON. Periksa URL /exec & deployment.");
+        }
+        this._loading = false;
+        return JSON.parse(teks);
+      } catch (e) {
+        if (e && e.name === "AbortError") {
+          lastError = new Error("Waktu habis (timeout 60 detik) menghubungi server.");
+        } else {
+          lastError = e;
+        }
+        console.log(`retry ${attempt} gagal (${lastError.message || lastError})`);
+        if (attempt < maxAttempts) {
+          const delay = backoffs[Math.min(attempt - 1, backoffs.length - 1)];
+          await new Promise((r) => setTimeout(r, delay));
+        }
+      } finally {
+        clearTimeout(timer);
       }
-      const teks = await res.text();
-      if (!teks || teks.trim().charAt(0) !== "{") {
-        throw new Error("Respon backend bukan JSON. Periksa URL /exec & deployment.");
-      }
-      return JSON.parse(teks);
-    } catch (e) {
-      if (e && e.name === "AbortError") {
-        throw new Error("Waktu habis (timeout 60 detik) menghubungi server.");
-      }
-      throw e;
-    } finally {
-      clearTimeout(timer);
     }
+    this._loading = false;
+    throw lastError;
   }
 
   _ekstrakOk(payload) {
@@ -388,12 +407,14 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
           display: block;
           margin-bottom: var(--ddd-spacing-4);
           font-family: var(--ddd-font-primary, 'DM Sans', system-ui, sans-serif);
+          background: var(--dk-bg, #ffffff);
+          color: var(--dk-text, #1e293b);
         }
 
         /* ===== Chalkboard-inspired design tokens ===== */
         .auth-card {
-          background: linear-gradient(155deg, var(--ddd-theme-polaris-surface), var(--ddd-theme-default-surface));
-          border: 1px solid var(--ddd-theme-polaris-border);
+          background: linear-gradient(155deg, var(--ddd-theme-polaris-surface, var(--ddd-theme-default-white, #ffffff)), var(--ddd-theme-default-surface, var(--ddd-theme-default-background, #f8fafc)));
+          border: 1px solid var(--ddd-theme-polaris-border, var(--ddd-theme-default-limestoneLight, #e4e5e7));
           border-radius: 12px;
           padding: var(--ddd-spacing-6, 32px);
           max-width: 420px;
@@ -408,11 +429,11 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
           position: absolute;
           top: 0; left: 0; right: 0;
           height: 2px;
-          background: linear-gradient(90deg, transparent, var(--ddd-theme-warning), transparent);
+          background: linear-gradient(90deg, transparent, var(--ddd-theme-warning, var(--ddd-theme-default-warning, #663c00)), transparent);
           opacity: 0.7;
         }
         h2 {
-          color: var(--ddd-theme-default-text);
+          color: var(--ddd-theme-default-text, var(--ddd-theme-default-coalyGray, #1e293b));
           font-family: var(--ddd-font-primary);
           font-size: var(--ddd-font-size-l, 26px);
           margin: 0 0 var(--ddd-spacing-2, 8px) 0;
@@ -422,12 +443,12 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
         h2 .auth-icon {
           display: inline-block;
           margin-right: 8px;
-          color: var(--ddd-theme-warning);
+          color: var(--ddd-theme-warning, var(--ddd-theme-default-warning, #663c00));
           font-size: 1.25em;
           vertical-align: -0.12em;
         }
         .subtitle {
-          color: var(--ddd-theme-secondary);
+          color: var(--ddd-theme-secondary, rgba(0, 0, 0, 0.75));
           font-size: var(--ddd-font-size-4xs, 14px);
           text-align: center;
           margin-bottom: var(--ddd-spacing-4, 20px);
@@ -453,13 +474,13 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
         .field input {
           width: 100%;
           padding: 12px 14px;
-          border: 1px solid var(--ddd-theme-input-border);
+          border: 1px solid var(--ddd-theme-input-border, var(--ddd-theme-default-limestoneLight, #e4e5e7));
           border-radius: 6px;
           font-size: 15px;
           font-family: var(--ddd-font-primary);
           box-sizing: border-box;
           background: rgba(255,255,255,0.06);
-          color: var(--ddd-theme-default-text);
+          color: var(--ddd-theme-default-text, var(--ddd-theme-default-coalyGray, #1e293b));
           transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
         }
         .field input::placeholder {
@@ -467,7 +488,7 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
         }
         .field input:focus {
           outline: none;
-          border-color: var(--ddd-theme-warning);
+          border-color: var(--ddd-theme-warning, var(--ddd-theme-default-warning, #663c00));
           background: rgba(255,255,255,0.09);
           box-shadow: 0 0 0 3px rgba(240, 192, 64, 0.12);
         }
@@ -481,8 +502,8 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
           cursor: pointer;
           font-family: var(--ddd-font-primary);
           margin-top: var(--ddd-spacing-2, 8px);
-          background: linear-gradient(120deg, var(--ddd-theme-warning), var(--ddd-theme-accent));
-          color: var(--ddd-theme-on-primary);
+          background: linear-gradient(120deg, var(--ddd-theme-warning, var(--ddd-theme-default-warning, #663c00)), var(--ddd-theme-accent, var(--ddd-accent-0, #96bee6)));
+          color: var(--ddd-theme-on-primary, var(--ddd-theme-bgContrast, var(--lowContrast-override, #ffffff)));
           transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
           box-shadow: 0 8px 20px -6px rgba(240, 192, 64, 0.4);
         }
@@ -502,7 +523,7 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
         .btn-link {
           background: none;
           border: none;
-          color: var(--ddd-theme-warning);
+          color: var(--ddd-theme-warning, var(--ddd-theme-default-warning, #663c00));
           font-size: var(--ddd-font-size-4xs, 14px);
           text-decoration: none;
           margin-top: var(--ddd-spacing-3, 12px);
@@ -523,15 +544,15 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
         }
         .msg-error {
           background: rgba(239, 68, 68, 0.12);
-          color: var(--ddd-theme-error);
+          color: var(--ddd-theme-error, var(--ddd-theme-default-error, #5f2120));
           border: 1px solid rgba(239, 68, 68, 0.25);
-          border-left: 3px solid var(--ddd-theme-error);
+          border-left: 3px solid var(--ddd-theme-error, var(--ddd-theme-default-error, #5f2120));
         }
         .msg-success {
           background: rgba(34, 197, 94, 0.12);
-          color: var(--ddd-theme-success);
+          color: var(--ddd-theme-success, var(--ddd-theme-default-success, #1e4620));
           border: 1px solid rgba(34, 197, 94, 0.25);
-          border-left: 3px solid var(--ddd-theme-success);
+          border-left: 3px solid var(--ddd-theme-success, var(--ddd-theme-default-success, #1e4620));
         }
         .user-bar {
           display: flex;
@@ -558,8 +579,8 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
           height: 44px;
           flex-shrink: 0;
           border-radius: 50%;
-          background: linear-gradient(120deg, var(--ddd-theme-warning), var(--ddd-theme-accent));
-          color: var(--ddd-theme-on-primary);
+          background: linear-gradient(120deg, var(--ddd-theme-warning, var(--ddd-theme-default-warning, #663c00)), var(--ddd-theme-accent, var(--ddd-accent-0, #96bee6)));
+          color: var(--ddd-theme-on-primary, var(--ddd-theme-bgContrast, var(--lowContrast-override, #ffffff)));
           display: flex;
           align-items: center;
           justify-content: center;
@@ -570,21 +591,21 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
         .user-name {
           font-weight: 600;
           font-size: var(--ddd-font-size-4xs, 15px);
-          color: var(--ddd-theme-default-text);
+          color: var(--ddd-theme-default-text, var(--ddd-theme-default-coalyGray, #1e293b));
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
         }
         .user-email {
           font-size: var(--ddd-font-size-4xs, 13px);
-          color: var(--ddd-theme-secondary);
+          color: var(--ddd-theme-secondary, rgba(0, 0, 0, 0.75));
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
         }
         .user-meta {
           font-size: var(--ddd-font-size-4xs, 12px);
-          color: var(--ddd-theme-secondary);
+          color: var(--ddd-theme-secondary, rgba(0, 0, 0, 0.75));
           margin-top: 4px;
           overflow: hidden;
           text-overflow: ellipsis;
@@ -593,7 +614,7 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
         .logout-btn {
           padding: 10px 16px;
           border: 1px solid rgba(239, 68, 68, 0.4);
-          color: var(--ddd-theme-error);
+          color: var(--ddd-theme-error, var(--ddd-theme-default-error, #5f2120));
           background: transparent;
           border-radius: 6px;
           font-size: 13px;
@@ -615,7 +636,7 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
         .check-btn {
           padding: 10px 16px;
           border: 1px solid rgba(240, 192, 64, 0.4);
-          color: var(--ddd-theme-warning);
+          color: var(--ddd-theme-warning, var(--ddd-theme-default-warning, #663c00));
           background: transparent;
           border-radius: 6px;
           font-size: 13px;
@@ -631,13 +652,13 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
         .verify-note {
           margin-top: 8px;
           font-size: var(--ddd-font-size-4xs, 12px);
-          color: var(--ddd-theme-warning);
+          color: var(--ddd-theme-warning, var(--ddd-theme-default-warning, #663c00));
           line-height: 1.4;
         }
         .loading {
           text-align: center;
           padding: var(--ddd-spacing-8, 32px);
-          color: var(--ddd-theme-warning);
+          color: var(--ddd-theme-warning, var(--ddd-theme-default-warning, #663c00));
           font-size: 15px;
         }
         .loading::before {
@@ -647,7 +668,7 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
           height: 14px;
           margin-right: 8px;
           border: 2px solid rgba(240, 192, 64, 0.3);
-          border-top-color: var(--ddd-theme-warning);
+          border-top-color: var(--ddd-theme-warning, var(--ddd-theme-default-warning, #663c00));
           border-radius: 50%;
           vertical-align: -2px;
           animation: spin 0.8s linear infinite;
@@ -696,7 +717,7 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
         :host-context(body.dark-mode) .field input {
           background: rgba(255,255,255,0.05);
           border-color: rgba(229, 231, 235, 0.15);
-          color: var(--ddd-theme-default-text);
+          color: var(--ddd-theme-default-text, var(--ddd-theme-default-coalyGray, #1e293b));
         }
         :host-context(body.dark-mode) select {
           background: rgba(255,255,255,0.05);
@@ -707,13 +728,13 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
           color: rgba(229, 231, 235, 0.25);
         }
         :host-context(body.dark-mode) .field input:focus {
-          border-color: var(--ddd-theme-primary);
+          border-color: var(--ddd-theme-primary, var(--ddd-primary-1, #1e407c));
           background: rgba(255,255,255,0.08);
           box-shadow: 0 0 0 3px rgba(196, 181, 253, 0.15);
         }
         :host-context(body.dark-mode) .btn {
-          background: linear-gradient(120deg, var(--ddd-theme-primary), var(--ddd-theme-accent));
-          color: var(--ddd-theme-on-primary);
+          background: linear-gradient(120deg, var(--ddd-theme-primary, var(--ddd-primary-1, #1e407c)), var(--ddd-theme-accent, var(--ddd-accent-0, #96bee6)));
+          color: var(--ddd-theme-on-primary, var(--ddd-theme-bgContrast, var(--lowContrast-override, #ffffff)));
           box-shadow: 0 8px 20px -6px rgba(129, 140, 248, 0.4);
         }
         :host-context(body.dark-mode) .btn:hover {
@@ -721,54 +742,54 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
           box-shadow: 0 12px 24px -6px rgba(129, 140, 248, 0.5);
         }
         :host-context(body.dark-mode) .btn-link {
-          color: var(--ddd-theme-primary);
+          color: var(--ddd-theme-primary, var(--ddd-primary-1, #1e407c));
         }
         :host-context(body.dark-mode) .btn-link:hover {
-          color: var(--ddd-theme-accent);
+          color: var(--ddd-theme-accent, var(--ddd-accent-0, #96bee6));
         }
         :host-context(body.dark-mode) .msg-error {
           background: rgba(239, 68, 68, 0.12);
-          color: var(--ddd-theme-error-text);
-          border-left-color: var(--ddd-theme-error);
+          color: var(--ddd-theme-error-text, var(--ddd-theme-default-error, #5f2120));
+          border-left-color: var(--ddd-theme-error, var(--ddd-theme-default-error, #5f2120));
         }
         :host-context(body.dark-mode) .msg-success {
           background: rgba(34, 197, 94, 0.12);
-          color: var(--ddd-theme-success-text);
-          border-left-color: var(--ddd-theme-success);
+          color: var(--ddd-theme-success-text, var(--ddd-theme-default-success, #1e4620));
+          border-left-color: var(--ddd-theme-success, var(--ddd-theme-default-success, #1e4620));
         }
         :host-context(body.dark-mode) .user-bar {
           background: rgba(255,255,255,0.05);
           border-color: rgba(229, 231, 235, 0.12);
         }
         :host-context(body.dark-mode) .user-name {
-          color: var(--ddd-theme-default-text);
+          color: var(--ddd-theme-default-text, var(--ddd-theme-default-coalyGray, #1e293b));
         }
         :host-context(body.dark-mode) .user-email,
         :host-context(body.dark-mode) .user-meta {
-          color: var(--ddd-theme-secondary);
+          color: var(--ddd-theme-secondary, rgba(229, 231, 235, 0.65));
         }
         :host-context(body.dark-mode) .avatar {
-          background: linear-gradient(120deg, var(--ddd-theme-primary), var(--ddd-theme-accent));
-          color: var(--ddd-theme-on-primary);
+          background: linear-gradient(120deg, var(--ddd-theme-primary, var(--ddd-primary-1, #1e407c)), var(--ddd-theme-accent, var(--ddd-accent-0, #96bee6)));
+          color: var(--ddd-theme-on-primary, var(--ddd-theme-bgContrast, var(--lowContrast-override, #ffffff)));
         }
         :host-context(body.dark-mode) .logout-btn {
           border-color: rgba(239, 68, 68, 0.4);
-          color: var(--ddd-theme-error);
+          color: var(--ddd-theme-error, var(--ddd-theme-default-error, #5f2120));
         }
         :host-context(body.dark-mode) .logout-btn:hover {
           background: rgba(239, 68, 68, 0.15);
-          color: var(--ddd-theme-error);
+          color: var(--ddd-theme-error, var(--ddd-theme-default-error, #5f2120));
         }
         :host-context(body.dark-mode) .check-btn {
           border-color: rgba(196, 181, 253, 0.4);
-          color: var(--ddd-theme-primary);
+          color: var(--ddd-theme-primary, var(--ddd-primary-1, #1e407c));
         }
         :host-context(body.dark-mode) .check-btn:hover {
           background: rgba(196, 181, 253, 0.12);
-          color: var(--ddd-theme-accent);
+          color: var(--ddd-theme-accent, var(--ddd-accent-0, #96bee6));
         }
         :host-context(body.dark-mode) .verify-note {
-          color: var(--ddd-theme-warning);
+          color: var(--ddd-theme-warning, var(--ddd-theme-default-warning, #663c00));
         }
         :host-context(body.dark-mode) .loading {
           color: #c4b5fd;
@@ -854,7 +875,7 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
                 </div>
                 <div class="field">
                   <label>Peran</label>
-                  <select .value=${this._role} @change=${(e) => (this._role = e.target.value)} style="width:100%;padding:12px 14px;border:1px solid var(--ddd-theme-input-border);border-radius:6px;font-size:15px;font-family:var(--ddd-font-primary);box-sizing:border-box;background:rgba(255,255,255,0.06);color:var(--ddd-theme-default-text);cursor:pointer;">
+                  <select .value=${this._role} @change=${(e) => (this._role = e.target.value)} style="width:100%;padding:12px 14px;border:1px solid var(--ddd-theme-input-border, var(--ddd-theme-default-limestoneLight, #e4e5e7));border-radius:6px;font-size:15px;font-family:var(--ddd-font-primary);box-sizing:border-box;background:rgba(255,255,255,0.06);color:var(--ddd-theme-default-text, var(--ddd-theme-default-coalyGray, #1e293b));cursor:pointer;">
                     <option value="siswa" ?selected=${this._role !== "guru"}>Siswa</option>
                     <option value="guru" ?selected=${this._role === "guru"}>Guru</option>
                   </select>
