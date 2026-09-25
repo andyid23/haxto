@@ -42,6 +42,10 @@ Langkah 4: Studi Kasus Lengkap (Mengumpulkan Data Cuaca)
 
 Berikut adalah kode lengkap untuk mengekstrak data prakiraan cuaca dari situs National Weather Service (NWS), menggabungkan teknik `find`, `select`, dan list comprehension.
 
+jika ada error, ganti bagian urlnya menjadi berikut
+
+[https://forecast.weather.gov/MapClick.php?lat=37.7772&amp;lon=-122.4168](https://forecast.weather.gov/MapClick.php?lat=37.7772&lon=-122.4168)
+
 * * *
 
 Langkah 5: Menyusun Data ke dalam Tabel (Pandas DataFrame)

@@ -16,7 +16,7 @@ Berikut adalah materi teknis lengkap berisi kode, langkah-langkah, dan rekomenda
 </images>
 <videos>
 </videos>
-<updated>1790298494</updated>
+<updated>1790299448</updated>
 <published>true</published>
 <hideInMenu>false</hideInMenu>
 <readtime>5</readtime>
@@ -54,6 +54,7 @@ Berikut adalah materi teknis lengkap berisi kode, langkah-langkah, dan rekomenda
 
 
 
+
  <li><strong>beautifulsoup4</strong>: Untuk mengurai (parse) dan mengekstrak data dari HTML.</li>
 
 
@@ -61,7 +62,9 @@ Berikut adalah materi teknis lengkap berisi kode, langkah-langkah, dan rekomenda
 
 
 
+
  <li><strong>pandas</strong>: Untuk menyusun data hasil scraping ke dalam bentuk tabel yang rapi.</li>
+
 
 
 
@@ -162,6 +165,9 @@ temps = [t.get_text() for t in seven_day.select(".tombstone-container .temp")]
 
 # Mengambil atribut 'title' dari tag <img> untuk deskripsi lengkap
 descs = [d["title"] for d in seven_day.select(".tombstone-container img")]</template></code-sample>
+<p>jika ada error, ganti bagian urlnya menjadi berikut</p>
+<p></p>
+<a href="https://forecast.weather.gov/MapClick.php?lat=37.7772&amp;lon=-122.4168">https://forecast.weather.gov/MapClick.php?lat=37.7772&#38;amp;lon=-122.4168</a>
 <p></p>
 <hr/><h2 id="h2--55738011">Langkah 5: Menyusun Data ke dalam Tabel (Pandas DataFrame)</h2>
 <p>Data yang sudah diekstrak dalam bentuk list (daftar) akan jauh lebih berguna jika diubah menjadi tabel.</p>
@@ -190,7 +196,9 @@ print(weather_df.head())
 
 
 
+
 : Selalu cek <code>https://namadomain.com/robots.txt</code> sebelum melakukan scraping. File ini memberi tahu bagian situs mana yang boleh atau tidak boleh diakses oleh bot.</li>
+
 
 
 
@@ -204,7 +212,9 @@ print(weather_df.head())
 
 
 
+
  <li><strong>Sertakan User-Agent yang Jelas</strong>: Server sering memblokir permintaan yang tidak memiliki identitas browser. Menggunakan header <code>User-Agent</code> yang standar adalah praktik baik, dan lebih baik lagi jika Anda menyertakan informasi kontak di header jika melakukan scraping skala besar.</li>
+
 
 
 
@@ -218,6 +228,7 @@ print(weather_df.head())
 
 
 
+
  <li><strong>Siapkan Penanganan Error</strong>: Situs web bisa berubah struktur HTML-nya atau sedang down. Gunakan blok <code>try...except</code> dalam kode Python Anda agar program tidak langsung crash saat terjadi kesalahan.</li>
 
 
@@ -225,7 +236,9 @@ print(weather_df.head())
 
 
 
+
  <li><strong>Gunakan untuk Tujuan Edukasi atau Riset</strong>: Pastikan penggunaan data hasil scraping sesuai dengan ketentuan layanan (Terms of Service) situs web tersebut dan tidak untuk dikomersialkan secara ilegal.</li>
+
 
 
 
@@ -241,7 +254,9 @@ print(weather_df.head())
 
 
 
+
 : Server memblokir Anda. Solusi: Tambahkan header <code>User-Agent</code> seperti pada Langkah 4.</li>
+
 
 
 
@@ -255,7 +270,9 @@ print(weather_df.head())
 
 
 
+
 : URL yang Anda masukkan salah atau halaman telah dipindahkan. Periksa kembali URL di browser.</li>
+
 
 
 
@@ -269,7 +286,9 @@ print(weather_df.head())
 
 
 
+
 : Struktur HTML situs target mungkin telah berubah, atau data dimuat secara dinamis menggunakan JavaScript (untuk kasus ini, BeautifulSoup saja tidak cukup, Anda mungkin perlu mempelajari <code>Selenium</code> atau <code>Playwright</code>).</li>
+
 
 
 
@@ -283,14 +302,15 @@ print(weather_df.head())
 
 
 
+
 </ul>
 <p></p>
 <p></p>
 <latihan-kuis apps-script-url="https://script.google.com/macros/s/AKfycbwDq12BtYxeokfbeCuDnDo-50z0ZL-XAMlXu4fMyZbbV_el4-B-lMbMWznocusKk63D/exec" duration="700" timerautostart="" mode="siswa" allowretake="" soal-file-url="./files/2026-stimulus2b-faseE.json" kategori="formatif" kd-materi="Latihan LM2" hide-answers allow-backward-nav show-question-nav judul-materi="Materi Pembelajaran" teks-materi="Baca materi di bawah ini dengan saksama sebelum mengerjakan kuis. Waktu pengerjaan kuis dibatasi oleh timer; saat waktu habis, kuis akan dikunci dan nilai otomatis terkirim." materi-file="" cover-image="" judul-kuis="Evaluasi Kuis Interaktif" student-id="STD-65108010" student-name="Abi Andy" student-nis="123" student-absen="" student-kelas="XI-1" pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai" allow-retake max-retake="0" hide-pause-restart question-delay="1800" review-answers timer-autostart kkm="75" tab-switch-threshold="3" questions="[{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Apa fungsi utama dari pustaka requests dalam proses web scraping menggunakan Python?&quot;,&quot;hint&quot;:&quot;Fokus pada peran pustaka ini dalam berinteraksi dengan server web untuk mengambil halaman.&quot;,&quot;choices&quot;:[&quot;Menguraikan kode HTML menjadi struktur pohon dokumen&quot;,&quot;Mengirimkan permintaan HTTP untuk mengunduh halaman web&quot;,&quot;Menyimpan data hasil scraping ke dalam database relasional&quot;,&quot;Membuat visualisasi grafik dari data hasil scraping&quot;,&quot;Memblokir akses dari situs web yang tidak diinginkan&quot;],&quot;correctIndex&quot;:1},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Dalam struktur HTML, atribut apa yang paling tepat digunakan untuk mengidentifikasi satu elemen unik di seluruh halaman?&quot;,&quot;hint&quot;:&quot;Atribut ini dirancang secara khusus untuk menjadi pengenal tunggal dan unik bagi sebuah elemen.&quot;,&quot;choices&quot;:[&quot;Tag&quot;,&quot;Class&quot;,&quot;ID&quot;,&quot;Style&quot;,&quot;Href&quot;],&quot;correctIndex&quot;:2},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Metode BeautifulSoup manakah yang digunakan untuk menemukan semua instance dari sebuah tag tertentu di halaman web dan mengembalikannya sebagai daftar (list)?&quot;,&quot;hint&quot;:&quot;Metode ini mencari seluruh kriteria yang cocok, bukan hanya hasil pertama.&quot;,&quot;choices&quot;:[&quot;find()&quot;,&quot;get_text()&quot;,&quot;select_one()&quot;,&quot;find_all()&quot;,&quot;prettify()&quot;],&quot;correctIndex&quot;:3},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Seorang siswa ingin mengambil data harga barang dari sebuah situs e-commerce untuk tugas sekolah. Tindakan berikut yang merupakan praktik web scraping yang baik dan etis adalah...\n(1) Memeriksa file robots.txt situs tersebut sebelum melakukan scraping.\n(2) Mengirimkan ribuan permintaan per detik untuk mempercepat pengambilan data.\n(3) Memberikan jeda waktu (delay) antar permintaan agar tidak membebani server.\n(4) Mengambil data pribadi pengguna seperti nomor telepon dan alamat rumah.&quot;,&quot;hint&quot;:&quot;Praktik etis selalu menghormati aturan pemilik situs dan menjaga agar server tidak terbebankan.&quot;,&quot;choices&quot;:[&quot;(1) dan (2)&quot;,&quot;(1) dan (3)&quot;,&quot;(2) dan (4)&quot;,&quot;(1), (2), dan (3)&quot;,&quot;(2), (3), dan (4)&quot;],&quot;correctIndex&quot;:1},{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Perhatikan kode HTML berikut:\n<div class=\&quot;produk\&quot;><h2 class=\&quot;nama\&quot;>Laptop</h2><p class=\&quot;harga\&quot;>Rp5.000.000</p></div>\n\nPernyataan yang benar mengenai cara mengambil data \&quot;Rp5.000.000\&quot; menggunakan CSS Selector di BeautifulSoup adalah...\n(1) Dapat menggunakan selector .produk .harga\n(2) Dapat menggunakan selector div p\n(3) Harus menggunakan selector #harga karena ini adalah data penting\n(4) Tidak bisa diambil karena data berada di dalam tag <p>&quot;,&quot;hint&quot;:&quot;Cermati hierarki kelas dan tag tempat teks harga tersebut berada.&quot;,&quot;choices&quot;:[&quot;(1) dan (2)&quot;,&quot;(1) dan (3)&quot;,&quot;(2) dan (4)&quot;,&quot;(1), (2), dan (3)&quot;,&quot;(3) dan (4)&quot;],&quot;correctIndex&quot;:0},{&quot;type&quot;:&quot;pgk&quot;,&quot;question&quot;:&quot;Tentukan keabsahan dari pernyataan mengenai keterbukaan format data untuk web scraping berikut!&quot;,&quot;hint&quot;:&quot;Web scraping paling berguna saat data TIDAK tersedia secara terstruktur.&quot;,&quot;statements&quot;:[{&quot;text&quot;:&quot;Web scraping hanya bisa dan berguna dilakukan pada situs web yang sudah menyediakan data dalam format CSV atau API.&quot;,&quot;answer&quot;:false}]},{&quot;type&quot;:&quot;pgk&quot;,&quot;question&quot;:&quot;Tentukan keabsahan dari pernyataan mengenai penggunaan metode pengambil teks pada BeautifulSoup berikut!&quot;,&quot;hint&quot;:&quot;Pahami fungsi metode get_text() terhadap tag HTML pendukung di sekitarnya.&quot;,&quot;statements&quot;:[{&quot;text&quot;:&quot;Metode get_text() pada BeautifulSoup digunakan untuk mengambil teks murni yang berada di dalam tag HTML, tanpa menyertakan kode tag HTML itu sendiri.&quot;,&quot;answer&quot;:true}]},{&quot;type&quot;:&quot;matching&quot;,&quot;question&quot;:&quot;Pasangkan istilah dasar seputar web scraping di lajur kiri dengan deskripsinya yang tepat di lajur kanan!&quot;,&quot;hint&quot;:&quot;Cermati bahasa penyusun web, pustaka parser Python, serta metode pemilih gaya.&quot;,&quot;leftItems&quot;:[&quot;HTML&quot;,&quot;BeautifulSoup&quot;,&quot;CSS Selector&quot;],&quot;rightItems&quot;:[&quot;Bahasa markup standar untuk membuat halaman web.&quot;,&quot;Pustaka Python untuk mengurai dan menavigasi dokumen HTML.&quot;,&quot;Permintaan standar untuk mengambil data dari server.&quot;,&quot;Metode untuk mencari elemen menggunakan pola gaya CSS.&quot;],&quot;correctPairs&quot;:{&quot;0&quot;:0,&quot;1&quot;:1,&quot;2&quot;:3}}]" _attempt-ke="0" _soal-file-url-cache="./files/2026-stimulus2b-faseE.json" _remidi-soal="[]" _tab-switch-count="0" _visibility-change-count="0" _window-blur-count="0" _window-focus-count="0" _warning-count="0"   >
-    <!--    Tombol pemula (opsional, bila timerAutostart=false)    -->
+    <!--     Tombol pemula (opsional, bila timerAutostart=false)     -->
     <button id="btn-mulai" class="btn-mulai">▶️ Mulai Kuis</button>
 
-    
+
   </latihan-kuis>
 ]]></content>
 </item>
