@@ -16,7 +16,7 @@ metadata:
   created: 1790128351
   images: []
   videos: []
-  updated: 1790297367
+  updated: 1790297534
   published: true
   hideInMenu: false
   readtime: 5
@@ -68,12 +68,15 @@ content: >
 
 
 
+
    <li><strong>beautifulsoup4</strong>: Untuk mengurai (parse) dan mengekstrak data dari HTML.</li>
 
 
 
 
+
    <li><strong>pandas</strong>: Untuk menyusun data hasil scraping ke dalam bentuk tabel yang rapi.</li>
+
 
 
 
@@ -181,12 +184,12 @@ content: >
 
   # 3. Menggunakan CSS Selector (lebih fleksibel dan ringkas)
 
-  # Mencari semua tag </p><p> yang berada di dalam tag </p><div>
+  # Mencari semua tag </p><p> yang berada di dalam tag </p>
 
   div_p_elements = soup_kelas.select("div p")
 
   print("\nHasil CSS Selector 'div p':",
-  div_p_elements)</div></template></code-sample>
+  div_p_elements)</template></code-sample>
 
   <p></p>
 
@@ -309,9 +312,11 @@ content: >
 
 
 
+
   : Selalu cek <code>https://namadomain.com/robots.txt</code> sebelum melakukan
   scraping. File ini memberi tahu bagian situs mana yang boleh atau tidak boleh
   diakses oleh bot.</li>
+
 
 
 
@@ -321,7 +326,9 @@ content: >
 
 
 
+
    <li><strong>Sertakan User-Agent yang Jelas</strong>: Server sering memblokir permintaan yang tidak memiliki identitas browser. Menggunakan header <code>User-Agent</code> yang standar adalah praktik baik, dan lebih baik lagi jika Anda menyertakan informasi kontak di header jika melakukan scraping skala besar.</li>
+
 
 
 
@@ -331,12 +338,15 @@ content: >
 
 
 
+
    <li><strong>Siapkan Penanganan Error</strong>: Situs web bisa berubah struktur HTML-nya atau sedang down. Gunakan blok <code>try...except</code> dalam kode Python Anda agar program tidak langsung crash saat terjadi kesalahan.</li>
 
 
 
 
+
    <li><strong>Gunakan untuk Tujuan Edukasi atau Riset</strong>: Pastikan penggunaan data hasil scraping sesuai dengan ketentuan layanan (Terms of Service) situs web tersebut dan tidak untuk dikomersialkan secara ilegal.</li>
+
 
 
 
@@ -351,13 +361,16 @@ content: >
 
 
 
+
   : Server memblokir Anda. Solusi: Tambahkan header <code>User-Agent</code>
   seperti pada Langkah 4.</li>
 
 
 
 
+
    <li><strong>Error <code>404 Not Found</code></strong>
+
 
 
 
@@ -368,7 +381,9 @@ content: >
 
 
 
+
    <li><strong>Hasil scraping kosong (<code>[]</code>)</strong>
+
 
 
 
@@ -381,7 +396,9 @@ content: >
 
 
 
+
    <li><strong>Masalah Encoding</strong>: Jika muncul karakter aneh, tambahkan <code>encoding="utf-8"</code> saat menyimpan ke CSV atau dekode response dengan <code>response.encoding = 'utf-8'</code>.</li>
+
 
 
 
@@ -394,19 +411,19 @@ content: >
 
   <latihan-kuis
   apps-script-url="https://script.google.com/macros/s/AKfycbwDq12BtYxeokfbeCuDnDo-50z0ZL-XAMlXu4fMyZbbV_el4-B-lMbMWznocusKk63D/exec"
-  duration="700" timerautostart mode="siswa" allowretake
+  duration="700" timerautostart="" mode="siswa" allowretake=""
   soal-file-url="./files/2026-stimulus2b-faseE.json" kategori="formatif"
-  kd-materi="Latihan LM2" hide-answers allow-backward-nav show-question-nav 
+  kd-materi="Latihan LM2" hide-answers allow-backward-nav show-question-nav
   judul-materi="Materi Pembelajaran" teks-materi="Baca materi di bawah ini
   dengan saksama sebelum mengerjakan kuis. Waktu pengerjaan kuis dibatasi oleh
-  timer; saat waktu habis, kuis akan dikunci dan nilai otomatis terkirim." 
+  timer; saat waktu habis, kuis akan dikunci dan nilai otomatis terkirim."
   materi-file="" cover-image="" judul-kuis="Evaluasi Kuis Interaktif"
   student-id="STD-65108010" student-name="Abi Andy" student-nis="123"
   student-absen="" student-kelas="XI-1" pesan-waktu-habis="⏰ Waktu habis! Kuis
   dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda
   sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai" allow-retake
   max-retake="0" hide-pause-restart question-delay="1800" review-answers
-  timer-autostart kkm="75"  tab-switch-threshold="3"
+  timer-autostart kkm="75" tab-switch-threshold="3"
   questions="[{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Apa
   fungsi utama dari pustaka requests dalam proses web scraping menggunakan
   Python?&quot;,&quot;hint&quot;:&quot;Fokus pada peran pustaka ini dalam
@@ -475,8 +492,8 @@ content: >
   CSS.&quot;],&quot;correctPairs&quot;:{&quot;0&quot;:0,&quot;1&quot;:1,&quot;2&quot;:3}}]"
   _attempt-ke="0" _soal-file-url-cache="./files/2026-stimulus2b-faseE.json"
   _remidi-soal="[]" _tab-switch-count="0" _visibility-change-count="0"
-  _window-blur-count="0" _window-focus-count="0" _warning-count="0">
-      <!--  Tombol pemula (opsional, bila timerAutostart=false)  -->
+  _window-blur-count="0" _window-focus-count="0" _warning-count="0"   >
+      <!--   Tombol pemula (opsional, bila timerAutostart=false)   -->
       <button id="btn-mulai" class="btn-mulai">▶️ Mulai Kuis</button>
 
       
