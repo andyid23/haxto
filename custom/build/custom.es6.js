@@ -2273,7 +2273,7 @@ ${!i||r?o`<button class="btn-submit" @click=${e.onSubmit}>Kirim Jawaban</button>
 
           /* Kontras Latar Belakang & Teks Utama */
           background-color: light-dark(#ffffff, #1f2937);
-          color: var(--ddd-theme-default-text, light-dark(#1e293b, #ffffff));
+          color: var(--ddd-theme-default-roarMaxlight, light-dark(#1e293b, #ffffff));
         }
 
         .field input::placeholder {
@@ -2412,7 +2412,7 @@ ${!i||r?o`<button class="btn-submit" @click=${e.onSubmit}>Kirim Jawaban</button>
         .user-name {
           font-weight: 600;
           font-size: var(--ddd-font-size-4xs, 15px);
-          color: var(--ddd-theme-default-text, var(--ddd-theme-default-coalyGray, #1e293b));
+          color: var(--ddd-theme-default-roarMaxlight, var(--ddd-theme-default-coalyGray, #1e293b));
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
@@ -2556,7 +2556,7 @@ ${!i||r?o`<button class="btn-submit" @click=${e.onSubmit}>Kirim Jawaban</button>
         :host-context(body.dark-mode) .field input {
           background: rgba(255,255,255,0.05);
           border-color: rgba(229, 231, 235, 0.15);
-          color: var(--ddd-theme-default-text, var(--ddd-theme-default-coalyGray, #1e293b));
+          color: var(--ddd-theme-default-roarMaxlight, var(--ddd-theme-default-coalyGray, #1e293b));
         }
         :host-context(body.dark-mode) select {
           background: rgba(255,255,255,0.05);
@@ -2601,7 +2601,7 @@ ${!i||r?o`<button class="btn-submit" @click=${e.onSubmit}>Kirim Jawaban</button>
           border-color: rgba(229, 231, 235, 0.12);
         }
         :host-context(body.dark-mode) .user-name {
-          color: var(--ddd-theme-default-text, var(--ddd-theme-default-coalyGray, #1e293b));
+          color: var(--ddd-theme-default-roarMaxlight, var(--ddd-theme-default-coalyGray, #1e293b));
         }
         :host-context(body.dark-mode) .user-email,
         :host-context(body.dark-mode) .user-meta {
@@ -2694,7 +2694,7 @@ ${!i||r?o`<button class="btn-submit" @click=${e.onSubmit}>Kirim Jawaban</button>
                 </div>
                 <div class="field">
                   <label>Peran</label>
-                  <select .value=${this._role} @change=${e=>this._role=e.target.value} style="width:100%;padding:12px 14px;border:1px solid var(--ddd-theme-input-border, var(--ddd-theme-default-limestoneLight, #e4e5e7));border-radius:6px;font-size:15px;font-family:var(--ddd-font-primary);box-sizing:border-box;background:rgba(255,255,255,0.06);color:var(--ddd-theme-default-text, var(--ddd-theme-default-coalyGray, #1e293b));cursor:pointer;">
+                  <select .value=${this._role} @change=${e=>this._role=e.target.value} style="width:100%;padding:12px 14px;border:1px solid var(--ddd-theme-input-border, var(--ddd-theme-default-limestoneLight, #e4e5e7));border-radius:6px;font-size:15px;font-family:var(--ddd-font-primary);box-sizing:border-box;background:rgba(255,255,255,0.06);color:var(--ddd-theme-default-roarMaxlight, var(--ddd-theme-default-coalyGray, #1e293b));cursor:pointer;">
                     <option value="siswa" ?selected=${this._role!=="guru"}>Siswa</option>
                     <option value="guru" ?selected=${this._role==="guru"}>Guru</option>
                   </select>
