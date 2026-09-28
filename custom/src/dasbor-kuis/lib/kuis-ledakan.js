@@ -494,6 +494,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
           display: block;
           font-family: var(--ddd-font-navigation, system-ui, sans-serif);
           --ddd-theme-polaris-focus-ring: rgba(79, 70, 229, 0.3);
+
         }
         .quiz-card {
           background: var(--ddd-theme-default-white, var(--ddd-theme-default-background, #ffffff));
@@ -616,6 +617,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
         .choice-row.selected {
           border-color: var(--ddd-theme-primary, var(--ddd-primary-1, #1e407c));
           background: var(--ddd-theme-default-skyLight, var(--ddd-theme-default-roarMaxlight), light-dark(var(--ddd-theme-default-roarMaxlight), var(--ddd-theme-default-creekTeal, #111827)));
+          color: var(--ddd-primary-2);
         }
 
 
@@ -642,10 +644,52 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
         .matching-container, .short-answer-container { display: flex; flex-direction: column; gap: var(--ddd-spacing-3); margin: var(--ddd-spacing-3) 0; }
         .matching-row { display: flex; align-items: center; gap: var(--ddd-spacing-3); flex-wrap: wrap; }
         .matching-item { font-weight: 600; font-size: var(--ddd-font-size-4xs); min-width: 180px; }
+        /* 1. Tambahkan deklarasi pada komponen utama select */
         .matching-select {
-          flex: 1; min-width: 180px; padding: var(--ddd-spacing-3); border: var(--ddd-border-xs); border-radius: var(--ddd-radius-md);
-          font-size: var(--ddd-font-size-4xs); font-family: inherit; background: var(--ddd-theme-default-white, var(--ddd-theme-default-background, #ffffff));
+            flex: 1 1 0%;
+            min-width: 180px;
+            padding: var(--ddd-spacing-3);
+            border: var(--ddd-border-xs);
+            border-radius: var(--ddd-radius-md);
+            font-size: var(--ddd-font-size-4xs);
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.3s;
+
+            /* FIX NATIVE: Gunakan light-dark murni untuk mengamankan kotak select */
+            background: var(--ddd-theme-background, light-dark(#ffffff, var(--dk-soft, #1f2937)));
+            color: var(--ddd-theme-text, light-dark(#1e293b, var(--dk-text, #e5e7eb)));
+            border-color: var(--ddd-theme-border, light-dark(#e4e5e7, var(--dk-border, #2a3245)));
         }
+
+        /* 2. FIX UTAMA: Paksa pewarnaan elemen dropdown option agar terlihat jelas di mode gelap */
+        /*.matching-select option {*/
+            /*
+              100% PRAW & CORE COMPLIANT:
+              - Mode Terang: Menggunakan putih bawaan core HAX (--ddd-theme-default-white)
+              - Mode Gelap: Memprioritaskan --dk-soft milik Anda. Jika --dk-soft mati,
+                             ia akan mengambil token abu-abu gelap resmi bawaan core HAX (--ddd-primary-14)
+            */
+            /*background-color: light-dark(
+                var(--ddd-theme-default-white, #ffffff),*/
+                /*var(--ddd-theme-default-globalNeon), var(--ddd-primary-14, #1f2937))  salah struktur */
+                /*var(--ddd-theme-default-globalNeon, var(--ddd-primary-14, #1f2937)) benar, cuma backgroun kuning jelek*/
+                /*var(--ddd-theme-default-infoLight, var(--ddd-primary-14, #1f2937))
+            );*/
+
+            /* Perbaikan untuk warna teks agar kontras tinggi */
+            /*color: light-dark(
+                var(--ddd-theme-default-text, #1e293b),
+                (#1e293b, var(--ddd-primary-0, #ffffff)
+            );*/
+            /*color: light-dark(
+                var(--ddd-theme-default-text, #1e293b),
+                light-dark(var(--ddd-primary-0, var(--ddd-theme-default-coalyGray))) */
+                /* Adaptif mengikuti keterbacaan latar belakang */
+            /*);
+        }*/
+
+
         .short-answer-input {
           width: 100%; padding: var(--ddd-spacing-3); border: var(--ddd-border-xs); border-radius: var(--ddd-radius-md);
           font-size: var(--ddd-font-size-4xs); font-family: inherit; box-sizing: border-box;
@@ -716,8 +760,8 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
         .quiz-timer { display: flex; justify-content: center; margin-bottom: var(--ddd-spacing-4); }
         .import-box { border: var(--ddd-border-sm); border-radius: var(--ddd-radius-md); padding: var(--ddd-spacing-4); background: var(--ddd-theme-polaris-surface-hover, var(--ddd-theme-default-white, #ffffff)); margin-top: var(--ddd-spacing-4); }
         .import-box h4 { margin: 0 0 var(--ddd-spacing-3) 0; color: var(--ddd-theme-primary, var(--ddd-primary-1, #1e407c)); font-size: var(--ddd-font-size-4xs); }
-      `,
-      css`
+
+
         /* ===== DARK MODE (DDD-token swap, gated on body.dark-mode) ===== */
         :host-context(body.dark-mode) :host {
           --dk-bg: #0b1020;
@@ -785,7 +829,8 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
         :host-context(body.dark-mode) .editor-input,
         :host-context(body.dark-mode) .editor-textarea,
         :host-context(body.dark-mode) .short-answer-input,
-        :host-context(body.dark-mode) .matching-select { background: var(--dk-soft); color: var(--dk-text); border-color: var(--dk-border); }
+
+
         :host-context(body.dark-mode) .pgk-table { color: var(--dk-text); }
         :host-context(body.dark-mode) .pgk-table th { background: var(--dk-soft); color: var(--dk-text-strong); }
         :host-context(body.dark-mode) .pgk-table td { border-bottom-color: var(--dk-border); }
@@ -810,6 +855,24 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
         :host-context(body.dark-mode) .review-qtext { color: var(--dk-text-strong); }
         :host-context(body.dark-mode) .practice-nav .btn-back { background: var(--dk-soft); color: var(--dk-text); border-color: var(--dk-border); }
         :host-context(body.dark-mode) .practice-nav .btn-next { background: var(--ddd-theme-polaris-primary, var(--ddd-primary-1, #1e407c)); color: var(--ddd-theme-on-primary, var(--ddd-theme-bgContrast, var(--lowContrast-override, #ffffff))); }
+        /* 3. Masukkan override ini di bagian PALING BAWAH berkas :host-context Anda */
+        /*:host-context(body.dark-mode) .matching-select {
+            background: var(--ddd-theme-default-background);
+            color: var(--ddd-primary-3);
+            border-color: var(--ddd-primary-21);
+        }*/
+        /* Tambahan agar option di dalam body.dark-mode ikut terpaksa gelap */
+        /*:host-context(body.dark-mode) .matching-select option,
+       :host-context(body.dark-mode) select.matching-select option
+       {
+
+            background-color: var(--ddd-theme-default-background, #111827);
+            color: var(--ddd-primary-3);
+            border-color: var(--ddd-primary-21);
+            /*background-color: #ffffff;
+            color: #1e293b;
+        }*/
+
       `,
     ];
   }

@@ -445,7 +445,7 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
           color: var(--dk-text, #1e293b);
         }
 
-        /* ===== Chalkboard-inspired design tokens ===== */
+        /* ===== Chalkboard-inspired design tokens ===== ini hasil buat tema
         .auth-card {
           background: linear-gradient(155deg, var(--ddd-theme-polaris-surface, var(--ddd-theme-default-white, #ffffff)), var(--ddd-theme-default-surface, var(--ddd-theme-default-background, #f8fafc)));
           border: 1px solid var(--ddd-theme-polaris-border, var(--ddd-theme-default-limestoneLight, #e4e5e7));
@@ -498,54 +498,154 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
         .field-row .field {
           flex: 1;
         }
+        /* ========================================================= */
+        /* 1. ELEMEN LABEL & INPUT (DENGAN ANIMASI TRANSISI HALUS)   */
+        /* ========================================================= */
+
+        /* ========================================================= */
+        /* 1. SEGMEN UTAMA / TEMA TERANG STANDAR (DI ATAS)            */
+        /* ========================================================= */
+        .auth-card {
+            border-radius: 12px;
+            padding: var(--ddd-spacing-6, 32px);
+            max-width: 420px;
+            margin: 0 auto;
+            position: relative;
+            transition: background 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+            /*
+              FIX BORDER ADAPTIF:
+              Terang = Abu-abu limestone halus (#e4e5e7) | Gelap = Abu-abu arang tua (#2a3245)
+            */
+            border: 1px solid var(--ddd-theme-polaris-border, light-dark(#e4e5e7, #2a3245));
+
+            /*
+              FIX SHADOW/BAYANGAN ADAPTIF:
+              Menghilangkan bayangan biru gelap di mode malam agar kotak tidak terlihat kotor.
+            */
+            box-shadow: light-dark(
+                0 24px 48px -16px rgba(26, 35, 50, 0.45),
+                0 24px 48px -16px rgba(0, 0, 0, 0.75)
+            );
+
+            /*
+              FIX UTAMA BACKGROUND GRADASI:
+              Menggunakan light-dark() di luar fungsi gradasi.
+              - Mode Terang: Gradasi putih ke abu-abu terang murni (#ffffff ke #f8fafc)
+              - Mode Gelap: Gradasi abu-abu arang pekat ke hitam pekat (#111827 ke #0b1020)
+            */
+            background: light-dark(
+                linear-gradient(155deg, #ffffff, #f8fafc),
+                linear-gradient(155deg, #111827, #0b1020)
+            );
+        }
+
+        /* Penyelamat warna teks judul "Masuk" dan subtitle agar otomatis kontras */
+        .auth-header h2 {
+            color: light-dark(#0f172a, #f8fafc);
+        }
+        .auth-header .subtitle {
+            color: light-dark(#64748b, #94a3b8);
+        }
+
+        /* Ggaya untuk tombol link pendaftaran di bagian paling bawah */
+        .btn-link {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: var(--ddd-font-size-4xs, 13px);
+            font-weight: 500;
+            margin-top: var(--ddd-spacing-4, 16px);
+            color: light-dark(#1e407c, #c4b5fd);
+        }
+
+
+
         .field label {
           display: block;
           font-size: var(--ddd-font-size-4xs, 13px);
           font-weight: 600;
-          color: var(--ddd-theme-secondary, rgba(0,0,0,0.75));
           margin-bottom: 6px;
+          /* Terang = abu gelap pekat | Gelap = putih bersih menyala */
+          color: var(--ddd-theme-default-roarMaxlight, light-dark(rgba(0, 0, 0, 0.8), #ffffff));
         }
+
         .field input {
           width: 100%;
           padding: 12px 14px;
-          border: 1px solid var(--ddd-theme-input-border, var(--ddd-theme-default-limestoneLight, #e4e5e7));
           border-radius: 6px;
           font-size: 15px;
-          font-family: var(--ddd-font-primary);
+          font-family: var(--ddd-font-primary, system-ui, sans-serif);
           box-sizing: border-box;
-          background: rgba(255,255,255,0.06);
-          color: var(--ddd-theme-default-text, var(--ddd-theme-default-coalyGray, #1e293b));
-          transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+
+          /* FIX ANIMASI MEMUDAR: Mengatur transisi halus berdurasi 0.3s untuk semua efek */
+          transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
+
+          /* Kontras Border Baseline */
+          border: 1px solid var(--ddd-theme-input-border, var(--ddd-theme-default-limestoneLight, light-dark(#e4e5e7, #2a3245)));
+
+          /* Kontras Latar Belakang & Teks Utama */
+          background-color: light-dark(#ffffff, #1f2937);
+          color: var(--ddd-theme-default-text, light-dark(#1e293b, #ffffff));
         }
+
         .field input::placeholder {
-          color: rgba(255,255,255,0.3);
+          /* Proteksi teks ghaib di mode terang */
+          color: light-dark(#757575, #94a3b8);
+          transition: color 0.3s ease-in-out;
         }
+
+        /* Efek Animasi Saat Kursor Pengguna Masuk (Focus) ke NIS / Email */
         .field input:focus {
           outline: none;
+          /* Fokus border menyala oranye/cokelat peringatan resmi HAX */
           border-color: var(--ddd-theme-warning, var(--ddd-theme-default-warning, #663c00));
-          background: rgba(255,255,255,0.09);
-          box-shadow: 0 0 0 3px rgba(240, 192, 64, 0.12);
+          /* Latar belakang memudar halus ke warna fokus yang kontras */
+          background-color: light-dark(#f8fafc, #182232);
+          /* Efek ring glow luar yang memudar lembut */
+          box-shadow: 0 0 0 3px light-dark(rgba(102, 60, 0, 0.15), rgba(240, 192, 64, 0.25));
         }
+
+        /* ========================================================= */
+        /* 2. FIX KONTRAS TOMBOL MASUK (.btn) ADAPTIF LIGHT-DARK     */
+        /* ========================================================= */
         .btn {
           width: 100%;
-          padding: 14px 24px;
+          padding: 14px;
+          font-size: var(--ddd-font-size-s, 14px);
+          font-weight: var(--ddd-font-weight-bold, 700);
           border: none;
           border-radius: 6px;
-          font-size: 15px;
-          font-weight: 600;
           cursor: pointer;
-          font-family: var(--ddd-font-primary);
-          margin-top: var(--ddd-spacing-2, 8px);
-          background: linear-gradient(120deg, var(--ddd-theme-warning, var(--ddd-theme-default-warning, #663c00)), var(--ddd-theme-accent, var(--ddd-accent-0, #96bee6)));
-          color: var(--ddd-theme-on-primary, var(--ddd-theme-bgContrast, var(--lowContrast-override, #ffffff)));
-          transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
-          box-shadow: 0 8px 20px -6px rgba(240, 192, 64, 0.4);
+          font-family: inherit;
+          /* Animasi memudar halus saat tombol disorot kursor (hover) */
+          transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+
+          /*
+            FIX KONTRAS TOMBOL:
+            - Mode Terang: Tombol biru polaris utama (#1e407c) dengan teks putih murni (#ffffff)
+            - Mode Gelap: Tombol otomatis melunak menjadi lavender/ungu cerah (#c4b5fd)
+                          dengan teks kontras gelap pekat (#0f172a) agar tidak silau di mata.
+          */
+          background-color: var(--ddd-theme-primary, light-dark(#1e407c, #c4b5fd));
+          color: var(--ddd-theme-on-primary, light-dark(#ffffff, #0f172a));
+          box-shadow: 0 4px 12px light-dark(rgba(30, 64, 124, 0.2), rgba(0, 0, 0, 0.3));
         }
+
+        /* Efek Interaktif Hover pada Tombol Masuk */
         .btn:hover {
-          filter: brightness(1.06);
+          /* Terang = Biru langit cerah HAX | Gelap = Ungu indigo terang HAX */
+          background-color: var(--ddd-theme-accent, light-dark(#96bee6, #818cf8));
+          /* Tombol sedikit terangkat memberikan feedback fisik yang memudar lembut */
           transform: translateY(-1px);
-          box-shadow: 0 12px 24px -6px rgba(240, 192, 64, 0.5);
+          box-shadow: 0 6px 16px light-dark(rgba(30, 64, 124, 0.3), rgba(0, 0, 0, 0.4));
         }
+
+        .btn:active {
+          /* Efek saat tombol ditekan klik */
+          transform: translateY(1px);
+        }
+
         .btn:active {
           transform: translateY(0);
         }
@@ -722,9 +822,8 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
             transition-duration: 0.01ms !important;
           }
         }
-      `,
-      css`
-        /* ===== DARK MODE (token swap, gated on body.dark-mode) ===== */
+
+        /* ===== DARK MODE (token swap, gated on body.dark-mode) =====
         :host-context(body.dark-mode) :host {
           --ddd-theme-card: #111827;
           --ddd-theme-card-deep: #0b1020;
@@ -747,7 +846,26 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
         :host-context(body.dark-mode) .auth-card {
           background: linear-gradient(155deg, #1f2937, #111827);
           border-color: rgba(132, 136, 248, 0.25);
-        }
+          } */
+
+          /*perbaikan tema 28092026 */
+
+          /* ========================================================= */
+          /* 2. SEGMEN OVERRIDE DARK MODE JAVASCRIPT (DI PALING BAWAH)  */
+          /* ========================================================= */
+          :host-context(body.dark-mode) .auth-card {
+              /*
+                Memaksa latar belakang kotak login langsung berubah menjadi gelap pekat
+                menggunakan variabel lokal --dk-card Anda saat tombol toggle web ditekan.
+              */
+              background: linear-gradient(155deg, var(--dk-card, #111827), #0b1020);
+              border-color: var(--dk-border, #2a3245);
+          }
+          :host-context(body.dark-mode) .auth-header h2 { color: var(--dk-text-strong, #f8fafc); }
+          :host-context(body.dark-mode) .auth-header .subtitle { color: var(--dk-text-soft, #94a3b8); }
+          :host-context(body.dark-mode) .btn-link { color: var(--ddd-theme-primary, #c4b5fd); }
+
+
         :host-context(body.dark-mode) .field input {
           background: rgba(255,255,255,0.05);
           border-color: rgba(229, 231, 235, 0.15);
