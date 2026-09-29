@@ -42,6 +42,10 @@ export class AntiCheatQuiz {
     // waktu mulai (referensi ke host, di-set host saat start)
     this.waktuMulai = null;
 
+    // hidden/idle time tracking (screen off, tab hidden)
+    this.hiddenTotalDetik = 0;
+    this.lastHiddenStart = null;
+
     // bind handler sekali
     this._onVisibilityChange = this._onVisibilityChange.bind(this);
     this._onWindowBlur = this._onWindowBlur.bind(this);
@@ -83,6 +87,7 @@ export class AntiCheatQuiz {
         windowFocusCount: this.windowFocusCount || 0,
         tabSwitchCount: this.tabSwitchCount || 0,
         visibilityChangeCount: this.visibilityChangeCount || 0,
+        hiddenTotalDetik: this.hiddenTotalDetik || 0,
         timestamp: Date.now(),
       };
       globalThis.localStorage.setItem(this._antiCheatKey(), JSON.stringify(data));
@@ -98,6 +103,7 @@ export class AntiCheatQuiz {
         this.windowFocusCount = data.windowFocusCount || 0;
         this.tabSwitchCount = data.tabSwitchCount || 0;
         this.visibilityChangeCount = data.visibilityChangeCount || 0;
+        this.hiddenTotalDetik = data.hiddenTotalDetik || 0;
       }
     } catch (_) {}
   }
@@ -188,6 +194,8 @@ export class AntiCheatQuiz {
     if (tipe === 'restart') {
       q.snapshot.total_restart = (q.snapshot.total_restart || 0) + 1;
       q.snapshot.mulai_detik = sekarang;
+      this.hiddenTotalDetik = 0;
+      this.lastHiddenStart = null;
     }
     this._simpanAuditQueue(q);
     return q;
@@ -212,11 +220,10 @@ export class AntiCheatQuiz {
   bacaAuditSingkat() {
     const q = this._bacaAuditQueue();
     if (!q) return { total_restart: 0, tab_switch: 0, durasi_detik: 0 };
-    const durasi =
-      q.snapshot.durasi_detik ||
-      (q.snapshot.mulai_detik
-        ? Math.max(0, Math.floor((Date.now() - q.snapshot.mulai_detik) / 1000))
-        : 0);
+    const elapsed = q.snapshot.mulai_detik
+      ? Math.max(0, Math.floor((Date.now() - q.snapshot.mulai_detik) / 1000) - (this.hiddenTotalDetik || 0))
+      : 0;
+    const durasi = q.snapshot.durasi_detik || elapsed;
     return {
       total_restart: q.snapshot.total_restart || 0,
       tab_switch: q.snapshot.tab_switch || 0,
@@ -228,7 +235,7 @@ export class AntiCheatQuiz {
     const q = this._bacaAuditQueue();
     if (!q) return;
     if (q.snapshot.mulai_detik) {
-      q.snapshot.durasi_detik = Math.max(0, Math.floor((Date.now() - q.snapshot.mulai_detik) / 1000));
+      q.snapshot.durasi_detik = Math.max(0, Math.floor((Date.now() - q.snapshot.mulai_detik) / 1000) - (this.hiddenTotalDetik || 0));
     }
     q.state = 'ready';
     this._simpanAuditQueue(q);
@@ -313,6 +320,9 @@ export class AntiCheatQuiz {
     this.visibilityChangeCount = (this.visibilityChangeCount || 0) + 1;
     const mulai = this.host._mulai && !this.host._selesai;
     if (document.visibilityState === 'hidden' && mulai) {
+      if (!this.lastHiddenStart) {
+        this.lastHiddenStart = Date.now();
+      }
       const remaining = this.host._bacaSisaWaktu ? this.host._bacaSisaWaktu() : this.bacaSisaWaktu();
       if (remaining > 0) {
         try {
@@ -336,6 +346,10 @@ export class AntiCheatQuiz {
         this._dispatchSelf('force-choice', { warningCount: this.warningCount });
       }
     } else if (document.visibilityState === 'visible' && mulai) {
+      if (this.lastHiddenStart) {
+        this.hiddenTotalDetik += Math.floor((Date.now() - this.lastHiddenStart) / 1000);
+        this.lastHiddenStart = null;
+      }
       try {
         const key = `latihan_kuis_remaining_${this.studentId}_${this.kdMateri}`;
         const remainingStr = globalThis.localStorage.getItem(key);
@@ -443,6 +457,8 @@ export class AntiCheatQuiz {
     this.forceChoiceDialog = false;
     this.tabSwitchWarning = false;
     this.fullscreenWarning = false;
+    this.hiddenTotalDetik = 0;
+    this.lastHiddenStart = null;
     this.clearState();
   }
 

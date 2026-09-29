@@ -1,8 +1,8 @@
-Belajar dan berlatih setiap saat! Agar semakin mahir.
+Belajar dan berlatih setiap saat! Agar semakin mahir. Materi dan soal bisa diakses, sedangkan untuk penilaian harus login terlebih dahulu...
 
 ### BELAJAR INFORMATIKA KELAS X-XI
 
-<type-writer>Bila seseorang banyak melatih dan mengulang, terpaksa ataupun sukarela, dia pasti akan menguasai keahlian tertentu. Inilah namanya pembentukan kebiasaan alias habits.</type-writer>
+<type-writer element-visible="" delay="100" cursor-duration="0" speed="150" erase-speed="80">Bila seseorang banyak melatih dan mengulang, terpaksa ataupun sukarela, dia pasti akan menguasai keahlian tertentu. Inilah namanya pembentukan kebiasaan alias habits.</type-writer>
 
 <stop-note title="KUIS UJI PEMAHAMAN" accent-color="grey" icon="stopnoteicons:stop-icon" status="stop" message="<strong>Read these important things!</strong>
 "><p slot="message"><strong>Baca dengan seksama materi dan jawablah soal di bawahnya. Materi lengkap ada di buku Informatika SMA kelas X dan XI.</strong></p></stop-note>

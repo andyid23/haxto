@@ -567,7 +567,7 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
           font-weight: 600;
           margin-bottom: 6px;
           /* Terang = abu gelap pekat | Gelap = putih bersih menyala */
-          color: var(--ddd-theme-default-roarMaxlight, light-dark(rgba(0, 0, 0, 0.8), #ffffff));
+          color: light-dark(rgba(0, 0, 0, 0.8), var(--ddd-theme-default-roarMaxlight));
         }
 
         .field input {
@@ -586,7 +586,7 @@ export class QuizUserAuth extends I18NMixin(DDDSuper(LitElement)) {
 
           /* Kontras Latar Belakang & Teks Utama */
           background-color: light-dark(#ffffff, #1f2937);
-          color: var(--ddd-theme-default-roarMaxlight, light-dark(#1e293b, #ffffff));
+          color: light-dark(#1e293b, var(--ddd-theme-default-limestoneLight));
         }
 
         .field input::placeholder {

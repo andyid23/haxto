@@ -179,6 +179,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     this._sessionToken = "";
     this._showReview = false;
     this._reviewSnapshot = null;
+    this._sudahSubmit = false;
     this._onAuthLogin = this._onAuthLogin.bind(this);
     this._onAuthLogout = this._onAuthLogout.bind(this);
     this._antiCheat = new AntiCheatQuiz(this, { tabSwitchThreshold: this.tabSwitchThreshold });
@@ -339,6 +340,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     this._curangLogged = false;
     this._sessionLogged = "";
     this._sessionToken = "";
+    this._sudahSubmit = false;
     try { localStorage.removeItem("latihan_kuis_attempt_u1_bab1"); } catch (_) {}
   }
 
@@ -485,12 +487,26 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     const sisa = this._bacaSisaWaktu();
     const kuota = this.maxRetake === 0 || this._attemptKe < this.maxRetake + 1;
 
+    // Guard: Prevent double-submit
+    if (this._sudahSubmit) return;
+
+    // Check if a timer was previously saved (indicates in-progress or expired session)
+    let adaTimer = false;
+    try {
+      const d = JSON.parse(globalThis.localStorage.getItem(this._timerKey()) || "null");
+      adaTimer = !!d;
+    } catch (_) {}
+
     // Fix: Handle null/undefined and proper quota check
     if (kuota && sisa != null && sisa > 0) {
       this._mulai = true;
       this._resumeRemaining = sisa;
       // Restore anti-cheat state on resume
       this._antiCheat.restoreState();
+    } else if (adaTimer && sisa <= 0 && !this._sudahSubmit) {
+      // Timer existed and time expired - auto-submit
+      this._sudahSubmit = true;
+      this._onWaktuHabis();
     }
   }
 
@@ -661,6 +677,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     this._selesai = true;
     this._habisWaktu = true;
     this._resumeRemaining = null;
+    this._sudahSubmit = false;
     this._hapusWaktuMulai();
     this._antiCheat.clearState();
     // Log session to Google Sheet for teacher review
@@ -688,6 +705,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
       const childKuis = this.shadowRoot && this.shadowRoot.querySelector("kuis-ledakan");
       this._reviewSnapshot = this._reviewSnapshotFromChild(childKuis);
       this._resumeRemaining = null;
+      this._sudahSubmit = false;
       this._hapusWaktuMulai();
       // Hapus data attempt latihan-kuis supaya reload berikutnya = fresh attempt
       try {
@@ -773,6 +791,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     this._sessionToken = this._antiCheat.generateSessionToken();
     this._antiCheat.sessionToken = this._sessionToken;
     this._sessionLogged = "";
+    this._sudahSubmit = false;
     this._antiCheat.resetCounters();
     this._antiCheat.waktuMulai = this._waktuMulai;
     this._curangLogged = false;

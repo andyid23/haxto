@@ -1890,6 +1890,22 @@
                 "text": "null"
               },
               "default": "null"
+            },
+            {
+              "kind": "field",
+              "name": "hiddenTotalDetik",
+              "type": {
+                "text": "number"
+              },
+              "default": "0"
+            },
+            {
+              "kind": "field",
+              "name": "lastHiddenStart",
+              "type": {
+                "text": "null"
+              },
+              "default": "null"
             }
           ]
         }
@@ -4495,7 +4511,7 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "`latihan-kuis`\n\nHalaman contoh latihan terpandu: materi → kuis berwaktu → pesan \"nilai\nterkirim\". Menyatukan <kuis-ledakan> (kuis yang ada) dan <timer-kuis>\n(hitung mundur). Saat waktu habis (event `timer-kuis-expired`), kuis\ndikunci otomatis (`_selesaiKuis`) lalu materi & kuis disembunyikan dan\nditampilkan pesan \"Selamat! Nilai sudah terkirim\".\n\nNilai dikirim ke Google Apps Script (`apps-script-url`) oleh <kuis-ledakan>\nlewat action=logActivity, sehingga tercatat di Google Spreadsheet.",
+          "description": "`latihan-kuis`\r\n\r\nHalaman contoh latihan terpandu: materi → kuis berwaktu → pesan \"nilai\r\nterkirim\". Menyatukan <kuis-ledakan> (kuis yang ada) dan <timer-kuis>\r\n(hitung mundur). Saat waktu habis (event `timer-kuis-expired`), kuis\r\ndikunci otomatis (`_selesaiKuis`) lalu materi & kuis disembunyikan dan\r\nditampilkan pesan \"Selamat! Nilai sudah terkirim\".\r\n\r\nNilai dikirim ke Google Apps Script (`apps-script-url`) oleh <kuis-ledakan>\r\nlewat action=logActivity, sehingga tercatat di Google Spreadsheet.",
           "name": "LatihanKuis",
           "members": [
             {
@@ -5495,6 +5511,14 @@
               },
               "default": "null",
               "attribute": "_reviewSnapshot"
+            },
+            {
+              "kind": "field",
+              "name": "_sudahSubmit",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
             },
             {
               "kind": "field",
