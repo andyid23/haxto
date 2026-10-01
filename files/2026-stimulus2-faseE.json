@@ -1,0 +1,206 @@
+[
+  {
+    "type": "mc",
+    "question": "Apa keunggulan utama menggunakan Google Colab dibandingkan menginstal Python secara lokal di komputer?",
+    "hint": "Colab berjalan di cloud sehingga tidak memerlukan penyetelan awal di perangkat lokal.",
+    "choices": [
+      "Memerlukan koneksi internet yang sangat cepat untuk setiap baris kode",
+      "Tidak memerlukan proses instalasi perangkat lunak dan konfigurasi lingkungan yang rumit",
+      "Hanya dapat digunakan untuk menjalankan satu jenis bahasa pemrograman selain Python",
+      "Menyimpan data secara permanen hanya di hard disk komputer lokal",
+      "Tidak mendukung penggunaan pustaka (library) tambahan"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "type": "mc",
+    "question": "Perintah Python yang benar untuk menampilkan teks \"Selamat Belajar\" di layar output adalah...",
+    "hint": "Gunakan fungsi bawaan Python untuk mencetak/menampilkan teks.",
+    "choices": [
+      "echo(\"Selamat Belajar\")",
+      "console.log(\"Selamat Belajar\")",
+      "print(\"Selamat Belajar\")",
+      "output(\"Selamat Belajar\")",
+      "write(\"Selamat Belajar\")"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "type": "mc",
+    "question": "Di dalam antarmuka Google Colab, kombinasi tombol keyboard (shortcut) yang berfungsi untuk menjalankan kode pada sel aktif dan langsung berpindah ke sel di bawahnya adalah...",
+    "hint": "Pahami perbedaan fungsi tombol eksekusi: kombinasi tombol ini mengeksekusi sel sekaligus memindahkan kursor ke sel berikutnya.",
+    "choices": [
+      "Ctrl + C",
+      "Shift + Enter",
+      "Alt + F4",
+      "Ctrl + S",
+      "Tab + Enter"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "type": "mc",
+    "question": "Seorang siswa baru saja membuka Google Colab untuk pertama kalinya. Langkah-langkah valid yang dapat ia lakukan untuk mulai bekerja adalah...\n(1) Mengklik tombol \"Notebook Baru\" di halaman utama.\n(2) Langsung mengetik kode di mesin pencari Google.\n(3) Menambahkan sel kode baru dengan mengklik tombol \"+ Kode\".\n(4) Menginstal ulang sistem operasi Windows agar Python bisa berjalan.",
+    "hint": "Pahami alur kerja dasar pembuatan berkas dan penambahan area penulisan program di dalam antarmuka Google Colab.",
+    "choices": [
+      "(1) dan (2)",
+      "(1) dan (3)",
+      "(2) dan (4)",
+      "(1), (2), dan (3)",
+      "(2), (3), dan (4)"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "type": "mc",
+    "question": "Perhatikan kode Python berikut yang dijalankan di dua sel berbeda:\nSel 1: x = 10\nSel 2: print(x + 5)\nPernyataan yang benar mengenai eksekusi kode tersebut adalah...\n(1) Output yang dihasilkan adalah 15.\n(2) Variabel x harus didefinisikan di sel yang sama dengan perintah print agar berhasil.\n(3) Google Colab mempertahankan nilai variabel x di memori selama sesi notebook aktif.\n(4) Kode akan menghasilkan error karena x tidak dikenali di Sel 2.",
+    "hint": "Variabel dalam memori sesi yang sama tetap tersimpan dan dapat diakses antar-sel.",
+    "choices": [
+      "(1) dan (2)",
+      "(1) dan (3)",
+      "(2) dan (4)",
+      "(1), (2), dan (3)",
+      "(3) dan (4)"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "type": "pgk",
+    "question": "Tentukan keabsahan dari pernyataan mengenai penyimpanan dan jenis sel pada Google Colab berikut!",
+    "hint": "Pahami perbedaan fungsi sel teks (Markdown) untuk dokumentasi dan integrasi Google Colab dengan ekosistem Google Cloud Storage.",
+    "statements": [
+      {
+        "text": "File notebook Google Colab secara default tersimpan otomatis di akun Google Drive pengguna yang sedang login.",
+        "answer": true
+      },
+      {
+        "text": "Sel teks (Text Cell) di Google Colab hanya bisa digunakan untuk menulis kode Python, tidak bisa untuk menulis penjelasan atau dokumentasi.",
+        "answer": false
+      }
+    ]
+  },
+  {
+    "type": "matching",
+    "question": "Pasangkan istilah atau fitur di lajur kiri dengan deskripsi fungsinya yang tepat di lajur kanan!",
+    "hint": "Cermati format ektensi berkas, nama fungsi cetak dasar Python, media penyimpanan cloud Google, serta format penulisan dokumentasi teks.",
+    "leftItems": [
+      ".ipynb",
+      "print()",
+      "Google Drive",
+      "Markdown"
+    ],
+    "rightItems": [
+      "Fungsi dasar Python untuk menampilkan output ke layar.",
+      "Format file asli notebook yang menyimpan kode, output, dan teks penjelasan.",
+      "Platform cloud tempat penyimpanan otomatis file notebook Colab.",
+      "Bahasa markup yang digunakan di sel teks untuk memformat penjelasan (seperti membuat tebal atau judul)."
+    ],
+    "correctPairs": {
+      "0": 1,
+      "1": 0,
+      "2": 2,
+      "3": 3
+    }
+  },
+  {
+    "type": "mc",
+    "question": "Apa fungsi utama dari pustaka requests dalam proses web scraping menggunakan Python?",
+    "hint": "Fokus pada peran pustaka ini dalam berinteraksi dengan server web untuk mengambil halaman.",
+    "choices": [
+      "Menguraikan kode HTML menjadi struktur pohon dokumen",
+      "Mengirimkan permintaan HTTP untuk mengunduh halaman web",
+      "Menyimpan data hasil scraping ke dalam database relasional",
+      "Membuat visualisasi grafik dari data hasil scraping",
+      "Memblokir akses dari situs web yang tidak diinginkan"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "type": "mc",
+    "question": "Dalam struktur HTML, atribut apa yang paling tepat digunakan untuk mengidentifikasi satu elemen unik di seluruh halaman?",
+    "hint": "Atribut ini dirancang secara khusus untuk menjadi pengenal tunggal dan unik bagi sebuah elemen.",
+    "choices": [
+      "Tag",
+      "Class",
+      "ID",
+      "Style",
+      "Href"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "type": "mc",
+    "question": "Metode BeautifulSoup manakah yang digunakan untuk menemukan semua instance dari sebuah tag tertentu di halaman web dan mengembalikannya sebagai daftar (list)?",
+    "hint": "Metode ini mencari seluruh kriteria yang cocok, bukan hanya hasil pertama.",
+    "choices": [
+      "find()",
+      "get_text()",
+      "select_one()",
+      "find_all()",
+      "prettify()"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "type": "mc",
+    "question": "Seorang siswa ingin mengambil data harga barang dari sebuah situs e-commerce untuk tugas sekolah. Tindakan berikut yang merupakan praktik web scraping yang baik dan etis adalah...\n(1) Memeriksa file robots.txt situs tersebut sebelum melakukan scraping.\n(2) Mengirimkan ribuan permintaan per detik untuk mempercepat pengambilan data.\n(3) Memberikan jeda waktu (delay) antar permintaan agar tidak membebani server.\n(4) Mengambil data pribadi pengguna seperti nomor telepon dan alamat rumah.",
+    "hint": "Praktik etis selalu menghormati aturan pemilik situs dan menjaga agar server tidak terbebankan.",
+    "choices": [
+      "(1) dan (2)",
+      "(1) dan (3)",
+      "(2) dan (4)",
+      "(1), (2), dan (3)",
+      "(2), (3), dan (4)"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "type": "mc",
+    "question": "Perhatikan kode HTML berikut:\n<div class=\"produk\"><h2 class=\"nama\">Laptop</h2><p class=\"harga\">Rp5.000.000</p></div>\n\nPernyataan yang benar mengenai cara mengambil data \"Rp5.000.000\" menggunakan CSS Selector di BeautifulSoup adalah...\n(1) Dapat menggunakan selector .produk .harga\n(2) Dapat menggunakan selector div p\n(3) Harus menggunakan selector #harga karena ini adalah data penting\n(4) Tidak bisa diambil karena data berada di dalam tag <p>",
+    "hint": "Cermati hierarki kelas dan tag tempat teks harga tersebut berada.",
+    "choices": [
+      "(1) dan (2)",
+      "(1) dan (3)",
+      "(2) dan (4)",
+      "(1), (2), dan (3)",
+      "(3) dan (4)"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "type": "pgk",
+    "question": "Tentukan keabsahan dari pernyataan mengenai konsep web scraping dan ekstraksi teks menggunakan BeautifulSoup berikut!",
+    "hint": "Cermati kapan web scraping paling bernilai serta fungsi khusus dari metode get_text().",
+    "statements": [
+      {
+        "text": "Web scraping hanya bisa dan berguna dilakukan pada situs web yang sudah menyediakan data dalam format CSV atau API.",
+        "answer": false
+      },
+      {
+        "text": "Metode get_text() pada BeautifulSoup digunakan untuk mengambil teks murni yang berada di dalam tag HTML, tanpa menyertakan kode tag HTML itu sendiri.",
+        "answer": true
+      }
+    ]
+  },
+  {
+    "type": "matching",
+    "question": "Pasangkan istilah dasar seputar web scraping di lajur kiri dengan deskripsinya yang tepat di lajur kanan!",
+    "hint": "Cermati bahasa penyusun web, pustaka parser Python, serta metode pemilih gaya.",
+    "leftItems": [
+      "HTML",
+      "BeautifulSoup",
+      "CSS Selector"
+    ],
+    "rightItems": [
+      "Bahasa markup standar untuk membuat halaman web.",
+      "Pustaka Python untuk mengurai dan menavigasi dokumen HTML.",
+      "Permintaan standar untuk mengambil data dari server.",
+      "Metode untuk mencari elemen menggunakan pola gaya CSS."
+    ],
+    "correctPairs": {
+      "0": 0,
+      "1": 1,
+      "2": 3
+    }
+  }
+]
