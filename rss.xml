@@ -6,7 +6,7 @@
     <description>belajar dan melatih pemahaman informatika SMA kelas 10 dan 11 X XI</description>
     <copyright>Copyright (C) 2026 https://localhost:3000/sites/haxto</copyright>
     <language>en-us</language>
-    <lastBuildDate>Fri, 25 Sep 2026 04:10:23 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 01 Oct 2026 04:13:34 GMT</lastBuildDate>
     <generator>HAXcms NodeJS</generator>
     <atom:link href="https://localhost:3000/sites/haxto/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
@@ -121,6 +121,13 @@
       <description>Ulangan 1 Kelas X ▶️ Mulai Kuis // Memaksa pemulian bila timer tidak otomatis document.getElementById(&apos;btn-mulai&apos;).addEventListener(&apos;click&apos;, () =&gt; { const kuis = document.querySelector(&apos;latihan-kuis&apos;); if (kuis &amp;&amp; kuis._onStartClick) kuis._onStartClick(); });</description>
       <guid>https://localhost:3000/sites/haxto/ulangan</guid>
       <pubDate>Wed, 23 Sep 2026 02:28:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>Ulangan Harian 2 Fase E LM2-E</title>
+      <link>https://localhost:3000/sites/haxto/ulangan-harian-2-fase-e-lm2-e</link>
+      <description>📝 Kuis Ekosistem Periksa Fakta &amp;#38; CRAAP(LM1) Kelas X Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban benar/salah ditampilkan. Setelah login reload untuk menampilkan tombol mulai &amp;#160;ulangan. Nilai akhir akan diambil dari nilai terakhir yang dikumpulkan setelah waktu habis atau semua soal terjawab dan klik selesai. Waktu Pengerjaan Soal 13 Menit&amp;#160;🤐 Kalau mode gelap tidak bisa gunakan mode terang di smartphonemu&amp;#160;😄</description>
+      <guid>https://localhost:3000/sites/haxto/ulangan-harian-2-fase-e-lm2-e</guid>
+      <pubDate>Thu, 01 Oct 2026 04:13:30 GMT</pubDate>
     </item>
   </channel>
 </rss>
