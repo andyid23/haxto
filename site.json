@@ -25,7 +25,7 @@
       "name": "haxto",
       "domain": "",
       "created": 1787457359,
-      "updated": 1790935965,
+      "updated": 1790936212,
       "logo": "",
       "version": "26.0.1"
     },
@@ -724,7 +724,7 @@
       "description": "Ulangan 1 Kelas X\n\n",
       "metadata": {
         "created": 1790130497,
-        "updated": 1790935965,
+        "updated": 1790936212,
         "images": [],
         "videos": [],
         "theme": {
@@ -744,7 +744,7 @@
         "published": true,
         "hideInMenu": true,
         "locked": false,
-        "readtime": 1,
+        "readtime": 8,
         "status": ""
       }
     },
