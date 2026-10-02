@@ -6,7 +6,7 @@
     <description>belajar dan melatih pemahaman informatika SMA kelas 10 dan 11 X XI</description>
     <copyright>Copyright (C) 2026 https://localhost:3000/sites/haxto</copyright>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Oct 2026 04:54:31 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 02 Oct 2026 09:00:45 GMT</lastBuildDate>
     <generator>HAXcms NodeJS</generator>
     <atom:link href="https://localhost:3000/sites/haxto/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
@@ -118,7 +118,7 @@
     <item>
       <title>ulangan</title>
       <link>https://localhost:3000/sites/haxto/ulangan</link>
-      <description>Ulangan 1 Kelas X ▶️ Mulai Kuis &amp;#60;script&amp;#62; // Memaksa pemulian bila timer tidak otomatis document.getElementById(&apos;btn-mulai&apos;).addEventListener(&apos;click&apos;, () =&amp;#62; { const kuis = document.querySelector(&apos;latihan-kuis&apos;); if (kuis &amp;#38;&amp;#38; kuis._onStartClick) kuis._onStartClick(); }); &amp;#60;/script&amp;#62;</description>
+      <description>Remidi Ulangan 1 &amp;#38; 2 Kelas X Laptop Rp5.000.000 \n\nPernyataan yang benar mengenai cara mengambil data \&amp;quot;Rp5.000.000\&amp;quot; menggunakan CSS Selector di BeautifulSoup adalah...\n(1) Dapat menggunakan selector .produk .harga\n(2) Dapat menggunakan selector div p\n(3) Harus menggunakan selector #harga karena ini adalah data penting\n(4) Tidak bisa diambil karena data berada di dalam tag &amp;quot;,&amp;quot;hint&amp;quot;:&amp;quot;Cermati hierarki kelas dan tag tempat teks harga tersebut berada.&amp;quot;...</description>
       <guid>https://localhost:3000/sites/haxto/ulangan</guid>
       <pubDate>Wed, 23 Sep 2026 02:28:17 GMT</pubDate>
     </item>
