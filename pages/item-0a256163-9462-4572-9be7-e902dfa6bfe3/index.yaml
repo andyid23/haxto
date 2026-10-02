@@ -10,7 +10,7 @@ description: |+
 
 metadata:
   created: 1790130497
-  updated: 1790936553
+  updated: 1790937047
   images: []
   videos: []
   theme:
@@ -37,21 +37,25 @@ content: >
 
   <p></p>
 
-  <latihan-kuis
+  <latihan-kuis mode="siswa" kd-materi="LM1" duration="900"
+  kategori="sumatif_lm" judul-kuis="Remidi — Ulangan 1 Bab Data Informasi dan
+  Validasi" soal-file-url="./files/2026-stimulus1-faseE.json"
+  remidi-soal-url="./files/2026-stimulus2-faseF.json" remidi-mode
+  shuffle-choices shuffle-questions kkm="75" practice-mode hide-confetti
+  hide-answers hide-score student-id="STD-65108010" allow-retake max-retake="5"
+  hide-pause-restart tab-switch-threshold="3"
   apps-script-url="https://script.google.com/macros/s/AKfycbxcCUl6QIYYuT4x2pqzQtAVycYBg2TIc9eXt7yAXATXkJtEroNvCnHUBULhVWNx3mc6/exec"
-  duration="900" timerautostart="" mode="siswa" allow-retake max-retake="5"
-  soal-file-url="./files/2026-stimulus1-faseE.json" kategori="sumatif_lm"
-  kd-materi="LM1" shuffle-choices hide-answers hide-score hide-confetti
-  judul-materi="Materi Pembelajaran" teks-materi="Baca materi di bawah ini
-  dengan saksama sebelum mengerjakan kuis. Waktu pengerjaan kuis dibatasi oleh
-  timer; saat waktu habis, kuis akan dikunci dan nilai otomatis terkirim."
-  materi-file="" cover-image="" judul-kuis="Evaluasi Kuis Interaktif"
-  student-id="" student-name="" student-nis="123" student-absen=""
-  student-kelas="XI-1" pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp;
-  dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim
-  ke spreadsheet." label-mulai="▶️ Mulai" hide-pause-restart show-question-nav
-  question-delay="1800" review-answers timer-autostart kkm="75"
-  tab-switch-threshold="3"
+  judul-materi="Materi Pembelajaran" teks-materi="Kerjakan soal di bawah ini
+  hingga mendapat nilai terbaik Anda. Waktu pengerjaan kuis dibatasi oleh timer;
+  saat waktu habis, kuis akan dikunci dan nilai otomatis terkirim."
+  materi-file="" cover-image="" student-name="Abi Andy" student-nis="123"
+  student-absen="" student-kelas="XI-1" pesan-waktu-habis="⏰ Waktu habis! Kuis
+  dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda
+  sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai" show-question-nav
+  question-delay="1800" review-answers timer-autostart _attempt-ke="0"
+  _soal-file-url-cache="./files/2026-stimulus1-faseE.json" _remidi-soal="[]"
+  _tab-switch-count="0" _visibility-change-count="0" _window-blur-count="0"
+  _window-focus-count="0" _warning-count="0"  
   questions="[{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Penilaian
   kevalidan suatu data teks dapat diuji secara terstruktur menggunakan instrumen
   ilmiah yang disebut Metode CRAAP yang membagi evaluasi ke dalam lima indikator
@@ -250,27 +254,29 @@ content: >
   sumber tersebut menyajikan argumen pendukung yang logis dan bebas dari
   kesalahan
   typo?&quot;],&quot;correctPairs&quot;:{&quot;0&quot;:2,&quot;1&quot;:1,&quot;2&quot;:3,&quot;3&quot;:0}}]"
-  _attempt-ke="0" _soal-file-url-cache="./files/2026-stimulus1-faseE.json"
-  _remidi-soal="[]" _tab-switch-count="0" _visibility-change-count="0"
-  _window-blur-count="0" _window-focus-count="0" _warning-count="0" _skor="26"
-  _best-skor="26" _pernah-ikut="" _terkunci="false"   ></latihan-kuis>
+  _skor="26" _best-skor="26" _pernah-ikut _terkunci _needs-remidi
+  _skor-awal="26">
+
+  </latihan-kuis>
+
+  <p></p>
 
   <latihan-kuis mode="siswa" kd-materi="LM2" duration="900"
-  kategori="sumatif_lm" judul-kuis="Uji Remidi — Latihan LM2"
-  soal-file-url="./files/2026-stimulus2-faseF.json"
-  remidi-soal-url="./files/2026-stimulus2-faseF.json" remidi-mode
+  kategori="sumatif_lm" judul-kuis="Remidi Ulangan 2 Bab Data Informasi dan
+  Validasinya" soal-file-url="./files/2026-stimulus2-faseF.json"
+  remidi-soal-url="./files/2026-stimulus2-faseE.json" remidi-mode
   shuffle-choices shuffle-questions kkm="75" practice-mode hide-confetti
-  hide-answers hide-score student-id="" allow-retake max-retake="5"
+  hide-answers hide-score student-id="STD-65108010" allow-retake max-retake="5"
   hide-pause-restart tab-switch-threshold="3"
   apps-script-url="https://script.google.com/macros/s/AKfycbxcCUl6QIYYuT4x2pqzQtAVycYBg2TIc9eXt7yAXATXkJtEroNvCnHUBULhVWNx3mc6/exec"
-  judul-materi="Materi Pembelajaran" teks-materi="Baca materi di bawah ini
-  dengan saksama sebelum mengerjakan kuis. Waktu pengerjaan kuis dibatasi oleh
-  timer; saat waktu habis, kuis akan dikunci dan nilai otomatis terkirim."
-  materi-file="" cover-image="" student-name="" student-nis="" student-absen=""
-  student-kelas="" pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai
-  otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke
-  spreadsheet." label-mulai="▶️ Mulai" show-question-nav question-delay="1800"
-  review-answers timer-autostart _attempt-ke="0"
+  judul-materi="Materi Pembelajaran" teks-materi="Kerjakan soal di bawah ini
+  hingga mendapat nilai terbaik Anda. Waktu pengerjaan kuis dibatasi oleh timer;
+  saat waktu habis, kuis akan dikunci dan nilai otomatis terkirim."
+  materi-file="" cover-image="" student-name="Abi Andy" student-nis="123"
+  student-absen="" student-kelas="XI-1" pesan-waktu-habis="⏰ Waktu habis! Kuis
+  dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda
+  sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai" show-question-nav
+  question-delay="1800" review-answers timer-autostart _attempt-ke="0"
   _soal-file-url-cache="./files/2026-stimulus2-faseF.json" _remidi-soal="[]"
   _tab-switch-count="0" _visibility-change-count="0" _window-blur-count="0"
   _window-focus-count="0" _warning-count="0"  
