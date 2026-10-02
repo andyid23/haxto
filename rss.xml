@@ -6,7 +6,7 @@
     <description>belajar dan melatih pemahaman informatika SMA kelas 10 dan 11 X XI</description>
     <copyright>Copyright (C) 2026 https://localhost:3000/sites/haxto</copyright>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Oct 2026 04:50:45 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 01 Oct 2026 04:54:31 GMT</lastBuildDate>
     <generator>HAXcms NodeJS</generator>
     <atom:link href="https://localhost:3000/sites/haxto/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
@@ -118,7 +118,7 @@
     <item>
       <title>ulangan</title>
       <link>https://localhost:3000/sites/haxto/ulangan</link>
-      <description>Ulangan 1 Kelas X ▶️ Mulai Kuis // Memaksa pemulian bila timer tidak otomatis document.getElementById(&apos;btn-mulai&apos;).addEventListener(&apos;click&apos;, () =&gt; { const kuis = document.querySelector(&apos;latihan-kuis&apos;); if (kuis &amp;&amp; kuis._onStartClick) kuis._onStartClick(); });</description>
+      <description>Ulangan 1 Kelas X ▶️ Mulai Kuis &amp;#60;script&amp;#62; // Memaksa pemulian bila timer tidak otomatis document.getElementById(&apos;btn-mulai&apos;).addEventListener(&apos;click&apos;, () =&amp;#62; { const kuis = document.querySelector(&apos;latihan-kuis&apos;); if (kuis &amp;#38;&amp;#38; kuis._onStartClick) kuis._onStartClick(); }); &amp;#60;/script&amp;#62;</description>
       <guid>https://localhost:3000/sites/haxto/ulangan</guid>
       <pubDate>Wed, 23 Sep 2026 02:28:17 GMT</pubDate>
     </item>
