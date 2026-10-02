@@ -10,7 +10,7 @@ description: |+
 
 metadata:
   created: 1790130497
-  updated: 1790935848
+  updated: 1790935935
   images: []
   videos: []
   theme:
@@ -46,12 +46,12 @@ content: >
   dengan saksama sebelum mengerjakan kuis. Waktu pengerjaan kuis dibatasi oleh
   timer; saat waktu habis, kuis akan dikunci dan nilai otomatis terkirim."
   materi-file="" cover-image="" judul-kuis="Evaluasi Kuis Interaktif"
-  student-id="" student-name="Abi Andy" student-nis="123" student-absen=""
-  student-kelas="XI-1" pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp;
-  dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim
-  ke spreadsheet." label-mulai="▶️ Mulai" hide-pause-restart show-question-nav
-  question-delay="1800" review-answers timer-autostart kkm="75"
-  tab-switch-threshold="3"
+  student-id="STD-65108010" student-name="Abi Andy" student-nis="123"
+  student-absen="" student-kelas="XI-1" pesan-waktu-habis="⏰ Waktu habis! Kuis
+  dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda
+  sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai" hide-pause-restart
+  show-question-nav question-delay="1800" review-answers timer-autostart
+  kkm="75" tab-switch-threshold="3"
   questions="[{&quot;type&quot;:&quot;mc&quot;,&quot;question&quot;:&quot;Penilaian
   kevalidan suatu data teks dapat diuji secara terstruktur menggunakan instrumen
   ilmiah yang disebut Metode CRAAP yang membagi evaluasi ke dalam lima indikator
