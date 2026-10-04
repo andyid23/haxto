@@ -1,0 +1,17 @@
+{
+  "id": "item-5db151cd-c603-4b6d-9ddf-35712cc84715",
+  "indent": 0,
+  "location": "pages/item-5db151cd-c603-4b6d-9ddf-35712cc84715/index.json",
+  "slug": "new-page",
+  "order": 1,
+  "parent": null,
+  "title": "New Page",
+  "description": "",
+  "metadata": {
+    "created": 1791075467,
+    "updated": 1791075467,
+    "images": [],
+    "videos": []
+  },
+  "content": "<p></p>"
+}
