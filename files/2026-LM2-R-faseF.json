@@ -1,0 +1,72 @@
+[
+  {
+    "id": "LM2-R-01",
+    "type": "uraian",
+    "indikator": "Menganalisis kekurangan utama metode Membaca Vertikal",
+    "question": "Mengapa mengandalkan metode Membaca Vertikal sangat berisiko membuat seseorang terkecoh oleh berita bohong (hoaks)? Jelaskan 2 kelemahan utama dari metode ini jika diterapkan pada situs web yang sengaja didesain untuk menipu! (Isi beda dari soal ulangan.)",
+    "points": 10
+  },
+  {
+    "id": "LM2-R-02",
+    "type": "uraian",
+    "indikator": "Menerapkan langkah awal membaca lateral saat menemukan artikel kontroversial",
+    "question": "Uraikan alur tindakan konkret saat kamu menerapkan teknik Lateral Reading ketika menemukan klaim kesehatan baru di media sosial yang bersumber dari portal berita tidak dikenal! (Isi beda dari soal ulangan.)",
+    "points": 10
+  },
+  {
+    "id": "LM2-R-03",
+    "type": "uraian",
+    "indikator": "Memahami batasan jaminan keamanan pada protokol HTTPS",
+    "question": "Mengapa ketersediaan sertifikat keamanan HTTPS dan ikon gembok pada sebuah alamat situs web tidak menjamin bahwa artikel yang dipublikasikan di situs tersebut pasti 100% benar dan akurat? Jelaskan perbedaan antara keamanan jalur transmisi dan kevalidan konten! (Isi beda dari soal ulangan.)",
+    "points": 10
+  },
+  {
+    "id": "LM2-R-04",
+    "type": "uraian",
+    "indikator": "Memahami tujuan utama penggunaan metode triangulasi dalam verifikasi",
+    "question": "Jelaskan prinsip kerja metode Triangulasi dalam verifikasi informasi digital! Mengapa membandingkan data dari minimal tiga sumber independen yang berbeda sangat disarankan sebelum menyimpulkan suatu kebenaran? (Isi beda dari soal ulangan.)",
+    "points": 10
+  },
+  {
+    "id": "LM2-R-05",
+    "type": "uraian",
+    "indikator": "Menganalisis bahaya bias konfirmasi dalam penyerapan informasi",
+    "question": "Bagaimana fenomena Bias Konfirmasi (Confirmation Bias) mempengaruhi cara seseorang memilih dan meyakini informasi di internet? Berikan contoh situasi nyata di mana bias konfirmasi membuat seseorang terjebak hoaks! (Isi beda dari soal ulangan.)",
+    "points": 10
+  },
+  {
+    "id": "LM2-R-06",
+    "type": "uraian",
+    "indikator": "Menganalisis pentingnya riwayat publikasi (publication history) untuk kredibilitas",
+    "question": "Mengapa rekam jejak atau riwayat publikasi (publication history) suatu penerbit digital menjadi indikator penting dalam menilai tingkat keandalan informasi? Jelaskan perbedaannya dengan situs yang baru dibuat kemarin! (Isi beda dari soal ulangan.)",
+    "points": 10
+  },
+  {
+    "id": "LM2-R-07",
+    "type": "uraian",
+    "indikator": "Mengevaluasi kasus penggunaan Reverse Image Search untuk mendeteksi hoaks konteks",
+    "question": "Jelaskan cara kerja teknik Reverse Image Search dalam membongkar hoaks foto yang sering dimanipulasi konteksnya! Mengapa pencarian gambar terbalik ini efektif membuktikan kecurangan informasi visual? (Isi beda dari soal ulangan.)",
+    "points": 10
+  },
+  {
+    "id": "LM2-R-08",
+    "type": "uraian",
+    "indikator": "Memahami alasan kerentanan manipulasi pada metadata EXIF gambar",
+    "question": "Mengapa seorang peneliti tidak boleh menggantungkan keaslian foto digital hanya pada metadata EXIF saja? sebutkan faktor-faktor yang dapat menyebabkan data EXIF diubah atau hilang! (Isi beda dari soal ulangan.)",
+    "points": 10
+  },
+  {
+    "id": "LM2-R-09",
+    "type": "uraian",
+    "indikator": "Mengidentifikasi prosedur pemeriksaan Kebenaran Visual pada gambar digital",
+    "question": "Apa saja indikator teknis atau kejanggalan visual yang wajib diperiksa saat kamu melakukan analisis Kebenaran Visual pada sebuah foto hasil suntingan digital yang mencurigakan? (Isi beda dari soal ulangan.)",
+    "points": 10
+  },
+  {
+    "id": "LM2-R-10",
+    "type": "uraian",
+    "indikator": "Menganalisis esensi analisis gaya penulisan (writing style) untuk menguji keandalan sumber",
+    "question": "Bagaimana analisis gaya penulisan (seperti penggunaan judul provokatif/clickbait, tanda seru berlebihan, dan kesalahan ejaan) dapat membantu kita mengenali indikasi awal sebuah artikel hoaks? Jelaskan alasannya! (Isi beda dari soal ulangan.)",
+    "points": 10
+  }
+]

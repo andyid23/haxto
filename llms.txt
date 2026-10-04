@@ -30,7 +30,7 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [ulangan](https://localhost:3000/sites/haxto/pages/item-0a256163-9462-4572-9be7-e902dfa6bfe3/index.md): Ulangan 1 Kelas X
 - [Ulangan Harian 2 Fase E LM2-E](https://localhost:3000/sites/haxto/pages/item-4d3d4b5e-ea50-4049-bdcb-dd0b672562c7/index.md): 📝 Kuis Koleksi Data (LM2) Kelas X Kerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban benar/salah ditampilkan. Login dahulu untuk menampilkan tombol mulai&#160;ulanga
 - [REMIDI Baru Kelas X](https://localhost:3000/sites/haxto/pages/item-5db151cd-c603-4b6d-9ddf-35712cc84715/index.md)
-- [REMIDI Baru Kelas XI](https://localhost:3000/sites/haxto/pages/item-3f6fce49-4e96-46b8-9f2f-eec9dd3b462b/index.md)
+- [REMIDI Baru Kelas XI](https://localhost:3000/sites/haxto/pages/item-3f6fce49-4e96-46b8-9f2f-eec9dd3b462b/index.md): 1️&#8419; LM1 &#8212; Ulangan 1 + Remidi Kelas XI 2️&#8419; LM2 &#8212; Ulangan 2 + Remidi indikator lengkap
 
 ## Optional
 - [Search index](https://localhost:3000/sites/haxto/lunrSearchIndex.json): Lunr corpus for quick full-text retrieval.

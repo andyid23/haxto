@@ -1,0 +1,72 @@
+[
+  {
+    "id": "LM1-R-01",
+    "type": "uraian",
+    "indikator": "Menerapkan kombinasi kata kunci persis, site:, dan filetype: untuk mencari dokumen resmi",
+    "question": "Tuliskan sintaks pencarian lanjutan lengkap yang harus kamu ketik di mesin pencari Google jika kamu ingin mencari jurnal ilmiah tentang \"kecerdasan buatan\" berformat PDF yang diterbitkan oleh situs resmi perguruan tinggi Indonesia (ac.id)! Jelaskan fungsi dari masing-masing perintah yang kamu gunakan! (Isi beda dari soal ulangan.)",
+    "points": 10
+  },
+  {
+    "id": "LM1-R-02",
+    "type": "uraian",
+    "indikator": "Memahami fungsi operator Boolean AND untuk mempersempit hasil pencarian",
+    "question": "Jelaskan bagaimana mekanisme kerja operator Boolean AND dalam menyaring kata kunci di mesin pencari, dan berikan contoh konkret kasus penelusuran yang membutuhkan penggunaan operator ini! (Isi beda dari soal ulangan.)",
+    "points": 10
+  },
+  {
+    "id": "LM1-R-03",
+    "type": "uraian",
+    "indikator": "Memahami fungsi tanda petik ganda (Exact Match) dalam pencarian",
+    "question": "Mengapa penggunaan tanda petik ganda \"\" sangat efektif saat mencari istilah teknis berfrasa panjang? Jelaskan perbedaan hasil pencarian antara mengetik perubahan iklim global tanpa tanda petik dengan \"perubahan iklim global\"! (Isi beda dari soal ulangan.)",
+    "points": 10
+  },
+  {
+    "id": "LM1-R-04",
+    "type": "uraian",
+    "indikator": "Memahami fungsi operator NOT/karakter minus (-) untuk mengecualikan istilah",
+    "question": "Seorang siswa ingin mencari informasi tentang hewan Jaguar tetapi tidak ingin hasil pencariannya menampilkan informasi tentang merek mobil Jaguar. Tuliskan sintaks pencarian yang tepat beserta penjelasannya! (Isi beda dari soal ulangan.)",
+    "points": 10
+  },
+  {
+    "id": "LM1-R-05",
+    "type": "uraian",
+    "indikator": "Menganalisis dampak negatif penggunaan kata kunci yang terlampau spesifik",
+    "question": "Uraikan risiko dan kerugian yang dihadapi oleh seorang peneliti jika ia menetapkan frasa kata kunci yang terlalu sempit dan sangat spesifik sejak awal proses pencarian literatur! (Isi beda dari soal ulangan.)",
+    "points": 10
+  },
+  {
+    "id": "LM1-R-06",
+    "type": "uraian",
+    "indikator": "Mengidentifikasi prinsip dasar penelusuran visual pada Google Lens",
+    "question": "Jelaskan bagaimana teknologi Google Lens membantu pengguna melakukan penelusuran berbasis citra/visual, serta berikan 2 contoh situasi nyata di mana fitur ini lebih unggul dibandingkan pencarian teks biasa! (Isi beda dari soal ulangan.)",
+    "points": 10
+  },
+  {
+    "id": "LM1-R-07",
+    "type": "uraian",
+    "indikator": "Memahami fungsi variabel cache: untuk membuka salinan sementara halaman web",
+    "question": "Dalam situasi seperti apa variabel pencarian cache: sangat berguna bagi pengguna internet? Jelaskan cara kerja penyimpanan cache oleh mesin pencari Google! (Isi beda dari soal ulangan.)",
+    "points": 10
+  },
+  {
+    "id": "LM1-R-08",
+    "type": "uraian",
+    "indikator": "Mengidentifikasi domain resmi perguruan tinggi di Indonesia (.ac.id)",
+    "question": "Mengapa dokumen rujukan atau artikel yang diunduh dari domain .ac.id memiliki kredibilitas akademik yang lebih tinggi dibandingkan dari blog pribadi berdomain .blogspot.com? Jelaskan analisis alasannya! (Isi beda dari soal ulangan.)",
+    "points": 10
+  },
+  {
+    "id": "LM1-R-09",
+    "type": "uraian",
+    "indikator": "Menganalisis efisiensi pemilihan kata kunci yang relevan dalam pencarian",
+    "question": "Mengapa perumusan kata kunci (keywords) yang presisi merupakan langkah paling krusial sebelum memulai penelusuran informasi digital? Jelaskan dampaknya terhadap efisiensi waktu riset! (Isi beda dari soal ulangan.)",
+    "points": 10
+  },
+  {
+    "id": "LM1-R-10",
+    "type": "uraian",
+    "indikator": "Menganalisis keunggulan tingkat keamanan protokol HTTPS",
+    "question": "Jelaskan peran teknologi enkripsi SSL/TLS pada protokol HTTPS dalam menjaga keamanan data sensitif pengguna saat mengakses atau mengunduh informasi dari sebuah situs web! (Isi beda dari soal ulangan.)",
+    "points": 10
+  }
+]

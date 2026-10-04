@@ -25,7 +25,7 @@
       "name": "haxto",
       "domain": "",
       "created": 1787457359,
-      "updated": 1791077537,
+      "updated": 1791078192,
       "logo": "",
       "version": "26.0.1"
     },
@@ -829,13 +829,30 @@
       "order": 11,
       "parent": null,
       "title": "REMIDI Baru Kelas XI",
-      "description": "",
+      "description": "\n1️&#8419; LM1 &#8212; Ulangan 1 + Remidi Kelas XI\n\n      \n\n      2️&#8419; LM2 &#8212; Ulangan 2 + Remidi indikator lengkap\n\n      \n      \n\n\n",
       "metadata": {
         "locked": false,
         "created": 1791077536,
         "images": [],
         "videos": [],
-        "updated": 1791077536
+        "updated": 1791078192,
+        "theme": {
+          "element": "polaris-flex-theme",
+          "path": "@haxtheweb/polaris-theme/lib/polaris-flex-theme.js",
+          "name": "Polaris Flex",
+          "thumbnail": "@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-polaris-flex-theme-thumb.jpg",
+          "description": "Start with a blank site using the Polaris Flex",
+          "category": [
+            "Website"
+          ],
+          "hidden": false,
+          "priority": -1,
+          "terrible": false,
+          "key": "polaris-flex-theme"
+        },
+        "published": true,
+        "hideInMenu": false,
+        "readtime": 1
       }
     }
   ]
