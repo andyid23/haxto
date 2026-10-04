@@ -2,14 +2,14 @@ id: item-5db151cd-c603-4b6d-9ddf-35712cc84715
 indent: 0
 location: pages/item-5db151cd-c603-4b6d-9ddf-35712cc84715/index.yaml
 slug: remidi-kelas-x
-order: 4
+order: 5
 parent: null
 title: REMIDI Baru Kelas X
 description: |+
 
 metadata:
   created: 1791075467
-  updated: 1791076841
+  updated: 1791077429
   images: []
   videos: []
   theme:
@@ -39,7 +39,7 @@ content: >
   remidi-soal-url="./files/2026-LM1-R-faseE.json" remidi-jumlah-soal="1"
   remidi-kirim-otomatis
   apps-script-url="https://script.google.com/macros/s/AKfycbwFby49gIJNzLL36S5JSZH7-MGBwqUPmpSx8ZhKeDTuCvWLh_MdP6Io4gFCCQuOTsb8/exec"
-  duration="700" judul-materi="Materi Pembelajaran" teks-materi="Baca materi di
+  duration="1800" judul-materi="Materi Pembelajaran" teks-materi="Baca materi di
   bawah ini dengan saksama sebelum mengerjakan kuis. Waktu pengerjaan kuis
   dibatasi oleh timer; saat waktu habis, kuis akan dikunci dan nilai otomatis
   terkirim." materi-file="" cover-image="" judul-kuis="Evaluasi Kuis Interaktif"
@@ -301,7 +301,7 @@ content: >
   remidi-soal-url="./files/2026-LM1-R-faseE.json" remidi-jumlah-soal="1"
   remidi-kirim-otomatis
   apps-script-url="https://script.google.com/macros/s/AKfycbwFby49gIJNzLL36S5JSZH7-MGBwqUPmpSx8ZhKeDTuCvWLh_MdP6Io4gFCCQuOTsb8/exec"
-  duration="300" judul-materi="Materi Pembelajaran" teks-materi="Baca materi di
+  duration="1800" judul-materi="Materi Pembelajaran" teks-materi="Baca materi di
   bawah ini dengan saksama sebelum mengerjakan kuis. Waktu pengerjaan kuis
   dibatasi oleh timer; saat waktu habis, kuis akan dikunci dan nilai otomatis
   terkirim." materi-file="" cover-image="" judul-kuis="Evaluasi Kuis Interaktif"
