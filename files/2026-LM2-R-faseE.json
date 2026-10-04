@@ -1,0 +1,72 @@
+[
+  {
+    "id": "LM2-R-01",
+    "type": "uraian",
+    "indikator": "Menganalisis keunggulan utama platform Google Colab",
+    "question": "Jelaskan mengapa penggunaan platform berbasis cloud seperti Google Colab lebih mempermudah alur kerja seorang pemula dalam mempelajari Python dibandingkan harus melakukan instalasi perangkat lunak secara lokal di komputer! (Isi beda dari soal ulangan.)",
+    "points": 10
+  },
+  {
+    "id": "LM2-R-02",
+    "type": "uraian",
+    "indikator": "Memahami perintah dasar menampilkan output pada Python",
+    "question": "Tuliskan satu baris perintah Python menggunakan fungsi print() untuk menampilkan nama lengkap dan kelasmu ke layar, lalu jelaskan fungsi tanda petik dalam perintah tersebut! (Isi beda dari soal ulangan.)",
+    "points": 10
+  },
+  {
+    "id": "LM2-R-03",
+    "type": "uraian",
+    "indikator": "Mengidentifikasi pintasan tombol (shortcut) eksekusi di Google Colab",
+    "question": "Jelaskan perbedaan mendasar antara mengeksekusi kode menggunakan kombinasi tombol Shift + Enter dengan Ctrl + Enter pada antarmuka Google Colab! (Isi beda dari soal ulangan.)",
+    "points": 10
+  },
+  {
+    "id": "LM2-R-04",
+    "type": "uraian",
+    "indikator": "Menerapkan langkah dasar memulai pekerjaan di Google Colab",
+    "question": "Uraikan 3 langkah awal secara berurutan yang harus kamu lakukan dari membuka peramban hingga siap mengetikkan perintah Python pertama di lembar kerja Google Colab! (Isi beda dari soal ulangan.)",
+    "points": 10
+  },
+  {
+    "id": "LM2-R-05",
+    "type": "uraian",
+    "indikator": "Menganalisis sifat retensi memori dan variabel antar-sel di Google Colab",
+    "question": "Jika kamu mendefinisikan variabel nilai_a = 50 di Sel 1, apakah nilai tersebut bisa dipanggil dan dikalikan di Sel 3 tanpa harus menulis ulang perintah nilainya? Jelaskan konsep penyimpanan memori yang terjadi pada Colab! (Isi beda dari soal ulangan.)",
+    "points": 10
+  },
+  {
+    "id": "LM2-R-06",
+    "type": "uraian",
+    "indikator": "Mengevaluasi lokasi penyimpanan otomatis dan fungsi sel teks pada Google Colab",
+    "question": "Mengapa fitur otomatisasi penyimpanan ke Google Drive dan ketersediaan Sel Teks (Markdown) pada Google Colab sangat membantu dalam dokumentasi pembuatan laporan proyek pemrograman? (Isi beda dari soal ulangan.)",
+    "points": 10
+  },
+  {
+    "id": "LM2-R-07",
+    "type": "uraian",
+    "indikator": "Memahami fungsi pustaka requests dalam web scraping",
+    "question": "Jelaskan secara singkat apa yang terjadi di balik layar ketika pustaka requests di Python menjalankan perintah requests.get(url) terhadap sebuah situs web! (Isi beda dari soal ulangan.)",
+    "points": 10
+  },
+  {
+    "id": "LM2-R-08",
+    "type": "uraian",
+    "indikator": "Mengidentifikasi atribut keunikan elemen dalam dokumen HTML",
+    "question": "Dalam struktur kode HTML, mengapa atribut ID dianggap lebih ideal digunakan sebagai penanda spesifik untuk elemen tunggal dibanding atribut Class saat kita melakukan ekstraksi data? (Isi beda dari soal ulangan.)",
+    "points": 10
+  },
+  {
+    "id": "LM2-R-09",
+    "type": "uraian",
+    "indikator": "Mengidentifikasi metode BeautifulSoup untuk mengekstrak seluruh tag sejenis",
+    "question": "Jelaskan perbedaan hasil keluaran (output) antara metode find() dan find_all() pada BeautifulSoup ketika memproses sekumpulan tag paragraf <p> di dokumen HTML! (Isi beda dari soal ulangan.)",
+    "points": 10
+  },
+  {
+    "id": "LM2-R-10",
+    "type": "uraian",
+    "indikator": "Menganalisis etika dan praktik baik dalam melakukan web scraping",
+    "question": "Sebutkan 2 alasan utama mengapa seorang pengembang (developer) wajib memeriksa berkas robots.txt dan memberikan jeda waktu (time delay) saat melakukan web scraping pada server publik! (Isi beda dari soal ulangan.)",
+    "points": 10
+  }
+]

@@ -1,0 +1,266 @@
+[
+  {
+    "id": "LM1-01",
+    "indikator": "Menganalisis kriteria Currency pada metode CRAAP",
+    "question": "Penilaian kevalidan suatu data teks dapat diuji secara terstruktur menggunakan instrumen ilmiah yang disebut Metode CRAAP yang membagi evaluasi ke dalam lima indikator utama. Berdasarkan kriteria CRAAP, aspek Currency sangat penting dievaluasi oleh seorang siswa kelas X saat mengumpulkan referensi naskah siber. Pertanyaan evaluasi manakah yang paling tepat diajukan untuk menguji kriteria Currency tersebut?",
+    "hint": "Fokus pada keaktualan, waktu publikasi, dan kebaruan data riset.",
+    "choices": [
+      "\"Apakah sumber tersebut mencerminkan penelitian yang baru-baru ini dilakukan?\"",
+      "\"Apakah sumber tersebut berkaitan dengan topik kajian yang sedang dilakukan?\"",
+      "\"Apakah penulis memiliki kualifikasi keahlian yang diakui secara akademis?\"",
+      "\"Apakah isi dokumen tersebut bebas dari kesalahan tata bahasa dan typo?\"",
+      "\"Apakah motif penulisan artikel tersebut mengandung bias komersial?\""
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "LM1-02",
+    "indikator": "Mengidentifikasi kriteria Relevance pada metode CRAAP",
+    "question": "Seorang siswa menemukan artikel kesehatan yang sangat sesuai dengan tugas sekolahnya tentang \"manfaat imunisasi\". Berdasarkan kriteria CRAAP, evaluasi siswa terhadap kesesuaian konten tersebut dengan topik tugas yang sedang dikerjakannya merupakan perwujudan dari kriteria...",
+    "hint": "Perhatikan keterkaitan langsung antara isi informasi dan topik kajian yang dibutuhkan.",
+    "choices": [
+      "Currency",
+      "Relevance",
+      "Authority",
+      "Accuracy",
+      "Purpose"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "LM1-03",
+    "indikator": "Memahami konsep Authority pada metode CRAAP",
+    "question": "Dalam Metode CRAAP (Currency, Relevance, Authority, Accuracy, Purpose), apa yang dimaksud dengan komponen Authority (Otoritas)?",
+    "hint": "Pertimbangkan latar belakang pembuat informasi dan platform penerbitnya.",
+    "choices": [
+      "Mengevaluasi seberapa baru informasi tersebut berdasarkan tahun publikasinya",
+      "Memeriksa kualifikasi penulis, kredibilitas lembaga penerbit, dan reputasi domain pengelolanya",
+      "Mengukur seberapa cocok informasi dengan kebutuhan riset",
+      "Menganalisis niat sebenarnya penulis ketika menulis artikel",
+      "Memastikan dokumen tersebut tidak disunting atau diubah pihak luar"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "LM1-04",
+    "indikator": "Menerapkan langkah taktis membaca lateral (lateral reading)",
+    "question": "Ketika melakukan teknik membaca lateral (lateral reading) untuk mengevaluasi sebuah postingan di media sosial yang mencurigakan, tindakan manakah yang harus dilakukan pertama kali oleh seorang siswa?",
+    "hint": "Ciri khas membaca lateral adalah tidak berdiam di halaman asli melainkan memverifikasi ke luar.",
+    "choices": [
+      "Membaca naskah postingan tersebut secara linear dari atas ke bawah berulang kali",
+      "Memperhatikan logo profesional dan desain visual internal yang tertera pada postingan",
+      "Keluar dari situs atau postingan asal, membuka tab baru, dan memverifikasi klaim di situs periksa fakta atau sumber bereputasi",
+      "Langsung membagikan naskah postingan tersebut ke grup obrolan agar diverifikasi orang lain",
+      "Menolak mengaktifkan fitur cookie pada peramban yang digunakan"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "LM1-05",
+    "indikator": "Menganalisis prosedur pengutipan terhadap jurnal tanpa peer-review",
+    "question": "Seorang peneliti menemukan artikel jurnal ilmiah bereputasi tentang dampak krisis iklim. Namun, ia membaca keterangan bahwa artikel jurnal tersebut belum melewati proses peninjauan sejawat (peer-review) oleh para ahli di bidangnya. Tindakan paling tepat yang harus dilakukan peneliti tersebut adalah...",
+    "hint": "Jurnal tanpa peninjauan sejawat memerlukan pemeriksaan silang tambahan.",
+    "choices": [
+      "Langsung mengutip jurnal tersebut karena diterbitkan oleh penerbit terkenal",
+      "Melakukan validasi lebih lanjut sebelum memutuskan untuk mengutip jurnal tersebut",
+      "Mengabaikan jurnal tersebut sepenuhnya karena tidak menggunakan format dokumen PDF",
+      "Melaporkan penulis jurnal tersebut kepada aparat kepolisian atas dasar pelanggaran UU ITE",
+      "Mengubah seluruh isi abstrak jurnal agar sesuai dengan opini pribadi peneliti"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "LM1-06",
+    "indikator": "Memahami regulasi hukum terkait sanksi pidana penyebaran hoaks",
+    "question": "Pemerintah Indonesia secara tegas melarang penyebaran berita bohong yang menyesatkan di dunia maya. Regulasi hukum yang mengatur sanksi pidana terhadap pelaku penyebaran hoaks diatur dalam...",
+    "hint": "Aturan ini berkaitan dengan Informasi dan Transaksi Elektronik.",
+    "choices": [
+      "UU Nomor 28 Tahun 2014 Pasal 40 tentang Hak Cipta",
+      "UU ITE Nomor 11 Tahun 2008 Pasal 45A ayat (1)",
+      "WTO Agreement tentang Hak Atas Kekayaan Intelektual (HaKI)",
+      "Undang-Undang No. 3 Tahun 2017 tentang Perbukuan Nasional",
+      "UU Nomor 19 Tahun 2016 tentang Revisi UU ITE Pasal 40 ayat (2)"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "LM1-07",
+    "indikator": "Memahami tujuan utama ekosistem periksa fakta di masyarakat digital",
+    "question": "Melalui pemahaman CRAAP dan strategi membaca lateral, siswa dilatih berpikir kritis agar tidak mudah terjebak oleh infodemi atau klaim sepihak. Apa tujuan utama dari ekosistem periksa fakta di masyarakat digital?",
+    "hint": "Fokus pada penyaringan kebenaran dan pencegahan disinformasi secara kolaboratif.",
+    "choices": [
+      "Untuk mempercepat penyebaran informasi agar lebih cepat dibaca publik",
+      "Untuk menyaring dan memvalidasi fakta sekaligus membendung berita bohong (hoaks) di dunia digital",
+      "Untuk menghapus seluruh berita digital yang ada di internet",
+      "Untuk mengganti peran jurnalis profesional di media tradisional",
+      "Untuk mengenkripsi semua data penting agar tidak dapat dilacak"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "LM1-08",
+    "indikator": "Menerapkan analisis metodologi saat menemukan konflik data statistik",
+    "question": "Ketika menyusun analisis data, seorang siswa menemukan dua data statistik yang bertolak belakang mengenai \"angka pengangguran\" dari dua kementerian resmi pemerintah yang sama-sama kredibel. Tindakan manakah yang paling tepat dilakukan siswa tersebut?",
+    "hint": "Analisis landasan pengumpulan data dan batasan variabel dari kedua pihak.",
+    "choices": [
+      "Memilih data yang persentasenya paling menyenangkan hati pribadi siswa",
+      "Mengabaikan kedua data tersebut dan mencari artikel opini di media sosial",
+      "Memeriksa metodologi pengumpulan data dan konteks di balik data dari kedua kementerian tersebut",
+      "Mengambil nilai rata-rata dari kedua data tersebut tanpa menganalisis prosesnya",
+      "Melaporkan salah satu kementerian ke portal aduan siber karena dianggap menyebarkan hoaks"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "LM1-09",
+    "indikator": "Menentukan sikap etis dan taat hukum terhadap pelanggaran HaKI",
+    "question": "Seorang siswa kelas X ingin membeli buku panduan belajar pemrograman. Di toko buku, ia menemukan e-book bajakan yang ditawarkan secara ilegal dengan harga sangat murah. Dari perspektif moral dan hukum HaKI, tindakan paling bijaksana yang harus diambil siswa adalah...",
+    "hint": "Cari opsi yang taat hukum sekaligus mendukung kebiasaan belajar ekonomis secara etis.",
+    "choices": [
+      "Membeli e-book bajakan tersebut karena menghemat anggaran belajarnya",
+      "Menolak membeli versi bajakan dan mencari alternatif perangkat ajar/buku bersertifikat resmi atau berlisensi terbuka (open source) yang gratis dan legal",
+      "Membeli e-book bajakan tersebut lalu membagikannya secara gratis di media sosial",
+      "Meminta penjual buku menonaktifkan fitur enkripsi file e-book bajakan tersebut",
+      "Membeli e-book tersebut hanya jika format dokumennya berupa PDF"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "LM1-10",
+    "indikator": "Menganalisis bahaya bias konfirmasi (confirmation bias) dalam verifikasi",
+    "question": "Apa bahaya terbesar dari kecenderungan psikologis bias konfirmasi (confirmation bias) ketika seorang siswa melakukan verifikasi kebenaran artikel di internet?",
+    "hint": "Kecenderungan ini membuat orang hanya menerima fakta yang ia sukai.",
+    "choices": [
+      "Siswa menjadi terlalu cepat bosan saat membaca teks ilmiah yang panjang",
+      "Siswa hanya akan aktif mengumpulkan bukti internet yang mendukung opini pribadinya sendiri dan menolak fakta tandingan yang sebenarnya kredibel",
+      "Peramban komputer otomatis mematikan koneksi internet akibat muatan data berlebih",
+      "Siswa terancam melanggar hukum hak cipta UU ITE karena membaca artikel opini",
+      "Server database mesin pencari Google otomatis memblokir IP address milik siswa"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "LM1-11",
+    "indikator": "Menganalisis urgensi periksa fakta pada era jurnalisme digital",
+    "question": "Dalam konteks jurnalisme digital, mengapa periksa fakta dianggap lebih penting daripada era jurnalisme tradisional? Karena jurnalisme digital...",
+    "hint": "Kemudahan akses membuat siapa saja bisa mempublikasikan konten tanpa saringan ketat.",
+    "choices": [
+      "lebih cepat dalam menyebarkan informasi secara berulang-ulang",
+      "lebih mengutamakan opini daripada fakta objektif",
+      "memungkinkan lebih banyak orang untuk menjadi jurnalis tanpa pelatihan formal",
+      "sudah memiliki mekanisme periksa fakta otomatis di setiap web",
+      "memungkinkan hanya penerbit terkenal yang mempublikasikan konten"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "LM1-12",
+    "indikator": "Mengevaluasi keabsahan pernyataan tentang protokol HTTPS dan metode membaca",
+    "type": "pgk",
+    "question": "Tentukan Benar/Salah untuk setiap pernyataan mengenai evaluasi situs dan cara membaca berikut!",
+    "hint": "Cermati cakupan nyata enkripsi HTTPS dan perbedaan membaca vertikal vs lateral.",
+    "statements": [
+      {
+        "text": "Protokol HTTPS menggunakan enkripsi SSL/TLS untuk melindungi keamanan data transmisi pengguna, tetapi protokol ini tidak menjamin kebenaran isi dari informasi yang dipublikasikan di dalam website tersebut.",
+        "answer": true
+      },
+      {
+        "text": "Metode membaca vertikal lebih direkomendasikan daripada membaca lateral untuk mendeteksi keaslian artikel kesehatan karena metode ini berfokus menilai keindahan logo dan kesaksian di halaman \"About Us\".",
+        "answer": false
+      }
+    ]
+  },
+  {
+    "id": "LM1-13",
+    "indikator": "Mengevaluasi keabsahan pernyataan tentang kriteria Accuracy dan ledakan infodemi",
+    "type": "pgk",
+    "question": "Tentukan Benar/Salah untuk setiap pernyataan mengenai evaluasi keakuratan data dan fenomena infodemi berikut!",
+    "hint": "Cermati kriteria Accuracy pada CRAAP serta pemicu utama ledakan informasi di era digital.",
+    "statements": [
+      {
+        "text": "Evaluasi kriteria Accuracy dalam tes CRAAP terpenuhi apabila sebuah dokumen tertulis menyertakan rujukan ilmiah yang logis, disajikan secara profesional, serta bebas dari kesalahan tata bahasa dan typo.",
+        "answer": true
+      },
+      {
+        "text": "Fenomena ledakan infodemi di era Masyarakat 5.0 terjadi karena kemudahan publikasi digital secara instan tanpa adanya proses penyaringan (filter) ketat seperti pada media informasi tradisional.",
+        "answer": true
+      }
+    ]
+  },
+  {
+    "id": "LM1-14",
+    "indikator": "Mengevaluasi keabsahan pernyataan tentang Lisensi Creative Commons dan jurnalisme periksa fakta",
+    "type": "pgk",
+    "question": "Tentukan Benar/Salah untuk setiap pernyataan mengenai lisensi hak cipta digital dan esensi periksa fakta berikut!",
+    "hint": "Cermati arti kode NC (Non-Commercial) serta prinsip pembawaan konteks dalam periksa fakta.",
+    "statements": [
+      {
+        "text": "Lisensi Creative Commons (CC BY-NC) memperbolehkan pengguna menyalin dan menyebarluaskan suatu karya ilmiah secara bebas, termasuk menggunakannya untuk tujuan komersial atau bisnis pribadi tanpa izin khusus.",
+        "answer": false
+      },
+      {
+        "text": "Jurnalisme pemeriksaan fakta dalam jurnalisme digital berfokus pada bagaimana cerita itu diceritakan secara utuh beserta konteksnya, bukan sekadar kutipan pernyataan semata.",
+        "answer": true
+      }
+    ]
+  },
+  {
+    "id": "LM1-15",
+    "indikator": "Menganalisis komponen ekosistem periksa fakta digital",
+    "question": "Manakah pernyataan berikut yang bukan bagian dari komponen ekonomi digital yang benar terkait ekosistem periksa fakta? (Pilih dua opsi)",
+    "hint": "Cari opsi yang bertentangan atau berupa instrumen regulasi/perilaku menyimpang.",
+    "choices": [
+      "Organisasi Periksa Fakta Independen seperti CekFakta.com dan Turnbackhoax.id",
+      "Jurnalis dan Peneliti yang secara aktif menyaring kebenaran berita",
+      "Platform media sosial yang memantau aliran konten dan menandai postingan menyesatkan",
+      "Publik yang menyebarkan hoaks tanpa verifikasi terlebih dahulu",
+      "Instrumen hukum seperti UU ITE Pasal 45A ayat (1)"
+    ],
+    "correctAnswers": [
+      2,
+      4
+    ]
+  },
+  {
+    "id": "LM1-16",
+    "indikator": "Menganalisis perbedaan metode membaca lateral dan membaca vertikal",
+    "question": "Membaca lateral (lateral reading) dan membaca vertikal merupakan dua cara berbeda dalam mengevaluasi informasi digital. Manakah opsi-opsi yang benar terkait perbedaan utama di antara keduanya? (Pilih lebih dari satu opsi)",
+    "hint": "Perhatikan fokus pemeriksaan internal vs verifikasi eksternal serta aspek kecepatannya.",
+    "choices": [
+      "Membaca Vertikal: hanya membaca satu halaman dari atas ke bawah dan mengandalkan visual internal",
+      "Membaca Lateral: keluar dari situs web, membuka tab baru, dan mencari konsensus sumber luar tepercaya",
+      "Membaca Vertikal lebih andal karena tidak perlu membuka banyak tab baru",
+      "Membaca Lateral lebih lambat karena harus membuka banyak sumber berbeda"
+    ],
+    "correctAnswers": [
+      0,
+      1,
+      3
+    ]
+  },
+  {
+    "id": "LM1-17",
+    "indikator": "Menjodohkan kriteria evaluasi CRAAP dengan pertanyaan pengujinya",
+    "type": "matching",
+    "question": "Pasangkanlah kriteria evaluasi ilmiah CRAAP di lajur kiri dengan deskripsi pertanyaan pengujinya yang tepat di lajur kanan!",
+    "hint": "Cermati aspek waktu (Currency), keterkaitan (Relevance), kebenaran (Accuracy), dan niat/tujuan (Purpose).",
+    "leftItems": [
+      "Currency (Keaktualan)",
+      "Relevance (Relevansi)",
+      "Accuracy (Keakuratan)",
+      "Purpose (Tujuan)"
+    ],
+    "rightItems": [
+      "Apakah ada bias kepentingan terselubung atau motif komersial di balik penerbitan artikel tersebut?",
+      "Apakah informasi tersebut berkaitan erat dan penting untuk menjawab topik tugas sekolah saya?",
+      "Kapan dokumen siber tersebut diterbitkan, dan apakah datanya masih mutakhir?",
+      "Apakah sumber tersebut menyajikan argumen pendukung yang logis dan bebas dari kesalahan typo?"
+    ],
+    "correctPairs": {
+      "0": 2,
+      "1": 1,
+      "2": 3,
+      "3": 0
+    }
+  }
+]

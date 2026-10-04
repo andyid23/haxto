@@ -1,0 +1,72 @@
+[
+  {
+    "id": "LM1-R-01",
+    "type": "uraian",
+    "indikator": "Menganalisis kriteria Currency pada metode CRAAP",
+    "question": "Mengapa evaluasi kriteria Currency (Keaktualan) sangat krusial saat menyusun tugas karya ilmiah di era informasi siber yang bergerak cepat? Jelaskan dampaknya jika kamu menggunakan data penelitian yang sudah kadaluwarsa! (Isi beda dari soal ulangan.)",
+    "points": 10
+  },
+  {
+    "id": "LM1-R-02",
+    "type": "uraian",
+    "indikator": "Mengidentifikasi kriteria Relevance pada metode CRAAP",
+    "question": "Diberikan skenario: kamu sedang meneliti topik 'Dampak Sampah Plastik terhadap Ekosistem Laut', namun kamu menemukan artikel bagus yang membahas 'Proses Pembuatan Plastik di Pabrik'. Jelaskan apakah artikel tersebut memenuhi kriteria Relevance untuk risetmu, serta berikan alasannya! (Isi beda dari soal ulangan.)",
+    "points": 10
+  },
+  {
+    "id": "LM1-R-03",
+    "type": "uraian",
+    "indikator": "Memahami konsep Authority pada metode CRAAP",
+    "question": "Jelaskan 3 indikator utama yang kamu gunakan untuk menguji kriteria Authority (Otoritas) dari sebuah blog siber sebelum kamu menjadikan tulisannya sebagai rujukan ilmiah! (Isi beda dari soal ulangan.)",
+    "points": 10
+  },
+  {
+    "id": "LM1-R-04",
+    "type": "uraian",
+    "indikator": "Menerapkan langkah taktis membaca lateral (lateral reading)",
+    "question": "Tuliskan simulasi langkah konkret yang akan kamu lakukan saat menerapkan teknik Lateral Reading untuk memverifikasi sebuah klaim berita kesehatan viral di media sosial, mulai dari membuka peramban hingga membuat kesimpulan! (Isi beda dari soal ulangan.)",
+    "points": 10
+  },
+  {
+    "id": "LM1-R-05",
+    "type": "uraian",
+    "indikator": "Menganalisis prosedur pengutipan terhadap jurnal tanpa peer-review",
+    "question": "Mengapa suatu artikel jurnal yang belum melalui proses peer-review tidak boleh langsung dikutip begitu saja dalam tulisan ilmiah? Tuliskan 2 langkah verifikasi tambahan yang wajib dilakukan! (Isi beda dari soal ulangan.)",
+    "points": 10
+  },
+  {
+    "id": "LM1-R-06",
+    "type": "uraian",
+    "indikator": "Memahami regulasi hukum terkait sanksi pidana penyebaran hoaks",
+    "question": "Jelaskan konsekuensi hukum dan sosial yang dapat menimpa seorang siswa jika ia terbukti ikut menyebarkan berita bohong (hoaks) di media sosial berdasarkan ketentuan UU ITE! (Isi beda dari soal ulangan.)",
+    "points": 10
+  },
+  {
+    "id": "LM1-R-07",
+    "type": "uraian",
+    "indikator": "Memahami tujuan utama ekosistem periksa fakta di masyarakat digital",
+    "question": "Bagaimana peran aktif siswa kelas X sebagai bagian dari masyarakat digital dalam membantu ekosistem periksa fakta guna mencegah penyebaran disinformasi di lingkungan sekolah? Tuliskan 2 contoh tindakan konkritnya! (Isi beda dari soal ulangan.)",
+    "points": 10
+  },
+  {
+    "id": "LM1-R-08",
+    "type": "uraian",
+    "indikator": "Menerapkan analisis metodologi saat menemukan konflik data statistik",
+    "question": "Ketika kamu menemukan dua grafik statistik dari sumber berbeda dengan hasil yang bertolak belakang mengenai topik yang sama, uraikan 3 aspek metodologi yang harus kamu bedah untuk menentukan mana data yang lebih objektif! (Isi beda dari soal ulangan.)",
+    "points": 10
+  },
+  {
+    "id": "LM1-R-09",
+    "type": "uraian",
+    "indikator": "Menentukan sikap etis dan taat hukum terhadap pelanggaran HaKI",
+    "question": "Mengapa mengunduh dan mengandalkan buku digital (e-book) bajakan merugikan ekosistem literasi dan melanggar hukum HaKI? Berikan solusi alternatif yang legal dan terjangkau bagi pelajar! (Isi beda dari soal ulangan.)",
+    "points": 10
+  },
+  {
+    "id": "LM1-R-10",
+    "type": "uraian",
+    "indikator": "Menganalisis bahaya bias konfirmasi (confirmation bias) dalam verifikasi",
+    "question": "Jelaskan apa yang dimaksud dengan bias konfirmasi (confirmation bias) dan berikan contoh riil bagaimana bias ini bisa membuat seseorang mempercayai berita hoaks meskipun datanya jelas-jelas salah! (Isi beda dari soal ulangan.)",
+    "points": 10
+  }
+]
