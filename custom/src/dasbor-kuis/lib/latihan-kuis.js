@@ -670,17 +670,14 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
   }
 
   /**
-   * Nilai efektif LM untuk DISPLAY — selaras presedensi akumulasi rapor
-   * (codev6.gs: nilai sepakat > 0 menang; bila belum ada, terbaik dari
-   * ulangan/remidi). Tanpa ini kartu "Nilai terbaik" macet di skor
-   * ulangan dasar walau remedial sudah dinilai guru.
+   * Nilai efektif LM untuk DISPLAY — P9: max murni selaras akumulasi rapor
+   * (codev6.gs: max(asli, remedial, sepakat)). Kartu selalu menunjukkan
+   * angka yang sama dengan kolom rapor.
    */
   _skorEfektif() {
     const srv = this._remidiServer || {};
-    if (typeof srv.nilai_akhir_disepakati === "number" && srv.nilai_akhir_disepakati > 0) {
-      return srv.nilai_akhir_disepakati;
-    }
-    const kandidat = [this._bestSkor, srv.bestRemidi].filter((v) => typeof v === "number");
+    const kandidat = [this._bestSkor, srv.bestRemidi, srv.nilai_akhir_disepakati]
+      .filter((v) => typeof v === "number");
     return kandidat.length ? Math.max(...kandidat) : null;
   }
 

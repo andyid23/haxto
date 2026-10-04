@@ -62,7 +62,11 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
       questions: {
         type: Array,
         attribute: "questions",
-        reflect: true,
+        // P11: JANGAN reflect (pola kembaran kuis-ledakan + latihan-kuis).
+        // Dengan reflect, tiap _muatSoalDariFile/tempel JSON menulis SELURUH
+        // array soal ke atribut questions="[{...},...]" → DOM membengkak +
+        // HAX ikut menyimpan soal ke HTML halaman.
+        reflect: false,
         converter: {
           fromAttribute(value) {
             if (value == null || value === "") return undefined;

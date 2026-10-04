@@ -835,8 +835,7 @@
                 "text": "array"
               },
               "default": "[]",
-              "attribute": "questions",
-              "reflects": true
+              "attribute": "questions"
             },
             {
               "kind": "field",
@@ -5053,7 +5052,7 @@
             {
               "kind": "method",
               "name": "_skorEfektif",
-              "description": "Nilai efektif LM untuk DISPLAY — selaras presedensi akumulasi rapor\n(codev6.gs: nilai sepakat > 0 menang; bila belum ada, terbaik dari\nulangan/remidi). Tanpa ini kartu \"Nilai terbaik\" macet di skor\nulangan dasar walau remedial sudah dinilai guru."
+              "description": "Nilai efektif LM untuk DISPLAY — P9: max murni selaras akumulasi rapor\n(codev6.gs: max(asli, remedial, sepakat)). Kartu selalu menunjukkan\nangka yang sama dengan kolom rapor."
             },
             {
               "kind": "method",
