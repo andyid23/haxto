@@ -86,6 +86,12 @@
                 "inputMethod": "textfield"
             },
             {
+                "property": "namaGuru",
+                "title": "Nama Guru (Mode Guru)",
+                "description": "Nama guru yang mencatat nilai remedial pada tab Remedial.",
+                "inputMethod": "textfield"
+            },
+            {
                 "property": "nis",
                 "title": "NIS (Mode Siswa)",
                 "description": "Nomor Induk Siswa yang terdaftar pada sheet Users.",

@@ -177,4 +177,43 @@ ${!answered || editable ? html`<button class="btn-submit" @click=${state.onSubmi
       ${hideAnswers ? "" : feedbackText ? html`<div class="feedback ${feedbackPositive ? 'correct' : 'wrong'}">${feedbackText}</div>` : ''}
     `;
   }
+
+  /**
+   * Render soal HOTS uraian.
+   *
+   * Berbeda dari shortAnswer: TIDAK ada kunci jawaban di markup dan tidak ada
+   * rubrik — rubrik hanya hidup di panel guru (dasbor-kuis). Jika belum dinilai,
+   * tampilkan status "menunggu penilaian" alih-alih "Benar/Salah".
+   * @param {Object} soal - Question data
+   * @param {Object} state - Current quiz state
+   * @returns {import('lit').TemplateResult}
+   */
+  static renderUraian(soal, state) {
+    const { uraianText, answered, editable, feedbackText, feedbackPositive, hideAnswers } = state;
+    const perluPenilaian = answered && !editable && feedbackText && /menilai/i.test(feedbackText);
+    return html`
+      <div class="uraian-container">
+        <textarea
+          class="uraian-input"
+          rows="6"
+          aria-label="Jawaban uraian"
+          placeholder="Tulis jawaban uraian Anda di sini…"
+          .value=${uraianText || ""}
+          @input=${(e) => state.onInput(e.target.value)}
+          ?disabled=${answered && !editable}
+        ></textarea>
+        <div class="uraian-meta">
+          <span class="uraian-hint">Dinilai guru setelah dikirim — tidak ada jawaban benar otomatis.</span>
+          ${!answered || editable ? html`<button class="btn-submit" @click=${state.onSubmit}>Kirim Jawaban</button>` : ""}
+        </div>
+        ${perluPenilaian
+          ? html`<div class="feedback correct" role="status">Terkirim. Jawaban uraian sedang menunggu penilaian guru.</div>`
+          : hideAnswers
+            ? ""
+            : feedbackText
+              ? html`<div class="feedback ${feedbackPositive ? "correct" : "wrong"}">${feedbackText}</div>`
+              : ""}
+      </div>
+    `;
+  }
 }

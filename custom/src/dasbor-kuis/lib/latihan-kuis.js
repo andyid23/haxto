@@ -21,6 +21,54 @@ import "./quiz-user-auth.js";
  *
  * @element latihan-kuis
  */
+/**
+ * Samakan bentuk indikator sebelum dibandingkan: huruf besar, spasi rapat.
+ * Penulis soal bisa menulis "Memahami  konsep" di satu tempat dan
+ * "memahami konsep" di tempat lain; tanpa normalisasi keduanya tidak ketemu.
+ */
+function _normalisasiIndikator(v) {
+  return String(v == null ? "" : v)
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, " ");
+}
+
+/**
+ * Cermin JS dari `_kodeLmNormal` di codev6.gs — WAJIB sama perilakunya.
+ * "lm1" | "LM 1" | "LM01" | "Pertemuan 1" | "P1" -> "LM1"
+ * "LM1-R" | "LM1 - Remedial" | "lm1 remedial"   -> "LM1-R"
+ *
+ * Alasan ada duplikasi: `_mulaiRemidi` memfilter di client (fetch tanpa
+ * kategori mengunduh seluruh sheet). Tanpa normalisasi yang sama, backend
+ * (dipakai child `kuis-ledakan`) menemukan baris yang parent buang — atau
+ * sebaliknya. Spasi buntut dari copy-paste sheet ("LM1-R ") adalah kasus
+ * nyata yang dulu membuat baris tak terlihat + pesan error menyesatkan.
+ */
+export function _normalisasiKategori(kat) {
+  const raw = String(kat == null ? "" : kat).trim();
+  if (!raw) return "";
+  const remidi = /-R$/i.test(raw) || /\bremedial\b/i.test(raw);
+  const akhir = remidi ? "-R" : "";
+  const dasar = raw
+    .replace(/-R$/i, "")
+    .replace(/\bremedial\s*singkat\b/gi, "")
+    .replace(/\bremedial\b/gi, "")
+    .replace(/[-–—]\s*$/, "")
+    .trim();
+  const pola = dasar.match(/^(?:pertemuan|pemateri|pertem|pert|p)\s*-?\s*0*(\d+)$/i);
+  if (pola) return "LM" + pola[1] + akhir;
+  const polaLm = dasar.match(/^lm\s*-?\s*0*(\d+)$/i);
+  if (polaLm) return "LM" + polaLm[1] + akhir;
+  return dasar.toUpperCase().replace(/\s+/g, " ").trim() + akhir;
+}
+
+/** Cermin JS dari `_kodeLmSama`: dua kode menunjuk hal yang sama? */
+export function _kategoriSama(a, b) {
+  const x = _normalisasiKategori(a);
+  const y = _normalisasiKategori(b);
+  return !!x && x === y;
+}
+
 export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
   static get tag() {
     return "latihan-kuis";
@@ -38,7 +86,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
       materiFile: { type: String, attribute: "materi-file", reflect: true },
       coverImage: { type: String, attribute: "cover-image", reflect: true },
       judulKuis: { type: String, attribute: "judul-kuis", reflect: true },
-      questions: { type: Array, attribute: "questions", reflect: true },
+      questions: { type: Array, attribute: "questions", reflect: false },
       studentId: { type: String, attribute: "student-id", reflect: true },
       studentName: { type: String, attribute: "student-name", reflect: true },
       studentNis: { type: String, attribute: "student-nis", reflect: true },
@@ -83,11 +131,26 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
       kkm: { type: Number, attribute: "kkm", reflect: true },
       remidiMode: { type: Boolean, attribute: "remidi-mode", reflect: true },
       remidiSoalUrl: { type: String, attribute: "remidi-soal-url", reflect: true },
+      // Remedial cukup 1 soal HOTS uraian (sudah cukup memetakan indikator).
+      remidiJumlahSoal: { type: Number, attribute: "remidi-jumlah-soal", reflect: true },
+      remidiKirimOtomatis: {
+        type: Boolean,
+        attribute: "remidi-kirim-otomatis",
+        reflect: true,
+      },
       nilaiAkhir: { state: true },
       sudahRemidi: { state: true },
       _needsRemidi: { state: true },
       _skorAwal: { state: true },
       _remidiSoal: { state: true },
+      // Status remedial otoritatif dari backend (getQuizLock).
+      _remidiServer: { state: true },
+      // Kode LM aktif saat remedial (ber-suffix -R); null = kuis biasa.
+      _kodeRemidiAktif: { state: true },
+      // Esai remedial sudah terkirim (submit/timeout). Retake tidak boleh —
+      // esai dianggap sudah masuk. Dibersihkan hanya bila server menyatakan
+      // fresh (guru reset) atau sudah ada nilai sepakat.
+      _remidiTerkirim: { state: true },
       _tabSwitchCount: { state: true },
       _visibilityChangeCount: { state: true },
       _windowBlurCount: { state: true },
@@ -161,11 +224,19 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     this.kkm = 75;
     this.remidiMode = false;
     this.remidiSoalUrl = "";
+    this.remidiJumlahSoal = 1;
+    this.remidiKirimOtomatis = false;
     this.nilaiAkhir = null;
     this.sudahRemidi = false;
     this._needsRemidi = false;
     this._skorAwal = null;
     this._remidiSoal = [];
+    // null = backend belum menjawab. Selama ini heuristics lokal masih dipakai
+    // (offline/demo). Setelah getQuizLock merespons, _remidiServer diisi dan
+    // decision server menjadi authoritative.
+    this._remidiServer = null;
+    this._kodeRemidiAktif = null;
+    this._remidiTerkirim = false;
     this._tabSwitchCount = 0;
     this._visibilityChangeCount = 0;
     this._windowBlurCount = 0;
@@ -328,7 +399,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     this._terkunci = false;
     this._resumeRemaining = null;
     this._attemptKe = 0;
-    try { localStorage.removeItem(`kuis-ledakan:attempt:${this.studentId}:${this.kdMateri}`); localStorage.removeItem(`kuis-ledakan:session:${this.studentId}:${this.kdMateri}`); } catch (_) {}
+    try { this._bersihkanKunciKuis(); } catch (_) {}
     this.studentId = "";
     this.studentName = "";
     this.studentNis = "";
@@ -383,7 +454,9 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     }
     const detail = {
       tipe: tipe_aktivitas,
-      payload: { ...payload_data, studentId: this.studentId, kdMateri: this.kdMateri, audit_singkat: this._antiCheat.bacaAuditSingkat() },
+      // Saat remedial, semua log menulis ke Kode LM "-R" supaya nilai asli
+      // di Kode LM dasar tidak tertimpa.
+      payload: { ...payload_data, studentId: this.studentId, kdMateri: this._kodeRemidiAktif || this.kdMateri, audit_singkat: this._antiCheat.bacaAuditSingkat() },
     };
     try { this.dispatchEvent(new CustomEvent("dasbor-kuis-log", { detail, bubbles: true, composed: true })); } catch (_) {}
     if (!this.closest("dasbor-kuis")) this._sendLogDirect(tipe_aktivitas, detail.payload);
@@ -396,7 +469,8 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
       const params = {
         action: "logActivity", studentId: this.studentId, type: tipe_aktivitas,
         description: JSON.stringify(payload), timestamp: new Date().toISOString(),
-        kdMateri: this.kdMateri || "", kategori: this.kategori || "sumatif_lm",
+        kdMateri: this._kodeRemidiAktif || this.kdMateri || "",
+        kategori: this._kodeRemidiAktif ? "remedial_lm" : this.kategori || "sumatif_lm",
         id_log: payload.id_log || `LOG-${Date.now()}-${Math.random().toString(36).slice(2, 10).toUpperCase()}`,
       };
       await fetch(`${this.appsScriptUrl}?${new URLSearchParams(params).toString()}`, { method: "GET", mode: "cors" });
@@ -430,6 +504,27 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
   /** Baca counter attempt ter-submit dari localStorage (per studentId+kdMateri). */
   _attemptKey() {
     return `latihan_kuis_attempt_${this.studentId}_${this.kdMateri}`;
+  }
+
+  /**
+   * Hapus seluruh kunci localStorage milik <kuis-ledakan> untuk siswa ini —
+   * versi ASLI dan versi remedial.
+   *
+   * Kunci <kuis-ledakan> memakai `kdMateri` yang sedang aktif. Saat remedial,
+   * `latihan-kuis` mengoper `LM1-R` ke child, jadi kunci yang tercipta adalah
+   * `...:LM1-R`. Dulu cleanup hanya menghapus `...:LM1`, sehingga attempt
+   * remedial yang sudah selesai tidak pernah dibersihkan dan remedial
+   * berikutnya bisa me-resume state basi.
+   */
+  _bersihkanKunciKuis() {
+    if (!this.studentId || !this.kdMateri) return;
+    const dasar = String(this.kdMateri).replace(/-R$/i, "");
+    const remidi = dasar + "-R";
+    const kodes = Array.from(new Set([dasar, remidi, this.kdMateri]));
+    kodes.forEach((k) => {
+      localStorage.removeItem(`kuis-ledakan:attempt:${this.studentId}:${k}`);
+      localStorage.removeItem(`kuis-ledakan:session:${this.studentId}:${k}`);
+    });
   }
 
   _loadAttemptCounter() {
@@ -525,6 +620,32 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
         this._terkunci = Boolean(j.locked);
         this._pernahIkut = typeof j.best === "number" && j.best != null;
         this._bestSkor = typeof j.best === "number" ? j.best : null;
+        // Status remedial dari SERVER (ambang Settings), bukan tebakan lokal.
+        this._remidiServer = {
+          boleh: Boolean(j.remidi),
+          ambang: typeof j.ambangRemidi === "number" ? j.ambangRemidi : this.kkm,
+          kdRemidi: j.kdRemidi || "",
+          perluPenilaian: Boolean(j.perluPenilaian),
+          bestRemidi: typeof j.bestRemidi === "number" ? j.bestRemidi : null,
+          nilai_akhir_disepakati:
+            typeof j.nilai_akhir_disepakati === "number" ? j.nilai_akhir_disepakati : null,
+        };
+        // Escape hatch: server menyatakan fresh (guru reset baris remedial,
+        // siswa layak remidi lagi) atau sudah ada nilai sepakat → lepas
+        // kunci kirim lokal supaya tidak macet di kartu ⏳ selamanya.
+        if (
+          (j.remidi && !j.perluPenilaian && j.bestRemidi == null) ||
+          j.nilai_akhir_disepakati != null
+        ) {
+          this._remidiTerkirim = false;
+        }
+        if (j.remidi) {
+          this._needsRemidi = true;
+          if (typeof this._bestSkor === "number") this._skorAwal = this._bestSkor;
+        } else if (j.perluPenilaian) {
+          // Esai sudah dikirim, guru belum menilai → jangan tampilkan tombol remidi lagi.
+          this._needsRemidi = false;
+        }
         if (this._terkunci) {
           this._terkunci = true;
           this._selesai = false;
@@ -534,10 +655,6 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
           this._resumeRemaining = null;
           // hentikan timer yang mungkin sudah jalan sebelum lock diketahui
           try{ const tt = this.shadowRoot && this.shadowRoot.querySelector("timer-kuis"); if(tt && typeof tt.pause==="function") tt.pause(); if(tt && typeof tt.reset==="function") tt.reset(); }catch(_){}
-          if (this.remidiMode && typeof this._bestSkor === "number" && this._bestSkor < this.kkm && !this.sudahRemidi) {
-            this._needsRemidi = true;
-            this._skorAwal = this._bestSkor;
-          }
         }
       })
       .catch(() => {
@@ -550,6 +667,21 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
         }
         this.requestUpdate();
       });
+  }
+
+  /**
+   * Nilai efektif LM untuk DISPLAY — selaras presedensi akumulasi rapor
+   * (codev6.gs: nilai sepakat > 0 menang; bila belum ada, terbaik dari
+   * ulangan/remidi). Tanpa ini kartu "Nilai terbaik" macet di skor
+   * ulangan dasar walau remedial sudah dinilai guru.
+   */
+  _skorEfektif() {
+    const srv = this._remidiServer || {};
+    if (typeof srv.nilai_akhir_disepakati === "number" && srv.nilai_akhir_disepakati > 0) {
+      return srv.nilai_akhir_disepakati;
+    }
+    const kandidat = [this._bestSkor, srv.bestRemidi].filter((v) => typeof v === "number");
+    return kandidat.length ? Math.max(...kandidat) : null;
   }
 
   _reviewSnapshotFromChild(kuis) {
@@ -609,7 +741,23 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     this.requestUpdate();
   }
 
-  _ulangiKuisDenganKonfeti() {
+  /**
+ * Tombol "Ulangi Kuis" hanya ditampilkan bila tidak sedang menunggu remedial.
+ *
+ * unsalted: saat remedial tersedia (nilai di bawah KKM dan server mengizinkan),
+ * siswa diberi SATU jalur: kerjakan remedial. Menampilkan "Ulangi Kuis" berdampingan
+ * membuat siswaFREE mengulang kuis yang sama alih-alih mengerjakan remedial —
+ * tombol yang Disable Remidi jadi tidak pernah dipakai.
+ */
+  get _tampilTombolUlangi() {
+    if (!this.allowRetake) return false;
+    if (this.maxRetake !== 0 && this._attemptKe >= this.maxRetake + 1) return false;
+    // Kalau remedial siap dan belum pernah dikerjakan -> jangan tawarkan ulang kuis.
+    if (this._needsRemidi && !this.sudahRemidi && this._effectiveRemidiMode) return false;
+    return true;
+  }
+
+  async _ulangiKuisDenganKonfeti() {
     this._ulangiKuis();
     this._fireConfetti();
   }
@@ -711,8 +859,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
       try {
         globalThis.localStorage.removeItem(this._attemptKey());
         globalThis.localStorage.removeItem(this._timerKey());
-        globalThis.localStorage.removeItem(`kuis-ledakan:attempt:${this.studentId}:${this.kdMateri}`);
-        globalThis.localStorage.removeItem(`kuis-ledakan:session:${this.studentId}:${this.kdMateri}`);
+        this._bersihkanKunciKuis();
       } catch (_) {}
       // L: hitung attempt ter-submit (bukan klik Ulangi) agar reload-trick tak bobol batas.
       if (this.maxRetake && !this._effectiveRemidiMode) {
@@ -724,7 +871,16 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
       if (!this.remidiMode && this.remidiSoalUrl && this._skor < this.kkm) {
         this.remidiMode = true;
       }
-      if (this._effectiveRemidiMode && this._skor < this.kkm) {
+      if (this._kodeRemidiAktif) {
+        // Attempt yang baru selesai ADALAH remedial → esai sudah masuk.
+        // Retake tidak boleh: kunci ke state terkirim, JANGAN tawarkan
+        // "Mulai Remidi" lagi (sebelumnya _needsRemidi=true di sini yang
+        // membuka loop klik-ulang → baris 0 menumpuk).
+        this._remidiTerkirim = true;
+        this._needsRemidi = false;
+        this.sudahRemidi = true;
+        this._saveRemidiState();
+      } else if (this._effectiveRemidiMode && this._skor < this.kkm) {
         this._needsRemidi = true;
         this._skorAwal = this._skor;
       } else {
@@ -735,7 +891,12 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
       }
       // Simpan state remidi ke localStorage (agar persist saat refresh)
       this._saveRemidiState();
-      this._muatStatusKuis(); // T: refresh nilai terbaik dari sheet (menangkap attempt baru)
+      // Refresh nilai terbaik + status remedial dari sheet, lalu render ulang
+      // supaya gate "Menunggu Penilaian" langsung aktif tanpa reload
+      // (sebelumnya gate basi → tombol remidi tetap tampil → loop klik).
+      Promise.resolve(this._muatStatusKuis())
+        .catch(() => {})
+        .then(() => this.requestUpdate());
       this._kirimLogSession("selesai");
       this._antiCheat.finalisasiAudit();
       // Log "selesai" ke sheet aktivitas (action=logActivity)
@@ -743,6 +904,9 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
       this._logActivity("selesai", {
         id_log: _idLog,
         score: this._skor,
+        // Teruskan array dari kuis-ledakan agar jalur direct
+        // (_sendLogDirect) juga menulis db_jawaban, bukan cuma skor.
+        jawabanPerSoal: (e.detail && e.detail.payload && e.detail.payload.jawabanPerSoal) || [],
         timestamp: new Date().toISOString(),
         kdMateri: this.kdMateri,
         studentId: this.studentId,
@@ -768,6 +932,13 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     if (!this.studentId) {
       this.requestUpdate();
       return;
+    }
+    // `_mulaiRemidi()` sudah menyetel `_kodeRemidiAktif` sebelum memanggil ini,
+    // jadi JANGAN reset di sini. Yang perlu dijaga: bila siswa memulai kuis
+    // sumatif biasa setelah remedial, kode remedial harus dilepas supaya log
+    // tidak lagi menulis ke Kode LM "-R".
+    if (!this.questions || !this.questions.length) {
+      this._kodeRemidiAktif = null;
     }
     // pastikan status kunci terbaru sebelum mulai — cegah timer jalan saat terkunci (race)
     await this._muatStatusKuis();
@@ -878,49 +1049,188 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
       } catch (_) {}
     }
   }
+  /**
+   * _mulaiRemidi: mulai 1 soal uraian HOTS dari Bank Soal kategori remidi.
+   *
+   * PENTING: tidak lagi memanggil resetQuizLock. Versi lama menghapus seluruh
+   * baris db_asesmen siswa pada Kode LM — jadi remedial justru menghapus bukti
+   * nilai yang seharusnya dipertahankan. Sekarang remedial dicatat pada Kode LM
+   * ber-suffix "-R" (lihat _kodeLmRemidi), sehingga LM asli tetap terkunci dan
+   * nilai aslinya utuh.
+   */
+  /**
+   * Ambil daftar indikator yang tingkatouventilnya di bawah ambang.
+   * Hanya dipakai saat remidiKirimOtomatis aktif. Kegagalan tidak fatal:
+   * kembalikan null supaya remedial tetap berjalan dengan seluruh soal -R.
+   */
+  async _ambilIndikatorGagal() {
+    if (!this.appsScriptUrl || !this.studentId) return null;
+    try {
+      const pemisah = this.appsScriptUrl.includes("?") ? "&" : "?";
+      const qs = new URLSearchParams({
+        action: "getIndikatorGagal",
+        kelas: this.kelas || "",
+        kdMateri: this._kodeLmRemidi.replace(/-R$/, ""),
+        studentId: this.studentId,
+      });
+      const res = await fetch(`${this.appsScriptUrl}${pemisah}${qs.toString()}`);
+      if (!res.ok) return null;
+      const data = await res.json();
+      if (!data || data.status !== "ok" || !Array.isArray(data.indikator)) return null;
+      return data.indikator.filter((d) => typeof d.persen === "number" && d.persen < 100);
+    } catch (_) {
+      return null;
+    }
+  }
+
   async _mulaiRemidi() {
-    if (!this.remidiSoalUrl) {
-      this._pesan = "Soal remidi belum disiapkan oleh guru.";
+    // GATE KERAS: retake remedial tidak boleh — esai dianggap sudah masuk
+    // sekali submit (submit normal maupun timeout). Refresh status server
+    // dulu supaya gate memakai data segar, bukan state basi.
+    if (this.appsScriptUrl && this.studentId && this.kdMateri) {
+      try {
+        await this._muatStatusKuis();
+      } catch (_) {}
+    }
+    const _srv = this._remidiServer || {};
+    const _sudahKirim =
+      !!this._remidiTerkirim || !!_srv.perluPenilaian || _srv.bestRemidi != null;
+    if (_sudahKirim && this.mode !== "guru") {
+      this._needsRemidi = false;
+      this._pesan =
+        "Jawaban remidi sudah terkirim dan menunggu/masuk penilaian guru. Tidak bisa mengulang.";
       this.requestUpdate();
       return;
     }
-    // buka kunci backend dulu agar kuis-ledakan tidak terkunci lagi (soal sama LM1)
-    if (this._terkunci && this.appsScriptUrl && this.studentId && this.kdMateri) {
-      try {
-        const qs = new URLSearchParams({ action: "resetQuizLock", studentId: this.studentId, kdMateri: this.kdMateri });
-        await fetch(`${this.appsScriptUrl}?${qs.toString()}`, { method: "GET", mode: "cors" });
-      } catch(_){}
-      try{ localStorage.removeItem(`kuis-ledakan:attempt:${this.studentId}:${this.kdMateri}`); localStorage.removeItem(`latihan_kuis_attempt_${this.studentId}_${this.kdMateri}`); localStorage.removeItem(`latihan_kuis_time_${this.studentId}_${this.kdMateri}`);}catch(_){}
+    const kdRemidi = this._kodeLmRemidi;
+    let soal = [];
+    // Semua kategori ber-suffix -R yang ada di Bank Soal. Dipakai untuk pesan error
+    // supaya guru tahu kategori mana yang perlu dibuat, bukan hanya "hubungi guru".
+    let remedialTersedia = [];
+    // Indikator gagal (opsional): saat remidiKirimOtomatis aktif, remedial hanya
+    // memuat soal yang indikatornya memang belum dikuasai siswa ini.
+    let indikatorGagal = null;
+    if (this.remidiKirimOtomatis) {
+      indikatorGagal = await this._ambilIndikatorGagal();
     }
+  // 1) Coba ambil dari Bank Soal kategori remidi.
+  // `kategori` dikirim agar backend memfilter (pakai normalisasi _kodeLmSama);
+  // client memfilter ulang dengan normalisasi yang sama sebagai pengaman.
+  if (this.appsScriptUrl) {
     try {
-      const r = await fetch(this.remidiSoalUrl);
-      if (!r.ok) throw new Error("HTTP " + r.status);
-      this._remidiSoal = await r.json();
-      if (!Array.isArray(this._remidiSoal) || this._remidiSoal.length === 0) {
-        throw new Error("Format soal remidi tidak valid");
+      const pemisah = this.appsScriptUrl.includes("?") ? "&" : "?";
+      const qs = new URLSearchParams({ action: "getBankSoal" });
+      if (kdRemidi) qs.set("kategori", kdRemidi);
+      const res = await fetch(`${this.appsScriptUrl}${pemisah}${qs.toString()}`);
+      if (res.ok) {
+        const data = await res.json();
+        const rows = Array.isArray(data && data.soal) ? data.soal : [];
+        const target = _normalisasiKategori(kdRemidi);
+        // Kumpulkan kategori remedial yang ADA, untuk pesan error yang berguna.
+        remedialTersedia = Array.from(
+          new Set(
+            rows
+              .map((r) => _normalisasiKategori((r && r.kategori) || ""))
+              .filter((k) => /-R$/.test(k)),
+          ),
+        );
+        const cocok = !target
+          ? []
+          : rows
+              .filter((r) => {
+                const katN = _normalisasiKategori((r && r.kategori) || "");
+                if (katN === target) return true;
+                // ID seperti "LM1-R-01": dinormalisasi lalu dicek awalan.
+                const idN = _normalisasiKategori((r && r.id) || "");
+                return !!idN && idN.indexOf(target) === 0;
+              })
+            .map((r) => ({ ...(r.soal || r), id: r.id, indikator: r.indikator, tipe: r.tipe, points: r.poin }));
+          // Prioritaskan satu soal uraian HOTS; kalau tidak ada, ambil soal apa pun.
+          let kandidat = cocok;
+          if (indikatorGagal && indikatorGagal.length) {
+            const target = new Set(
+              indikatorGagal.map((d) => _normalisasiIndikator(d.indikator || d.soalId)),
+            );
+            const terfilter = cocok.filter((q) =>
+              target.has(_normalisasiIndikator(q.indikator || "")),
+            );
+            // Jangan pernah kosong: kalau tak ada soal yang cocok, tetap pakai semua.
+            if (terfilter.length) kandidat = terfilter;
+          }
+          const uraian = kandidat.filter((q) => (q.type || q.tipe) === "uraian");
+          // remidiJumlahSoal 0 = tanpa batas (sesuai deskripsi HAX); selain itu potong.
+          const daftar = uraian.length ? uraian : kandidat;
+          soal = this.remidiJumlahSoal === 0 ? daftar : daftar.slice(0, this.remidiJumlahSoal || 1);
+        }
+      } catch (_) {
+        // offline / backend lama — coba remidiSoalUrl di bawah
       }
-      // Reset state for remedial — buka kunci jika sebelumnya terkunci
-      this._terkunci = false;
-      this._selesai = false;
-      this._skor = null;
-      this._habisWaktu = false;
-      this._resumeRemaining = null;
-      this._needsRemidi = false;
-      this.sudahRemidi = true;
-      this._pesan = "";
-      // Use remedial questions (soal sama shuffle: file sama LM1, acak via shuffle-choices)
-      this.questions = this._remidiSoal;
-      // Simpan state remidi ke localStorage (agar persist saat refresh)
-      this._saveRemidiState();
-      // juga buka kunci kuis-ledakan internal jika ada
-      try{ const k=this.shadowRoot&&this.shadowRoot.querySelector("kuis-ledakan"); if(k){ k._locked=false; k._lockChecked=false; } }catch(_){}
-      this.requestUpdate();
-      // Start quiz with remedial questions
-      this._mulaiLatihan();
-    } catch (e) {
-      this._pesan = "Gagal memulai remidi: " + e.message;
-      this.requestUpdate();
     }
+    // 2) Fallback: file JSON remidi ( atribut HAX lama).
+    if (!soal.length && this.remidiSoalUrl) {
+      try {
+        const r = await fetch(this.remidiSoalUrl);
+        if (!r.ok) throw new Error("HTTP " + r.status);
+        const data = await r.json();
+        if (Array.isArray(data) && data.length) {
+          soal = this.remidiJumlahSoal === 0 ? data : data.slice(0, this.remidiJumlahSoal || 1);
+        }
+      } catch (e) {
+        this._pesan = "Gagal memulai remidi: " + e.message;
+        this.requestUpdate();
+        return;
+      }
+    }
+    if (!soal.length) {
+      // Pesan lama ("Belum ada soal remidi ... Hubungi guru") tidak-bank soal
+      // APA yang salah, sehingga guru/siswa berulang kali mencoba tanpa tahu
+      // harus membuat kategori mana.
+      const dibaca = remedialTersedia.length
+        ? "Kategori remedial yang tersedia: " + remedialTersedia.join(", ") + ". "
+        : "Belum ada kategori ber-suffix -R sama sekali di Bank Soal. ";
+      this._pesan =
+        "Belum ada soal remidi. Dicari kategori '" +
+        kdRemidi +
+        "' (dari kd-materi '" +
+        this.kdMateri +
+        "'). " +
+        dibaca +
+        "Guru dapat membuatnya lewat menu ⚙️ Kuis → 🧬 Generate Soal → Soal Remedial dari Diagnostik.";
+      this.requestUpdate();
+      return;
+    }
+
+    this._remidiSoal = soal;
+    this._kodeRemidiAktif = kdRemidi;
+    this._terkunci = false;
+    this._selesai = false;
+    this._skor = null;
+    this._habisWaktu = false;
+    this._resumeRemaining = null;
+    this._needsRemidi = false;
+    this._pesan = "";
+    this.questions = soal;
+    this._saveRemidiState();
+  // Kunci internal kuis-ledakan (kalau ada) — bukan unlock backend.
+  // Tandai juga soal berasal dari parent: child WAJIB memakai soal ini apa
+  // adanya dan dilarang fetch ulang (lihat _soalDariParent di kuis-ledakan).
+  // Tanpa ini, child menimpa 1 soal uraian hasil filter dengan maksimal
+  // 10 baris mentah kategori — filter indikator + remidiJumlahSoal buyar.
+  try {
+    const k = this.shadowRoot && this.shadowRoot.querySelector("kuis-ledakan");
+    if (k) {
+      k._locked = false;
+      k._lockChecked = false;
+      if (soal.length) k._soalDariParent = true;
+    }
+  } catch (_) {}
+    // Bersihkan sisa attempt LM asli supaya tidak me-resume jawaban lama.
+    try {
+      localStorage.removeItem(`latihan_kuis_attempt_${this.studentId}_${this.kdMateri}`);
+      localStorage.removeItem(`latihan_kuis_attempt_${this.studentId}_${kdRemidi}`);
+    } catch (_) {}
+    this.requestUpdate();
+    this._mulaiLatihan();
   }
 
   async _resetKunciGuru() {
@@ -963,14 +1273,18 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
   }
 
   // Simpan state remidi ke localStorage
+  // `_kodeRemidiAktif` ikut disimpan agar refresh saat sedang remidi tidak
+  // menulis nilai balik ke Kode LM asli.
   _saveRemidiState() {
     if (!this.studentId || !this.kdMateri) return;
     try {
       const data = {
         sudahRemidi: this.sudahRemidi,
         _needsRemidi: this._needsRemidi,
+        _remidiTerkirim: this._remidiTerkirim,
         _skorAwal: this._skorAwal,
         _remidiSoal: this._remidiSoal || [],
+        _kodeRemidiAktif: this._kodeRemidiAktif,
         timestamp: Date.now(),
       };
       localStorage.setItem(this._remidiKey(), JSON.stringify(data));
@@ -982,19 +1296,24 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     if (!this.studentId || !this.kdMateri) return;
     try {
       const data = JSON.parse(localStorage.getItem(this._remidiKey()));
-      if (data && data.sudahRemidi) {
-        this.sudahRemidi = data.sudahRemidi;
-        this._needsRemidi = data._needsRemidi;
-        this._skorAwal = data._skorAwal;
-        // Restore soal remidi jika ada
-        if (Array.isArray(data._remidiSoal) && data._remidiSoal.length > 0) {
-          this._remidiSoal = data._remidiSoal;
-          // Set questions ke soal remidi jika sedang dalam mode remidi
-          if (this.sudahRemidi && this._effectiveRemidiMode) {
-            this.questions = this._remidiSoal;
-          }
+      if (!data) return;
+      if (data._kodeRemidiAktif) this._kodeRemidiAktif = data._kodeRemidiAktif;
+      if (Array.isArray(data._remidiSoal) && data._remidiSoal.length > 0) {
+        this._remidiSoal = data._remidiSoal;
+        // Sedang berjalan di mode remidi → pulihkan soal remidi.
+        if (this._kodeRemidiAktif && this._effectiveRemidiMode) {
+          this.questions = this._remidiSoal;
         }
       }
+      // sudahRemidi lokal hanya fallback; gate sesungguhnya dari backend.
+      if (data.sudahRemidi && !this._remidiServer.boleh) {
+        this.sudahRemidi = data.sudahRemidi;
+      }
+      // Esai remedial yang sudah terkirim tetap terkunci walau reload —
+      // dibuka lagi hanya oleh server (guru reset / nilai sepakat),
+      // lewat escape hatch di _muatStatusKuis().
+      if (data._remidiTerkirim) this._remidiTerkirim = true;
+      if (data._needsRemidi && this._remidiServer.boleh) this._needsRemidi = data._needsRemidi;
     } catch (_) {}
   }
 
@@ -1182,6 +1501,10 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
           --ddd-theme-surface: #111827;
           --ddd-theme-default-surface: #111827;
           --ddd-theme-primary: #c4b5fd;
+          /* Primary di dark scheme sengaja terang, jadi teks di atasnya harus
+             gelap. Tanpa override ini .btn-mulai/.btn-logout memakai teks putih
+             di atas latar terang dan gagal uji kontras WCAG AA. */
+          --ddd-theme-on-primary: #1e1b4b;
           --ddd-theme-secondary: #94a3b8;
           --ddd-theme-error: #fca5a5;
           --ddd-border-color: #2a3245;
@@ -1298,13 +1621,32 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     ];
   }
 
-  /** Mode remidi efektif: true jika HAX attribute di-set ATAU (auto) ada remidiSoalUrl + skor<KKM. */
+  /**
+ * Mode remidi efektif.
+ *
+ * Backend bersifat authoritative: begitu `getQuizLock` menjawab, decision
+ * `boleh`-nya dipakai apa adanya — termasuk `false`. Tanpa ini, heuristics
+ * lokal (remidi-soal-url + best < kkm) bisa membuka remedial padahal server
+ * sudah menyatakan tidak boleh.
+ *
+ * Fallback lokal hanya dipakai saat `_remidiServer` masih null, yaitu backend
+ * belum merespons / mode offline-demo.
+ */
   get _effectiveRemidiMode() {
     if (this.remidiMode) return true;
+    if (this._remidiServer) return !!this._remidiServer.boleh;
     if (this.remidiSoalUrl && typeof this._bestSkor === "number" && this._bestSkor < this.kkm && !this.sudahRemidi) {
       return true;
     }
     return false;
+  }
+
+  /**
+   * Kode LM remedial (ber-suffix -R) dari server. Dipakai saat submit nilai
+   * supaya baris remedial tidak menimpa bukti nilai asli.
+   */
+  get _kodeLmRemidi() {
+    return (this._remidiServer && this._remidiServer.kdRemidi) || `${this.kdMateri}-R`;
   }
 
   /** Mode latihan saja (tanpa timer & tanpa lock) — popup warning tidak agresif. */
@@ -1313,8 +1655,42 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
   }
 
   render() {
-    const _canRemidiNow = this._effectiveRemidiMode && !this.sudahRemidi && typeof this._bestSkor === "number" && this._bestSkor < this.kkm;
-    const _remidiBypass = (this._needsRemidi || _canRemidiNow) && this._effectiveRemidiMode && !this.sudahRemidi;
+    // Gate remedial: server yang memutuskan. `sudahRemidi` lokal hanya dipakai
+    // sebagai fallback ketika backend tidak tersedia (mode offline/demo).
+    const _serverDimakai = !!(this._remidiServer && this._remidiServer.boleh);
+    const _ambangRemidi = (this._remidiServer && this._remidiServer.ambang) || this.kkm;
+    const _perluPenilaian = !!(this._remidiServer && this._remidiServer.perluPenilaian);
+    const _belumTuntas =
+      typeof this._bestSkor === "number" && this._bestSkor < _ambangRemidi;
+    const _sudahHabis = _serverDimakai ? false : this.sudahRemidi;
+    const _canRemidiNow = this._effectiveRemidiMode && !_sudahHabis && _belumTuntas;
+    const _remidiBypass = (this._needsRemidi || _canRemidiNow) && this._effectiveRemidiMode && !_sudahHabis;
+    // Esai remedial sudah terkumpul tapi belum dinilai guru: student TIDAK boleh
+    // offered "Mulai Remidi" lagi (atau dia bisa mengulang tanpa batas sampai
+    // guru menilai). Ini gate global, bukan hanya di cabang terkunci — kalau
+    // kuis tidak terkunci pun siswa tetap tak boleh mengerjakan ulang.
+    // `_remidiTerkirim` = flag lokal (submit/timeout baru saja terjadi,
+    // status server mungkin belum mengejar) — kartu ⏳ yang sama.
+    const _menungguPenilaian =
+      (_perluPenilaian || !!this._remidiTerkirim) && !this._needsRemidi;
+    if (_menungguPenilaian && this.mode !== "guru") {
+      return html`
+        <div class="wrap">
+          <div class="selesai-card" role="alert">
+            <div style="font-size:2.5rem">⏳</div>
+            <p class="kirim">Jawaban remidi Anda sedang dinilai guru.</p>
+            <p style="font-size:12px; color:#64748B;">Nilai berlaku setelah guru menilai. Hubungi guru bila lama.</p>
+            <button
+              class="btn-mulai"
+              @click=${() =>
+                Promise.resolve(this._muatStatusKuis())
+                  .catch(() => {})
+                  .then(() => this.requestUpdate())}
+            >🔄 Muat Ulang Status</button>
+          </div>
+        </div>
+      `;
+    }
     if (this._terkunci && this.mode !== "guru") {
       if (_remidiBypass) {
         return html`
@@ -1322,24 +1698,25 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
             <div class="selesai-card" role="alert">
               <div style="font-size:2.5rem">🔓</div>
               <p class="kirim">Kuis terkunci, tapi Anda bisa <b>remidi</b> karena nilai &lt; KKM.</p>
-              ${this._bestSkor != null ? html`<div class="skor">Nilai terbaik: <strong>${this._bestSkor}%</strong> (KKM ${this.kkm}%)</div>` : nothing}
+              ${this._skorEfektif() != null ? html`<div class="skor">Nilai terbaik: <strong>${this._skorEfektif()}%</strong> (KKM ${_ambangRemidi}%)</div>` : nothing}
               <div class="remidi-card" style="margin-top:12px;">
                 <h3>📝 Remidi Tersedia</h3>
-                <p>Soal sama diacak via <code>shuffle-choices</code>. Klik untuk mulai remidi LM1.</p>
-                <button class="btn-mulai" @click=${this._mulaiRemidi}>🔄 Mulai Remidi (Soal Sama Shuffle)</button>
+                <p>Soal HOTS untuk indikator yang belum dikuasai. Jawaban dinilai oleh guru.</p>
+                <button class="btn-mulai" @click=${this._mulaiRemidi}>🔄 Mulai Remidi</button>
               </div>
               <p style="font-size:12px; color:#64748B; margin-top:8px;">Atau hubungi guru untuk <b>Buka Kunci</b> penuh.</p>
             </div>
           </div>
         `;
       }
+
       return html`
         <div class="wrap">
           <div class="selesai-card" role="alert">
             <div style="font-size:2.5rem">🔒</div>
             <p class="kirim warn">Kuis terkunci. Hubungi guru untuk mengulang.</p>
-            ${this._bestSkor != null
-              ? html`<div class="skor">Nilai terbaik Anda: <strong>${this._bestSkor}%</strong></div>`
+            ${this._skorEfektif() != null
+              ? html`<div class="skor">Nilai terbaik Anda: <strong>${this._skorEfektif()}%</strong></div>`
               : nothing}
             ${this.mode === "guru" ? html`<button class="btn-mulai" @click=${this._resetKunciGuru}>🔓 Buka Kunci (Guru)</button>` : html`<p style="font-size:12px; color:#64748B;">Guru bisa buka via <b>Dasbor Guru → Atur → 🔓 Buka Kunci</b> atau tombol di atas (mode guru).</p>`}
           </div>
@@ -1378,7 +1755,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
                     : nothing}
                 </div>`
               : nothing}
-            ${this.allowRetake && (this.maxRetake === 0 || this._attemptKe < this.maxRetake + 1)
+            ${this._tampilTombolUlangi
               ? html`<button class="btn-mulai" @click=${this._ulangiKuisDenganKonfeti}>🔁 Ulangi Kuis + Konfeti</button>`
               : nothing}
             ${this.reviewAnswers && this._reviewSnapshot && this._reviewSnapshot.questions.length > 0
@@ -1403,6 +1780,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
                 .studentAbsen="${this.studentAbsen}"
                 .studentKelas="${this.studentKelas}"
                 .kdMateri="${this.kdMateri}"
+                .kunciSoal="${((this._reviewSnapshot && this._reviewSnapshot.questions) || this.questions || []).length > 0}"
                 .appsScriptUrl="${this.appsScriptUrl}"
                 .judul="${this.judulKuis}"
                 .lockAfterComplete="${false}"
@@ -1430,7 +1808,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
             ${this.materiFile ? html`<a href="${this.materiFile}" target="_blank" rel="noopener" download>${this.t.unduhMateri}</a>` : nothing}
           </div>
           ${this._pernahIkut && this._bestSkor != null
-            ? html`<p class="skor-best">⭐ Nilai terbaik Anda: <strong>${this._bestSkor}%</strong></p>`
+            ? html`<p class="skor-best">⭐ Nilai terbaik Anda: <strong>${this._skorEfektif()}%</strong></p>`
             : nothing}
         </section>
 
@@ -1511,13 +1889,14 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
                 .studentNis="${this.studentNis}"
                 .studentAbsen="${this.studentAbsen}"
                 .studentKelas="${this.studentKelas}"
-                .kdMateri="${this.kdMateri}"
+                .kdMateri="${this._kodeRemidiAktif || this.kdMateri}"
+                .kunciSoal="${Array.isArray(this.questions) && this.questions.length > 0}"
                 .lockAfterComplete="${this.ulanganMode || !this.allowRetake}"
                 .mode="${this.mode}"
                 .hidePauseRestart="${this.ulanganMode || this.hidePauseRestart}"
                 .shuffleQuestions="${this.ulanganMode || this.shuffleQuestions}"
                 .shuffleChoices="${this.ulanganMode || this.shuffleChoices}"
-                .kategori="${this.kategori}"
+                .kategori="${this._kodeRemidiAktif ? 'remedial_lm' : this.kategori}"
                 .hideConfetti="${this.ulanganMode || this.hideConfetti}"
                 .hideAnswers="${this.ulanganMode || this.hideAnswers}"
                 .hideScore="${this.ulanganMode || this.hideScore}"
@@ -1778,6 +2157,18 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
             title: "Upload File Soal Remidi (JSON)",
             inputMethod: "haxupload",
             description: "File .json soal remidi; digunakan jika siswa tidak mencapai KKM.",
+          },
+          {
+            property: "remidiJumlahSoal",
+            title: "Jumlah Soal Remidi",
+            inputMethod: "textfield",
+            description: "Jumlah soal remedial yang dipakai. Default 1: satu esai HOTS yang dinilai guru. Isi 0 untuk memakai seluruh soal remedial.",
+          },
+          {
+            property: "remidiKirimOtomatis",
+            title: "Remidi Otomatis Sesuai Indikator Gagal",
+            inputMethod: "switch",
+            description: "Saat aktif, remedial hanya memuat soal yang indikatornya belum dikuasai siswa ini (dari getIndikatorGagal). Kembali ke seluruh soal -R bila tidak ada yang cocok.",
           },
         ],
       },

@@ -58,7 +58,7 @@ content: >
   shuffle-choices shuffle-questions kkm="75" practice-mode hide-confetti
   hide-answers hide-score student-id="" allow-retake max-retake="5"
   hide-pause-restart tab-switch-threshold="3"
-  apps-script-url="https://script.google.com/macros/s/AKfycbxcCUl6QIYYuT4x2pqzQtAVycYBg2TIc9eXt7yAXATXkJtEroNvCnHUBULhVWNx3mc6/exec"
+  apps-script-url="https://script.google.com/macros/s/AKfycbx4-ZvZieRruK5HVZjxuTEq4LGmE8JQizEV0WbYCCGfNzlUGSqVwa_yE30WGRbjaDw/exec"
   judul-materi="Materi Pembelajaran" teks-materi="Baca materi di bawah ini
   dengan saksama sebelum mengerjakan kuis. Waktu pengerjaan kuis dibatasi oleh
   timer; saat waktu habis, kuis akan dikunci dan nilai otomatis terkirim."

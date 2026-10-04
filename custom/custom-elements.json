@@ -397,7 +397,112 @@
             },
             {
               "kind": "method",
-              "name": "_materiCol"
+              "name": "_gantiTab",
+              "parameters": [
+                {
+                  "name": "id"
+                }
+              ],
+              "description": "Ganti tab; tab Remedial memuat datanya sendiri saat dibuka."
+            },
+            {
+              "kind": "method",
+              "name": "_kelasLihat",
+              "description": "Filter view guru (dasbor-wide). null = ikut atribut; string (termasuk\n\"\") = timpa tampilan. \"\" = semua (tanpa filter ke backend)."
+            },
+            {
+              "kind": "method",
+              "name": "_kdLihat"
+            },
+            {
+              "kind": "method",
+              "name": "_opsiLM",
+              "description": "Daftar LM tetap untuk filter (D1): \"\" = Semua LM."
+            },
+            {
+              "kind": "method",
+              "name": "_dasarKode",
+              "parameters": [
+                {
+                  "name": "kode"
+                }
+              ],
+              "description": "Kode dasar tanpa sufiks -R (untuk chip per-LM)."
+            },
+            {
+              "kind": "method",
+              "name": "_kelasOpsi",
+              "description": "Opsi Kelas unik dari data yang sudah dimuat (roster + antrean)."
+            },
+            {
+              "kind": "method",
+              "name": "_gantiFilterLihat",
+              "parameters": [
+                {
+                  "name": "kelas"
+                },
+                {
+                  "name": "kd"
+                }
+              ],
+              "description": "Ganti filter view (dari navbar / tab Remedial) lalu muat ulang."
+            },
+            {
+              "kind": "method",
+              "name": "_muatRemedial",
+              "description": "Muat antrean esai yang menunggu penilaian + diagnostik indikator gagal.\nDua sumber: getMenungguPenilaian (per esai) dan getIndikatorGagal (agregat)."
+            },
+            {
+              "kind": "method",
+              "name": "_nilaiAcuanRemidi",
+              "parameters": [
+                {
+                  "name": "antre"
+                }
+              ],
+              "description": "Nilai remedial default: ikuti skor guru (bukan auto-100)."
+            },
+            {
+              "kind": "method",
+              "name": "_simpanNilaiRemedial",
+              "parameters": [
+                {
+                  "name": "antre"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_renderRemedial"
+            },
+            {
+              "kind": "method",
+              "name": "_renderChipLM",
+              "parameters": [
+                {
+                  "name": "antre"
+                }
+              ],
+              "description": "Chip per-LM dari antrean (D4): tampil bila >1 LM; klik = filter LM."
+            },
+            {
+              "kind": "method",
+              "name": "_regenerasiRangkuman",
+              "description": "Regenerasi Rangkuman (pesan saja, D2): tanpa tabel, tanpa ubah backend."
+            },
+            {
+              "kind": "method",
+              "name": "_renderFormRemedial",
+              "parameters": [
+                {
+                  "name": "antre"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_materiCol",
+              "description": "Kolom LM di sheet rapor/leaderboard untuk kdMateri sekarang.\n\nUntuk kode remedial (\"LM1-R\") sengaja dikembalikan \"\" — nilai remedial\ndisimpan di baris terpisah pada tab Remedial dan dicangkok saat\ngenerateReport, bukan ditulis ke kolom LM1. Kalau dipetakan ke LM1, angka\nremedial akan terlihat seolah-olah nilai asli berubah."
             },
             {
               "kind": "method",
@@ -658,6 +763,28 @@
             },
             {
               "kind": "field",
+              "name": "namaGuru",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "nama-guru",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "roleLock",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"auto\"",
+              "attribute": "role-lock",
+              "reflects": true
+            },
+            {
+              "kind": "field",
               "name": "nis",
               "privacy": "public",
               "type": {
@@ -808,6 +935,106 @@
               },
               "default": "\"pantauan\"",
               "attribute": "_activeTab"
+            },
+            {
+              "kind": "field",
+              "name": "_remidiAntre",
+              "privacy": "public",
+              "type": {
+                "text": "array"
+              },
+              "default": "[]",
+              "attribute": "_remidiAntre"
+            },
+            {
+              "kind": "field",
+              "name": "_remidiDiag",
+              "privacy": "public",
+              "type": {
+                "text": "array"
+              },
+              "default": "[]",
+              "attribute": "_remidiDiag"
+            },
+            {
+              "kind": "field",
+              "name": "_remidiForm",
+              "privacy": "public",
+              "type": {
+                "text": "null"
+              },
+              "default": "null",
+              "attribute": "_remidiForm"
+            },
+            {
+              "kind": "field",
+              "name": "_remidiNote",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "_remidiNote"
+            },
+            {
+              "kind": "field",
+              "name": "_remidiError",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "_remidiError"
+            },
+            {
+              "kind": "field",
+              "name": "_remidiBusy",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "_remidiBusy"
+            },
+            {
+              "kind": "field",
+              "name": "_lihatKelas",
+              "privacy": "public",
+              "type": {
+                "text": "null"
+              },
+              "default": "null",
+              "attribute": "_lihatKelas"
+            },
+            {
+              "kind": "field",
+              "name": "_lihatKd",
+              "privacy": "public",
+              "type": {
+                "text": "null"
+              },
+              "default": "null",
+              "attribute": "_lihatKd"
+            },
+            {
+              "kind": "field",
+              "name": "_rangkumanHasil",
+              "privacy": "public",
+              "type": {
+                "text": "null"
+              },
+              "default": "null",
+              "attribute": "_rangkumanHasil"
+            },
+            {
+              "kind": "field",
+              "name": "_rangkumanBusy",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "_rangkumanBusy"
             },
             {
               "kind": "field",
@@ -1197,6 +1424,14 @@
               "fieldName": "namaSiswa"
             },
             {
+              "name": "nama-guru",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "namaGuru"
+            },
+            {
               "name": "nis",
               "type": {
                 "text": "string"
@@ -1226,6 +1461,14 @@
                 "text": "string"
               },
               "fieldName": "role"
+            },
+            {
+              "name": "role-lock",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"auto\"",
+              "fieldName": "roleLock"
             },
             {
               "name": "judul-kuis",
@@ -1321,6 +1564,86 @@
               },
               "default": "\"pantauan\"",
               "fieldName": "_activeTab"
+            },
+            {
+              "name": "_remidiAntre",
+              "type": {
+                "text": "array"
+              },
+              "default": "[]",
+              "fieldName": "_remidiAntre"
+            },
+            {
+              "name": "_remidiDiag",
+              "type": {
+                "text": "array"
+              },
+              "default": "[]",
+              "fieldName": "_remidiDiag"
+            },
+            {
+              "name": "_remidiForm",
+              "type": {
+                "text": "null"
+              },
+              "default": "null",
+              "fieldName": "_remidiForm"
+            },
+            {
+              "name": "_remidiNote",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "_remidiNote"
+            },
+            {
+              "name": "_remidiError",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "_remidiError"
+            },
+            {
+              "name": "_remidiBusy",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "_remidiBusy"
+            },
+            {
+              "name": "_lihatKelas",
+              "type": {
+                "text": "null"
+              },
+              "default": "null",
+              "fieldName": "_lihatKelas"
+            },
+            {
+              "name": "_lihatKd",
+              "type": {
+                "text": "null"
+              },
+              "default": "null",
+              "fieldName": "_lihatKd"
+            },
+            {
+              "name": "_rangkumanHasil",
+              "type": {
+                "text": "null"
+              },
+              "default": "null",
+              "fieldName": "_rangkumanHasil"
+            },
+            {
+              "name": "_rangkumanBusy",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "_rangkumanBusy"
             },
             {
               "name": "_serverData",
@@ -2551,7 +2874,7 @@
                   "name": "e"
                 }
               ],
-              "description": "Keyboard navigation handler for accessibility.\nSupports:\n- Arrow Left/Right: Navigate between questions\n- Enter: Submit answer (for short answer, PGK, matching)\n- Number keys 1-9: Jump to question number"
+              "description": "Keyboard navigation handler for accessibility.\r\nSupports:\r\n- Arrow Left/Right: Navigate between questions\r\n- Enter: Submit answer (for short answer, PGK, matching)\r\n- Number keys 1-9: Jump to question number"
             },
             {
               "kind": "method",
@@ -2577,7 +2900,7 @@
             {
               "kind": "method",
               "name": "_muatBankSoal",
-              "description": "Muat Bank Soal (AKM) dari backend bila tidak ada atribut `questions`."
+              "description": "Muat Bank Soal (AKM) dari backend bila tidak ada atribut `questions`.\r\n\r\nWAJIB mengirim `kategori`. Tanpa itu backend mengembalikan SELURUH Bank\r\nSoal, sehingga kuis LM1 ikut memuat LM2, LM3, dan — paling parah —\r\n`LM1-R` (soal uraian remedial) yang belum boleh dilihat siswa.\r\n\r\n`latihan-kuis` mengirim `kdMateri = LM1-R` saat remedial aktif, jadi\r\npemanggilan otomatis mengambil soal `-R` tanpa percabangan tambahan."
             },
             {
               "kind": "method",
@@ -2665,7 +2988,7 @@
             {
               "kind": "method",
               "name": "_buatSessionToken",
-              "description": "Buat token sesi unik menggunakan crypto.getRandomValues.\nToken disimpan di localStorage dan dikirim ke backend untuk validasi."
+              "description": "Buat token sesi unik menggunakan crypto.getRandomValues.\r\nToken disimpan di localStorage dan dikirim ke backend untuk validasi."
             },
             {
               "kind": "method",
@@ -2682,7 +3005,7 @@
             {
               "kind": "method",
               "name": "_cekSesiAktif",
-              "description": "Validasi sesi: jika ada token aktif yang belum kedaluwarsa,\nhambat pembukaan sesi baru (anti-multi-login)."
+              "description": "Validasi sesi: jika ada token aktif yang belum kedaluwarsa,\r\nhambat pembukaan sesi baru (anti-multi-login)."
             },
             {
               "kind": "method",
@@ -2740,6 +3063,16 @@
             {
               "kind": "method",
               "name": "_submitShortAnswer"
+            },
+            {
+              "kind": "method",
+              "name": "_submitUraian",
+              "description": "_submitUraian: soal HOTS uraian — dikirim utuh ke guru, TIDAK auto-score.\r\n\r\nBerbeda dengan shortAnswer: tidak ada kunci jawaban di browser, dan rubrik\r\nsengaja tidak pernah dikirim ke siswa (getBankSoal mengirim objek soal\r\npenuh). Skor 0 sampai guru menilai lewat updateNilaiRemedial, sehingga\r\nskor 0 tidak boleh ikut mengunci Kode LM (lihat getQuizLock)."
+            },
+            {
+              "kind": "method",
+              "name": "_buildJawabanPerSoal",
+              "description": "_buildJawabanPerSoal: rangkai jawaban semua soal menjadi 1 entri per soal\r\nuntuk dikirim ke db_jawaban (diagnostik indikator gagal lintas siswa).\r\n\r\n`isCorrect` boleh null (uraian menunggu penilaian guru) — backend menyimpan\r\nnull sebagai kolom Poin kosong supaya getMenungguPenilaian bisa meng-antre."
             },
             {
               "kind": "method",
@@ -2962,6 +3295,16 @@
             },
             {
               "kind": "method",
+              "name": "_renderUraian",
+              "parameters": [
+                {
+                  "name": "s"
+                }
+              ],
+              "description": "HOTS uraian: textarea + tombol kirim. Tidak menampilkan kunci jawaban.\r\nIndikator soal ditampilkan supaya siswa tahu kompetensi yang diuji."
+            },
+            {
+              "kind": "method",
               "name": "_handleImportFile",
               "parameters": [
                 {
@@ -3114,8 +3457,7 @@
                 "text": "array"
               },
               "default": "[ { q: \"Apa kegunaan utama metode connectedCallback pada LitElement?\", a: \"Menginisialisasi nilai variabel dasar\", b: \"Mendeteksi elemen saat berhasil diinjeksikan ke struktur DOM\", c: \"Menghapus event listener global\", k: \"b\" }, { q: \"Bagaimana cara mencegah timeout 6 menit pada Google Apps Script?\", a: \"Menggunakan penulisan masal berbasis batch I/O\", b: \"Menulis ke banyak sheet terpisah\", c: \"Memperbanyak rumus formula cell\", k: \"a\" } ]",
-              "attribute": "questions",
-              "reflects": true
+              "attribute": "questions"
             },
             {
               "kind": "field",
@@ -3488,6 +3830,16 @@
             },
             {
               "kind": "field",
+              "name": "_uraianText",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "_uraianText"
+            },
+            {
+              "kind": "field",
               "name": "_answered",
               "privacy": "public",
               "type": {
@@ -3583,6 +3935,14 @@
             {
               "kind": "field",
               "name": "_bankLoaded",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "_soalDariParent",
               "type": {
                 "text": "boolean"
               },
@@ -3745,6 +4105,15 @@
               },
               "default": "null",
               "attribute": "_autoSaveInterval"
+            },
+            {
+              "kind": "field",
+              "name": "kunciSoal",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "attribute": "kunciSoal"
             },
             {
               "kind": "field",
@@ -3945,6 +4314,13 @@
               },
               "default": "\"sumatif_lm\"",
               "fieldName": "kategori"
+            },
+            {
+              "name": "kunciSoal",
+              "type": {
+                "text": "boolean"
+              },
+              "fieldName": "kunciSoal"
             },
             {
               "name": "mode",
@@ -4226,6 +4602,14 @@
               },
               "default": "\"\"",
               "fieldName": "_shortAnswerText"
+            },
+            {
+              "name": "_uraianText",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "_uraianText"
             },
             {
               "name": "_answered",
@@ -4510,8 +4894,31 @@
       "path": "src/dasbor-kuis/lib/latihan-kuis.js",
       "declarations": [
         {
+          "kind": "function",
+          "name": "_normalisasiKategori",
+          "parameters": [
+            {
+              "name": "kat"
+            }
+          ],
+          "description": "Cermin JS dari `_kodeLmNormal` di codev6.gs — WAJIB sama perilakunya.\n\"lm1\" | \"LM 1\" | \"LM01\" | \"Pertemuan 1\" | \"P1\" -> \"LM1\"\n\"LM1-R\" | \"LM1 - Remedial\" | \"lm1 remedial\"   -> \"LM1-R\"\n\nAlasan ada duplikasi: `_mulaiRemidi` memfilter di client (fetch tanpa\nkategori mengunduh seluruh sheet). Tanpa normalisasi yang sama, backend\n(dipakai child `kuis-ledakan`) menemukan baris yang parent buang — atau\nsebaliknya. Spasi buntut dari copy-paste sheet (\"LM1-R \") adalah kasus\nnyata yang dulu membuat baris tak terlihat + pesan error menyesatkan."
+        },
+        {
+          "kind": "function",
+          "name": "_kategoriSama",
+          "parameters": [
+            {
+              "name": "a"
+            },
+            {
+              "name": "b"
+            }
+          ],
+          "description": "Cermin JS dari `_kodeLmSama`: dua kode menunjuk hal yang sama?"
+        },
+        {
           "kind": "class",
-          "description": "`latihan-kuis`\r\n\r\nHalaman contoh latihan terpandu: materi → kuis berwaktu → pesan \"nilai\r\nterkirim\". Menyatukan <kuis-ledakan> (kuis yang ada) dan <timer-kuis>\r\n(hitung mundur). Saat waktu habis (event `timer-kuis-expired`), kuis\r\ndikunci otomatis (`_selesaiKuis`) lalu materi & kuis disembunyikan dan\r\nditampilkan pesan \"Selamat! Nilai sudah terkirim\".\r\n\r\nNilai dikirim ke Google Apps Script (`apps-script-url`) oleh <kuis-ledakan>\r\nlewat action=logActivity, sehingga tercatat di Google Spreadsheet.",
+          "description": "",
           "name": "LatihanKuis",
           "members": [
             {
@@ -4607,6 +5014,11 @@
             },
             {
               "kind": "method",
+              "name": "_bersihkanKunciKuis",
+              "description": "Hapus seluruh kunci localStorage milik <kuis-ledakan> untuk siswa ini —\nversi ASLI dan versi remedial.\n\nKunci <kuis-ledakan> memakai `kdMateri` yang sedang aktif. Saat remedial,\n`latihan-kuis` mengoper `LM1-R` ke child, jadi kunci yang tercipta adalah\n`...:LM1-R`. Dulu cleanup hanya menghapus `...:LM1`, sehingga attempt\nremedial yang sudah selesai tidak pernah dibersihkan dan remedial\nberikutnya bisa me-resume state basi."
+            },
+            {
+              "kind": "method",
               "name": "_loadAttemptCounter"
             },
             {
@@ -4640,6 +5052,11 @@
             },
             {
               "kind": "method",
+              "name": "_skorEfektif",
+              "description": "Nilai efektif LM untuk DISPLAY — selaras presedensi akumulasi rapor\n(codev6.gs: nilai sepakat > 0 menang; bila belum ada, terbaik dari\nulangan/remidi). Tanpa ini kartu \"Nilai terbaik\" macet di skor\nulangan dasar walau remedial sudah dinilai guru."
+            },
+            {
+              "kind": "method",
               "name": "_reviewSnapshotFromChild",
               "parameters": [
                 {
@@ -4662,6 +5079,12 @@
             {
               "kind": "method",
               "name": "_closeReviewMode"
+            },
+            {
+              "kind": "field",
+              "name": "_tampilTombolUlangi",
+              "description": "Tombol \"Ulangi Kuis\" hanya ditampilkan bila tidak sedang menunggu remedial.\n\nunsalted: saat remedial tersedia (nilai di bawah KKM dan server mengizinkan),\nsiswa diberi SATU jalur: kerjakan remedial. Menampilkan \"Ulangi Kuis\" berdampingan\nmembuat siswaFREE mengulang kuis yang sama alih-alih mengerjakan remedial —\ntombol yang Disable Remidi jadi tidak pernah dipakai.",
+              "readonly": true
             },
             {
               "kind": "method",
@@ -4708,6 +5131,11 @@
             },
             {
               "kind": "method",
+              "name": "_ambilIndikatorGagal",
+              "description": "Ambil daftar indikator yang tingkatouventilnya di bawah ambang.\nHanya dipakai saat remidiKirimOtomatis aktif. Kegagalan tidak fatal:\nkembalikan null supaya remedial tetap berjalan dengan seluruh soal -R."
+            },
+            {
+              "kind": "method",
               "name": "_mulaiRemidi"
             },
             {
@@ -4737,7 +5165,13 @@
             {
               "kind": "field",
               "name": "_effectiveRemidiMode",
-              "description": "Mode remidi efektif: true jika HAX attribute di-set ATAU (auto) ada remidiSoalUrl + skor<KKM.",
+              "description": "Mode remidi efektif.\n\nBackend bersifat authoritative: begitu `getQuizLock` menjawab, decision\n`boleh`-nya dipakai apa adanya — termasuk `false`. Tanpa ini, heuristics\nlokal (remidi-soal-url + best < kkm) bisa membuka remedial padahal server\nsudah menyatakan tidak boleh.\n\nFallback lokal hanya dipakai saat `_remidiServer` masih null, yaitu backend\nbelum merespons / mode offline-demo.",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "_kodeLmRemidi",
+              "description": "Kode LM remedial (ber-suffix -R) dari server. Dipakai saat submit nilai\nsupaya baris remedial tidak menimpa bukti nilai asli.",
               "readonly": true
             },
             {
@@ -4859,8 +5293,7 @@
                 "text": "array"
               },
               "default": "undefined",
-              "attribute": "questions",
-              "reflects": true
+              "attribute": "questions"
             },
             {
               "kind": "field",
@@ -5335,6 +5768,28 @@
             },
             {
               "kind": "field",
+              "name": "remidiJumlahSoal",
+              "privacy": "public",
+              "type": {
+                "text": "number"
+              },
+              "default": "1",
+              "attribute": "remidi-jumlah-soal",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "remidiKirimOtomatis",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "remidi-kirim-otomatis",
+              "reflects": true
+            },
+            {
+              "kind": "field",
               "name": "nilaiAkhir",
               "privacy": "public",
               "type": {
@@ -5382,6 +5837,36 @@
               },
               "default": "[]",
               "attribute": "_remidiSoal"
+            },
+            {
+              "kind": "field",
+              "name": "_remidiServer",
+              "privacy": "public",
+              "type": {
+                "text": "null"
+              },
+              "default": "null",
+              "attribute": "_remidiServer"
+            },
+            {
+              "kind": "field",
+              "name": "_kodeRemidiAktif",
+              "privacy": "public",
+              "type": {
+                "text": "null"
+              },
+              "default": "null",
+              "attribute": "_kodeRemidiAktif"
+            },
+            {
+              "kind": "field",
+              "name": "_remidiTerkirim",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "_remidiTerkirim"
             },
             {
               "kind": "field",
@@ -5982,6 +6467,22 @@
               "fieldName": "remidiSoalUrl"
             },
             {
+              "name": "remidi-jumlah-soal",
+              "type": {
+                "text": "number"
+              },
+              "default": "1",
+              "fieldName": "remidiJumlahSoal"
+            },
+            {
+              "name": "remidi-kirim-otomatis",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "remidiKirimOtomatis"
+            },
+            {
               "name": "nilaiAkhir",
               "type": {
                 "text": "null"
@@ -6020,6 +6521,30 @@
               },
               "default": "[]",
               "fieldName": "_remidiSoal"
+            },
+            {
+              "name": "_remidiServer",
+              "type": {
+                "text": "null"
+              },
+              "default": "null",
+              "fieldName": "_remidiServer"
+            },
+            {
+              "name": "_kodeRemidiAktif",
+              "type": {
+                "text": "null"
+              },
+              "default": "null",
+              "fieldName": "_kodeRemidiAktif"
+            },
+            {
+              "name": "_remidiTerkirim",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "_remidiTerkirim"
             },
             {
               "name": "_tabSwitchCount",
@@ -6136,11 +6661,26 @@
             "name": "LitElement",
             "package": "lit"
           },
-          "tagName": "latihan-kuis",
           "customElement": true
         }
       ],
       "exports": [
+        {
+          "kind": "js",
+          "name": "_normalisasiKategori",
+          "declaration": {
+            "name": "_normalisasiKategori",
+            "module": "src/dasbor-kuis/lib/latihan-kuis.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "_kategoriSama",
+          "declaration": {
+            "name": "_kategoriSama",
+            "module": "src/dasbor-kuis/lib/latihan-kuis.js"
+          }
+        },
         {
           "kind": "js",
           "name": "LatihanKuis",
@@ -6296,6 +6836,33 @@
                 }
               ],
               "description": "Render Short Answer question",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderUraian",
+              "static": true,
+              "parameters": [
+                {
+                  "name": "soal",
+                  "description": "Question data",
+                  "type": {
+                    "text": "Object"
+                  }
+                },
+                {
+                  "name": "state",
+                  "description": "Current quiz state",
+                  "type": {
+                    "text": "Object"
+                  }
+                }
+              ],
+              "description": "Render soal HOTS uraian.\r\n\r\nBerbeda dari shortAnswer: TIDAK ada kunci jawaban di markup dan tidak ada\r\nrubrik — rubrik hanya hidup di panel guru (dasbor-kuis). Jika belum dinilai,\r\ntampilkan status \"menunggu penilaian\" alih-alih \"Benar/Salah\".",
               "return": {
                 "type": {
                   "text": "TemplateResult"

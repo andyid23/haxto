@@ -48,6 +48,7 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
       tema: { type: String, attribute: "tema", reflect: true },
       studentId: { type: String, attribute: "student-id", reflect: true },
       namaSiswa: { type: String, attribute: "nama-siswa", reflect: true },
+      namaGuru: { type: String, attribute: "nama-guru", reflect: true },
       nis: { type: String, attribute: "nis", reflect: true },
       absen: { type: String, attribute: "absen", reflect: true },
       allowModeSwitch: {
@@ -56,6 +57,7 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
         reflect: true,
       },
       role: { type: String, attribute: "role", reflect: true },
+      roleLock: { type: String, attribute: "role-lock", reflect: true },
       judulKuis: { type: String, attribute: "judul-kuis", reflect: true },
       questions: {
         type: Array,
@@ -124,6 +126,21 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
       remidiSoalUrl: { type: String, attribute: "remidi-soal-url", reflect: true },
       kkm: { type: Number, attribute: "kkm", reflect: true },
       _activeTab: { state: true },
+      // Tab Remedial: antrean esai + diagnostik indikator.
+      _remidiAntre: { state: true },
+      _remidiDiag: { state: true },
+      _remidiForm: { state: true },
+      _remidiNote: { state: true },
+      _remidiError: { state: true },
+      _remidiBusy: { state: true },
+      // Filter view guru (dasbor-wide): null = ikut atribut kelas/kd-materi,
+      // string (termasuk "") = timpa tampilan. "" = semua (tanpa filter).
+      // Sengaja TIDAK menulis this.kelas agar tidak memicu watcher fetch.
+      _lihatKelas: { state: true },
+      _lihatKd: { state: true },
+      // Hasil Regenerasi Rangkuman (pesan saja, tanpa tabel).
+      _rangkumanHasil: { state: true },
+      _rangkumanBusy: { state: true },
       _serverData: { state: true },
       _isFlushing: { state: true },
       _networkStatus: { state: true },
@@ -357,6 +374,10 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
     this.tema = "";
     this.studentId = "STD-65108053";
     this.namaSiswa = "Andy Yulianto";
+    this.namaGuru = "";
+    // Default "auto" = ikut session login. Set "manual" di markup agar
+    // halaman demo/utama tidak berubah mode saat ada siswa login.
+    this.roleLock = "auto";
     this.nis = "";
     this.absen = "";
     this.allowModeSwitch = false;
@@ -371,6 +392,16 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
     this.hideScore = false;
     this.hideConfetti = false;
     this._activeTab = "pantauan";
+    this._remidiAntre = [];
+    this._remidiDiag = [];
+    this._remidiForm = null;
+    this._remidiNote = "";
+    this._remidiError = "";
+    this._remidiBusy = false;
+    this._lihatKelas = null;
+    this._lihatKd = null;
+    this._rangkumanHasil = null;
+    this._rangkumanBusy = false;
     this._isFlushing = false;
     this._syncRetryCount = 0;
     this._networkStatus = globalThis.navigator?.onLine ? "online" : "offline";
@@ -575,12 +606,15 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
       // abaikan
     }
     // baca hax_role dari sessionStorage untuk auto-switch mode
-    try {
-      const role = sessionStorage.getItem("hax_role");
-      if (role === "guru" || role === "siswa") {
-        this.mode = role;
-      }
-    } catch (_) {}
+    // Dihormati hanya bila roleLock = "auto" (default).
+    if (this.roleLock !== "manual") {
+      try {
+        const role = sessionStorage.getItem("hax_role");
+        if (role === "guru" || role === "siswa") {
+          this.mode = role;
+        }
+      } catch (_) {}
+    }
   }
 
   _persistProfile() {
@@ -608,10 +642,16 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
     if (d.nis) this.nis = d.nis;
     if (d.absen) this.absen = d.absen;
     // role dari event (login/register) atau sessionStorage: atur mode dasbor
+    // HANYA bila penulis halaman tidak mengunci role secara eksplisit.
+    // Tanpa ini, login siswa pada halaman yang ditulis mode="guru" diam-diam
+    // menurunkan dasbor ke mode siswa dan semua tab guru (termasuk Remedial)
+    // hilang — dan tidak bisa dipulihkan tanpa logout.
     const role = d.role || (typeof sessionStorage !== "undefined" ? sessionStorage.getItem("hax_role") : null);
     if (role === "guru" || role === "siswa") {
-      this.mode = role;
-      try { sessionStorage.setItem("hax_role", role); } catch (_) {}
+      if (this.roleLock !== "manual") {
+        this.mode = role;
+        try { sessionStorage.setItem("hax_role", role); } catch (_) {}
+      }
     }
     this._persistProfile();
     this.fetchDataKomplit();
@@ -785,9 +825,9 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
               .map((r) => this._normalizeRosterRow(r))
               .filter(
                 (r) =>
-                  !this._canonKelas(this.kelas) ||
+                  !this._canonKelas(this._kelasLihat()) ||
                   !this._canonKelas(r.kelas) ||
-                  this._canonKelas(r.kelas) === this._canonKelas(this.kelas),
+                  this._canonKelas(r.kelas) === this._canonKelas(this._kelasLihat()),
               )
           : null;
         // normalisasi leaderboard V6 -> format lama agar render tidak 0%
@@ -1171,6 +1211,53 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
           font-size: 12px;
           font-weight: var(--ddd-font-weight-bold);
           backdrop-filter: blur(4px);
+        }
+        /* Bar filter view guru (dasbor-wide): Kelas + LM. */
+        .filter-bar {
+          display: flex;
+          align-items: flex-end;
+          gap: var(--ddd-spacing-3);
+          flex-wrap: wrap;
+          padding: 10px 16px;
+          background: #f1f5f9;
+          border-bottom: 1px solid #e2e8f0;
+        }
+        .filter-item {
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+          font-size: 12px;
+          font-weight: var(--ddd-font-weight-bold);
+          color: #334155;
+        }
+        .filter-input {
+          padding: 6px 10px;
+          border: 1px solid #cbd5e1;
+          border-radius: 8px;
+          font-size: 13px;
+          min-width: 140px;
+          background: #fff;
+        }
+        /* Chip per-LM (D4): tampil bila antrean mencakup >1 LM. */
+        .lm-chip-bar {
+          display: flex;
+          gap: 8px;
+          flex-wrap: wrap;
+          margin: 8px 0 4px;
+        }
+        .lm-chip {
+          border: 1px solid #c7d2fe;
+          background: #eef2ff;
+          color: #4338ca;
+          border-radius: 999px;
+          padding: 4px 12px;
+          font-size: 12px;
+          font-weight: var(--ddd-font-weight-bold);
+          cursor: pointer;
+        }
+        .lm-chip.active {
+          background: #4338ca;
+          color: #fff;
         }
         .mode-switch {
           display: flex;
@@ -1577,6 +1664,31 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
           background: #f8fafc;
           font-size: 14px;
         }
+
+        /* ---------- Panel Remedial ---------- */
+        .remidi-panel { display: flex; flex-direction: column; gap: var(--ddd-spacing-4); }
+        .remidi-head { display: flex; align-items: center; justify-content: space-between; gap: var(--ddd-spacing-3); flex-wrap: wrap; }
+        .remidi-head h2 { margin: 0; color: #1e293b; }
+        .remidi-panel h3 { margin: var(--ddd-spacing-4) 0 0; color: #1e293b; }
+        .remidi-note { margin: 0; padding: var(--ddd-spacing-3); border-radius: var(--ddd-radius-md); background: #eef2ff; color: #312e81; font-size: 14px; }
+        .remidi-muted { margin: 0; color: #64748b; font-size: 13px; }
+        .remidi-antre { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--ddd-spacing-3); }
+        .remidi-item { border: var(--ddd-border-xs); border-radius: var(--ddd-radius-md); padding: var(--ddd-spacing-4); background: #ffffff; }
+        .remidi-item-head { display: flex; align-items: center; justify-content: space-between; gap: var(--ddd-spacing-2); flex-wrap: wrap; }
+        .remidi-kode { font-family: var(--ddd-font-family-code, monospace); font-size: 12px; background: #eef2ff; color: #4338ca; padding: 2px 8px; border-radius: var(--ddd-radius-sm); }
+        .remidi-indikator { margin: var(--ddd-spacing-2) 0; font-size: 13px; color: #334155; }
+        .remidi-jawaban { margin: var(--ddd-spacing-2) 0; padding: var(--ddd-spacing-3); background: #f8fafc; border-left: 4px solid #cbd5e1; border-radius: var(--ddd-radius-sm); white-space: pre-wrap; }
+        .remidi-form { display: flex; flex-direction: column; gap: var(--ddd-spacing-3); margin-top: var(--ddd-spacing-3); }
+        .remidi-form label { display: flex; flex-direction: column; gap: var(--ddd-spacing-1); font-size: 13px; color: #334155; font-weight: 600; }
+        .remidi-form input, .remidi-form textarea {
+          padding: var(--ddd-spacing-2); border: var(--ddd-border-xs); border-radius: var(--ddd-radius-sm);
+          font-size: 14px; font-family: inherit; width: 100%; box-sizing: border-box;
+        }
+        .remidi-form-actions { display: flex; gap: var(--ddd-spacing-2); flex-wrap: wrap; }
+        .remidi-tabel { width: 100%; border-collapse: collapse; font-size: 14px; }
+        .remidi-tabel th, .remidi-tabel td { text-align: left; padding: var(--ddd-spacing-2); border-bottom: var(--ddd-border-xs); }
+        .remidi-tabel th { background: #f1f5f9; color: #1e293b; }
+        .remidi-tabel .baris-gagal { background: #fef2f2; }
         .empty-state code {
           background: #eef2ff;
           color: #4338ca;
@@ -2020,6 +2132,19 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
         :host-context(body.dark-mode) .btn-primary:hover { background: var(--ddd-primary-14); }
         :host-context(body.dark-mode) .retry-btn { background: var(--ddd-primary-13); color: #f8fafc; }
         :host-context(body.dark-mode) .retry-btn:hover { background: var(--ddd-primary-14); }
+        :host-context(body.dark-mode) .remidi-panel h2,
+        :host-context(body.dark-mode) .remidi-panel h3 { color: var(--dk-text-strong); }
+        :host-context(body.dark-mode) .remidi-note { background: #1e1b4b; color: #c7d2fe; }
+        :host-context(body.dark-mode) .remidi-muted,
+        :host-context(body.dark-mode) .remidi-indikator { color: var(--dk-text-soft); }
+        :host-context(body.dark-mode) .remidi-item { background: var(--dk-bg-card); border-color: var(--dk-border); }
+        :host-context(body.dark-mode) .remidi-jawaban { background: var(--dk-bg-soft); border-left-color: var(--dk-border); color: var(--dk-text); }
+        :host-context(body.dark-mode) .remidi-form label { color: var(--dk-text-soft); }
+        :host-context(body.dark-mode) .remidi-form input,
+        :host-context(body.dark-mode) .remidi-form textarea { background: var(--dk-bg-soft); color: var(--dk-text-strong); border-color: var(--dk-border); }
+        :host-context(body.dark-mode) .remidi-tabel th { background: var(--dk-soft); color: var(--dk-text-strong); }
+        :host-context(body.dark-mode) .remidi-tabel td { border-bottom-color: var(--dk-border); color: var(--dk-text); }
+        :host-context(body.dark-mode) .remidi-tabel .baris-gagal { background: #7f1d1d33; }
         :host-context(body.dark-mode) .err-chip { background: #7f1d1d; color: #fecaca; border-color: #991b1b; }
         :host-context(body.dark-mode) .error-banner { background: #7f1d1d; color: #fecaca; border-color: #991b1b; }
         :host-context(body.dark-mode) .loading-banner { background: #1e1b4b; border-color: #4338ca; color: #c7d2fe; }
@@ -2163,6 +2288,7 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
           { id: "kehadiran", label: "📚 Ruang Pertemuan" },
           { id: "nilai", label: "✏️ Input Nilai" },
           { id: "kuis", label: "📝 Evaluasi" },
+          { id: "remidi", label: "🩺 Remedial" },
           { id: "forum", label: "💬 Diskusi" },
           { id: "soal", label: "🗂️ Bank Soal" },
           { id: "atur", label: "⚙️ Pengaturan" },
@@ -2174,7 +2300,7 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
           { id: "forum", label: "💬 Diskusi" },
         ];
 
-    const identitas = this._isSiswa() ? this.namaSiswa || "Siswa" : "Guru / Wali Kelas";
+    const identitas = this._isSiswa() ? this.namaSiswa || "Siswa" : this.namaGuru || "Guru / Wali Kelas";
 
     return html`
       <div class="app-container">
@@ -2204,6 +2330,39 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
           </div>
         </div>
 
+        ${isGuru
+          ? html`
+              <div class="filter-bar" role="group" aria-label="Filter kelas dan materi">
+                <label class="filter-item">🏫 Kelas
+                  <input
+                    class="filter-input"
+                    list="dk-kelas-list"
+                    placeholder="Semua kelas"
+                    .value=${this._lihatKelas ?? this.kelas ?? ""}
+                    @change=${(e) => this._gantiFilterLihat(e.target.value.trim(), this._kdLihat())}
+                  />
+                  <datalist id="dk-kelas-list">
+                    ${(this._kelasOpsi() || []).map((k) => html`<option value="${k}"></option>`)}
+                  </datalist>
+                </label>
+                <label class="filter-item">📚 Materi
+                  <select
+                    class="filter-input"
+                    .value=${this._kdLihat()}
+                    @change=${(e) => this._gantiFilterLihat(this._kelasLihat(), e.target.value)}
+                  >
+                    ${this._opsiLM().map(
+                      (lm) => html`<option value="${lm}" ?selected=${lm === this._kdLihat()}>${lm || "Semua LM"}</option>`,
+                    )}
+                  </select>
+                </label>
+                ${(this._lihatKelas != null || this._lihatKd != null)
+                  ? html`<button class="retry-btn" @click=${() => this._gantiFilterLihat(null, null)}>↩️ Atribut</button>`
+                  : ""}
+              </div>
+            `
+          : ""}
+
         <div class="tabs" role="tablist">
           ${tabs.map(
             (t) => html`
@@ -2211,7 +2370,7 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
                 class="tab-btn ${this._activeTab === t.id ? "active" : ""}"
                 role="tab"
                 aria-selected=${this._activeTab === t.id}
-                @click=${() => (this._activeTab = t.id)}
+                @click=${() => this._gantiTab(t.id)}
               >${t.label}</button>
             `,
           )}
@@ -2253,6 +2412,7 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
         return this._renderDashboardPembelajaran();
       if (this._activeTab === "nilai") return this._renderInputNilai();
       if (this._activeTab === "kuis") return this._renderKuisWadah();
+      if (this._activeTab === "remidi") return this._renderRemedial();
       if (this._activeTab === "soal") return this._renderEditSoal();
       if (this._activeTab === "atur") return this._renderPengaturan();
       if (this._activeTab === "forum") {
@@ -2888,10 +3048,10 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
       ? Math.round(roster.reduce((a, r) => a + this._num(r.nilaiAkhir), 0) / roster.length)
       : 0;
 
-    const filterLabel = String(this.kelas || "").trim() ? `Filter: ${this.kelas}` : "Semua kelas";
+    const filterLabel = String(this._kelasLihat() || "").trim() ? `Filter: ${this._kelasLihat()}` : "Semua kelas";
     return html`
       <h2 style="margin-top: 0; color: #1e293b;">Peta Pantauan & Rekapitulasi Kelas</h2>
-      <div class="note-chip" style="margin-bottom:12px;">Menampilkan ${roster.length} siswa — ${filterLabel}. Kosongkan filter Kelas di tab Atur untuk melihat semua.</div>
+      <div class="note-chip" style="margin-bottom:12px;">Menampilkan ${roster.length} siswa — ${filterLabel}. Ubah lewat filter di bilah atas.</div>
 
       <div class="stats-grid">
         <div class="stat-card">
@@ -2966,8 +3126,375 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
     `;
   }
 
+  // ---------- GURU: REMEDIAL ----------
+  /** Ganti tab; tab Remedial memuat datanya sendiri saat dibuka. */
+  _gantiTab(id) {
+    this._activeTab = id;
+    if (id === "remidi") this._muatRemedial();
+  }
+
+  /**
+   * Filter view guru (dasbor-wide). null = ikut atribut; string (termasuk
+   * "") = timpa tampilan. "" = semua (tanpa filter ke backend).
+   */
+  _kelasLihat() {
+    return this._lihatKelas ?? this.kelas ?? "";
+  }
+
+  _kdLihat() {
+    return this._lihatKd ?? this.kdMateri ?? "";
+  }
+
+  /** Daftar LM tetap untuk filter (D1): "" = Semua LM. */
+  _opsiLM() {
+    const daftar = [""];
+    for (let i = 1; i <= 10; i++) daftar.push("LM" + i);
+    daftar.push("STS", "SAS");
+    return daftar;
+  }
+
+  /** Kode dasar tanpa sufiks -R (untuk chip per-LM). */
+  _dasarKode(kode) {
+    return String(kode || "").replace(/-R$/i, "").trim();
+  }
+
+  /** Opsi Kelas unik dari data yang sudah dimuat (roster + antrean). */
+  _kelasOpsi() {
+    const himp = new Set();
+    const tampung = (v) => {
+      const t = String(v || "").trim();
+      if (t) himp.add(t);
+    };
+    (this._serverData?.roster || []).forEach((r) => tampung(r.kelas));
+    (this._remidiAntre || []).forEach((a) => tampung(a.kelas));
+    tampung(this.kelas);
+    return [...himp].sort();
+  }
+
+  /** Ganti filter view (dari navbar / tab Remedial) lalu muat ulang. */
+  _gantiFilterLihat(kelas, kd) {
+    this._lihatKelas = kelas;
+    this._lihatKd = kd;
+    this.fetchDataKomplit();
+    this._muatRemedial();
+  }
+
+  /**
+   * Muat antrean esai yang menunggu penilaian + diagnostik indikator gagal.
+   * Dua sumber: getMenungguPenilaian (per esai) dan getIndikatorGagal (agregat).
+   */
+  async _muatRemedial() {
+    if (!this.appsScriptUrl) return;
+    this._remidiBusy = true;
+    this._remidiNote = "";
+    this.requestUpdate();
+    const kelas = this._kelasLihat();
+    const kd = this._kdLihat();
+    const [antre, diag] = await Promise.all([
+      this._apiGet({ action: "getantrean", kelas: kelas, kdMateri: kd }),
+      this._apiGet({ action: "getIndikatorGagal", kelas: kelas, kdMateri: kd }),
+    ]);
+    this._remidiAntre = Array.isArray(antre && antre.antre) ? antre.antre : [];
+    this._remidiDiag = diag && Array.isArray(diag.indikator) ? diag.indikator : [];
+    this._remidiError = this._deteksiErrorBackend(antre, diag) || "";
+    this._remidiNote = this._remidiAntre.length
+      ? `${this._remidiAntre.length} jawaban uraian menunggu penilaian.`
+      : "Tidak ada jawaban uraian yang menunggu penilaian.";
+    this._remidiBusy = false;
+    this.requestUpdate();
+  }
+
+  /** Nilai remedial default: ikuti skor guru (bukan auto-100). */
+  _nilaiAcuanRemidi(antre) {
+    const dp = this._num((antre && antre.poinDp) || 0);
+    return dp > 0 ? dp : 80;
+  }
+
+  async _simpanNilaiRemedial(antre) {
+    const agreed = this._num(this._remidiForm.nilai_akhir_disepakati);
+    const remedial = this._num(this._remidiForm.skor_remedial);
+    if (agreed < 0 || agreed > 100 || remedial < 0 || remedial > 100) {
+      this._remidiNote = "Nilai harus antara 0 dan 100.";
+      this.requestUpdate();
+      return;
+    }
+    this._remidiBusy = true;
+    this._remidiNote = "";
+    this.requestUpdate();
+    const hasil = await this._apiGet({
+      action: "updateNilaiRemedial",
+      studentId: antre.studentId,
+      nama: antre.nama,
+      nis: antre.nis,
+      kelas: antre.kelas,
+      kdMateri: antre.kodeLm,
+      soalId: antre.soalId,
+      skor_remedial: remedial,
+      nilai_akhir_disepakati: agreed,
+      catatan: this._remidiForm.catatan || "",
+      guru: this.namaGuru || "Guru",
+    });
+    this._remidiBusy = false;
+    if (hasil && hasil.status === "ok") {
+      this._remidiForm = null;
+      // Refresh DULU (ia menimpa _remidiNote), baru tulis note sukses —
+      // kalau tidak, pesan "tersimpan + rata-rata" langsung terhapus.
+      await this._muatRemedial();
+      // Pesan backend sudah memuat info agregat/terbaik (single source) —
+      // jangan tambah lagi di sini agar tidak ganda.
+      this._remidiNote = "✅ " + (hasil.message || "Nilai remedial tersimpan.") +
+        " Jalankan Regenerasi Rangkuman agar rapor ikut terupdate.";
+      this.requestUpdate();
+    } else {
+      this._remidiNote = "⚠️ " + String((hasil && hasil.message) || "Gagal menyimpan.");
+      this.requestUpdate();
+    }
+  }
+
+  _renderRemedial() {
+    if (!this.appsScriptUrl) {
+      return html`<div class="empty-state">Isi <strong>apps-script-url</strong> untuk memuat data remedial.</div>`;
+    }
+    const antre = this._remidiAntre || [];
+    const diag = this._remidiDiag || [];
+    const gagal = diag.filter((d) => d.persen < 75);
+    return html`
+      <section class="remidi-panel">
+        <div class="remidi-head">
+          <h2>🩺 Remedial Singkat</h2>
+          <div class="remidi-head-actions">
+            <button class="retry-btn" @click=${() => this._muatRemedial()} ?disabled=${this._remidiBusy}>
+              🔄 Muat Ulang
+            </button>
+          </div>
+        </div>
+
+        ${this._remidiNote ? html`<p class="remidi-note" role="status">${this._remidiNote}</p>` : ""}
+        ${this._remidiError ? html`<span class="err-chip">⚠️ ${this._remidiError}</span>` : ""}
+
+        <h3>✍️ Menunggu Penilaian (${antre.length})</h3>
+        <p class="remidi-muted">
+          Antrean = esai <code>uraian</code> yang <code>Benar</code>/<code>Poin</code>-nya
+          masih kosong. Soal PG yang sudah dinilai otomatis tidak masuk antrean.
+          Filter Kelas mengharuskan kolom <code>Kelas</code> terisi sama persis —
+          kosongkan filter untuk semua kelas. <code>LM1</code> mencakup
+          <code>LM1-R</code>.
+        </p>
+        ${this._renderChipLM(antre)}
+        ${this._remidiBusy && !antre.length
+          ? html`<p class="remidi-muted">Memuat…</p>`
+          : antre.length
+            ? html`
+                <ul class="remidi-antre">
+                  ${antre.map(
+                    (a) => html`
+                      <li class="remidi-item">
+                        <div class="remidi-item-head">
+                          <strong>${a.nama || a.studentId}</strong>
+                          <span class="remidi-kode">${a.kodeLm}</span>
+                        </div>
+                        ${a.indikator ? html`<p class="remidi-indikator"><strong>Indikator:</strong> ${a.indikator}</p>` : ""}
+                        <blockquote class="remidi-jawaban">${a.teks || "(kosong)"}</blockquote>
+                        <p class="remidi-muted">Dikirim ${a.tanggal || "-"}</p>
+                        ${this._remidiForm && this._remidiForm.kunci === a.studentId + "|" + a.kodeLm + "|" + a.soalId
+                          ? this._renderFormRemedial(a)
+                          : html`<button
+                              class="btn-mulai"
+                              @click=${() => {
+                                const acuan = this._nilaiAcuanRemidi(a);
+                                this._remidiForm = {
+                                  kunci: a.studentId + "|" + a.kodeLm + "|" + a.soalId,
+                                  skor_remedial: acuan,
+                                  nilai_akhir_disepakati: acuan,
+                                  catatan: "",
+                                };
+                                this.requestUpdate();
+                              }}
+                            >✏️ Nilai Jawaban</button>`}
+                      </li>
+                    `,
+                  )}
+                </ul>
+              `
+            : html`<div class="empty-state">Tidak ada jawaban uraian yang menunggu penilaian.</div>`}
+
+        <h3>🎯 Indikator Paling Gagal (${gagal.length} dari ${diag.length} soal)</h3>
+        ${diag.length
+          ? html`
+              <table class="remidi-tabel">
+                <thead>
+                  <tr>
+                    <th scope="col">Indikator</th>
+                    <th scope="col">Soal</th>
+                    <th scope="col">Benar</th>
+                    <th scope="col">Salah</th>
+                    <th scope="col">%</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${diag.map(
+                    (d) => html`
+                      <tr class=${d.persen < 75 ? "baris-gagal" : ""}>
+                        <td>${d.indikator || "—"}</td>
+                        <td><code>${d.soalId}</code></td>
+                        <td>${d.benar}</td>
+                        <td>${d.salah}</td>
+                        <td>${d.persen}%</td>
+                      </tr>
+                    `,
+                  )}
+                </tbody>
+              </table>
+              <p class="remidi-muted">
+                Indikator di bawah ambang (${75}%) adalah kandidat soal remedial. Tambahkan soal
+                uraian dengan kategori <code>${(this.kdMateri || "LM1").replace(/-R$/i, "")}-R</code> di tab Bank Soal.
+              </p>
+            `
+            : html`<div class="empty-state">Belum ada data diagnostik. Data muncul setelah siswa menjawab kuis sumatif.</div>`}
+
+        <h3>📋 Rangkuman &amp; Rapor</h3>
+        <p class="remidi-muted">
+          Menulis ulang tab sheet <code>Rangkuman</code> dari Users +
+          <code>db_asesmen</code>. Jalankan setelah menilai agar rapor ikut
+          terupdate.
+        </p>
+        <div class="remidi-head-actions" style="margin-bottom:8px;">
+          <button class="retry-btn" @click=${() => this._regenerasiRangkuman()} ?disabled=${this._rangkumanBusy}>
+            🔄 Regenerasi Rangkuman
+          </button>
+        </div>
+        ${this._rangkumanHasil
+          ? html`<p class="remidi-note" role="status">
+              ${this._rangkumanHasil.ok ? "✅" : "⚠️"} ${this._rangkumanHasil.teks}
+            </p>`
+          : ""}
+      </section>
+    `;
+  }
+
+  /** Chip per-LM dari antrean (D4): tampil bila >1 LM; klik = filter LM. */
+  _renderChipLM(antre) {
+    const hitung = {};
+    (antre || []).forEach((a) => {
+      const dasar = this._dasarKode(a.kodeLm) || "(tanpa LM)";
+      hitung[dasar] = (hitung[dasar] || 0) + 1;
+    });
+    const daftar = Object.keys(hitung).sort();
+    if (daftar.length < 2) return "";
+    const aktif = this._dasarKode(this._kdLihat());
+    return html`
+      <div class="lm-chip-bar" role="group" aria-label="Filter cepat per materi">
+        ${daftar.map(
+          (lm) => html`
+            <button
+              class="lm-chip ${aktif === lm ? "active" : ""}"
+              @click=${() => this._gantiFilterLihat(this._kelasLihat(), lm === "(tanpa LM)" ? "" : lm)}
+            >${lm} (${hitung[lm]})</button>
+          `,
+        )}
+        ${aktif
+          ? html`<button class="lm-chip" @click=${() => this._gantiFilterLihat(this._kelasLihat(), "")}>
+              ✖️ Semua
+            </button>`
+          : ""}
+      </div>
+    `;
+  }
+
+  /** Regenerasi Rangkuman (pesan saja, D2): tanpa tabel, tanpa ubah backend. */
+  async _regenerasiRangkuman() {
+    if (!this.appsScriptUrl || this._rangkumanBusy) return;
+    this._rangkumanBusy = true;
+    this._rangkumanHasil = null;
+    this.requestUpdate();
+    try {
+      const hasil = await this._apiGet({ action: "generateRangkuman" });
+      const ok = !!(hasil && hasil.status === "ok");
+      this._rangkumanHasil = {
+        ok,
+        teks: ok
+          ? `${hasil.message || "Rangkuman diperbarui."} Lihat tab sheet Rangkuman.`
+          : String((hasil && hasil.message) || "Gagal meregenerasi rangkuman."),
+      };
+    } catch (_) {
+      this._rangkumanHasil = { ok: false, teks: "Gagal meregenerasi rangkuman (jaringan)." };
+    }
+    this._rangkumanBusy = false;
+    this.requestUpdate();
+  }
+
+  _renderFormRemedial(antre) {
+    const f = this._remidiForm;
+    return html`
+      <div class="remidi-form">
+        <label>
+          Skor remedial (0-100)
+          <input
+            type="number"
+            min="0"
+            max="100"
+            .value=${String(f.skor_remedial)}
+            @input=${(e) => {
+              f.skor_remedial = e.target.value;
+              // Nilai kesepakatan mengikuti skor remedial secara default —
+              // guru boleh menyesuaikan sedikit bila perlu.
+              f.nilai_akhir_disepakati = e.target.value;
+              this.requestUpdate();
+            }}
+          />
+        </label>
+        <label>
+          Nilai akhir disepakati (masuk rapor)
+          <input
+            type="number"
+            min="0"
+            max="100"
+            .value=${String(f.nilai_akhir_disepakati)}
+            @input=${(e) => {
+              f.nilai_akhir_disepakati = e.target.value;
+              this.requestUpdate();
+            }}
+          />
+        </label>
+        <label>
+          Catatan untuk siswa
+          <textarea
+            rows="2"
+            .value=${f.catatan}
+            @input=${(e) => {
+              f.catatan = e.target.value;
+            }}
+          ></textarea>
+        </label>
+        <div class="remidi-form-actions">
+          <button class="btn-mulai" ?disabled=${this._remidiBusy} @click=${() => this._simpanNilaiRemedial(antre)}>
+            💾 Simpan Nilai
+          </button>
+          <button
+            class="retry-btn"
+            @click=${() => {
+              this._remidiForm = null;
+              this.requestUpdate();
+            }}
+          >
+            Batal
+          </button>
+        </div>
+      </div>
+    `;
+  }
+
+  /**
+   * Kolom LM di sheet rapor/leaderboard untuk kdMateri sekarang.
+   *
+   * Untuk kode remedial ("LM1-R") sengaja dikembalikan "" — nilai remedial
+   * disimpan di baris terpisah pada tab Remedial dan dicangkok saat
+   * generateReport, bukan ditulis ke kolom LM1. Kalau dipetakan ke LM1, angka
+   * remedial akan terlihat seolah-olah nilai asli berubah.
+   */
   _materiCol() {
     const m = String(this.kdMateri||"").trim();
+    if (/-R$/i.test(m)) return "";
     const lm = m.match(/^LM\s*0?(\d+)$/i);
     if (lm) return `LM${lm[1]}`;
     const p = m.match(/^Pertemuan\s*0?(\d+)$/i);

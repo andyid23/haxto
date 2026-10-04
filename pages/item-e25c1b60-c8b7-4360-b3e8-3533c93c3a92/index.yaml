@@ -81,12 +81,12 @@ content: >
   <p></p>
 
   <quiz-user-auth
-  apps-script-url="https://script.google.com/macros/s/AKfycbxcCUl6QIYYuT4x2pqzQtAVycYBg2TIc9eXt7yAXATXkJtEroNvCnHUBULhVWNx3mc6/exec"
+  apps-script-url="https://script.google.com/macros/s/AKfycbx4-ZvZieRruK5HVZjxuTEq4LGmE8JQizEV0WbYCCGfNzlUGSqVwa_yE30WGRbjaDw/exec"
   auto-login _student-id=""></quiz-user-auth>
 
 
   <dasbor-kuis mode="guru"
-  apps-script-url="https://script.google.com/macros/s/AKfycbxcCUl6QIYYuT4x2pqzQtAVycYBg2TIc9eXt7yAXATXkJtEroNvCnHUBULhVWNx3mc6/exec"
+  apps-script-url="https://script.google.com/macros/s/AKfycbx4-ZvZieRruK5HVZjxuTEq4LGmE8JQizEV0WbYCCGfNzlUGSqVwa_yE30WGRbjaDw/exec"
   kd-materi="Pertemuan 1" kelas="XI-1" student-id="STD-65108053"
   nama-siswa="Andy Yulianto" nis="65108053" absen="1" judul-kuis="Evaluasi Kuis
   Interaktif" questions="[]" _active-tab="pantauan"

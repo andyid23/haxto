@@ -250,7 +250,12 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
       questions: {
         type: Array,
         attribute: "questions",
-        reflect: true,
+        // PENTING: JANGAN reflect: true.
+        // Dengan reflect, constructor yang menyetel this.questions = DEFAULT_QUESTIONS
+        // menulis atribut questions="[...]", sehingga guard hasAttribute("questions")
+        // di _muatBankSoal() selalu true dan Bank Soal tidak pernah dimuat. Reflect juga membocorkan isi soal ke
+        // editor HAX.
+        reflect: false,
         converter: {
           fromAttribute(value) {
             if (value == null || value === "") return undefined;
@@ -284,6 +289,11 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
       appsScriptUrl: { type: String, attribute: "apps-script-url", reflect: true },
       kdMateri: { type: String, attribute: "kd-materi", reflect: true },
       kategori: { type: String, attribute: "kategori", reflect: true },
+      // Kunci dari parent (latihan-kuis): soal sudah dipasok via property
+      // (.questions: file/slice remidi) — fetch Bank akan menimpa, jadi
+      // _muatBankSoal wajib lewati. Standalone (tanpa parent) tetap fetch.
+      // Sengaja tanpa reflect: hanya sinyal internal, bukan atribut HAX.
+      kunciSoal: { type: Boolean },
       mode: { type: String, attribute: "mode", reflect: true },
       hideConfetti: {
         type: Boolean,
@@ -360,6 +370,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
       _selectedAnswers: { state: true },
       _matchAnswers: { state: true },
       _shortAnswerText: { state: true },
+      _uraianText: { state: true },
       _answered: { state: true },
       _answeredSet: { state: true },
       _userAnswers: { state: true },
@@ -455,6 +466,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     this._selectedAnswers = new Set();
     this._matchAnswers = {};
     this._shortAnswerText = "";
+    this._uraianText = "";
     this._answered = false;
     this._answeredSet = new Set();
     this._userAnswers = new Map();
@@ -466,6 +478,10 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     this._megaConfettiFrameId = null;
     this._bankStatus = "";
     this._bankLoaded = false;
+    // True bila soal saat ini dipasok parent (latihan-kuis mode remidi).
+    // _muatBankSoal WAJIB hormat: fetch ulang akan menimpa 1 soal uraian
+    // hasil filter dengan maksimal 10 baris mentah kategori.
+    this._soalDariParent = false;
     this._confettiFired = false;
     this._shuffledQuestions = [];
     this._locked = false;
@@ -695,6 +711,15 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
           font-size: var(--ddd-font-size-4xs); font-family: inherit; box-sizing: border-box;
         }
         .short-answer-input:focus { outline: none; border-color: var(--ddd-theme-primary, var(--ddd-primary-1, #1e407c)); box-shadow: 0 0 0 2px var(--ddd-theme-polaris-focus-ring, rgba(79, 70, 229, 0.3)); }
+        .uraian-container { display: flex; flex-direction: column; gap: var(--ddd-spacing-2); margin: var(--ddd-spacing-3) 0; }
+        .uraian-input {
+          width: 100%; padding: var(--ddd-spacing-3); border: var(--ddd-border-xs); border-radius: var(--ddd-radius-md);
+          font-size: var(--ddd-font-size-4xs); font-family: inherit; box-sizing: border-box; resize: vertical; min-height: 120px;
+        }
+        .uraian-input:focus { outline: none; border-color: var(--ddd-theme-primary, var(--ddd-primary-1, #1e407c)); box-shadow: 0 0 0 2px var(--ddd-theme-polaris-focus-ring, rgba(79, 70, 229, 0.3)); }
+        .uraian-input:disabled { background: var(--ddd-theme-default-silverTint, #f5f5f5); color: var(--ddd-theme-default-coalyGray, #1e293b); }
+        .uraian-indikator { margin: 0; font-size: var(--ddd-font-size-4xs); color: var(--ddd-theme-default-coalyGray, #1e293b); }
+        .uraian-hint { margin: 0; font-size: var(--ddd-font-size-4xxs, 0.75rem); color: var(--ddd-theme-default-coolGray, #52616f); }
         .btn-submit {
           display: block; padding: var(--ddd-spacing-3) var(--ddd-spacing-5); background-color: var(--ddd-theme-polaris-primary, var(--ddd-primary-1, #1e407c)); color: var(--ddd-theme-on-primary, var(--ddd-theme-bgContrast, var(--lowContrast-override, #ffffff)));
           border: none; border-radius: var(--ddd-radius-sm); font-size: var(--ddd-font-size-4xs); font-weight: 700; cursor: pointer; margin-top: var(--ddd-spacing-3);
@@ -829,7 +854,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
         :host-context(body.dark-mode) .editor-input,
         :host-context(body.dark-mode) .editor-textarea,
         :host-context(body.dark-mode) .short-answer-input,
-
+        :host-context(body.dark-mode) .uraian-input,
 
         :host-context(body.dark-mode) .pgk-table { color: var(--dk-text); }
         :host-context(body.dark-mode) .pgk-table th { background: var(--dk-soft); color: var(--dk-text-strong); }
@@ -1000,6 +1025,9 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
       case "shortAnswer":
         this._submitShortAnswer();
         break;
+      case "uraian":
+        this._submitUraian();
+        break;
       case "pgk":
         this._submitPGK();
         break;
@@ -1048,21 +1076,80 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     this._selesaiKuis();
   }
 
-  /** Muat Bank Soal (AKM) dari backend bila tidak ada atribut `questions`. */
+/**
+   * Muat Bank Soal (AKM) dari backend bila tidak ada atribut `questions`.
+   *
+   * WAJIB mengirim `kategori`. Tanpa itu backend mengembalikan SELURUH Bank
+   * Soal, sehingga kuis LM1 ikut memuat LM2, LM3, dan — paling parah —
+   * `LM1-R` (soal uraian remedial) yang belum boleh dilihat siswa.
+   *
+   * `latihan-kuis` mengirim `kdMateri = LM1-R` saat remedial aktif, jadi
+   * pemanggilan otomatis mengambil soal `-R` tanpa percabangan tambahan.
+   */
   async _muatBankSoal() {
     if (this._bankLoaded || !this.appsScriptUrl || this.hasAttribute("questions")) return;
+    // Kunci reaktif dari parent: parent sudah memegang soal (file ulangan /
+    // slice remidi) — fetch Bank menimpa dengan maks 10 baris mentah.
+    // Ini akar "remidi-jumlah-soal tidak berfungsi": flag sekali-pakai
+    // _soalDariParent dipasang saat child belum di-render (null), sehingga
+    // child yang baru dibuat tetap fetch. Binding reaktif selalu terlihat.
+    // Kunci hanya melindungi soal yang ADA; questions kosong tetap fetch
+    // (standalone / latihan-kuis tanpa file).
+    if (this.kunciSoal && Array.isArray(this.questions) && this.questions.length) return;
+    // Soal titipan parent (remidi) tidak boleh ditimpa hasil fetch.
+    // Flag dikonsumsi sekali: start berikutnya kembali normal.
+    if (this._soalDariParent && Array.isArray(this.questions) && this.questions.length) {
+    this._soalDariParent = false;
+    // Sinyal reaktif pengganti flag sekali-pakai di atas (lihat _muatBankSoal).
+    this.kunciSoal = false;
+      return;
+    }
+    this._soalDariParent = false;
     this._bankLoaded = true;
     try {
       const pemisah = this.appsScriptUrl.includes("?") ? "&" : "?";
-      const res = await fetch(this.appsScriptUrl + pemisah + "action=getBankSoal");
+      const qs = new URLSearchParams({ action: "getBankSoal" });
+      const kategori = String(this.kdMateri || "").trim();
+      if (kategori) qs.set("kategori", kategori);
+      const res = await fetch(this.appsScriptUrl + pemisah + qs.toString());
       if (!res.ok) return;
       const teks = await res.text();
       const data = JSON.parse(teks);
       if (data && data.status === "ok" && Array.isArray(data.soal)) {
-        const valid = data.soal.filter(
-          (s) =>
-            s && (s.soal || s.question) && (Array.isArray(s.choices) ? s.choices.length >= 2 : true),
-        );
+// Backend mengirim {id, kategori, tipe, indikator, soal:{...}, poin}.
+        // Ratakan ke objek soal supaya _siapkanSoal() bisa membaca
+        // question/choices/type - sekaligus membawa id + indikator untuk
+        // NeedsFeedback-on submit (diagnostik per soal).
+        // Catatan: kolom "Tipe" di sheet ditulis lowercase ("mc"/"uraian"),
+        // sedangkan JSON Bank Soal bisa memakai "type". Keduanya dipetakan
+        // ke `type` supaya soal uraian tetap dikenali walau JSON-nya tidak
+        // menulis field type.
+        //
+        // Soal uraian HANYA boleh muncul pada kategori remedial (ber-suffix -R).
+        // Di kuis sumatif, uraian di-filter supaya tidak bocor & tidak merusak skor.
+        const isRemidi = /-R$/i.test(kategori);
+        const valid = data.soal
+          .filter((s) => {
+            if (!s) return false;
+            const q = s.soal || s;
+            if (!(q.question || q.q)) return false;
+            const tipe = String(s.tipe || q.type || q.tipe || "mc").toLowerCase();
+            if (tipe === "uraian" && !isRemidi) return false;
+            return Array.isArray(q.choices) ? q.choices.length >= 2 : true;
+          })
+          .map((s, i) => {
+            const q = s.soal || s;
+            return {
+              ...q,
+              id: s.id || q.id || "",
+              indikator: s.indikator || q.indikator || "",
+              kategori: s.kategori || "",
+              tipe: s.tipe || q.tipe || q.type || "mc",
+              type: s.tipe || q.type || q.tipe || "mc",
+              poin: typeof s.poin === "number" ? s.poin : q.points || q.poin || 1,
+              _originalIndex: i,
+            };
+          });
         if (valid.length > 0) {
           this.questions = valid.slice(0, 10);
           this._bankStatus = "Soal dimuat dari Bank Soal (AKM).";
@@ -1129,7 +1216,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     if (kunci === null) kunci = pilihan[0];
 
     return {
-      type: soal.type || "mc",
+      type: soal.type || soal.tipe || "mc",
       teks: soal.question || soal.q || soal.soal || "",
       image: soal.image || "",
       pilihan,
@@ -1143,6 +1230,11 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
       correctPairs: soal.correctPairs || {},
       acceptedAnswers: Array.isArray(soal.acceptedAnswers) ? soal.acceptedAnswers : [],
       hint: soal.hint || "",
+      // Metadata untuk log per-soal (db_jawaban). id harus stabil lintas
+      // randomize — pakai id Bank Soal, fallback ke indeks asli.
+      soalId: soal.id || (soal._originalIndex >= 0 ? "#" + (soal._originalIndex + 1) : ""),
+      indikator: soal.indikator || "",
+      points: typeof soal.points === "number" ? soal.points : typeof soal.poin === "number" ? soal.poin : 1,
       originalIndex: soal._originalIndex >= 0 ? soal._originalIndex : null,
     };
   }
@@ -1418,6 +1510,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     this._selectedAnswers = new Set();
     this._matchAnswers = {};
     this._shortAnswerText = "";
+    this._uraianText = "";
     this._answered = false;
     this._feedbackText = "";
     this._feedbackPositive = false;
@@ -1684,6 +1777,86 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     this._autoAdvance();
   }
 
+  /**
+   * _submitUraian: soal HOTS uraian — dikirim utuh ke guru, TIDAK auto-score.
+   *
+   * Berbeda dengan shortAnswer: tidak ada kunci jawaban di browser, dan rubrik
+   * sengaja tidak pernah dikirim ke siswa (getBankSoal mengirim objek soal
+   * penuh). Skor 0 sampai guru menilai lewat updateNilaiRemedial, sehingga
+   * skor 0 tidak boleh ikut mengunci Kode LM (lihat getQuizLock).
+   */
+  _submitUraian() {
+    if (!this.editable && (this._answered || this._userAnswers.has(this._currentIdx))) return;
+    const teks = this._uraianText.trim();
+    if (!teks) {
+      this._feedbackText = "Tulis jawaban uraian terlebih dahulu.";
+      this._feedbackPositive = false;
+      this.requestUpdate();
+      return;
+    }
+    const active = this._getActiveQuestions();
+    const soal = active[this._currentIdx];
+    const s = this._siapkanSoal(soal);
+    // Edit jawaban yang sudah dikirim: kembalikan poin lama (selalu 0 utk uraian).
+    const prev = this._userAnswers.get(this._currentIdx);
+    if (prev && prev.points) this._score -= prev.points;
+    this._answered = true;
+    if (!this.hideAnswers) {
+      // Jangan bilang "Terkirim" — jawaban baru terkirim setelah _selesaiKuis().
+      this._feedbackText = "Jawaban tersimpan. Klik “Kirim Jawaban” untuk mengirim ke guru.";
+      this._feedbackPositive = true;
+    }
+    this._answeredSet.add(this._currentIdx);
+    this._userAnswers.set(this._currentIdx, {
+      text: teks,
+      // TIGA NULL: sedang menunggu penilaian, bukan salah.
+      isCorrect: null,
+      points: 0,
+      needsGrading: true,
+      soalId: s.soalId,
+      indikator: s.indikator,
+      pointsMax: s.points,
+    });
+    this._saveAttempt();
+    // Kuis 1 soal (remedial): _autoAdvance tidak punya tujuan, dan jawaban baru
+    // terkirim saat _selesaiKuis(). Kalau tidak di-trigger, siswa tak pernah
+    // mengirim — jadi panggil _selesaiKuis() supaya benar-benar terkirim.
+    this._autoAdvance();
+    if (active.length <= 1 && !this.practiceMode) {
+      setTimeout(() => this._selesaiKuis(), this.questionDelay || 1800);
+    }
+  }
+
+  /**
+   * _buildJawabanPerSoal: rangkai jawaban semua soal menjadi 1 entri per soal
+   * untuk dikirim ke db_jawaban (diagnostik indikator gagal lintas siswa).
+   *
+   * `isCorrect` boleh null (uraian menunggu penilaian guru) — backend menyimpan
+   * null sebagai kolom Poin kosong supaya getMenungguPenilaian bisa meng-antre.
+   */
+  _buildJawabanPerSoal() {
+    const active = this._getActiveQuestions();
+    const out = [];
+    this._userAnswers.forEach((ua, idx) => {
+      const raw = active[idx];
+      const s = raw ? this._siapkanSoal(this._normalisasiSoal(raw)) : null;
+      if (!ua || !s) return;
+      const benar =
+        ua.isCorrect === true || ua.isCorrect === false ? ua.isCorrect : null;
+      out.push({
+        soalId: ua.soalId || s.soalId,
+        indikator: ua.indikator || s.indikator,
+        tipe: s.type,
+        noSoal: s.originalIndex != null ? s.originalIndex + 1 : idx + 1,
+        benar: benar,
+        poin: benar === true ? ua.points || 0 : 0,
+        poinDp: s.points || 1,
+        teks: ua.text || "",
+      });
+    });
+    return out;
+  }
+
   _restoreAnswerState(index) {
     const ua = this._userAnswers.get(index);
     if (!ua) return;
@@ -1694,6 +1867,10 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
       this._answered = true;
     } else if (typeof ua.selected === "number") {
       this._selected = ua.selected;
+      this._answered = true;
+    } else if (ua.needsGrading) {
+      // Uraian: teks kembali ke editor uraian, bukan isian jawaban singkat.
+      this._uraianText = ua.text || "";
       this._answered = true;
     } else if (ua.text) {
       this._shortAnswerText = ua.text;
@@ -1709,8 +1886,12 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
         const active = this._getActiveQuestions();
         const raw = active[index];
         const s = raw ? this._siapkanSoal(this._normalisasiSoal(raw)) : null;
-        if (ua.isCorrect) {
+        if (ua.isCorrect === true) {
           this._feedbackText = s && s.type === "pgk" ? "Mantap, semua pernyataan benar!" : s && s.type === "matching" ? "Mantap, Benar!" : "Mantap, Benar!";
+          this._feedbackPositive = true;
+        } else if (ua.needsGrading) {
+          // Uraian tidak pernah "Benar/Salah" di browser — belum dinilai guru.
+          this._feedbackText = "Terkirim. Jawaban uraian dinilai guru.";
           this._feedbackPositive = true;
         } else if (ua.isCorrect === false) {
           if (s && s.type === "shortAnswer") {
@@ -1878,6 +2059,9 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
             metadataKuis: this.judul,
             timestamp: new Date().toISOString(),
             answerTimings: answerTimings,
+            // 1 entri per soal — backend logActivity meneruskannya ke logJawaban
+            // (satu lock, jadi tidak ada celah dua_request setengah jadi).
+            jawabanPerSoal: this._buildJawabanPerSoal(),
             sessionToken: this._sessionToken,
             audit_singkat: _auditSingkatSaldo,
           },
@@ -2050,6 +2234,9 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
         kdMateri: this.kdMateri || "",
         metadataKuis: this.judul,
         timestamp,
+        // Jalur standalone (tanpa dasbor-kuis): backend butuh array ini
+        // untuk menulis db_jawaban (baca dua bentuk: top-level & description).
+        jawabanPerSoal: this._buildJawabanPerSoal(),
         audit_singkat: this._bacaAuditSingkat(),
       }),
       timestamp,
@@ -2160,9 +2347,12 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     this.requestUpdate();
   }
 
-  _attemptKey() {
-    return `kuis-ledakan:attempt:${this.studentId}:${this.kdMateri}`;
-  }
+_attemptKey() {
+     // Kode remedial (LM1-R) harus punya kunci sendiri. Tanpa suffix -R, dua
+     // elemen kuis-ledakan di satu halaman (sumatif + remedial) saling
+     // menimpa attempt karena memakai kunci localStorage yang sama.
+     return `kuis-ledakan:attempt:${this.studentId}:${this.kdMateri}`;
+   }
 
   /** Resume attempt yang belum submit bila ada (anti-refresh): kembalikan sisa waktu & urutan soal. */
   _resumeAttemptIfAny() {
@@ -2398,6 +2588,7 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
         ${qType === "pgk" ? this._renderPGK(s) : ""}
         ${qType === "matching" ? this._renderMatching(s) : ""}
         ${qType === "shortAnswer" ? this._renderShortAnswer(s) : ""}
+        ${qType === "uraian" ? this._renderUraian(s) : ""}
         ${qType === "mc" ? this._renderMC(s, soal) : ""}
         ${this._feedbackText
           ? html`<div class="feedback-area ${this._feedbackPositive ? "positive" : "negative"}" aria-live="polite">${this._feedbackText}</div>`
@@ -2521,6 +2712,30 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
       ${!this._answered || this.editable
         ? html`<button class="btn-submit" ?disabled=${this._answered && !this.editable} @click=${this._submitShortAnswer}>Kirim Jawaban</button>`
         : ""}
+    `;
+  }
+
+  /**
+   * HOTS uraian: textarea + tombol kirim. Tidak menampilkan kunci jawaban.
+   * Indikator soal ditampilkan supaya siswa tahu kompetensi yang diuji.
+   */
+  _renderUraian(s) {
+    return html`
+      <div class="uraian-container">
+        ${s.indikator
+          ? html`<p class="uraian-indikator"><strong>Indikator:</strong> ${s.indikator}</p>`
+          : ""}
+        <textarea name="uraian" class="uraian-input" rows="7"
+          aria-label="Tulis jawaban uraian"
+          placeholder="Tulis jawaban uraian Anda di sini…"
+          ?disabled=${this._answered && !this.editable}
+          .value=${this._uraianText}
+          @input=${(e) => (this._uraianText = e.target.value)}></textarea>
+        <p class="uraian-hint">Dinilai guru setelah dikirim — tidak ada jawaban benar otomatis.</p>
+        ${!this._answered || this.editable
+          ? html`<button class="btn-submit" ?disabled=${this._answered && !this.editable} @click=${this._submitUraian}>Kirim Jawaban</button>`
+          : ""}
+      </div>
     `;
   }
 
