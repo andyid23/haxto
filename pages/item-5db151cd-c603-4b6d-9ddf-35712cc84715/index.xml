@@ -4,17 +4,39 @@
 <indent>0</indent>
 <location>pages/item-5db151cd-c603-4b6d-9ddf-35712cc84715/index.xml</location>
 <slug>new-page</slug>
-<order>1</order>
+<order>2</order>
 <parent></parent>
-<title>New Page</title>
-<description></description>
+<title>REMIDI Baru Kelas X</title>
+<description>
+</description>
 <metadata>
 <created>1791075467</created>
-<updated>1791075467</updated>
+<updated>1791075508</updated>
 <images>
 </images>
 <videos>
 </videos>
+<theme>
+<element>polaris-flex-theme</element>
+<path>@haxtheweb/polaris-theme/lib/polaris-flex-theme.js</path>
+<name>Polaris Flex</name>
+<thumbnail>@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-polaris-flex-theme-thumb.jpg</thumbnail>
+<description>Start with a blank site using the Polaris Flex</description>
+<category>
+<item>Website</item>
+</category>
+<hidden>false</hidden>
+<priority>-1</priority>
+<terrible>false</terrible>
+<key>polaris-flex-theme</key>
+</theme>
+<published>true</published>
+<hideInMenu>true</hideInMenu>
+<icon>av:airplay</icon>
+<locked>false</locked>
+<readtime>1</readtime>
 </metadata>
-<content><![CDATA[<p></p>]]></content>
+<content><![CDATA[
+<p></p>
+]]></content>
 </item>

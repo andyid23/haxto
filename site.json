@@ -25,7 +25,7 @@
       "name": "haxto",
       "domain": "",
       "created": 1787457359,
-      "updated": 1790938047,
+      "updated": 1791075508,
       "logo": "",
       "version": "26.0.1"
     },
@@ -789,15 +789,34 @@
       "indent": 0,
       "location": "pages/item-5db151cd-c603-4b6d-9ddf-35712cc84715/index.html",
       "slug": "new-page",
-      "order": 1,
+      "order": 2,
       "parent": null,
-      "title": "New Page",
-      "description": "",
+      "title": "REMIDI Baru Kelas X",
+      "description": "\n",
       "metadata": {
         "created": 1791075467,
-        "updated": 1791075467,
+        "updated": 1791075508,
         "images": [],
-        "videos": []
+        "videos": [],
+        "theme": {
+          "element": "polaris-flex-theme",
+          "path": "@haxtheweb/polaris-theme/lib/polaris-flex-theme.js",
+          "name": "Polaris Flex",
+          "thumbnail": "@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-polaris-flex-theme-thumb.jpg",
+          "description": "Start with a blank site using the Polaris Flex",
+          "category": [
+            "Website"
+          ],
+          "hidden": false,
+          "priority": -1,
+          "terrible": false,
+          "key": "polaris-flex-theme"
+        },
+        "published": true,
+        "hideInMenu": true,
+        "icon": "av:airplay",
+        "locked": false,
+        "readtime": 1
       }
     }
   ]
