@@ -2,14 +2,14 @@ id: item-5db151cd-c603-4b6d-9ddf-35712cc84715
 indent: 0
 location: pages/item-5db151cd-c603-4b6d-9ddf-35712cc84715/index.yaml
 slug: remidi-kelas-x
-order: 3
+order: 4
 parent: null
 title: REMIDI Baru Kelas X
 description: |+
 
 metadata:
   created: 1791075467
-  updated: 1791076662
+  updated: 1791076841
   images: []
   videos: []
   theme:
@@ -38,17 +38,17 @@ content: >
   kelas="XI-1" soal-file-url="./files/2026-LM1-faseE.json"
   remidi-soal-url="./files/2026-LM1-R-faseE.json" remidi-jumlah-soal="1"
   remidi-kirim-otomatis
-  apps-script-url="https://script.google.com/macros/s/AKfycbwFby49gIJNzLL36S5JSZH7-MGBwqUPmpSx8ZhKeDTuCvWLh_MdP6Io4gFCCQuOTsb8/exec" 
-  duration="300" judul-materi="Materi Pembelajaran" teks-materi="Baca materi di
+  apps-script-url="https://script.google.com/macros/s/AKfycbwFby49gIJNzLL36S5JSZH7-MGBwqUPmpSx8ZhKeDTuCvWLh_MdP6Io4gFCCQuOTsb8/exec"
+  duration="700" judul-materi="Materi Pembelajaran" teks-materi="Baca materi di
   bawah ini dengan saksama sebelum mengerjakan kuis. Waktu pengerjaan kuis
   dibatasi oleh timer; saat waktu habis, kuis akan dikunci dan nilai otomatis
-  terkirim."  materi-file="" cover-image="" judul-kuis="Evaluasi Kuis
-  Interaktif" student-id="" student-name="" student-nis="" student-absen=""
-  student-kelas="" pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai
-  otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke
-  spreadsheet." label-mulai="▶️ Mulai" allow-retake max-retake="0"
-  hide-pause-restart show-question-nav question-delay="1800" review-answers
-  timer-autostart tab-switch-threshold="3"
+  terkirim." materi-file="" cover-image="" judul-kuis="Evaluasi Kuis Interaktif"
+  student-id="" student-name="" student-nis="" student-absen="" student-kelas=""
+  pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai otomatis."
+  pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet."
+  label-mulai="▶️ Mulai" allow-retake max-retake="0" hide-pause-restart
+  show-question-nav question-delay="1800" review-answers timer-autostart
+  tab-switch-threshold="3"
   questions="[{&quot;id&quot;:&quot;LM1-01&quot;,&quot;indikator&quot;:&quot;Menganalisis
   kriteria Currency pada metode CRAAP&quot;,&quot;question&quot;:&quot;Penilaian
   kevalidan suatu data teks dapat diuji secara terstruktur menggunakan instrumen
@@ -287,30 +287,30 @@ content: >
   _pesan="Gagal memuat file soal: HTTP 404" _attempt-ke="0" _remidi-soal="[]"
   _tab-switch-count="0" _visibility-change-count="0" _window-blur-count="0"
   _window-focus-count="0" _warning-count="0"
-  _soal-file-url-cache="./files/2026-LM1-faseE.json"></latihan-kuis>
+  _soal-file-url-cache="./files/2026-LM1-faseE.json"  ></latihan-kuis>
 
   <p></p>
 
   <p>&#160; _</p>
 
-  <h2>2️&#8419; LM2 &#8212; Ulangan + Remidi <span class="badge">indikator
-  lengkap</span></h2>
+  <h2 id="h2--758790995">2️&#8419; LM2 &#8212; Ulangan + Remidi <span
+  class="badge">indikator lengkap</span></h2>
 
   <latihan-kuis kd-materi="LM2" kategori="sumatif_lm" kkm="75" mode="siswa"
   kelas="X" soal-file-url="./files/2026-LM1-R-faseE.json"
   remidi-soal-url="./files/2026-LM1-R-faseE.json" remidi-jumlah-soal="1"
   remidi-kirim-otomatis
-  apps-script-url="https://script.google.com/macros/s/AKfycbwFby49gIJNzLL36S5JSZH7-MGBwqUPmpSx8ZhKeDTuCvWLh_MdP6Io4gFCCQuOTsb8/exec" 
+  apps-script-url="https://script.google.com/macros/s/AKfycbwFby49gIJNzLL36S5JSZH7-MGBwqUPmpSx8ZhKeDTuCvWLh_MdP6Io4gFCCQuOTsb8/exec"
   duration="300" judul-materi="Materi Pembelajaran" teks-materi="Baca materi di
   bawah ini dengan saksama sebelum mengerjakan kuis. Waktu pengerjaan kuis
   dibatasi oleh timer; saat waktu habis, kuis akan dikunci dan nilai otomatis
-  terkirim."  materi-file="" cover-image="" judul-kuis="Evaluasi Kuis
-  Interaktif" student-id="" student-name="" student-nis="" student-absen=""
-  student-kelas="" pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai
-  otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke
-  spreadsheet." label-mulai="▶️ Mulai" allow-retake max-retake="0"
-  hide-pause-restart show-question-nav question-delay="1800" review-answers
-  timer-autostart tab-switch-threshold="3"
+  terkirim." materi-file="" cover-image="" judul-kuis="Evaluasi Kuis Interaktif"
+  student-id="" student-name="" student-nis="" student-absen="" student-kelas=""
+  pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai otomatis."
+  pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet."
+  label-mulai="▶️ Mulai" allow-retake max-retake="0" hide-pause-restart
+  show-question-nav question-delay="1800" review-answers timer-autostart
+  tab-switch-threshold="3"
   questions="[{&quot;id&quot;:&quot;LM1-R-01&quot;,&quot;type&quot;:&quot;uraian&quot;,&quot;indikator&quot;:&quot;Menganalisis
   kriteria Currency pada metode CRAAP&quot;,&quot;question&quot;:&quot;Mengapa
   evaluasi kriteria Currency (Keaktualan) sangat krusial saat menyusun tugas
@@ -374,4 +374,4 @@ content: >
   _pesan="Gagal memuat file soal: HTTP 404" _attempt-ke="0" _remidi-soal="[]"
   _tab-switch-count="0" _visibility-change-count="0" _window-blur-count="0"
   _window-focus-count="0" _warning-count="0"
-  _soal-file-url-cache="./files/2026-LM1-R-faseE.json"></latihan-kuis>
+  _soal-file-url-cache="./files/2026-LM1-R-faseE.json"  ></latihan-kuis>
