@@ -963,6 +963,77 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
     );
   }
 
+  /**
+   * Transformer rekap dinamis: data mentah → blueprint 3 cabang
+   * (statistik_akademik, statistik_aktivitas_proses, audit_keamanan_terakhir)
+   * + action simpanRekapDinamis. Murni (tanpa fetch, tanpa state) —
+   * gampang di-test. Nilai tak dikenal default 0/"".
+   */
+  _bangunRekapDinamis(mentah) {
+    const m = mentah || {};
+    const ak = m.statistik_akademik || {};
+    const ap = m.statistik_aktivitas_proses || {};
+    const au = m.audit_keamanan_terakhir || {};
+    const num = (v) => {
+      const n = Number(v);
+      return Number.isFinite(n) ? n : 0;
+    };
+    const teks = (v) => String(v == null ? "" : v);
+    const pick = (o, kunci) => {
+      const r = {};
+      kunci.forEach((k) => (r[k] = num(o[k])));
+      return r;
+    };
+    return {
+      action: "simpanRekapDinamis",
+      studentId: teks(m.studentId || this.studentId),
+      statistik_akademik: {
+        ...pick(ak, [
+          "total_kuis",
+          "rata_rata_skor",
+          "skor_tertinggi",
+          "skor_terendah",
+          "kuis_formatif",
+          "kuis_sumatif",
+          "skor_uts",
+          "skor_uas",
+        ]),
+        status_kuis_terakhir: teks(ak.status_kuis_terakhir),
+      },
+      statistik_aktivitas_proses: pick(ap, [
+        "total_aktivitas",
+        "reading",
+        "quiz_activity",
+        "assignment",
+        "discussion",
+        "download",
+        "jumlah_pertemuan",
+      ]),
+      audit_keamanan_terakhir: {
+        id_log_terakhir: teks(au.id_log_terakhir),
+        kdMateri: teks(au.kdMateri || this.kdMateri),
+        total_restart_all: num(au.total_restart_all),
+        total_tab_switch_all: num(au.total_tab_switch_all),
+        durasi_pengerjaan_terakhir_detik: num(au.durasi_pengerjaan_terakhir_detik),
+        remidi_status: au.remidi_status === true,
+      },
+    };
+  }
+
+  /**
+   * Kirim rekap via _apiGet yang sudah ada (GET, seperti writer UI lain).
+   * Backoff antrean (_flushQueue) TIDAK disentuh.
+   */
+  async _kirimRekapDinamis(mentah) {
+    if (!this.appsScriptUrl) return { status: "error", message: "apps-script-url kosong." };
+    const payload = this._bangunRekapDinamis(mentah);
+    return this._apiGet({
+      action: payload.action,
+      studentId: payload.studentId,
+      data: JSON.stringify(payload),
+    });
+  }
+
   async _flushQueue() {
     if (
       this._isFlushing ||

@@ -2169,7 +2169,12 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
           },
         ],
       },
-      saveOptions: { unsetAttributes: [] },
+      saveOptions: {
+        // HAXCMS mencap properti demoSchema ke HTML saat insert; tanpa ini,
+        // contoh questions ikut tersimpan di halaman (bloat + bocor soal).
+        // Runtime (soal-file-url/Bank) mengisi via property — bukan atribut.
+        unsetAttributes: ["questions"],
+      },
       demoSchema: [
         {
           tag: "latihan-kuis",
@@ -2195,10 +2200,8 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
             judulMateri: "Demo Materi Kuis",
             teksMateri: "Baca materi di bawah ini sebelum mengerjakan kuis.",
             kkm: 75,
-            questions: [
-              { q: "Apa kepanjangan AKM?", a: "Asesmen Kompetensi Minimum", b: "Akademik Kurikulum Merdeka", c: "Analisis Kebutuhan Materi", k: "a" },
-              { q: "Apa manfaat AKM dalam pendidikan?", a: "Mengukur Literasi dan Numerasi", b: "Menentukan ranking kelas", c: "Menghapus ujian nasional", k: "a" },
-            ],
+            // SENGAJA tanpa questions: contoh soal tidak ikut tercap ke HTML
+            // saat insert dari HAX store (soal dimuat via soal-file-url/Bank).
           },
           content: "",
         },
@@ -2220,9 +2223,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
             allowBackwardNav: true,
             reviewAnswers: false,
             kkm: 75,
-            questions: [
-              { q: "Apa kepanjangan AKM?", a: "Asesmen Kompetensi Minimum", b: "Akademik Kurikulum Merdeka", c: "Analisis Kebutuhan Materi", k: "a" },
-            ],
+            // SENGAJA tanpa questions (lihat alasan di atas).
           },
           content: "",
         },

@@ -258,6 +258,26 @@
             },
             {
               "kind": "method",
+              "name": "_bangunRekapDinamis",
+              "parameters": [
+                {
+                  "name": "mentah"
+                }
+              ],
+              "description": "Transformer rekap dinamis: data mentah → blueprint 3 cabang\n(statistik_akademik, statistik_aktivitas_proses, audit_keamanan_terakhir)\n+ action simpanRekapDinamis. Murni (tanpa fetch, tanpa state) —\ngampang di-test. Nilai tak dikenal default 0/\"\"."
+            },
+            {
+              "kind": "method",
+              "name": "_kirimRekapDinamis",
+              "parameters": [
+                {
+                  "name": "mentah"
+                }
+              ],
+              "description": "Kirim rekap via _apiGet yang sudah ada (GET, seperti writer UI lain).\nBackoff antrean (_flushQueue) TIDAK disentuh."
+            },
+            {
+              "kind": "method",
               "name": "_flushQueue"
             },
             {
