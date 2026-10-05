@@ -6,7 +6,7 @@
     <description>belajar dan melatih pemahaman informatika SMA kelas 10 dan 11 X XI</description>
     <copyright>Copyright (C) 2026 https://localhost:3000/sites/haxto</copyright>
     <language>en-us</language>
-    <lastBuildDate>Sun, 04 Oct 2026 13:58:03 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 05 Oct 2026 01:48:41 GMT</lastBuildDate>
     <generator>HAXcms NodeJS</generator>
     <atom:link href="https://localhost:3000/sites/haxto/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
@@ -131,16 +131,16 @@
     </item>
     <item>
       <title>REMIDI Baru Kelas X</title>
-      <link>https://localhost:3000/sites/haxto/remidi-baru-kelas-x</link>
+      <link>https://localhost:3000/sites/haxto/ulangan/remidi-baru-kelas-x</link>
       <description>&amp;#160; _ 2️&amp;#8419; LM2 &amp;#8212; Ulangan + Remidi indikator lengkap</description>
-      <guid>https://localhost:3000/sites/haxto/remidi-baru-kelas-x</guid>
+      <guid>https://localhost:3000/sites/haxto/ulangan/remidi-baru-kelas-x</guid>
       <pubDate>Sun, 04 Oct 2026 00:57:47 GMT</pubDate>
     </item>
     <item>
       <title>REMIDI Baru Kelas XI</title>
-      <link>https://localhost:3000/sites/haxto/remidi-baru-kelas-xi</link>
+      <link>https://localhost:3000/sites/haxto/ulangan/remidi-baru-kelas-xi</link>
       <description>1️&amp;#8419; LM1 &amp;#8212; Ulangan 1 + Remidi Kelas XI 2️&amp;#8419; LM2 &amp;#8212; Ulangan 2 + Remidi indikator lengkap</description>
-      <guid>https://localhost:3000/sites/haxto/remidi-baru-kelas-xi</guid>
+      <guid>https://localhost:3000/sites/haxto/ulangan/remidi-baru-kelas-xi</guid>
       <pubDate>Sun, 04 Oct 2026 01:32:16 GMT</pubDate>
     </item>
   </channel>

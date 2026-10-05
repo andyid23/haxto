@@ -156,6 +156,11 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
       _note: { state: true },
       _draftNilai: { state: true },
       _soalText: { state: true },
+      // P15: impor JSON → Bank Soal (state terpisah dari editor _soalText).
+      _imporKategori: { state: true },
+      _imporJson: { state: true },
+      _imporHasil: { state: true },
+      _imporBusy: { state: true },
       _copasTSV: { state: true },
       _simulabankSoalUrl: { state: true },
       _bobotTugas: { state: true },
@@ -533,7 +538,11 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
       this.questions = d;
       this._note = `✅ Soal dimuat dari file: ${d.length} soal (${resolved.split("/").pop()}) — ${this.kdMateri}`;
     } catch (e) {
-      this._soalFileUrlCache = "";
+    this._soalFileUrlCache = "";
+    this._imporKategori = "";
+    this._imporJson = "";
+    this._imporHasil = null;
+    this._imporBusy = false;
       this._note = "⚠️ Gagal muat soal-file-url: " + e.message + ` (${this._resolveSoalUrl(url)})`;
     }
     this.requestUpdate();
@@ -1752,6 +1761,9 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
         .remidi-item-head { display: flex; align-items: center; justify-content: space-between; gap: var(--ddd-spacing-2); flex-wrap: wrap; }
         .remidi-kode { font-family: var(--ddd-font-family-code, monospace); font-size: 12px; background: #eef2ff; color: #4338ca; padding: 2px 8px; border-radius: var(--ddd-radius-sm); }
         .remidi-indikator { margin: var(--ddd-spacing-2) 0; font-size: 13px; color: #334155; }
+        /* P13: teks pertanyaan antrean — pola sama dengan indikator. */
+        .remidi-soal { margin: var(--ddd-spacing-2) 0; font-size: 13px; color: #1e293b;
+          background: #f8fafc; border-left: 3px solid #c7d2fe; padding: 6px 10px; border-radius: 0 8px 8px 0; }
         .remidi-jawaban { margin: var(--ddd-spacing-2) 0; padding: var(--ddd-spacing-3); background: #f8fafc; border-left: 4px solid #cbd5e1; border-radius: var(--ddd-radius-sm); white-space: pre-wrap; }
         .remidi-form { display: flex; flex-direction: column; gap: var(--ddd-spacing-3); margin-top: var(--ddd-spacing-3); }
         .remidi-form label { display: flex; flex-direction: column; gap: var(--ddd-spacing-1); font-size: 13px; color: #334155; font-weight: 600; }
@@ -2776,6 +2788,47 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
         </div>
       </div>
       ${this._note ? html`<div class="note-chip">${this._note}</div>` : ""}
+
+      <h3 style="margin:18px 0 6px; color:#1e293b;">📥 Impor JSON ke Bank Soal (P15)</h3>
+      <p class="remidi-muted">
+        Tempel isi file (mis. <code>remidi-LM1-indikator.json</code>) → tersimpan
+        ke sheet Bank Soal (upsert by <code>ID</code>; duplikat = update).
+        <code>Kategori</code> + <code>Kode Materi</code> diisi sama otomatis.
+      </p>
+      <div class="set-row">
+        <div>
+          <div class="set-title">Kategori tujuan</div>
+          <div class="set-sub">cth: <code>LM1-R</code> (pakai sufiks -R untuk remedial)</div>
+        </div>
+        <input class="set-input" placeholder="LM1-R"
+          .value=${this._imporKategori || ""}
+          @input=${(e) => (this._imporKategori = e.target.value)} />
+      </div>
+      <textarea class="soal-textarea" rows="8" placeholder='[{"id":"LM1-R-01","type":"uraian","indikator":"...","question":"...","points":10}]'
+        .value=${this._imporJson || ""} @input=${(e) => (this._imporJson = e.target.value)}></textarea>
+      <details style="font-size:12.5px; color:#475569; margin:6px 0;">
+        <summary style="cursor:pointer;">Lihat contoh format</summary>
+        <pre style="background:#f8fafc; padding:8px; border-radius:8px; overflow:auto;">[
+  {
+    "id": "LM1-R-01",
+    "type": "uraian",
+    "indikator": "Memahami tujuan pembelajaran LM1",
+    "question": "REMIDI LM1 — Jelaskan ...",
+    "points": 10
+  }
+]</pre>
+      </details>
+      <div class="toolbar">
+        <div class="tb-action">
+          <button class="retry-btn" @click=${() => this._imporBankSoal(false)} ?disabled=${this._imporBusy}>
+            🔍 Pratinjau (dry-run)</button>
+          <button class="retry-btn" @click=${() => this._imporBankSoal(true)} ?disabled=${this._imporBusy}>
+            📥 Impor ke Bank Soal</button>
+        </div>
+      </div>
+      ${this._imporHasil
+        ? html`<div class="note-chip">${this._imporHasil.ok ? "✅" : "⚠️"} ${this._imporHasil.teks}</div>`
+        : ""}
     `;
   }
 
@@ -2829,6 +2882,54 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
     } catch (_) {
       this._note = "⚠️ JSON tidak valid. Format: array soal (lihat deskripsi properti questions di HAX editor).";
     }
+    this.requestUpdate();
+  }
+
+  /** P15: impor tempelan JSON ke Bank Soal (upsert by ID). Tulis = false → dry-run. */
+  async _imporBankSoal(tulis) {
+    const kategori = String(this._imporKategori || "").trim();
+    const teks = String(this._imporJson || "").trim();
+    if (!this.appsScriptUrl) {
+      this._imporHasil = { ok: false, teks: "URL Apps Script belum diatur (tab Atur)." };
+      this.requestUpdate();
+      return;
+    }
+    if (!kategori) {
+      this._imporHasil = { ok: false, teks: "Isi kategori tujuan dulu (cth: LM1-R)." };
+      this.requestUpdate();
+      return;
+    }
+    let parsed;
+    try {
+      parsed = JSON.parse(teks);
+      if (parsed && typeof parsed === "object" && !Array.isArray(parsed) && Array.isArray(parsed.questions)) {
+        parsed = parsed.questions;
+      }
+      if (!Array.isArray(parsed) || !parsed.length) throw new Error("bukan array");
+    } catch (_) {
+      this._imporHasil = { ok: false, teks: "JSON tidak valid — harus array soal." };
+      this.requestUpdate();
+      return;
+    }
+    this._imporBusy = true;
+    this._imporHasil = null;
+    this.requestUpdate();
+    try {
+      const hasil = await this._apiGet({
+        action: "importBankSoal",
+        kategori: kategori,
+        soal: teks,
+        dryRun: tulis ? "false" : "true",
+      });
+      const ok = !!(hasil && hasil.status === "ok");
+      this._imporHasil = {
+        ok,
+        teks: ok ? String(hasil.message || "Impor selesai.") : String((hasil && hasil.message) || "Gagal mengimpor."),
+      };
+    } catch (_) {
+      this._imporHasil = { ok: false, teks: "Gagal mengimpor (jaringan)." };
+    }
+    this._imporBusy = false;
     this.requestUpdate();
   }
 
@@ -3369,6 +3470,7 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
                           <span class="remidi-kode">${a.kodeLm}</span>
                         </div>
                         ${a.indikator ? html`<p class="remidi-indikator"><strong>Indikator:</strong> ${a.indikator}</p>` : ""}
+                        ${a.soal ? html`<p class="remidi-soal"><strong>Soal:</strong> ${a.soal}</p>` : ""}
                         <blockquote class="remidi-jawaban">${a.teks || "(kosong)"}</blockquote>
                         <p class="remidi-muted">Dikirim ${a.tanggal || "-"}</p>
                         ${this._remidiForm && this._remidiForm.kunci === a.studentId + "|" + a.kodeLm + "|" + a.soalId

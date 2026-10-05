@@ -25,7 +25,7 @@
       "name": "haxto",
       "domain": "",
       "created": 1787457359,
-      "updated": 1791164921,
+      "updated": 1791178778,
       "logo": "",
       "version": "26.0.1"
     },
@@ -45,13 +45,13 @@
       "indent": 0,
       "location": "pages/item-e25c1b60-c8b7-4360-b3e8-3533c93c3a92/index.html",
       "slug": "selamat-datang-dashbor",
-      "order": 18,
+      "order": 16,
       "parent": null,
       "title": "Selamat Datang Dashbor",
       "description": "Welcome to your new HAX site! Click edit on the top bar to get started\nWhat can I do?\nWe've got a ton of blocks that are easy to use and get a lot done with little effort, so much in fact we made a l",
       "metadata": {
         "created": 1787457359,
-        "updated": 1791077537,
+        "updated": 1791178778,
         "theme": {
           "element": "haxma-theme",
           "path": "@haxtheweb/haxma-theme/haxma-theme.js",
@@ -86,7 +86,7 @@
       "description": "Halaman ulangan harian terintegrasi dengan timer, anti-confetti, dan jawaban tersembunyi.",
       "metadata": {
         "created": 1787466936,
-        "updated": 1791077536,
+        "updated": 1791178776,
         "published": true,
         "hideInMenu": true,
         "locked": false,
@@ -121,7 +121,7 @@
       "description": "soal latihan ",
       "metadata": {
         "created": 1787721767,
-        "updated": 1791077535,
+        "updated": 1791178775,
         "images": [],
         "videos": [],
         "published": true,
@@ -157,7 +157,7 @@
       "description": "\n\n",
       "metadata": {
         "created": 1787854344,
-        "updated": 1791077536,
+        "updated": 1791178776,
         "images": [],
         "videos": [],
         "published": true,
@@ -196,7 +196,7 @@
         "created": 1788163319,
         "images": [],
         "videos": [],
-        "updated": 1791077535,
+        "updated": 1791178775,
         "theme": {
           "element": "polaris-flex-theme",
           "path": "@haxtheweb/polaris-theme/lib/polaris-flex-theme.js",
@@ -231,7 +231,7 @@
         "created": 1788165602,
         "images": [],
         "videos": [],
-        "updated": 1791077534,
+        "updated": 1791178774,
         "theme": {
           "element": "polaris-flex-theme",
           "path": "@haxtheweb/polaris-theme/lib/polaris-flex-theme.js",
@@ -267,7 +267,7 @@
         "created": 1788169908,
         "images": [],
         "videos": [],
-        "updated": 1791077534,
+        "updated": 1791178774,
         "theme": {
           "element": "terrible-resume-themes",
           "path": "@haxtheweb/terrible-themes/lib/terrible-resume-themes.js",
@@ -295,13 +295,13 @@
       "indent": 0,
       "location": "pages/item-9bc01ccd-190b-45e4-ac15-8d4938403c5f/index.html",
       "slug": "halaman-dark-tes-bug",
-      "order": 17,
+      "order": 15,
       "parent": null,
       "title": "halaman-dark tes bug",
       "description": "\n",
       "metadata": {
         "created": 1788236145,
-        "updated": 1791077537,
+        "updated": 1791178778,
         "images": [],
         "videos": [],
         "published": true,
@@ -349,7 +349,7 @@
       "indent": 0,
       "location": "pages/item-fd7a0828-3867-49ac-8957-6d8f99585c6e/index.html",
       "slug": "lm2-fase-f-verifikasi",
-      "order": 13,
+      "order": 11,
       "parent": null,
       "title": "LM2 Fase F Verifikasi",
       "description": "\nMODUL AJAR INFORMATIKA FASE F (KELAS XI)\nTOPIK: VERIFIKASI INFORMASI DAN PERIKSA FAKTA (LITERASI DIGITAL)\n1. Pendahuluan\nInformatika merupakan disiplin ilmu yang mencari pemahaman terhadap konsep in",
@@ -358,7 +358,7 @@
         "created": 1788478965,
         "images": [],
         "videos": [],
-        "updated": 1791077536,
+        "updated": 1791178777,
         "theme": {
           "element": "terrible-resume-themes",
           "path": "@haxtheweb/terrible-themes/lib/terrible-resume-themes.js",
@@ -401,7 +401,7 @@
           "files/belajar.jpg"
         ],
         "videos": [],
-        "updated": 1791077534,
+        "updated": 1791178774,
         "published": true,
         "status": "",
         "files": [
@@ -530,7 +530,7 @@
       "indent": 0,
       "location": "pages/item-cc3c0230-cd78-4c49-996b-e5f77752a46a/index.html",
       "slug": "ulangan-harian-2-fase-f-lm2",
-      "order": 15,
+      "order": 13,
       "parent": null,
       "title": "Ulangan Harian 2 FASE F LM2",
       "description": "📝 Kuis Verifikasi Informasi &#38; Periksa Fakta (LM2)\n\nKerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban\n  benar/salah tidak ditampilkan. Setelah login reloaduntuk men",
@@ -539,7 +539,7 @@
         "created": 1788628387,
         "images": [],
         "videos": [],
-        "updated": 1791077537,
+        "updated": 1791178777,
         "theme": {
           "element": "polaris-flex-theme",
           "path": "@haxtheweb/polaris-theme/lib/polaris-flex-theme.js",
@@ -574,7 +574,7 @@
         "created": 1789517726,
         "images": [],
         "videos": [],
-        "updated": 1791077535,
+        "updated": 1791178775,
         "theme": {
           "element": "polaris-flex-theme",
           "path": "@haxtheweb/polaris-theme/lib/polaris-flex-theme.js",
@@ -613,7 +613,7 @@
       "indent": 0,
       "location": "pages/item-6d97fd59-ff85-4cb5-b919-e62def7dad34/index.html",
       "slug": "remidi-ulangan-2-fase-f-lm2",
-      "order": 16,
+      "order": 14,
       "parent": null,
       "title": "Remidi Ulangan 2 FASE F LM2",
       "description": "📝 Kuis Verifikasi Informasi &#38; Periksa Fakta (LM2)\n\nKerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban\n  benar/salah tidak ditampilkan. Nilai akhir akan diambil dari",
@@ -622,7 +622,7 @@
         "created": 1789540077,
         "images": [],
         "videos": [],
-        "updated": 1791164920,
+        "updated": 1791178778,
         "theme": {
           "element": "polaris-flex-theme",
           "path": "@haxtheweb/polaris-theme/lib/polaris-flex-theme.js",
@@ -648,7 +648,7 @@
       "indent": 0,
       "location": "pages/item-6389b65b-7abc-4ab4-9fa2-1d7374d117fb/index.html",
       "slug": "lm3-fase-f-sumber-data",
-      "order": 14,
+      "order": 12,
       "parent": null,
       "title": "LM3 Fase F Sumber Data",
       "description": "TOPIK: KARAKTERISTIK SUMBER DATA & SIKLUS PENGOLAHAN DATA\n1. Pendahuluan\nInformatika pada era Masyarakat 5.0 menempatkan data sebagai salah satu aset paling berharga (data as a strategic asset). Di d",
@@ -657,7 +657,7 @@
         "created": 1790060941,
         "images": [],
         "videos": [],
-        "updated": 1791077537,
+        "updated": 1791178777,
         "theme": {
           "element": "polaris-flex-theme",
           "path": "@haxtheweb/polaris-theme/lib/polaris-flex-theme.js",
@@ -692,7 +692,7 @@
         "created": 1790128351,
         "images": [],
         "videos": [],
-        "updated": 1791077535,
+        "updated": 1791178775,
         "published": true,
         "hideInMenu": false,
         "readtime": 5,
@@ -718,13 +718,13 @@
       "indent": 0,
       "location": "pages/item-0a256163-9462-4572-9be7-e902dfa6bfe3/index.html",
       "slug": "ulangan",
-      "order": 12,
+      "order": 10,
       "parent": null,
       "title": "ulangan",
       "description": "Ulangan 1 Kelas X\n\n",
       "metadata": {
         "created": 1790130497,
-        "updated": 1791077536,
+        "updated": 1791178776,
         "images": [],
         "videos": [],
         "theme": {
@@ -745,58 +745,21 @@
         "hideInMenu": true,
         "locked": false,
         "readtime": 1,
-        "status": ""
-      }
-    },
-    {
-      "id": "item-4d3d4b5e-ea50-4049-bdcb-dd0b672562c7",
-      "indent": 0,
-      "location": "pages/item-4d3d4b5e-ea50-4049-bdcb-dd0b672562c7/index.html",
-      "slug": "ulangan-harian-2-fase-e-lm2-e",
-      "order": 4,
-      "parent": null,
-      "title": "Ulangan Harian 2 Fase E LM2-E",
-      "description": "📝 Kuis Koleksi Data (LM2) Kelas X\n\nKerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban\n  benar/salah ditampilkan. Login dahulu untuk menampilkan tombol mulai&#160;ulanga",
-      "metadata": {
-        "locked": false,
-        "created": 1790828010,
-        "images": [],
-        "videos": [],
-        "updated": 1791077535,
-        "theme": {
-          "element": "polaris-flex-theme",
-          "path": "@haxtheweb/polaris-theme/lib/polaris-flex-theme.js",
-          "name": "Polaris Flex",
-          "thumbnail": "@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-polaris-flex-theme-thumb.jpg",
-          "description": "Start with a blank site using the Polaris Flex",
-          "category": [
-            "Website"
-          ],
-          "hidden": false,
-          "priority": -1,
-          "terrible": false,
-          "key": "polaris-flex-theme"
-        },
-        "published": true,
-        "pageType": "assessment",
-        "hideInMenu": true,
-        "readtime": 1,
-        "icon": "lrn:assessment",
         "status": ""
       }
     },
     {
       "id": "item-5db151cd-c603-4b6d-9ddf-35712cc84715",
-      "indent": 0,
+      "indent": 1,
       "location": "pages/item-5db151cd-c603-4b6d-9ddf-35712cc84715/index.html",
-      "slug": "remidi-baru-kelas-x",
-      "order": 10,
-      "parent": null,
+      "slug": "ulangan/remidi-baru-kelas-x",
+      "order": 0,
+      "parent": "item-0a256163-9462-4572-9be7-e902dfa6bfe3",
       "title": "REMIDI Baru Kelas X",
       "description": "\n",
       "metadata": {
         "created": 1791075467,
-        "updated": 1791119289,
+        "updated": 1791178776,
         "images": [],
         "videos": [],
         "theme": {
@@ -823,11 +786,11 @@
     },
     {
       "id": "item-3f6fce49-4e96-46b8-9f2f-eec9dd3b462b",
-      "indent": 0,
+      "indent": 1,
       "location": "pages/item-3f6fce49-4e96-46b8-9f2f-eec9dd3b462b/index.html",
-      "slug": "remidi-baru-kelas-xi",
-      "order": 11,
-      "parent": null,
+      "slug": "ulangan/remidi-baru-kelas-xi",
+      "order": 1,
+      "parent": "item-0a256163-9462-4572-9be7-e902dfa6bfe3",
       "title": "REMIDI Baru Kelas XI",
       "description": "\n1️&#8419; LM1 &#8212; Ulangan 1 + Remidi Kelas XI\n\n      \n\n      2️&#8419; LM2 &#8212; Ulangan 2 + Remidi indikator lengkap\n\n      \n      \n\n\n",
       "metadata": {
@@ -835,7 +798,7 @@
         "created": 1791077536,
         "images": [],
         "videos": [],
-        "updated": 1791121859,
+        "updated": 1791178777,
         "theme": {
           "element": "polaris-flex-theme",
           "path": "@haxtheweb/polaris-theme/lib/polaris-flex-theme.js",
@@ -852,7 +815,45 @@
         },
         "published": true,
         "hideInMenu": true,
-        "readtime": 1
+        "readtime": 1,
+        "status": ""
+      }
+    },
+    {
+      "id": "item-4d3d4b5e-ea50-4049-bdcb-dd0b672562c7",
+      "indent": 0,
+      "location": "pages/item-4d3d4b5e-ea50-4049-bdcb-dd0b672562c7/index.html",
+      "slug": "ulangan-harian-2-fase-e-lm2-e",
+      "order": 4,
+      "parent": null,
+      "title": "Ulangan Harian 2 Fase E LM2-E",
+      "description": "📝 Kuis Koleksi Data (LM2) Kelas X\n\nKerjakan soal di bawah ini dengan jujur dan dalam waktu yang ditentukan. Jawaban\n  benar/salah ditampilkan. Login dahulu untuk menampilkan tombol mulai&#160;ulanga",
+      "metadata": {
+        "locked": false,
+        "created": 1790828010,
+        "images": [],
+        "videos": [],
+        "updated": 1791178775,
+        "theme": {
+          "element": "polaris-flex-theme",
+          "path": "@haxtheweb/polaris-theme/lib/polaris-flex-theme.js",
+          "name": "Polaris Flex",
+          "thumbnail": "@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-polaris-flex-theme-thumb.jpg",
+          "description": "Start with a blank site using the Polaris Flex",
+          "category": [
+            "Website"
+          ],
+          "hidden": false,
+          "priority": -1,
+          "terrible": false,
+          "key": "polaris-flex-theme"
+        },
+        "published": true,
+        "pageType": "assessment",
+        "hideInMenu": true,
+        "readtime": 1,
+        "icon": "lrn:assessment",
+        "status": ""
       }
     }
   ]

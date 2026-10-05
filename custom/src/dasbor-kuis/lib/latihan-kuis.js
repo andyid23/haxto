@@ -138,6 +138,9 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
         attribute: "remidi-kirim-otomatis",
         reflect: true,
       },
+      // P16: "auto" (Bank dulu, perilaku lama) | "bank" (sama, eksplisit) |
+      // "file" (remidi-soal-url dulu — cocok operasional file-based).
+      remidiSumberSoal: { type: String, attribute: "remidi-sumber-soal", reflect: true },
       nilaiAkhir: { state: true },
       sudahRemidi: { state: true },
       _needsRemidi: { state: true },
@@ -226,6 +229,9 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     this.remidiSoalUrl = "";
     this.remidiJumlahSoal = 1;
     this.remidiKirimOtomatis = false;
+    // P16: urutan sumber soal remidi — auto/bank = Bank dulu (perilaku lama),
+    // file = remidi-soal-url dulu (operasional file-based).
+    this.remidiSumberSoal = "auto";
     this.nilaiAkhir = null;
     this.sudahRemidi = false;
     this._needsRemidi = false;
@@ -472,6 +478,13 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
         kdMateri: this._kodeRemidiAktif || this.kdMateri || "",
         kategori: this._kodeRemidiAktif ? "remedial_lm" : this.kategori || "sumatif_lm",
         id_log: payload.id_log || `LOG-${Date.now()}-${Math.random().toString(36).slice(2, 10).toUpperCase()}`,
+        // P14: identitas top-level (cermin _kirimHasilLangsung). Tanpa ini,
+        // pemenang race id_log menentukan kelengkapan Nama/Kelas di db_jawaban
+        // (nama kosong → antrean tampil student-id; kelas kosong → lolos filter).
+        nama: this.studentName || "",
+        nis: this.studentNis || "",
+        absen: this.studentAbsen || "",
+        kelas: this.studentKelas || "",
       };
       await fetch(`${this.appsScriptUrl}?${new URLSearchParams(params).toString()}`, { method: "GET", mode: "cors" });
     } catch (_) {}
@@ -1080,6 +1093,58 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     }
   }
 
+  /**
+   * Ambil kandidat mentah Bank kategori remidi (tanpa filter/slice).
+   * Kembalikan {kandidat, remedialTersedia} atau null bila gagal/kosong-setup.
+   */
+  async _ambilSoalRemidiBank(kdRemidi) {
+    // `kategori` dikirim agar backend memfilter (pakai normalisasi _kodeLmSama);
+    // client memfilter ulang dengan normalisasi yang sama sebagai pengaman.
+    if (!this.appsScriptUrl) return null;
+    try {
+      const pemisah = this.appsScriptUrl.includes("?") ? "&" : "?";
+      const qs = new URLSearchParams({ action: "getBankSoal" });
+      if (kdRemidi) qs.set("kategori", kdRemidi);
+      const res = await fetch(`${this.appsScriptUrl}${pemisah}${qs.toString()}`);
+      if (!res.ok) return null;
+      const data = await res.json();
+      const rows = Array.isArray(data && data.soal) ? data.soal : [];
+      const target = _normalisasiKategori(kdRemidi);
+      // Kumpulkan kategori remedial yang ADA, untuk pesan error yang berguna.
+      const remedialTersedia = Array.from(
+        new Set(
+          rows
+            .map((r) => _normalisasiKategori((r && r.kategori) || ""))
+            .filter((k) => /-R$/.test(k)),
+        ),
+      );
+      const kandidat = !target
+        ? []
+        : rows
+            .filter((r) => {
+              const katN = _normalisasiKategori((r && r.kategori) || "");
+              if (katN === target) return true;
+              // ID seperti "LM1-R-01": dinormalisasi lalu dicek awalan.
+              const idN = _normalisasiKategori((r && r.id) || "");
+              return !!idN && idN.indexOf(target) === 0;
+            })
+            .map((r) => ({ ...(r.soal || r), id: r.id, indikator: r.indikator, tipe: r.tipe, points: r.poin }));
+      return { kandidat, remedialTersedia };
+    } catch (_) {
+      // offline / backend lama — sumber berikutnya dicoba pemanggil
+      return null;
+    }
+  }
+
+  /** Ambil kandidat mentah file remidi-soal-url (tanpa filter/slice). */
+  async _ambilSoalRemidiFile() {
+    if (!this.remidiSoalUrl) return [];
+    const r = await fetch(this.remidiSoalUrl);
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    const data = await r.json();
+    return Array.isArray(data) ? data : [];
+  }
+
   async _mulaiRemidi() {
     // GATE KERAS: retake remedial tidak boleh — esai dianggap sudah masuk
     // sekali submit (submit normal maupun timeout). Refresh status server
@@ -1110,74 +1175,49 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     if (this.remidiKirimOtomatis) {
       indikatorGagal = await this._ambilIndikatorGagal();
     }
-  // 1) Coba ambil dari Bank Soal kategori remidi.
-  // `kategori` dikirim agar backend memfilter (pakai normalisasi _kodeLmSama);
-  // client memfilter ulang dengan normalisasi yang sama sebagai pengaman.
-  if (this.appsScriptUrl) {
-    try {
-      const pemisah = this.appsScriptUrl.includes("?") ? "&" : "?";
-      const qs = new URLSearchParams({ action: "getBankSoal" });
-      if (kdRemidi) qs.set("kategori", kdRemidi);
-      const res = await fetch(`${this.appsScriptUrl}${pemisah}${qs.toString()}`);
-      if (res.ok) {
-        const data = await res.json();
-        const rows = Array.isArray(data && data.soal) ? data.soal : [];
-        const target = _normalisasiKategori(kdRemidi);
-        // Kumpulkan kategori remedial yang ADA, untuk pesan error yang berguna.
-        remedialTersedia = Array.from(
-          new Set(
-            rows
-              .map((r) => _normalisasiKategori((r && r.kategori) || ""))
-              .filter((k) => /-R$/.test(k)),
-          ),
-        );
-        const cocok = !target
-          ? []
-          : rows
-              .filter((r) => {
-                const katN = _normalisasiKategori((r && r.kategori) || "");
-                if (katN === target) return true;
-                // ID seperti "LM1-R-01": dinormalisasi lalu dicek awalan.
-                const idN = _normalisasiKategori((r && r.id) || "");
-                return !!idN && idN.indexOf(target) === 0;
-              })
-            .map((r) => ({ ...(r.soal || r), id: r.id, indikator: r.indikator, tipe: r.tipe, points: r.poin }));
-          // Prioritaskan satu soal uraian HOTS; kalau tidak ada, ambil soal apa pun.
-          let kandidat = cocok;
-          if (indikatorGagal && indikatorGagal.length) {
-            const target = new Set(
-              indikatorGagal.map((d) => _normalisasiIndikator(d.indikator || d.soalId)),
-            );
-            const terfilter = cocok.filter((q) =>
-              target.has(_normalisasiIndikator(q.indikator || "")),
-            );
-            // Jangan pernah kosong: kalau tak ada soal yang cocok, tetap pakai semua.
-            if (terfilter.length) kandidat = terfilter;
-          }
-          const uraian = kandidat.filter((q) => (q.type || q.tipe) === "uraian");
-          // remidiJumlahSoal 0 = tanpa batas (sesuai deskripsi HAX); selain itu potong.
-          const daftar = uraian.length ? uraian : kandidat;
-          soal = this.remidiJumlahSoal === 0 ? daftar : daftar.slice(0, this.remidiJumlahSoal || 1);
-        }
-      } catch (_) {
-        // offline / backend lama — coba remidiSoalUrl di bawah
-      }
-    }
-    // 2) Fallback: file JSON remidi ( atribut HAX lama).
-    if (!soal.length && this.remidiSoalUrl) {
+  // P16: urutan sumber soal. auto/bank = Bank dulu (perilaku lama);
+  // file = remidi-soal-url dulu (operasional file-based). Pertama yang
+  // tak kosong menang; filter indikator + slice berlaku untuk semua sumber.
+  const sumber = String(this.remidiSumberSoal || "auto").toLowerCase();
+  const urutan = sumber === "file" ? ["file", "bank"] : ["bank", "file"];
+  let kandidat = [];
+  let galatFile = "";
+  for (const asal of urutan) {
+    if (kandidat.length) break;
+    if (asal === "file") {
       try {
-        const r = await fetch(this.remidiSoalUrl);
-        if (!r.ok) throw new Error("HTTP " + r.status);
-        const data = await r.json();
-        if (Array.isArray(data) && data.length) {
-          soal = this.remidiJumlahSoal === 0 ? data : data.slice(0, this.remidiJumlahSoal || 1);
-        }
+        kandidat = await this._ambilSoalRemidiFile();
       } catch (e) {
-        this._pesan = "Gagal memulai remidi: " + e.message;
-        this.requestUpdate();
-        return;
+        galatFile = e.message;
+        kandidat = [];
+      }
+    } else {
+      // 1) Coba ambil dari Bank Soal kategori remidi.
+      const hasil = await this._ambilSoalRemidiBank(kdRemidi);
+      if (hasil) {
+        kandidat = hasil.kandidat;
+        remedialTersedia = hasil.remedialTersedia;
       }
     }
+  }
+  // Filter indikator + prioritas uraian + slice (berlaku semua sumber).
+  // Prioritaskan soal uraian HOTS; kalau tidak ada, ambil soal apa pun.
+  if (indikatorGagal && indikatorGagal.length && kandidat.length) {
+    const target = new Set(
+      indikatorGagal.map((d) => _normalisasiIndikator(d.indikator || d.soalId)),
+    );
+    const terfilter = kandidat.filter((q) =>
+      target.has(_normalisasiIndikator(q.indikator || "")),
+    );
+    // Jangan pernah kosong: kalau tak ada soal yang cocok, tetap pakai semua.
+    if (terfilter.length) kandidat = terfilter;
+  }
+  if (kandidat.length) {
+    const uraian = kandidat.filter((q) => (q.type || q.tipe) === "uraian");
+    // remidiJumlahSoal 0 = tanpa batas (sesuai deskripsi HAX); selain itu potong.
+    const daftar = uraian.length ? uraian : kandidat;
+    soal = this.remidiJumlahSoal === 0 ? daftar : daftar.slice(0, this.remidiJumlahSoal || 1);
+  }
     if (!soal.length) {
       // Pesan lama ("Belum ada soal remidi ... Hubungi guru") tidak-bank soal
       // APA yang salah, sehingga guru/siswa berulang kali mencoba tanpa tahu
@@ -1192,6 +1232,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
         this.kdMateri +
         "'). " +
         dibaca +
+        (galatFile ? "Galat file: " + galatFile + ". " : "") +
         "Guru dapat membuatnya lewat menu ⚙️ Kuis → 🧬 Generate Soal → Soal Remedial dari Diagnostik.";
       this.requestUpdate();
       return;
@@ -2166,6 +2207,12 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
             title: "Remidi Otomatis Sesuai Indikator Gagal",
             inputMethod: "switch",
             description: "Saat aktif, remedial hanya memuat soal yang indikatornya belum dikuasai siswa ini (dari getIndikatorGagal). Kembali ke seluruh soal -R bila tidak ada yang cocok.",
+          },
+          {
+            property: "remidiSumberSoal",
+            title: "Sumber Soal Remidi",
+            inputMethod: "textfield",
+            description: "Urutan sumber soal remedial: auto (Bank dulu, bawaan) | bank (eksplisit, sama) | file (remidi-soal-url dulu — cocok operasional file-based).",
           },
         ],
       },
