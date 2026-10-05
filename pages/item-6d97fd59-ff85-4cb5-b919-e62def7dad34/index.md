@@ -7,3 +7,6 @@ Kerjakan soal di bawah ini dengan jujur  dan dalam waktu yang ditentukan. Jawab
 
 1️⃣ LM1 — Ulangan 1 + Remidi Kelas XI
 -------------------------------------
+
+1️⃣ LM1 — Ulangan 1 + Remidi Kelas XI
+-------------------------------------

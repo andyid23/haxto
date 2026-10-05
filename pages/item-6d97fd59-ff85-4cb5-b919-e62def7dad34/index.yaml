@@ -17,7 +17,7 @@ metadata:
   created: 1789540077
   images: []
   videos: []
-  updated: 1791122283
+  updated: 1791164920
   theme:
     element: polaris-flex-theme
     path: '@haxtheweb/polaris-theme/lib/polaris-flex-theme.js'
@@ -65,20 +65,50 @@ content: >
   bawah ini dengan saksama sebelum mengerjakan kuis. Waktu pengerjaan kuis
   dibatasi oleh timer; saat waktu habis, kuis akan dikunci dan nilai otomatis
   terkirim." materi-file="" cover-image="" judul-kuis="Evaluasi Kuis Interaktif"
-  student-id="" student-name="" student-nis="" student-absen="" student-kelas=""
-  pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai otomatis."
-  pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet."
-  label-mulai="▶️ Mulai" allow-retake max-retake="0" hide-pause-restart
-  show-question-nav question-delay="1800" review-answers timer-autostart
-  tab-switch-threshold="3" _attempt-ke="0"
+  student-id="STD-65108053" student-name="Andy" student-nis="234"
+  student-absen="" student-kelas="XI-1" pesan-waktu-habis="⏰ Waktu habis! Kuis
+  dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda
+  sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai" allow-retake
+  max-retake="0" hide-pause-restart show-question-nav question-delay="1800"
+  review-answers timer-autostart tab-switch-threshold="3" _attempt-ke="0"
   _soal-file-url-cache="./files/2026-LM1-faseF.json" _remidi-soal="[]"
   _tab-switch-count="0" _visibility-change-count="0" _window-blur-count="0"
-  _window-focus-count="0" _warning-count="0"  ></latihan-kuis>
+  _window-focus-count="0" _warning-count="0"   _skor="50" _best-skor="50"
+  _pernah-ikut _terkunci _needs-remidi _skor-awal="50"
+  _remidi-server="{&quot;boleh&quot;:true,&quot;ambang&quot;:75,&quot;kdRemidi&quot;:&quot;LM1-R&quot;,&quot;perluPenilaian&quot;:true,&quot;bestRemidi&quot;:null,&quot;nilai_akhir_disepakati&quot;:null}"></latihan-kuis>
+
+  <p></p>
+
+  <p><latihan-kuis   duration="300" judul-materi="Materi Pembelajaran"
+  teks-materi="Baca materi di bawah ini dengan saksama sebelum mengerjakan kuis.
+  Waktu pengerjaan kuis dibatasi oleh timer; saat waktu habis, kuis akan dikunci
+  dan nilai otomatis terkirim."  materi-file="" cover-image=""
+  judul-kuis="Evaluasi Kuis Interaktif" student-id="STD-65108053"
+  student-name="Andy" student-nis="234" student-absen="" student-kelas="XI-1"
+  kd-materi="" pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai
+  otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke
+  spreadsheet." label-mulai="▶️ Mulai"  allow-retake max-retake="0" mode="siswa"
+  hide-pause-restart kategori="sumatif_lm" show-question-nav
+  question-delay="1800" review-answers timer-autostart kkm="75" 
+  remidi-jumlah-soal="1" tab-switch-threshold="3" _attempt-ke="0"
+  _remidi-soal="[]" _tab-switch-count="0" _visibility-change-count="0"
+  _window-blur-count="0" _window-focus-count="0"
+  _warning-count="0"></latihan-kuis>
+
+
+
+        <h2>1️&#8419; LM1 &#8212; Ulangan 1 + Remidi <span class="badge">Kelas XI</span></h2>
+
+        <latihan-kuis kd-materi="LM1" kategori="sumatif_lm" kkm="75" mode="siswa" soal-file-url="./files/2026-LM1-faseF.json" remidi-soal-url="./files/2026-LM1-R-faseF.json" remidi-jumlah-soal="1" remidi-kirim-otomatis apps-script-url="https://script.google.com/macros/s/AKfycbwFby49gIJNzLL36S5JSZH7-MGBwqUPmpSx8ZhKeDTuCvWLh_MdP6Io4gFCCQuOTsb8/exec"  duration="300" judul-materi="Materi Pembelajaran" teks-materi="Baca materi di bawah ini dengan saksama sebelum mengerjakan kuis. Waktu pengerjaan kuis dibatasi oleh timer; saat waktu habis, kuis akan dikunci dan nilai otomatis terkirim."  materi-file="" cover-image="" judul-kuis="Evaluasi Kuis Interaktif" student-id="STD-65108053" student-name="Andy" student-nis="234" student-absen="" student-kelas="XI-1" pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai" allow-retake max-retake="0" hide-pause-restart show-question-nav question-delay="1800" review-answers timer-autostart tab-switch-threshold="3" _skor="50" _best-skor="50" _pernah-ikut _attempt-ke="0" _terkunci _soal-file-url-cache="./files/2026-LM1-faseF.json" _needs-remidi _skor-awal="50" _remidi-soal="[]" _remidi-server="{&quot;boleh&quot;:true,&quot;ambang&quot;:75,&quot;kdRemidi&quot;:&quot;LM1-R&quot;,&quot;perluPenilaian&quot;:true,&quot;bestRemidi&quot;:null,&quot;nilai_akhir_disepakati&quot;:null}" _tab-switch-count="0" _visibility-change-count="0" _window-blur-count="0" _window-focus-count="0" _warning-count="0">
+        </latihan-kuis>
+  </p>
+
+  <p></p>
 
   <p></p>
 
   <p>
-    <latihan-kuis duration="300" judul-materi="Materi Pembelajaran" teks-materi="Baca materi di bawah ini dengan saksama sebelum mengerjakan kuis. Waktu pengerjaan kuis dibatasi oleh timer; saat waktu habis, kuis akan dikunci dan nilai otomatis terkirim." materi-file="" cover-image="" judul-kuis="Evaluasi Kuis Interaktif" student-id="" student-name="" student-nis="" student-absen="" student-kelas="" kd-materi="LM2" pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet." apps-script-url="https://script.google.com/macros/s/AKfycbwFby49gIJNzLL36S5JSZH7-MGBwqUPmpSx8ZhKeDTuCvWLh_MdP6Io4gFCCQuOTsb8/exec" label-mulai="▶️ Mulai" allow-retake max-retake="0" mode="siswa" hide-pause-restart kategori="sumatif_lm" show-question-nav question-delay="1800" review-answers timer-autostart kkm="75" remidi-soal-url="./files/2026-LM1-R-faseF.json" remidi-jumlah-soal="1" tab-switch-threshold="3" _attempt-ke="0" _remidi-soal="[]" _tab-switch-count="0" _visibility-change-count="0" _window-blur-count="0" _window-focus-count="0" _warning-count="0"   ></latihan-kuis>
+    <latihan-kuis duration="300" judul-materi="Materi Pembelajaran" teks-materi="Baca materi di bawah ini dengan saksama sebelum mengerjakan kuis. Waktu pengerjaan kuis dibatasi oleh timer; saat waktu habis, kuis akan dikunci dan nilai otomatis terkirim." materi-file="" cover-image="" judul-kuis="Evaluasi Kuis Interaktif" student-id="STD-65108053" student-name="Andy" student-nis="234" student-absen="" student-kelas="XI-1" kd-materi="LM2" pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet." apps-script-url="https://script.google.com/macros/s/AKfycbwFby49gIJNzLL36S5JSZH7-MGBwqUPmpSx8ZhKeDTuCvWLh_MdP6Io4gFCCQuOTsb8/exec" label-mulai="▶️ Mulai" allow-retake max-retake="0" mode="siswa" hide-pause-restart kategori="sumatif_lm" show-question-nav question-delay="1800" review-answers timer-autostart kkm="75" remidi-soal-url="./files/2026-LM1-R-faseF.json" remidi-jumlah-soal="1" tab-switch-threshold="3" _attempt-ke="0" _remidi-soal="[]" _tab-switch-count="0" _visibility-change-count="0" _window-blur-count="0" _window-focus-count="0" _warning-count="0"    _remidi-server="{&quot;boleh&quot;:false,&quot;ambang&quot;:75,&quot;kdRemidi&quot;:&quot;LM2-R&quot;,&quot;perluPenilaian&quot;:true,&quot;bestRemidi&quot;:null,&quot;nilai_akhir_disepakati&quot;:null}"></latihan-kuis>
 
   </p>
 
