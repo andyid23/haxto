@@ -1,0 +1,34 @@
+[
+  {
+    "id": "LM1-01",
+    "indikator": "Memahami tujuan pembelajaran LM1",
+    "question": "LM1 — Apa tujuan utama pembelajaran pada LM1?",
+    "choices": ["Memahami konsep dasar", "Hafalan saja", "Menyalin teman", "Tidak ada tujuan"],
+    "correctIndex": 0
+  },
+  {
+    "id": "LM1-02",
+    "indikator": "Menerapkan konsep LM1 pada studi kasus",
+    "question": "LM1 — Manakah contoh penerapan TP LM1 dalam kehidupan sehari-hari?",
+    "choices": ["Mengabaikan materi", "Menerapkan konsep pada studi kasus kecil", "Menunda tugas", "Mencontek"],
+    "correctIndex": 1
+  },
+  {
+    "id": "LM1-03",
+    "indikator": "Menganalisis pernyataan tentang LM1",
+    "type": "pgk",
+    "question": "LM1 — Tentukan Benar/Salah untuk pernyataan TP LM1:",
+    "statements": [
+      { "text": "LM1 melatih keterampilan berpikir kritis.", "answer": true },
+      { "text": "LM1 hanya hafalan tanpa pemahaman.", "answer": false },
+      { "text": "Nilai LM1 masuk ke Rerata LM rapor.", "answer": true }
+    ]
+  },
+  {
+    "id": "LM1-04",
+    "indikator": "Menerapkan konsep LM1 pada studi kasus",
+    "question": "LM1 — Seorang siswa gagal ulangan LM1. Langkah penerapan konsep yang TEPAT adalah?",
+    "choices": ["Minta contekan", "Mengulang materi yang indikatornya gagal lalu ikut remidi", "Menyalahkan soal", "Tidak ikut remidi"],
+    "correctIndex": 1
+  }
+]

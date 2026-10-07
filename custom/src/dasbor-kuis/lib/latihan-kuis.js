@@ -141,6 +141,8 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
       // P16: "auto" (Bank dulu, perilaku lama) | "bank" (sama, eksplisit) |
       // "file" (remidi-soal-url dulu — cocok operasional file-based).
       remidiSumberSoal: { type: String, attribute: "remidi-sumber-soal", reflect: true },
+      // P21: acak urutan kandidat remedial sebelum slice (acak 1 dari N).
+      remidiAcak: { type: Boolean, attribute: "remidi-acak", reflect: true },
       nilaiAkhir: { state: true },
       sudahRemidi: { state: true },
       _needsRemidi: { state: true },
@@ -232,6 +234,8 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     // P16: urutan sumber soal remidi — auto/bank = Bank dulu (perilaku lama),
     // file = remidi-soal-url dulu (operasional file-based).
     this.remidiSumberSoal = "auto";
+    // P21: acak urutan kandidat sebelum slice (1 acak dari N seindikator).
+    this.remidiAcak = false;
     this.nilaiAkhir = null;
     this.sudahRemidi = false;
     this._needsRemidi = false;
@@ -1094,6 +1098,20 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
   }
 
   /**
+   * P21: acak urutan array (Fisher-Yates, tak mutasi input).
+   */
+  _acakArray(arr) {
+    const out = Array.isArray(arr) ? arr.slice() : [];
+    for (let i = out.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const t = out[i];
+      out[i] = out[j];
+      out[j] = t;
+    }
+    return out;
+  }
+
+  /**
    * Ambil kandidat mentah Bank kategori remidi (tanpa filter/slice).
    * Kembalikan {kandidat, remedialTersedia} atau null bila gagal/kosong-setup.
    */
@@ -1213,7 +1231,10 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     if (terfilter.length) kandidat = terfilter;
   }
   if (kandidat.length) {
-    const uraian = kandidat.filter((q) => (q.type || q.tipe) === "uraian");
+    // P21: acak dulu bila remidi-acak (slice mengambil N teratas = acak).
+    // Shuffle saja (bukan subset) agar komposabel: tak menyusut diam-diam.
+    const acak = this.remidiAcak ? this._acakArray(kandidat) : kandidat;
+    const uraian = acak.filter((q) => (q.type || q.tipe) === "uraian");
     // remidiJumlahSoal 0 = tanpa batas (sesuai deskripsi HAX); selain itu potong.
     const daftar = uraian.length ? uraian : kandidat;
     soal = this.remidiJumlahSoal === 0 ? daftar : daftar.slice(0, this.remidiJumlahSoal || 1);
@@ -2213,6 +2234,12 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
             title: "Sumber Soal Remidi",
             inputMethod: "textfield",
             description: "Urutan sumber soal remedial: auto (Bank dulu, bawaan) | bank (eksplisit, sama) | file (remidi-soal-url dulu — cocok operasional file-based).",
+          },
+          {
+            property: "remidiAcak",
+            title: "Acak Soal Remidi",
+            inputMethod: "switch",
+            description: "Saat aktif, urutan kandidat diacak dulu (mis. 1 acak dari N esai seindikator); slice remidi-jumlah-soal mengambil N teratas.",
           },
         ],
       },

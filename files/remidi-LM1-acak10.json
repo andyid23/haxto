@@ -1,0 +1,72 @@
+[
+  {
+    "id": "LM1-R-A01",
+    "type": "uraian",
+    "indikator": "Memahami tujuan pembelajaran LM1",
+    "question": "REMIDI LM1 [A01] — Jelaskan dengan bahasamu sendiri tujuan utama pembelajaran LM1!",
+    "points": 10
+  },
+  {
+    "id": "LM1-R-A02",
+    "type": "uraian",
+    "indikator": "Memahami tujuan pembelajaran LM1",
+    "question": "REMIDI LM1 [A02] — Sebutkan dua ciri kegiatan belajar yang mencerminkan tujuan LM1, lalu jelaskan alasannya!",
+    "points": 10
+  },
+  {
+    "id": "LM1-R-A03",
+    "type": "uraian",
+    "indikator": "Memahami tujuan pembelajaran LM1",
+    "question": "REMIDI LM1 [A03] — Bandingkan tujuan pembelajaran LM1 dengan sekadar menghafal materi!",
+    "points": 10
+  },
+  {
+    "id": "LM1-R-A04",
+    "type": "uraian",
+    "indikator": "Memahami tujuan pembelajaran LM1",
+    "question": "REMIDI LM1 [A04] — Beri satu contoh nyata di kelasmu yang menunjukkan tujuan LM1 tercapai!",
+    "points": 10
+  },
+  {
+    "id": "LM1-R-A05",
+    "type": "uraian",
+    "indikator": "Memahami tujuan pembelajaran LM1",
+    "question": "REMIDI LM1 [A05] — Mengapa tujuan LM1 penting untuk belajarmu semester ini? Jelaskan dalam 3 kalimat!",
+    "points": 10
+  },
+  {
+    "id": "LM1-R-A06",
+    "type": "uraian",
+    "indikator": "Memahami tujuan pembelajaran LM1",
+    "question": "REMIDI LM1 [A06] — Tulis ulang tujuan LM1 menjadi target pribadimu minggu ini!",
+    "points": 10
+  },
+  {
+    "id": "LM1-R-A07",
+    "type": "uraian",
+    "indikator": "Memahami tujuan pembelajaran LM1",
+    "question": "REMIDI LM1 [A07] — Apa yang terjadi bila tujuan LM1 diabaikan? Jelaskan akibatnya bagi nilaimu!",
+    "points": 10
+  },
+  {
+    "id": "LM1-R-A08",
+    "type": "uraian",
+    "indikator": "Memahami tujuan pembelajaran LM1",
+    "question": "REMIDI LM1 [A08] — Jelaskan hubungan tujuan LM1 dengan nilai rapor kolom LM1!",
+    "points": 10
+  },
+  {
+    "id": "LM1-R-A09",
+    "type": "uraian",
+    "indikator": "Memahami tujuan pembelajaran LM1",
+    "question": "REMIDI LM1 [A09] — Buat satu pertanyaan kuis beserta jawabannya yang menguji tujuan LM1!",
+    "points": 10
+  },
+  {
+    "id": "LM1-R-A10",
+    "type": "uraian",
+    "indikator": "Memahami tujuan pembelajaran LM1",
+    "question": "REMIDI LM1 [A10] — Simpulkan tujuan LM1 dalam satu paragraf singkat untuk adik kelasmu!",
+    "points": 10
+  }
+]
