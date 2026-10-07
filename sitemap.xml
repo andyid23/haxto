@@ -114,4 +114,10 @@
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://localhost:3000/sites/haxto/soal-komputasi</loc>
+    <lastmod>2026-10-07T07:21:20.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
 </urlset>

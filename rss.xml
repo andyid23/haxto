@@ -6,7 +6,7 @@
     <description>belajar dan melatih pemahaman informatika SMA kelas 10 dan 11 X XI</description>
     <copyright>Copyright (C) 2026 https://localhost:3000/sites/haxto</copyright>
     <language>en-us</language>
-    <lastBuildDate>Mon, 05 Oct 2026 01:48:41 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 05 Oct 2026 05:39:38 GMT</lastBuildDate>
     <generator>HAXcms NodeJS</generator>
     <atom:link href="https://localhost:3000/sites/haxto/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
@@ -142,6 +142,13 @@
       <description>1️&amp;#8419; LM1 &amp;#8212; Ulangan 1 + Remidi Kelas XI 2️&amp;#8419; LM2 &amp;#8212; Ulangan 2 + Remidi indikator lengkap</description>
       <guid>https://localhost:3000/sites/haxto/ulangan/remidi-baru-kelas-xi</guid>
       <pubDate>Sun, 04 Oct 2026 01:32:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>komputasi algoritma</title>
+      <link>https://localhost:3000/sites/haxto/soal-komputasi</link>
+      <description>soal latihan</description>
+      <guid>https://localhost:3000/sites/haxto/soal-komputasi</guid>
+      <pubDate>Wed, 07 Oct 2026 07:19:49 GMT</pubDate>
     </item>
   </channel>
 </rss>
