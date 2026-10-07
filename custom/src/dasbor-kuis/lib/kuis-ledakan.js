@@ -478,6 +478,9 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     this._megaConfettiFrameId = null;
     this._bankStatus = "";
     this._bankLoaded = false;
+    // P22: esai menunggu dinilai + penyebut skor jujur (tanpa esai pending).
+    this._essayPending = [];
+    this._skorPenyebut = 0;
     // True bila soal saat ini dipasok parent (latihan-kuis mode remidi).
     // _muatBankSoal WAJIB hormat: fetch ulang akan menimpa 1 soal uraian
     // hasil filter dengan maksimal 10 baris mentah kategori.
@@ -1134,7 +1137,9 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
             const q = s.soal || s;
             if (!(q.question || q.q)) return false;
             const tipe = String(s.tipe || q.type || q.tipe || "mc").toLowerCase();
-            if (tipe === "uraian" && !isRemidi) return false;
+            // P22: esai formatif diizinkan (progres, tanpa rapor/kunci).
+            // Esai sumatif tetap difilter (persen amblas sebelum dinilai).
+            if (tipe === "uraian" && !isRemidi && this.kategori !== "formatif") return false;
             return Array.isArray(q.choices) ? q.choices.length >= 2 : true;
           })
           .map((s, i) => {
@@ -2022,8 +2027,19 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     if (this._autoSaveInterval) { clearInterval(this._autoSaveInterval); this._autoSaveInterval = null; }
     this._screen = "result";
     this._maxPoints = (this.questions || []).reduce((sum, q) => sum + this._maxPoinSoal(q), 0) || 1;
+    // P22: esai pending (menunggu dinilai guru) dikeluarkan dari penyebut
+    // agar persen jujur — tanpa ini 1 esai 10 poin menekan nilai ke ~9%.
+    const _jpsP22 = this._buildJawabanPerSoal();
+    this._essayPending = _jpsP22.filter(
+      (e) => e.benar === null && String(e.tipe || "").toLowerCase() === "uraian",
+    );
+    const _pendingPoin = this._essayPending.reduce(
+      (s, e) => s + (Number(e.poinDp) > 0 ? Number(e.poinDp) : 1),
+      0,
+    );
+    this._skorPenyebut = Math.max(1, this._maxPoints - _pendingPoin);
     // Use ScoreCalculator for score percentage
-    const rawSkor = ScoreCalculator.calculatePercentage(this._score, this._maxPoints);
+    const rawSkor = ScoreCalculator.calculatePercentage(this._score, this._skorPenyebut);
     const totalSkor = Math.max(0, Math.min(100, rawSkor));
 
     if (!this._confettiFired && !this.hideConfetti) {
@@ -2429,12 +2445,16 @@ _attemptKey() {
     if (this._screen === "question") return this._renderQuestionScreen();
 
     if (this._screen === "result") {
-      const rawPersentase = Math.round((this._score / this._maxPoints) * 100);
+      const _penyebut = this._skorPenyebut > 0 ? this._skorPenyebut : this._maxPoints;
+      const rawPersentase = Math.round((this._score / _penyebut) * 100);
       const persentase = Math.max(0, Math.min(100, rawPersentase));
       return html`
         <div class="quiz-card result-box">
           <h3 class="quiz-title">🎊 Hasil Evaluasi Anda</h3>
           ${this.hideScore ? "" : html`<div class="score-circle" aria-label="Skor: ${persentase}%">${persentase}%</div>`}
+          ${this._essayPending && this._essayPending.length
+            ? html`<p class="err-chip">⏳ ${this._essayPending.length} jawaban menunggu dinilai guru.</p>`
+            : ""}
           <p style="font-weight:700; color:var(--ddd-theme-default-text, var(--ddd-theme-default-coalyGray, #1e293b)); margin-bottom:4px;">Kuis Selesai Dikerjakan!</p>
           <p style="color:var(--ddd-theme-secondary, rgba(0, 0, 0, 0.75)); font-size:14px; margin-top:0; margin-bottom: var(--ddd-spacing-4);">Skor Anda telah dikunci dan dikirim masuk ke antrean database tunggal V5.</p>
           ${this._bankStatus

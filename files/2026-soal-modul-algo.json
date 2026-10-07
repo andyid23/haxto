@@ -1,0 +1,236 @@
+[
+  {
+    "id": "LM0-01",
+    "indikator": "Memahami dan menerapkan aturan penulisan variabel, tipe data dasar, serta manipulasi string/numerik",
+    "question": "Manakah penulisan nama variabel dalam Python yang valid dan tidak menyebabkan error saat dijalankan?",
+    "hint": "Nama variabel tidak boleh diawali angka atau menggunakan kata kunci tersimpan (keyword) Python.",
+    "choices": [
+      "1_skor_ai = 95",
+      "skor-ai = 95",
+      "skor_ai = 95",
+      "class = 95"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "LM0-02",
+    "indikator": "Memahami dan menerapkan aturan penulisan variabel, tipe data dasar, serta manipulasi string/numerik",
+    "question": "Diberikan potongan kode Python:\nx = \"10\"\ny = 5\ntotal = x * y\nApakah tipe data dari variabel total dan nilainya setelah program dieksekusi?",
+    "hint": "Perkalian string dengan integer akan melakukan pengulangan karakter (string repetition).",
+    "choices": [
+      "Tipe int dengan nilai 50",
+      "Tipe str dengan nilai \"1010101010\"",
+      "Tipe float dengan nilai 50.0",
+      "Program mengalami error (TypeError)"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "LM0-03",
+    "indikator": "Memahami dan menerapkan aturan penulisan variabel, tipe data dasar, serta manipulasi string/numerik",
+    "question": "Sebuah model AI memerlukan input nilai piksel gambar berupa angka desimal antara 0.0 hingga 1.0. Tipe data Python manakah yang digunakan untuk menyimpan nilai tersebut?",
+    "hint": "Tipe data ini digunakan untuk memuat angka bertitik desimal (presisi ganda).",
+    "choices": [
+      "int",
+      "str",
+      "float",
+      "bool"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "LM0-04",
+    "type": "pgk",
+    "indikator": "Memahami dan menerapkan aturan penulisan variabel, tipe data dasar, serta manipulasi string/numerik",
+    "question": "Tentukan keabsahan dari pernyataan mengenai konversi tipe data (type casting) dan nilai Boolean pada Python berikut!",
+    "hint": "Cermati dampak menukar string desimal ke int serta evaluasi string tidak kosong pada bool().",
+    "statements": [
+      {
+        "text": "Menjalankan perintah int(\"100.5\") pada Python akan langsung membulatkan angka dan menghasilkan nilai integer 100.",
+        "answer": false
+      },
+      {
+        "text": "Ekspresi bool(\"False\") pada Python akan mengembalikan nilai Boolean True karena string tersebut tidak kosong.",
+        "answer": true
+      }
+    ]
+  },
+  {
+    "id": "LM0-05",
+    "type": "matching",
+    "indikator": "Memahami dan menerapkan aturan penulisan variabel, tipe data dasar, serta manipulasi string/numerik",
+    "question": "Pasangkan kode operasi variabel Python di lajur kiri dengan hasil nilainya yang tepat di lajur kanan!",
+    "leftItems": [
+      "a = 15; a += 4 * 2",
+      "p, q = 10, 20; p, q = q, p + 5",
+      "nama = 'Model_A'; f'{nama}: {0.8765:.2f}'"
+    ],
+    "rightItems": [
+      "Nilai a = 23",
+      "Nilai p = 20 dan q = 15",
+      "Output: 'Model_A: 0.88'",
+      "Nilai a = 38"
+    ],
+    "correctPairs": {
+      "0": 0,
+      "1": 1,
+      "2": 2
+    }
+  },
+  {
+    "id": "LM1-01",
+    "indikator": "Menganalisis logika percabangan (IF-ELIF-ELSE) dan perulangan (FOR, WHILE) pada algoritma dasar",
+    "question": "Dalam perulangan FOR pada Python, jika kita menggunakan range(2, 8, 2), berapa kali iterasi perulangan tersebut akan dijalankan?",
+    "hint": "Fungsi range(start, stop, step) melompati nilai sebesar step (2, 4, 6).",
+    "choices": [
+      "3 kali",
+      "4 kali",
+      "6 kali",
+      "8 kali"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "LM1-02",
+    "indikator": "Menganalisis logika percabangan (IF-ELIF-ELSE) dan perulangan (FOR, WHILE) pada algoritma dasar",
+    "question": "Sebuah wahana hiburan menetapkan biaya tiket masuk sebesar Rp50.000 untuk pengunjung berusia di atas 12 tahun. Anak-anak berusia 12 tahun atau di bawahnya mendapatkan diskon 50%. Manakah ekspresi percabangan Python (ternary operator) yang tepat?",
+    "hint": "Gunakan bentuk: nilai_jika_true if kondisi else nilai_jika_false.",
+    "choices": [
+      "tarif = 50000 if usia > 12 else 25000",
+      "tarif = 50000 if usia <= 12 else 25000",
+      "tarif = 25000 * usia",
+      "tarif = 50000 - usia"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "LM1-03",
+    "indikator": "Menganalisis logika percabangan (IF-ELIF-ELSE) dan perulangan (FOR, WHILE) pada algoritma dasar",
+    "question": "Diberikan potongan algoritma perulangan:\na = 20\nb = 6\ncount = 0\nwhile a > b:\n    a = a - b\n    count = count + 1\nBerapakah nilai akhir variabel a dan count setelah loop berhenti?",
+    "hint": "Lakukan tracing pengurangan bertahap: (20-6=14), (14-6=8), (8-6=2).",
+    "choices": [
+      "a = 2 dan count = 3",
+      "a = 0 dan count = 3",
+      "a = 2 dan count = 4",
+      "a = 20 dan count = 0"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "LM1-04",
+    "type": "pgk",
+    "indikator": "Menganalisis logika percabangan (IF-ELIF-ELSE) dan perulangan (FOR, WHILE) pada algoritma dasar",
+    "question": "Tentukan Benar/Salah untuk setiap pernyataan mengenai karakteristik struktur kontrol Python berikut!",
+    "hint": "Pahami perilaku evaluasi ELIF jika IF bernilai True serta fungsi operator modulo (%).",
+    "statements": [
+      {
+        "text": "Pada struktur percabangan IF-ELIF-ELSE, apabila kondisi pada blok IF bernilai TRUE, kondisi pada blok ELIF berikutnya tetap akan dievaluasi oleh interpreter.",
+        "answer": false
+      },
+      {
+        "text": "Operator aritmatika modulo (%) digunakan khusus untuk mencari sisa hasil pembagian dua buah bilangan integer.",
+        "answer": true
+      }
+    ]
+  },
+  {
+    "id": "LM1-05",
+    "type": "matching",
+    "indikator": "Menganalisis logika percabangan (IF-ELIF-ELSE) dan perulangan (FOR, WHILE) pada algoritma dasar",
+    "question": "Pasangkan potongan kode algoritma di lajur kiri dengan hasil akhir variabelnya yang tepat di lajur kanan!",
+    "leftItems": [
+      "x = 15; status = 'Genap' if x % 2 == 0 else 'Ganjil'",
+      "res = (10 > 5) and (3 == 4)",
+      "sumber = 0; for i in range(1, 5): sumber += i"
+    ],
+    "rightItems": [
+      "Nilai status = 'Ganjil'",
+      "Nilai res = False",
+      "Nilai akhir sumber = 10",
+      "Nilai akhir sumber = 15"
+    ],
+    "correctPairs": {
+      "0": 0,
+      "1": 1,
+      "2": 2
+    }
+  },
+  {
+    "id": "LM2-01",
+    "indikator": "Menerapkan algoritma percabangan, perulangan, dan pemrosesan data pada kasus riset/sistem AI",
+    "question": "Sebuah algoritma optimasi AI menghentikan iterasi jika early stopping counter mencapai nilai 3 atau nilai loss kurang dari 0.001. Manakah ekspresi kondisi while yang tepat agar perulangan tetap berjalan selama kondisi penghentian BELUM terpenuhi?",
+    "hint": "Gunakan hukum De Morgan untuk membalik kondisi penghenti (counter < 3 DAN loss >= 0.001).",
+    "choices": [
+      "while counter < 3 and loss >= 0.001:",
+      "while counter == 3 or loss < 0.001:",
+      "while counter > 3 and loss <= 0.001:",
+      "while counter == 3 and loss == 0.001:"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "LM2-02",
+    "indikator": "Menerapkan algoritma percabangan, perulangan, dan pemrosesan data pada kasus riset/sistem AI",
+    "question": "Sebuah algoritma AI mengiterasi dataset berukuran 100 sampel menggunakan ukuran batch (batch size) sebesar 20 sampel per iterasi. Berapa kali perulangan for akan mengeksekusi proses pelatihan untuk 1 epoch penuh?",
+    "hint": "Bagi total ukuran dataset dengan ukuran batch (100 / 20).",
+    "choices": [
+      "5 kali",
+      "20 kali",
+      "80 kali",
+      "100 kali"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "LM2-03",
+    "indikator": "Menerapkan algoritma percabangan, perulangan, dan pemrosesan data pada kasus riset/sistem AI",
+    "question": "Diberikan list prediksi bounding box dari model AI: boxes = [12, 45, 8, 90, 3]. Kita ingin menyaring nilai kotak yang ukurannya di bawah threshold 10. Berapa banyak nilai yang akan lolos seleksi kondisi if box >= 10?",
+    "hint": "Hitung elemen list yang bernilai lebih besar atau sama dengan 10 (12, 45, 90).",
+    "choices": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "LM2-04",
+    "type": "pgk",
+    "indikator": "Menerapkan algoritma percabangan, perulangan, dan pemrosesan data pada kasus riset/sistem AI",
+    "question": "Tentukan Benar/Salah untuk pernyataan mengenai penanganan error dan operator logika pada model AI berikut!",
+    "hint": "Cermati penanganan NaN pada loss serta gabungan dua kondisi yang harus dipenuhi sekaligus.",
+    "statements": [
+      {
+        "text": "Dalam proses pelatihan model AI, ekspresi pengecekan if math.isnan(loss): break tepat digunakan untuk menghentikan loop agar mencegah error akibat nilai loss NaN.",
+        "answer": true
+      },
+      {
+        "text": "Model sistem rekomendasi yang menyaring produk jika rating >= 4.0 DAN stok > 0 menggunakan operator logika 'or' dalam Python.",
+        "answer": false
+      }
+    ]
+  },
+  {
+    "id": "LM2-05",
+    "type": "matching",
+    "indikator": "Menerapkan algoritma percabangan, perulangan, dan pemrosesan data pada kasus riset/sistem AI",
+    "question": "Pasangkan nilai masukan skor pada sistem AI di lajur kiri dengan hasil keputusan statusnya di lajur kanan!",
+    "leftItems": [
+      "confidence = 0.72 (Valid >0.85, Verifikasi >=0.50, Tidak Dikenal <0.50)",
+      "skor_risiko = 75 (Blokir >=80, Inspeksi 50-79, Izinkan <50)",
+      "skor_sentimen = [-0.8, 0.2, 0.9, -0.1, 0.6] (Hitung skor > 0)"
+    ],
+    "rightItems": [
+      "Status: 'Perlu Verifikasi'",
+      "Status: 'INSPEKSI MANUAL'",
+      "Hasil Hitung: 3 kalimat positif",
+      "Status: 'BLOKIR'"
+    ],
+    "correctPairs": {
+      "0": 0,
+      "1": 1,
+      "2": 2
+    }
+  }
+]
