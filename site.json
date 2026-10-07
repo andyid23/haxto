@@ -25,7 +25,7 @@
       "name": "haxto",
       "domain": "",
       "created": 1787457359,
-      "updated": 1791361798,
+      "updated": 1791362497,
       "logo": "",
       "version": "26.0.1"
     },
@@ -861,13 +861,13 @@
       "indent": 0,
       "location": "pages/item-6f704bd4-8967-4ed1-930c-2c27bee1a3e9/index.html",
       "slug": "soal-komputasi",
-      "order": 6,
+      "order": 7,
       "parent": null,
       "title": "komputasi algoritma",
       "description": "soal latihan\n\n      \n\n",
       "metadata": {
         "created": 1791357589,
-        "updated": 1791361798,
+        "updated": 1791362497,
         "images": [],
         "videos": [],
         "theme": {

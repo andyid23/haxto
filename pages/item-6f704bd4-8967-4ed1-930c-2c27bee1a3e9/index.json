@@ -3,13 +3,13 @@
   "indent": 0,
   "location": "pages/item-6f704bd4-8967-4ed1-930c-2c27bee1a3e9/index.json",
   "slug": "soal-komputasi",
-  "order": 6,
+  "order": 7,
   "parent": null,
   "title": "komputasi algoritma",
   "description": "soal latihan\n\n      \n\n",
   "metadata": {
     "created": 1791357589,
-    "updated": 1791361798,
+    "updated": 1791362497,
     "images": [],
     "videos": [],
     "theme": {
@@ -32,5 +32,5 @@
     "locked": false,
     "readtime": 1
   },
-  "content": "\n<p>soal latihan</p>\n<p>\n  <latihan-kuis kd-materi=\"LM3-latihan\" kategori=\"formatif\" kkm=\"75\" mode=\"siswa\" kelas=\"XI-1\" soal-file-url=\"./files/2026-remidi-modul-algo.json\" allow-retake max-retake=\"0\" apps-script-url=\"https://script.google.com/macros/s/AKfycbwFby49gIJNzLL36S5JSZH7-MGBwqUPmpSx8ZhKeDTuCvWLh_MdP6Io4gFCCQuOTsb8/exec\" duration=\"300\" judul-materi=\"Materi Pembelajaran\" teks-materi=\"Baca materi di bawah ini dengan saksama sebelum mengerjakan kuis. Waktu pengerjaan kuis dibatasi oleh timer; saat waktu habis, kuis akan dikunci dan nilai otomatis terkirim.\" materi-file=\"\" cover-image=\"\" judul-kuis=\"Evaluasi Kuis Interaktif\" student-id=\"\" student-name=\"\" student-nis=\"\" student-absen=\"\" student-kelas=\"\" pesan-waktu-habis=\"⏰ Waktu habis! Kuis dikunci &amp; dinilai otomatis.\" pesan-nilai-terkirim=\"🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet.\" label-mulai=\"▶️ Mulai\" hide-pause-restart show-question-nav question-delay=\"1800\" review-answers timer-autostart remidi-jumlah-soal=\"1\" remidi-sumber-soal=\"auto\" tab-switch-threshold=\"3\" _attempt-ke=\"0\" _soal-file-url-cache=\"./files/2026-remidi-modul-algo.json\" _remidi-soal=\"[]\" _tab-switch-count=\"0\" _visibility-change-count=\"0\" _window-blur-count=\"0\" _window-focus-count=\"0\" _warning-count=\"0\"   ></latihan-kuis>\n\n</p>\n"
+  "content": "\n<p>soal latihan</p>\n<p>\n  <latihan-kuis kd-materi=\"LM3-latihan\" kategori=\"formatif\" kkm=\"75\" mode=\"siswa\" kelas=\"XI-1\" soal-file-url=\"./files/2026-remidi-modul-algo.json\" allow-retake max-retake=\"0\" satu-per-indikator=\"\" apps-script-url=\"https://script.google.com/macros/s/AKfycbwFby49gIJNzLL36S5JSZH7-MGBwqUPmpSx8ZhKeDTuCvWLh_MdP6Io4gFCCQuOTsb8/exec\" duration=\"300\" judul-materi=\"Materi Pembelajaran\" teks-materi=\"Baca materi di bawah ini dengan saksama sebelum mengerjakan kuis. Waktu pengerjaan kuis dibatasi oleh timer; saat waktu habis, kuis akan dikunci dan nilai otomatis terkirim.\" materi-file=\"\" cover-image=\"\" judul-kuis=\"Evaluasi Kuis Interaktif\" student-id=\"\" student-name=\"\" student-nis=\"\" student-absen=\"\" student-kelas=\"\" pesan-waktu-habis=\"⏰ Waktu habis! Kuis dikunci &amp; dinilai otomatis.\" pesan-nilai-terkirim=\"🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet.\" label-mulai=\"▶️ Mulai\" hide-pause-restart show-question-nav question-delay=\"1800\" review-answers timer-autostart remidi-jumlah-soal=\"1\" remidi-sumber-soal=\"auto\" tab-switch-threshold=\"3\" _attempt-ke=\"0\" _soal-file-url-cache=\"./files/2026-remidi-modul-algo.json\" _remidi-soal=\"[]\" _tab-switch-count=\"0\" _visibility-change-count=\"0\" _window-blur-count=\"0\" _window-focus-count=\"0\" _warning-count=\"0\"   ></latihan-kuis>\n\n</p>\n"
 }

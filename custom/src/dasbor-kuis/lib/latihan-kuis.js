@@ -143,6 +143,8 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
       remidiSumberSoal: { type: String, attribute: "remidi-sumber-soal", reflect: true },
       // P21: acak urutan kandidat remedial sebelum slice (acak 1 dari N).
       remidiAcak: { type: Boolean, attribute: "remidi-acak", reflect: true },
+      // P24: satu soal per indikator (dedupe grup seindikator).
+      satuPerIndikator: { type: Boolean, attribute: "satu-per-indikator", reflect: true },
       nilaiAkhir: { state: true },
       sudahRemidi: { state: true },
       _needsRemidi: { state: true },
@@ -236,6 +238,8 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     this.remidiSumberSoal = "auto";
     // P21: acak urutan kandidat sebelum slice (1 acak dari N seindikator).
     this.remidiAcak = false;
+    // P24: satu soal per indikator (dedupe grup seindikator).
+    this.satuPerIndikator = false;
     this.nilaiAkhir = null;
     this.sudahRemidi = false;
     this._needsRemidi = false;
@@ -1112,6 +1116,27 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
   }
 
   /**
+   * P24: satu soal per indikator — simpan pertama per grup indikator
+   * ternormalisasi. Indikator KOSONG dilewati (jangan buang): kalau tidak,
+   * semua soal tanpa indikator collaps jadi 1.
+   */
+  _unikPerIndikator(daftar) {
+    const lihat = new Set();
+    const out = [];
+    (Array.isArray(daftar) ? daftar : []).forEach((q) => {
+      const kunci = _normalisasiIndikator((q && q.indikator) || "");
+      if (!kunci) {
+        out.push(q);
+        return;
+      }
+      if (lihat.has(kunci)) return;
+      lihat.add(kunci);
+      out.push(q);
+    });
+    return out;
+  }
+
+  /**
    * Ambil kandidat mentah Bank kategori remidi (tanpa filter/slice).
    * Kembalikan {kandidat, remedialTersedia} atau null bila gagal/kosong-setup.
    */
@@ -1236,8 +1261,11 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     const acak = this.remidiAcak ? this._acakArray(kandidat) : kandidat;
     const uraian = acak.filter((q) => (q.type || q.tipe) === "uraian");
     // remidiJumlahSoal 0 = tanpa batas (sesuai deskripsi HAX); selain itu potong.
-    const daftar = uraian.length ? uraian : kandidat;
-    soal = this.remidiJumlahSoal === 0 ? daftar : daftar.slice(0, this.remidiJumlahSoal || 1);
+    const daftar = uraian.length ? uraian : acak;
+    // P24: satu soal per indikator (setelah prioritas uraian — kalau dibalik,
+    // satu-satunya esai bisa terbuang oleh PG seindikator yang muncul duluan).
+    const unik = this.satuPerIndikator ? this._unikPerIndikator(daftar) : daftar;
+    soal = this.remidiJumlahSoal === 0 ? unik : unik.slice(0, this.remidiJumlahSoal || 1);
   }
     if (!soal.length) {
       // Pesan lama ("Belum ada soal remidi ... Hubungi guru") tidak-bank soal
@@ -2240,6 +2268,12 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
             title: "Acak Soal Remidi",
             inputMethod: "switch",
             description: "Saat aktif, urutan kandidat diacak dulu (mis. 1 acak dari N esai seindikator); slice remidi-jumlah-soal mengambil N teratas.",
+          },
+          {
+            property: "satuPerIndikator",
+            title: "Satu Soal per Indikator",
+            inputMethod: "switch",
+            description: "Saat aktif, tiap indikator hanya diwakili 1 soal (dedupe grup seindikator). Tanpa indikator tidak dibuang.",
           },
         ],
       },
