@@ -4,7 +4,7 @@
 <indent>0</indent>
 <location>pages/item-6f704bd4-8967-4ed1-930c-2c27bee1a3e9/index.xml</location>
 <slug>soal-komputasi</slug>
-<order>2</order>
+<order>3</order>
 <parent></parent>
 <title>komputasi algoritma</title>
 <description>soal latihan
@@ -14,7 +14,7 @@
 </description>
 <metadata>
 <created>1791357589</created>
-<updated>1791357680</updated>
+<updated>1791357793</updated>
 <images>
 </images>
 <videos>
@@ -41,8 +41,9 @@
 </metadata>
 <content><![CDATA[
 <p>soal latihan</p>
-<p><latihan-kuis kd-materi="LM1" kategori="sumatif_lm" kkm="75" mode="siswa" kelas="XI-1" soal-file-url="./soal-LM1-indikator.json" remidi-soal-url="./remidi-LM1-acak10.json" remidi-sumber-soal="file" remidi-jumlah-soal="1" remidi-acak allow-retake max-retake="1" remidi-kirim-otomatis allow="" apps-script-url="https://script.google.com/macros/s/AKfycbwFby49gIJNzLL36S5JSZH7-MGBwqUPmpSx8ZhKeDTuCvWLh_MdP6Io4gFCCQuOTsb8/exec"  duration="300" judul-materi="Materi Pembelajaran" teks-materi="Baca materi di bawah ini dengan saksama sebelum mengerjakan kuis. Waktu pengerjaan kuis dibatasi oleh timer; saat waktu habis, kuis akan dikunci dan nilai otomatis terkirim."  materi-file="" cover-image="" judul-kuis="Evaluasi Kuis Interaktif" student-id="" student-name="" student-nis="" student-absen="" student-kelas="" pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai" hide-pause-restart show-question-nav question-delay="1800" review-answers timer-autostart tab-switch-threshold="3" _pesan="Gagal memuat file soal: HTTP 404" _attempt-ke="0" _remidi-soal="[]" _tab-switch-count="0" _visibility-change-count="0" _window-blur-count="0" _window-focus-count="0" _warning-count="0">
-      </latihan-kuis>
+<p>
+  <latihan-kuis kd-materi="LM1" kategori="sumatif_lm" kkm="75" mode="siswa" kelas="XI-1" soal-file-url="./files/soal-LM1-indikator.json" remidi-soal-url="./files/remidi-LM1-acak10.json" remidi-sumber-soal="file" remidi-jumlah-soal="1" remidi-acak allow-retake max-retake="1" remidi-kirim-otomatis allow="" apps-script-url="https://script.google.com/macros/s/AKfycbwFby49gIJNzLL36S5JSZH7-MGBwqUPmpSx8ZhKeDTuCvWLh_MdP6Io4gFCCQuOTsb8/exec" duration="300" judul-materi="Materi Pembelajaran" teks-materi="Baca materi di bawah ini dengan saksama sebelum mengerjakan kuis. Waktu pengerjaan kuis dibatasi oleh timer; saat waktu habis, kuis akan dikunci dan nilai otomatis terkirim." materi-file="" cover-image="" judul-kuis="Evaluasi Kuis Interaktif" student-id="STD-65108053" student-name="Andy" student-nis="234" student-absen="" student-kelas="XI-1" pesan-waktu-habis="⏰ Waktu habis! Kuis dikunci &amp; dinilai otomatis." pesan-nilai-terkirim="🎉 Selamat! Nilai Anda sudah terkirim ke spreadsheet." label-mulai="▶️ Mulai" hide-pause-restart show-question-nav question-delay="1800" review-answers timer-autostart tab-switch-threshold="3" _pesan="Gagal memuat file soal: HTTP 404" _attempt-ke="0" _remidi-soal="[]" _tab-switch-count="0" _visibility-change-count="0" _window-blur-count="0" _window-focus-count="0" _warning-count="0"   _skor="50" _best-skor="50" _pernah-ikut="" _terkunci="" _needs-remidi="" _skor-awal="50" _remidi-server="{&quot;boleh&quot;:true,&quot;ambang&quot;:75,&quot;kdRemidi&quot;:&quot;LM1-R&quot;,&quot;perluPenilaian&quot;:false,&quot;bestRemidi&quot;:null,&quot;nilai_akhir_disepakati&quot;:null}" _soal-file-url-cache="./files/soal-LM1-indikator.json"></latihan-kuis>
+
 </p>
 ]]></content>
 </item>
