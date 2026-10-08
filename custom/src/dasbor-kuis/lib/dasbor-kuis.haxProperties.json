@@ -138,6 +138,12 @@
                 "title": "Nonaktifkan Konfeti",
                 "description": "Tidak menampilkan efek konfeti saat jawaban benar.",
                 "inputMethod": "boolean"
+            },
+            {
+                "property": "formatif",
+                "title": "Mode Formatif",
+                "description": "Formatif = progres saja, tidak masuk rapor, tidak mengunci kuis, tidak memicu remidi. Cocok untuk latihan tanpa login.",
+                "inputMethod": "boolean"
             }
         ]
     },

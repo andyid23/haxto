@@ -3,210 +3,210 @@
     "id": "LM0-R-01",
     "type": "uraian",
     "indikator": "Memahami dan menerapkan aturan penulisan variabel, tipe data dasar, serta manipulasi string/numerik",
-    "question": "Jelaskan 3 aturan utama penulisan nama variabel di Python yang harus dipatuhi agar tidak menyebabkan SyntaxError! Berikan masing-masing satu contoh nama variabel yang salah dan perbaikannya! (Isi beda dari soal ulangan.)",
+    "question": "Jelaskan 3 aturan utama penulisan nama variabel di Python yang harus dipatuhi agar tidak menyebabkan SyntaxError! Berikan masing-masing satu contoh nama variabel yang salah dan perbaikannya!",
     "points": 10
   },
   {
     "id": "LM0-R-02",
     "type": "uraian",
     "indikator": "Memahami dan menerapkan aturan penulisan variabel, tipe data dasar, serta manipulasi string/numerik",
-    "question": "Diberikan kode Python: a = '20'; b = 3. Jelaskan perbedaan hasil keluaran antara perintah print(a * b) dengan print(int(a) * b) beserta tipe data akhir masing-masing! (Isi beda dari soal ulangan.)",
+    "question": "Diberikan kode Python: a = '20'; b = 3. Jelaskan perbedaan hasil keluaran antara perintah print(a * b) dengan print(int(a) * b) beserta tipe data akhir masing-masing!",
     "points": 10
   },
   {
     "id": "LM0-R-03",
     "type": "uraian",
     "indikator": "Memahami dan menerapkan aturan penulisan variabel, tipe data dasar, serta manipulasi string/numerik",
-    "question": "Mengapa input data desimal untuk skor probabilitas model AI (0.0 - 1.0) harus menggunakan tipe data float dan bukan integer? Apa yang terjadi jika kita memaksa mengonversinya dengan int(0.85)? (Isi beda dari soal ulangan.)",
+    "question": "Mengapa input data desimal untuk skor probabilitas model AI (0.0 - 1.0) harus menggunakan tipe data float dan bukan integer? Apa yang terjadi jika kita memaksa mengonversinya dengan int(0.85)?",
     "points": 10
   },
   {
     "id": "LM0-R-04",
     "type": "uraian",
     "indikator": "Memahami dan menerapkan aturan penulisan variabel, tipe data dasar, serta manipulasi string/numerik",
-    "question": "Diberikan variabel x = 10 dan y = 3. Tuliskan hasil operasi Python dari: (a) x / y, (b) x // y, dan (c) x % y, serta jelaskan perbedaan fungsi ketiga operator pembagian tersebut! (Isi beda dari soal ulangan.)",
+    "question": "Diberikan variabel x = 10 dan y = 3. Tuliskan hasil operasi Python dari: (a) x / y, (b) x // y, dan (c) x % y, serta jelaskan perbedaan fungsi ketiga operator pembagian tersebut!",
     "points": 10
   },
   {
     "id": "LM0-R-05",
     "type": "uraian",
     "indikator": "Memahami dan menerapkan aturan penulisan variabel, tipe data dasar, serta manipulasi string/numerik",
-    "question": "Mengapa perintah int('100.5') menghasilkan ValueError pada Python? Tuliskan langkah perbaikan kode agar teks '100.5' tersebut dapat diubah menjadi angka integer 100 secara aman! (Isi beda dari soal ulangan.)",
+    "question": "Mengapa perintah int('100.5') menghasilkan ValueError pada Python? Tuliskan langkah perbaikan kode agar teks '100.5' tersebut dapat diubah menjadi angka integer 100 secara aman!",
     "points": 10
   },
   {
     "id": "LM0-R-06",
     "type": "uraian",
     "indikator": "Memahami dan menerapkan aturan penulisan variabel, tipe data dasar, serta manipulasi string/numerik",
-    "question": "Jelaskan apa yang dimaksud dengan tipe data NoneType dalam Python! Pada situasi apa seorang pemrogram AI memanfaatkan nilai None saat inisialisasi variabel awal? (Isi beda dari soal ulangan.)",
+    "question": "Jelaskan apa yang dimaksud dengan tipe data NoneType dalam Python! Pada situasi apa seorang pemrogram AI memanfaatkan nilai None saat inisialisasi variabel awal?",
     "points": 10
   },
   {
     "id": "LM0-R-07",
     "type": "uraian",
     "indikator": "Memahami dan menerapkan aturan penulisan variabel, tipe data dasar, serta manipulasi string/numerik",
-    "question": "Perhatikan potongan kode pertukaran variabel berikut: m = 15; n = 30; m, n = n, m + 10. Berapakah nilai akhir variabel m dan n? Uraikan alur eksekusinya! (Isi beda dari soal ulangan.)",
+    "question": "Perhatikan potongan kode pertukaran variabel berikut: m = 15; n = 30; m, n = n, m + 10. Berapakah nilai akhir variabel m dan n? Uraikan alur eksekusinya!",
     "points": 10
   },
   {
     "id": "LM0-R-08",
     "type": "uraian",
     "indikator": "Memahami dan menerapkan aturan penulisan variabel, tipe data dasar, serta manipulasi string/numerik",
-    "question": "Jelaskan konsep Truthy dan Falsy pada Python! Sebutkan 3 contoh nilai yang jika dimasukkan ke fungsi bool() akan menghasilkan nilai False! (Isi beda dari soal ulangan.)",
+    "question": "Jelaskan konsep Truthy dan Falsy pada Python! Sebutkan 3 contoh nilai yang jika dimasukkan ke fungsi bool() akan menghasilkan nilai False!",
     "points": 10
   },
   {
     "id": "LM0-R-09",
     "type": "uraian",
     "indikator": "Memahami dan menerapkan aturan penulisan variabel, tipe data dasar, serta manipulasi string/numerik",
-    "question": "Diberikan variabel nama_model = 'ResNet' dan loss_value = 0.04561. Tuliskan perintah f-string Python untuk mencetak teks 'Model ResNet - Loss: 0.05' (pembulatan 2 digit desimal)! (Isi beda dari soal ulangan.)",
+    "question": "Diberikan variabel nama_model = 'ResNet' dan loss_value = 0.04561. Tuliskan perintah f-string Python untuk mencetak teks 'Model ResNet - Loss: 0.05' (pembulatan 2 digit desimal)!",
     "points": 10
   },
   {
     "id": "LM0-R-10",
     "type": "uraian",
     "indikator": "Memahami dan menerapkan aturan penulisan variabel, tipe data dasar, serta manipulasi string/numerik",
-    "question": "Perhatikan kode chained assignment berikut: p = q = r = 100; r += 25. Tuliskan nilai akhir dari variabel p, q, dan r serta berikan alasan mengapa nilai p dan q tidak ikut berubah! (Isi beda dari soal ulangan.)",
+    "question": "Perhatikan kode chained assignment berikut: p = q = r = 100; r += 25. Tuliskan nilai akhir dari variabel p, q, dan r serta berikan alasan mengapa nilai p dan q tidak ikut berubah!",
     "points": 10
   },
   {
     "id": "LM1-R-01",
     "type": "uraian",
     "indikator": "Menganalisis logika percabangan (IF-ELIF-ELSE) dan perulangan (FOR, WHILE) pada algoritma dasar",
-    "question": "Tuliskan hasil keluaran angka dari perintah perulangan Python for k in range(5, 15, 3): print(k), lalu jelaskan arti dari ketiga parameter fungsi range() tersebut! (Isi beda dari soal ulangan.)",
+    "question": "Tuliskan hasil keluaran angka dari perintah perulangan Python for k in range(5, 15, 3): print(k), lalu jelaskan arti dari ketiga parameter fungsi range() tersebut!",
     "points": 10
   },
   {
     "id": "LM1-R-02",
     "type": "uraian",
     "indikator": "Menganalisis logika percabangan (IF-ELIF-ELSE) dan perulangan (FOR, WHILE) pada algoritma dasar",
-    "question": "Sebuah restoran memberikan ongkir gratis jika jarak <= 3 km. Jika jarak 3 - 10 km, ongkir = (jarak - 3) * 2000. Jika jarak > 10 km, ongkir flat 20000. Buatlah pseudokode percabangan untuk kasus ini! (Isi beda dari soal ulangan.)",
+    "question": "Sebuah restoran memberikan ongkir gratis jika jarak <= 3 km. Jika jarak 3 - 10 km, ongkir = (jarak - 3) * 2000. Jika jarak > 10 km, ongkir flat 20000. Buatlah pseudokode percabangan untuk kasus ini!",
     "points": 10
   },
   {
     "id": "LM1-R-03",
     "type": "uraian",
     "indikator": "Menganalisis logika percabangan (IF-ELIF-ELSE) dan perulangan (FOR, WHILE) pada algoritma dasar",
-    "question": "Suatu penyewaan mobil menetapkan tarif: 1-2 hari = Rp300.000/hari. Hari ke-3 dst = Rp250.000/hari. Jika sewa > 5 hari, dapat cashback Rp100.000. Tuliskan pseudokode lengkap untuk menghitung total biaya sewa berdasarkan variabel lama_sewa! (Isi beda dari soal ulangan.)",
+    "question": "Suatu penyewaan mobil menetapkan tarif: 1-2 hari = Rp300.000/hari. Hari ke-3 dst = Rp250.000/hari. Jika sewa > 5 hari, dapat cashback Rp100.000. Tuliskan pseudokode lengkap untuk menghitung total biaya sewa berdasarkan variabel lama_sewa!",
     "points": 10
   },
   {
     "id": "LM1-R-04",
     "type": "uraian",
     "indikator": "Menganalisis logika percabangan (IF-ELIF-ELSE) dan perulangan (FOR, WHILE) pada algoritma dasar",
-    "question": "Mengapa pada struktur percabangan IF-ELIF-ELSE, interpreter Python akan mengabaikan seluruh blok ELIF di bawahnya jika kondisi IF di paling atas sudah bernilai True? Jelaskan alur eksekusinya! (Isi beda dari soal ulangan.)",
+    "question": "Mengapa pada struktur percabangan IF-ELIF-ELSE, interpreter Python akan mengabaikan seluruh blok ELIF di bawahnya jika kondisi IF di paling atas sudah bernilai True? Jelaskan alur eksekusinya!",
     "points": 10
   },
   {
     "id": "LM1-R-05",
     "type": "uraian",
     "indikator": "Menganalisis logika percabangan (IF-ELIF-ELSE) dan perulangan (FOR, WHILE) pada algoritma dasar",
-    "question": "Lakukan penelusuran (tracing) variabel pada perulangan berikut: x = 30; y = 7; count = 0; while x > y: x -= y; count += 1. Tuliskan nilai akhir dari variabel x dan count setelah loop selesai! (Isi beda dari soal ulangan.)",
+    "question": "Lakukan penelusuran (tracing) variabel pada perulangan berikut: x = 30; y = 7; count = 0; while x > y: x -= y; count += 1. Tuliskan nilai akhir dari variabel x dan count setelah loop selesai!",
     "points": 10
   },
   {
     "id": "LM1-R-06",
     "type": "uraian",
     "indikator": "Menganalisis logika percabangan (IF-ELIF-ELSE) dan perulangan (FOR, WHILE) pada algoritma dasar",
-    "question": "Tuliskan kode Python menggunakan percabangan IF-ELSE untuk menentukan apakah variabel angka_input bernilai bilangan genap atau ganjil dengan memanfaatkan operator modulo (%)! (Isi beda dari soal ulangan.)",
+    "question": "Tuliskan kode Python menggunakan percabangan IF-ELSE untuk menentukan apakah variabel angka_input bernilai bilangan genap atau ganjil dengan memanfaatkan operator modulo (%)!",
     "points": 10
   },
   {
     "id": "LM1-R-07",
     "type": "uraian",
     "indikator": "Menganalisis logika percabangan (IF-ELIF-ELSE) dan perulangan (FOR, WHILE) pada algoritma dasar",
-    "question": "Jelaskan hasil evaluasi dari ekspresi logika Python: (15 > 10) and (5 == 8) or not(2 < 1)! Uraikan langkah-langkah penyelesaian logika boolean tersebut secara berurutan! (Isi beda dari soal ulangan.)",
+    "question": "Jelaskan hasil evaluasi dari ekspresi logika Python: (15 > 10) and (5 == 8) or not(2 < 1)! Uraikan langkah-langkah penyelesaian logika boolean tersebut secara berurutan!",
     "points": 10
   },
   {
     "id": "LM1-R-08",
     "type": "uraian",
     "indikator": "Menganalisis logika percabangan (IF-ELIF-ELSE) dan perulangan (FOR, WHILE) pada algoritma dasar",
-    "question": "Tuliskan kode Python perulangan FOR untuk menghitung akumulasi penjumlahan angka dari 1 sampai 10 (1+2+3+...+10) dan mencetak total hasil akhirnya! (Isi beda dari soal ulangan.)",
+    "question": "Tuliskan kode Python perulangan FOR untuk menghitung akumulasi penjumlahan angka dari 1 sampai 10 (1+2+3+...+10) dan mencetak total hasil akhirnya!",
     "points": 10
   },
   {
     "id": "LM1-R-09",
     "type": "uraian",
     "indikator": "Menganalisis logika percabangan (IF-ELIF-ELSE) dan perulangan (FOR, WHILE) pada algoritma dasar",
-    "question": "Uraikan perbedaan penggunaan struktur perulangan FOR dengan perulangan WHILE pada Python dari segi syarat inisialisasi dan kejelasan jumlah iterasi! (Isi beda dari soal ulangan.)",
+    "question": "Uraikan perbedaan penggunaan struktur perulangan FOR dengan perulangan WHILE pada Python dari segi syarat inisialisasi dan kejelasan jumlah iterasi!",
     "points": 10
   },
   {
     "id": "LM1-R-10",
     "type": "uraian",
     "indikator": "Menganalisis logika percabangan (IF-ELIF-ELSE) dan perulangan (FOR, WHILE) pada algoritma dasar",
-    "question": "Buatlah bentuk ringkas (ternary operator) Python untuk pernyataan kondisi berikut: jika variabel skor >= 70 maka status = 'Pass', jika tidak maka status = 'Fail'! (Isi beda dari soal ulangan.)",
+    "question": "Buatlah bentuk ringkas (ternary operator) Python untuk pernyataan kondisi berikut: jika variabel skor >= 70 maka status = 'Pass', jika tidak maka status = 'Fail'!",
     "points": 10
   },
   {
     "id": "LM2-R-01",
     "type": "uraian",
     "indikator": "Menerapkan algoritma percabangan, perulangan, dan pemrosesan data pada kasus riset/sistem AI",
-    "question": "Sistem AI pengenal objek menetapkan status: jika confidence > 0.85 status 'Valid', jika 0.50 - 0.85 status 'Perlu Verifikasi', selain itu 'Tidak Dikenal'. Tuliskan pseudokode percabangannya! (Isi beda dari soal ulangan.)",
+    "question": "Sistem AI pengenal objek menetapkan status: jika confidence > 0.85 status 'Valid', jika 0.50 - 0.85 status 'Perlu Verifikasi', selain itu 'Tidak Dikenal'. Tuliskan pseudokode percabangannya!",
     "points": 10
   },
   {
     "id": "LM2-R-02",
     "type": "uraian",
     "indikator": "Menerapkan algoritma percabangan, perulangan, dan pemrosesan data pada kasus riset/sistem AI",
-    "question": "Jelaskan logika dibalik penyusunan kondisi perulangan optimasi AI: while counter < 3 and loss >= 0.001:. Kapan perulangan tersebut akan berhenti berjalan? (Isi beda dari soal ulangan.)",
+    "question": "Jelaskan logika dibalik penyusunan kondisi perulangan optimasi AI: while counter < 3 and loss >= 0.001:. Kapan perulangan tersebut akan berhenti berjalan?",
     "points": 10
   },
   {
     "id": "LM2-R-03",
     "type": "uraian",
     "indikator": "Menerapkan algoritma percabangan, perulangan, dan pemrosesan data pada kasus riset/sistem AI",
-    "question": "Diberikan list skor sentimen NLP: skor = [-0.8, 0.2, 0.9, -0.1, 0.6]. Tuliskan kode Python lengkap menggunakan perulangan FOR untuk menghitung jumlah kalimat positif (skor > 0)! (Isi beda dari soal ulangan.)",
+    "question": "Diberikan list skor sentimen NLP: skor = [-0.8, 0.2, 0.9, -0.1, 0.6]. Tuliskan kode Python lengkap menggunakan perulangan FOR untuk menghitung jumlah kalimat positif (skor > 0)!",
     "points": 10
   },
   {
     "id": "LM2-R-04",
     "type": "uraian",
     "indikator": "Menerapkan algoritma percabangan, perulangan, dan pemrosesan data pada kasus riset/sistem AI",
-    "question": "Sistem pendingin data center AI mengatur kipas: jika suhu > 75°C kipas '100%', jika 60°C - 75°C kipas '60%', jika < 60°C kipas '30%'. Buatlah pseudokode percabangannya! (Isi beda dari soal ulangan.)",
+    "question": "Sistem pendingin data center AI mengatur kipas: jika suhu > 75°C kipas '100%', jika 60°C - 75°C kipas '60%', jika < 60°C kipas '30%'. Buatlah pseudokode percabangannya!",
     "points": 10
   },
   {
     "id": "LM2-R-05",
     "type": "uraian",
     "indikator": "Menerapkan algoritma percabangan, perulangan, dan pemrosesan data pada kasus riset/sistem AI",
-    "question": "Sebuah dataset berukuran 500 sampel dilatih menggunakan batch size sebesar 50. Berapa jumlah iterasi perulangan FOR yang dieksekusi dalam 1 epoch penuh? Tuliskan rumus perhitungannya! (Isi beda dari soal ulangan.)",
+    "question": "Sebuah dataset berukuran 500 sampel dilatih menggunakan batch size sebesar 50. Berapa jumlah iterasi perulangan FOR yang dieksekusi dalam 1 epoch penuh? Tuliskan rumus perhitungannya!",
     "points": 10
   },
   {
     "id": "LM2-R-06",
     "type": "uraian",
     "indikator": "Menerapkan algoritma percabangan, perulangan, dan pemrosesan data pada kasus riset/sistem AI",
-    "question": "Diberikan list ukuran bounding box: boxes = [12, 45, 8, 90, 3]. Tuliskan kode Python (list comprehension) untuk menyaring hanya box yang bernilai >= 10 dan tampilkan hasilnya! (Isi beda dari soal ulangan.)",
+    "question": "Diberikan list ukuran bounding box: boxes = [12, 45, 8, 90, 3]. Tuliskan kode Python (list comprehension) untuk menyaring hanya box yang bernilai >= 10 dan tampilkan hasilnya!",
     "points": 10
   },
   {
     "id": "LM2-R-07",
     "type": "uraian",
     "indikator": "Menerapkan algoritma percabangan, perulangan, dan pemrosesan data pada kasus riset/sistem AI",
-    "question": "Tuliskan struktur perulangan FOR dan kondisi IF dalam Python untuk memproses list emails dan mencetak teks 'Spam Terdeteksi' jika fungsi is_spam(email) bernilai True! (Isi beda dari soal ulangan.)",
+    "question": "Tuliskan struktur perulangan FOR dan kondisi IF dalam Python untuk memproses list emails dan mencetak teks 'Spam Terdeteksi' jika fungsi is_spam(email) bernilai True!",
     "points": 10
   },
   {
     "id": "LM2-R-08",
     "type": "uraian",
     "indikator": "Menerapkan algoritma percabangan, perulangan, dan pemrosesan data pada kasus riset/sistem AI",
-    "question": "Mengapa pengecekan kondisi math.isnan(loss) sangat penting dimasukkan ke dalam loop latihan model AI? Apa dampaknya jika nilai NaN diproses terus dalam perhitungan matematika? (Isi beda dari soal ulangan.)",
+    "question": "Mengapa pengecekan kondisi math.isnan(loss) sangat penting dimasukkan ke dalam loop latihan model AI? Apa dampaknya jika nilai NaN diproses terus dalam perhitungan matematika?",
     "points": 10
   },
   {
     "id": "LM2-R-09",
     "type": "uraian",
     "indikator": "Menerapkan algoritma percabangan, perulangan, dan pemrosesan data pada kasus riset/sistem AI",
-    "question": "Sistem deteksi kecurangan transaksi AI menetapkan: skor_risiko >= 80 'BLOKIR', 50-79 'INSPEKSI MANUAL', < 50 'IZINKAN'. Berapakah status transaksi jika nilai skor_risiko = 75? Jelaskan alur eksekusinya! (Isi beda dari soal ulangan.)",
+    "question": "Sistem deteksi kecurangan transaksi AI menetapkan: skor_risiko >= 80 'BLOKIR', 50-79 'INSPEKSI MANUAL', < 50 'IZINKAN'. Berapakah status transaksi jika nilai skor_risiko = 75? Jelaskan alur eksekusinya!",
     "points": 10
   },
   {
     "id": "LM2-R-10",
     "type": "uraian",
     "indikator": "Menerapkan algoritma percabangan, perulangan, dan pemrosesan data pada kasus riset/sistem AI",
-    "question": "Jelaskan penggunaan operator logika 'and' vs 'or' dalam menyaring sistem rekomendasi produk AI yang mensyaratkan dua kriteria (rating >= 4.0 DAN stok > 0) harus terpenuhi bersamaan! (Isi beda dari soal ulangan.)",
+    "question": "Jelaskan penggunaan operator logika 'and' vs 'or' dalam menyaring sistem rekomendasi produk AI yang mensyaratkan dua kriteria (rating >= 4.0 DAN stok > 0) harus terpenuhi bersamaan!",
     "points": 10
   }
 ]

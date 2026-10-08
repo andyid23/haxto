@@ -138,6 +138,8 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
         attribute: "remidi-kirim-otomatis",
         reflect: true,
       },
+      // Formatif mode: progres saja, tidak mengunci, tidak memicu remidi.
+      formatif: { type: Boolean, attribute: "formatif", reflect: true },
       // P16: "auto" (Bank dulu, perilaku lama) | "bank" (sama, eksplisit) |
       // "file" (remidi-soal-url dulu — cocok operasional file-based).
       remidiSumberSoal: { type: String, attribute: "remidi-sumber-soal", reflect: true },
@@ -230,6 +232,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     this._userStarted = false;
     this.kkm = 75;
     this.remidiMode = false;
+    this.formatif = false;
     this.remidiSoalUrl = "";
     this.remidiJumlahSoal = 1;
     this.remidiKirimOtomatis = false;
@@ -815,7 +818,9 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
       if (!r.ok) throw new Error("HTTP " + r.status);
       const d = await r.json();
       if (!Array.isArray(d) || d.length === 0) throw new Error("Bukan array JSON / kosong");
-      this.questions = d;
+      // P26: satu soal per indikator berlaku juga di luar remidi bila flag aktif
+      // (kuis formatif/sumatif file-based). Tanpa flag: perilaku lama (semua).
+      this.questions = this.satuPerIndikator ? this._unikPerIndikator(d) : d;
       this._pesan = "";
     } catch (e) {
       this._soalFileUrlCache = "";
@@ -990,12 +995,14 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     // Backend merutekan timer_mulai ke db_aktivitas (audit trail), BUKAN db_asesmen —
     // baris skor=0 di db_asesmen mengunci siswa (getQuizLock). Kategori di-embed agar
     // audit menyebut jenis kuis & percobaan ke berapa.
+    // Formatif mode: progres saja, kirim ke db_aktivitas bukan db_asesmen.
+    const kategoriKirim = this.formatif ? "formatif" : (this.kategori || "sumatif_lm");
     if (!this._latihanOnlyMode) {
       this._logActivity("timer_mulai", {
         timestamp: new Date().toISOString(),
         durasiUlangan: this.duration || 300,
         waktuMulai: this._waktuMulai,
-        kategori: this.kategori || "sumatif_lm",
+        kategori: kategoriKirim,
         kdMateri: this.kdMateri,
         percobaanKe: this._attemptKe ? this._attemptKe + 1 : 1,
       });
@@ -1750,7 +1757,9 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     const _belumTuntas =
       typeof this._bestSkor === "number" && this._bestSkor < _ambangRemidi;
     const _sudahHabis = _serverDimakai ? false : this.sudahRemidi;
-    const _canRemidiNow = this._effectiveRemidiMode && !_sudahHabis && _belumTuntas;
+    // Formatif mode: progres saja, tidak ada remidi.
+    let _canRemidiNow = this._effectiveRemidiMode && !_sudahHabis && _belumTuntas;
+    if (this.formatif) { _canRemidiNow = false; }
     const _remidiBypass = (this._needsRemidi || _canRemidiNow) && this._effectiveRemidiMode && !_sudahHabis;
     // Esai remedial sudah terkumpul tapi belum dinilai guru: student TIDAK boleh
     // offered "Mulai Remidi" lagi (atau dia bisa mengulang tanpa batas sampai
@@ -1759,7 +1768,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
     // `_remidiTerkirim` = flag lokal (submit/timeout baru saja terjadi,
     // status server mungkin belum mengejar) — kartu ⏳ yang sama.
     const _menungguPenilaian =
-      (_perluPenilaian || !!this._remidiTerkirim) && !this._needsRemidi;
+      (_perluPenilaian || !!this._remidiTerkirim) && !this._needsRemidi && !this.formatif;
     if (_menungguPenilaian && this.mode !== "guru") {
       return html`
         <div class="wrap">
@@ -1778,7 +1787,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
         </div>
       `;
     }
-    if (this._terkunci && this.mode !== "guru") {
+    if (this._terkunci && this.mode !== "guru" && !this.formatif) {
       if (_remidiBypass) {
         return html`
           <div class="wrap">
@@ -1807,10 +1816,10 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
               : nothing}
             ${this.mode === "guru" ? html`<button class="btn-mulai" @click=${this._resetKunciGuru}>🔓 Buka Kunci (Guru)</button>` : html`<p style="font-size:12px; color:#64748B;">Guru bisa buka via <b>Dasbor Guru → Atur → 🔓 Buka Kunci</b> atau tombol di atas (mode guru).</p>`}
           </div>
-        </div>
-      `;
+         </div>
+       `;
     }
-
+    // Formatif selesai: lanjut ke hasil tanpa kunci/lock check (lihat di atas).
     if (this._selesai) {
       // Check if suspicious (time manipulation detected)
       const sisaWaktu = this._bacaSisaWaktu();
@@ -1832,7 +1841,7 @@ export class LatihanKuis extends I18NMixin(DDDSuper(LitElement)) {
               : html`<div class="kirim warn">⚠️ Nilai belum tersimpan karena belum login</div>`}
             ${this._skor != null ? html`<div class="skor">Skor Anda: <strong>${this._skor}%</strong></div>` : nothing}
             ${this.nilaiAkhir != null ? html`<div class="skor">Nilai Akhir: <strong>${this.nilaiAkhir}%</strong></div>` : nothing}
-            ${this._needsRemidi && !this.sudahRemidi && this._effectiveRemidiMode
+            ${this._needsRemidi && !this.sudahRemidi && this._effectiveRemidiMode && !this.formatif
               ? html`<div class="remidi-card">
                   <h3>📝 Remedi Diperlukan</h3>
                   <p>Nilai Anda belum mencapai KKM (${this.kkm}%). Silakan kerjakan remidi.</p>

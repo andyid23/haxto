@@ -93,6 +93,18 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
             inputMethod: "boolean",
           },
           {
+            property: "varianAcak",
+            title: "Acak Varian Soal",
+            description: "Tiap siswa dapat subset acak: N soal per indikator (varian-per-indikator, default 1). Soal tanpa indikator selalu ikut.",
+            inputMethod: "boolean",
+          },
+          {
+            property: "varianPerIndikator",
+            title: "Varian per Indikator",
+            description: "Jumlah varian diambil per grup indikator bila Acak Varian aktif. Minimal 1.",
+            inputMethod: "textfield",
+          },
+          {
             property: "hideAnswers",
             title: "Sembunyikan Jawaban",
             description: "Tidak menampilkan jawaban benar/salah setelah menjawab",
@@ -321,6 +333,17 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
         attribute: "shuffle-questions",
         reflect: true,
       },
+      // P19: sampling varian per indikator (tiap siswa dapat subset acak).
+      varianAcak: {
+        type: Boolean,
+        attribute: "varian-acak",
+        reflect: true,
+      },
+      varianPerIndikator: {
+        type: Number,
+        attribute: "varian-per-indikator",
+        reflect: true,
+      },
       lockAfterComplete: {
         type: Boolean,
         attribute: "lock-after-complete",
@@ -439,6 +462,9 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     this.hideScore = false;
     this.shuffleChoices = false;
     this.shuffleQuestions = false;
+    // P19: sampling varian (default mati).
+    this.varianAcak = false;
+    this.varianPerIndikator = 1;
     this.lockAfterComplete = true;
     this.showQuestionNav = true;
     this.allowBackwardNav = false;
@@ -1324,6 +1350,41 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     return a;
   }
 
+  /** Normalisasi indikator lokal (cermin _normalisasiIndikator GAS/latihan-kuis). */
+  _normalisasiIndikatorLihat(v) {
+    return String(v == null ? "" : v)
+      .trim()
+      .toLowerCase()
+      .replace(/\s+/g, " ");
+  }
+
+  /**
+   * P19: sampling varian per indikator — grup soal by indikator, ambil N
+   * acak per grup (varianPerIndikator, default 1). Tanpa indikator: ikut
+   * semua (jangan buang). Kembalikan array baru; input tak dimutasi.
+   */
+  _samplingVarian(daftar) {
+    const semua = Array.isArray(daftar) ? daftar.slice() : [];
+    const n = Math.max(1, parseInt(this.varianPerIndikator, 10) || 1);
+    const grup = new Map();
+    const tanpaIndikator = [];
+    semua.forEach((q) => {
+      const kunci = this._normalisasiIndikatorLihat((q && q.indikator) || "");
+      if (!kunci) {
+        tanpaIndikator.push(q);
+        return;
+      }
+      if (!grup.has(kunci)) grup.set(kunci, []);
+      grup.get(kunci).push(q);
+    });
+    const hasil = [...tanpaIndikator];
+    grup.forEach((anggota) => {
+      const acak = this._shuffleArray(anggota);
+      hasil.push(...acak.slice(0, n));
+    });
+    return hasil;
+  }
+
   /** Hanya true di dalam editor HAX (hax start / haxcms local dev). */
   get _inHaxEditor() {
     return !!(
@@ -1363,11 +1424,15 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     if (hasResumed) {
       base = this._shuffledQuestions;
     } else {
+      // P19: sampling varian dulu (subset), baru acak urutan. Resume memakai
+      // subset tersimpan (persist via _shuffledQuestions) — tak resample.
+      if (this.varianAcak) base = this._samplingVarian(base);
       if (this.shuffleQuestions) base = this._shuffleArray(base);
       if (!Array.isArray(base)) base = DEFAULT_QUESTIONS;
     }
-    this._maxPoints =
-      (this.questions || []).reduce((sum, q) => sum + this._maxPoinSoal(q), 0) || 1;
+    // P19: persen dari subset aktif (bukan pool penuh) bila sampling/resume.
+    const _sumberMax = (hasResumed || this.varianAcak) && Array.isArray(base) && base.length ? base : this.questions;
+    this._maxPoints = (_sumberMax || []).reduce((sum, q) => sum + this._maxPoinSoal(q), 0) || 1;
     if (!hasResumed) {
       // Anti-cheat: generate session token for new attempt (anti-multi-login)
       this._buatSessionToken();
@@ -2026,7 +2091,18 @@ export class ModularQuiz extends I18NMixin(DDDSuper(LitElement)) {
     }
     if (this._autoSaveInterval) { clearInterval(this._autoSaveInterval); this._autoSaveInterval = null; }
     this._screen = "result";
-    this._maxPoints = (this.questions || []).reduce((sum, q) => sum + this._maxPoinSoal(q), 0) || 1;
+    // P19: bila sampling aktif, pertahankan penyebut subset dari _startQuiz
+    // (fallback: subset tersimpan; terakhir: pool penuh).
+    if (this.varianAcak && this._maxPoints) {
+      // pertahankan — jangan tulis ulang dari pool penuh
+    } else if (this.varianAcak) {
+      const _aktif = Array.isArray(this._shuffledQuestions) && this._shuffledQuestions.length
+        ? this._shuffledQuestions
+        : this.questions;
+      this._maxPoints = (_aktif || []).reduce((sum, q) => sum + this._maxPoinSoal(q), 0) || 1;
+    } else {
+      this._maxPoints = (this.questions || []).reduce((sum, q) => sum + this._maxPoinSoal(q), 0) || 1;
+    }
     // P22: esai pending (menunggu dinilai guru) dikeluarkan dari penyebut
     // agar persen jujur — tanpa ini 1 esai 10 poin menekan nilai ke ~9%.
     const _jpsP22 = this._buildJawabanPerSoal();

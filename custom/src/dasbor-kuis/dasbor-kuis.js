@@ -145,6 +145,9 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
       // Hasil Regenerasi Rangkuman (pesan saja, tanpa tabel).
       _rangkumanHasil: { state: true },
       _rangkumanBusy: { state: true },
+      // P27: pemicu manual rekap-dinamis (siswa terpilih dari roster).
+      _rekapSid: { state: true },
+      _rekapBusy: { state: true },
       _serverData: { state: true },
       _isFlushing: { state: true },
       _networkStatus: { state: true },
@@ -411,6 +414,8 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
     this._lihatKd = null;
     this._rangkumanHasil = null;
     this._rangkumanBusy = false;
+    this._rekapSid = "";
+    this._rekapBusy = false;
     this._isFlushing = false;
     this._syncRetryCount = 0;
     this._networkStatus = globalThis.navigator?.onLine ? "online" : "offline";
@@ -3545,6 +3550,29 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
               ${this._rangkumanHasil.ok ? "✅" : "⚠️"} ${this._rangkumanHasil.teks}
             </p>`
           : ""}
+        <h4 style="margin:12px 0 4px; color:#1e293b;">📸 Rekap Dinamis per Siswa (P27)</h4>
+        <p class="remidi-muted">
+          Snapshot rapor + aktivitas siswa ke sheet
+          <code>db_aktivitas_rekap</code> (24 kolom). Pilih siswa lalu kirim.
+        </p>
+        <div class="remidi-head-actions" style="margin-bottom:8px;">
+          <select class="filter-input" aria-label="Pilih siswa untuk rekap"
+            .value=${this._rekapSid || ""}
+            @change=${(e) => { this._rekapSid = e.target.value; this.requestUpdate(); }}
+          >
+            <option value="">— Pilih siswa —</option>
+            ${(this._serverData?.roster || []).map((r) => {
+              const sid = String((r && (r.studentId || r["Student ID"] || r.StudentID)) || "");
+              if (!sid) return "";
+              const nama = (r && r.nama) || sid;
+              return html`<option value="${sid}" ?selected=${sid === this._rekapSid}>${nama} (${sid})</option>`;
+            })}
+          </select>
+          <button class="retry-btn" @click=${() => this._kirimRekapSiswa()}
+            ?disabled=${this._rekapBusy || !this._rekapSid}>
+            📸 Kirim Rekap
+          </button>
+        </div>
       </section>
     `;
   }
@@ -3576,6 +3604,89 @@ export class QuizDashboard extends I18NMixin(DDDSuper(LitElement)) {
           : ""}
       </div>
     `;
+  }
+
+  /**
+   * P27: snapshot rekap-dinamis dari 1 baris roster (getStudentRoster).
+   * Best-effort: kunci yang dikenal dipetakan, sisanya default 0/"".
+   * Bentuk roster: {studentId, nama, nis, absen, kelas, totalActivities,
+   * nilaiRapor, sas, rerataLM, sts, intervalCapaian}.
+   */
+  _bangunRekapSiswa(r) {
+    const num = (v) => {
+      const n = Number(v);
+      return Number.isFinite(n) ? n : 0;
+    };
+    const sid = String((r && (r.studentId || r["Student ID"] || r.StudentID)) || "");
+    return {
+      studentId: sid,
+      statistik_akademik: {
+        total_kuis: 0,
+        rata_rata_skor: num(r && (r.nilaiAkhir ?? r.nilaiRapor ?? r["Rata-rata Skor"])),
+        skor_tertinggi: 0,
+        skor_terendah: 0,
+        kuis_formatif: 0,
+        kuis_sumatif: 0,
+        skor_uts: num(r && (r.uts ?? r.sts ?? r.UTS ?? r.STS)),
+        skor_uas: num(r && (r.uas ?? r.sas ?? r.UAS ?? r.SAS)),
+        status_kuis_terakhir: String((r && (r.intervalCapaian || r.grade)) || ""),
+      },
+      statistik_aktivitas_proses: {
+        total_aktivitas: num(r && r.totalActivities),
+        reading: 0,
+        quiz_activity: 0,
+        assignment: 0,
+        discussion: 0,
+        download: 0,
+        jumlah_pertemuan: 0,
+      },
+      audit_keamanan_terakhir: {
+        id_log_terakhir: "",
+        kdMateri: this._kdLihat(),
+        total_restart_all: 0,
+        total_tab_switch_all: 0,
+        durasi_pengerjaan_terakhir_detik: 0,
+        remidi_status: false,
+      },
+    };
+  }
+
+  /**
+   * P27: kirim rekap snapshot siswa terpilih (pemicu manual panel Rangkuman).
+   * Otomatisasi (pasca-kuis/dinilai) ditunda — implikasi kuota + spam baris.
+   */
+  async _kirimRekapSiswa() {
+    if (!this.appsScriptUrl || this._rekapBusy) return;
+    const sid = String(this._rekapSid || "").trim();
+    if (!sid) {
+      this._rangkumanHasil = { ok: false, teks: "Pilih siswa dulu untuk kirim rekap." };
+      this.requestUpdate();
+      return;
+    }
+    const baris = (this._serverData?.roster || []).find(
+      (r) => String((r && (r.studentId || r["Student ID"] || r.StudentID)) || "") === sid,
+    );
+    if (!baris) {
+      this._rangkumanHasil = { ok: false, teks: "Siswa tidak ada di roster yang dimuat." };
+      this.requestUpdate();
+      return;
+    }
+    this._rekapBusy = true;
+    this.requestUpdate();
+    try {
+      const hasil = await this._kirimRekapDinamis(this._bangunRekapSiswa(baris));
+      const ok = !!(hasil && hasil.status === "ok");
+      this._rangkumanHasil = {
+        ok,
+        teks: ok
+          ? `Rekap ${sid} tersimpan ke db_aktivitas_rekap.`
+          : String((hasil && hasil.message) || "Gagal kirim rekap."),
+      };
+    } catch (_) {
+      this._rangkumanHasil = { ok: false, teks: "Gagal kirim rekap (jaringan)." };
+    }
+    this._rekapBusy = false;
+    this.requestUpdate();
   }
 
   /** Regenerasi Rangkuman (pesan saja, D2): tanpa tabel, tanpa ubah backend. */
