@@ -4,13 +4,13 @@
 <indent>0</indent>
 <location>pages/item-dc8119b7-41f2-490f-9e56-1875c649ac1f/index.xml</location>
 <slug>kode-c</slug>
-<order>5</order>
+<order>6</order>
 <parent></parent>
 <title>kode-c</title>
 <description>kode online</description>
 <metadata>
 <created>1791961830</created>
-<updated>1791961969</updated>
+<updated>1791962101</updated>
 <images>
 </images>
 <videos>
@@ -36,6 +36,6 @@
 </metadata>
 <content><![CDATA[
 <p></p>
-<iframe-loader source="https://haxtheweb.org/" height="500" width="100%"><iframe src="https://haxtheweb.org/" sandbox="allow-scripts allow-same-origin" height="500" width="100%"></iframe></iframe-loader>
+<iframe-loader source="https://mapeltik.web.id/files/c_editor_simulator.html" height="500" width="100%"><iframe src="https://mapeltik.web.id/files/c_editor_simulator.html" sandbox="allow-scripts allow-same-origin" height="500" width="100%"></iframe></iframe-loader>
 ]]></content>
 </item>
