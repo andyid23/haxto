@@ -6,7 +6,7 @@
     <description>belajar dan melatih pemahaman informatika SMA kelas 10 dan 11 X XI</description>
     <copyright>Copyright (C) 2026 https://localhost:3000/sites/haxto</copyright>
     <language>en-us</language>
-    <lastBuildDate>Wed, 07 Oct 2026 08:43:48 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 07 Oct 2026 08:45:05 GMT</lastBuildDate>
     <generator>HAXcms NodeJS</generator>
     <atom:link href="https://localhost:3000/sites/haxto/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
@@ -149,6 +149,13 @@
       <description>soal latihan</description>
       <guid>https://localhost:3000/sites/haxto/soal-komputasi</guid>
       <pubDate>Wed, 07 Oct 2026 07:19:49 GMT</pubDate>
+    </item>
+    <item>
+      <title>kode-c</title>
+      <link>https://localhost:3000/sites/haxto/new-page</link>
+      <description></description>
+      <guid>https://localhost:3000/sites/haxto/new-page</guid>
+      <pubDate>Wed, 14 Oct 2026 07:10:30 GMT</pubDate>
     </item>
   </channel>
 </rss>

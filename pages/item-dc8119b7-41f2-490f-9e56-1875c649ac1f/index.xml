@@ -4,17 +4,38 @@
 <indent>0</indent>
 <location>pages/item-dc8119b7-41f2-490f-9e56-1875c649ac1f/index.xml</location>
 <slug>new-page</slug>
-<order>1</order>
+<order>2</order>
 <parent></parent>
-<title>New Page</title>
-<description></description>
+<title>kode-c</title>
+<description>kode online</description>
 <metadata>
 <created>1791961830</created>
-<updated>1791961830</updated>
+<updated>1791961879</updated>
 <images>
 </images>
 <videos>
 </videos>
+<theme>
+<element>haxcms-blank-theme</element>
+<path>@haxtheweb/haxcms-elements/lib/haxcms-blank-theme.js</path>
+<name>Haxcms Blank Theme</name>
+<thumbnail>@haxtheweb/haxcms-elements/lib/theme-screenshots/theme-haxcms-blank-theme-thumb.jpg</thumbnail>
+<description>Start with a blank site using the Haxcms Blank Theme</description>
+<category>
+<item>Website</item>
+</category>
+<hidden>true</hidden>
+<priority>0</priority>
+<terrible>false</terrible>
+<key>haxcms-blank-theme</key>
+</theme>
+<published>true</published>
+<hideInMenu>false</hideInMenu>
+<locked>false</locked>
+<readtime>1</readtime>
 </metadata>
-<content><![CDATA[<p></p>]]></content>
+<content><![CDATA[
+<p></p>
+<iframe-loader source="https://haxtheweb.org/" height="500" width="100%"><iframe src="https://haxtheweb.org/" sandbox="allow-scripts allow-same-origin" height="500" width="100%"></iframe></iframe-loader>
+]]></content>
 </item>
