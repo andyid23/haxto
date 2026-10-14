@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C Editor & Simulator</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Load Fira Code font for editor/terminal -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1e1e1e; /* VS Code dark background */
+            color: #d4d4d4;
+            overflow: hidden; /* Prevent body scroll, handle scrolling in panels */
+        }
+        
+        /* Typography for code elements */
+        .font-mono {
+            font-family: 'Fira Code', monospace;
+        }
+
+        /* Custom scrollbar for dark theme */
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #252526;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #424242;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4f4f4f;
+        }
+
+        /* Textarea styling to mimic a basic code editor */
+        #code-editor {
+            tab-size: 4;
+            caret-color: #007acc;
+            resize: none;
+            outline: none;
+            white-space: pre;
+            overflow-wrap: normal;
+            overflow-x: auto;
+        }
+        
+        /* Basic syntax highlighting simulation colors (for future enhancement, currently just basic text) */
+        .c-keyword { color: #569cd6; }
+        .c-string { color: #ce9178; }
+        .c-function { color: #dcdcaa; }
+        .c-comment { color: #6a9955; }
+
+        /* Terminal output styling */
+        .terminal-text {
+            color: #cccccc;
+            line-height: 1.5;
+        }
+        .terminal-command { color: #4af626; font-weight: bold; }
+        .terminal-error { color: #f44747; }
+        
+        /* Blinking cursor effect for terminal */
+        .cursor-blink {
+            animation: blinker 1s linear infinite;
+        }
+        @keyframes blinker {
+            50% { opacity: 0; }
+        }
+
+        /* Loading spinner animation */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .animate-spin-custom {
+            animation: spin 1s linear infinite;
+        }
+        
+        /* Responsive height adjustments */
+        .main-container {
+            height: calc(100vh - 60px); /* 60px for header */
+        }
+        @media (max-width: 768px) {
+            .main-container {
+                flex-direction: column;
+                height: auto;
+                min-height: calc(100vh - 60px);
+                overflow-y: auto;
+            }
+            .panel {
+                height: 50vh;
+                min-height: 400px;
+            }
+        }
+    </style>
+</head>
+<body class="flex flex-col h-screen antialiased bg-[#1e1e1e]">
+
+    <!-- Header -->
+    <header class="h-[60px] bg-[#2d2d2d] border-b border-[#3c3c3c] flex items-center justify-between px-4 sm:px-6 shadow-md z-10 shrink-0">
+        <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded bg-[#00599C] flex items-center justify-center shadow-inner">
+                <i class="fa-solid fa-c text-white font-bold text-lg"></i>
+            </div>
+            <h1 class="text-lg font-semibold tracking-wide hidden sm:block">C Web Editor & Simulator</h1>
+            <h1 class="text-lg font-semibold tracking-wide sm:hidden">C Simulator</h1>
+        </div>
+        
+        <div class="flex items-center gap-2 sm:gap-4">
+            <!-- Template Dropdown (Simple select) -->
+            <div class="relative">
+                <select id="template-select" class="appearance-none bg-[#3c3c3c] hover:bg-[#4a4a4a] text-sm text-gray-200 py-1.5 pl-3 pr-8 rounded border border-[#555] focus:outline-none focus:border-[#007acc] transition-colors cursor-pointer transition-all duration-200">
+                    <option value="hello">👋 Hello World</option>
+                    <option value="variables">📦 Variabel & Tipe Data</option>
+                    <option value="loop">🔄 Looping (For)</option>
+                    <option value="condition">🔀 Kondisional (If-Else)</option>
+                    <option value="empty">📄 File Kosong</option>
+                </select>
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-400">
+                    <i class="fa-solid fa-chevron-down text-xs"></i>
+                </div>
+            </div>
+
+            <!-- Run Button -->
+            <button id="run-btn" class="bg-[#007acc] hover:bg-[#005c99] text-white px-4 py-1.5 rounded text-sm font-medium flex items-center gap-2 transition-colors duration-200 shadow-md">
+                <i class="fa-solid fa-play text-xs"></i>
+                <span>Jalankan</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content (Split Screen) -->
+    <div class="flex flex-1 overflow-hidden flex-col md:flex-row w-full main-container">
+        
+        <!-- Left Panel: Editor -->
+        <div class="panel flex-1 flex flex-col border-r border-[#3c3c3c] bg-[#1e1e1e] relative min-w-0">
+            <!-- Editor Tabs/Header -->
+            <div class="flex bg-[#252526] h-[35px] shrink-0 border-b border-[#3c3c3c]">
+                <div class="flex items-center px-4 bg-[#1e1e1e] text-[#007acc] text-sm border-t-2 border-[#007acc] border-r border-[#3c3c3c] cursor-default">
+                    <i class="fa-regular fa-file-code mr-2 text-[#007acc]"></i>
+                    main.c
+                </div>
+            </div>
+            
+            <!-- Line Numbers & Textarea Container -->
+            <div class="flex-1 flex overflow-hidden relative">
+                <!-- Line Numbers (Simplified simulation) -->
+                <div id="line-numbers" class="w-12 bg-[#1e1e1e] border-r border-[#3c3c3c] text-[#858585] text-right pr-2 py-4 font-mono text-sm leading-6 select-none flex-shrink-0 overflow-hidden">
+                    1
+                </div>
+                
+                <!-- The actual textarea for code editing -->
+                <textarea 
+                    id="code-editor" 
+                    class="flex-1 w-full h-full bg-[#1e1e1e] text-[#d4d4d4] font-mono text-sm leading-6 p-4 border-none shadow-none focus:ring-0" 
+                    spellcheck="false" 
+                    placeholder="Tulis kode C di sini..."></textarea>
+            </div>
+        </div>
+
+        <!-- Right Panel: Terminal Simulator -->
+        <div class="panel flex-1 flex flex-col bg-[#1e1e1e] min-w-0">
+            <!-- Terminal Header -->
+            <div class="flex justify-between items-center bg-[#252526] h-[35px] px-4 shrink-0 border-b border-[#3c3c3c]">
+                <div class="flex items-center text-gray-300 text-sm tracking-wide">
+                    <i class="fa-solid fa-terminal mr-2 text-gray-400"></i>
+                    TERMINAL
+                </div>
+                <button id="clear-term-btn" class="text-gray-500 hover:text-gray-300 transition-colors" title="Clear Terminal">
+                    <i class="fa-solid fa-trash-can text-sm"></i>
+                </button>
+            </div>
+            
+            <!-- Terminal Output Area -->
+            <div id="terminal-output" class="flex-1 overflow-y-auto p-4 font-mono text-sm terminal-text bg-[#000000] shadow-inner relative">
+                <!-- Output will be injected here -->
+                <div class="text-gray-500 mb-2">C Compiler Simulator v1.0 (Web Based)</div>
+                <div class="text-gray-500 mb-4">Siap untuk mengkompilasi...</div>
+                
+                <!-- The prompt line -->
+                <div class="flex mt-2">
+                    <span class="text-green-500 mr-2">simulator@web:~$</span>
+                    <span id="terminal-cursor" class="inline-block w-2 bg-gray-400 cursor-blink ml-1"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // --- Data: Code Templates ---
+        const templates = {
+            hello: `#include <stdio.h>
+
+int main() {
+    // Menampilkan pesan ke layar
+    printf("Hello, World!\\n");
+    printf("Selamat datang di Simulator C!\\n");
+    
+    return 0;
+}`,
+            variables: `#include <stdio.h>
+
+int main() {
+    int umur = 25;
+    float tinggi = 175.5;
+    char inisial = 'A';
+    
+    printf("Data Profil:\\n");
+    printf("Inisial : %c\\n", inisial);
+    printf("Umur    : %d tahun\\n", umur);
+    printf("Tinggi  : %.1f cm\\n", tinggi);
+    
+    return 0;
+}`,
+            loop: `#include <stdio.h>
+
+int main() {
+    printf("Menghitung mundur:\\n");
+    
+    for(int i = 5; i > 0; i--) {
+        printf("%d...\\n", i);
+    }
+    
+    printf("Liftoff! 🚀\\n");
+    
+    return 0;
+}`,
+            condition: `#include <stdio.h>
+
+int main() {
+    int nilai = 85;
+    
+    printf("Nilai ujian kamu: %d\\n", nilai);
+    
+    if (nilai >= 80) {
+        printf("Predikat: A (Sangat Baik)\\n");
+    } else if (nilai >= 70) {
+        printf("Predikat: B (Baik)\\n");
+    } else if (nilai >= 60) {
+        printf("Predikat: C (Cukup)\\n");
+    } else {
+        printf("Predikat: D (Kurang)\\n");
+    }
+    
+    return 0;
+}`,
+            empty: ``
+        };
+
+        // --- DOM Elements ---
+        const codeEditor = document.getElementById('code-editor');
+        const lineNumbers = document.getElementById('line-numbers');
+        const runBtn = document.getElementById('run-btn');
+        const templateSelect = document.getElementById('template-select');
+        const terminalOutput = document.getElementById('terminal-output');
+        const clearTermBtn = document.getElementById('clear-term-btn');
+
+        // --- Initialization ---
+        // Load default template (Hello World)
+        codeEditor.value = templates['hello'];
+        updateLineNumbers();
+
+        // --- STREAMING_CHUNK:JavaScript - Editor functionalities (Line numbers, Tabs)... ---
+        // --- Editor Features ---
+        // Update line numbers based on textarea content
+        function updateLineNumbers() {
+            const lines = codeEditor.value.split('\n').length;
+            let numbersHTML = '';
+            for (let i = 1; i <= lines; i++) {
+                numbersHTML += `<div>${i}</div>`;
+            }
+            lineNumbers.innerHTML = numbersHTML;
+        }
+
+        // Sync scrolling between textarea and line numbers
+        codeEditor.addEventListener('scroll', () => {
+            lineNumbers.scrollTop = codeEditor.scrollTop;
+        });
+
+        // Update line numbers on input
+        codeEditor.addEventListener('input', updateLineNumbers);
+
+        // Handle 'Tab' key in textarea (insert spaces instead of changing focus)
+        codeEditor.addEventListener('keydown', function(e) {
+            if (e.key === 'Tab') {
+                e.preventDefault();
+                const start = this.selectionStart;
+                const end = this.selectionEnd;
+                
+                // Set textarea value to: text before caret + 4 spaces + text after caret
+                this.value = this.value.substring(0, start) + 
+                             "    " + 
+                             this.value.substring(end);
+                
+                // Put caret at right position again
+                this.selectionStart = this.selectionEnd = start + 4;
+            }
+        });
+
+        // Handle template selection
+        templateSelect.addEventListener('change', (e) => {
+            const selected = e.target.value;
+            if (templates[selected] !== undefined) {
+                codeEditor.value = templates[selected];
+                updateLineNumbers();
+            }
+        });
+
+        // Clear terminal
+        clearTermBtn.addEventListener('click', () => {
+            terminalOutput.innerHTML = `
+                <div class="flex mt-2">
+                    <span class="text-green-500 mr-2">simulator@web:~$</span>
+                    <span id="terminal-cursor" class="inline-block w-2 bg-gray-400 cursor-blink ml-1"></span>
+                </div>
+            `;
+        });
+
+        // --- STREAMING_CHUNK:JavaScript - Terminal UI functions (Append, Animate)... ---
+        // --- Terminal Helper Functions ---
+        // Remove cursor
+        function removeCursor() {
+            const cursor = document.getElementById('terminal-cursor');
+            if (cursor) cursor.remove();
+        }
+
+        // Add prompt with cursor
+        function addPrompt() {
+            removeCursor();
+            const promptHTML = `
+                <div class="flex mt-2 prompt-line">
+                    <span class="text-green-500 mr-2">simulator@web:~$</span>
+                    <span id="terminal-cursor" class="inline-block w-2 bg-gray-400 cursor-blink ml-1"></span>
+                </div>
+            `;
+            terminalOutput.insertAdjacentHTML('beforeend', promptHTML);
+            terminalOutput.scrollTop = terminalOutput.scrollHeight;
+        }
+
+        // Append line to terminal
+        function appendTerminalLine(htmlContent, className = '') {
+            removeCursor();
+            const lineHTML = `<div class="${className} mt-1">${htmlContent}</div>`;
+            terminalOutput.insertAdjacentHTML('beforeend', lineHTML);
+            terminalOutput.scrollTop = terminalOutput.scrollHeight;
+        }
+
+        // Sleep function for animations
+        const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+        // --- STREAMING_CHUNK:JavaScript - Simple C Code Parser & Simulator Engine... ---
+        // --- C Code Parser & Simulator ---
+
+        // Simple Syntax Analyzer (Linter)
+        function analyzeSyntax(code) {
+            let errors = [];
+            
+            // 1. Cek keseimbangan kurung kurawal
+            let openBraces = (code.match(/\{/g) || []).length;
+            let closeBraces = (code.match(/\}/g) || []).length;
+            
+            if (openBraces > closeBraces) {
+                errors.push("Syntax Error: Kurang kurung kurawal penutup '}'.");
+            } else if (closeBraces > openBraces) {
+                errors.push("Syntax Error: Terlalu banyak kurung kurawal penutup '}'.");
+            }
+
+            // 2. Cek titik koma (;) yang hilang
+            const lines = code.split('\n');
+            lines.forEach((line, index) => {
+                let cleanLine = line.replace(/\/\/.*$/, '').trim(); // Hapus komentar sebaris & spasi
+                
+                // Abaikan baris kosong, preprocessor, dan baris yang sudah diakhiri dengan {, }, ;, atau :
+                if (cleanLine === '' || cleanLine.startsWith('#') || cleanLine.endsWith('{') || cleanLine.endsWith('}') || cleanLine.endsWith(';') || cleanLine.endsWith(':')) {
+                    return;
+                }
+                
+                // Abaikan struktur kontrol dan deklarasi fungsi (misal: int main())
+                if (cleanLine.startsWith('if') || cleanLine.startsWith('else') || cleanLine.startsWith('for') || cleanLine.startsWith('while')) return;
+                if (cleanLine.match(/^[a-zA-Z_]\w*\s+[a-zA-Z_]\w*\s*\([^)]*\)$/)) return; 
+
+                // Jika lolos semua filter di atas, kemungkinan besar itu adalah pernyataan yang kehilangan ';'
+                errors.push(`Syntax Error (Baris ${index + 1}): Diharapkan ';' di akhir pernyataan.`);
+            });
+
+            return errors;
+        }
+        
+        // Very basic simulator that attempts to read main() block and execute printf statements
+        // Note: This is a *simulation* and uses regex to fake execution for demonstration purposes.
+        // It does not actually compile C code or handle complex logic/memory.
+        function simulateCCode(code) {
+            let output = [];
+            let errors = [];
+            let variables = {}; // Store simple variables
+
+            try {
+                // Basic syntax check (needs main function)
+                if (!code.includes('main()') && !code.includes('main(')) {
+                    throw new Error("Linker error: undefined reference to `main'");
+                }
+
+                // 1. Extract content inside main()
+                const mainMatch = code.match(/int\s+main\s*\([^)]*\)\s*\{([\s\S]*)\}/);
+                if (!mainMatch) {
+                    throw new Error("Syntax error: Could not parse main block properly.");
+                }
+                
+                let mainBody = mainMatch[1];
+
+                // Remove single line comments
+                mainBody = mainBody.replace(/\/\/.*$/gm, '');
+                // Remove multi-line comments
+                mainBody = mainBody.replace(/\/\*[\s\S]*?\*\//g, '');
+
+                // Split into statements by semicolon
+                const statements = mainBody.split(';').map(s => s.trim()).filter(s => s.length > 0);
+
+                for (let stmt of statements) {
+                    // Simulating Variable Declarations & Assignments
+                    // Match pattern: type name = value
+                    const varDeclMatch = stmt.match(/^(int|float|double|char)\s+([a-zA-Z_]\w*)\s*=\s*(.+)$/);
+                    if (varDeclMatch) {
+                        const type = varDeclMatch[1];
+                        const name = varDeclMatch[2];
+                        let rawValue = varDeclMatch[3];
+                        
+                        if (type === 'int') {
+                            variables[name] = parseInt(rawValue) || 0;
+                        } else if (type === 'float' || type === 'double') {
+                            variables[name] = parseFloat(rawValue) || 0.0;
+                        } else if (type === 'char') {
+                             // Extract character between single quotes
+                            const charMatch = rawValue.match(/'([^'\\]|\\.)'/);
+                            variables[name] = charMatch ? charMatch[1] : '';
+                        }
+                        continue; // Move to next statement
+                    }
+
+                    // Simulating simple For Loop (VERY limited: standard `for(int i=x; i<y; i++) { printf(...) }`)
+                    const forMatch = stmt.match(/for\s*\(\s*int\s+([a-zA-Z_]\w*)\s*=\s*(\d+)\s*;\s*\1\s*([<>]=?)\s*(\d+)\s*;\s*\1(\+\+|--)\s*\)\s*\{([\s\S]*)/);
+                    if (forMatch) {
+                        // Due to how we split by ';', the for loop body is broken.
+                        // This simplistic simulator cannot handle nested blocks well without a real AST parser.
+                        // For the sake of the 'loop' template simulation, we will hack a specific check.
+                        
+                        // We will try to reconstruct the loop block if we detect 'for('
+                        // This is extremely hacky and only works for the specific provided template.
+                        throw new Error("Warning: Complex nested structures (loops/conditions) require a backend compiler. Try running the pre-defined template 'Looping' to see a mocked simulation.");
+                    }
+                    
+                    // Simulating simple If-Else
+                     if (stmt.startsWith('if') || stmt.startsWith('else')) {
+                         throw new Error("Warning: Complex conditional structures require a backend compiler. Try running the pre-defined template 'Kondisional' to see a mocked simulation.");
+                     }
+
+                    // Simulating printf()
+                    const printfMatch = stmt.match(/^printf\s*\(\s*(["'])([\s\S]*?)\1\s*(?:,\s*(.+))?\)$/);
+                    if (printfMatch) {
+                        let formatString = printfMatch[2];
+                        let argsStr = printfMatch[3];
+                        let args = [];
+                        
+                        if (argsStr) {
+                             // Split args by comma, ignoring commas inside quotes (simplistic)
+                             args = argsStr.split(',').map(a => a.trim());
+                        }
+
+                        // Process format specifiers and replace with variables
+                        let currentArgIndex = 0;
+                        let processedString = formatString.replace(/%([difsfc])/g, (match, type) => {
+                            if (currentArgIndex < args.length) {
+                                let argName = args[currentArgIndex++];
+                                let val = variables[argName];
+                                
+                                if (val !== undefined) {
+                                    if (type === 'd' || type === 'i') return parseInt(val, 10);
+                                    if (type === 'f') return parseFloat(val).toFixed(6); // Default printf float behavior roughly
+                                    if (type === 's') return val;
+                                    if (type === 'c') return val;
+                                }
+                                // If variable not found or expression, just return the arg literal for this mock
+                                // If arg is a literal number
+                                if (!isNaN(argName)) return argName;
+                                return `[Undefined: ${argName}]`;
+                            }
+                            return match; // Not enough args
+                        });
+
+                        // Specially handle %.1f, %.2f etc for float formatting (hardcoded commonly used ones)
+                         processedString = processedString.replace(/%\.(\d+)f/g, (match, decimals) => {
+                             if (currentArgIndex <= args.length) {
+                                 let argName = args[currentArgIndex-1]; // re-use last matched arg index logically 
+                                 // (In a real parser, we match specifier one by one)
+                                 
+                                 // Let's re-parse properly for specifiers
+                             }
+                             return match;
+                         });
+
+                        // Re-parsing format string more robustly for the mock
+                        let finalStr = "";
+                        let j = 0;
+                        let argIdx = 0;
+                        while(j < formatString.length) {
+                            if(formatString[j] === '%' && j+1 < formatString.length) {
+                                let spec = formatString[j+1];
+                                let precisionMatch = formatString.substring(j).match(/^%\.(\d+)f/);
+                                
+                                if (precisionMatch) {
+                                    if(argIdx < args.length) {
+                                        let val = variables[args[argIdx]];
+                                        if(val !== undefined) {
+                                            finalStr += parseFloat(val).toFixed(parseInt(precisionMatch[1]));
+                                        } else {
+                                            finalStr += `[?]`;
+                                        }
+                                        argIdx++;
+                                    }
+                                    j += precisionMatch[0].length;
+                                    continue;
+                                }
+                                
+                                if (['d', 'i', 'f', 's', 'c'].includes(spec)) {
+                                     if(argIdx < args.length) {
+                                         let val = variables[args[argIdx]];
+                                         if(val !== undefined) {
+                                              finalStr += val;
+                                         } else if (!isNaN(args[argIdx])) {
+                                              finalStr += args[argIdx];
+                                         } else {
+                                              finalStr += `[?]`;
+                                         }
+                                         argIdx++;
+                                     } else {
+                                         finalStr += `%${spec}`;
+                                     }
+                                     j += 2;
+                                     continue;
+                                }
+                            }
+                            // Handle escapes
+                            if (formatString[j] === '\\' && j+1 < formatString.length) {
+                                if (formatString[j+1] === 'n') {
+                                    finalStr += '\n';
+                                    j += 2;
+                                    continue;
+                                }
+                                if (formatString[j+1] === 't') {
+                                    finalStr += '\t';
+                                    j += 2;
+                                    continue;
+                                }
+                            }
+                            
+                            finalStr += formatString[j];
+                            j++;
+                        }
+
+                        // Split by actual newlines to render HTML correctly later
+                        let lines = finalStr.split('\n');
+                        lines.forEach((l, index) => {
+                             // If it's not the last part (which means a \n was after it), or if it has content
+                             if (index < lines.length - 1) {
+                                 output.push(l);
+                             } else if (l.length > 0) {
+                                 // Last chunk without trailing newline
+                                 // In a real terminal, it stays on same line, we simulate line breaks for simplicity in DOM
+                                 output.push(l + " "); 
+                             }
+                        });
+                        continue;
+                    }
+                    
+                    if (stmt.startsWith('return')) {
+                        // ignore
+                        continue;
+                    }
+
+                    // If statement is not recognized
+                    // errors.push(`Unrecognized statement in simulation: ${stmt}`);
+                }
+
+            } catch (e) {
+                errors.push(e.message);
+            }
+
+            return { output, errors };
+        }
+
+        // --- HARDCODED SIMULATIONS FOR TEMPLATES ---
+        // Because a regex-based parser in browser is too weak for real C syntax,
+        // we use a hybrid approach: if code matches our template logic closely, 
+        // we output the expected result to provide a realistic 'feel'.
+        
+        function getMockedOutput(code) {
+             const codeTrimmed = code.replace(/\s+/g, '');
+             const tHello = templates.hello.replace(/\s+/g, '');
+             const tVars = templates.variables.replace(/\s+/g, '');
+             const tLoop = templates.loop.replace(/\s+/g, '');
+             const tCond = templates.condition.replace(/\s+/g, '');
+             
+             if (codeTrimmed === tHello) {
+                 return { out: ["Hello, World!", "Selamat datang di Simulator C!"], err: null };
+             }
+             if (codeTrimmed === tVars) {
+                 return { out: ["Data Profil:", "Inisial : A", "Umur    : 25 tahun", "Tinggi  : 175.5 cm"], err: null };
+             }
+             if (codeTrimmed === tLoop) {
+                 return { out: ["Menghitung mundur:", "5...", "4...", "3...", "2...", "1...", "Liftoff! 🚀"], err: null };
+             }
+             if (codeTrimmed === tCond) {
+                 return { out: ["Nilai ujian kamu: 85", "Predikat: A (Sangat Baik)"], err: null };
+             }
+             
+             return null; // Need to use the generic parser
+        }
+
+        // --- STREAMING_CHUNK:JavaScript - Execution flow and Animations... ---
+        // --- Main Execution Action ---
+        runBtn.addEventListener('click', async () => {
+            const code = codeEditor.value;
+            
+            // UI Update: Disable button, show loading
+            runBtn.disabled = true;
+            const originalBtnContent = runBtn.innerHTML;
+            runBtn.innerHTML = `<i class="fa-solid fa-spinner animate-spin-custom text-xs"></i><span>Kompilasi...</span>`;
+            
+            // Append compile command to terminal
+            removeCursor();
+            appendTerminalLine('<span class="text-green-500 mr-2">simulator@web:~$</span><span class="text-white">gcc main.c -o main</span>');
+            
+            // Simulate compilation delay
+            await sleep(800);
+            
+            // --- Cek Error Sintaks Sebelum Menjalankan ---
+            const syntaxErrors = analyzeSyntax(code);
+            if (syntaxErrors.length > 0) {
+                appendTerminalLine('<b>Kompilasi Gagal:</b>', 'text-red-500 mt-2');
+                syntaxErrors.forEach(err => {
+                    appendTerminalLine(`main.c: ${err}`, 'terminal-error ml-2');
+                });
+                appendTerminalLine(`<br/><span class="text-gray-500 text-xs italic">[Proses dihentikan karena error sintaks]</span>`);
+                addPrompt();
+
+                // UI Update: Restore button
+                runBtn.innerHTML = originalBtnContent;
+                runBtn.disabled = false;
+                return; // Hentikan eksekusi jika ada error sintaks
+            }
+
+            appendTerminalLine('<span class="text-green-500 mr-2">simulator@web:~$</span><span class="text-white">./main</span>');
+            await sleep(300);
+
+            // Execute logic
+            let results = getMockedOutput(code);
+            
+            if (results) {
+                // Use mocked perfect output for templates
+                results.out.forEach(line => {
+                    // Escape HTML to prevent injection if it was dynamic
+                    const escapedLine = line.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+                    appendTerminalLine(escapedLine, 'text-gray-300 ml-2');
+                });
+            } else {
+                // Try dynamic generic parser
+                const { output, errors } = simulateCCode(code);
+                
+                if (errors.length > 0) {
+                    appendTerminalLine('<b>Kompilasi/Eksekusi Gagal:</b>', 'text-red-500 mt-2');
+                    errors.forEach(err => {
+                        appendTerminalLine(`main.c: ${err}`, 'terminal-error ml-2');
+                    });
+                } else if (output.length === 0) {
+                     appendTerminalLine('[Program selesai tanpa output visual]', 'text-gray-500 italic ml-2');
+                } else {
+                    output.forEach(line => {
+                        appendTerminalLine(line.replace(/</g, "&lt;").replace(/>/g, "&gt;"), 'text-gray-300 ml-2');
+                    });
+                }
+            }
+            
+            // Finish line
+            appendTerminalLine(`<br/><span class="text-gray-500 text-xs italic">[Proses selesai dengan kode keluar 0]</span>`);
+            addPrompt();
+
+            // UI Update: Restore button
+            runBtn.innerHTML = originalBtnContent;
+            runBtn.disabled = false;
+        });
+
+    </script>
+</body>
+</html>
